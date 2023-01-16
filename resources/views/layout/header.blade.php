@@ -28,12 +28,12 @@
 				<div class="app-menu">
 					<div class="search-bx mx-5">
 						<form>
-							<div class="input-group">
+							{{-- <div class="input-group">
 							  <input type="search" class="form-control" placeholder="Search">
 							  <div class="input-group-append">
 								<button class="btn" type="submit" id="button-addon3"><i class="icon-Search"><span class="path1"></span><span class="path2"></span></i></button>
 							  </div>
-							</div>
+							</div> --}}
 						</form>
 					</div>
 				</div>
