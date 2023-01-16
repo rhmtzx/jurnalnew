@@ -1,396 +1,519 @@
-<aside class="main-sidebar">
-    <section class="sidebar position-relative">
-	  	<div class="multinav">
-		  <div class="multinav-scroll" style="height: 97%;">
-			  <!-- sidebar menu-->
-			  <ul class="sidebar-menu" data-widget="tree">
-				<li>
-				  <a href="index.html"><i data-feather="home"></i><span>Dashboard</span></a>
-				</li>
-				<li>
-				  <a href="mailbox.html"><i data-feather="mail"></i><span>Mailbox</span></a>
-				</li>
-				<li>
-				  <a href="extra_calendar.html"><i data-feather="command"></i><span>Calendar</span></a>
-				</li>
-				<li>
-				  <a href="contact_app_chat.html"><i data-feather="message-circle"></i><span>Group chats</span></a>
-				</li>
-				<li class="header">Components</li>
-				<li class="treeview">
-				  <a href="#">
-					<i data-feather="edit"></i>
-					<span>Features</span>
-					<span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-				  </a>
-				  <ul class="treeview-menu">
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Card
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="box_cards.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>User Card</a></li>
-							<li><a href="box_advanced.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Advanced Card</a></li>
-							<li><a href="box_basic.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Basic Card</a></li>
-							<li><a href="box_color.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Card Color</a></li>
-							<li><a href="box_group.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Card Group</a></li>
-						</ul>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>BS UI
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="ui_grid.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Grid System</a></li>
-							<li><a href="ui_badges.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Badges</a></li>
-							<li><a href="ui_border_utilities.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Border</a></li>
-							<li><a href="ui_buttons.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Buttons</a></li>
-							<li><a href="ui_color_utilities.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Color</a></li>
-							<li><a href="ui_dropdown.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dropdown</a></li>
-							<li><a href="ui_dropdown_grid.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dropdown Grid</a></li>
-							<li><a href="ui_progress_bars.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Progress Bars</a></li>
-						</ul>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Icons
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="icons_fontawesome.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Font Awesome</a></li>
-							<li><a href="icons_glyphicons.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Glyphicons</a></li>
-							<li><a href="icons_material.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Material Icons</a></li>
-							<li><a href="icons_themify.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Themify Icons</a></li>
-							<li><a href="icons_simpleline.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Simple Line Icons</a></li>
-							<li><a href="icons_cryptocoins.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Cryptocoins Icons</a></li>
-							<li><a href="icons_flag.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Flag Icons</a></li>
-							<li><a href="icons_weather.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Weather Icons</a></li>
-						</ul>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Custom UI
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="ui_ribbons.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ribbons</a></li>
-							<li><a href="ui_sliders.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Sliders</a></li>
-							<li><a href="ui_typography.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Typography</a></li>
-							<li><a href="ui_tab.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Tabs</a></li>
-							<li><a href="ui_timeline.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Timeline</a></li>
-							<li><a href="ui_timeline_horizontal.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Horizontal Timeline</a></li>
-						</ul>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Components
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="component_bootstrap_switch.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Bootstrap Switch</a></li>
-							<li><a href="component_date_paginator.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Date Paginator</a></li>
-							<li><a href="component_media_advanced.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Advanced Medias</a></li>
-							<li><a href="component_rangeslider.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Range Slider</a></li>
-							<li><a href="component_rating.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ratings</a></li>
-							<li><a href="component_animations.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Animations</a></li>
-							<li><a href="extension_fullscreen.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Fullscreen</a></li>
-							<li><a href="extension_pace.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Pace</a></li>
-							<li><a href="component_nestable.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Nestable</a></li>
-							<li><a href="component_portlet_draggable.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Draggable Portlets</a></li>
-						</ul>
-					</li>
-				  </ul>
-				</li>
-				<li class="treeview">
-				  <a href="#">
-					<i data-feather="pie-chart"></i>
-					<span>Forms & Charts</span>
-					<span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-				  </a>
-				  <ul class="treeview-menu">
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Forms
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="forms_advanced.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Form Elements</a></li>
-							<li><a href="forms_general.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Form Layout</a></li>
-							<li><a href="forms_wizard.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Form Wizard</a></li>
-							<li><a href="forms_validation.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Form Validation</a></li>
-							<li><a href="forms_mask.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Formatter</a></li>
-							<li><a href="forms_xeditable.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Xeditable Editor</a></li>
-							<li><a href="forms_dropzone.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dropzone</a></li>
-							<li><a href="forms_code_editor.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Code Editor</a></li>
-							<li><a href="forms_editors.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Editor</a></li>
-							<li><a href="forms_editor_markdown.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Markdown</a></li>
-						</ul>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Charts
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li class="treeview">
-								<a href="#">
-									<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Basic Charts
-									<span class="pull-right-container">
-										<i class="fa fa-angle-right pull-right"></i>
-									</span>
-								</a>
-								<ul class="treeview-menu">
-									<li><a href="charts_chartjs.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ChartJS</a></li>
-									<li><a href="charts_flot.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Flot</a></li>
-									<li><a href="charts_inline.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Inline charts</a></li>
-									<li><a href="charts_morris.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Morris</a></li>
-									<li><a href="charts_peity.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Peity</a></li>
-									<li><a href="charts_chartist.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Chartist</a></li>
-								</ul>
-							</li>
-							<li><a href="charts_apex.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Apex Chart</a></li>
-							<li class="treeview">
-								<a href="#">
-									<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>C3 Charts
-									<span class="pull-right-container">
-										<i class="fa fa-angle-right pull-right"></i>
-									</span>
-								</a>
-								<ul class="treeview-menu">
-									<li><a href="charts_c3_axis.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Axis Chart</a></li>
-									<li><a href="charts_c3_bar.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Bar Chart</a></li>
-									<li><a href="charts_c3_data.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Data Chart</a></li>
-									<li><a href="charts_c3_line.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Line Chart</a></li>
-								</ul>
-							</li>
-							<li class="treeview">
-								<a href="#">
-									<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>eCharts
-									<span class="pull-right-container">
-										<i class="fa fa-angle-right pull-right"></i>
-									</span>
-								</a>
-								<ul class="treeview-menu">
-									<li><a href="charts_echarts_basic.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Basic Charts</a></li>
-									<li><a href="charts_echarts_bar.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Bar Chart</a></li>
-									<li><a href="charts_echarts_pie_doughnut.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Pie Chart</a></li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-				  </ul>
-				</li>
-				<li class="treeview">
-				  <a href="#">
-					<i data-feather="grid"></i>
-					<span>Tables</span>
-					<span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-				  </a>
-				  <ul class="treeview-menu">
-					<li><a href="tables_simple.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Simple tables</a></li>
-					<li><a href="tables_data.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Data tables</a></li>
-					<li><a href="tables_editable.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Editable Tables</a></li>
-					<li><a href="tables_color.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Table Color</a></li>
-				  </ul>
-				</li>
-				<li class="treeview">
-				  <a href="#">
-					<i data-feather="database"></i>
-					<span>Apps & Widgets</span>
-					<span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-				  </a>
-				  <ul class="treeview-menu">
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Apps
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="contact_app.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Contact List</a></li>
-							<li><a href="extra_taskboard.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Todo</a></li>
-						</ul>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Widgets
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li class="treeview">
-								<a href="#">
-									<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Custom
-									<span class="pull-right-container">
-										<i class="fa fa-angle-right pull-right"></i>
-									</span>
-								</a>
-								<ul class="treeview-menu">
-									<li><a href="widgets_blog.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Blog</a></li>
-									<li><a href="widgets_chart.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Chart</a></li>
-									<li><a href="widgets_list.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>List</a></li>
-									<li><a href="widgets_social.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Social</a></li>
-									<li><a href="widgets_statistic.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Statistic</a></li>
-									<li><a href="widgets_weather.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Weather</a></li>
-									<li><a href="widgets.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Widgets</a></li>
-									<li><a href="email_index.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Emails</a></li>
-								</ul>
-							</li>
-							<li class="treeview">
-								<a href="#">
-									<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Maps
-									<span class="pull-right-container">
-										<i class="fa fa-angle-right pull-right"></i>
-									</span>
-								</a>
-								<ul class="treeview-menu">
-									<li><a href="map_google.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Google Map</a></li>
-									<li><a href="map_vector.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Vector Map</a></li>
-								</ul>
-							</li>
-							<li class="treeview">
-								<a href="#">
-									<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Modals
-									<span class="pull-right-container">
-										<i class="fa fa-angle-right pull-right"></i>
-									</span>
-								</a>
-								<ul class="treeview-menu">
-									<li><a href="component_modals.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Modals</a></li>
-									<li><a href="component_sweatalert.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Sweet Alert</a></li>
-									<li><a href="component_notification.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Toastr</a></li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ecommerce
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="ecommerce_products.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Products</a></li>
-							<li><a href="ecommerce_cart.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Products Cart</a></li>
-							<li><a href="ecommerce_products_edit.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Products Edit</a></li>
-							<li><a href="ecommerce_details.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Product Details</a></li>
-							<li><a href="ecommerce_orders.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Product Orders</a></li>
-							<li><a href="ecommerce_checkout.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Products Checkout</a></li>
-						</ul>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Sample Pages
-							<span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="invoice.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Invoice</a></li>
-							<li><a href="invoice_2.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Invoice 2</a></li>
-							<li><a href="invoicelist.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Invoice List</a></li>
-							<li><a href="invoicelist_2.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Invoice List 2</a></li>
-							<li><a href="extra_profile.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>User Profile</a></li>
-							<li><a href="contact_userlist.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Userlist</a></li>
-							<li><a href="sample_faq.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>FAQs</a></li>
-							<li><a href="sample_blank.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Blank</a></li>
-							<li><a href="sample_coming_soon.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Coming Soon</a></li>
-							<li><a href="sample_custom_scroll.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Custom Scrolls</a></li>
-							<li><a href="sample_gallery.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Gallery</a></li>
-							<li><a href="sample_lightbox.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Lightbox Popup</a></li>
-							<li><a href="sample_pricing.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Pricing</a></li>
-						</ul>
-					</li>
-				  </ul>
-				</li>
-				<li class="treeview">
-				  <a href="#">
-					<i data-feather="lock"></i>
-					<span>Authentication</span>
-					<span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-				  </a>
-				  <ul class="treeview-menu">
-					<li>
-						<a href="auth_login.html" target="_blank" class="d-light"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Login</a>
-						<a href="auth_login_dark.html" target="_blank" class="d-dark"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Login</a>
-					</li>
-					<li>
-						<a href="auth_register.html" target="_blank" class="d-light"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Register</a>
-						<a href="auth_register_dark.html" target="_blank" class="d-dark"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Register</a>
-					</li>
-					<li>
-						<a href="auth_lockscreen.html" target="_blank" class="d-light"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Lockscreen</a>
-						<a href="auth_lockscreen_dark.html" target="_blank" class="d-dark"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Lockscreen</a>
-					</li>
-					<li>
-						<a href="auth_user_pass.html" target="_blank" class="d-light"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Recover password</a>
-						<a href="auth_user_pass_dark.html" target="_blank" class="d-dark"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Recover password</a>
-					</li>
-				  </ul>
-				</li>
-				<li class="treeview">
-				  <a href="#">
-					<i data-feather="alert-triangle"></i>
-					<span>Miscellaneous</span>
-					<span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-				  </a>
-				  <ul class="treeview-menu">
-					<li>
-						<a href="error_404.html" target="_blank" class="d-light"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Error 404</a>
-						<a href="error_404_dark.html" target="_blank" class="d-dark"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Error 404</a>
-					</li>
-					<li>
-						<a href="error_500.html" target="_blank" class="d-light"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Error 500</a>
-						<a href="error_500_dark.html" target="_blank" class="d-dark"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Error 500</a>
-					</li>
-					<li>
-						<a href="error_maintenance.html" target="_blank" class="d-light"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Maintenance</a>
-						<a href="error_maintenance_dark.html" target="_blank" class="d-dark"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Maintenance</a>
-					</li>
-				  </ul>
-				</li>
-			  </ul>
+<aside class="sidebar-wrapper">
+    <div class="logo-wrapper">
+        <a href="index.html" class="admin-logo">
+            <img src="{{ asset('templatejr/kamleshyadav.com/html/splashdash/HTML/bootstrep-5/splashdash-admin-template/assets/images/logo.png') }}" alt="" class="sp_logo">
+            <img src="{{ asset('templatejr/kamleshyadav.com/html/splashdash/HTML/bootstrep-5/splashdash-admin-template/assets/images/mini_logo.png') }}" alt="" class="sp_mini_logo">
+        </a>
+    </div>
+    <div class="side-menu-wrap">
+        <ul class="main-menu">
+            <li>
+                <a href="javascript:void(0);" class="active">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </span>
+                    <span class="menu-text">
+                        Dashboard
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="index.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Admin
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                User
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-			  <div class="sidebar-widgets">
-				  <div class="mx-25 mb-30 pb-20 side-bx bg-primary-light rounded20">
-					<div class="text-center">
-						<img src="http://edulearn-lms-admin-template.multipurposethemes.com/images/svg-icon/color-svg/custom-24.svg" class="sideimg p-5" alt="">
-						<h4 class="title-bx text-primary">Best Education Admin</h4>
-					</div>
-				  </div>
-			  </div>
-		  </div>
-		</div>
-    </section>
-  </aside>
+            <li>
+                <a href="all-product.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </span>
+                    <span class="menu-text">
+                        Products
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="orders.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    </span>
+                    <span class="menu-text">
+                        Orders
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="customers.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </span>
+                    <span class="menu-text">
+                        Customers
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </span>
+                    <span class="menu-text">
+                        Calendar
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="fontawesome.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid nav-icon"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </span>
+                    <span class="menu-text">
+                        Font Awesome
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wind"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg>
+                    </span>
+                    <span class="menu-text">
+                        UI Kit
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="progress-bars.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Progress Bars
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="alert.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                alert
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="editor.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                editor
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="modal.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Modal
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tab.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Tabs
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="carousal.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Carousal
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="counter.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Counter
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="accordation.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Accordation
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pagination.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Pagination
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="typography.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Typograpgy
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </span>
+                    <span class="menu-text">
+                        Form
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="form.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Basic Form
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tags.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Tags
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tablet"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </span>
+                    <span class="menu-text">
+                        Table
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="basic-table.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Basic Table
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="advance-table.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Advance Table
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="data-table.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Data Table
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                    </span>
+                    <span class="menu-text">
+                        Map
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="g-map.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Google Map
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="v-map.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                vector Map
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="chart.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                    </span>
+                    <span class="menu-text">
+                        Chart
+                    </span>
+                </a>
+            </li>
+             <li>
+                <a href="buttons.html">
+                    <span class="icon-menu feather-icon">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cloud"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                    </span>
+                    <span class="menu-text">
+                        buttons
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="invoice.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                    </span>
+                    <span class="menu-text">
+                        Invoice
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </span>
+                    <span class="menu-text">
+                        Email
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="inbox.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Inbox
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="email-template.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Email Template
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chat.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Chat
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    </span>
+                    <span class="menu-text">
+                        Authentication
+                    </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="login.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Login
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Register
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                My Profile
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="forgot-pws.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Recover Password
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="active-li">
+                <a href="javascript:void(0);">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </span>
+                    <span class="menu-text">
+                        General
+                    </span>
+                </a>
+                <ul class="sub-menu show-submenu">
+                    <li>
+                        <a href="blank.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Starter
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cards.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Cards
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product-single.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Product Single
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="wishlist.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Wishlist
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Cart
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="checkout.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Checkout
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="faq.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Faq
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="error.html">
+                            <span class="icon-dash">
+                            </span>
+                            <span class="menu-text">
+                                Error 404
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="support.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-voicemail"><circle cx="5.5" cy="11.5" r="4.5"></circle><circle cx="18.5" cy="11.5" r="4.5"></circle><line x1="5.5" y1="16" x2="18.5" y2="16"></line></svg>
+                    </span>
+                    <span class="menu-text">
+                        Support
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="documentation.html">
+                    <span class="icon-menu feather-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+                    </span>
+                    <span class="menu-text">
+                        Documentation
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
