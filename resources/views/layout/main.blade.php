@@ -13,11 +13,11 @@
     <title>edulearn - Dashboard</title>
 
 	<!-- Vendors Style-->
-	<link rel="stylesheet" href="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/src/css/vendors_css.css') }}">
+	<link rel="stylesheet" href="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/template/vertical/src/css/vendors_css.css') }}">
 
 	<!-- Style-->
-	<link rel="stylesheet" href="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/src/css/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/src/css/skin_color.css') }}">
+	<link rel="stylesheet" href="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/template/vertical/src/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/template/vertical/src/css/skin_color.css') }}">
 
   </head>
 
@@ -588,8 +588,8 @@
 
 
 	<!-- Vendor JS -->
-	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/src/js/vendors.min.js') }}"></script>
-	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/src/js/pages/chat-popup.js') }}"></script>
+	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/template/vertical/src/js/vendors.min.js') }}"></script>
+	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/template/vertical/src/js/pages/chat-popup.js') }}"></script>
     <script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/icons/feather-icons/feather.min.js') }}"></script>
 
 	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/vendor_components/apexcharts-bundle/dist/apexcharts.js') }}"></script>
@@ -597,9 +597,9 @@
 	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/vendor_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 
 	<!-- edulearn App -->
-	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/src/js/demo.js') }}"></script>
-	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/src/js/template.js') }}"></script>
-	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/assets/src/js/pages/dashboard.js') }}"></script>
+	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/template/vertical/src/js/demo.js') }}"></script>
+	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/template/vertical/src/js/template.js') }}"></script>
+	<script src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/template/vertical/src/js/pages/dashboard.js') }}"></script>
 
 </body>
 
