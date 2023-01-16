@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class datadudi extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    protected $dates = ['created_at'];
 }
