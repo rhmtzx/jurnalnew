@@ -9,6 +9,7 @@ use App\Http\Controllers\TambahjurnalController;
 use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
+use App\Http\Controllers\DataplotinganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,6 @@ Route::get('/', function () {
 });
 
 //jurusan
-
 Route::get('/datajurusan',[JurusanController::class, 'index'])->name('datajurusan');
 Route::get('/tambahjurusan',[JurusanController::class, 'tambahjurusan'])->name('tambahjurusan');
 Route::post('/insertjurusan',[JurusanController::class, 'insertjurusan'])->name('insertjurusan');
@@ -82,3 +82,10 @@ Route::get('/tampilpembimbingdudi/{id}',[DatapembimbingdudiController::class, 't
 Route::post('/updatepembimbingdudi/{id}',[DatapembimbingdudiController::class, 'updatepembimbingdudi'])->name('updatepembimbingdudi');
 Route::get('/deletepembimbingdudi/{id}',[DatapembimbingdudiController::class, 'deletepembimbingdudi'])->name('deletepembimbingdudi');
 
+//dataplotingan
+Route::get('/dataplotingan',[DataplotinganController::class, 'index'])->name('dataplotingan');
+Route::get('/tambahdataplotingan',[DataplotinganController::class, 'tambahdataplotingan'])->name('tambahdataplotingan');
+Route::post('/insertdataplotingan',[DataplotinganController::class, 'insertdataplotingan'])->name('insertdataplotingan');
+Route::get('/tampildataplotingan/{id}',[DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan');
+Route::post('/updatedataplotingan/{id}',[DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan');
+Route::get('/deletedataplotingan/{id}',[DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan');
