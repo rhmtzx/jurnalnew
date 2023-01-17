@@ -1,3 +1,6 @@
+@extends('layout.main')
+@section('content')
+
     <!doctype html>
     <html lang="en">
 
@@ -63,11 +66,11 @@
                                         </div>
                                     @enderror
                                     <br>
-                                        
+
                                      <div class="mb-1">
                                                     <label for="exampleInputEmail1" class="form-label">Foto</label>
                                                     <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
-                                                        alt="" style="width: 90px" alt=""> 
+                                                        alt="" style="width: 90px" alt="">
                                                     <input type="file" name="foto" class="form-control">
                                                 </div>
                                             <br>
@@ -100,3 +103,4 @@
     </body>
 
     </html>
+    @endsection

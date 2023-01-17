@@ -1,163 +1,339 @@
-<header class="main-header">
-	<div class="d-flex align-items-center logo-box justify-content-start">
-		<!-- Logo -->
-		<a href="index.html" class="logo">
-		  <!-- logo-->
-		  <div class="logo-mini w-30">
-			  <span class="light-logo"><img src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/images/logo-letter.png') }}"alt="logo"></span>
-			  <span class="dark-logo"><img src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/images/logo-letter-white.png') }}" alt="logo"></span>
-		  </div>
-		  <div class="logo-lg">
-			  <span class="light-logo"><img src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/images/logo-dark-text.png') }}" alt="logo"></span>
-			  <span class="dark-logo"><img src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/images/logo-light-text.png') }}" alt="logo"></span>
-		  </div>
-		</a>
-	</div>
-    <!-- Sidebar toggle button-->
-    <nav class="navbar navbar-static-top">
-	  <div class="app-menu">
-		<ul class="header-megamenu nav">
-			<li class="btn-group nav-item">
-				<a href="#" class="waves-effect waves-light nav-link push-btn btn-primary-light ms-0" data-toggle="push-menu" role="button">
-					<i data-feather="menu"></i>
-			    </a>
-			</li>
-			{{-- <li class="btn-group d-lg-inline-flex d-none">
-				<div class="app-menu">
-					<div class="search-bx mx-5">
-						<form>
-							<div class="input-group">
-							  <input type="search" class="form-control" placeholder="Search">
-							  <div class="input-group-append">
-								<button class="btn" type="submit" id="button-addon3"><i class="icon-Search"><span class="path1"></span><span class="path2"></span></i></button>
-							  </div>
-							</div>
-						</form>
-					</div>
+<header class="top-header">
+			<nav class="navbar navbar-expand">
+				<div class="left-topbar d-flex align-items-center">
+					<a href="javascript:;" class="toggle-btn">	<i class="bx bx-menu"></i>
+					</a>
 				</div>
-			</li> --}}
-		</ul>
-	  </div>
-
-      <div class="navbar-custom-menu r-side">
-        <ul class="nav navbar-nav">
-			<li class="btn-group d-md-inline-flex d-none">
-              <a href="javascript:void(0)" title="skin Change" class="waves-effect skin-toggle waves-light">
-			  	<label class="switch">
-					<input type="checkbox" data-mainsidebarskin="toggle" id="toggle_left_sidebar_skin">
-					<span class="switch-on"><i data-feather="moon"></i></span>
-					<span class="switch-off"><i data-feather="sun"></i></span>
-				</label>
-			  </a>
-            </li>
-			<li class="dropdown notifications-menu btn-group">
-				<a href="#" class="waves-effect waves-light btn-primary-light svg-bt-icon bg-transparent" data-bs-toggle="dropdown" title="Notifications">
-					<i data-feather="bell"></i>
-					<div class="pulse-wave"></div>
-			    </a>
-				<ul class="dropdown-menu animated bounceIn">
-				  <li class="header">
-					<div class="p-20">
-						<div class="flexbox">
-							<div>
-								<h4 class="mb-0 mt-0">Notifications</h4>
+				<div class="flex-grow-1 search-bar">
+					{{-- <div class="input-group">
+						 <button class="btn btn-search-back search-arrow-back" type="button"><i class="bx bx-arrow-back"></i></button>
+						 <input type="text" class="form-control" placeholder="search" />
+						 <button class="btn btn-search" type="button"><i class="lni lni-search-alt"></i></button>
+					</div> --}}
+				</div>
+				<div class="right-topbar ms-auto">
+					<ul class="navbar-nav">
+						<li class="nav-item search-btn-mobile">
+							<a class="nav-link position-relative" href="javascript:;">	<i class="bx bx-search vertical-align-middle"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown dropdown-lg">
+							<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="javascript:;" data-bs-toggle="dropdown">	<span class="msg-count">6</span>
+								<i class="bx bx-comment-detail vertical-align-middle"></i>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a href="javascript:;">
+									<div class="msg-header">
+										<h6 class="msg-header-title">6 New</h6>
+										<p class="msg-header-subtitle">Application Messages</p>
+									</div>
+								</a>
+								<div class="header-message-list">
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-1.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Daisy Anderson <span class="msg-time float-end">5 sec
+													ago</span></h6>
+												<p class="msg-info">The standard chunk of lorem</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-2.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Althea Cabardo <span class="msg-time float-end">14
+													sec ago</span></h6>
+												<p class="msg-info">Many desktop publishing packages</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-3.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Oscar Garner <span class="msg-time float-end">8 min
+													ago</span></h6>
+												<p class="msg-info">Various versions have evolved over</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-4.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Katherine Pechon <span class="msg-time float-end">15
+													min ago</span></h6>
+												<p class="msg-info">Making this the first true generator</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-5.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Amelia Doe <span class="msg-time float-end">22 min
+													ago</span></h6>
+												<p class="msg-info">Duis aute irure dolor in reprehenderit</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-6.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Cristina Jhons <span class="msg-time float-end">2 hrs
+													ago</span></h6>
+												<p class="msg-info">The passage is attributed to an unknown</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-7.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">James Caviness <span class="msg-time float-end">4 hrs
+													ago</span></h6>
+												<p class="msg-info">The point of using Lorem</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-8.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Peter Costanzo <span class="msg-time float-end">6 hrs
+													ago</span></h6>
+												<p class="msg-info">It was popularised in the 1960s</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-9.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">David Buckley <span class="msg-time float-end">2 hrs
+													ago</span></h6>
+												<p class="msg-info">Various versions have evolved over</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-10.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Thomas Wheeler <span class="msg-time float-end">2 days
+													ago</span></h6>
+												<p class="msg-info">If you are going to use a passage</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="user-online">
+												<img src="{{ asset('admin/assets/images/avatars/avatar-11.png') }}" class="msg-avatar" alt="user avatar">
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Johnny Seitz <span class="msg-time float-end">5 days
+													ago</span></h6>
+												<p class="msg-info">All the Lorem Ipsum generators</p>
+											</div>
+										</div>
+									</a>
+								</div>
+								<a href="javascript:;">
+									<div class="text-center msg-footer">View All Messages</div>
+								</a>
 							</div>
-							<div>
-								<a href="#" class="text-danger">Clear All</a>
+						</li>
+						<li class="nav-item dropdown dropdown-lg">
+							<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="javascript:;" data-bs-toggle="dropdown">	<i class="bx bx-bell vertical-align-middle"></i>
+								<span class="msg-count">8</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a href="javascript:;">
+									<div class="msg-header">
+										<h6 class="msg-header-title">8 New</h6>
+										<p class="msg-header-subtitle">Application Notifications</p>
+									</div>
+								</a>
+								<div class="header-notifications-list">
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-primary text-primary"><i class="bx bx-group"></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">New Customers<span class="msg-time float-end">14 Sec
+													ago</span></h6>
+												<p class="msg-info">5 new user registered</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-danger text-danger"><i class="bx bx-cart-alt"></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">New Orders <span class="msg-time float-end">2 min
+													ago</span></h6>
+												<p class="msg-info">You have recived new orders</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-shineblue text-shineblue"><i class="bx bx-file"></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">24 PDF File<span class="msg-time float-end">19 min
+													ago</span></h6>
+												<p class="msg-info">The pdf files generated</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-cyne text-cyne"><i class="bx bx-send"></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Time Response <span class="msg-time float-end">28 min
+													ago</span></h6>
+												<p class="msg-info">5.1 min avarage time response</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-purple text-purple"><i class="bx bx-home-circle"></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">New Product Approved <span
+													class="msg-time float-end">2 hrs ago</span></h6>
+												<p class="msg-info">Your new product has approved</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-warning text-warning"><i class="bx bx-message-detail"></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">New Comments <span class="msg-time float-end">4 hrs
+													ago</span></h6>
+												<p class="msg-info">New customer comments recived</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-success text-success"><i class='bx bx-check-square'></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Your item is shipped <span class="msg-time float-end">5 hrs
+													ago</span></h6>
+												<p class="msg-info">Successfully shipped your item</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-sinata text-sinata"><i class='bx bx-user-pin'></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
+													ago</span></h6>
+												<p class="msg-info">24 new authors joined last week</p>
+											</div>
+										</div>
+									</a>
+									<a class="dropdown-item" href="javascript:;">
+										<div class="d-flex align-items-center">
+											<div class="notify bg-light-mehandi text-mehandi"><i class='bx bx-door-open'></i>
+											</div>
+											<div class="flex-grow-1">
+												<h6 class="msg-name">Defense Alerts <span class="msg-time float-end">2 weeks
+													ago</span></h6>
+												<p class="msg-info">45% less alerts last 4 weeks</p>
+											</div>
+										</div>
+									</a>
+								</div>
+								<a href="javascript:;">
+									<div class="text-center msg-footer">View All Notifications</div>
+								</a>
 							</div>
-						</div>
-					</div>
-				  </li>
-				  <li>
-					<!-- inner menu: contains the actual data -->
-					<ul class="menu sm-scrol">
-					  <li>
-						<a href="#">
-						  <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
-						</a>
-					  </li>
-					  <li>
-						<a href="#">
-						  <i class="fa fa-warning text-warning"></i> Duis malesuada justo eu sapien elementum, in semper diam posuere.
-						</a>
-					  </li>
-					  <li>
-						<a href="#">
-						  <i class="fa fa-users text-danger"></i> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
-						</a>
-					  </li>
-					  <li>
-						<a href="#">
-						  <i class="fa fa-shopping-cart text-success"></i> In gravida mauris et nisi
-						</a>
-					  </li>
-					  <li>
-						<a href="#">
-						  <i class="fa fa-user text-danger"></i> Praesent eu lacus in libero dictum fermentum.
-						</a>
-					  </li>
-					  <li>
-						<a href="#">
-						  <i class="fa fa-user text-primary"></i> Nunc fringilla lorem
-						</a>
-					  </li>
-					  <li>
-						<a href="#">
-						  <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
-						</a>
-					  </li>
+						</li>
+						<li class="nav-item dropdown dropdown-user-profile">
+							<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+								<div class="d-flex user-box align-items-center">
+									<div class="user-info">
+										<p class="user-name mb-0">Jessica Doe</p>
+										<p class="designattion mb-0">Available</p>
+									</div>
+									<img src="{{ asset('admin/assets/images/avatars/avatar-1.png') }}" class="user-img" alt="user avatar">
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="javascript:;"><i
+										class="bx bx-user"></i><span>Profile</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="bx bx-cog"></i><span>Settings</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="bx bx-tachometer"></i><span>Dashboard</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="bx bx-wallet"></i><span>Earnings</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="bx bx-cloud-download"></i><span>Downloads</span></a>
+								<div class="dropdown-divider mb-0"></div>	<a class="dropdown-item" href="javascript:;"><i
+										class="bx bx-power-off"></i><span>Logout</span></a>
+							</div>
+						</li>
+						{{-- <li class="nav-item dropdown dropdown-language">
+							<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+								<div class="lang d-flex">
+									<div><i class="flag-icon flag-icon-um"></i>
+									</div>
+									<div><span>En</span>
+									</div>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="javascript:;"><i
+										class="flag-icon flag-icon-de"></i><span>German</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="flag-icon flag-icon-fr"></i><span>French</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="flag-icon flag-icon-um"></i><span>English</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="flag-icon flag-icon-in"></i><span>Hindi</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="flag-icon flag-icon-cn"></i><span>Chinese</span></a>
+								<a class="dropdown-item" href="javascript:;"><i
+										class="flag-icon flag-icon-ae"></i><span>Arabic</span></a>
+							</div>
+						</li> --}}
 					</ul>
-				  </li>
-				  <li class="footer">
-					  <a href="#">View all</a>
-				  </li>
-				</ul>
-			</li>
-			{{-- <li class="btn-group nav-item d-xl-inline-flex d-none">
-				<a href="#" class="waves-effect waves-light nav-link btn-primary-light svg-bt-icon" title="" id="live-chat">
-					<i data-feather="message-circle"></i>
-			    </a>
-			</li> --}}
-
-			{{-- <li class="btn-group d-xl-inline-flex d-none">
-			    <a href="#" class="waves-effect waves-light nav-link btn-primary-light svg-bt-icon dropdown-toggle" data-bs-toggle="dropdown">
-					<img class="rounded-circle" src="http://edulearn-lms-admin-template.multipurposethemes.com/images/svg-icon/usa.svg" alt="">
-				</a>
-			    <div class="dropdown-menu">
-					<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="http://edulearn-lms-admin-template.multipurposethemes.com/images/svg-icon/usa.svg" alt=""> English</a>
-					<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="http://edulearn-lms-admin-template.multipurposethemes.com/images/svg-icon/spain.svg" alt=""> Spanish</a>
-					<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="http://edulearn-lms-admin-template.multipurposethemes.com/images/svg-icon/ger.svg" alt=""> German</a>
-					<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="http://edulearn-lms-admin-template.multipurposethemes.com/images/svg-icon/jap.svg" alt=""> Japanese</a>
-					<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="http://edulearn-lms-admin-template.multipurposethemes.com/images/svg-icon/fra.svg" alt=""> French</a>
-			    </div>
-			</li> --}}
-
-			{{-- <li class="btn-group nav-item d-xl-inline-flex d-none">
-				<a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link btn-primary-light svg-bt-icon" title="Full Screen">
-					<i data-feather="maximize"></i>
-			    </a>
-			</li> --}}
-
-			<!-- User Account-->
-			<li class="dropdown user user-menu">
-				<a href="#" class="waves-effect waves-light dropdown-toggle w-auto l-h-12 bg-transparent p-0 no-shadow" title="User" data-bs-toggle="modal" data-bs-target="#quick_user_toggle">
-					<div class="d-flex pt-1 align-items-center">
-						<div class="text-end me-10">
-							<p class="pt-5 fs-14 mb-0 fw-700">Nil Yeager</p>
-							<small class="fs-10 mb-0 text-uppercase text-mute">Admin</small>
-						</div>
-						<img src="{{ asset('template/edulearn-lms-admin-template.multipurposethemes.com/images/avatar/avatar-13.png') }}" class="avatar rounded-circle bg-primary-light h-40 w-40" alt="" />
-					</div>
-				</a>
-			</li>
-          <!-- Control Sidebar Toggle Button -->
-          {{-- <li class="btn-group nav-item d-xl-inline-flex d-none">
-              <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light nav-link btn-primary-light svg-bt-icon me-0">
-			  	<i data-feather="sliders"></i>
-			  </a>
-          </li> --}}
-
-        </ul>
-      </div>
-    </nav>
-  </header>
+				</div>
+			</nav>
+		</header>

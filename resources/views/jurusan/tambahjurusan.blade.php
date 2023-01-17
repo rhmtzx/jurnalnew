@@ -1,4 +1,7 @@
-    <!doctype html>
+ @extends('layout.main')
+ @section('content')
+
+ <!doctype html>
     <html lang="en">
 
     <head>
@@ -14,13 +17,13 @@
     </head>
 
     <body>
-        <h1 class="text-center mb-5">Tambah Data jurusan</h1>
+        <br><h1 class="text-center mb-5">Tambah Data jurusan</h1>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-8">
                     <div class="card">
                         <div class="card-body">
-                            {{-- <h1 class="text-center mb-5">Tambah jurusan</h1> --}}
+                            <h1 class="text-center mb-5">Tambah jurusan</h1>
                             <form action="/insertjurusan" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
@@ -61,4 +64,5 @@
     </body>
 
     </html>
+    @endsection
 
