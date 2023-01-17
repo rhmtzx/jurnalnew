@@ -1,6 +1,6 @@
 @extends('layout.main')
-@section('content')
 
+@section('content')
 <!doctype html>
     <html lang="en">
 
@@ -21,7 +21,28 @@
     </head>
 
     <body>
-        <br><div class="row">
+    <div class="content-wrapper">
+    <div class="container-full">
+      <div class="content-header">
+          <div class="d-flex align-items-center">
+              <div class="me-auto">
+                  <h4 class="page-title">Blank page</h4>
+                  <div class="d-inline-block align-items-center">
+                      <nav>
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+                              <li class="breadcrumb-item" aria-current="page">Sample Page</li>
+                              <li class="breadcrumb-item active" aria-current="page">Blank page</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+
+      <section class="content">
+        <div class="row">
             <h1 class="text-center">Data Siswa</h1>
             <br>
             <div class="row-2">
@@ -29,7 +50,6 @@
                     <div class="justify-content-center"></div>
                     <div class="col-xl-12">
                         <div class="card mt-5">
-                            <h1 class="text-center">Data Siswa</h1>
                             <div class="card-body">
                                 <div class="container">
                                     <a href="/tambahdatasiswa" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
@@ -83,12 +103,16 @@
                                 </div>
                             </div>
                         </div>
-                    {{-- </div> --}}
                 </div>
             </div>
         </div>
         </div>
         </div>
+      </section>
+      <!-- /.content -->
+    
+    </div>
+</div>
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -149,6 +173,6 @@
             toastr.success("{{ Session::get('succes') }}");
         @endif
     </script>
-
     </html>
 @endsection
+
