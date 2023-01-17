@@ -1,4 +1,7 @@
-  <!doctype html>
+@extends('layout.main')
+@section('content')
+
+ <!doctype html>
     <html lang="en">
 
     <head>
@@ -18,16 +21,26 @@
     </head>
 
     <body>
-        <br><div class="row">
-            <h1 class="text-center">Data dudi</h1>
-            <div class="row-2">
-                <div class="container-fluid">
-                    <div class="justify-content-center"></div>
-                    <div class="col-xl-12">
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                <div class="container">
-                                    <hr>
+        <div class="content-wrapper">
+        <div class="container-full">
+          <div class="content-header">
+              <div class="d-flex align-items-center">
+                  <div class="me-auto">
+                  </div>
+              </div>
+          </div>
+
+          <section class="content">
+            <div class="row">
+                <h1 class="text-center">Data DuDi</h1>
+                <br>
+                <div class="row-2">
+                    <div class="container-fluid">
+                        <div class="justify-content-center"></div>
+                        <div class="col-xl-12">
+                            <div class="card mt-5">
+                                <div class="card-body">
+                                    <div class="container">
                                     <a href="/tambahdatadudi" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
@@ -152,4 +165,4 @@
     </script>
 
     </html>
-
+@endsection

@@ -14,13 +14,33 @@
 </head>
 
 <body>
-    <h1 class="text-center mb-5">Edit Data Siswa</h1>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="text-center mb-5">Edit Data Siswa</h1>
+    <body>
+        <div class="content-wrapper">
+        <div class="container-full">
+          <div class="content-header">
+              <div class="d-flex align-items-center">
+                  <div class="me-auto">
+                    <h4 class="page-title">Data Siswa</h4>
+                    <div class="d-inline-block align-items-center">
+
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+          <section class="content">
+            <div class="row">
+                {{-- <h1 class="text-center">Tambah Data Siswa</h1> --}}
+                <br>
+                <div class="row-2">
+                    <div class="container-fluid">
+                        <div class="justify-content-center"></div>
+                        <div class="col-xl-12">
+                            <div class="card mt-5">
+                                <div class="card-body">
+                                    <div class="container">
+                            <br><h1 class="text-center mb-5">Edit Data Siswa</h1>
+                            <hr><br>
                         <form action="/updatedatasiswa/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">

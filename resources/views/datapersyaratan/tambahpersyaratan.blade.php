@@ -1,4 +1,8 @@
-    <!doctype html>
+@extends('layout.main')
+@section('content')
+
+
+<!doctype html>
     <html lang="en">
 
     <head>
@@ -14,12 +18,26 @@
     </head>
 
     <body>
-        <h1 class="text-center mb-5">Tambah Persyaratan</h1>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8">
-                    <div class="card">
-                        <div class="card-body">
+        <div class="content-wrapper">
+        <div class="container-full">
+          <div class="content-header">
+              <div class="d-flex align-items-center">
+                  <div class="me-auto">
+                  </div>
+              </div>
+          </div>
+
+          <section class="content">
+            <div class="row">
+                <h1 class="text-center">Data DuDi</h1>
+                <br>
+                <div class="row-2">
+                    <div class="container-fluid">
+                        <div class="justify-content-center"></div>
+                        <div class="col-xl-12">
+                            <div class="card mt-5">
+                                <div class="card-body">
+                                    <div class="container">
                             <!-- <h1 class="text-center mb-5">Tambah Siswa</h1> -->
                             <form action="/insertpersyaratan" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -55,7 +73,6 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <!-- Optional JavaScript; choose one of the two! -->
@@ -77,3 +94,4 @@
 </body>
 
 </html>
+@endsection

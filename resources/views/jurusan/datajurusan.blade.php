@@ -21,17 +21,26 @@
     </head>
 
     <body>
-        <h1 class="text-center mb-5">Data jurusan</h1>
-        <div class="row">
-            <div class="row-2">
-                <div class="container-fluid">
-                    <div class="justify-content-center"></div>
-                    <div class="col-xl-12">
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                <div class="container">
-                                    {{-- <br><h1 class="text-center mb-5">Data jurusan</h1> --}}
+        <div class="content-wrapper">
+        <div class="container-full">
+          <div class="content-header">
+              <div class="d-flex align-items-center">
+                  <div class="me-auto">
+                  </div>
+              </div>
+          </div>
 
+          <section class="content">
+            <div class="row">
+                <h1 class="text-center">Jurusan</h1>
+                <br>
+                <div class="row-2">
+                    <div class="container-fluid">
+                        <div class="justify-content-center"></div>
+                        <div class="col-xl-12">
+                            <div class="card mt-5">
+                                <div class="card-body">
+                                    <div class="container">
                                     <a href="/tambahjurusan" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
