@@ -1,4 +1,7 @@
-    <!doctype html>
+  @extends('layout.main')
+  @section('content')
+
+  <!doctype html>
     <html lang="en">
 
     <head>
@@ -112,3 +115,4 @@
     </body>
 
     </html>
+    @endsection

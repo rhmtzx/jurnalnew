@@ -1,4 +1,7 @@
-    <!doctype html>
+@extends('layout.main')
+@section('content')
+
+   <!doctype html>
     <html lang="en">
 
     <head>
@@ -28,7 +31,7 @@
                             <div class="card-body">
                                 <div class="container">
                                     {{-- <br><h1 class="text-center mb-5">Data jurusan</h1> --}}
-                                    
+
                                     <a href="/tambahjurusan" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
@@ -144,3 +147,4 @@
 
 
     </html>
+@endsection

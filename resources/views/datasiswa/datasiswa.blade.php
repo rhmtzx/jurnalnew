@@ -1,4 +1,7 @@
-  <!doctype html>
+@extends('layout.main')
+@section('content')
+
+<!doctype html>
     <html lang="en">
 
     <head>
@@ -20,14 +23,15 @@
     <body>
         <br><div class="row">
             <h1 class="text-center">Data Siswa</h1>
+            <br>
             <div class="row-2">
                 <div class="container-fluid">
                     <div class="justify-content-center"></div>
                     <div class="col-xl-12">
                         <div class="card mt-5">
+                            <h1 class="text-center">Data Siswa</h1>
                             <div class="card-body">
                                 <div class="container">
-                                    <hr>
                                     <a href="/tambahdatasiswa" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
@@ -79,7 +83,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {{-- </div> --}}
                 </div>
             </div>
         </div>
@@ -147,4 +151,4 @@
     </script>
 
     </html>
-
+@endsection
