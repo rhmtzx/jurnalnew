@@ -7,6 +7,8 @@ use App\Http\Controllers\DatadudiController;
 use App\Http\Controllers\DatasiswaController;
 use App\Http\Controllers\TambahjurnalController;
 use App\Http\Controllers\DatapersyaratanController;
+use App\Http\Controllers\DatagurupembimbingController;
+use App\Http\Controllers\DatapembimbingdudiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,14 +58,6 @@ Route::get('/tampiltambahjurnal/{id}',[TambahjurnalController::class, 'tampiltam
 Route::post('/updatetambahjurnal/{id}',[TambahjurnalController::class, 'updatetambahjurnal'])->name('updatetambahjurnal');
 Route::get('/deletetambahjurnal/{id}',[TambahjurnalController::class, 'deletetambahjurnal'])->name('deletetambahjurnal');
 
-//datapembimbingdudi
-Route::get('/datapembimbingdudi',[DatapembimbingdudiController::class, 'index'])->name('datapembimbingdudi');
-Route::get('/tambahdatapembimbingdudi',[DatapembimbingdudiController::class, 'tambahdatapembimbingdudi'])->name('tambahdatapembimbingdudi');
-Route::post('/insertdatapembimbingdudi',[DatapembimbingdudiController::class, 'insertdatapembimbingdudi'])->name('insertdatapembimbingdudi');
-Route::get('/tampildatapembimbingdudi/{id}',[DatapembimbingdudiController::class, 'tampildatapembimbingdudi'])->name('tampildatapembimbingdudi');
-Route::post('/updatedatapembimbingdudi/{id}',[DatapembimbingdudiController::class, 'updatedatapembimbingdudi'])->name('updatedatapembimbingdudi');
-Route::get('/deletedatapembimbingdudi/{id}',[DatapembimbingdudiController::class, 'deletedatapembimbingdudi'])->name('deletedatapembimbingdudi');
-
 //datapersyaratan
 Route::get('/datapersyaratan',[DatapersyaratanController::class, 'index'])->name('datapersyaratan');
 Route::get('/tambahpersyaratan',[DatapersyaratanController::class, 'tambahpersyaratan'])->name('tambahpersyaratan');
@@ -71,4 +65,20 @@ Route::post('/insertpersyaratan',[DatapersyaratanController::class, 'insertpersy
 Route::get('/tampilpersyaratan/{id}',[DatapersyaratanController::class, 'tampilpersyaratan'])->name('tampilpersyaratan');
 Route::post('/updatepersyaratan/{id}',[DatapersyaratanController::class, 'updatepersyaratan'])->name('updatepersyaratan');
 Route::get('/deletepersyaratan/{id}',[DatapersyaratanController::class, 'deletepersyaratan'])->name('deletepersyaratan');
+
+//datagurupembimbing
+Route::get('/datagurupembimbing',[DatagurupembimbingController::class, 'index'])->name('datagurupembimbing');
+Route::get('/tambahgurupembimbing',[DatagurupembimbingController::class, 'tambahgurupembimbing'])->name('tambahgurupembimbing');
+Route::post('/insertgurupembimbing',[DatagurupembimbingController::class, 'insertgurupembimbing'])->name('insertgurupembimbing');
+Route::get('/tampilgurupembimbing/{id}',[DatagurupembimbingController::class, 'tampilgurupembimbing'])->name('tampilgurupembimbing');
+Route::post('/updategurupembimbing/{id}',[DatagurupembimbingController::class, 'updategurupembimbing'])->name('updategurupembimbing');
+Route::get('/deletegurupembimbing/{id}',[DatagurupembimbingController::class, 'deletegurupembimbing'])->name('deletegurupembimbing');
+
+//pembimbingdudi
+Route::get('/pembimbingdudi',[DatapembimbingdudiController::class, 'index'])->name('pembimbingdudi');
+Route::get('/tambahpembimbingdudi',[DatapembimbingdudiController::class, 'tambahpembimbingdudi'])->name('tambahpembimbingdudi');
+Route::post('/insertpembimbingdudi',[DatapembimbingdudiController::class, 'insertpembimbingdudi'])->name('insertpembimbingdudi');
+Route::get('/tampilpembimbingdudi/{id}',[DatapembimbingdudiController::class, 'tampilpembimbingdudi'])->name('tampilpembimbingdudi');
+Route::post('/updatepembimbingdudi/{id}',[DatapembimbingdudiController::class, 'updatepembimbingdudi'])->name('updatepembimbingdudi');
+Route::get('/deletepembimbingdudi/{id}',[DatapembimbingdudiController::class, 'deletepembimbingdudi'])->name('deletepembimbingdudi');
 
