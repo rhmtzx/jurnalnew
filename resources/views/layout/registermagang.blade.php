@@ -48,7 +48,7 @@
 											<hr>
 										</div> --}}
 										<div class="form-body">
-											<form class="row g-3" action="/registeruser" method="POST">
+											<form class="row g-3" action="/registerusermagang" method="POST">
                                                 @csrf
 												{{-- <div class="col-sm-6">
 													<label for="inputFirstName" class="form-label">First Name</label>
