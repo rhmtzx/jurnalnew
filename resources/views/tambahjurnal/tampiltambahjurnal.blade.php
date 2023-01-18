@@ -14,13 +14,30 @@
     </head>
 
     <body>
-        <h1 class="text-center mb-5">Tambah Jurnal Siswa</h1>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8">
+        <div class="page-content-wrapper">
+          <div class="justify-content-center">
+            <div class="row-2">
+              <div class="col-12 col-lg-12">
+                <div class="card-body">
+                  <div class="container">
+
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                      <div class="breadcrumb-title pe-3">Sekolah</div>
+                      <div class="ps-3">
+                        <nav aria-label="breadcrumb" >
+                          <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="/"><i class="bx bx-archive icon-color-6"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Jurnal</li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
                     <div class="card">
-                        <div class="card-body">
-                            <!-- <h1 class="text-center mb-5">Tambah Siswa</h1> -->
+                      <div class="card-body">
+                        <div>
+                            <h2 class="text-center mb-4">EDIT JURNAL</h2>
+                          <hr>
                             <form action="/updatetambahjurnal/ {{ $data->id }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
@@ -33,11 +50,24 @@
                                         </div>
                                     @enderror
                                     <br>
-                                    <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
-                                    <input type="text" name="deskripsi" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Nama Siswa" value="{{ $data->deskripsi }}">
-                                    @error('namasiswa')
+                                    <section style="padding-top:60px;">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <br>Deskripsi
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                        </div>
+                                                        <div class="card-body">
+                                                            {{--  <form method="POST" enctype="multipart/form-data">  --}}
+                                                            <textarea name="deskripsi" id="mytextarea"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    @error('deskripsi')
                                         <div class="text-danger">
                                             {{ $message }}
                                         </div>
@@ -47,7 +77,7 @@
                                     <label for="exampleInputEmail1" class="form-label">User Siswa</label>
                                     <input type="text" name="usersiswa" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" placeholder="Jurusan" value="{{ $data->usersiswa }}">
-                                    @error('jurusan')
+                                    @error('usersiswa')
                                         <div class="text-danger">
                                             {{ $message }}
                                         </div>
@@ -56,7 +86,7 @@
                                      <div class="mb-1">
                                                     <label for="exampleInputEmail1" class="form-label">Masukkan Foto</label>
                                                     <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
-                                                        alt="" style="width: 90px" alt=""> 
+                                                        alt="" style="width: 90px" alt="">
                                                     <input type="file" name="foto" class="form-control">
                                                 </div>
                                             <br>

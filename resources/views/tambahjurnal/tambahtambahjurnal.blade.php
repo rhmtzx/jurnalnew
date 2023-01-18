@@ -1,3 +1,7 @@
+ @extends('layout.main')
+ @section('content')
+
+
     <!doctype html>
     <html lang="en">
 
@@ -9,18 +13,43 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <script src="https://cdn.tiny.cloud/1/z3vshivvjuw47heg0vg12ouq5rr8i7ckkxmmjadvrhgsynq8/tinymce/6/tinymce.min.js"
+  referrerpolicy="origin"></script>
+
+<script>
+  tinymce.init({
+      selector: '#mytextarea'
+  });
+</script>
 
         <title>DATA JURNAL</title>
     </head>
 
     <body>
-        <h1 class="text-center mb-5">Tambah Jurnal Siswa</h1>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8">
+        <div class="page-content-wrapper">
+          <div class="justify-content-center">
+            <div class="row-2">
+              <div class="col-12 col-lg-12">
+                <div class="card-body">
+                  <div class="container">
+
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                      <div class="breadcrumb-title pe-3">Sekolah</div>
+                      <div class="ps-3">
+                        <nav aria-label="breadcrumb" >
+                          <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="/"><i class="bx bx-archive icon-color-6"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Jurnal</li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
                     <div class="card">
-                        <div class="card-body">
-                            <!-- <h1 class="text-center mb-5">Tambah Siswa</h1> -->
+                      <div class="card-body">
+                        <div>
+                            <h2 class="text-center mb-4">TAMBAH JURNAL</h2>
+                          <hr>
                             <form action="/inserttambahjurnal" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
@@ -32,11 +61,23 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                    <br>
-                                    <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
-                                    <input type="text" name="deskripsi" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Nama Siswa">
+                                    <section style="padding-top:60px;">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <br>Deskripsi
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                        </div>
+                                                        <div class="card-body">
+                                                            {{--  <form method="POST" enctype="multipart/form-data">  --}}
+                                                            <textarea name="deskripsi" id="mytextarea"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
                                     @error('namasiswa')
                                         <div class="text-danger">
                                             {{ $message }}
@@ -87,3 +128,4 @@
     </body>
 
     </html>
+    @endsection

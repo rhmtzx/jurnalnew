@@ -39,8 +39,8 @@
                     <div class="card">
                       <div class="card-body">
                         <div>
-                          <h4><em>DATA DUDI</em></h4>
-                          <hr>
+                            <h2 class="text-center mb-4">EDIT GURU PEMBIMBING</h2>
+                                        <hr>
                             <!-- <h1 class="text-center mb-5">Tambah Siswa</h1> -->
                             <form action="/updategurupembimbing/ {{ $data->id }}" method="POST" enctype="multipart/form-data">
                                 @csrf

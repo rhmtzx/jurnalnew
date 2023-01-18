@@ -35,7 +35,7 @@
                           <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-archive icon-color-6"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Data DuDi</li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Guru Pembimbing</li>
                           </ol>
                         </nav>
                       </div>
@@ -43,9 +43,9 @@
                     <div class="card">
                       <div class="card-body">
                         <div>
-                          <h4><em>DATA DUDI</em></h4>
+                          <h4><em>DATA GURU PEMBIMBING</em></h4>
                           <hr>  
-                                    <a href="/tambahgurupembimbing" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
+                                    <a href="/tambahgurupembimbing" class="btn btn-success mb-3">Tambah Guru Pembimbing +</i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
                                     {{ $message }}

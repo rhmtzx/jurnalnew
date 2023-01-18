@@ -110,7 +110,7 @@
                                                 <input type="file" name="foto" class="form-control">
                                             </div> -->
                                             <div class="mt-4">
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-primary">Edit Data Siswa</button>
                                                 <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                             </div>
                         </form>

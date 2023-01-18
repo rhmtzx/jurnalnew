@@ -13,7 +13,7 @@
     <ul class="metismenu" id="menu">
         <!-- <li class="menu-label"><strong>Dashboard</strong></li> -->
         <li>
-            <a href="javascript:;">
+            <a href="/">
                 <div class="parent-icon icon-color-1"><i class="bx bx-home-alt"></i>
                 </div>
                 <div class="menu-title"><strong>Dashboard</strong></div>
@@ -42,7 +42,7 @@
             </a>
         </li>
         <li>
-            <a href="/datagurupem">
+            <a href="/datagurupembimbing">
                 <div class="parent-icon icon-color-5"><i class="bx bx-group"></i>
                 </div>
                 <div class="menu-title"><strong>Guru Pembimbing</strong></div>
@@ -72,17 +72,17 @@
             </a>
         </li>
         <li>
-            <a href="/datapemdudi">
+            <a href="/pembimbingdudi">
                 <div class="parent-icon icon-color-4"><i class="bx bx-group"></i>
                 </div>
                 <div class="menu-title"><strong>Pembimbing Dudi</strong></div>
             </a>
         </li>
-        
-      
+
+
         <li class="menu-label"><strong>DATA PLOTINGAN</strong></li>
         <li>
-            <a href="widgets.html">
+            <a href="/dataplotingan">
                 <div class="parent-icon icon-color-9"><i class="bx bx-group"></i>
                 </div>
                 <div class="menu-title"><strong>Data Plotingan</strong></div>
@@ -206,7 +206,7 @@
         </li> -->
         <li class="menu-label"><strong>DATA JURNAL</strong></li>
         <li>
-            <a href="/tambahjurnal">
+            <a href="/datatambahjurnal">
                 <div class="parent-icon icon-color-2"><i class="bx bx-group"></i>
                 </div>
                 <div class="menu-title"><strong>Data Jurnal</strong></div>

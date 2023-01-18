@@ -39,8 +39,8 @@
                     <div class="card">
                       <div class="card-body">
                         <div>
-                          <h4><em>DATA SISWA</em></h4>
-                          <hr>
+                            <h2 class="text-center mb-4">TAMBAH DATA SISWA</h2>
+                            <hr>
                             <form action="/insertdatasiswa" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
@@ -104,7 +104,7 @@
                                             @enderror
                                             <br>
                                                 <div class="mt-4">
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                    <button type="submit" class="btn btn-primary">Submit Data Siswa</button>
                                                     <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                                 </div>
                             </form>

@@ -27,13 +27,13 @@
               <div class="col-12 col-lg-12">
                 <div class="card-body">
                   <div class="container">
-      
+
                     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
                       <div class="breadcrumb-title pe-3">Sekolah</div>
                       <div class="ps-3">
                         <nav aria-label="breadcrumb" >
                           <ol class="breadcrumb mb-0 p-0">
-                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-archive icon-color-6"></i></a>
+                            <li class="breadcrumb-item"><a href="/"><i class="bx bx-archive icon-color-6"></i></a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">Data Siswa</li>
                           </ol>
@@ -45,7 +45,7 @@
                         <div>
                           <h4><em>DATA SISWA</em></h4>
                           <hr>
-                                    <a href="/tambahdatasiswa" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
+                                    <a href="/tambahdatasiswa" class="btn btn-success mb-3">Tambah Data Siswa +</a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
                                     {{ $message }}

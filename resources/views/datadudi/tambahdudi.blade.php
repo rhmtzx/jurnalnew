@@ -39,8 +39,8 @@
                     <div class="card">
                       <div class="card-body">
                         <div>
-                          <h4><em>TAMBAH DATA DUDI</em></h4>
-                          <hr>
+                            <h2 class="text-center mb-4">TAMBAH DATA DUDI</h2>
+                                        <hr>
                             <form action="/insertdatadudi" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">

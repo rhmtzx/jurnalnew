@@ -1,4 +1,7 @@
-    <!doctype html>
+@extends('layout.main')
+@section('content')
+
+  <!doctype html>
     <html lang="en">
 
     <head>
@@ -14,12 +17,30 @@
     </head>
 
     <body>
-        <h1 class="text-center mb-5">Tambah Data Plotingan</h1>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8">
+        <div class="page-content-wrapper">
+          <div class="justify-content-center">
+            <div class="row-2">
+              <div class="col-12 col-lg-12">
+                <div class="card-body">
+                  <div class="container">
+
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                      <div class="breadcrumb-title pe-3">Sekolah</div>
+                      <div class="ps-3">
+                        <nav aria-label="breadcrumb" >
+                          <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="/"><i class="bx bx-archive icon-color-6"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Plotingan</li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
                     <div class="card">
-                        <div class="card-body">
+                      <div class="card-body">
+                        <div>
+                            <h2 class="text-center mb-4">TAMBAH DATA PLOTINGAN</h2>
+                          <hr>
                             {{-- <h1 class="text-center mb-5">Tambah Plotingan</h1> --}}
                             <form action="/insertdataplotingan" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -79,4 +100,4 @@
     </body>
 
     </html>
-
+@endsection

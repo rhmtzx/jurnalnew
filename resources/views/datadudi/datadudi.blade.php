@@ -45,7 +45,7 @@
                         <div>
                           <h4><em>DATA DUDI</em></h4>
                           <hr>
-                                    <a href="/tambahdatadudi" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
+                                    <a href="/tambahdatadudi" class="btn btn-success mb-3">Tambah Data DuDi +</i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
                                     {{ $message }}

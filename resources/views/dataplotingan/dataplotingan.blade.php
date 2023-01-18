@@ -21,38 +21,31 @@
     </head>
 
     <body>
-    <div class="content-wrapper">
-    <div class="container-full">
-      <div class="content-header">
-          <div class="d-flex align-items-center">
-              <div class="me-auto">
-                  <h4 class="page-title">Data Siswa</h4>
-                  <div class="d-inline-block align-items-center">
-                      <nav>
-                          <!-- <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
-                              <li class="breadcrumb-item" aria-current="page">Sample Page</li>
-                              <li class="breadcrumb-item active" aria-current="page">Data Siswa</li>
-                          </ol> -->
-                      </nav>
-                  </div>
-              </div>
-              
-          </div>
-      </div>
-
-      <section class="content">
-        <div class="row">
-            <h1 class="text-center">Data Plotingan Dudi</h1>
-            <br>
+        <div class="page-content-wrapper">
+          <div class="justify-content-center">
             <div class="row-2">
-                <div class="container-fluid">
-                    <div class="justify-content-center"></div>
-                    <div class="col-xl-12">
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                <div class="container">
-                                    <a href="/tambahdataplotingan" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
+              <div class="col-12 col-lg-12">
+                <div class="card-body">
+                  <div class="container">
+
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                      <div class="breadcrumb-title pe-3">Sekolah</div>
+                      <div class="ps-3">
+                        <nav aria-label="breadcrumb" >
+                          <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="/"><i class="bx bx-archive icon-color-6"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Plotingan</li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body">
+                        <div>
+                            <h2 class="text-center mb-4">TAMBAH DATA PLOTINGAN</h2>
+                          <hr>
+                                    <a href="/tambahdataplotingan" class="btn btn-success mb-3">Tambah Plotingan +</i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
                                     {{ $message }}
@@ -104,7 +97,7 @@
         </div>
       </section>
       <!-- /.content -->
-    
+
     </div>
 </div>
         <!-- Optional JavaScript; choose one of the two! -->

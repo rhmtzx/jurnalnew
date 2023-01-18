@@ -1,4 +1,7 @@
-  <!doctype html>
+ @extends('layout.main')
+ @section('content')
+
+ <!doctype html>
     <html lang="en">
 
     <head>
@@ -18,17 +21,31 @@
     </head>
 
     <body>
-        <br><div class="row">
-            <h1 class="text-center">Data Jurnal</h1>
+        <div class="page-content-wrapper">
+          <div class="justify-content-center">
             <div class="row-2">
-                <div class="container-fluid">
-                    <div class="justify-content-center"></div>
-                    <div class="col-xl-12">
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                <div class="container">
-                                    <hr>
-                                    <a href="/tambahtambahjurnal" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
+              <div class="col-12 col-lg-12">
+                <div class="card-body">
+                  <div class="container">
+
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                      <div class="breadcrumb-title pe-3">Sekolah</div>
+                      <div class="ps-3">
+                        <nav aria-label="breadcrumb" >
+                          <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="/"><i class="bx bx-archive icon-color-6"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Jurnal</li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body">
+                        <div>
+                          <h4><em>JURNAL</em></h4>
+                          <hr>
+                                    <a href="/tambahtambahjurnal" class="btn btn-success mb-3">Tambah Jurnal +</i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
                                     {{ $message }}
@@ -146,4 +163,5 @@
     </script>
 
     </html>
+    @endsection
 

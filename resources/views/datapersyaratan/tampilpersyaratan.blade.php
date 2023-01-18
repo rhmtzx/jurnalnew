@@ -17,13 +17,30 @@
     </head>
 
     <body>
-        <h1 class="text-center mb-5">Edit Persyaratan</h1>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8">
+        <div class="page-content-wrapper">
+          <div class="justify-content-center">
+            <div class="row-2">
+              <div class="col-12 col-lg-12">
+                <div class="card-body">
+                  <div class="container">
+      
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                      <div class="breadcrumb-title pe-3">Sekolah</div>
+                      <div class="ps-3">
+                        <nav aria-label="breadcrumb" >
+                          <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-archive icon-color-6"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Persyaratan</li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
                     <div class="card">
-                        <div class="card-body">
-                            <!-- <h1 class="text-center mb-5">Tambah Siswa</h1> -->
+                      <div class="card-body">
+                        <div>
+                            <h2 class="text-center mb-4">EDIT PERSYARATAN</h2>
+                                        <hr>
                             <form action="/updatepersyaratan/ {{ $data->id }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
