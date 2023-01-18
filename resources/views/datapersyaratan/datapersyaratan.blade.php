@@ -20,27 +20,31 @@
         <title>DATA PERSYARATAN</title>
     </head>
 
-    <body>
-        <div class="content-wrapper">
-        <div class="container-full">
-          <div class="content-header">
-              <div class="d-flex align-items-center">
-                  <div class="me-auto">
-                  </div>
-              </div>
-          </div>
-
-          <section class="content">
-            <div class="row">
-                <h1 class="text-center">Persyaratan</h1>
-                <br>
-                <div class="row-2">
-                    <div class="container-fluid">
-                        <div class="justify-content-center"></div>
-                        <div class="col-xl-12">
-                            <div class="card mt-5">
-                                <div class="card-body">
-                                    <div class="container">
+<body>
+        <div class="page-content-wrapper">
+          <div class="justify-content-center">
+            <div class="row-2">
+              <div class="col-12 col-lg-12">
+                <div class="card-body">
+                  <div class="container">
+      
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                      <div class="breadcrumb-title pe-3">Sekolah</div>
+                      <div class="ps-3">
+                        <nav aria-label="breadcrumb" >
+                          <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-archive icon-color-6"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data DuDi</li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body">
+                        <div>
+                          <h4><em>DATA DUDI</em></h4>
+                          <hr>
                                     <a href="/tambahpersyaratan" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">

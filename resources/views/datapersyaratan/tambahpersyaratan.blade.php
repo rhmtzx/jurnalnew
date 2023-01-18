@@ -17,27 +17,31 @@
         <title>DATA PERSYARATAN</title>
     </head>
 
-    <body>
-        <div class="content-wrapper">
-        <div class="container-full">
-          <div class="content-header">
-              <div class="d-flex align-items-center">
-                  <div class="me-auto">
-                  </div>
-              </div>
-          </div>
-
-          <section class="content">
-            <div class="row">
-                <h1 class="text-center">Data DuDi</h1>
-                <br>
-                <div class="row-2">
-                    <div class="container-fluid">
-                        <div class="justify-content-center"></div>
-                        <div class="col-xl-12">
-                            <div class="card mt-5">
-                                <div class="card-body">
-                                    <div class="container">
+<body>
+        <div class="page-content-wrapper">
+          <div class="justify-content-center">
+            <div class="row-2">
+              <div class="col-12 col-lg-12">
+                <div class="card-body">
+                  <div class="container">
+      
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                      <div class="breadcrumb-title pe-3">Sekolah</div>
+                      <div class="ps-3">
+                        <nav aria-label="breadcrumb" >
+                          <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-archive icon-color-6"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data DuDi</li>
+                          </ol>
+                        </nav>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body">
+                        <div>
+                          <h4><em>DATA DUDI</em></h4>
+                          <hr>
                             <!-- <h1 class="text-center mb-5">Tambah Siswa</h1> -->
                             <form action="/insertpersyaratan" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -68,7 +72,7 @@
                                         <br>
                                         <div class="mt-4">
                                             <button type="submit" class="btn btn-primary">Submit</button>
-                                            <a href="/datatambahjurnal" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
+                                            <a href="/datapersyaratan" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                         </div>
                                         </form>
                                     </div>

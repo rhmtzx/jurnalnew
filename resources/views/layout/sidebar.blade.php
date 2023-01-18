@@ -4,85 +4,91 @@
             <img src="assets/images/logo-icon.png" class="logo-icon-2" alt="" />
         </div>
         <div>
-            <h4 class="logo-text">Syndash</h4>
+            <h4 class="logo-text">J-On | Jurnal</h4>
         </div>
         <a href="javascript:;" class="toggle-btn ms-auto"> <i class="bx bx-menu"></i>
         </a>
     </div>
     <!--navigation-->
     <ul class="metismenu" id="menu">
+        <!-- <li class="menu-label"><strong>Dashboard</strong></li> -->
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="javascript:;">
                 <div class="parent-icon icon-color-1"><i class="bx bx-home-alt"></i>
                 </div>
-                <div class="menu-title">Dashboard</div>
+                <div class="menu-title"><strong>Dashboard</strong></div>
             </a>
-            <ul>
-                <li> <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
-                </li>
-                <li> <a href="index2.html"><i class="bx bx-right-arrow-alt"></i>Sales</a>
-                </li>
-            </ul>
         </li>
-        <li class="menu-label">Web Apps</li>
-        <li>
+        <li class="menu-label"><strong>Data Sekolah</strong></li>
+        <!-- <li>
             <a href="/datasiswa">
                 <div class="parent-icon icon-color-2"><i class="bx bx-envelope"></i>
                 </div>
                 <div class="menu-title">Data Siswa</div>
             </a>
-        </li>
+        </li> -->
         <li>
-            <a href="chat-box.html">
-                <div class="parent-icon icon-color-3"> <i class="bx bx-conversation"></i>
+            <a href="/datajurusan">
+                <div class="parent-icon icon-color-3"> <i class="bx bx-group"></i>
                 </div>
-                <div class="menu-title">Chat Box</div>
+                <div class="menu-title"><strong>Data Jurusan</strong></div>
             </a>
         </li>
         <li>
-            <a href="file-manager.html">
-                <div class="parent-icon icon-color-4"><i class="bx bx-archive"></i>
+            <a href="/datasiswa">
+                <div class="parent-icon icon-color-4"><i class="bx bx-group"></i>
                 </div>
-                <div class="menu-title">File Manager</div>
+                <div class="menu-title"><strong>Data Siswa</strong></div>
             </a>
         </li>
         <li>
-            <a href="contact-list.html">
+            <a href="/datagurupem">
                 <div class="parent-icon icon-color-5"><i class="bx bx-group"></i>
                 </div>
-                <div class="menu-title">Contatcs</div>
+                <div class="menu-title"><strong>Guru Pembimbing</strong></div>
+            </a>
+        </li>
+
+        <li class="menu-label"><strong>Data Dudi</strong></li>
+        <!-- <li>
+            <a href="/datasiswa">
+                <div class="parent-icon icon-color-2"><i class="bx bx-envelope"></i>
+                </div>
+                <div class="menu-title">Data Siswa</div>
+            </a>
+        </li> -->
+        <li>
+            <a href="/datadudi">
+                <div class="parent-icon icon-color-3"> <i class="bx bx-group"></i>
+                </div>
+                <div class="menu-title"><strong>Data Dudi</strong></div>
             </a>
         </li>
         <li>
-            <a href="to-do.html">
-                <div class="parent-icon icon-color-6"><i class="bx bx-task"></i>
+            <a href="/datapersyaratan">
+                <div class="parent-icon icon-color-5"><i class="bx bx-group"></i>
                 </div>
-                <div class="menu-title">Todo List</div>
+                <div class="menu-title"><strong>Data Persyaratan</strong></div>
             </a>
         </li>
         <li>
-            <a href="invoice.html">
-                <div class="parent-icon icon-color-7"><i class="bx bx-file"></i>
+            <a href="/datapemdudi">
+                <div class="parent-icon icon-color-4"><i class="bx bx-group"></i>
                 </div>
-                <div class="menu-title">Invoice</div>
+                <div class="menu-title"><strong>Pembimbing Dudi</strong></div>
             </a>
         </li>
-        <li>
-            <a href="fullcalender.html">
-                <div class="parent-icon icon-color-8"> <i class="bx bx-calendar-check"></i>
-                </div>
-                <div class="menu-title">Calendar</div>
-            </a>
-        </li>
-        <li class="menu-label">UI Elements</li>
+        
+      
+        <li class="menu-label"><strong>DATA PLOTINGAN</strong></li>
         <li>
             <a href="widgets.html">
-                <div class="parent-icon icon-color-9"><i class="bx bx-ghost"></i>
+                <div class="parent-icon icon-color-9"><i class="bx bx-group"></i>
                 </div>
-                <div class="menu-title">Widgets</div>
+                <div class="menu-title"><strong>Data Plotingan</strong></div>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon icon-color-10"><i class="bx bx-spa"></i>
                 </div>
@@ -197,9 +203,16 @@
                 <li> <a href="table-editable.html"><i class="bx bx-right-arrow-alt"></i>Editable Table</a>
                 </li>
             </ul>
-        </li>
-        <li class="menu-label">Pages</li>
+        </li> -->
+        <li class="menu-label"><strong>DATA JURNAL</strong></li>
         <li>
+            <a href="/tambahjurnal">
+                <div class="parent-icon icon-color-2"><i class="bx bx-group"></i>
+                </div>
+                <div class="menu-title"><strong>Data Jurnal</strong></div>
+            </a>
+        </li>
+        <!-- <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon icon-color-3"><i class="bx bx-lock"></i>
                 </div>
@@ -260,9 +273,16 @@
                 </div>
                 <div class="menu-title">Pricing</div>
             </a>
-        </li>
-        <li class="menu-label">Charts & Maps</li>
+        </li> -->
+        <!-- <li class="menu-label"><strong>DATA APA</strong></li>
         <li>
+            <a href="/tambahjurnal">
+                <div class="parent-icon icon-color-2"><i class="bx bx-envelope"></i>
+                </div>
+                <div class="menu-title">Data Apa</div>
+            </a>
+        </li> -->
+        <!-- <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon icon-color-9"><i class="bx bx-line-chart"></i>
                 </div>
@@ -276,8 +296,8 @@
                 <li> <a href="charts-highcharts.html"><i class="bx bx-right-arrow-alt"></i>Highcharts</a>
                 </li>
             </ul>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon icon-color-10"><i class="bx bx-map-alt"></i>
                 </div>
@@ -323,7 +343,7 @@
                 </div>
                 <div class="menu-title">Support</div>
             </a>
-        </li>
+        </li> -->
     </ul>
     <!--end navigation-->
 </div>
