@@ -288,8 +288,8 @@
 							<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
 								<div class="d-flex user-box align-items-center">
 									<div class="user-info">
-										<p class="user-name mb-0">Jessica Doe</p>
-										<p class="designattion mb-0">Available</p>
+										<p class="user-name mb-0">Sekolah</p>
+										<p class="designattion mb-0">Admin</p>
 									</div>
 									<img src="{{ asset('admin/assets/images/avatars/avatar-1.png') }}" class="user-img" alt="user avatar">
 								</div>

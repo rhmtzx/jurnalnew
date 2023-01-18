@@ -10,6 +10,7 @@ use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
 use App\Http\Controllers\DataplotinganController;
+use App\Http\Controllers\SiswamagangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +90,11 @@ Route::post('/insertdataplotingan',[DataplotinganController::class, 'insertdatap
 Route::get('/tampildataplotingan/{id}',[DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan');
 Route::post('/updatedataplotingan/{id}',[DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan');
 Route::get('/deletedataplotingan/{id}',[DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan');
+
+//siswamagang
+Route::get('/siswamagang',[SiswamagangController::class, 'siswamagang'])->name('siswamagang');
+Route::get('/tambahsiswamagang',[SiswamagangController::class, 'tambahsiswamagang'])->name('tambahsiswamagang');
+Route::post('/insertsiswamagang',[SiswamagangController::class, 'insertsiswamagang'])->name('insertsiswamagang');
+Route::get('/tampilsiswamagang/{id}',[SiswamagangController::class, 'tampilsiswamagang'])->name('tampilsiswamagang');
+Route::post('/updatesiswamagang/{id}',[SiswamagangController::class, 'updatesiswamagang'])->name('updatesiswamagang');
+Route::get('/deletesiswamagang/{id}',[SiswamagangController::class, 'deletesiswamagang'])->name('deletesiswamagang');
