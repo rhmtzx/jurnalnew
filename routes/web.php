@@ -2,15 +2,16 @@
 
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DatadudiController;
 use App\Http\Controllers\DatasiswaController;
+use App\Http\Controllers\SiswamagangController;
 use App\Http\Controllers\TambahjurnalController;
+use App\Http\Controllers\DataplotinganController;
 use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
-use App\Http\Controllers\DataplotinganController;
-use App\Http\Controllers\SiswamagangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,3 +99,12 @@ Route::post('/insertsiswamagang',[SiswamagangController::class, 'insertsiswamaga
 Route::get('/tampilsiswamagang/{id}',[SiswamagangController::class, 'tampilsiswamagang'])->name('tampilsiswamagang');
 Route::post('/updatesiswamagang/{id}',[SiswamagangController::class, 'updatesiswamagang'])->name('updatesiswamagang');
 Route::get('/deletesiswamagang/{id}',[SiswamagangController::class, 'deletesiswamagang'])->name('deletesiswamagang');
+
+//login
+Route::get('/login',[LoginController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/loginproses',[LoginController::class, 'loginproses'])->name('loginproses');
+Route::get('/register',[LoginController::class, 'register'])->name('register');
+Route::post('/registeruser',[LoginController::class, 'registeruser'])->name('registeruser');
+
+//log out
+Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
