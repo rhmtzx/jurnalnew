@@ -7,7 +7,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<title>Syndash - Bootstrap4 Admin Template</title>
+	<title>J-On | Jurnal Online</title>
 	<!--favicon-->
 	<link rel="icon" href="{{ asset('admin/assets/images/favicon-32x32.png') }}" type="image/png" />
 	<!-- Vector CSS -->

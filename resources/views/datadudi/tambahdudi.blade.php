@@ -17,30 +17,32 @@
     </head>
 
 <body>
-        <div class="page-content-wrapper">
-          <div class="justify-content-center">
-            <div class="row-2">
-              <div class="col-12 col-lg-12">
-                <div class="card-body">
-                  <div class="container">
-      
-                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                      <div class="breadcrumb-title pe-3">Sekolah</div>
-                      <div class="ps-3">
-                        <nav aria-label="breadcrumb" >
-                          <ol class="breadcrumb mb-0 p-0">
-                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-archive icon-color-6"></i></a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">Data Dudi</li>
-                          </ol>
+   <div class="page-content-wrapper">
+    <div class="justify-content-center">
+      <div class="row-2">
+        <div class="col-12 col-lg-12">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row" > 
+
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pe-3">DATA SEKOLAH</div>
+                        <div class="ps-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">TAMBAH DUDI</li>
+                            </ol>
                         </nav>
-                      </div>
                     </div>
-                    <div class="card">
-                      <div class="card-body">
-                        <div>
-                            <h2 class="text-center mb-4">TAMBAH DATA DUDI</h2>
-                                        <hr>
+                </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <h4><em>TAMBAH DUDI</em></h4>
+                                    <hr>
                             <form action="/insertdatadudi" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">

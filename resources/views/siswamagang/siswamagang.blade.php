@@ -150,7 +150,7 @@
                     icon: "success",
                 });
             } else {
-                swal("Data Gagal Di Hapus");
+                swal("Data Siswa Gagal Di Hapus");
             }
         });
     });

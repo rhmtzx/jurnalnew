@@ -48,7 +48,7 @@
                                 <div>
                                     <h4><em>DATA JURUSAN</em></h4>
                                     <hr>
-                                    <a href="/tambahjurusan" class="btn btn-success mb-10">Tambah Data Jurusan +</a>
+                                    <a href="/tambahjurusan" class="btn btn-success mb-10">Tambah Jurusan +</a>
                                     <br></br>
                                     <div class="row" > 
                                         {{-- @if ($message = Session::get('success'))
@@ -76,8 +76,8 @@
                                                         <td>{{ $row->namajurusan}}</td>
                                                         
                                                         <td>
-                                                            <a href="/tampildatajurusan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                            <a href="#" class="btn btn-danger delete" data-id="{{ $row->id }}"
+                                                            <a href="/tampiljurusan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                            <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
                                                                 data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
                                                         </td>
                                                     </tr>
@@ -132,7 +132,7 @@
 
 </body>
 <script>
-    $('.delete').click(function() {
+    $('.deletejurusan').click(function() {
         var kategoriid = $(this).attr('data-id');
         var kategori = $(this).attr('data-kategori');
         swal({
@@ -145,11 +145,11 @@
         .then((willDelete) => {
             if (willDelete) {
                 window.location = "/deletejurusan/" + kategoriid + ""
-                swal("Data Kategori Berhasil Di Hapus", {
+                swal("Data Jurusan Berhasil Di Hapus", {
                     icon: "success",
                 });
             } else {
-                swal("Data Kategori Gagal Di Hapus");
+                swal("Data Jurusan Gagal Di Hapus");
             }
         });
     });

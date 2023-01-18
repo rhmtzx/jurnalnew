@@ -18,17 +18,37 @@
     </head>
 
     <body>
-        <h1 class="text-center mb-5">Tambah Data jurusan</h1>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8">
-                    <div class="card">
-                        <div class="card-body">
+ <div class="page-content-wrapper">
+    <div class="justify-content-center">
+      <div class="row-2">
+        <div class="col-12 col-lg-12">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row" > 
+
+                        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                            <div class="breadcrumb-title pe-3">DATA SEKOLAH</div>
+                            <div class="ps-3">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0 p-0">
+                                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">EDIT JURUSAN</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <h4><em>EDIT JURUSAN</em></h4>
+                                    <hr>
                             <form action="/updatedatajurusan/{{ $data->id }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Mata Pelajaran</label>
+                                    <label for="exampleInputEmail1" class="form-label">Jurusan</label>
                                     <input type="text" name="namajurusan" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" value="{{ $data->namajurusan }}">
                                     @error('jurusan')

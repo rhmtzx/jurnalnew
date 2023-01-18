@@ -1,4 +1,6 @@
-<!doctype html>
+@extends('layout.main')
+  @section('content')
+  <!doctype html>
 <html lang="en">
 
 <head>
@@ -14,34 +16,32 @@
 </head>
 
 <body>
-    <body>
-        <div class="content-wrapper">
-        <div class="container-full">
-          <div class="content-header">
-              <div class="d-flex align-items-center">
-                  <div class="me-auto">
-                    <h4 class="page-title">Data Siswa</h4>
-                    <div class="d-inline-block align-items-center">
+   <div class="page-content-wrapper">
+    <div class="justify-content-center">
+      <div class="row-2">
+        <div class="col-12 col-lg-12">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row" > 
 
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pe-3">DATA SEKOLAH</div>
+                        <div class="ps-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">EDIT SISWA</li>
+                            </ol>
+                        </nav>
                     </div>
-                  </div>
-              </div>
-          </div>
+                </div>
 
-          <section class="content">
-            <div class="row">
-                {{-- <h1 class="text-center">Tambah Data Siswa</h1> --}}
-                <br>
-                <div class="row-2">
-                    <div class="container-fluid">
-                        <div class="justify-content-center"></div>
-                        <div class="col-xl-12">
-                            <div class="card mt-5">
-                                <div class="card-body">
-                                    <div class="container">
-                            <br><h1 class="text-center mb-5">Edit Data Siswa</h1>
-                            <hr><br>
-                        <form action="/updatedatasiswa/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <h4><em>EDIT SISWA</em></h4>
+                                    <hr>                        <form action="/updatedatasiswa/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nis Siswa</label>
@@ -138,3 +138,4 @@
 </body>
 
 </html>
+@endsection

@@ -16,31 +16,33 @@
         <title>EDIT Guru Pembimbing</title>
     </head>
 
- <body>
-        <div class="page-content-wrapper">
-          <div class="justify-content-center">
-            <div class="row-2">
-              <div class="col-12 col-lg-12">
-                <div class="card-body">
-                  <div class="container">
-      
-                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                      <div class="breadcrumb-title pe-3">Sekolah</div>
-                      <div class="ps-3">
-                        <nav aria-label="breadcrumb" >
-                          <ol class="breadcrumb mb-0 p-0">
-                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-archive icon-color-6"></i></a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">Data DuDi</li>
-                          </ol>
+<body>
+   <div class="page-content-wrapper">
+    <div class="justify-content-center">
+      <div class="row-2">
+        <div class="col-12 col-lg-12">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row" > 
+
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pe-3">DATA SEKOLAH</div>
+                        <div class="ps-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">EDIT GURU PEMBIMBING</li>
+                            </ol>
                         </nav>
-                      </div>
                     </div>
-                    <div class="card">
-                      <div class="card-body">
-                        <div>
-                            <h2 class="text-center mb-4">EDIT GURU PEMBIMBING</h2>
-                                        <hr>
+                </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <h4><em>EDIT GURU PEMBIMBING</em></h4>
+                                    <hr>
                             <!-- <h1 class="text-center mb-5">Tambah Siswa</h1> -->
                             <form action="/updategurupembimbing/ {{ $data->id }}" method="POST" enctype="multipart/form-data">
                                 @csrf
