@@ -100,11 +100,23 @@ Route::get('/tampilsiswamagang/{id}',[SiswamagangController::class, 'tampilsiswa
 Route::post('/updatesiswamagang/{id}',[SiswamagangController::class, 'updatesiswamagang'])->name('updatesiswamagang');
 Route::get('/deletesiswamagang/{id}',[SiswamagangController::class, 'deletesiswamagang'])->name('deletesiswamagang');
 
-//login
-Route::get('/login',[LoginController::class, 'login'])->name('login')->middleware('guest');
+//loginadmin
+Route::get('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/loginproses',[LoginController::class, 'loginproses'])->name('loginproses');
 Route::get('/register',[LoginController::class, 'register'])->name('register');
 Route::post('/registeruser',[LoginController::class, 'registeruser'])->name('registeruser');
+
+//loginsiswa
+Route::get('/loginsiswa',[LoginController::class, 'loginsiswa'])->name('loginsiswa');
+Route::post('/loginprosessiswa',[LoginController::class, 'loginprosessiswa'])->name('loginprosessiswa');
+Route::get('/registersiswa',[LoginController::class, 'registersiswa'])->name('registersiswa');
+Route::post('/registerusersiswa',[LoginController::class, 'registerusersiswa'])->name('registerusersiswa');
+
+//loginsiswa
+Route::get('/loginmagang',[LoginController::class, 'loginmagang'])->name('loginmagang');
+Route::post('/loginprosesmagang',[LoginController::class, 'loginprosesmagang'])->name('loginprosesmagang');
+Route::get('/registermagang',[LoginController::class, 'registermagang'])->name('registermagang');
+Route::post('/registerusermagang',[LoginController::class, 'registerusermagang'])->name('registerusermagang');
 
 //log out
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
