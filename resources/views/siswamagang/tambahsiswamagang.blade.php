@@ -66,7 +66,7 @@
                                                 @enderror
                                                 <br>
                                                 <button type="submit" class="btn btn-primary">Submit Siswa Magang</button>
-                                                <a href="/datasiswamagang" class="btn btn-danger mb-10">Kembali</a>
+                                                <a href="/siswamagang" class="btn btn-danger mb-10">Kembali</a>
 
                                             </form>
                                         </div>

@@ -14,7 +14,7 @@
         <!-- <li class="menu-label"><strong>Dashboard</strong></li> -->
         <li>
         <li class="menu-label"><strong>Dashboard</strong></li>
-            <a href="javascript:;">
+            <a href="/">
                 <div class="parent-icon icon-color-1"><i class="bx bx-home-alt"></i>
                 </div>
                 <div class="menu-title"><strong>Dashboard</strong></div>
