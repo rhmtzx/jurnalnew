@@ -53,7 +53,7 @@
                                     {{ $message }}
                                 </div>
     @endif-->
-                                    <table id="datatable" class="table text-center table-bordered dt-responsive nowrap"
+                                    <table id="dataguru" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
@@ -123,7 +123,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             $(document).ready(function() {
-                $('#example').DataTable();
+                $('#dataguru').DataTable();
             });
         </script>
 

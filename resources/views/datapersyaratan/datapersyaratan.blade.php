@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
             integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>CRUD LARAVEL</title>
+        <title></title>
     </head>
 
 <body>
@@ -36,7 +36,7 @@
                             <ol class="breadcrumb mb-0 p-0">
                                 <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">DATA DUDI</li>
+                                <li class="breadcrumb-item active" aria-current="page">DATA PERSYARATAN</li>
                             </ol>
                         </nav>
                     </div>
@@ -45,27 +45,23 @@
                         <div class="card">
                             <div class="card-body">
                                 <div>
-                                    <h4><em>DATA DUDI</em></h4>
+                                    <h4><em>DATA PERSYARATAN</em></h4>
                                     <hr>
-                                    <a href="/tambahdatadudi" class="btn btn-success mb-3">Tambah Data Dudi +</i></a>
+                                    <a href="/tambahdatapersyaratan" class="btn btn-success mb-3">Tambah Data Persyaratan +</i></a>
                                     <!--@if ($message = Session::get('succes'))
     <div class="alert alert-success" role="alert">
                                     {{ $message }}
                                 </div>
     @endif-->
-                                    <table id="datadudi" class="table text-center table-bordered dt-responsive nowrap"
+                                    <table id="datapersyaratan" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Foto</th>
-                                                <th scope="col">Nama Dudi</th>
-                                                <th scope="col">Nama Kepala Direktur</th>
-                                                <th scope="col">Nama Data Pembimbing</th>
-                                                <th scope="col">Alamat Dudi</th>
-                                                <th scope="col">Email Dudi</th>
-                                                <th scope="col">Persyaratan</th>
-                                                <th scope="col">Slot Dudi</th>
+                                                <th scope="col">Deskripsi</th>
+                                                <th scope="col">Id Dudi</th>
+                                               
                                                 <th scope="col">Dibuat</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
@@ -78,22 +74,18 @@
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
                                                     <td>
-                                                        <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                                        <img src="{{ asset('fotodudi/' . $row->fotopersyaratan) }}" alt=""
                                                             style="width: 40px">
                                                     </td>
-                                                    <td>{{ $row->namadudi }}</td>
-                                                    <td>{{ $row->namakepdik }}</td>
-                                                    <td>{{ $row->namadatapembimbing }}</td>
-                                                    <td>{{ $row->alamatdudi }}</td>
-                                                    <td>{{ $row->emaildudi }}</td>
-                                                    <td>{{ $row->persyaratan }}</td>
-                                                    <td>{{ $row->slotdudi }}</td>
+                                                    <td>{{ $row->deskripsi }}</td>
+                                                    <td>{{ $row->id_dudi }}</td>
+                                                    
                                                     <td>{{ $row->created_at}}</td>
                                                     <td scope="row">
-                                                        <a href="/tampildatadudi/{{ $row->id }}"
+                                                        <a href="/tampildatapersyaratan/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deletedatadudi"
+                                                        <a href="#" class="btn btn-danger deletedatapersyaratan"
                                                             data-id="{{ $row->id }}"
                                                              data-nama="{{ $row->namakepdik }}"><i
                                                                 class="fa-sharp fa-solid fa-trash"></i></a>
@@ -129,7 +121,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             $(document).ready(function() {
-                $('#datadudi').DataTable();
+                $('#datapersyaratan').DataTable();
             });
         </script>
 
@@ -144,7 +136,7 @@
                 -->
     </body>
     <script>
-        $('.deletedatadudi').click(function() {
+        $('.deletedatapersyaratan').click(function() {
             var pegawaiid = $(this).attr('data-id');
             var nama = $(this).attr('data-nama');
             swal({
@@ -156,12 +148,12 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/deletedatadudi/" + pegawaiid + ""
+                        window.location = "/deletedatapersyaratan/" + pegawaiid + ""
                         swal("Data Dudi Berhasil Dihapus", {
                             icon: "success",
                         });
                     } else {
-                        swal("Data Dudi Berhasil Dihapus");
+                        swal("Data Dudi Gagal Dihapus");
                     }
                 });
         });

@@ -12,49 +12,49 @@ class DatapersyaratanController extends Controller
         return view('datapersyaratan.datapersyaratan',compact('data'));
     }
 
-    public function tambahpersyaratan(){
+    public function tambahdatapersyaratan(){
         return view('datapersyaratan.tambahpersyaratan');
     }
 
-    public function insertpersyaratan(Request $request){
+    public function insertdatapersyaratan(Request $request){
 
             $this->validate($request,[
                   'deskripsi' => 'required',
-                  'filepersyaratan' => 'required',
+                  'fotopersyaratan' => 'required',
                   'id_dudi' => 'required',
 
              ],[
                  'deskripsi.required' => 'Harus diisi',
-                 'filepersyaratan.required' => 'Harus diisi',
+                 'fotopersyaratan.required' => 'Harus diisi',
                  'id_dudi.required' => 'Harus diisi',
  
              ]);
 
             $data = datapersyaratan::create([
                 'deskripsi' =>$request->deskripsi,
-                'filepersyaratan' =>$request->filepersyaratan,
+                'fotopersyaratan' =>$request->fotopersyaratan,
                 'id_dudi' =>$request->id_dudi,
 
                 
             ]);
             // dd($request->all);
 
-            if($request->hasFile('filepersyaratan')){
-                $request->file('filepersyaratan')->move('fotodudi/', $request->file('filepersyaratan')->getClientOriginalName());
-                $data->filepersyaratan = $request->file('filepersyaratan')->getClientOriginalName();
+            if($request->hasFile('fotopersyaratan')){
+                $request->file('fotopersyaratan')->move('fotodudi/', $request->file('fotopersyaratan')->getClientOriginalName());
+                $data->fotopersyaratan = $request->file('fotopersyaratan')->getClientOriginalName();
                 $data->save();
             }
 
             return redirect()->route('datapersyaratan')->with('succes', 'Data Berhasil Ditambahkan');
         }
-        public function tampilpersyaratan($id){
+        public function tampildatapersyaratan($id){
             $data = datapersyaratan::findOrfail($id);
             //dd($data);
 
             return view('datapersyaratan.tampilpersyaratan', compact('data'));
         }
 
-        public function updatepersyaratan(Request $request, $id){
+        public function updatedatapersyaratan(Request $request, $id){
             $data = datapersyaratan::find($id);
             $data->update([
                 'deskripsi' =>$request->deskripsi,
@@ -62,9 +62,9 @@ class DatapersyaratanController extends Controller
                 
             ]);
 
-            if($request->hasFile('filepersyaratan')){
-                $request->file('filepersyaratan')->move('fotodudi/', $request->file('filepersyaratan')->getClientOriginalName());
-                $data->filepersyaratan = $request->file('filepersyaratan')->getClientOriginalName();
+            if($request->hasFile('fotopersyaratan')){
+                $request->file('fotopersyaratan')->move('fotodudi/', $request->file('fotopersyaratan')->getClientOriginalName());
+                $data->fotopersyaratan = $request->file('fotopersyaratan')->getClientOriginalName();
                 $data->save();
 
             }
@@ -72,7 +72,7 @@ class DatapersyaratanController extends Controller
             return redirect()->route('datapersyaratan')->with('succes', 'Data Berhasil Di Update');
         }
 
-        public function deletepersyaratan($id){
+        public function deletedatapersyaratan($id){
             $data = datapersyaratan::find($id);
             $data->delete();
 

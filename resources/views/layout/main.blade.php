@@ -112,6 +112,22 @@
 	<script src="{{ asset('admin/assets/js/index2.js') }}"></script>
 	<!-- App JS -->
 	<script src="{{ asset('admin/assets/js/app.js') }}"></script>
+	<script>
+    new PerfectScrollbar('.dashboard-social-list');
+    new PerfectScrollbar('.dashboard-top-countries');
+  </script>
+  <script src="{{asset('admin/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+  <script>
+    $(document).ready(function () {
+      //Default data table
+      $('#example').DataTable();
+      var table = $('#example2').DataTable({
+        lengthChange: false,
+        buttons: ['copy', 'excel', 'pdf', 'print', 'colvis']
+      });
+      table.buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+    });
+  </script>
 </body>
 
 

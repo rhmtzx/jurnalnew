@@ -105,6 +105,16 @@
                                                 </div>
                                             @enderror
                                             <br>
+                                            <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Slot Dudi</label>
+                                            <input type="number" name="slotdudi" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp" placeholder="Slot Dudi">
+                                            @error('slotdudi')
+                                                <div class="text-danger">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                            <br>
                                             <div class="mb-1">
                                                     <label for="exampleInputEmail1" class="form-label">Masukkan Foto</label>
                                                     <input type="file" name="foto" class="form-control">

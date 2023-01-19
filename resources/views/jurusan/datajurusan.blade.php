@@ -57,7 +57,7 @@
                                         </div>
                                         @endif --}}
                                         <div class="table-responsive">
-                                            <table class="table table-striped table-bordered mb-0" id="example">
+                                            <table class="table table-striped table-bordered mb-0" id="datajurusan">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -117,7 +117,7 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#example').DataTable();
+                $('#datajurusan').DataTable();
             });
         </script>
         <!-- Option 2: Separate Popper and Bootstrap JS -->

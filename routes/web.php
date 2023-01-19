@@ -120,3 +120,11 @@ Route::post('/registerusermagang',[LoginController::class, 'registerusermagang']
 
 //log out
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+
+//datapersyaratan
+Route::get('/datapersyaratan',[DatapersyaratanController::class, 'index'])->name('datapersyaratan');
+Route::get('/tambahdatapersyaratan',[DatapersyaratanController::class, 'tambahdatapersyaratan'])->name('tambahdatapersyaratan');
+Route::post('/insertdatapersyaratan',[DatapersyaratanController::class, 'insertdatapersyaratan'])->name('insertdatapersyaratan');
+Route::get('/tampildatapersyaratan/{id}',[DatapersyaratanController::class, 'tampildatapersyaratan'])->name('tampildatapersyaratan');
+Route::post('/updatedatapersyaratan/{id}',[DatapersyaratanController::class, 'updatedatapersyaratan'])->name('updatedatapersyaratan');
+Route::get('/deletedatapersyaratan/{id}',[DatapersyaratanController::class, 'deletedatapersyaratan'])->name('deletedatapersyaratan');

@@ -26,6 +26,7 @@ class DatadudiController extends Controller
                   'alamatdudi' => 'required',
                   'emaildudi' => 'required',
                   'persyaratan' => 'required',
+                  'slotdudi' => 'required',
 
              ],[
                  'namadudi.required' => 'Harus diisi',
@@ -34,6 +35,7 @@ class DatadudiController extends Controller
                  'alamatemail.required' => 'Harus diisi',
                  'emaildudi.required' => 'Harus diisi',
                  'persyaratan.required' => 'Harus diisi',
+                 'slotdudi.required' => 'Harus diisi',
              ]);
 
             $data = datadudi::create([
@@ -44,6 +46,7 @@ class DatadudiController extends Controller
                 'emaildudi' =>$request->emaildudi,
                 'persyaratan' =>$request->persyaratan,
                 'foto' =>$request->foto,
+                'slotdudi' =>$request->slotdudi,
             ]);
             // dd($request->all);
 
@@ -71,6 +74,7 @@ class DatadudiController extends Controller
                 'alamatdudi' =>$request->alamatdudi,
                 'emaildudi' =>$request->emaildudi,
                 'persyaratan' =>$request->persyaratan,
+                'slotdudi' =>$request->slotdudi,
                 
             ]);
             if($request->hasFile('foto')){

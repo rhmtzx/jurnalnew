@@ -73,16 +73,17 @@
                                         </div>
                                     @enderror
                                     <br>
-                                    <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Jurusan</label>
-                                <input type="text" name="jurusan" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Jurusan" value="{{ $data->jurusan }}">
-                                @error('jurusan')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                                <br>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label"><h5>Jurusan</h5></label>
+                                                    <select class="form-control" name="jurusan" id="jurusan">
+                                                        <option value="" selected disabled>Pilih</option>
+                                                        @foreach($jurusan as $a)
+                                                        <option value="{{ $a->id }}"<?php if($data->jurusan == $a->id) {
+                                                            echo 'selected';    
+                                                        }?> > {{ $a->namajurusan }} </option><!--  <--- Tergantung Variabel Database -->
+                                                        @endforeach
+                                                    </select>
+                                                </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Alamat Siswa</label>
                                     <input type="text" name="alamatsiswa" class="form-control" id="exampleInputEmail1"

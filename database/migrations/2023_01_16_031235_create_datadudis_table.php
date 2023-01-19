@@ -22,6 +22,7 @@ class CreateDatadudisTable extends Migration
             $table->string('alamatdudi');
             $table->string('emaildudi');
             $table->string('persyaratan');
+            $table->string('slotdudi');
 
             $table->timestamps();
         });

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\datasiswa;
+use App\Models\jurusan;
+
 use Illuminate\Http\Request;
 
 class DatasiswaController extends Controller
@@ -14,7 +16,10 @@ class DatasiswaController extends Controller
     }
 
     public function tambahdatasiswa(){
-        return view('datasiswa.tambahsiswa');
+    $data = datasiswa::all();
+    $jurusan = jurusan::all();
+
+        return view('datasiswa.tambahsiswa', compact('data','jurusan'));
     }
 
     public function insertdatasiswa(Request $request){
@@ -57,9 +62,11 @@ class DatasiswaController extends Controller
         }
         public function tampildatasiswa($id){
             $data = datasiswa::findOrfail($id);
+            $jurusan = jurusan::all();
+
             //dd($data);
 
-            return view('datasiswa.tampilsiswa', compact('data'));
+            return view('datasiswa.tampilsiswa', compact('data','jurusan'));
         }
 
         public function updatedatasiswa(Request $request, $id){

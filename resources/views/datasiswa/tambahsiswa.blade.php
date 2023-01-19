@@ -76,9 +76,14 @@
                                         @enderror
                                         <br>
                                         <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Jurusan</label>
-                                    <input type="text" name="jurusan" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Jurusan">
+                                                    <label for="exampleInputEmail1" class="form-label"><h5>Jurusan</h5></label>
+                                                    <select class="form-control" name="jurusan" id="jurusan">
+                                                        <option value="" selected disabled>Pilih Jurusan</option>
+                                                        @foreach($jurusan as $hihi)
+                                                        <option value="{{ $hihi->id }}">{{ $hihi->namajurusan }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
                                     @error('jurusan')
                                         <div class="text-danger">
                                             {{ $message }}

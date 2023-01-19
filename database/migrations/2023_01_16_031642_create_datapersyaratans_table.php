@@ -17,7 +17,6 @@ class CreateDatapersyaratansTable extends Migration
             $table->id();
             $table->string('deskripsi');
             $table->string('fotopersyaratan');
-            $table->string('filepersyaratan');
             $table->string('id_dudi');
 
             $table->timestamps();
