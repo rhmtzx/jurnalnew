@@ -28,6 +28,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//landing
+Route::get('/landinghome', function () {
+    return view('landing.home');
+});
+
 //jurusan
 Route::get('/datajurusan',[JurusanController::class, 'index'])->name('datajurusan');
 Route::get('/tambahjurusan',[JurusanController::class, 'tambahjurusan'])->name('tambahjurusan');
@@ -112,7 +117,7 @@ Route::post('/loginprosessiswa',[LoginController::class, 'loginprosessiswa'])->n
 Route::get('/registersiswa',[LoginController::class, 'registersiswa'])->name('registersiswa');
 Route::post('/registerusersiswa',[LoginController::class, 'registerusersiswa'])->name('registerusersiswa');
 
-//loginsiswa
+//loginmagang
 Route::get('/loginmagang',[LoginController::class, 'loginmagang'])->name('loginmagang');
 Route::post('/loginprosesmagang',[LoginController::class, 'loginprosesmagang'])->name('loginprosesmagang');
 Route::get('/registermagang',[LoginController::class, 'registermagang'])->name('registermagang');
@@ -121,6 +126,7 @@ Route::post('/registerusermagang',[LoginController::class, 'registerusermagang']
 //log out
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
 
+
 //datapersyaratan
 Route::get('/datapersyaratan',[DatapersyaratanController::class, 'index'])->name('datapersyaratan');
 Route::get('/tambahdatapersyaratan',[DatapersyaratanController::class, 'tambahdatapersyaratan'])->name('tambahdatapersyaratan');
@@ -128,3 +134,7 @@ Route::post('/insertdatapersyaratan',[DatapersyaratanController::class, 'insertd
 Route::get('/tampildatapersyaratan/{id}',[DatapersyaratanController::class, 'tampildatapersyaratan'])->name('tampildatapersyaratan');
 Route::post('/updatedatapersyaratan/{id}',[DatapersyaratanController::class, 'updatedatapersyaratan'])->name('updatedatapersyaratan');
 Route::get('/deletedatapersyaratan/{id}',[DatapersyaratanController::class, 'deletedatapersyaratan'])->name('deletedatapersyaratan');
+
+
+
+

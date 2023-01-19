@@ -73,14 +73,10 @@
 														<button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Sign in</button>
 													</div>
 												</div>
-												<div class="col-12 text-center">
-													<p>Don't have an account yet? <a href="/register">Sign up here</a></p>
-												</div>
-												<div class="col-12 text-center">
-													<p>Don't have an account yet? <a href="/registersiswa">Siswa</a></p>
-												</div>
-												<div class="col-12 text-center">
-													<p>Don't have an account yet? <a href="/registermagang">DUDI</a></p>
+                                                <div class="col-12">
+													<div class="d-grid">
+														<a href="/landinghome" class="btn btn-primary">Back</a>
+													</div>
 												</div>
 											</form>
 										</div>
