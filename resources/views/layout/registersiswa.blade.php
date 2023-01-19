@@ -34,7 +34,8 @@
 								<div class="card-body p-md-5">
 									<div class="text-center">
 										<img src="{{ asset('admin/assets/images/logo-icon.png') }}" width="80" alt="">
-										<h3 class="mt-4 font-weight-bold">Create an Account</h3>
+										<h3 class="mt-4 font-weight-bold"><strong>Buat Akun Siswa</strong></h3>
+                                        <br>
 									</div>
 									<div class="">
 										{{-- <div class="d-grid">
@@ -59,19 +60,41 @@
 													<input type="email" class="form-control" id="inputLastName" placeholder="Deo">
 												</div> --}}
 												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label">Masukkan Nama</label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="name" placeholder="example@user.com">
+													<label for="inputEmailAddress" class="form-label"><strong>Masukkan NIS</strong></label>
+													<input type="number" class="form-control" id="inputEmailAddress" name="nissiswa" placeholder="25200507">
+												</div>
+												
+												<div class="col-12">
+													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Nama Lengkap Siswa</strong></label>
+													<input type="text" class="form-control" id="inputEmailAddress" name="name" placeholder="Muhammad Narendra Syahrafli">
 												</div>
 												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label">Email Address</label>
-													<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="example@user.com">
+													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Kelas</strong></label>
+													<input type="text" class="form-control" id="inputEmailAddress" name="kelas" placeholder="XII">
 												</div>
 												<div class="col-12">
-													<label for="inputChoosePassword" class="form-label">Password</label>
+													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Jurusan</strong></label>
+													<input type="text" class="form-control" id="inputEmailAddress" name="jurusan" placeholder="RPL">
+												</div>
+												<div class="col-12">
+													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Alamat Siswa</strong></label>
+													<input type="text" class="form-control" id="inputEmailAddress" name="alamatsiswa" placeholder="JL.Ahmad Yani">
+												</div>
+												<div class="col-12">
+													<label for="inputEmailAddress" class="form-label"><strong>Masukkan No Telepon</strong></label>
+													<input type="text" class="form-control" id="inputEmailAddress" name="notlpsiswa" placeholder="089 . . .">
+												</div>
+                                                <div class="col-12">
+													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Email</strong></label>
+													<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="narendra@gmail.com">
+												</div>
+												<div class="col-12">
+													<label for="inputChoosePassword" class="form-label"><strong>Masukkan Password</strong></label>
 													<div class="input-group" id="show_hide_password">
 														<input type="password" class="form-control border-end-0" name="password" id="inputChoosePassword" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 													</div>
 												</div>
+                                                
 												{{-- <div class="col-12">
 													<label for="inputSelectCountry" class="form-label">Country</label>
 													<select class="form-select" id="inputSelectCountry" aria-label="Default select example">
@@ -89,16 +112,16 @@
 												</div> --}}
 												<div class="col-12">
 													<div class="d-grid">
-														<button type="submit" class="btn btn-primary"><i class="bx bx-user me-1"></i>Sign up</button>
+														<button type="submit" class="btn btn-primary"><i class="bx bx-user me-1"></i>Daftar</button>
 													</div>
 												</div>
                                                 <div class="col-12">
 													<div class="d-grid">
-														<a href="/landinghome" class="btn btn-primary">Back</a>
+														<a href="/landinghome" class="btn btn-primary">Kembali</a>
 													</div>
 												</div>
                                                 <div class="col-12 text-center">
-													<p>have an account yet? <a href="/login">Sign In     here</a></p>
+													<p>Sudah Punya Akun? <a href="/login">Login Disini</a></p>
 												</div>
 											</form>
 										</div>

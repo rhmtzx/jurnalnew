@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\datadudi;
+use App\Models\datasiswa;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,13 +64,25 @@ class LoginController extends Controller
 
     public function registerusersiswa(Request $request){
         // dd($request->all());
-        User::create([
+        $user=User::create([
             'name' => $request ->name,
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
             'role' => 'siswa'
         ]);
+
+        datasiswa::create([
+            'nissiswa' => $request ->nissiswa,
+            'namasiswa' => $request ->name,
+            'kelas' => $request ->kelas,
+            'jurusan' => $request ->jurusan,
+            'alamatsiswa' => $request ->alamatsiswa,
+            'notlpsiswa' => $request ->notlpsiswa,
+            'user_id' => $user->id,
+        ]);
+
+
 
         return redirect('/login');
     }
@@ -94,12 +108,20 @@ class LoginController extends Controller
 
     public function registerusermagang(Request $request){
         // dd($request->all());
-        User::create([
+        $user=User::create([
             'name' => $request ->name,
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
-            'role' => 'magang'
+            'role' => 'Dudi'
+        ]);
+
+        datadudi::create([
+            'namadudi' => $request ->name,
+            'namakepdik' => $request ->namakepdik,
+            'alamatdudi' => $request ->alamatdudi,
+            'user_id' => $user->id,
+
         ]);
 
         return redirect('/login');
