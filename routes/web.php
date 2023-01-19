@@ -28,6 +28,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//landing
+Route::get('/landinghome', function () {
+    return view('landing.home');
+});
+
 //jurusan
 Route::get('/datajurusan',[JurusanController::class, 'index'])->name('datajurusan');
 Route::get('/tambahjurusan',[JurusanController::class, 'tambahjurusan'])->name('tambahjurusan');
@@ -112,7 +117,7 @@ Route::post('/loginprosessiswa',[LoginController::class, 'loginprosessiswa'])->n
 Route::get('/registersiswa',[LoginController::class, 'registersiswa'])->name('registersiswa');
 Route::post('/registerusersiswa',[LoginController::class, 'registerusersiswa'])->name('registerusersiswa');
 
-//loginsiswa
+//loginmagang
 Route::get('/loginmagang',[LoginController::class, 'loginmagang'])->name('loginmagang');
 Route::post('/loginprosesmagang',[LoginController::class, 'loginprosesmagang'])->name('loginprosesmagang');
 Route::get('/registermagang',[LoginController::class, 'registermagang'])->name('registermagang');
@@ -120,3 +125,6 @@ Route::post('/registerusermagang',[LoginController::class, 'registerusermagang']
 
 //log out
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+
+
+

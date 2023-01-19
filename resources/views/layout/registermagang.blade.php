@@ -92,6 +92,11 @@
 														<button type="submit" class="btn btn-primary"><i class="bx bx-user me-1"></i>Sign up</button>
 													</div>
 												</div>
+                                                <div class="col-12">
+													<div class="d-grid">
+														<a href="/landinghome" class="btn btn-primary">Back</a>
+													</div>
+												</div>
                                                 <div class="col-12 text-center">
 													<p>have an account yet? <a href="/login">Sign In     here</a></p>
 												</div>
