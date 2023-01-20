@@ -63,22 +63,22 @@
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan NIS</strong></label>
 													<input type="number" class="form-control" id="inputEmailAddress" name="nissiswa" placeholder="25200507">
 												</div>
-												
+
 												<div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Nama Lengkap Siswa</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="name" placeholder="Muhammad Narendra Syahrafli">
+													<input type="text" class="form-control" id="inputEmailAddress" name="name" placeholder="Masukkan Nama Lengkap">
 												</div>
 												<div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Kelas</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="kelas" placeholder="XII">
+													<input type="text" class="form-control" id="inputEmailAddress" name="kelas" placeholder="Masukkan Kelas">
 												</div>
 												<div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Jurusan</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="jurusan" placeholder="RPL">
+													<input type="text" class="form-control" id="inputEmailAddress" name="jurusan" placeholder="Masukkan Jurusan">
 												</div>
 												<div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Alamat Siswa</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="alamatsiswa" placeholder="JL.Ahmad Yani">
+													<input type="text" class="form-control" id="inputEmailAddress" name="alamatsiswa" placeholder="Masukkan Alamat">
 												</div>
 												<div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan No Telepon</strong></label>
@@ -86,15 +86,15 @@
 												</div>
                                                 <div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Email</strong></label>
-													<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="narendra@gmail.com">
+													<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="Masukkan Email">
 												</div>
 												<div class="col-12">
 													<label for="inputChoosePassword" class="form-label"><strong>Masukkan Password</strong></label>
 													<div class="input-group" id="show_hide_password">
-														<input type="password" class="form-control border-end-0" name="password" id="inputChoosePassword" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+														<input type="password" class="form-control border-end-0" name="password" id="inputChoosePassword" placeholder="Masukkan Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 													</div>
 												</div>
-                                                
+
 												{{-- <div class="col-12">
 													<label for="inputSelectCountry" class="form-label">Country</label>
 													<select class="form-select" id="inputSelectCountry" aria-label="Default select example">

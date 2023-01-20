@@ -169,7 +169,7 @@
 						</li> --}}
 						<li class="nav-item dropdown dropdown-lg">
 							<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="javascript:;" data-bs-toggle="dropdown">	<i class="bx bx-bell vertical-align-middle"></i>
-								<span class="msg-count">8</span>
+								{{-- <span class="msg-count"></span> --}}
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a href="javascript:;">
@@ -295,7 +295,7 @@
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="javascript:;"><i
+								<a class="dropdown-item" href="#"><i
 										class="bx bx-user"></i><span>Profile</span></a>
 								{{-- <a class="dropdown-item" href="javascript:;"><i
 										class="bx bx-cog"></i><span>Settings</span></a>
