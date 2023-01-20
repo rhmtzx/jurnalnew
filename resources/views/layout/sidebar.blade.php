@@ -49,6 +49,13 @@
                 <div class="menu-title"><strong>Guru Pembimbing</strong></div>
             </a>
         </li>
+        <li>
+            <a href="/datatambahjurnal">
+                <div class="parent-icon icon-color-2"><i class="bx bx-group"></i>
+                </div>
+                <div class="menu-title"><strong>Data Jurnal Siswa</strong></div>
+            </a>
+        </li>
 
         <li class="menu-label"><strong>Data Dudi</strong></li>
         <!-- <li>
@@ -212,14 +219,8 @@
                 </li>
             </ul>
         </li> -->
-        <li class="menu-label"><strong>DATA JURNAL</strong></li>
-        <li>
-            <a href="/datatambahjurnal">
-                <div class="parent-icon icon-color-2"><i class="bx bx-group"></i>
-                </div>
-                <div class="menu-title"><strong>Data Jurnal Siswa</strong></div>
-            </a>
-        </li>
+        <!-- <li class="menu-label"><strong>DATA JURNAL</strong></li> -->
+        
         <!-- <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon icon-color-3"><i class="bx bx-lock"></i>

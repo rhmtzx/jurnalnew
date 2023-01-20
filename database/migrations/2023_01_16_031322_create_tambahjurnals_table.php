@@ -17,7 +17,6 @@ class CreateTambahjurnalsTable extends Migration
             $table->id();
             $table->string('judul');
             $table->text('deskripsi');
-            $table->string('file');
             $table->string('foto');
             $table->string('usersiswa');
 
