@@ -108,6 +108,17 @@ class LoginController extends Controller
 
     public function registerusermagang(Request $request){
         // dd($request->all());
+        $this->validate($request,[
+            'email' => 'required|unique:users',
+            'password' => 'required|min:6'
+
+        ],[
+            'email.unique' => 'Email Sudah Digunakan',
+            'email.required' => 'Harus Diisi',
+            'password.min' => 'Isi Password Minimal 6 Huruf'
+
+
+        ]);
         $user=User::create([
             'name' => $request ->name,
             'email' => $request ->email,

@@ -27,7 +27,7 @@
             <div class="col-12 col-lg-12">
                 <div class="card-body">
                     <div class="container">
-                        <div class="row" > 
+                        <div class="row" >
 
                             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
                                 <div class="breadcrumb-title pe-3">DATA JURNAL</div>
@@ -53,7 +53,7 @@
                                     {{ $message }}
                                 </div>
     @endif-->
-                                    <table id="datatable" class="table text-center table-bordered dt-responsive nowrap"
+                                    <table id="datajurnal" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
@@ -78,7 +78,7 @@
                                                             style="width: 40px">
                                                     </td>
                                                     <td>{{ $row->judul }}</td>
-                                                    <td>{{ $row->deskripsi }}</td>
+                                                    <td>{!! $row->deskripsi !!}</td>
                                                     <td>{{ $row->usersiswa }}</td>
                                                     <td>{{ $row->created_at}}</td>
                                                     <td scope="row">
@@ -121,7 +121,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             $(document).ready(function() {
-                $('#example').DataTable();
+                $('#datajurnal').DataTable();
             });
         </script>
 

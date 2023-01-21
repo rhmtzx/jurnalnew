@@ -61,26 +61,36 @@
 												</div> --}}
 												<div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Nama Dudi</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="name" placeholder="Hummasoft Technology">
+													<input type="text" class="form-control" id="inputEmailAddress" name="name" placeholder="Masukkan Nama Tempat DuDi">
 												</div>
 												<div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Nama Kepala Direktur</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="namakepdik" placeholder="Afrizal Himawan">
+													<input type="text" class="form-control" id="inputEmailAddress" name="namakepdik" placeholder="Masukkan Nama Kepala Direktur">
 												</div>
 
                                                 <div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Alamat Dudi</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="alamatdudi" placeholder="Perumahan Griya Permata Alam">
+													<input type="text" class="form-control" id="inputEmailAddress" name="alamatdudi" placeholder="Masukkan Alamat DuDi">
 												</div>
                                                 <div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Email Dudi</strong></label>
-													<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="hummasoft@gmail.com">
+													<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="Masukkan Email DuDi">
 												</div>
+                                                @error('email')
+                                                <div class="text-danger">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
 												<div class="col-12">
 													<label for="inputChoosePassword" class="form-label"><strong>Masukkan Password</strong></label>
 													<div class="input-group" id="show_hide_password">
-														<input type="password" class="form-control border-end-0" name="password" id="inputChoosePassword" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+														<input type="password" class="form-control border-end-0" name="password" id="inputChoosePassword" placeholder="Masukkan Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 													</div>
+                                                    @error('password')
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
 												</div>
 
 												{{-- <div class="col-12">

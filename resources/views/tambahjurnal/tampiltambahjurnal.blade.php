@@ -22,7 +22,7 @@
             <div class="col-12 col-lg-12">
                 <div class="card-body">
                     <div class="container">
-                        <div class="row" > 
+                        <div class="row" >
 
                             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
                                 <div class="breadcrumb-title pe-3">DATA JURNAL</div>
@@ -42,8 +42,7 @@
                                     <div>
                                         <h4><em>TAMBAH DATA JURNAL</em></h4>
                                         <hr>
-                                        <form action="/inserttambahjurnal" method="POST" enctype="multipart\form-data" >
-
+                                        <form action="/updatetambahjurnal/ {{ $data->id }}" method="POST" enctype="multipart\form-data" >
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h5>Judul</h5></label>
@@ -53,10 +52,23 @@
                                             <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
                                             <br>
-                                            <div class="col-12">
-                                                <label for="inputAddress3" class="form-label"><h5>Deskripsi</h5></label>
-                                                <textarea class="form-control" name="deskripsi" type="text" id="inputAddress3" placeholder="Deskripsi Jurnal" value="<?php echo $data['deskripsi'] ?>" rows="3"></textarea>
-                                            </div>
+                                            <section style="padding-top:60px;">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                           <br> Deskripsi
+                                                            <div class="card">
+                                                                <div class="card-header">
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    {{--  <form method="POST" enctype="multipart/form-data">  --}}
+                                                                    <textarea name="deskripsi" id="mytextarea">{!! $data->deskripsi !!}</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
                                             @error('deskripsi')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
@@ -95,6 +107,14 @@
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.tiny.cloud/1/z3vshivvjuw47heg0vg12ouq5rr8i7ckkxmmjadvrhgsynq8/tinymce/6/tinymce.min.js"
+  referrerpolicy="origin"></script>
+
+<script>
+  tinymce.init({
+      selector: '#mytextarea'
+  });
+</script>
 
         <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

@@ -30,7 +30,7 @@ class TambahjurnalController extends Controller
                  'deskripsi.required' => 'Harus diisi',
                  'foto.required' => 'Harus diisi',
                  'usersiswa.required' => 'Harus diisi',
- 
+
              ]);
 
             $data = tambahjurnal::create([
@@ -39,7 +39,7 @@ class TambahjurnalController extends Controller
                 'foto' =>$request->foto,
                 'usersiswa' =>$request->usersiswa,
 
-                
+
             ]);
             // dd($request->all);
 
@@ -64,7 +64,7 @@ class TambahjurnalController extends Controller
                 'judul' =>$request->judul,
                 'deskripsi' =>$request->deskripsi,
                 'usersiswa' =>$request->usersiswa,
-                
+
             ]);
 
             if($request->hasFile('foto')){
