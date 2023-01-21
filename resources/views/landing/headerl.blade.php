@@ -25,21 +25,21 @@
                     <!--begin navbar-nav -->
                     <ul class="navbar-nav ml-auto">
 
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="#home">Beranda</a></li>
 
-                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#about">Bantuan</a></li>
 
-                        <li><a href="#pricing">Pricing</a></li>
+                        <!-- <li><a href="#pricing">Pricing</a></li> -->
 
                         <li><a href="#team">Team</a></li>
 
                         <li><a href="#showcase">Showcase</a></li>
 
-                        <li><a href="#features">Features</a></li>
+                        <li><a href="#features">Fitur</a></li>
 
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#blog">Berita</a></li>
 
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Kontak</a></li>
 
                         <li class="discover-link"><a href="/login" class="external discover-btn">Log In</a></li>
 

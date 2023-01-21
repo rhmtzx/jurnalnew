@@ -71,7 +71,7 @@
 
                     <p>Curabitur quam etsum lacus netsum nulat iaculis ets vitae etsum nisle varius sed aliquam ets vitae netsum.</p>
 
-                    <a href="#about" class="btn-blue-line small scrool">Essentials for Designers</a>
+                    <a href="/login" class="btn-blue-line small scrool">Essentials for Designers</a>
 
                 </div>
 
@@ -252,123 +252,7 @@
 <!--end section-blue -->
 
 <!--begin pricing section -->
-<section class="section-grey" id="pricing">
 
-    <!--begin container -->
-    <div class="container">
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col-md-12 -->
-            <div class="col-md-12 text-center padding-bottom-40">
-
-                <h2 class="section-title">Pricing for every business, at any stage</h2>
-
-                <p class="section-subtitle">All pricing packages are backed up by a 30-day money back guarantee.</p>
-
-            </div>
-            <!--end col-md-12 -->
-
-            <!--begin col-md-4-->
-            <div class="col-md-4">
-
-                <div class="price-box">
-
-                    <ul class="pricing-list">
-
-                        <li class="price-title">BASIC</li>
-
-                        <li class="price-value">$25</li>
-
-                        <li class="price-subtitle">Per Month</li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>Custom Charts</li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>5 Mailboxes, 10 Gb Storage</li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>Unlimited Free Dashboards</li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>Access to all APIs</li>
-
-                        <li class="price-tag-line"><a href="#">FREE 15-DAY TRIAL</a></li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4-->
-            <div class="col-md-4">
-
-                <div class="price-box">
-
-                <div class="ribbon blue"><span>Popular</span></div>
-
-                    <ul class="pricing-list">
-
-                        <li class="price-title">STANDARD</li>
-
-                        <li class="price-value">$99</li>
-
-                        <li class="price-subtitle">Per Month</li>
-
-                        <li class="price-text strong"><i class="fas fa-check blue"></i><strong>All Basic features</strong></li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>15 Mailboxes, 50 Gb Storage</li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>Interactive Screen Sharing</li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>Full Reports History</li>
-
-                        <li class="price-tag"><a href="#">FREE 15-DAY TRIAL</a></li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4-->
-            <div class="col-md-4">
-
-                <div class="price-box">
-
-                    <ul class="pricing-list">
-
-                        <li class="price-title white-text">PRO</li>
-
-                        <li class="price-value white-text">$199</li>
-
-                        <li class="price-subtitle white-text">Per Month</li>
-
-                        <li class="price-text white-text"><i class="fas fa-check blue"></i><strong>All Standard Features</strong></li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>50 Mailboxes, 90 Gb Storage</li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>Dedicated Account Manager</li>
-
-                        <li class="price-text"><i class="fas fa-check blue"></i>24/7 Priority Support</li>
-
-                        <li class="price-tag-line"><a href="#">FREE 15-DAY TRIAL</a></li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-            <!--end col-md-4 -->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
-</section>
 <!--end pricing section -->
 
 <!--begin section-white -->
@@ -587,15 +471,15 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center">
 
-                <h2 class="section-title">The Team Behind Essentials</h2>
+                <h2 class="section-title">Team Kami</h2>
 
-                <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+                <p class="section-subtitle">Team Kami Terdiri Dari 2 Orang Yaitu Muhammad Narendra Syahrafli Dan Muhammad Rahmatullah .</p>
 
             </div>
             <!--end col-md-12 -->
 
             <!--begin team-item -->
-            <div class="col-sm-12 col-md-4">
+           <!--  <div class="col-sm-12 col-md-4">
 
                 <div class="team-item">
 
@@ -621,7 +505,7 @@
 
                 </div>
 
-            </div>
+            </div> -->
             <!--end team-item -->
 
             <!--begin team-item -->
@@ -631,11 +515,11 @@
 
                     <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/team4.jpg') }}" class="team-img" alt="pic">
 
-                    <h3>ANDRES JOHANSON</h3>
+                    <h3>MUHAMMAD NERENDRA SYAHRAFLI</h3>
 
-                    <div class="team-info"><p>Marketing Manager</p></div>
+                    <div class="team-info"><p>Backend Developer</p></div>
 
-                    <p>Andres fell in love with marketing at the school and looks forward to being part of the industry for years.</p>
+                    <p>Rafli so love with backend programs.</p>
 
                     <ul class="team-icon">
 
@@ -659,13 +543,13 @@
 
                 <div class="team-item">
 
-                    <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/team3.jpg') }}" class="team-img" alt="pic">
+                    <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/team4.jpg') }}" class="team-img" alt="pic">
 
-                    <h3>ALEXANDRA SMITHS</h3>
+                    <h3>MUHAMMAD RAHMATULLAH</h3>
 
-                    <div class="team-info"><p>SEO Specialist</p></div>
+                    <div class="team-info"><p>Frontend Developer</p></div>
 
-                    <p>Graduating with a degree in Spanish, English and French, she has always loved writing.</p>
+                    <p>Rahmat so love with frontend programs.</p>
 
                     <ul class="team-icon">
 
@@ -824,7 +708,261 @@
             <!--begin col-md-12-->
             <div class="col-md-12 text-center padding-bottom-10">
 
-                <h2 class="section-title">Amazing Features</h2>
+                <h2 class="section-title">Fitur Admin Sekolah</h2>
+
+                <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+
+            </div>
+            <!--end col-md-12 -->
+
+        </div>
+        <!--end row -->
+
+          <!--begin row -->
+          <div class="row">
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeIn;">
+
+                    <i class="fas fa-tachometer-alt"></i>
+
+                    <h4>Powerful Dashboard</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <h4>User Friendly</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md 4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="0.75s" style="visibility: visible; animation-delay: 0.75s; animation-name: fadeIn;">
+
+                    <i class="fas fa-bell"></i>
+
+                    <h4>Smart Notifications</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+        </div>
+        <!--end row -->
+
+          <!--begin row -->
+          <div class="row">
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeIn;">
+
+                    <i class="fas fa-hand-holding-usd"></i>
+
+                    <h4>Cost Control</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="1.25s" style="visibility: visible; animation-delay: 1.25s; animation-name: fadeIn;">
+
+                    <i class="fas fa-rocket"></i>
+
+                    <h4>Unique Features</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="1.5s" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeIn;">
+
+                    <i class="fab fa-rocketchat"></i>
+
+                    <h4>Support 24/7</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+          </div>
+          <!--end row -->
+
+    </div>
+    <!--end container -->
+
+  </section>
+    <section class="section-white section-bottom-border" id="features">
+
+    <!--begin container -->
+    <div class="container">
+
+          <!--begin row -->
+          <div class="row">
+
+            <!--begin col-md-12-->
+            <div class="col-md-12 text-center padding-bottom-10">
+
+                <h2 class="section-title">Fitur Pengguna Dudi</h2>
+
+                <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+
+            </div>
+            <!--end col-md-12 -->
+
+        </div>
+        <!--end row -->
+
+          <!--begin row -->
+          <div class="row">
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeIn;">
+
+                    <i class="fas fa-tachometer-alt"></i>
+
+                    <h4>Powerful Dashboard</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <h4>User Friendly</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md 4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="0.75s" style="visibility: visible; animation-delay: 0.75s; animation-name: fadeIn;">
+
+                    <i class="fas fa-bell"></i>
+
+                    <h4>Smart Notifications</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+        </div>
+        <!--end row -->
+
+          <!--begin row -->
+          <div class="row">
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeIn;">
+
+                    <i class="fas fa-hand-holding-usd"></i>
+
+                    <h4>Cost Control</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="1.25s" style="visibility: visible; animation-delay: 1.25s; animation-name: fadeIn;">
+
+                    <i class="fas fa-rocket"></i>
+
+                    <h4>Unique Features</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md-4-->
+            <div class="col-md-4">
+
+                <div class="feature-box wow fadeIn" data-wow-delay="1.5s" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeIn;">
+
+                    <i class="fab fa-rocketchat"></i>
+
+                    <h4>Support 24/7</h4>
+
+                    <p>Utise wisi enim minim veniam, quis et stationes ullamcorper suscipit ets lobotis nisle consequat nihis etim.</p>
+
+                </div>
+            </div>
+            <!--end col-md-4 -->
+
+          </div>
+          <!--end row -->
+
+    </div>
+    <!--end container -->
+
+  </section>
+    <section class="section-white section-bottom-border" id="features">
+
+    <!--begin container -->
+    <div class="container">
+
+          <!--begin row -->
+          <div class="row">
+
+            <!--begin col-md-12-->
+            <div class="col-md-12 text-center padding-bottom-10">
+
+                <h2 class="section-title">Fitur Pengguna Siswa</h2>
 
                 <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
 
