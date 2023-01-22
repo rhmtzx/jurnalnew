@@ -37,7 +37,7 @@ class LoginController extends Controller
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
-            'role' => 'admin'
+            'role' => 'Admin'
         ]);
 
         return redirect('/login');
@@ -69,7 +69,7 @@ class LoginController extends Controller
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
-            'role' => 'siswa'
+            'role' => 'Siswa'
         ]);
 
         datasiswa::create([
@@ -146,4 +146,32 @@ class LoginController extends Controller
     public function landinghome(){
         return view('landing.home');
     }
+
+    public function profil()
+    {
+        $data = User::all();
+        return view('layout.profil', compact('data'));
+    }
+    public function editprofil(request $request)
+    {
+        $data = User::findOrFail(Auth::user()->id);
+
+        return view('layout.editprofil', compact('data'));
+    }
+    public function updateprofil(request $request)
+    {
+        $data = User::find(Auth::user()->id);
+        $data->update([
+            'name' => $request->name,
+            'alamat' => $request->alamat,
+            'notelpon' => $request->notelpon,
+        ]);
+        if ($request->hasfile('foto')) {
+            $request->file('foto')->move('fotoprofil/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            $data->save();
+        }
+        return redirect()->route('profil')->with('success', 'Profil berhasil di Ganti!');
+    }
+
 }

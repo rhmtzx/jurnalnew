@@ -11,7 +11,6 @@
     </div>
     <!--navigation-->
     <ul class="metismenu" id="menu">
-        <!-- <li class="menu-label"><strong>Dashboard</strong></li> -->
         <li>
         <li class="menu-label"><strong>Dashboard</strong></li>
             <a href="/">
@@ -21,13 +20,6 @@
             </a>
         </li>
         <li class="menu-label"><strong>Data Sekolah</strong></li>
-        <!-- <li>
-            <a href="/datasiswa">
-                <div class="parent-icon icon-color-2"><i class="bx bx-envelope"></i>
-                </div>
-                <div class="menu-title">Data Siswa</div>
-            </a>
-        </li> -->
         <li>
             <a href="/datajurusan">
                 <div class="parent-icon icon-color-3"> <i class="bx bx-group"></i>

@@ -53,7 +53,7 @@
 		<!--End Back To Top Button-->
 		<!--footer -->
 		<div class="footer">
-			<p class="mb-0">Syndash @2020 | Developed By : <a href="https://themeforest.net/user/codervent" target="_blank">codervent</a>
+			<p class="mb-0">J - On Journal @2023 | Developed By : RQuadrat Team <a href="https://themeforest.net/user/codervent" target="_blank">#</a>
 			</p>
 		</div>
 		<!-- end footer -->

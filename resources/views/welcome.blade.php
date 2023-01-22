@@ -8,16 +8,16 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h2 class="mb-0 text-white">649 <i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
+                                <h2 class="mb-0 text-white">{{$jurusan}}<i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
                             </div>
                             <div class="ms-auto font-35 text-white"><i class="bx bx-cart-alt"></i>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
                             <div>
-                                <p class="mb-0 text-white">Item Delivered</p>
+                                <p class="mb-0 text-white"><strong>Jumlah Jurusan</strong></p>
                             </div>
-                            <div class="ms-auto font-14 text-white">+23.4%</div>
+                            <div class="ms-auto font-14 text-white">{{$jurusan}}</div>
                         </div>
                     </div>
                 </div>
@@ -27,16 +27,16 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h2 class="mb-0 text-white">114 <i class='bx bxs-down-arrow-alt font-14 text-white'></i> </h2>
+                                <h2 class="mb-0 text-white">{{$siswa}}<i class='bx bxs-down-arrow-alt font-14 text-white'></i> </h2>
                             </div>
                             <div class="ms-auto font-35 text-white"><i class="bx bx-support"></i>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
                             <div>
-                                <p class="mb-0 text-white">Refund Request</p>
+                                <p class="mb-0 text-white"><strong>Jumlah Siswa</strong></p>
                             </div>
-                            <div class="ms-auto font-14 text-white">+14.7%</div>
+                            <div class="ms-auto font-14 text-white">{{$siswa}}</div>
                         </div>
                     </div>
                 </div>
@@ -46,16 +46,16 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h2 class="mb-0 text-white">98 <i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
+                                <h2 class="mb-0 text-white">{{$dudi}} <i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
                             </div>
                             <div class="ms-auto font-35 text-white"><i class="bx bx-tachometer"></i>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
                             <div>
-                                <p class="mb-0 text-white">Cancelled Orders</p>
+                                <p class="mb-0 text-white"><strong>Jumlah Dudi</strong></p>
                             </div>
-                            <div class="ms-auto font-14 text-white">-12.9%</div>
+                            <div class="ms-auto font-14 text-white">{{$dudi}}</div>
                         </div>
                     </div>
                 </div>
@@ -65,16 +65,16 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h2 class="mb-0 text-white">208 <i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
+                                <h2 class="mb-0 text-white">{{$jurnal}} <i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
                             </div>
                             <div class="ms-auto font-35 text-white"><i class="bx bx-user"></i>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
                             <div>
-                                <p class="mb-0 text-white">New Users</p>
+                                <p class="mb-0 text-white"><strong>Jumlah Jurnal</strong></p>
                             </div>
-                            <div class="ms-auto font-14 text-white">+13.6%</div>
+                            <div class="ms-auto font-14 text-white">{{$jurnal}}</div>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                     <div class="ms-lg-auto mb-2 mb-lg-0">
                         <div class="btn-group-round">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-white">Daiiy</button>
+                                <button type="button" class="btn btn-white">Daily</button>
                                 <button type="button" class="btn btn-white">Weekly</button>
                                 <button type="button" class="btn btn-white">Monthly</button>
                             </div>

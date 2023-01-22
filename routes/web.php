@@ -12,6 +12,10 @@ use App\Http\Controllers\DataplotinganController;
 use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
+use App\Models\jurusan;
+use App\Models\datasiswa;
+use App\Models\datadudi;
+use App\Models\tambahjurnal;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +29,13 @@ use App\Http\Controllers\DatapembimbingdudiController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+	$jurusan = jurusan::count();
+	$siswa = datasiswa::count();
+	$dudi = datadudi::count();
+	$jurnal = tambahjurnal::count();
+
+    return view('welcome', compact('jurusan','siswa','dudi','jurnal'));
+})->middleware('auth');
 
 //landing
 Route::get('/landinghome', function () {
@@ -135,6 +144,10 @@ Route::get('/tampildatapersyaratan/{id}',[DatapersyaratanController::class, 'tam
 Route::post('/updatedatapersyaratan/{id}',[DatapersyaratanController::class, 'updatedatapersyaratan'])->name('updatedatapersyaratan');
 Route::get('/deletedatapersyaratan/{id}',[DatapersyaratanController::class, 'deletedatapersyaratan'])->name('deletedatapersyaratan');
 
+//profil
+Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
+Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
+Route::post('/updateprofil', [LoginController::class, 'updateprofil'])->name('updateprofil');
 
 
 

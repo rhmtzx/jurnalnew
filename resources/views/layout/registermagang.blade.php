@@ -70,7 +70,7 @@
 
                                                 <div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Alamat Dudi</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="alamatdudi" placeholder="Masukkan Alamat DuDi">
+													<input type="text" class="form-control" id="inputEmailAddress" name="alamat" placeholder="Masukkan Alamat DuDi">
 												</div>
                                                 <div class="col-12">
 													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Email Dudi</strong></label>
