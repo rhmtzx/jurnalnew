@@ -20,7 +20,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
 </head>
 
 <body>
@@ -49,62 +49,63 @@
         <!-- Page wrapper scss in scafholding.scss -->
         <!-- ============================================================== -->
         
-            <!-- ============================================================== -->
-            <!-- Title and breadcrumb -->
-            <!-- ============================================================== -->
-            <div class="page-titles">
-                <div class="d-flex align-items-center">
-                    <h5 class="font-medium m-b-0">Cards</h5>
-                    <div class="custom-breadcrumb ml-auto">
-                        <a href="#!" class="breadcrumb">Home</a>
-                        <a href="#!" class="breadcrumb">Cards</a>
-                    </div>
+        <!-- ============================================================== -->
+        <!-- Title and breadcrumb -->
+        <!-- ============================================================== -->
+        <div class="page-titles">
+            <div class="d-flex align-items-center">
+                <h5 class="font-medium m-b-0">Cards</h5>
+                <div class="custom-breadcrumb ml-auto">
+                    <a href="#!" class="breadcrumb">Home</a>
+                    <a href="#!" class="breadcrumb">Cards</a>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card">
-                            <div class="card-content">
-                                
-                                <h4><em>EDIT JURUSAN</em></h4>
-                                        <hr>                                            
-                                        <form action="/updatedatajurusan/{{ $data->id }}" method="POST"
+        </div>
+        <!-- ============================================================== -->
+        <!-- Container fluid scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+
+                            <h4><em>EDIT JURUSAN</em></h4>
+                            <hr>                                            
+                            <form action="/updatedatajurusan/{{ $data->id }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
                                     <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Jurusan</h6></label> 
                                     <input type="text" name="namajurusan" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->namajurusan }}">
-                                        <br>
+                                    aria-describedby="emailHelp" value="{{ $data->namajurusan }}">
+                                    <br>
                                     @error('jurusan')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
                                     @enderror
                                     <br>
                                     <div class="mt-4">
-                                        <button type="submit" class="btn btn-primary">Submit Edit</button>
+                                        <button type="submit" class="btn btn-primary">Edit Data</button>
                                         <a href="/datajurusan" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                     </div>
-                            </form>                                  
-                                    
-                                </div>
+                                </form>                                  
+
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
-
             </div>
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
-            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
+
+
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- Container fluid scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
         
         <!-- ============================================================== -->
         <!-- Page wrapper scss in scafholding.scss -->

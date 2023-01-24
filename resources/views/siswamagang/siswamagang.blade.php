@@ -1,63 +1,48 @@
 @extends('layout.main')
-
 @section('content')
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png')}}">
+    <title>Materialart Admin Template</title>
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/style.css')}}" rel="stylesheet">
+    <!-- This page CSS -->
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/data-table.css')}}" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
-    integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <title>DATA SISWA MAGANG</title>
+<!-- FONT AWESOME LINK -->    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 
 <body>
-   <div class="page-content-wrapper">
-    <div class="justify-content-center">
-      <div class="row-2">
-        <div class="col-12 col-lg-12">
-            <div class="card-body">
-                <div class="container">
-                    <div class="row" > 
-
-                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                    <div class="breadcrumb-title pe-3">DATA DUDI</div>
-                        <div class="ps-3">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0 p-0">
-                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">DATA SISWA MAGANG</li>
-                            </ol>
-                        </nav>
+    <div class="main-wrapper" id="main-wrapper">
+        <div class="page-titles">
+                <div class="d-flex align-items-center">
+                    <h5 class="font-medium m-b-0">Cards</h5>
+                    <div class="custom-breadcrumb ml-auto">
+                        <a href="#!" class="breadcrumb">Home</a>
+                        <a href="#!" class="breadcrumb">Cards</a>
                     </div>
                 </div>
-
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col s12">
                         <div class="card">
-                            <div class="card-body">
-                                <div>
-                                    <h4><em>DATA SISWA MAGANG</em></h4>
-                                    <hr>
-                                    <a href="/tambahsiswamagang" class="btn btn-success mb-10">Tambah Siswa Magang +</a>
-                                    <br></br>
-                                    <div class="row" > 
-                                        {{-- @if ($message = Session::get('success'))
-                                        <div class="alert alert-success" role="alert">
-                                            {{ $message }}
-                                        </div>
-                                        @endif --}}
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-bordered mb-0" id="example">
+                            <div class="card-content">
+                                <h1 class="card-title">Data Siswa Magang</h1>
+                                <h6 class="card-subtitle">Seluruh Data Siswa Magang Ada Disini!</h6>
+                                <br>
+                                <a href="/tambahdatapersyaratan" class="btn btn-success mb-10">Tambah Siswa Magang +</a>
+                                <br>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered mb-0" id="siswamagang">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -85,24 +70,46 @@
                                                     @endforeach
                                                     </tbody>
                                                 </table>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
+                </div>
+                
             </div>
+            
+            
+        <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
+       
+        <div class="chat-windows"></div>
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/materialize.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- Apps -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app.init.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app-style-switcher.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- Custom js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/custom.min.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/pages/datatable/datatable-basic.init.js')}}"></script>
 
-
-            <!-- Optional JavaScript; choose one of the two! -->
-
-            <!-- Option 1: Bootstrap Bundle with Popper -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -118,22 +125,13 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#example').DataTable();
+                $('#siswamagang').DataTable();
             });
         </script>
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
--->
-
 </body>
+
 <script>
-    $('.delete').click(function() {
+    $('.deletesiswamagang').click(function() {
         var kategoriid = $(this).attr('data-id');
         var kategori = $(this).attr('data-kategori');
         swal({
@@ -150,7 +148,7 @@
                     icon: "success",
                 });
             } else {
-                swal("Data Siswa Gagal Di Hapus");
+                swal("Data Gagal Di Hapus");
             }
         });
     });
@@ -168,5 +166,6 @@
     @endif
 </script>
 
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:10 GMT -->
 </html>
 @endsection

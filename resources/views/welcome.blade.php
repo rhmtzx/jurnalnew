@@ -20,249 +20,144 @@
                 <!-- ============================================================== -->
                 <div class="row">
                     <!-- col -->
-                    <div class="col s12 l7">
-                        <div class="card card-hover">
+                    <div class="row">
+                    <div class="col l3 m6 s12">
+                        <div class="card danger-gradient card-hover">
                             <div class="card-content">
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex no-block align-items-center">
                                     <div>
-                                        <h5 class="card-title">Earnings</h5>
+                                        <h2 class="white-text m-b-5">250</h2>
+                                        <h6 class="white-text op-5 light-blue-text">Invoices</h6>
                                     </div>
                                     <div class="ml-auto">
-                                        <ul class="list-inline font-12 dl m-r-10">
-                                            <li><i class="fa fa-circle blue-text text-accent-4"></i> Expenses</li>
-                                            <li><i class="fa fa-circle blue-grey-text text-lighten-5"></i> Earnings</li>
-                                        </ul>
+                                        <span class="white-text display-6"><i class="material-icons">assignment</i></span>
                                     </div>
-                                </div>
-                                <div id="chart-earnings" style="height: 255px"></div>
-                                <div class="row m-t-25 center-align">
-                                    <!-- col -->
-                                    <div class="info col m4 s12 l4">
-                                        <span>Total Earnings</span>
-                                        <h4 class="font-medium m-b-5 m-t-5">$3,567.56</h4>
-                                        <span class="green-text">+23% <i class="fa fa-chevron-up"></i></span>
-                                    </div>
-                                    <!-- col -->
-                                    <!-- col -->
-                                    <div class="info col m4 s12 l4">
-                                        <span>Referral Earnings</span>
-                                        <h4 class="font-medium m-b-5 m-t-5">$769.08</h4>
-                                        <span class="red-text">-18% <i class="fa fa-chevron-down"></i></span>
-                                    </div>
-                                    <!-- col -->
-                                    <!-- col -->
-                                    <div class="info col m4 s12 l4">
-                                        <span>Total Sales</span>
-                                        <h4 class="font-medium m-b-5 m-t-5">5489</h4>
-                                        <span class="green-text">+12% <i class="fa fa-chevron-up"></i></span>
-                                    </div>
-                                    <!-- col -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- col -->
-                    <div class="col s12 l5">
-                        <div class="row">
-                            <div class="col s12 m6 l6">
-                                <div class="card warning-gradient card-hover">
-                                    <div class="card-content">
-                                        <h5 class="card-title  white-text">Revenues</h5>
-                                        <p class="m-b-5"><span class="white-text op-5">This Month <span class="right">$250</span></span></p>
-                                        <p><span class="white-text op-5">Last Month <span class="right">$158</span></span></p>
-                                        
+                    <div class="col l3 m6 s12">
+                        <div class="card info-gradient card-hover">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center">
+                                    <div>
+                                        <h2 class="white-text m-b-5">520</h2>
+                                        <h6 class="white-text op-5">News Feed</h6>
                                     </div>
-                                    <div id="revenue" style="height:75px; width:100%;"></div>
-                                </div>
-                            </div>
-                            <div class="col s12 m6 l6">
-                                <div class="card primary-gradient card-hover">
-                                    <div class="card-content">
-                                        <h5 class="card-title white-text">Visits</h5>
-                                        <p class="m-b-5"><span class="white-text op-5">This Month <span class="right">1255</span></span></p>
-                                        <p><span class="white-text op-5">Last Month <span class="right">1470</span></span></p>
-                                    </div>
-                                    <div class="center-align">
-                                        <div id="visits"></div>
+                                    <div class="ml-auto">
+                                        <span class="white-text display-6"><i class="material-icons">receipt</i></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col s12 m6 l6">
-                                <div class="card success-gradient card-hover">
-                                    <div class="card-content">
-                                        <h5 class="card-title  white-text">Jobs</h5>
-                                        <ul class="m-t-15">
-                                            <li>
-                                                <div class="d-flex no-block align-items-center">
-                                                    <div>
-                                                        <span class="m-b-0 white-text op-5">Completed</span>
-                                                    </div>
-                                                    <div class="ml-auto">
-                                                        <span class="m-b-0 white-text">26</span>
-                                                    </div>
-                                                </div>
-                                                <div class="progress m-t-10" style="background-color: rgba(0,0,0,.1);">
-                                                    <div class="determinate white" style="width: 26%"></div>
-                                                </div>
-                                            </li>
-                                            <li class="m-t-25">
-                                                <div class="d-flex no-block align-items-center">
-                                                    <div>
-                                                        <span class="m-b-0 white-text op-5">Remaining</span>
-                                                    </div>
-                                                    <div class="ml-auto">
-                                                        <span class="m-b-0 white-text">15</span>
-                                                    </div>
-                                                </div>
-                                                <div class="progress m-t-10" style="background-color: rgba(0,0,0,.1);">
-                                                    <div class="determinate white" style="width: 15%"></div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col s12 m6 l6">
-                                <div class="card danger-gradient card-hover">
-                                    <div class="card-content">
-                                        <h5 class="card-title white-text">Sales</h5>
-                                        <p class="m-b-5"><span class="white-text op-5">This Month <span class="right">88%</span></span></p>
-                                        <p><span class="white-text op-5">Last Month <span class="right">75%</span></span></p>
-                                    </div>
-                                    <div id="sales" style="height:60px; width:100%;"></div>
-                                </div>
-                            </div>
-                            
                         </div>
-                    </div>                   
+                    </div>
+                     
+                    
+                    <div class="col l3 m6 s12">
+                        <div class="card success-gradient card-hover">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center">
+                                    <div>
+                                        <h2 class="white-text m-b-5">100</h2>
+                                        <h6 class="white-text op-5 text-darken-2">Sales</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col l3 m6 s12">
+                        <div class="card warning-gradient card-hover">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center">
+                                    <div>
+                                        <h2 class="white-text m-b-5">450</h2>
+                                        <h6 class="white-text op-5">Revenue</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="white-text display-6"><i class="material-icons">attach_money</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="row">
+                    <!-- col -->
+                    <div class="row">
+                    <div class="col l3 m6 s12">
+                        <div class="card success-gradient card-hover">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center">
+                                    <div>
+                                        <h2 class="white-text m-b-5">{{$jurusan}}</h2>
+                                        <h6 class="white-text op-5 text-darken-2">Jumlah Jurusan</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l3 m6 s12">
+                        <div class="card success-gradient card-hover">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center">
+                                    <div>
+                                        <h2 class="white-text m-b-5">{{$siswa}}</h2>
+                                        <h6 class="white-text op-5 text-darken-2">Jumlah Siswa</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     
+                    
+                    <div class="col l3 m6 s12">
+                        <div class="card success-gradient card-hover">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center">
+                                    <div>
+                                        <h2 class="white-text m-b-5">{{$dudi}}</h2>
+                                        <h6 class="white-text op-5 text-darken-2">Jumlah Dudi</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col l3 m6 s12">
+                        <div class="card success-gradient card-hover">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center">
+                                    <div>
+                                        <h2 class="white-text m-b-5">{{$jurnal}}</h2>
+                                        <h6 class="white-text op-5 text-darken-2">Jumlah Jurnal Siswa</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    
+                
                 <!-- ============================================================== -->
                 <!-- Table -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <!-- col -->
-                    <div class="col s12">
-                        <div class="card">
-                            <div class="card-content">
-                                <!-- title -->
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h5 class="card-title">Projects of the Month</h5>
-                                        <h6 class="card-subtitle">Overview of Latest Month</h6>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <div class="input-field dl support-select">
-                                            <select>
-                                                <option value="0" selected>Monthly</option>
-                                                <option value="1">Daily</option>
-                                                <option value="2">Weekly</option>
-                                                <option value="3">Yearly</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- title -->
-                                <div class="table-responsive">
-                                    <table class="">
-                                        <thead>
-                                            <tr>
-                                                <th>Team Lead</th>
-                                                <th>Project</th>
-                                                <th>Team</th>
-                                                <th>Status</th>
-                                                <th>Weeks</th>
-                                                <th>Budget</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="m-r-10"><img src="../../assets/images/users/d1.jpg" alt="user" class="circle" width="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="m-b-0 font-16 font-medium">Hanna Gover</h5><span>hgover@gmail.com</span></div>
-                                                    </div>
-                                                </td>
-                                                <td>Elite Admin</td>
-                                                <td>
-                                                    <div class="popover-icon">
-                                                        <a class="btn-floating btn light-blue">SS</a>
-                                                        <a class="btn-floating btn cyan lighten-2">DS</a>
-                                                        <a class="btn-floating btn white"><img src="../../assets/images/users/1.jpg" class="circle" width="41"/></a>
-                                                        <a class="btn-floating btn light-blue lighten-5 blue-text text-darken-1">+</a>
-                                                    </div>
-                                                </td>
-                                                <td><i class="fa fa-circle orange-text tooltipped" data-tooltip="In Progress"></i></td>
-                                                <td>35</td>
-                                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="m-r-10"><img src="../../assets/images/users/d2.jpg" alt="user" class="circle" width="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="m-b-0 font-16 font-medium">Daniel Kristeen</h5><span>Kristeen@gmail.com</span></div>
-                                                    </div>
-                                                </td>
-                                                <td>Elite Admin</td>
-                                                <td>
-                                                    <div class="popover-icon">
-                                                        <a class="btn-floating btn blue accent-4">SS</a>
-                                                        <a class="btn-floating btn purple lighten-1">DS</a>
-                                                        <a class="btn-floating btn light-blue lighten-5 blue-text text-darken-1">+</a>
-                                                    </div>
-                                                </td>
-                                                <td><i class="fa fa-circle teal-text text-accent-4 tooltipped" data-tooltip="Active"></i></td>
-                                                <td>35</td>
-                                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="m-r-10"><img src="../../assets/images/users/d3.jpg" alt="user" class="circle" width="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="m-b-0 font-16 font-medium">Julian Josephs</h5><span>Josephs@gmail.com</span></div>
-                                                    </div>
-                                                </td>
-                                                <td>Elite Admin</td>
-                                                <td>
-                                                    <div class="popover-icon">
-                                                        <a class="btn-floating btn light-blue">SS</a>
-                                                        <a class="btn-floating btn cyan lighten-2">DS</a>
-                                                        <a class="btn-floating btn orange">RP</a>
-                                                        <a class="btn-floating btn light-blue lighten-5 blue-text text-darken-1">+</a>
-                                                    </div>
-                                                </td>
-                                                <td><i class="fa fa-circle teal-text text-accent-4 tooltipped" data-tooltip="Active"></i></td>
-                                                <td>35</td>
-                                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="m-r-10"><img src="../../assets/images/users/2.jpg" alt="user" class="circle" width="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="m-b-0 font-16 font-medium">Jan Petrovic</h5><span>hgover@gmail.com</span></div>
-                                                    </div>
-                                                </td>
-                                                <td>Elite Admin</td>
-                                                <td>
-                                                    <div class="popover-icon">
-                                                        <a class="btn-floating btn light-blue">SS</a>
-                                                        <a class="btn-floating btn light-blue lighten-5 blue-text text-darken-1">+</a>
-                                                    </div>
-                                                </td>
-                                                <td><i class="fa fa-circle orange-text tooltipped" data-tooltip="In Progress"></i></td>
-                                                <td>35</td>
-                                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- ============================================================== -->
                 <!-- Devices - Income - Sales -->
                 <!-- ============================================================== -->
@@ -330,66 +225,11 @@
                 <!-- ============================================================== -->
                 <!-- Projects of the month -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col l4">
-                        <div class="card">
-                            <img class="card-img-top responsive-img" src="../../assets/images/big/img4.jpg" alt="Card image cap">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center m-b-15">
-                                    <span><i class="ti-calendar"></i> 20 May 2018</span>
-                                    <div class="ml-auto">
-                                        <a href="javascript:void(0)" class="link"><i class="ti-comments"></i> 3 Comments</a>
-                                    </div>
-                                </div>
-                                <h5>Featured Hydroflora Pots Garden &amp; Outdoors</h5>
-                                <p class="m-b-0 m-t-10">Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
-                                <button class="waves-effect waves-light btn btn-round indigo m-t-20">Read more</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col l4">
-                        <div class="card">
-                            <img class="card-img-top responsive-img" src="../../assets/images/big/img5.jpg" alt="Card image cap">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center m-b-15">
-                                    <span><i class="ti-calendar"></i> 19 May 2018</span>
-                                    <div class="ml-auto">
-                                        <a href="javascript:void(0)" class="link"><i class="ti-comments"></i> 5 Comments</a>
-                                    </div>
-                                </div>
-                                <h5>Featured Hydroflora Pots Garden &amp; Outdoors</h5>
-                                <p class="m-b-0 m-t-10">Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
-                                <button class="waves-effect waves-light btn btn-round indigo m-t-20">Read more</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col l4">
-                        <div class="card">
-                            <img class="card-img-top responsive-img" src="../../assets/images/big/img6.jpg" alt="Card image cap">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center m-b-15">
-                                    <span><i class="ti-calendar"></i> 29 May 2018</span>
-                                    <div class="ml-auto">
-                                        <a href="javascript:void(0)" class="link"><i class="ti-comments"></i> 6 Comments</a>
-                                    </div>
-                                </div>
-                                <h5>Featured Hydroflora Pots Garden &amp; Outdoors</h5>
-                                <p class="m-b-0 m-t-10">Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
-                                <button class="waves-effect waves-light btn btn-round indigo m-t-20">Read more</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                </div>
+               
             </div>
             <!-- ============================================================== -->
             <!-- Container fluid scss in scafholding.scss -->
             <!-- ============================================================== -->
-            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
+            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">RQ Team</a>.</footer>
         
         @endsection
