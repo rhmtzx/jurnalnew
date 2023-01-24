@@ -1,348 +1,275 @@
-<header class="top-header">
-	<nav class="navbar navbar-expand">
-		<div class="left-topbar d-flex align-items-center">
-			<a href="javascript:;" class="toggle-btn">	<i class="bx bx-menu"></i>
-			</a>
-		</div>
-		<div>
-			<p class="info">
-				<h5>
-					<a href="/" class="d-block" style="color: #000000; align-items: center; display: flex; margin-top: 12px;">
-						Hello {{ Auth::user()->name }}, Welcome To {{ Auth::user()->role }} Page
-					</a>
-				</h5>
-			</p>
-		</div>
-		<div class="flex-grow-1 search-bar">
-			{{-- <div class="input-group">
-				<button class="btn btn-search-back search-arrow-back" type="button"><i class="bx bx-arrow-back"></i></button>
-				<input type="text" class="form-control" placeholder="search" />
-				<button class="btn btn-search" type="button"><i class="lni lni-search-alt"></i></button>
-			</div> --}}
-		</div>
-		<div class="right-topbar ms-auto">
-			<ul class="navbar-nav">
-				<li class="nav-item search-btn-mobile">
-					<a class="nav-link position-relative" href="javascript:;">	<i class="bx bx-search vertical-align-middle"></i>
-					</a>
-				</li>
-				{{-- <li class="nav-item dropdown dropdown-lg">
-					<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="javascript:;" data-bs-toggle="dropdown">	<span class="msg-count">6</span>
-						<i class="bx bx-comment-detail vertical-align-middle"></i>
-					</a>
-					<div class="dropdown-menu dropdown-menu-end">
-						<a href="javascript:;">
-							<div class="msg-header">
-								<h6 class="msg-header-title">6 New</h6>
-								<p class="msg-header-subtitle">Application Messages</p>
-							</div>
-						</a>
-						<div class="header-message-list">
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-1.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Daisy Anderson <span class="msg-time float-end">5 sec
-										ago</span></h6>
-										<p class="msg-info">The standard chunk of lorem</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-2.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Althea Cabardo <span class="msg-time float-end">14
-										sec ago</span></h6>
-										<p class="msg-info">Many desktop publishing packages</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-3.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Oscar Garner <span class="msg-time float-end">8 min
-										ago</span></h6>
-										<p class="msg-info">Various versions have evolved over</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-4.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Katherine Pechon <span class="msg-time float-end">15
-										min ago</span></h6>
-										<p class="msg-info">Making this the first true generator</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-5.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Amelia Doe <span class="msg-time float-end">22 min
-										ago</span></h6>
-										<p class="msg-info">Duis aute irure dolor in reprehenderit</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-6.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Cristina Jhons <span class="msg-time float-end">2 hrs
-										ago</span></h6>
-										<p class="msg-info">The passage is attributed to an unknown</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-7.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">James Caviness <span class="msg-time float-end">4 hrs
-										ago</span></h6>
-										<p class="msg-info">The point of using Lorem</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-8.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Peter Costanzo <span class="msg-time float-end">6 hrs
-										ago</span></h6>
-										<p class="msg-info">It was popularised in the 1960s</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-9.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">David Buckley <span class="msg-time float-end">2 hrs
-										ago</span></h6>
-										<p class="msg-info">Various versions have evolved over</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-10.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Thomas Wheeler <span class="msg-time float-end">2 days
-										ago</span></h6>
-										<p class="msg-info">If you are going to use a passage</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="user-online">
-										<img src="{{ asset('admin/assets/images/avatars/avatar-11.png') }}" class="msg-avatar" alt="user avatar">
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Johnny Seitz <span class="msg-time float-end">5 days
-										ago</span></h6>
-										<p class="msg-info">All the Lorem Ipsum generators</p>
-									</div>
-								</div>
-							</a>
-						</div>
-						<a href="javascript:;">
-							<div class="text-center msg-footer">View All Messages</div>
-						</a>
-					</div>
-				</li> --}}
-				<li class="nav-item dropdown dropdown-lg">
-					<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="javascript:;" data-bs-toggle="dropdown">	<i class="bx bx-bell vertical-align-middle"></i>
-						{{-- <span class="msg-count"></span> --}}
-					</a>
-					<div class="dropdown-menu dropdown-menu-end">
-						<a href="javascript:;">
-							<div class="msg-header">
-								<h6 class="msg-header-title">8 New</h6>
-								<p class="msg-header-subtitle">Application Notifications</p>
-							</div>
-						</a>
-						<div class="header-notifications-list">
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="notify bg-light-primary text-primary"><i class="bx bx-group"></i>
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">New Customers<span class="msg-time float-end">14 Sec
-										ago</span></h6>
-										<p class="msg-info">5 new user registered</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="notify bg-light-danger text-danger"><i class="bx bx-cart-alt"></i>
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">New Orders <span class="msg-time float-end">2 min
-										ago</span></h6>
-										<p class="msg-info">You have recived new orders</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="notify bg-light-shineblue text-shineblue"><i class="bx bx-file"></i>
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">24 PDF File<span class="msg-time float-end">19 min
-										ago</span></h6>
-										<p class="msg-info">The pdf files generated</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="notify bg-light-cyne text-cyne"><i class="bx bx-send"></i>
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">Time Response <span class="msg-time float-end">28 min
-										ago</span></h6>
-										<p class="msg-info">5.1 min avarage time response</p>
-									</div>
-								</div>
-							</a>
-							<a class="dropdown-item" href="javascript:;">
-								<div class="d-flex align-items-center">
-									<div class="notify bg-light-purple text-purple"><i class="bx bx-home-circle"></i>
-									</div>
-									<div class="flex-grow-1">
-										<h6 class="msg-name">New Product Approved <span
-											class="msg-time float-end">2 hrs ago</span></h6>
-											<p class="msg-info">Your new product has approved</p>
-										</div>
-									</div>
-								</a>
-								<a class="dropdown-item" href="javascript:;">
-									<div class="d-flex align-items-center">
-										<div class="notify bg-light-warning text-warning"><i class="bx bx-message-detail"></i>
-										</div>
-										<div class="flex-grow-1">
-											<h6 class="msg-name">New Comments <span class="msg-time float-end">4 hrs
-											ago</span></h6>
-											<p class="msg-info">New customer comments recived</p>
-										</div>
-									</div>
-								</a>
-								<a class="dropdown-item" href="javascript:;">
-									<div class="d-flex align-items-center">
-										<div class="notify bg-light-success text-success"><i class='bx bx-check-square'></i>
-										</div>
-										<div class="flex-grow-1">
-											<h6 class="msg-name">Your item is shipped <span class="msg-time float-end">5 hrs
-											ago</span></h6>
-											<p class="msg-info">Successfully shipped your item</p>
-										</div>
-									</div>
-								</a>
-								<a class="dropdown-item" href="javascript:;">
-									<div class="d-flex align-items-center">
-										<div class="notify bg-light-sinata text-sinata"><i class='bx bx-user-pin'></i>
-										</div>
-										<div class="flex-grow-1">
-											<h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
-											ago</span></h6>
-											<p class="msg-info">24 new authors joined last week</p>
-										</div>
-									</div>
-								</a>
-								<a class="dropdown-item" href="javascript:;">
-									<div class="d-flex align-items-center">
-										<div class="notify bg-light-mehandi text-mehandi"><i class='bx bx-door-open'></i>
-										</div>
-										<div class="flex-grow-1">
-											<h6 class="msg-name">Defense Alerts <span class="msg-time float-end">2 weeks
-											ago</span></h6>
-											<p class="msg-info">45% less alerts last 4 weeks</p>
-										</div>
-									</div>
-								</a>
-							</div>
-							<a href="javascript:;">
-								<div class="text-center msg-footer">View All Notifications</div>
-							</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown dropdown-user-profile">
-						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-							<div class="d-flex user-box align-items-center">
-								<div class="user-info">
-									<p class="user-name mb-0"><em>{{ auth()->user()->name }}</em></p>
-									<p class="designattion mb-0"><em>{{ Auth::user()->role }}</em></p>
-								</div>
-								<img src="{{ asset('admin/assets/images/avatars/avatar-1.png') }}" class="user-img" alt="user avatar">
-							</div>
-						</a>
-						<div class="dropdown-menu dropdown-menu-end">
-							<a class="dropdown-item" href="/profil"><i
-								class="bx bx-user"></i><span>Profile</span></a>
-								{{-- <a class="dropdown-item" href="javascript:;"><i
-									class="bx bx-cog"></i><span>Settings</span></a>
-									<a class="dropdown-item" href="javascript:;"><i
-										class="bx bx-tachometer"></i><span>Dashboard</span></a>
-										<a class="dropdown-item" href="javascript:;"><i
-											class="bx bx-wallet"></i><span>Earnings</span></a>
-											<a class="dropdown-item" href="javascript:;"><i
-												class="bx bx-cloud-download"></i><span>Downloads</span></a> --}}
-												<div class="dropdown-divider mb-0"></div>	<a class="dropdown-item" href="/logout"><i
-													class="bx bx-power-off"></i><span>Logout</span></a>
-												</div>
-											</li>
-											{{-- <li class="nav-item dropdown dropdown-language">
-												<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-													<div class="lang d-flex">
-														<div><i class="flag-icon flag-icon-um"></i>
-														</div>
-														<div><span>En</span>
-														</div>
-													</div>
-												</a>
-												<div class="dropdown-menu dropdown-menu-end">
-													<a class="dropdown-item" href="javascript:;"><i
-														class="flag-icon flag-icon-de"></i><span>German</span></a>
-														<a class="dropdown-item" href="javascript:;"><i
-															class="flag-icon flag-icon-fr"></i><span>French</span></a>
-															<a class="dropdown-item" href="javascript:;"><i
-																class="flag-icon flag-icon-um"></i><span>English</span></a>
-																<a class="dropdown-item" href="javascript:;"><i
-																	class="flag-icon flag-icon-in"></i><span>Hindi</span></a>
-																	<a class="dropdown-item" href="javascript:;"><i
-																		class="flag-icon flag-icon-cn"></i><span>Chinese</span></a>
-																		<a class="dropdown-item" href="javascript:;"><i
-																			class="flag-icon flag-icon-ae"></i><span>Arabic</span></a>
-																		</div>
-																	</li> --}}
-																</ul>
-															</div>
-														</nav>
-													</header>
+ <header class="topbar">
+            <!-- ============================================================== -->
+            <!-- Navbar scss in header.scss -->
+            <!-- ============================================================== -->
+            <nav>
+                <div class="nav-wrapper">
+                    <!-- ============================================================== -->
+                    <!-- Logo you can find that scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <a href="javascript:void(0)" class="brand-logo">
+                        <span class="icon">
+                            <img class="light-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-light-icon.png')}}">
+                            <img class="dark-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-icon.png')}}">
+                        </span>
+                        <span class="text">
+                            <img class="light-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-light-text.png')}}">
+                            <img class="dark-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-text.png')}}">
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- Logo you can find that scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Left topbar icon scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <ul class="left">
+                        <li class="hide-on-med-and-down">
+                            <a href="javascript: void(0);" class="nav-toggle">
+                                <span class="bars bar1"></span>
+                                <span class="bars bar2"></span>
+                                <span class="bars bar3"></span>
+                            </a>
+                        </li>
+                        <li class="hide-on-large-only">
+                            <a href="javascript: void(0);" class="sidebar-toggle">
+                                <span class="bars bar1"></span>
+                                <span class="bars bar2"></span>
+                                <span class="bars bar3"></span>
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Notification icon scss in header.scss -->
+                        <!-- ============================================================== -->
+                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="noti_dropdown"><i class="material-icons">notifications</i></a>
+                            <ul id="noti_dropdown" class="mailbox dropdown-content">
+                                <li>
+                                    <div class="drop-title">Notifications</div>
+                                </li>
+                                <li>
+                                    <div class="message-center">
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large red"><i class="material-icons">link</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Launch Admin</h5>
+                                                    <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large blue"><i class="material-icons">date_range</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Event today</h5>
+                                                    <span class="mail-desc">Just a reminder that you have event</span>
+                                                    <span class="time">9:10 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large cyan"><i class="material-icons">settings</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Settings</h5>
+                                                    <span class="mail-desc">You can customize this template as you want</span>
+                                                    <span class="time">9:08 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large green"><i class="material-icons">face</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Lily Jordan</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                    <span class="time">9:02 AM</span>
+                                                </span>
+                                            </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="center-align" href="javascript:void(0);"> <strong>Check all notifications</strong> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Comment topbar icon scss in header.scss -->
+                        <!-- ============================================================== -->
+                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="msg_dropdown"><i class="material-icons">comment</i></a>
+                            <ul id="msg_dropdown" class="mailbox dropdown-content">
+                                <li>
+                                    <div class="drop-title">You have 4 new messages</div>
+                                </li>
+                                <li>
+                                    <div class="message-center">
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="user-img">
+                                                    <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/1.jpg')}}" alt="user" class="circle">
+                                                    <span class="profile-status online pull-right"></span>
+                                                </span>
+                                                <span class="mail-contnet">
+                                                    <h5>Chris Evans</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                    <span class="time">9:30 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="user-img">
+                                                    <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/2.jpg')}}" alt="user" class="circle">
+                                                    <span class="profile-status busy pull-right"></span>
+                                                </span>
+                                                <span class="mail-contnet">
+                                                    <h5>Ray Hudson</h5>
+                                                    <span class="mail-desc">I've sung a song! See you at</span>
+                                                    <span class="time">9:10 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="user-img">
+                                                    <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/3.jpg')}}" alt="user" class="circle">
+                                                    <span class="profile-status away pull-right"></span>
+                                                </span>
+                                                <span class="mail-contnet">
+                                                    <h5>Lb James</h5>
+                                                    <span class="mail-desc">I am a singer!</span>
+                                                    <span class="time">9:08 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="user-img">
+                                                    <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/4.jpg')}}" alt="user" class="circle">
+                                                    <span class="profile-status offline pull-right"></span>
+                                                </span>
+                                                <span class="mail-contnet">
+                                                    <h5>Don Andres</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                    <span class="time">9:02 AM</span>
+                                                </span>
+                                            </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="center-align" href="javascript:void(0);"> <strong>See all e-Mails</strong> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="search-box">
+                            <a href="javascript: void(0);"><i class="material-icons">search</i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fas fa-times"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Left topbar icon scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Right topbar icon scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <ul class="right">
+                    	<li><a class="dropdown-trigger" href="javascript: void(0);" data-target="noti_dropdown"><i class="material-icons">notifications</i></a>
+                            <ul id="noti_dropdown" class="mailbox dropdown-content">
+                                <li>
+                                    <div class="drop-title">Notifications</div>
+                                </li>
+                                <li>
+                                    <div class="message-center">
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large red"><i class="material-icons">link</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Launch Admin</h5>
+                                                    <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large blue"><i class="material-icons">date_range</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Event today</h5>
+                                                    <span class="mail-desc">Just a reminder that you have event</span>
+                                                    <span class="time">9:10 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large cyan"><i class="material-icons">settings</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Settings</h5>
+                                                    <span class="mail-desc">You can customize this template as you want</span>
+                                                    <span class="time">9:08 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large green"><i class="material-icons">face</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Lily Jordan</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                    <span class="time">9:02 AM</span>
+                                                </span>
+                                            </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="center-align" href="javascript:void(0);"> <strong>Check all notifications</strong> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li class="lang-dropdown"><a class="dropdown-trigger" href="javascript: void(0);" data-target="lang_dropdown"><i class="flag-icon flag-icon-us"></i></a>
+                            <ul id="lang_dropdown" class="dropdown-content">
+                                <li>
+                                    <a href="#!" class="grey-text text-darken-1">
+                                        <i class="flag-icon flag-icon-us"></i> English</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="grey-text text-darken-1">
+                                        <i class="flag-icon flag-icon-fr"></i> French</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="grey-text text-darken-1">
+                                        <i class="flag-icon flag-icon-es"></i> Spanish</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="grey-text text-darken-1">
+                                        <i class="flag-icon flag-icon-de"></i> German</a>
+                                </li>
+                            </ul>
+                        </li> -->
+                        <!-- ============================================================== -->
+                        <!-- Profile icon scss in header.scss -->
+                        <!-- ============================================================== -->
+                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/2.jpg')}}" alt="user" class="circle profile-pic"></a>
+                            <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
+                                <li>
+                                    <div class="dw-user-box">
+                                        <div class="u-img"><img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/2.jpg')}}" alt="user"></div>
+                                        <div class="u-text">
+                                            <h4>{{ Auth::user()->name }}</h4>
+                                            <p>{{ Auth::user()->email }}</p>
+                                            <a class="waves-effect waves-light btn-small red white-text">View Profile</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/profil"><i class="material-icons">account_circle</i> My Profile</a></li>
+<!--                                 <li><a href="#"><i class="material-icons">account_balance_wallet</i> My Balance</a></li>
+                                <li><a href="#"><i class="material-icons">inbox</i> Inbox</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#"><i class="material-icons">settings</i> Account Setting</a></li> -->
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/logout"><i class="material-icons">power_settings_new</i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right topbar icon scss in header.scss -->
+                    <!-- ============================================================== -->
+                </div>
+            </nav>
+            <!-- ============================================================== -->
+            <!-- Navbar scss in header.scss -->
+            <!-- ============================================================== -->
+        </header>

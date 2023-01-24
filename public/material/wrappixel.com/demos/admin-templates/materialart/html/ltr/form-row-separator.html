@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/form-row-separator.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:19:55 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>Materialart Admin Template</title>
+    <link href="../../dist/css/style.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <link href="../../dist/css/pages/form-page.css" rel="stylesheet">
+    <link href="../../assets/extra-libs/prism/prism.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper" id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">Material Admin</p>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <!-- ============================================================== -->
+            <!-- Navbar scss in header.scss -->
+            <!-- ============================================================== -->
+            <nav>
+                <div class="nav-wrapper">
+                    <!-- ============================================================== -->
+                    <!-- Logo you can find that scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <a href="javascript:void(0)" class="brand-logo">
+                        <span class="icon">
+                            <img class="light-logo" src="../../assets/images/logo-light-icon.png">
+                            <img class="dark-logo" src="../../assets/images/logo-icon.png">
+                        </span>
+                        <span class="text">
+                            <img class="light-logo" src="../../assets/images/logo-light-text.png">
+                            <img class="dark-logo" src="../../assets/images/logo-text.png">
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- Logo you can find that scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Left topbar icon scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <ul class="left">
+                        <li class="hide-on-med-and-down">
+                            <a href="javascript: void(0);" class="nav-toggle">
+                                <span class="bars bar1"></span>
+                                <span class="bars bar2"></span>
+                                <span class="bars bar3"></span>
+                            </a>
+                        </li>
+                        <li class="hide-on-large-only">
+                            <a href="javascript: void(0);" class="sidebar-toggle">
+                                <span class="bars bar1"></span>
+                                <span class="bars bar2"></span>
+                                <span class="bars bar3"></span>
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Notification icon scss in header.scss -->
+                        <!-- ============================================================== -->
+                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="noti_dropdown"><i class="material-icons">notifications</i></a>
+                            <ul id="noti_dropdown" class="mailbox dropdown-content">
+                                <li>
+                                    <div class="drop-title">Notifications</div>
+                                </li>
+                                <li>
+                                    <div class="message-center">
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large red"><i class="material-icons">link</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Launch Admin</h5>
+                                                    <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large blue"><i class="material-icons">date_range</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Event today</h5>
+                                                    <span class="mail-desc">Just a reminder that you have event</span>
+                                                    <span class="time">9:10 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large cyan"><i class="material-icons">settings</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Settings</h5>
+                                                    <span class="mail-desc">You can customize this template as you want</span>
+                                                    <span class="time">9:08 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="btn-floating btn-large green"><i class="material-icons">face</i></span>
+                                                <span class="mail-contnet">
+                                                    <h5>Lily Jordan</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                    <span class="time">9:02 AM</span>
+                                                </span>
+                                            </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="center-align" href="javascript:void(0);"> <strong>Check all notifications</strong> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Comment topbar icon scss in header.scss -->
+                        <!-- ============================================================== -->
+                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="msg_dropdown"><i class="material-icons">comment</i></a>
+                            <ul id="msg_dropdown" class="mailbox dropdown-content">
+                                <li>
+                                    <div class="drop-title">You have 4 new messages</div>
+                                </li>
+                                <li>
+                                    <div class="message-center">
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="user-img">
+                                                    <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
+                                                    <span class="profile-status online pull-right"></span>
+                                                </span>
+                                                <span class="mail-contnet">
+                                                    <h5>Chris Evans</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                    <span class="time">9:30 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="user-img">
+                                                    <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
+                                                    <span class="profile-status busy pull-right"></span>
+                                                </span>
+                                                <span class="mail-contnet">
+                                                    <h5>Ray Hudson</h5>
+                                                    <span class="mail-desc">I've sung a song! See you at</span>
+                                                    <span class="time">9:10 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="user-img">
+                                                    <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
+                                                    <span class="profile-status away pull-right"></span>
+                                                </span>
+                                                <span class="mail-contnet">
+                                                    <h5>Lb James</h5>
+                                                    <span class="mail-desc">I am a singer!</span>
+                                                    <span class="time">9:08 AM</span>
+                                                </span>
+                                            </a>
+                                        <!-- Message -->
+                                        <a href="#">
+                                                <span class="user-img">
+                                                    <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
+                                                    <span class="profile-status offline pull-right"></span>
+                                                </span>
+                                                <span class="mail-contnet">
+                                                    <h5>Don Andres</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                    <span class="time">9:02 AM</span>
+                                                </span>
+                                            </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="center-align" href="javascript:void(0);"> <strong>See all e-Mails</strong> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="search-box">
+                            <a href="javascript: void(0);"><i class="material-icons">search</i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Left topbar icon scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Right topbar icon scss in header.scss -->
+                    <!-- ============================================================== -->
+                    <ul class="right">
+                        <li class="lang-dropdown"><a class="dropdown-trigger" href="javascript: void(0);" data-target="lang_dropdown"><i class="flag-icon flag-icon-in"></i></a>
+                            <ul id="lang_dropdown" class="dropdown-content">
+                                <li>
+                                    <a href="#!" class="grey-text text-darken-1">
+                                        <i class="flag-icon flag-icon-us"></i> English</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="grey-text text-darken-1">
+                                        <i class="flag-icon flag-icon-fr"></i> French</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="grey-text text-darken-1">
+                                        <i class="flag-icon flag-icon-es"></i> Spanish</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="grey-text text-darken-1">
+                                        <i class="flag-icon flag-icon-de"></i> German</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Profile icon scss in header.scss -->
+                        <!-- ============================================================== -->
+                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img src="../../assets/images/users/2.jpg" alt="user" class="circle profile-pic"></a>
+                            <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
+                                <li>
+                                    <div class="dw-user-box">
+                                        <div class="u-img"><img src="../../assets/images/users/2.jpg" alt="user"></div>
+                                        <div class="u-text">
+                                            <h4>Steve Harvey</h4>
+                                            <p>steve@gmail.com</p>
+                                            <a class="waves-effect waves-light btn-small red white-text">View Profile</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#"><i class="material-icons">account_circle</i> My Profile</a></li>
+                                <li><a href="#"><i class="material-icons">account_balance_wallet</i> My Balance</a></li>
+                                <li><a href="#"><i class="material-icons">inbox</i> Inbox</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#"><i class="material-icons">settings</i> Account Setting</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#"><i class="material-icons">power_settings_new</i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right topbar icon scss in header.scss -->
+                    <!-- ============================================================== -->
+                </div>
+            </nav>
+            <!-- ============================================================== -->
+            <!-- Navbar scss in header.scss -->
+            <!-- ============================================================== -->
+        </header>
+        <!-- ============================================================== -->
+        <!-- Sidebar scss in sidebar.scss -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <ul id="slide-out" class="sidenav">
+                <li>
+                    <ul class="collapsible collapsiblebox">
+                        <li class="small-cap"><span class="hide-menu">PERSONAL</span></li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <ul>
+                                    <li><a href="index.html"><i class="material-icons">adjust</i><span class="hide-menu">Dashboard-1</span></a></li>
+                                    <li><a href="index2.html"><i class="material-icons">adjust</i><span class="hide-menu">Dashboard-2</span></a></li>
+                                    <li><a href="index3.html"><i class="material-icons">adjust</i><span class="hide-menu">Dashboard-3</span></a></li>
+                                    <li><a href="index4.html"><i class="material-icons">adjust</i><span class="hide-menu">Dashboard-4</span></a></li>
+                                </ul>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">equalizer</i><span class="hide-menu"> Sidebar Types </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="sidebar-type-minisidebar.html"><i class="material-icons">photo_size_select_small</i><span class="hide-menu">Minisidebar</span></a></li>
+                                    <li><a href="sidebar-type-iconbar.html"><i class="material-icons">picture_in_picture</i><span class="hide-menu">Icon Sidebar</span></a></li>
+                                    <li><a href="sidebar-type-overlay.html"><i class="material-icons">low_priority</i><span class="hide-menu">Overlay Sidebar</span></a></li>
+                                    <li><a href="sidebar-type-fullsidebar.html"><i class="material-icons">present_to_all</i><span class="hide-menu">Full Sidebar</span></a></li>
+                                    <li><a href="sidebar-type-horizontalsidebar.html"><i class="material-icons">power_input</i><span class="hide-menu">Horizontal Sidebar</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">library_books</i><span class="hide-menu"> Page Layouts </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="layout-inner-fixed-left-sidebar.html"><i class="material-icons">format_align_left</i><span class="hide-menu">Inner Fixed Left Sidebar</span></a></li>
+                                    <li><a href="layout-inner-fixed-right-sidebar.html"><i class="material-icons">format_align_right</i><span class="hide-menu">Inner Fixed Right Sidebar</span></a></li>
+                                    <li><a href="layout-inner-left-sidebar.html"><i class="material-icons">format_indent_increase</i><span class="hide-menu">Inner Left Sidebar</span></a></li>
+                                    <li><a href="layout-inner-right-sidebar.html"><i class="material-icons">format_indent_decrease</i><span class="hide-menu">Inner Right Sidebar</span></a></li>
+                                    <li><a href="page-layout-fixed-header.html"><i class="material-icons">line_weight</i><span class="hide-menu">Fixed Header</span></a></li>
+                                    <li><a href="page-layout-fixed-sidebar.html"><i class="material-icons">line_weight</i><span class="hide-menu">Fixed Sidebar</span></a></li>
+                                    <li><a href="page-layout-fixed-header-sidebar.html"><i class="material-icons">format_align_center</i><span class="hide-menu">Fixed Header & Sidebar</span></a></li>
+                                    <li><a href="page-layout-boxed-layout.html"><i class="material-icons">format_line_spacing</i><span class="hide-menu">Boxed Layout</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="small-cap"><span class="hide-menu">Apps</span></li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">move_to_inbox</i><span class="hide-menu"> Inbox</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="inbox-email.html"><i class="material-icons">email</i><span class="hide-menu">Email</span></a></li>
+                                    <li><a href="inbox-email-detail.html"><i class="material-icons">markunread_mailbox</i><span class="hide-menu">Email Detail</span></a></li>
+                                    <li><a href="inbox-compose.html"><i class="material-icons">contact_mail</i><span class="hide-menu">Email Compose</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">bookmark_border</i><span class="hide-menu"> Ticket</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="ticket-list.html"><i class="material-icons">collections_bookmark</i><span class="hide-menu">Ticket List</span></a></li>
+                                    <li><a href="ticket-detail.html"><i class="material-icons">bookmark</i><span class="hide-menu">Ticket Detail</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">donut_small</i><span class="hide-menu"> Extra</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="app-chats.html"><i class="material-icons">chat</i><span class="hide-menu">Chat Apps</span></a></li>
+                                    <li><a href="app-taskboard.html"><i class="material-icons">dvr</i><span class="hide-menu">Taskboard</span></a></li>
+                                    <li><a href="app-contact.html"><i class="material-icons">dialer_sip</i><span class="hide-menu">Contact</span></a></li>
+                                    <li><a href="app-contact2.html"><i class="material-icons">contacts</i><span class="hide-menu">Contact Grid</span></a></li>
+                                    <li><a href="app-contact-detail.html"><i class="material-icons">contact_phone</i><span class="hide-menu">Contact Detail</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="app-calendar.html" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Calendar </span></a>
+                            <div class="collapsible-body">
+                                <ul></ul>
+                            </div> 
+                        </li>
+
+                        <li class="small-cap"><span class="hide-menu">UI</span></li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">widgets</i><span class="hide-menu"> UI Elements </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="ui-badge.html"><i class="material-icons">crop_3_2</i><span class="hide-menu">Badges</span></a></li>
+                                    <li><a href="ui-button.html"><i class="material-icons">hdr_strong</i><span class="hide-menu">Buttons</span></a></li>
+                                    <li><a href="ui-breadcrumbs.html"><i class="material-icons">drag_handle</i><span class="hide-menu">Breadcrumbs</span></a></li>
+                                    <li><a href="ui-collections.html"><i class="material-icons">nfc</i><span class="hide-menu">Collections</span></a></li>
+                                    <li><a href="ui-floating-action-button.html"><i class="material-icons">panorama_horizontal</i><span class="hide-menu">Floating Action Button</span></a></li>
+                                    <li><a href="ui-footer.html"><i class="material-icons">video_label</i><span class="hide-menu">Footer</span></a></li>
+                                    <li><a href="ui-navbar.html"><i class="material-icons">view_compact</i><span class="hide-menu">Navbar</span></a></li>
+                                    <li><a href="ui-pagination.html"><i class="material-icons">swap_horiz</i><span class="hide-menu">Pagination</span></a></li>
+                                    <li><a href="ui-preloader.html"><i class="material-icons">sync</i><span class="hide-menu">Preloader</span></a></li>
+                                    <li><a href="ui-sweetalert.html"><i class="material-icons">filter_vintage</i><span class="hide-menu">Sweetalert</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">credit_card</i><span class="hide-menu"> Cards </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="ui-cards.html"><i class="material-icons">layers</i><span class="hide-menu">Basic Cards</span></a></li>
+                                    <li><a href="ui-card-customs.html"><i class="material-icons">card_membership</i><span class="hide-menu">Custom Cards</span></a></li>
+                                    <li><a href="ui-card-draggable.html"><i class="material-icons">card_giftcard</i><span class="hide-menu">Draggable Cards</span></a></li>
+                                    <li><a href="ui-card-weather.html"><i class="material-icons">grain</i><span class="hide-menu">Weather Cards</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">compare</i><span class="hide-menu"> Components </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="component-noui-slider.html"><i class="material-icons">compare_arrows</i><span class="hide-menu">Noui Silder</span></a></li>
+                                    <li><a href="component-toastr.html"><i class="material-icons">cast</i><span class="hide-menu">Toastr</span></a></li>
+                                    <li><a href="component-rating.html"><i class="material-icons">star_half</i><span class="hide-menu">Rating</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">dns</i><span class="hide-menu"> Advanced UI </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="advanced-ui-carousel.html"><i class="material-icons">view_carousel</i><span class="hide-menu">Carousel</span></a></li>
+                                    <li><a href="advanced-ui-collapsible.html"><i class="material-icons">view_day</i><span class="hide-menu">Collapsible</span></a></li>
+                                    <li><a href="advanced-ui-dropdown.html"><i class="material-icons">vertical_align_bottom</i><span class="hide-menu">Dropdown</span></a></li>
+                                    <li><a href="advanced-ui-feature-discovery.html"><i class="material-icons">videogame_asset</i><span class="hide-menu">Feature Discovery</span></a></li>
+                                    <li><a href="advanced-ui-media.html"><i class="material-icons">video_library</i><span class="hide-menu">Media</span></a></li>
+                                    <li><a href="advanced-ui-modal.html"><i class="material-icons">vignette</i><span class="hide-menu">Modals</span></a></li>
+                                    <li><a href="advanced-ui-parallax.html"><i class="material-icons">view_day</i><span class="hide-menu">Parallax</span></a></li>
+                                    <li><a href="advanced-ui-pushpin.html"><i class="material-icons">wrap_text</i><span class="hide-menu">Pushpin</span></a></li>
+                                    <li><a href="advanced-ui-scrollspy.html"><i class="material-icons">theaters</i><span class="hide-menu">Scrollspy</span></a></li>
+                                    <li><a href="advanced-ui-sidenav.html"><i class="material-icons">web</i><span class="hide-menu">Sidenav</span></a></li>
+                                    <li><a href="advanced-ui-tabs.html"><i class="material-icons">short_text</i><span class="hide-menu">Tabs</span></a></li>
+                                    <li><a href="advanced-ui-toasts.html"><i class="material-icons">tab_unselected</i><span class="hide-menu">Toast</span></a></li>
+                                    <li><a href="advanced-ui-tooltips.html"><i class="material-icons">spa</i><span class="hide-menu">Tooltips</span></a></li>
+                                    <li><a href="advanced-ui-waves.html"><i class="material-icons">polymer</i><span class="hide-menu">Waves</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">brightness_7</i><span class="hide-menu"> CSS </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="ui-color.html"><i class="material-icons">looks</i><span class="hide-menu">Color</span></a></li>
+                                    <li><a href="ui-grid.html"><i class="material-icons">view_module</i><span class="hide-menu">Grid</span></a></li>
+                                    <li><a href="ui-helper.html"><i class="material-icons">live_help</i><span class="hide-menu">Helpers</span></a></li>
+                                    <li><a href="ui-media-css.html"><i class="material-icons">live_tv</i><span class="hide-menu">Media</span></a></li>
+                                    <li><a href="ui-pulse.html"><i class="material-icons">linear_scale</i><span class="hide-menu">Pulse</span></a></li>
+                                    <li><a href="ui-sass.html"><i class="material-icons">group_work</i><span class="hide-menu">Sass</span></a></li>
+                                    <li><a href="ui-shadow.html"><i class="material-icons">graphic_eq</i><span class="hide-menu">Shadow</span></a></li>
+                                    <li><a href="ui-transitions.html"><i class="material-icons">gesture</i><span class="hide-menu">Transitions</span></a></li>
+                                    <li><a href="ui-typography.html"><i class="material-icons">format_shapes</i><span class="hide-menu">Typography</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="small-cap"><span class="hide-menu">FORMS</span></li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">receipt</i><span class="hide-menu"> Form Elements </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="form-autocomplete.html"><i class="material-icons">format_indent_increase</i><span class="hide-menu">Autocomplete</span></a></li>
+                                    <li><a href="form-checkboxes.html"><i class="material-icons">check_circle</i><span class="hide-menu">Checkboxes</span></a></li>
+                                    <li><a href="form-chips.html"><i class="material-icons">collections_bookmark</i><span class="hide-menu">Chips</span></a></li>
+                                    <li><a href="form-pickers.html"><i class="material-icons">colorize</i><span class="hide-menu">Pickers</span></a></li>
+                                    <li><a href="form-radio-buttons.html"><i class="material-icons">album</i><span class="hide-menu">Radio Buttons</span></a></li>
+                                    <li><a href="form-range.html"><i class="material-icons">compare</i><span class="hide-menu">Range</span></a></li>
+                                    <li><a href="form-select.html"><i class="material-icons">check_box</i><span class="hide-menu">Select</span></a></li>
+                                    <li><a href="form-switch.html"><i class="material-icons">confirmation_number</i><span class="hide-menu">Switch</span></a></li>
+                                    <li><a href="form-text-inputs.html"><i class="material-icons">flash_auto</i><span class="hide-menu">Text Input</span></a></li>
+                                    <li><a href="form-inputs.html"><i class="material-icons">call_to_action</i><span class="hide-menu">Form Inputs</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">content_copy</i><span class="hide-menu"> Form Pages </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="form-masks.html"><i class="material-icons">filter_none</i><span class="hide-menu">Form Mask & Typehead</span></a></li>
+                                    <li><a href="form-layouts.html"><i class="material-icons">filter_b_and_w</i><span class="hide-menu">Form Layout</span></a></li>
+                                    <li><a href="form-input-grid.html"><i class="material-icons">border_inner</i><span class="hide-menu">Form Input Grid</span></a></li>
+                                    <li><a href="form-hidden-label.html"><i class="material-icons">border_style</i><span class="hide-menu">Form Hidden Label</span></a></li>
+                                    <li><a href="form-horizontal.html"><i class="material-icons">art_track</i><span class="hide-menu">Form Horizontal</span></a></li>
+                                    <li><a href="form-bordered.html"><i class="material-icons">filter_frames</i><span class="hide-menu">Form with Border</span></a></li>
+                                    <li><a href="form-row-separator.html"><i class="material-icons">chrome_reader_mode</i><span class="hide-menu">Form Row Separator</span></a></li>
+                                    <li><a href="form-row-striped.html"><i class="material-icons">assignment</i><span class="hide-menu">Form Row Striped</span></a></li>
+                                    <li><a href="form-label-striped.html"><i class="material-icons">border_horizontal</i><span class="hide-menu">Form Label Striped</span></a></li>
+                                    <li><a href="form-repeater.html"><i class="material-icons">photo_filter</i><span class="hide-menu">Form Repeater</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="form-validation.html" class="collapsible-header"><i class="material-icons">assignment_late</i><span class="hide-menu"> Form Validation </span></a>
+                             <div class="collapsible-body">
+                                <ul></ul>
+                            </div> 
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">center_focus_weak</i><span class="hide-menu"> Form Pickers </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="form-picker-colorpicker.html"><i class="material-icons">brightness_4</i><span class="hide-menu">Form Colorpicker</span></a></li>
+                                    <li><a href="form-picker-datetimepicker.html"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu">Form Datetimepicker</span></a></li>
+                                    <li><a href="form-picker-material-datepicker.html"><i class="material-icons">brightness_high</i><span class="hide-menu">Form Material Datepicker</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">input</i><span class="hide-menu"> Form Editors </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="form-editor-ckeditor.html"><i class="material-icons">memory</i><span class="hide-menu">Form Ckeditor</span></a></li>
+                                    <li><a href="form-editor-tinymce.html"><i class="material-icons">brightness_4</i><span class="hide-menu">Form Tinymce</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="form-wizard.html" class="collapsible-header"><i class="material-icons">developer_board</i><span class="hide-menu"> Form Wizard </span></a>
+                             <div class="collapsible-body">
+                                <ul></ul>
+                            </div> 
+                        </li>
+
+                        <li class="small-cap"><span class="hide-menu">Tables</span></li>
+                        <li>
+                            <a href="table-basic.html" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Basic Table </span></a>
+                            <div class="collapsible-body">
+                                <ul></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="table-editable.html" class="collapsible-header"><i class="material-icons">graphic_eq</i><span class="hide-menu"> Editable Table </span></a>
+                            <div class="collapsible-body">
+                                <ul></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="table-jsgrid.html" class="collapsible-header"><i class="material-icons">grain</i><span class="hide-menu"> Jsgrid Table </span></a>
+                            <div class="collapsible-body">
+                                <ul></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="table-footable.html" class="collapsible-header"><i class="material-icons">gamepad</i><span class="hide-menu"> Footable Table </span></a>
+                            <div class="collapsible-body">
+                                <ul></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">blur_linear</i><span class="hide-menu"> Datatables</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="table-datatable-basic.html"><i class="material-icons">border_vertical</i><span class="hide-menu"> Basic Initialisation</span></a></li>
+                                    <li><a href="table-datatable-api.html"><i class="material-icons">border_outer</i><span class="hide-menu"> API</span></a></li>
+                                    <li><a href="table-datatable-advanced.html"><i class="material-icons">border_style</i><span class="hide-menu"> Advanced Initialisation</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="small-cap"><span class="hide-menu">Charts</span></li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">pie_chart</i><span class="hide-menu"> Charts</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="chart-chartist.html"><i class="material-icons">blur_on</i><span class="hide-menu"> Chartist Chart</span></a></li>
+                                    <li><a href="chart-chartjs.html"><i class="material-icons">ac_unit</i><span class="hide-menu"> Chartjs Chart</span></a></li>
+                                    <li><a href="chart-extra-chart.html"><i class="material-icons">explicit</i><span class="hide-menu"> Extra Chart</span></a></li>
+                                    <li><a href="chart-flot.html"><i class="material-icons">insert_chart</i><span class="hide-menu"> Flot Chart</span></a></li>
+                                    <li><a href="chart-knob.html"><i class="material-icons">device_hub</i><span class="hide-menu"> Knob Chart</span></a></li>
+                                    <li><a href="chart-morris.html"><i class="material-icons">filter_tilt_shift</i><span class="hide-menu"> Morris Chart</span></a></li>
+                                    <li><a href="chart-peity.html"><i class="material-icons">explore</i><span class="hide-menu"> Peity Chart</span></a></li>
+                                    <li><a href="chart-sparkline.html"><i class="material-icons">flare</i><span class="hide-menu"> Sparkline Chart</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">insert_chart</i><span class="hide-menu">C3 Charts</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="chart-c3-axis.html"><i class="material-icons">pie_chart_outlined</i><span class="hide-menu"> Axis Chart</span></a></li>
+                                    <li><a href="chart-c3-bar.html"><i class="material-icons">show_chart</i><span class="hide-menu"> Bar Chart</span></a></li>
+                                    <li><a href="chart-c3-data.html"><i class="material-icons">bubble_chart</i><span class="hide-menu"> Data Chart</span></a></li>
+                                    <li><a href="chart-c3-line.html"><i class="material-icons">line_style</i><span class="hide-menu"> Line Chart</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">multiline_chart</i><span class="hide-menu">Echarts</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="chart-echart-basic.html"><i class="material-icons">trending_up</i><span class="hide-menu"> Basic Chart</span></a></li>
+                                    <li><a href="chart-echart-bar.html"><i class="material-icons">signal_cellular_4_bar</i><span class="hide-menu"> Bar Chart</span></a></li>
+                                    <li><a href="chart-echart-pie-doughnut.html"><i class="material-icons">my_location</i><span class="hide-menu"> Pie & Doughnut Chart</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="small-cap"><span class="hide-menu">Authentication</span></li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">account_circle</i><span class="hide-menu"> Authentication</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="authentication-login1.html"><i class="material-icons">account_circle</i><span class="hide-menu"> Login 1</span></a></li>
+                                    <li><a href="authentication-login2.html"><i class="material-icons">account_circle</i><span class="hide-menu"> Login 2</span></a></li>
+                                    <li><a href="authentication-register1.html"><i class="material-icons">person_add</i><span class="hide-menu"> Register 1</span></a></li>
+                                    <li><a href="authentication-register2.html"><i class="material-icons">person_add</i><span class="hide-menu"> Register 2</span></a></li>
+                                    <li><a href="authentication-lockscreen.html"><i class="material-icons">lock_outline</i><span class="hide-menu"> Lockscreen</span></a></li>
+                                    <li><a href="authentication-recover-password.html"><i class="material-icons">lock_open</i><span class="hide-menu"> Recover Password</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">group</i><span class="hide-menu"> Users</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="ui-user-card.html"><i class="material-icons">assignment_ind</i><span class="hide-menu"> User Card</span></a></li>
+                                    <li><a href="ui-user-contacts.html"><i class="material-icons">assignment_turned_in</i><span class="hide-menu"> User Contact</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">assignment</i><span class="hide-menu"> Invoice</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="page-invoice.html"><i class="material-icons">featured_video</i><span class="hide-menu"> Invoice Layout</span></a></li>
+                                    <li><a href="page-invoice-list.html"><i class="material-icons">featured_play_list</i><span class="hide-menu"> Invoice List</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">map</i><span class="hide-menu"> Map</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="map-google.html"><i class="material-icons">add_location</i><span class="hide-menu"> Google Map</span></a></li>
+                                    <li><a href="map-vector.html"><i class="material-icons">location_searching</i><span class="hide-menu"> Vector Map</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">explore</i><span class="hide-menu"> Timeline</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="timeline-center.html"><i class="material-icons">import_export</i><span class="hide-menu"> Center Timeline</span></a></li>
+                                    <li><a href="timeline-horizontal.html"><i class="material-icons">compare_arrows</i><span class="hide-menu"> Horizontal Timeline</span></a></li>
+                                    <li><a href="timeline-left.html"><i class="material-icons">hdr_weak</i><span class="hide-menu"> Left Timeline</span></a></li>
+                                    <li><a href="timeline-right.html"><i class="material-icons">hdr_strong</i><span class="hide-menu"> Right Timeline</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="small-cap"><span class="hide-menu">Extra</span></li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">shopping_cart</i><span class="hide-menu"> Ecommerce Pages </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="eco-products.html"><i class="material-icons">add_to_photos</i><span class="hide-menu">Products</span></a></li>
+                                    <li><a href="eco-products-cart.html"><i class="material-icons">chrome_reader_mode</i><span class="hide-menu">Product Carts</span></a></li>
+                                    <li><a href="eco-products-edit.html"><i class="material-icons">add_shopping_cart</i><span class="hide-menu">Product Edit</span></a></li>
+                                    <li><a href="eco-products-detail.html"><i class="material-icons">assignment</i><span class="hide-menu">Product Details</span></a></li>
+                                    <li><a href="eco-products-orders.html"><i class="material-icons">airplay</i><span class="hide-menu">Product Order</span></a></li>
+                                    <li><a href="eco-products-checkout.html"><i class="material-icons">assignment_turned_in</i><span class="hide-menu">Product Checkout</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">center_focus_strong</i><span class="hide-menu"> Sample Pages </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="starter-page.html"><i class="material-icons">crop_free</i><span class="hide-menu">Starter Page</span></a></li>
+                                    <li><a href="page-animation.html"><i class="material-icons">crop_original</i><span class="hide-menu">Animation</span></a></li>
+                                    <li><a href="page-faq.html"><i class="material-icons">device_hub</i><span class="hide-menu">FAQ</span></a></li>
+                                    <li><a href="page-gallery.html"><i class="material-icons">developer_board</i><span class="hide-menu">Gallery</span></a></li>
+                                    <li><a href="page-inner-right-sidebar.html"><i class="material-icons">view_column</i><span class="hide-menu">Inner Right Sidebar</span></a></li>
+                                    <li><a href="page-inner-sidebar.html"><i class="material-icons">view_array</i><span class="hide-menu">Inner Sidebar</span></a></li>
+                                    <li><a href="page-lightbox.html"><i class="material-icons">wb_iridescent</i><span class="hide-menu">Lightbox</span></a></li>
+                                    <li><a href="page-pricing.html"><i class="material-icons">monetization_on</i><span class="hide-menu">Pricing</span></a></li>
+                                    <li><a href="page-profile.html"><i class="material-icons">person_pin</i><span class="hide-menu">Profile</span></a></li>
+                                    <li><a href="page-scroll.html"><i class="material-icons">swap_vert</i><span class="hide-menu">Scroll</span></a></li>
+                                    <li><a href="page-search-result.html"><i class="material-icons">youtube_searched_for</i><span class="hide-menu">Search Result</span></a></li>
+                                    <li><a href="page-maintenance.html"><i class="material-icons">settings</i><span class="hide-menu">Page Maintenance</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">face</i><span class="hide-menu"> Icons </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="icon-material.html"><i class="material-icons">insert_emoticon</i><span class="hide-menu">Material Icons</span></a></li>
+                                    <li><a href="icon-fontawesome.html"><i class="material-icons">child_care</i><span class="hide-menu">Fontawesome Icons</span></a></li>
+                                    <li><a href="icon-themify.html"><i class="material-icons">bubble_chart</i><span class="hide-menu">Themify Icons</span></a></li>
+                                    <li><a href="icon-weather.html"><i class="material-icons">filter_drama</i><span class="hide-menu">Weather Icons</span></a></li>
+                                    <li><a href="icon-simple.html"><i class="material-icons">broken_image</i><span class="hide-menu">Simple Line Icons</span></a></li>
+                                    <li><a href="icon-flag.html"><i class="material-icons">assistant_photo</i><span class="hide-menu">Flag Icons</span></a></li>
+                                    <li><a href="icon-cryptocurrency.html"><i class="material-icons">euro_symbol</i><span class="hide-menu">Cryptocurrency Icons</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">email</i><span class="hide-menu"> Email Templates </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="email-templete-alert.html"><i class="material-icons">report_problem</i><span class="hide-menu">Alert</span></a></li>
+                                    <li><a href="email-templete-basic.html"><i class="material-icons">rounded_corner</i><span class="hide-menu">Basic</span></a></li>
+                                    <li><a href="email-templete-billing.html"><i class="material-icons">settings_overscan</i><span class="hide-menu">Billing</span></a></li>
+                                    <li><a href="email-templete-password-reset.html"><i class="material-icons">slow_motion_video</i><span class="hide-menu">password Reset</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="collapsible-header has-arrow"><i class="material-icons">clear_all</i><span class="hide-menu">Multi Levels</span></a>
+                            <div class="collapsible-body">
+                                <ul class="collapsible" data-collapsible="accordion">
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="material-icons">grade</i>
+                                            <span class="hide-menu">Second level</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="collapsible-header has-arrow">
+                                            <i class="material-icons">looks_two</i>
+                                            <span class="nav-text">Second level child</span>
+                                        </a>
+                                        <div class="collapsible-body">
+                                            <ul class="collapsible" data-collapsible="accordion">
+                                                <li>
+                                                    <a href="javascript:void(0)">
+                                                        <i class="material-icons">grade</i>
+                                                        <span class="hide-menu">Third level</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="collapsible-header has-arrow">
+                                                        <i class="material-icons">looks_3</i>
+                                                        <span class="hide-menu">Third level child</span>
+                                                    </a>
+                                                    <div class="collapsible-body">
+                                                        <ul class="collapsible" data-collapsible="accordion">
+                                                            <li>
+                                                                <a href="javascript:void(0)">
+                                                                    <i class="material-icons">grade</i>
+                                                                    <span class="hide-menu">Forth level</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:void(0)">
+                                                                    <i class="material-icons">grade</i>
+                                                                    <span class="hide-menu">Forth level</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="small-cap"><span class="hide-menu">Error</span></li>
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">backspace</i><span class="hide-menu"> Error Pages </span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="error-400.html"><i class="material-icons">info</i><span class="hide-menu">Error 400</span></a></li>
+                                    <li><a href="error-403.html"><i class="material-icons">help_outline</i><span class="hide-menu">Error 403</span></a></li>
+                                    <li><a href="error-404.html"><i class="material-icons">all_inclusive</i><span class="hide-menu">Error 404</span></a></li>
+                                    <li><a href="error-500.html"><i class="material-icons">live_help</i><span class="hide-menu">Error 500</span></a></li>
+                                    <li><a href="error-503.html"><i class="material-icons">info_outline</i><span class="hide-menu">Error 503</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="small-cap"><span class="hide-menu">Single Link</span></li>
+                        <li>
+                            <a href="https://wrappixel.com/demos/admin-templates/materialart/docs/documentation.html" class="collapsible-header"><i class="material-icons">content_paste</i><span class="hide-menu"> Documentation </span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.wrappixel.com/demos/admin-templates/materialart/html/ltr/logout.html" class="collapsible-header"><i class="material-icons">directions</i><span class="hide-menu"> Log Out </span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.wrappixel.com/demos/admin-templates/materialart/html/ltr/faqs.html" class="collapsible-header"><i class="material-icons">people_outline</i><span class="hide-menu"> FAQs </span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <!-- ============================================================== -->
+        <!-- Sidebar scss in sidebar.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Title and breadcrumb -->
+            <!-- ============================================================== -->
+            <div class="page-titles">
+                <div class="d-flex align-items-center">
+                    <h5 class="font-medium m-b-0">Form Separate Row</h5>
+                    <div class="custom-breadcrumb ml-auto">
+                        <a href="#!" class="breadcrumb">Home</a>
+                        <a href="#!" class="breadcrumb">Form Separate Row</a>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- Container fluid scss in scafholding.scss -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="card-title activator">Project Assigning<i class="material-icons right tooltipped" data-position="left" data-delay="50" data-tooltip="Get Code">more_vert</i></h5>
+                                <h6 class="card-subtitle">Add <code>.r-separator</code> class in the form with horizontal styling.</h6>
+                            </div>
+                            <form class="h-form r-separator">
+                                <div class="form-body">
+                                    <div class="divider"></div>
+                                    <div class="card-content">
+                                        <h6 class="font-medium">Personal Info</h6>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="f-nameh">First Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="f-nameh" type="text" placeholder="First name Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="l-nameh">Last Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="l-nameh" type="text" placeholder="Last name Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="emailh">Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="emailh" type="email" placeholder="Email Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="cn_noh">Contact Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <textarea id="cn_noh" class="materialize-textarea" placeholder="Contact Number Here"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="card-content">
+                                        <h6 class="font-medium">Requirements</h6>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="c_nameh">Company Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <textarea id="c_nameh" class="materialize-textarea" placeholder="Company Here"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="ins_inh">Interested In</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <select>
+                                                    <option value="" disabled selected>Choose your option</option>
+                                                    <option value="1">Designing</option>
+                                                    <option value="2">Development</option>
+                                                    <option value="3">Videography</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="ins_inbh">Budget</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <select>
+                                                    <option value="" disabled selected>Choose your option</option>
+                                                    <option value="1">Less then $5000</option>
+                                                    <option value="2">$5000 -$10000</option>
+                                                    <option value="3">$10000 - $20000</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="fileh">Select File</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <div class="file-field input-field">
+                                                    <div class="btn cyan">
+                                                        <span>File</span>
+                                                        <input type="file">
+                                                    </div>
+                                                    <div class="file-path-wrapper">
+                                                        <input class="file-path validate" type="text" placeholder="Choose File Here">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="a_proh">About Project</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <textarea id="a_proh" class="materialize-textarea" placeholder="About Project Here"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="card-content">
+                                    <div class="form-action">
+                                        <button class="btn cyan waves-effect waves-light" type="submit" name="action">Save
+                                        </button>
+                                        <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Code<i class="material-icons right">close</i></span>
+                                <pre class="pre-scroll">
+                                    <code class="language-markup">
+                                        &lt;form class=&quot;h-form r-separator&quot;&gt;
+                                &lt;div class=&quot;form-body&quot;&gt;
+                                    &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+                                    &lt;div class=&quot;card-content&quot;&gt;
+                                        &lt;h6 class=&quot;font-medium&quot;&gt;Personal Info&lt;/h6&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;f-nameh&quot;&gt;First Name&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;f-nameh&quot; type=&quot;text&quot; placeholder=&quot;First name Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;l-nameh&quot;&gt;Last Name&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;l-nameh&quot; type=&quot;text&quot; placeholder=&quot;Last name Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;emailh&quot;&gt;Email&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;emailh&quot; type=&quot;email&quot; placeholder=&quot;Email Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;cn_noh&quot;&gt;Contact Number&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;textarea id=&quot;cn_noh&quot; class=&quot;materialize-textarea&quot; placeholder=&quot;Contact Number Here&quot;&gt;&lt;/textarea&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+                                    &lt;div class=&quot;card-content&quot;&gt;
+                                        &lt;h6 class=&quot;font-medium&quot;&gt;Requirements&lt;/h6&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;c_nameh&quot;&gt;Company Name&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;textarea id=&quot;c_nameh&quot; class=&quot;materialize-textarea&quot; placeholder=&quot;Company Here&quot;&gt;&lt;/textarea&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;ins_inh&quot;&gt;Interested In&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;select&gt;
+                                                    &lt;option value=&quot;&quot; disabled selected&gt;Choose your option&lt;/option&gt;
+                                                    &lt;option value=&quot;1&quot;&gt;Designing&lt;/option&gt;
+                                                    &lt;option value=&quot;2&quot;&gt;Development&lt;/option&gt;
+                                                    &lt;option value=&quot;3&quot;&gt;Videography&lt;/option&gt;
+                                                &lt;/select&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;ins_inbh&quot;&gt;Budget&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;select&gt;
+                                                    &lt;option value=&quot;&quot; disabled selected&gt;Choose your option&lt;/option&gt;
+                                                    &lt;option value=&quot;1&quot;&gt;Less then $5000&lt;/option&gt;
+                                                    &lt;option value=&quot;2&quot;&gt;$5000 -$10000&lt;/option&gt;
+                                                    &lt;option value=&quot;3&quot;&gt;$10000 - $20000&lt;/option&gt;
+                                                &lt;/select&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;fileh&quot;&gt;Select File&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;div class=&quot;file-field input-field&quot;&gt;
+                                                    &lt;div class=&quot;btn cyan&quot;&gt;
+                                                        &lt;span&gt;File&lt;/span&gt;
+                                                        &lt;input type=&quot;file&quot;&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;file-path-wrapper&quot;&gt;
+                                                        &lt;input class=&quot;file-path validate&quot; type=&quot;text&quot; placeholder=&quot;Choose File Here&quot;&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;a_proh&quot;&gt;About Project&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;textarea id=&quot;a_proh&quot; class=&quot;materialize-textarea&quot; placeholder=&quot;About Project Here&quot;&gt;&lt;/textarea&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;card-content&quot;&gt;
+                                    &lt;div class=&quot;form-action&quot;&gt;
+                                        &lt;button class=&quot;btn cyan waves-effect waves-light&quot; type=&quot;submit&quot; name=&quot;action&quot;&gt;Save
+                                        &lt;/button&gt;
+                                        &lt;button class=&quot;btn waves-effect waves-light grey darken-4&quot; type=&quot;submit&quot; name=&quot;action&quot;&gt;Cancel
+                                        &lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="card-title activator">Employee Profile<i class="material-icons right tooltipped" data-position="left" data-delay="50" data-tooltip="Get Code">more_vert</i></h5>
+                            </div>
+                            <form class="h-form r-separator">
+                                <div class="form-body">
+                                    <div class="divider"></div>
+                                    <div class="card-content">
+                                        <h6 class="font-medium">About Employee</h6>
+                                        <div class="row">
+                                            <div class="col s12 l6">
+                                                <div class="row">
+                                                    <div class="col s3">
+                                                        <div class="h-form-label">
+                                                            <label for="f-nameh">First Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-field col s9">
+                                                        <input id="f-nameh" type="text" placeholder="First Name Here">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 l6">
+                                                <div class="row">
+                                                    <div class="col s3">
+                                                        <div class="h-form-label">
+                                                            <label for="l1-nameh">Last Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-field col s9">
+                                                        <input id="l1-nameh" type="text" placeholder="Last Name Here">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 l6">
+                                                <div class="row">
+                                                    <div class="col s3">
+                                                        <div class="h-form-label">
+                                                            <label for="u1-nameh">Username</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-field col s9">
+                                                        <input id="u1-nameh" type="text" placeholder="Username Here">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 l6">
+                                                <div class="row">
+                                                    <div class="col s3">
+                                                        <div class="h-form-label">
+                                                            <label for="n1-nameh">Nick Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-field col s9">
+                                                        <input id="n1-nameh" type="text" placeholder="Nick Name Here">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="card-content">
+                                        <h6 class="font-medium"> Contact Info &amp; Bio</h6>
+                                        <div class="row">
+                                            <div class="col s12 l6">
+                                                <div class="row">
+                                                    <div class="col s3">
+                                                        <div class="h-form-label">
+                                                            <label for="email2h">Email</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-field col s9">
+                                                        <input id="email2h" type="text" placeholder="Email Here">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 l6">
+                                                <div class="row">
+                                                    <div class="col s3">
+                                                        <div class="h-form-label">
+                                                            <label for="bio2h">Bio</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-field col s9">
+                                                        <textarea id="bio2h" class="materialize-textarea" placeholder="Bio Here"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 l6">
+                                                <div class="row">
+                                                    <div class="col s3">
+                                                        <div class="h-form-label">
+                                                            <label for="webh">Website</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-field col s9">
+                                                        <input id="webh" type="text" placeholder="http://">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 l6">
+                                                <div class="row">
+                                                    <div class="col s3">
+                                                        <div class="h-form-label">
+                                                            <label for="cn_no1h">Contact No</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-field col s9">
+                                                        <input id="cn_no1h" type="text" placeholder="Contact Number Here">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="card-content">
+                                    <div class="form-action">
+                                        <button class="btn cyan waves-effect waves-light" type="submit" name="action">Save
+                                        </button>
+                                        <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Code<i class="material-icons right">close</i></span>
+                                <pre class="pre-scroll">
+                                    <code class="language-markup">
+                                        &lt;form class=&quot;h-form r-separator&quot;&gt;
+                                &lt;div class=&quot;form-body&quot;&gt;
+                                    &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+                                    &lt;div class=&quot;card-content&quot;&gt;
+                                        &lt;h6 class=&quot;font-medium&quot;&gt;About Employee&lt;/h6&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s12 l6&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col s3&quot;&gt;
+                                                        &lt;div class=&quot;h-form-label&quot;&gt;
+                                                            &lt;label for=&quot;f-nameh&quot;&gt;First Name&lt;/label&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                        &lt;input id=&quot;f-nameh&quot; type=&quot;text&quot; placeholder=&quot;First Name Here&quot;&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;col s12 l6&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col s3&quot;&gt;
+                                                        &lt;div class=&quot;h-form-label&quot;&gt;
+                                                            &lt;label for=&quot;l1-nameh&quot;&gt;Last Name&lt;/label&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                        &lt;input id=&quot;l1-nameh&quot; type=&quot;text&quot; placeholder=&quot;Last Name Here&quot;&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s12 l6&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col s3&quot;&gt;
+                                                        &lt;div class=&quot;h-form-label&quot;&gt;
+                                                            &lt;label for=&quot;u1-nameh&quot;&gt;Username&lt;/label&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                        &lt;input id=&quot;u1-nameh&quot; type=&quot;text&quot; placeholder=&quot;Username Here&quot;&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;col s12 l6&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col s3&quot;&gt;
+                                                        &lt;div class=&quot;h-form-label&quot;&gt;
+                                                            &lt;label for=&quot;n1-nameh&quot;&gt;Nick Name&lt;/label&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                        &lt;input id=&quot;n1-nameh&quot; type=&quot;text&quot; placeholder=&quot;Nick Name Here&quot;&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+                                    &lt;div class=&quot;card-content&quot;&gt;
+                                        &lt;h6 class=&quot;font-medium&quot;&gt; Contact Info &amp; Bio&lt;/h6&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s12 l6&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col s3&quot;&gt;
+                                                        &lt;div class=&quot;h-form-label&quot;&gt;
+                                                            &lt;label for=&quot;email2h&quot;&gt;Email&lt;/label&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                        &lt;input id=&quot;email2h&quot; type=&quot;text&quot; placeholder=&quot;Email Here&quot;&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;col s12 l6&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col s3&quot;&gt;
+                                                        &lt;div class=&quot;h-form-label&quot;&gt;
+                                                            &lt;label for=&quot;bio2h&quot;&gt;Bio&lt;/label&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                        &lt;textarea id=&quot;bio2h&quot; class=&quot;materialize-textarea&quot; placeholder=&quot;Bio Here&quot;&gt;&lt;/textarea&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s12 l6&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col s3&quot;&gt;
+                                                        &lt;div class=&quot;h-form-label&quot;&gt;
+                                                            &lt;label for=&quot;webh&quot;&gt;Website&lt;/label&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                        &lt;input id=&quot;webh&quot; type=&quot;text&quot; placeholder=&quot;http://&quot;&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;col s12 l6&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col s3&quot;&gt;
+                                                        &lt;div class=&quot;h-form-label&quot;&gt;
+                                                            &lt;label for=&quot;cn_no1h&quot;&gt;Contact No&lt;/label&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                        &lt;input id=&quot;cn_no1h&quot; type=&quot;text&quot; placeholder=&quot;Contact Number Here&quot;&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;card-content&quot;&gt;
+                                    &lt;div class=&quot;form-action&quot;&gt;
+                                        &lt;button class=&quot;btn cyan waves-effect waves-light&quot; type=&quot;submit&quot; name=&quot;action&quot;&gt;Save
+                                        &lt;/button&gt;
+                                        &lt;button class=&quot;btn waves-effect waves-light grey darken-4&quot; type=&quot;submit&quot; name=&quot;action&quot;&gt;Cancel
+                                        &lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="card-title activator">Employee Timing<i class="material-icons right tooltipped" data-position="left" data-delay="50" data-tooltip="Get Code">more_vert</i></h5>
+                            </div>
+                            <div class="divider"></div>
+                            <form class="h-form r-separator">
+                                <div class="form-body">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="e_name1">Employee Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="e_name1" type="text" placeholder="Employee Name Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="p_name1">Project Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="p_name1" type="text" placeholder="Project Name Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="u1-nameh">Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input type="text" class="datepicker" placeholder="Date Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="r_f_h">Rate Per Hour</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="r_f_h" type="text" placeholder="Rate Per Hour Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="s_th">Start Time</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="s_th" type="text" class="timepicker" placeholder="Start Time Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="e_th">End Time</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="e_th" type="text" class="timepicker" placeholder="End Time Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="note_h">Notes</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <textarea id="note_h" class="materialize-textarea" placeholder="Notes"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="card-content">
+                                    <div class="form-action">
+                                        <button class="btn cyan waves-effect waves-light" type="submit" name="action">Save
+                                        </button>
+                                        <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Code<i class="material-icons right">close</i></span>
+                                <pre class="pre-scroll">
+                                <code class="language-markup">
+                                    &lt;form class=&quot;h-form r-separator&quot;&gt;
+                                &lt;div class=&quot;form-body&quot;&gt;
+                                    &lt;div class=&quot;card-content&quot;&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;e_name1&quot;&gt;Employee Name&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;e_name1&quot; type=&quot;text&quot; placeholder=&quot;Employee Name Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;p_name1&quot;&gt;Project Name&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;p_name1&quot; type=&quot;text&quot; placeholder=&quot;Project Name Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;u1-nameh&quot;&gt;Date&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input type=&quot;text&quot; class=&quot;datepicker&quot; placeholder=&quot;Date Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;r_f_h&quot;&gt;Rate Per Hour&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;r_f_h&quot; type=&quot;text&quot; placeholder=&quot;Rate Per Hour Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;s_th&quot;&gt;Start Time&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;s_th&quot; type=&quot;text&quot; class=&quot;timepicker&quot; placeholder=&quot;Start Time Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;e_th&quot;&gt;End Time&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;e_th&quot; type=&quot;text&quot; class=&quot;timepicker&quot; placeholder=&quot;End Time Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;note_h&quot;&gt;Notes&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;textarea id=&quot;note_h&quot; class=&quot;materialize-textarea&quot; placeholder=&quot;Notes&quot;&gt;&lt;/textarea&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;card-content&quot;&gt;
+                                    &lt;div class=&quot;form-action&quot;&gt;
+                                        &lt;button class=&quot;btn cyan waves-effect waves-light&quot; type=&quot;submit&quot; name=&quot;action&quot;&gt;Save
+                                        &lt;/button&gt;
+                                        &lt;button class=&quot;btn waves-effect waves-light grey darken-4&quot; type=&quot;submit&quot; name=&quot;action&quot;&gt;Cancel
+                                        &lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                                </code>
+                            </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="card-title activator">Event Registration<i class="material-icons right tooltipped" data-position="left" data-delay="50" data-tooltip="Get Code">more_vert</i></h5>
+                            </div>
+                            <div class="divider"></div>
+                            <form class="h-form r-separator">
+                                <div class="form-body">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="fu_name1">Full Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="fu_name1" type="text" placeholder="Full Name Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="title1">Title</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="title1" type="text" placeholder="Title Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="com1">Company</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="com1" type="text" placeholder="Company Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="email2">Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="email2" type="text" placeholder="Email Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label for="con_no">Contact Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <input id="con_no" type="text" placeholder="Contact Number Here">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s3">
+                                                <div class="h-form-label">
+                                                    <label>Existing Customer</label>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s9">
+                                                <p>
+                                                    <label>
+                                                        <input name="group1" type="radio" checked />
+                                                        <span>Yes</span>
+                                                    </label>
+                                                </p>
+                                                <p>
+                                                    <label>
+                                                        <input name="group1" type="radio" />
+                                                        <span>No</span>
+                                                    </label>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="card-content">
+                                    <div class="form-action">
+                                        <button class="btn cyan waves-effect waves-light" type="submit" name="action">Save
+                                        </button>
+                                        <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Code<i class="material-icons right">close</i></span>
+                                <pre class="pre-scroll">
+                                    <code class="language-markup">
+                                         &lt;form class=&quot;h-form r-separator&quot;&gt;
+                                &lt;div class=&quot;form-body&quot;&gt;
+                                    &lt;div class=&quot;card-content&quot;&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;fu_name1&quot;&gt;Full Name&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;fu_name1&quot; type=&quot;text&quot; placeholder=&quot;Full Name Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;title1&quot;&gt;Title&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;title1&quot; type=&quot;text&quot; placeholder=&quot;Title Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;com1&quot;&gt;Company&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;com1&quot; type=&quot;text&quot; placeholder=&quot;Company Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;email2&quot;&gt;Email&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;email2&quot; type=&quot;text&quot; placeholder=&quot;Email Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label for=&quot;con_no&quot;&gt;Contact Number&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;input id=&quot;con_no&quot; type=&quot;text&quot; placeholder=&quot;Contact Number Here&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col s3&quot;&gt;
+                                                &lt;div class=&quot;h-form-label&quot;&gt;
+                                                    &lt;label&gt;Existing Customer&lt;/label&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;input-field col s9&quot;&gt;
+                                                &lt;p&gt;
+                                                    &lt;label&gt;
+                                                        &lt;input name=&quot;group1&quot; type=&quot;radio&quot; checked /&gt;
+                                                        &lt;span&gt;Yes&lt;/span&gt;
+                                                    &lt;/label&gt;
+                                                &lt;/p&gt;
+                                                &lt;p&gt;
+                                                    &lt;label&gt;
+                                                        &lt;input name=&quot;group1&quot; type=&quot;radio&quot; /&gt;
+                                                        &lt;span&gt;No&lt;/span&gt;
+                                                    &lt;/label&gt;
+                                                &lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;card-content&quot;&gt;
+                                    &lt;div class=&quot;form-action&quot;&gt;
+                                        &lt;button class=&quot;btn cyan waves-effect waves-light&quot; type=&quot;submit&quot; name=&quot;action&quot;&gt;Save
+                                        &lt;/button&gt;
+                                        &lt;button class=&quot;btn waves-effect waves-light grey darken-4&quot; type=&quot;submit&quot; name=&quot;action&quot;&gt;Cancel
+                                        &lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- Container fluid scss in scafholding.scss -->
+            <!-- ============================================================== -->
+            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+        <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
+        <aside class="right-sidebar">
+            <!-- Right Sidebar -->
+            <ul id="right-slide-out" class="sidenav right-sidenav p-t-10">
+                <li>
+                    <div class="row">
+                        <div class="col s12">
+                            <!-- Tabs -->
+                            <ul class="tabs">
+                                <li class="tab col s4"><a href="#settings" class="active"><span class="material-icons">build</span></a></li>
+                                <li class="tab col s4"><a href="#chat"><span class="material-icons">chat_bubble</span></a></li>
+                                <li class="tab col s4"><a href="#activity"><span class="material-icons">local_activity</span></a></li>
+                            </ul>
+                            <!-- Tabs -->
+                        </div>
+                        <!-- Setting -->
+                        <div id="settings" class="col s12">
+                            <div class="m-t-10 p-10 b-b">
+                                <h6 class="font-medium">Layout Settings</h6>
+                                <ul class="m-t-15">
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" name="theme-view" id="theme-view" />
+                                            <span>Dark Theme</span>
+                                        </label>
+                                    </li>
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" class="nav-toggle" name="collapssidebar" id="collapssidebar" />
+                                            <span>Collapse Sidebar</span>
+                                        </label>
+                                    </li>
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" name="sidebar-position" id="sidebar-position" />
+                                            <span>Fixed Sidebar</span>
+                                        </label>
+                                    </li>
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" name="header-position" id="header-position" />
+                                            <span>Fixed Header</span>
+                                        </label>
+                                    </li>
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" name="boxed-layout" id="boxed-layout" />
+                                            <span>Boxed Layout</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-10 b-b">
+                                <!-- Logo BG -->
+                                <h6 class="font-medium">Logo Backgrounds</h6>
+                                <ul class="m-t-15 theme-color">
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin1"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin2"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin3"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin4"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin5"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin6"></a></li>
+                                </ul>
+                                <!-- Logo BG -->
+                            </div>
+                            <div class="p-10 b-b">
+                                <!-- Navbar BG -->
+                                <h6 class="font-medium">Navbar Backgrounds</h6>
+                                <ul class="m-t-15 theme-color">
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin1"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin2"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin3"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin4"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin5"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin6"></a></li>
+                                </ul>
+                                <!-- Navbar BG -->
+                            </div>
+                            <div class="p-10 b-b">
+                                <!-- Logo BG -->
+                                <h6 class="font-medium">Sidebar Backgrounds</h6>
+                                <ul class="m-t-15 theme-color">
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin1"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin2"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin3"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin4"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin5"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin6"></a></li>
+                                </ul>
+                                <!-- Logo BG -->
+                            </div>
+                        </div>
+                        <!-- chat -->
+                        <div id="chat" class="col s12">
+                            <ul class="mailbox m-t-20">
+                                <li>
+                                    <div class="message-center">
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_1' data-user-id='1'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
+                                                <span class="profile-status online pull-right" data-status="online"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Chris Evans</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:30 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_2' data-user-id='2'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
+                                                <span class="profile-status busy pull-right" data-status="busy"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Ray Hudson</h5>
+                                                <span class="mail-desc">I've sung a song! See you at</span>
+                                                <span class="time">9:10 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_3' data-user-id='3'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
+                                                <span class="profile-status away pull-right" data-status="away"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Lb James</h5>
+                                                <span class="mail-desc">I am a singer!</span>
+                                                <span class="time">9:08 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_4' data-user-id='4'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
+                                                <span class="profile-status offline pull-right" data-status="offline"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Don Andres</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:02 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_5' data-user-id='5'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
+                                                <span class="profile-status online pull-right" data-status="online"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Chris Evans</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:30 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_6' data-user-id='6'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
+                                                <span class="profile-status busy pull-right" data-status="busy"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Ray Hudson</h5>
+                                                <span class="mail-desc">I've sung a song! See you at</span>
+                                                <span class="time">9:10 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_7' data-user-id='7'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
+                                                <span class="profile-status away pull-right" data-status="away"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Lb James</h5>
+                                                <span class="mail-desc">I am a singer!</span>
+                                                <span class="time">9:08 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_8' data-user-id='8'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
+                                                <span class="profile-status offline pull-right" data-status="offline"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Don Andres</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:02 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_9' data-user-id='9'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
+                                                <span class="profile-status online pull-right" data-status="online"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Chris Evans</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:30 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_10' data-user-id='10'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
+                                                <span class="profile-status busy pull-right" data-status="busy"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Ray Hudson</h5>
+                                                <span class="mail-desc">I've sung a song! See you at</span>
+                                                <span class="time">9:10 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_11' data-user-id='11'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
+                                                <span class="profile-status away pull-right" data-status="away"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Lb James</h5>
+                                                <span class="mail-desc">I am a singer!</span>
+                                                <span class="time">9:08 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_12' data-user-id='12'>
+                                            <span class="user-img">
+                                                <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
+                                                <span class="profile-status offline pull-right" data-status="offline"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Don Andres</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:02 AM</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Activity -->
+                        <div id="activity" class="col s12">
+                            <div class="m-t-10 p-10">
+                                <h6 class="font-medium">Activity Timeline</h6>
+                                <div class="steamline">
+                                    <div class="sl-item">
+                                        <div class="sl-left green"> <i class="ti-user"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
+                                            <div class="desc">you can write anything </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left blue"><i class="fa fa-image"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Send documents to Clark</div>
+                                            <div class="desc">Lorem Ipsum is simply </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/2.jpg"> </div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
+                                            <div class="desc">Contrary to popular belief</div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/1.jpg"> </div>
+                                        <div class="sl-right">
+                                            <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
+                                            <div class="desc">Approve meeting with tiger</div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left teal"> <i class="ti-user"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
+                                            <div class="desc">you can write anything </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left purple"><i class="fa fa-image"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Send documents to Clark</div>
+                                            <div class="desc">Lorem Ipsum is simply </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/4.jpg"> </div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
+                                            <div class="desc">Contrary to popular belief</div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/6.jpg"> </div>
+                                        <div class="sl-right">
+                                            <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
+                                            <div class="desc">Approve meeting with tiger</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <div class="chat-windows"></div>
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../dist/js/materialize.min.js"></script>
+    <script src="../../assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- Apps -->
+    <!-- ============================================================== -->
+    <script src="../../dist/js/app.js"></script>
+    <script src="../../dist/js/app.init.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
+    <!-- ============================================================== -->
+    <!-- Custom js -->
+    <!-- ============================================================== -->
+    <script src="../../dist/js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <script src="../../assets/extra-libs/prism/prism.js"></script>
+</body>
+
+
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/form-row-separator.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:19:56 GMT -->
+</html>

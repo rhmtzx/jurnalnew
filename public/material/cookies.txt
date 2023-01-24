@@ -1,0 +1,8 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+github.com	TRUE	/	FALSE	1999999999	_gh_sess	%2BHyvd6rUvypw%2FguTAx0QHkKjZMaPpiYLXpmeF7u8UKy1lH4zg0xuNAjZ95YjsW%2Bgmqk8BcTV3VuoMLI2Sj20bd3qx7GaLsGm%2BcP10t7fO2VOZBMx%2BG2PdBvyRs%2FyGQZtWZ9bdYYTEChdPRRdvWtdKfVQNtnRRA71Hce9tzMsIPu%2FRUZ21INsRVF6jsa%2Fumdv68yv14BOlMrkdg95TzGzTB%2BsuIwqfN7%2BVwa%2FV2N1ij2ox7nid15cO2hU0d5I%2FCWdq829XjSVQznBORd2bUyDXQ%3D%3D--SoChO5NbQyLAtnbm--FH2%2BHZCSX3ZWkBRF%2FQkYjQ%3D%3D
+github.com	TRUE	/	FALSE	1999999999	_octo	GH1.1.1188629730.1674397193
+github.com	TRUE	/	FALSE	1999999999	logged_in	no
+github.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+www.wrappixel.com	TRUE	/	FALSE	1999999999	PHPSESSID	36c2cf4adcc9c52e7b3e279b96323f55
+

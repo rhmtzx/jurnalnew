@@ -1,135 +1,414 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 
-<!-- Mirrored from codervent.com/syndash/demo/vertical/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Nov 2022 01:44:17 GMT -->
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:18:42 GMT -->
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<title>J-On | Jurnal Online</title>
-	<!--favicon-->
-	<link rel="icon" href="{{ asset('admin/assets/images/favicon-32x32.png') }}" type="image/png" />
-	<!-- Vector CSS -->
-	<link href="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
-	<!--plugins-->
-	<link href="{{ asset('admin/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
-	<link href="{{ asset('admin/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
-	<link href="{{ asset('admin/assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
-	<!-- loader-->
-	<link href="{{ asset('admin/assets/css/pace.min.css') }}a" rel="stylesheet" />
-	<script src="{{ asset('admin/assets/js/pace.min.js') }}"></script>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&amp;family=Roboto&amp;display=swap" />
-	<!-- Icons CSS -->
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/icons.css') }}" />
-	<!-- App CSS -->
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/app.css') }}" />
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/dark-sidebar.css') }}" />
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/dark-theme.css') }}" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png')}}">
+    <title>Materialart Admin Template</title>
+    <!-- This page CSS -->
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/chartist/dist/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/c3/c3.min.css')}}" rel="stylesheet">
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/css-chart/css-chart.css')}}" rel="stylesheet">
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/dashboard3.css')}}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-	<!-- wrapper -->
-	<div class="wrapper">
-		<!--sidebar-wrapper-->
-		@include('layout.sidebar')
-		<!--end sidebar-wrapper-->
-		<!--header-->
-		@include('layout.header')
-		<!--end header-->
-		<!--page-wrapper-->
-		<div class="page-wrapper">
-			<!--page-content-wrapper-->
-			@yield('content')
-			<!--end page-content-wrapper-->
-		</div>
-		<!--end page-wrapper-->
-		<!--start overlay-->
-		<div class="overlay toggle-btn-mobile"></div>
-		<!--end overlay-->
-		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
-		<!--End Back To Top Button-->
-		<!--footer -->
-		<div class="footer">
-			<p class="mb-0">J - On Journal @2023 | Developed By : RQuadrat Team <a href="https://themeforest.net/user/codervent" target="_blank">#</a>
-			</p>
-		</div>
-		<!-- end footer -->
-	</div>
-	<!--start switcher-->
-	<div class="switcher-body">
-		<button class="btn btn-primary btn-switcher shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bx bx-cog bx-spin"></i></button>
-		<div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling">
-		  <div class="offcanvas-header border-bottom">
-			<h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
-			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-		  </div>
-		  <div class="offcanvas-body">
-			<h6 class="mb-0">Theme Variation</h6>
-			<hr>
-			<div class="form-check form-check-inline">
-			  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="lightmode" value="option1" checked>
-			  <label class="form-check-label" for="lightmode">Light</label>
-			</div>
-			<hr>
-			<div class="form-check form-check-inline">
-			  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="darkmode" value="option2">
-			  <label class="form-check-label" for="darkmode">Dark</label>
-			</div>
-			<hr>
-			<div class="form-check form-check-inline">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="darksidebar" value="option3">
-				<label class="form-check-label" for="darksidebar">Semi Dark</label>
-			  </div>
-			  <hr>
-			 <div class="form-check form-check-inline">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="ColorLessIcons" value="option3">
-				<label class="form-check-label" for="ColorLessIcons">Color Less Icons</label>
-			  </div>
-		  </div>
-		</div>
-	   </div>
-	   <!--end switcher-->
-	<!-- JavaScript -->
-	<!-- Bootstrap JS -->
-	<script src="{{ asset('admin/assets/js/bootstrap.bundle.min.js') }}"></script>
+    <div class="main-wrapper" id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">Material Admin</p>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+       @include('layout.header')
+        <!-- ============================================================== -->
+        <!-- Sidebar scss in sidebar.scss -->
+        <!-- ============================================================== -->
+        @include('layout.sidebar')
+        <!-- ============================================================== -->
+        <!-- Sidebar scss in sidebar.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper page-header">
 
-	<!--plugins-->
-	<script src="{{ asset('admin/assets/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
-	<!-- Vector map JavaScript -->
-	<script src="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-in-mill.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-us-aea-en.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-uk-mill-en.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-au-mill.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
-	<script src="{{ asset('admin/assets/js/index2.js') }}"></script>
-	<!-- App JS -->
-	<script src="{{ asset('admin/assets/js/app.js') }}"></script>
-	<script>
-    new PerfectScrollbar('.dashboard-social-list');
-    new PerfectScrollbar('.dashboard-top-countries');
-  </script>
-  <script src="{{asset('admin/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
-  <script>
-    $(document).ready(function () {
-      //Default data table
-      $('#example').DataTable();
-      var table = $('#example2').DataTable({
-        lengthChange: false,
-        buttons: ['copy', 'excel', 'pdf', 'print', 'colvis']
-      });
-      table.buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
-    });
-  </script>
+        @yield('content')
+
+    	</div>
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+        <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
+        <aside class="right-sidebar">
+            <!-- Right Sidebar -->
+            <ul id="right-slide-out" class="sidenav right-sidenav p-t-10">
+                <li>
+                    <div class="row">
+                        <div class="col s12">
+                            <!-- Tabs -->
+                            <ul class="tabs">
+                                <li class="tab col s4"><a href="#settings" class="active"><span class="material-icons">build</span></a></li>
+                                <li class="tab col s4"><a href="#chat"><span class="material-icons">chat_bubble</span></a></li>
+                                <li class="tab col s4"><a href="#activity"><span class="material-icons">local_activity</span></a></li>
+                            </ul>
+                            <!-- Tabs -->
+                        </div>
+                        <!-- Setting -->
+                        <div id="settings" class="col s12">
+                            <div class="m-t-10 p-10 b-b">
+                                <h6 class="font-medium">Layout Settings</h6>
+                                <ul class="m-t-15">
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" name="theme-view" id="theme-view" />
+                                            <span>Dark Theme</span>
+                                        </label>
+                                    </li>
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" class="nav-toggle" name="collapssidebar" id="collapssidebar" />
+                                            <span>Collapse Sidebar</span>
+                                        </label>
+                                    </li>
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" name="sidebar-position" id="sidebar-position" />
+                                            <span>Fixed Sidebar</span>
+                                        </label>
+                                    </li>
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" name="header-position" id="header-position" />
+                                            <span>Fixed Header</span>
+                                        </label>
+                                    </li>
+                                    <li class="m-b-10">
+                                        <label>
+                                            <input type="checkbox" name="boxed-layout" id="boxed-layout" />
+                                            <span>Boxed Layout</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-10 b-b">
+                                <!-- Logo BG -->
+                                <h6 class="font-medium">Logo Backgrounds</h6>
+                                <ul class="m-t-15 theme-color">
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin1"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin2"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin3"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin4"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin5"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin6"></a></li>
+                                </ul>
+                                <!-- Logo BG -->
+                            </div>
+                            <div class="p-10 b-b">
+                                <!-- Navbar BG -->
+                                <h6 class="font-medium">Navbar Backgrounds</h6>
+                                <ul class="m-t-15 theme-color">
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin1"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin2"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin3"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin4"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin5"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin6"></a></li>
+                                </ul>
+                                <!-- Navbar BG -->
+                            </div>
+                            <div class="p-10 b-b">
+                                <!-- Logo BG -->
+                                <h6 class="font-medium">Sidebar Backgrounds</h6>
+                                <ul class="m-t-15 theme-color">
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin1"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin2"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin3"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin4"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin5"></a></li>
+                                    <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin6"></a></li>
+                                </ul>
+                                <!-- Logo BG -->
+                            </div>
+                        </div>
+                        <!-- chat -->
+                        <div id="chat" class="col s12">
+                            <ul class="mailbox m-t-20">
+                                <li>
+                                    <div class="message-center">
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_1' data-user-id='1'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/1.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status online pull-right" data-status="online"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Chris Evans</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:30 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_2' data-user-id='2'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/2.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status busy pull-right" data-status="busy"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Ray Hudson</h5>
+                                                <span class="mail-desc">I've sung a song! See you at</span>
+                                                <span class="time">9:10 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_3' data-user-id='3'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/3.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status away pull-right" data-status="away"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Lb James</h5>
+                                                <span class="mail-desc">I am a singer!</span>
+                                                <span class="time">9:08 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_4' data-user-id='4'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/4.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status offline pull-right" data-status="offline"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Don Andres</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:02 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_5' data-user-id='5'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/1.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status online pull-right" data-status="online"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Chris Evans</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:30 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_6' data-user-id='6'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/2.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status busy pull-right" data-status="busy"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Ray Hudson</h5>
+                                                <span class="mail-desc">I've sung a song! See you at</span>
+                                                <span class="time">9:10 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_7' data-user-id='7'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/3.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status away pull-right" data-status="away"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Lb James</h5>
+                                                <span class="mail-desc">I am a singer!</span>
+                                                <span class="time">9:08 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_8' data-user-id='8'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/4.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status offline pull-right" data-status="offline"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Don Andres</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:02 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_9' data-user-id='9'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/1.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status online pull-right" data-status="online"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Chris Evans</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:30 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_10' data-user-id='10'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/2.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status busy pull-right" data-status="busy"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Ray Hudson</h5>
+                                                <span class="mail-desc">I've sung a song! See you at</span>
+                                                <span class="time">9:10 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_11' data-user-id='11'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/3.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status away pull-right" data-status="away"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Lb James</h5>
+                                                <span class="mail-desc">I am a singer!</span>
+                                                <span class="time">9:08 AM</span>
+                                            </span>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="#" class="user-info" id='chat_user_12' data-user-id='12'>
+                                            <span class="user-img">
+                                                <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/4.jpg')}}" alt="user" class="circle">
+                                                <span class="profile-status offline pull-right" data-status="offline"></span>
+                                            </span>
+                                            <span class="mail-contnet">
+                                                <h5>Don Andres</h5>
+                                                <span class="mail-desc">Just see the my admin!</span>
+                                                <span class="time">9:02 AM</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Activity -->
+                        <div id="activity" class="col s12">
+                            <div class="m-t-10 p-10">
+                                <h6 class="font-medium">Activity Timeline</h6>
+                                <div class="steamline">
+                                    <div class="sl-item">
+                                        <div class="sl-left green"> <i class="ti-user"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
+                                            <div class="desc">you can write anything </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left blue"><i class="fa fa-image"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Send documents to Clark</div>
+                                            <div class="desc">Lorem Ipsum is simply </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left"> <img class="circle" alt="user" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/2.jpg')}}"> </div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
+                                            <div class="desc">Contrary to popular belief</div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left"> <img class="circle" alt="user" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/1.jpg')}}"> </div>
+                                        <div class="sl-right">
+                                            <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
+                                            <div class="desc">Approve meeting with tiger</div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left teal"> <i class="ti-user"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
+                                            <div class="desc">you can write anything </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left purple"><i class="fa fa-image"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Send documents to Clark</div>
+                                            <div class="desc">Lorem Ipsum is simply </div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left"> <img class="circle" alt="user" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/4.jpg')}}"> </div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
+                                            <div class="desc">Contrary to popular belief</div>
+                                        </div>
+                                    </div>
+                                    <div class="sl-item">
+                                        <div class="sl-left"> <img class="circle" alt="user" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/6.jpg')}}"> </div>
+                                        <div class="sl-right">
+                                            <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
+                                            <div class="desc">Approve meeting with tiger</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <div class="chat-windows "></div>
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/materialize.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- Apps -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app.init.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app-style-switcher.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- Custom js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/custom.min.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/chartist/dist/chartist.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/gaugeJS/dist/gauge.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/c3/d3.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/c3/c3.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/sparkline/sparkline.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/pages/dashboards/dashboard3.js')}}"></script>
+
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/pages/datatable/datatable-basic.init.js')}}"></script>
 </body>
 
 
-<!-- Mirrored from codervent.com/syndash/demo/vertical/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Nov 2022 01:44:18 GMT -->
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:18:44 GMT -->
 </html>

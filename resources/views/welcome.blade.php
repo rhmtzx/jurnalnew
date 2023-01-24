@@ -1,600 +1,395 @@
 @extends('layout.main')
 @section('content')
-<div class="page-content-wrapper">
-    <div class="page-content">
-        <div class="row">
-            <div class="col-12 col-lg-3">
-                <div class="card radius-15 bg-voilet">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h2 class="mb-0 text-white">{{$jurusan}}<i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
-                            </div>
-                            <div class="ms-auto font-35 text-white"><i class="bx bx-cart-alt"></i>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-white"><strong>Jumlah Jurusan</strong></p>
-                            </div>
-                            <div class="ms-auto font-14 text-white">{{$jurusan}}</div>
-                        </div>
+            <!-- ============================================================== -->
+            <!-- Temp - Earnings -->
+            <!-- ============================================================== -->
+            <div class="card info-gradient m-t-0 m-b-0">
+                <div class="card-content">
+                    <div class="p-b-40 p-t-20">
+                        <h3 class="white-text">Welcome back {{ Auth::user()->name }}!</h3>
+                        <p class="white-text op-7 m-b-20">Success is not a destination, its a Journey!!!</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-3">
-                <div class="card radius-15 bg-primary-blue">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h2 class="mb-0 text-white">{{$siswa}}<i class='bx bxs-down-arrow-alt font-14 text-white'></i> </h2>
-                            </div>
-                            <div class="ms-auto font-35 text-white"><i class="bx bx-support"></i>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-white"><strong>Jumlah Siswa</strong></p>
-                            </div>
-                            <div class="ms-auto font-14 text-white">{{$siswa}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3">
-                <div class="card radius-15 bg-rose">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h2 class="mb-0 text-white">{{$dudi}} <i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
-                            </div>
-                            <div class="ms-auto font-35 text-white"><i class="bx bx-tachometer"></i>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-white"><strong>Jumlah Dudi</strong></p>
-                            </div>
-                            <div class="ms-auto font-14 text-white">{{$dudi}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3">
-                <div class="card radius-15 bg-sunset">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h2 class="mb-0 text-white">{{$jurnal}} <i class='bx bxs-up-arrow-alt font-14 text-white'></i> </h2>
-                            </div>
-                            <div class="ms-auto font-35 text-white"><i class="bx bx-user"></i>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-white"><strong>Jumlah Jurnal</strong></p>
-                            </div>
-                            <div class="ms-auto font-14 text-white">{{$jurnal}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end row-->
-        <div class="card radius-15">
-            <div class="card-header border-bottom-0">
-                <div class="d-lg-flex align-items-center">
-                    <div>
-                        <h5 class="mb-2 mb-lg-0">Sales Update</h5>
-                    </div>
-                    <div class="ms-lg-auto mb-2 mb-lg-0">
-                        <div class="btn-group-round">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-white">Daily</button>
-                                <button type="button" class="btn btn-white">Weekly</button>
-                                <button type="button" class="btn btn-white">Monthly</button>
+            <!-- ============================================================== -->
+            <!-- Container fluid scss in scafholding.scss -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Devices - Income - Sales -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- col -->
+                    <div class="col s12 l7">
+                        <div class="card card-hover">
+                            <div class="card-content">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <h5 class="card-title">Earnings</h5>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <ul class="list-inline font-12 dl m-r-10">
+                                            <li><i class="fa fa-circle blue-text text-accent-4"></i> Expenses</li>
+                                            <li><i class="fa fa-circle blue-grey-text text-lighten-5"></i> Earnings</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="chart-earnings" style="height: 255px"></div>
+                                <div class="row m-t-25 center-align">
+                                    <!-- col -->
+                                    <div class="info col m4 s12 l4">
+                                        <span>Total Earnings</span>
+                                        <h4 class="font-medium m-b-5 m-t-5">$3,567.56</h4>
+                                        <span class="green-text">+23% <i class="fa fa-chevron-up"></i></span>
+                                    </div>
+                                    <!-- col -->
+                                    <!-- col -->
+                                    <div class="info col m4 s12 l4">
+                                        <span>Referral Earnings</span>
+                                        <h4 class="font-medium m-b-5 m-t-5">$769.08</h4>
+                                        <span class="red-text">-18% <i class="fa fa-chevron-down"></i></span>
+                                    </div>
+                                    <!-- col -->
+                                    <!-- col -->
+                                    <div class="info col m4 s12 l4">
+                                        <span>Total Sales</span>
+                                        <h4 class="font-medium m-b-5 m-t-5">5489</h4>
+                                        <span class="green-text">+12% <i class="fa fa-chevron-up"></i></span>
+                                    </div>
+                                    <!-- col -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div id="chart1"></div>
-            </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12 col-lg-6">
-            <div class="card radius-15">
-                <div class="card-body">
-                    <div class="d-flex align-items-center">
-                        <div>
-                            <h5 class="mb-0">Revenue By Device</h5>
-                        </div>
-                        <div class="dropdown ms-auto">
-                            <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
-                            </div>
-                            <div class="dropdown-menu dropdown-menu-right">	<a class="dropdown-item" href="javascript:;">Action</a>
-                                <a class="dropdown-item" href="javascript:;">Another action</a>
-                                <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Something else here</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="chart2"></div>
-                    <div class="legends">
+                    <!-- col -->
+                    <div class="col s12 l5">
                         <div class="row">
-                            <div class="col-12 col-lg-5">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="text-secondary"><i class='bx bxs-circle font-13 text-primary-blue me-2'></i>Desktop</div>
-                                    <div>$850.04</div>
-                                    <div class="text-secondary">64.4%</div>
-                                </div>
-                                <div class="my-2"></div>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="text-secondary"><i class='bx bxs-circle font-13 text-shineblue me-2'></i>Mobile</div>
-                                    <div>$755.08</div>
-                                    <div class="text-secondary">48.6%</div>
+                            <div class="col s12 m6 l6">
+                                <div class="card warning-gradient card-hover">
+                                    <div class="card-content">
+                                        <h5 class="card-title  white-text">Revenues</h5>
+                                        <p class="m-b-5"><span class="white-text op-5">This Month <span class="right">$250</span></span></p>
+                                        <p><span class="white-text op-5">Last Month <span class="right">$158</span></span></p>
+                                        
+                                    </div>
+                                    <div id="revenue" style="height:75px; width:100%;"></div>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-2">
-                                <div class="vertical-separater"></div>
-                            </div>
-                            <div class="col-12 col-lg-5">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="text-secondary"><i class='bx bxs-circle font-13 text-primary me-2'></i>Tablet</div>
-                                    <div>$687.03</div>
-                                    <div class="text-secondary">24.7%</div>
+                            <div class="col s12 m6 l6">
+                                <div class="card primary-gradient card-hover">
+                                    <div class="card-content">
+                                        <h5 class="card-title white-text">Visits</h5>
+                                        <p class="m-b-5"><span class="white-text op-5">This Month <span class="right">1255</span></span></p>
+                                        <p><span class="white-text op-5">Last Month <span class="right">1470</span></span></p>
+                                    </div>
+                                    <div class="center-align">
+                                        <div id="visits"></div>
+                                    </div>
                                 </div>
-                                <div class="my-2"></div>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="text-secondary"><i class='bx bxs-circle font-13 text-red me-2'></i>Unknown</div>
-                                    <div>$142.07</div>
-                                    <div class="text-secondary">14.8%</div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="card success-gradient card-hover">
+                                    <div class="card-content">
+                                        <h5 class="card-title  white-text">Jobs</h5>
+                                        <ul class="m-t-15">
+                                            <li>
+                                                <div class="d-flex no-block align-items-center">
+                                                    <div>
+                                                        <span class="m-b-0 white-text op-5">Completed</span>
+                                                    </div>
+                                                    <div class="ml-auto">
+                                                        <span class="m-b-0 white-text">26</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress m-t-10" style="background-color: rgba(0,0,0,.1);">
+                                                    <div class="determinate white" style="width: 26%"></div>
+                                                </div>
+                                            </li>
+                                            <li class="m-t-25">
+                                                <div class="d-flex no-block align-items-center">
+                                                    <div>
+                                                        <span class="m-b-0 white-text op-5">Remaining</span>
+                                                    </div>
+                                                    <div class="ml-auto">
+                                                        <span class="m-b-0 white-text">15</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress m-t-10" style="background-color: rgba(0,0,0,.1);">
+                                                    <div class="determinate white" style="width: 15%"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="card danger-gradient card-hover">
+                                    <div class="card-content">
+                                        <h5 class="card-title white-text">Sales</h5>
+                                        <p class="m-b-5"><span class="white-text op-5">This Month <span class="right">88%</span></span></p>
+                                        <p><span class="white-text op-5">Last Month <span class="right">75%</span></span></p>
+                                    </div>
+                                    <div id="sales" style="height:60px; width:100%;"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>                   
+                </div>
+                <!-- ============================================================== -->
+                <!-- Table -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- col -->
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <!-- title -->
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <h5 class="card-title">Projects of the Month</h5>
+                                        <h6 class="card-subtitle">Overview of Latest Month</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <div class="input-field dl support-select">
+                                            <select>
+                                                <option value="0" selected>Monthly</option>
+                                                <option value="1">Daily</option>
+                                                <option value="2">Weekly</option>
+                                                <option value="3">Yearly</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- title -->
+                                <div class="table-responsive">
+                                    <table class="">
+                                        <thead>
+                                            <tr>
+                                                <th>Team Lead</th>
+                                                <th>Project</th>
+                                                <th>Team</th>
+                                                <th>Status</th>
+                                                <th>Weeks</th>
+                                                <th>Budget</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="m-r-10"><img src="../../assets/images/users/d1.jpg" alt="user" class="circle" width="45" /></div>
+                                                        <div class="">
+                                                            <h5 class="m-b-0 font-16 font-medium">Hanna Gover</h5><span>hgover@gmail.com</span></div>
+                                                    </div>
+                                                </td>
+                                                <td>Elite Admin</td>
+                                                <td>
+                                                    <div class="popover-icon">
+                                                        <a class="btn-floating btn light-blue">SS</a>
+                                                        <a class="btn-floating btn cyan lighten-2">DS</a>
+                                                        <a class="btn-floating btn white"><img src="../../assets/images/users/1.jpg" class="circle" width="41"/></a>
+                                                        <a class="btn-floating btn light-blue lighten-5 blue-text text-darken-1">+</a>
+                                                    </div>
+                                                </td>
+                                                <td><i class="fa fa-circle orange-text tooltipped" data-tooltip="In Progress"></i></td>
+                                                <td>35</td>
+                                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="m-r-10"><img src="../../assets/images/users/d2.jpg" alt="user" class="circle" width="45" /></div>
+                                                        <div class="">
+                                                            <h5 class="m-b-0 font-16 font-medium">Daniel Kristeen</h5><span>Kristeen@gmail.com</span></div>
+                                                    </div>
+                                                </td>
+                                                <td>Elite Admin</td>
+                                                <td>
+                                                    <div class="popover-icon">
+                                                        <a class="btn-floating btn blue accent-4">SS</a>
+                                                        <a class="btn-floating btn purple lighten-1">DS</a>
+                                                        <a class="btn-floating btn light-blue lighten-5 blue-text text-darken-1">+</a>
+                                                    </div>
+                                                </td>
+                                                <td><i class="fa fa-circle teal-text text-accent-4 tooltipped" data-tooltip="Active"></i></td>
+                                                <td>35</td>
+                                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="m-r-10"><img src="../../assets/images/users/d3.jpg" alt="user" class="circle" width="45" /></div>
+                                                        <div class="">
+                                                            <h5 class="m-b-0 font-16 font-medium">Julian Josephs</h5><span>Josephs@gmail.com</span></div>
+                                                    </div>
+                                                </td>
+                                                <td>Elite Admin</td>
+                                                <td>
+                                                    <div class="popover-icon">
+                                                        <a class="btn-floating btn light-blue">SS</a>
+                                                        <a class="btn-floating btn cyan lighten-2">DS</a>
+                                                        <a class="btn-floating btn orange">RP</a>
+                                                        <a class="btn-floating btn light-blue lighten-5 blue-text text-darken-1">+</a>
+                                                    </div>
+                                                </td>
+                                                <td><i class="fa fa-circle teal-text text-accent-4 tooltipped" data-tooltip="Active"></i></td>
+                                                <td>35</td>
+                                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="m-r-10"><img src="../../assets/images/users/2.jpg" alt="user" class="circle" width="45" /></div>
+                                                        <div class="">
+                                                            <h5 class="m-b-0 font-16 font-medium">Jan Petrovic</h5><span>hgover@gmail.com</span></div>
+                                                    </div>
+                                                </td>
+                                                <td>Elite Admin</td>
+                                                <td>
+                                                    <div class="popover-icon">
+                                                        <a class="btn-floating btn light-blue">SS</a>
+                                                        <a class="btn-floating btn light-blue lighten-5 blue-text text-darken-1">+</a>
+                                                    </div>
+                                                </td>
+                                                <td><i class="fa fa-circle orange-text tooltipped" data-tooltip="In Progress"></i></td>
+                                                <td>35</td>
+                                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Devices - Income - Sales -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- col -->
+                    <div class="col s12 l4">
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="card-title">Device Variations</h5>
+                                <div id="visitor" style="height:267px; width:100%;" class="m-t-20"></div>
+                                <ul class="list-inline center-align">
+                                    <li><i class="fa fa-circle blue-text"></i> Mobiles</li>
+                                    <li><i class="fa fa-circle blue-text text-accent-4"></i> Desktops</li>
+                                    <li><i class="fa fa-circle orange-text"></i> Tablets</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col -->
+                    <div class="col s12 l4">
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="card-title">Net Income</h5>
+                                <div class="net-income m-t-30" style="height:257px; position: relative;"></div>
+                                <ul class="list-inline center-align">
+                                    <li><i class="fa fa-circle blue-text text-accent-4"></i> Net Income</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col -->
+                    <div class="col s12 l4">
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="card-title">Sales Performance</h5>
+                                <div class="row">
+                                    <div class="col s8">
+                                        <h3 class="font-medium m-b-5 m-t-30">$4316</h3>
+                                        <span>(150-165 sales)</span>
+                                    </div>
+                                    <div class="col s4 right-align">
+                                        <div id="sales2" style="height:125px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="card-title">Monthly Sales</h5>
+                                <div class="row">
+                                    <div class="col s8 m-t-30">
+                                        <h3 class="font-medium m-b-5">$3528</h3>
+                                        <span>(150-165 sales)</span>
+                                    </div>
+                                    <div class="col s4 right-align">
+                                        
+                                        <div id="monthlysales"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Projects of the month -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col l4">
+                        <div class="card">
+                            <img class="card-img-top responsive-img" src="../../assets/images/big/img4.jpg" alt="Card image cap">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center m-b-15">
+                                    <span><i class="ti-calendar"></i> 20 May 2018</span>
+                                    <div class="ml-auto">
+                                        <a href="javascript:void(0)" class="link"><i class="ti-comments"></i> 3 Comments</a>
+                                    </div>
+                                </div>
+                                <h5>Featured Hydroflora Pots Garden &amp; Outdoors</h5>
+                                <p class="m-b-0 m-t-10">Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
+                                <button class="waves-effect waves-light btn btn-round indigo m-t-20">Read more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col l4">
+                        <div class="card">
+                            <img class="card-img-top responsive-img" src="../../assets/images/big/img5.jpg" alt="Card image cap">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center m-b-15">
+                                    <span><i class="ti-calendar"></i> 19 May 2018</span>
+                                    <div class="ml-auto">
+                                        <a href="javascript:void(0)" class="link"><i class="ti-comments"></i> 5 Comments</a>
+                                    </div>
+                                </div>
+                                <h5>Featured Hydroflora Pots Garden &amp; Outdoors</h5>
+                                <p class="m-b-0 m-t-10">Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
+                                <button class="waves-effect waves-light btn btn-round indigo m-t-20">Read more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col l4">
+                        <div class="card">
+                            <img class="card-img-top responsive-img" src="../../assets/images/big/img6.jpg" alt="Card image cap">
+                            <div class="card-content">
+                                <div class="d-flex no-block align-items-center m-b-15">
+                                    <span><i class="ti-calendar"></i> 29 May 2018</span>
+                                    <div class="ml-auto">
+                                        <a href="javascript:void(0)" class="link"><i class="ti-comments"></i> 6 Comments</a>
+                                    </div>
+                                </div>
+                                <h5>Featured Hydroflora Pots Garden &amp; Outdoors</h5>
+                                <p class="m-b-0 m-t-10">Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
+                                <button class="waves-effect waves-light btn btn-round indigo m-t-20">Read more</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
                 </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="card radius-15">
-                <div class="card-body">
-                    <div class="d-flex align-items-center">
-                        <div>
-                            <h5 class="mb-0">Traffic</h5>
-                        </div>
-                        <div class="dropdown ms-auto">
-                            <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
-                            </div>
-                            <div class="dropdown-menu dropdown-menu-right">	<a class="dropdown-item" href="javascript:;">Action</a>
-                                <a class="dropdown-item" href="javascript:;">Another action</a>
-                                <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Something else here</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3 g-3">
-                        <div class="col-12 col-lg-6">
-                            <div class="card radius-15 border shadow-none">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div>
-                                            <p class="mb-0">Store Visits</p>
-                                        </div>
-                                        <div class="ms-auto text-success"><span>+22%</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="mb-0">8950</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="card radius-15 border shadow-none">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div>
-                                            <p class="mb-0">Visitors</p>
-                                        </div>
-                                        <div class="ms-auto text-purple"><span>-24%</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="mb-0">1520</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="chart3"></div>
-                </div>
-            </div>
-        </div>
-        </div><!--end row-->
-
-
-        <div class="row">
-            <div class="col-12 col-lg-4 d-flex">
-                <div class="card radius-15 w-100">
-                    <div class="card-body">
-                        <div class="d-lg-flex align-items-center">
-                            <div>
-                                <h5 class="mb-4">Top Categories</h5>
-                            </div>
-                            <div class="dropdown ms-auto">
-                                <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right">	<a class="dropdown-item" href="javascript:;">Action</a>
-                                    <a class="dropdown-item" href="javascript:;">Another action</a>
-                                    <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-wrapper mb-4">
-                            <p class="mb-1">Electronics <span class="float-end">45%</span>
-                            </p>
-                            <div class="progress radius-15" style="height:5px;">
-                                <div class="progress-bar" role="progressbar" style="width: 45%"></div>
-                            </div>
-                        </div>
-                        <div class="progress-wrapper mb-4">
-                            <p class="mb-1">Clothing <span class="float-end">55%</span>
-                            </p>
-                            <div class="progress radius-15" style="height:5px;">
-                                <div class="progress-bar bg-voilet" role="progressbar" style="width: 55%"></div>
-                            </div>
-                        </div>
-                        <div class="progress-wrapper mb-4">
-                            <p class="mb-1">Furniture <span class="float-end">64%</span>
-                            </p>
-                            <div class="progress radius-15" style="height:5px;">
-                                <div class="progress-bar bg-red-light" role="progressbar" style="width: 64%"></div>
-                            </div>
-                        </div>
-                        <div class="progress-wrapper mb-4">
-                            <p class="mb-1">Accessories <span class="float-end">78%</span>
-                            </p>
-                            <div class="progress radius-15" style="height:5px;">
-                                <div class="progress-bar bg-sunset" role="progressbar" style="width: 78%"></div>
-                            </div>
-                        </div>
-                        <div class="progress-wrapper mb-4">
-                            <p class="mb-1">Jewellery <span class="float-end">82%</span>
-                            </p>
-                            <div class="progress radius-15" style="height:5px;">
-                                <div class="progress-bar bg-wall" role="progressbar" style="width: 82%"></div>
-                            </div>
-                        </div>
-                        <div class="progress-wrapper">
-                            <p class="mb-1">Mobiles <span class="float-end">89%</span>
-                            </p>
-                            <div class="progress radius-15" style="height:5px;">
-                                <div class="progress-bar bg-dark" role="progressbar" style="width: 89%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-8 d-flex">
-                <div class="card radius-15 w-100">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div>
-                                <h5 class="mb-0">Sales Forecast</h5>
-                            </div>
-                            <div class="dropdown ms-auto">
-                                <div class="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right">	<a class="dropdown-item" href="javascript:;">Action</a>
-                                    <a class="dropdown-item" href="javascript:;">Another action</a>
-                                    <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-12 col-lg-6">
-                                <div class="card radius-15 border shadow-none mb-0">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <div class="">
-                                                <p class="text-secondary mb-0">Revenue</p>
-                                                <h4 class="mb-0 ">+24.5%</h4>
-                                            </div>
-                                            <div class="fs-2 ms-auto">
-                                                <i class='bx bx-wallet-alt'></i>
-                                            </div>
-                                        </div>
-                                        <div id="chart4" class="ms-auto mt-1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="card radius-15 border shadow-none mb-0">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <div class="">
-                                                <p class="text-secondary mb-0">Net Profit</p>
-                                                <h4 class="mb-0">-2.7%</h4>
-                                            </div>
-                                            <div class="fs-2 ms-auto">
-                                                <i class='bx bx-bar-chart-alt-2' ></i>
-                                            </div>
-                                        </div>
-                                        <div id="chart5" class="ms-auto mt-1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="card radius-15 border shadow-none mb-0">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <div class="">
-                                                <p class="text-secondary mb-0">Orders</p>
-                                                <h4 class="mb-0">+32.6%</h4>
-                                            </div>
-                                            <div class="fs-2 ms-auto">
-                                                <i class='bx bx-shopping-bag'></i>
-                                            </div>
-                                        </div>
-                                        <div id="chart6" class="ms-auto mt-1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="card radius-15 border shadow-none mb-0">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <div class="">
-                                                <p class="text-secondary mb-0">Visitors</p>
-                                                <h4 class="mb-0">+60.2%</h4>
-                                            </div>
-                                            <div class="fs-2 ms-auto">
-                                                <i class='bx bx-group'></i>
-                                            </div>
-                                        </div>
-                                        <div id="chart7" class="ms-auto mt-1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end row-->
-        <div class="row">
-            <div class="col-12 col-lg-8 d-flex">
-                <div class="card radius-15 w-100 overflow-hidden">
-                    <div class="card-header border-bottom-0">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h5 class="mb-0">Revenue By Locations</h5>
-                            </div>
-                            <div class="dropdown ms-auto">
-                                <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class="bx bx-dots-horizontal-rounded"></i>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-right">	<a class="dropdown-item" href="javascript:;">Action</a>
-                                    <a class="dropdown-item" href="javascript:;">Another action</a>
-                                    <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="location-map"></div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table mb-0">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="text-blue-ribbon">Countries</th>
-                                    <th scope="col" class="text-brink-pink">Orders</th>
-                                    <th scope="col" class="text-mountain-meadow">Earnings</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="d-flex align-items-center"><i class="flag-icon flag-icon-um me-2"></i>
-                                        <div>United States</div>
-                                    </td>
-                                    <td>13,495</td>
-                                    <td class="text-semibold">$58,430.75</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-flex align-items-center"><i class="flag-icon flag-icon-nl me-2"></i>
-                                        <div>Netherlands</div>
-                                    </td>
-                                    <td>11,495</td>
-                                    <td class="text-semibold">$68,253.90</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-flex align-items-center"><i class="flag-icon flag-icon-us me-2"></i>
-                                        <div>United Kingdom</div>
-                                    </td>
-                                    <td>09,348</td>
-                                    <td class="text-semibold">$87,295.70</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-flex align-items-center"><i class="flag-icon flag-icon-ca me-2"></i>
-                                        <div>Canada</div>
-                                    </td>
-                                    <td>07,845</td>
-                                    <td class="text-semibold">$64,914.20</td>
-                                </tr>
-                                <tr>
-                                    <td class="d-flex align-items-center"><i class="flag-icon flag-icon-au me-2"></i>
-                                        <div>Australia</div>
-                                    </td>
-                                    <td>05,945</td>
-                                    <td class="text-semibold">$94,335.60</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-4 d-flex">
-                <div class="card radius-15 w-100">
-                  <div class="card-body">
-                  <div class="card radius-15 border shadow-none">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <h5 class="mb-0">New Users</h5>
-                            <p class="mb-0 ms-auto"><i class="bx bx-dots-horizontal-rounded float-right font-24"></i>
-                            </p>
-                        </div>
-                        <div class="d-flex align-items-center mt-3 gap-2">
-                            <img src="{{ asset('admin/assets/images/avatars/avatar-1.png') }}" width="45" height="45" class="rounded-circle" alt="">
-                            <div class="flex-grow-1">
-                                <p class="font-weight-bold mb-0">Neil Wagner</p>
-                                <p class="text-secondary mb-0">United Kingdom</p>
-                            </div>
-                            <a href="javascript:;" class="btn btn-sm btn-light-primary px-4 radius-10">Add</a>
-                        </div>
-                        <hr>
-                        <div class="d-flex align-items-center gap-2">
-                            <img src="{{ asset('admin/assets/images/avatars/avatar-2.png') }}" width="45" height="45" class="rounded-circle" alt="">
-                            <div class="flex-grow-1">
-                                <p class="font-weight-bold mb-0">Sampoll Dinga</p>
-                                <p class="text-secondary mb-0">America</p>
-                            </div> <a href="javascript:;" class="btn btn-sm btn-light-primary px-4 radius-10">Add</a>
-                        </div>
-                        <hr>
-                        <div class="d-flex align-items-center gap-2">
-                            <img src="{{ asset('admin/assets/images/avatars/avatar-3.png') }}" width="45" height="45" class="rounded-circle" alt="">
-                            <div class="flex-grow-1">
-                                <p class="font-weight-bold mb-0">Loona Ting</p>
-                                <p class="text-secondary mb-0">Canada</p>
-                            </div> <a href="javascript:;" class="btn btn-sm btn-light-primary px-4 radius-10">Add</a>
-                        </div>
-                        <hr>
-                        <div class="d-flex align-items-center gap-2">
-                            <img src="{{ asset('admin/assets/images/avatars/avatar-4.png') }}" width="45" height="45" class="rounded-circle" alt="">
-                            <div class="flex-grow-1">
-                                <p class="font-weight-bold mb-0">Lee Jong</p>
-                                <p class="text-secondary mb-0">China</p>
-                            </div> <a href="javascript:;" class="btn btn-sm btn-light-primary px-4 radius-10">Add</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card radius-15 border shadow-none mb-0">
-                    <div class="card-body">
-                        <h4 class="mb-0">87.52%</h4>
-                        <p class="mb-0">Bounce Rate</p>
-                    </div>
-                    <div id="chart8"></div>
-                </div>
-              </div>
-             </div>
-
-            </div>
-        </div>
-        <!--end row-->
-        <div class="card radius-15 overflow-hidden">
-            <div class="card-header border-bottom-0">
-                <div class="d-flex align-items-center">
-                    <div>
-                        <h5 class="mb-0">Recent Orders</h5>
-                    </div>
-                    <div class="ms-auto">
-                        <button type="button" class="btn btn-white btn-sm px-4 radius-15">View More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table mb-0">
-                        <thead>
-                            <tr>
-                                <th>Photo</th>
-                                <th>Product Name</th>
-                                <th>Customer</th>
-                                <th>Product id</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="product-img bg-transparent border">
-                                        <img src="{{ asset('admin/assets/images/icons/smartphone.png"') }} width="35" alt="">
-                                    </div>
-                                </td>
-                                <td>Honor Mobile 7x</td>
-                                <td>Mitchell Daniel</td>
-                                <td>#835478</td>
-                                <td>$54.68</td>
-                                <td><a href="javascript:;" class="btn btn-sm btn-light-success btn-block radius-30">Delivered</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="product-img bg-transparent border">
-                                        <img src="{{ asset('admin/assets/images/icons/watch.png"') }} width="35" alt="">
-                                    </div>
-                                </td>
-                                <td>Hand Watch</td>
-                                <td>Milona Burke</td>
-                                <td>#987546</td>
-                                <td>$43.78</td>
-                                <td><a href="javascript:;" class="btn btn-sm btn-light-warning btn-block radius-30">Pending</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="product-img bg-transparent border">
-                                        <img src="{{ asset('admin/assets/images/icons/laptop.png"') }} width="35" alt="">
-                                    </div>
-                                </td>
-                                <td>Mini Laptop</td>
-                                <td>Craig Clayton</td>
-                                <td>#325687</td>
-                                <td>$62.21</td>
-                                <td><a href="javascript:;" class="btn btn-sm btn-light-success btn-block radius-30">Delivered</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="product-img bg-transparent border">
-                                        <img src="{{ asset('admin/assets/images/icons/shirt.png"') }} width="35" alt="">
-                                    </div>
-                                </td>
-                                <td>Slim-T-Shirt</td>
-                                <td>Clark Andola</td>
-                                <td>#658972</td>
-                                <td>$75.68</td>
-                                <td><a href="javascript:;" class="btn btn-sm btn-light-danger btn-block radius-30">Cancelled</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="product-img bg-transparent border">
-                                        <img src="{{ asset('admin/assets/images/icons/wine-glass.png') }}" width="35" alt="">
-                                    </div>
-                                </td>
-                                <td>Mini Laptop</td>
-                                <td>Craig Clayton</td>
-                                <td>#325687</td>
-                                <td>$62.21</td>
-                                <td><a href="javascript:;" class="btn btn-sm btn-light-success btn-block radius-30">Delivered</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="product-img bg-transparent border">
-                                        <img src="{{ asset('admin/assets/images/icons/headphones.png"') }} width="35" alt="">
-                                    </div>
-                                </td>
-                                <td>Honor Mobile 7x</td>
-                                <td>Mitchell Daniel</td>
-                                <td>#835478</td>
-                                <td>$54.68</td>
-                                <td><a href="javascript:;" class="btn btn-sm btn-light-success btn-block radius-30">Delivered</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+            <!-- ============================================================== -->
+            <!-- Container fluid scss in scafholding.scss -->
+            <!-- ============================================================== -->
+            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
+        
+        @endsection
