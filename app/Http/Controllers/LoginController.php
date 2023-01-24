@@ -131,9 +131,16 @@ class LoginController extends Controller
             'namadudi' => $request ->name,
             'namakepdik' => $request ->namakepdik,
             'alamatdudi' => $request ->alamatdudi,
+            'foto' => $request ->foto,
             'user_id' => $user->id,
 
         ]);
+
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
+            $user->foto = $request->file('foto')->getClientOriginalName();
+            $user->save();
+        }
 
         return redirect('/login');
     }

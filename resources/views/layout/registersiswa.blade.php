@@ -1,167 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 
-<!-- Mirrored from codervent.com/syndash/demo/vertical/authentication-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Nov 2022 01:45:51 GMT -->
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/authentication-register2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:30 GMT -->
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<title>Syndash - Bootstrap4 Admin Template</title>
-	<!--favicon-->
-	<link rel="icon" href="{{ asset('admin/assets/images/favicon-32x32.png') }}" type="image/png" />
-	<!-- loader-->
-	<link href="{{ asset('admin/assets/css/pace.min.css') }}" rel="stylesheet" />
-	<script src="{{ asset('admin/assets/js/pace.min.js') }}"></script>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&amp;family=Roboto&amp;display=swap" />
-	<!-- Icons CSS -->
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/icons.css') }}" />
-	<!-- App CSS -->
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/app.css') }}" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png') }}">
+    <title>J-On | Register Siswa</title>
+    <link href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/style.css') }}" rel="stylesheet">
+    <!-- This page CSS -->
+    <link href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/authentication.css') }}" rel="stylesheet">
+    <!-- This page CSS -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
-<body class="bg-register">
-	<!-- wrapper -->
-	<div class="wrapper">
-		<div class="section-authentication-register d-flex align-items-center justify-content-center">
-			<div class="row">
-				<div class="col-12 col-lg-10 mx-auto">
-					<div class="card radius-15 overflow-hidden">
-						<div class="row g-0">
-							<div class="col-xl-6">
-								<div class="card-body p-md-5">
-									<div class="text-center">
-										<img src="{{ asset('admin/assets/images/logo-icon.png') }}" width="80" alt="">
-										<h3 class="mt-4 font-weight-bold"><strong>Buat Akun Siswa</strong></h3>
-                                        <br>
-									</div>
-									<div class="">
-										{{-- <div class="d-grid">
-											<a class="btn my-4 shadow-sm btn-white" href="javascript:;"> <span class="d-flex justify-content-center align-items-center">
-											<img class="me-2" src="{{ asset('admin/assets/images/icons/search.svg') }}" width="16" alt="Image Description">
-											<span>Sign Up with Google</span>
-												</span>
-											</a> <a href="javascript:;" class="btn btn-facebook"><i class="bx bxl-facebook me-1"></i>Sign Up with Facebook</a>
-										</div>
-										<div class="login-separater text-center mb-4"> <span>OR SIGN UP WITH EMAIL</span>
-											<hr>
-										</div> --}}
-										<div class="form-body">
-											<form class="row g-3" action="/registerusersiswa" method="POST">
-                                                @csrf
-												{{-- <div class="col-sm-6">
-													<label for="inputFirstName" class="form-label">First Name</label>
-													<input type="email" class="form-control" id="inputFirstName" placeholder="Jhon">
-												</div>
-												<div class="col-sm-6">
-													<label for="inputLastName" class="form-label">Last Name</label>
-													<input type="email" class="form-control" id="inputLastName" placeholder="Deo">
-												</div> --}}
-												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label"><strong>Masukkan NIS</strong></label>
-													<input type="number" class="form-control" id="inputEmailAddress" name="nissiswa" placeholder="25200507">
-												</div>
-
-												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Nama Lengkap Siswa</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="name" placeholder="Masukkan Nama Lengkap">
-												</div>
-												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Kelas</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="kelas" placeholder="Masukkan Kelas">
-												</div>
-												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Jurusan</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="jurusan" placeholder="Masukkan Jurusan">
-												</div>
-												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Alamat Siswa</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="alamatsiswa" placeholder="Masukkan Alamat">
-												</div>
-												<div class="col-12">
-													<label for="inputEmailAddress" class="form-label"><strong>Masukkan No Telepon</strong></label>
-													<input type="text" class="form-control" id="inputEmailAddress" name="notlpsiswa" placeholder="089 . . .">
-												</div>
-                                                <div class="col-12">
-													<label for="inputEmailAddress" class="form-label"><strong>Masukkan Email</strong></label>
-													<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="Masukkan Email">
-												</div>
-												<div class="col-12">
-													<label for="inputChoosePassword" class="form-label"><strong>Masukkan Password</strong></label>
-													<div class="input-group" id="show_hide_password">
-														<input type="password" class="form-control border-end-0" name="password" id="inputChoosePassword" placeholder="Masukkan Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
-													</div>
-												</div>
-
-												{{-- <div class="col-12">
-													<label for="inputSelectCountry" class="form-label">Country</label>
-													<select class="form-select" id="inputSelectCountry" aria-label="Default select example">
-														<option selected="">India</option>
-														<option value="1">United Kingdom</option>
-														<option value="2">America</option>
-														<option value="3">Dubai</option>
-													</select>
-												</div> --}}
-												{{-- <div class="col-12">
-													<div class="form-check form-switch">
-														<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-														<label class="form-check-label" for="flexSwitchCheckChecked">I read and agree to Terms &amp; Conditions</label>
-													</div>
-												</div> --}}
-												<div class="col-12">
-													<div class="d-grid">
-														<button type="submit" class="btn btn-primary"><i class="bx bx-user me-1"></i>Daftar</button>
-													</div>
-												</div>
-                                                <div class="col-12">
-													<div class="d-grid">
-														<a href="/landinghome" class="btn btn-primary">Kembali</a>
-													</div>
-												</div>
-                                                <div class="col-12 text-center">
-													<p>Sudah Punya Akun? <a href="/login">Login Disini</a></p>
-												</div>
-											</form>
-										</div>
-									</div>
-
-								</div>
-							</div>
-							<div class="col-xl-6 bg-login-color d-flex align-items-center justify-content-center">
-                                <img src="{{ asset('admin/assets/images/login-images/register-frent-img.jpg') }}" class="img-fluid" alt="...">
-							</div>
-						</div>
-						<!--end row-->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end wrapper -->
-	<!-- JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="{{ asset('admin/assets/js/jquery.min.js') }}"></script>
-	<!--Password show & hide js -->
-	<script>
-		$(document).ready(function () {
-			$("#show_hide_password a").on('click', function (event) {
-				event.preventDefault();
-				if ($('#show_hide_password input').attr("type") == "text") {
-					$('#show_hide_password input').attr('type', 'password');
-					$('#show_hide_password i').addClass("bx-hide");
-					$('#show_hide_password i').removeClass("bx-show");
-				} else if ($('#show_hide_password input').attr("type") == "password") {
-					$('#show_hide_password input').attr('type', 'text');
-					$('#show_hide_password i').removeClass("bx-hide");
-					$('#show_hide_password i').addClass("bx-show");
-				}
-			});
-		});
-	</script>
+<body>
+    <div class="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">J-On | Jurnal Online</p>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Login box.scss -->
+        <!-- ============================================================== -->
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url({{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/big/auth-bg2.jpg') }}) no-repeat left center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 l8 m6 demo-text">
+                        <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-icon.png') }}" alt="logo" /></span>
+                        <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-text.png') }}" alt="logo" /></span>
+                        <h1 class="font-light m-t-40">Selamat Datang di <span class="font-medium black-text">J-On</span></h1>
+                        <p>Selamat Datang di J-On Silahkan Registerasi Akun Anda.</p>
+                        <a href="/login" class="btn btn-round red m-t-5">Login</a>
+                    </div>
+                </div>
+                <div class="auth-box auth-sidebar">
+                    <div id="loginform">
+                        <div class="p-l-10">
+                            <h5 class="font-medium m-b-0 m-t-40">Silahkan Daftarkan Akun Anda</h5>
+                            <small>Masukkan Data Anda</small>
+                        </div>
+                        <!-- Form -->
+                        <div class="row">
+                            <form class="col s12" action="/registerusersiswa" method="POST">
+                                @csrf
+                                <!-- email -->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="number" name="nissiswa" class="validate" required>
+                                        <label for="name">NIS</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="text" name="name" class="validate" required>
+                                        <label for="name">Nama Siswa</label>
+                                    </div>
+                                </div>
+                                <!-- email -->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="email" type="email" name="email" class="validate" required>
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="text" name="kelas"  class="validate" required>
+                                        <label for="name">Kelas</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="text" name="jurusan" class="validate" required>
+                                        <label for="name">Jurusan</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="text" name="alamatsiswa" class="validate" required>
+                                        <label for="name">Alamat</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="number" name="notlpsiswa" class="validate" required>
+                                        <label for="name">No Telepon</label>
+                                    </div>
+                                </div>
+                                <!-- pwd -->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="password" type="password" name="password" class="validate" required>
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                                <!-- pwd -->
+                                {{-- <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="cpassword" type="password"  class="validate" required>
+                                        <label for="cpassword">Password</label>
+                                    </div>
+                                </div> --}}
+                                <!-- pwd -->
+                                {{-- <div class="row m-t-5">
+                                    <div class="col s7">
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Agree to all Terms</span>
+                                        </label>
+                                    </div>
+                                </div> --}}
+                                <!-- pwd -->
+                                <div class="row m-t-40">
+                                    <div class="col s12">
+                                        <button class="btn-large w100 red" type="submit">Sign Up</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="center-align m-t-20 db">
+                            Sudah Punya Akun? <a href="/login">Login DIsini!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Login box.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <script src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/materialize.min.js') }}"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <script type="text/javascript">
+        $(function() {
+            $(".preloader").fadeOut();
+        });
+    </script>
 </body>
 
 
-<!-- Mirrored from codervent.com/syndash/demo/vertical/authentication-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Nov 2022 01:45:53 GMT -->
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/authentication-register2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:30 GMT -->
 </html>

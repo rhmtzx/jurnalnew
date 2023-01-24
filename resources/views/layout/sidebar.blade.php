@@ -1,12 +1,12 @@
 <aside class="left-sidebar">
             <ul id="slide-out" class="sidenav">
-                
+
                 <li>
                     <ul class="collapsible collapsiblebox">
                         <li class="small-cap"><span class="hide-menu">PERSONAL</span></li>
                         <li>
-                            <a href="#"><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
-                            
+                            <a href="/"><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
+
                         </li>
 
                         <li class="small-cap"><span class="hide-menu">DATA SEKOLAH</span></li>
@@ -40,7 +40,7 @@
                             <a href="#" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Dudi </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
-                            </div> 
+                            </div>
                         </li>
                         <li>
                             <a href="#" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Persyaratan </span></a>
@@ -66,10 +66,10 @@
                             <a href="#" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data User </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
-                            </div> 
+                            </div>
                         </li>
-                       
-                        
+
+
 
                         <!-- <li class="small-cap"><span class="hide-menu">UI</span></li>
                         <li>
@@ -186,7 +186,7 @@
                             <a href="form-validation.html" class="collapsible-header"><i class="material-icons">assignment_late</i><span class="hide-menu"> Form Validation </span></a>
                              <div class="collapsible-body">
                                 <ul></ul>
-                            </div> 
+                            </div>
                         </li>
 
                         <li>
@@ -212,7 +212,7 @@
                             <a href="form-wizard.html" class="collapsible-header"><i class="material-icons">developer_board</i><span class="hide-menu"> Form Wizard </span></a>
                              <div class="collapsible-body">
                                 <ul></ul>
-                            </div> 
+                            </div>
                         </li>
 
                         <li class="small-cap"><span class="hide-menu">Tables</span></li>
