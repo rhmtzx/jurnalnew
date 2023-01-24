@@ -1,142 +1,513 @@
 @extends('layout.main')
-  @section('content')
-  <!doctype html>
-<html lang="en">
+@section('content')
+<!DOCTYPE html>
+<html>
 
+
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/ui-cards.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:19:20 GMT -->
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>EDIT DATA SISWA</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>Materialart Admin Template</title>
+    <link href="../../dist/css/style.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <link href="../../assets/extra-libs/prism/prism.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
-   <div class="page-content-wrapper">
-    <div class="justify-content-center">
-      <div class="row-2">
-        <div class="col-12 col-lg-12">
-            <div class="card-body">
-                <div class="container">
-                    <div class="row" > 
-
-                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                    <div class="breadcrumb-title pe-3">DATA SEKOLAH</div>
-                        <div class="ps-3">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0 p-0">
-                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">EDIT SISWA</li>
-                            </ol>
-                        </nav>
-                    </div>
+    <div class="main-wrapper" id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">Material Admin</p>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Sidebar scss in sidebar.scss -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Sidebar scss in sidebar.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Title and breadcrumb -->
+        <!-- ============================================================== -->
+        <div class="page-titles">
+            <div class="d-flex align-items-center">
+                <h5 class="font-medium m-b-0">Cards</h5>
+                <div class="custom-breadcrumb ml-auto">
+                    <a href="#!" class="breadcrumb">Home</a>
+                    <a href="#!" class="breadcrumb">Cards</a>
                 </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Container fluid scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
 
-                        <div class="card">
-                            <div class="card-body">
-                                <div>
-                                    <h4><em>EDIT SISWA</em></h4>
-                                    <hr>                        <form action="/updatedatasiswa/{{ $data->id }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nis Siswa</label>
-                                <input type="number" name="nissiswa" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Nis Siswa" value="{{ $data->nissiswa }}">
-                                @error('nissiswa')
+                            <h4><em>EDIT SISWA</em></h4>
+                            <hr>                                            
+                            <form action="/updatedatasiswa/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Nis Siswa</h6></label>
+                                    <input type="number" name="nissiswa" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Masukkan Nis Siswa" value="{{ $data->nissiswa }}">
+                                    @error('nissiswa')
                                     <div class="text-danger">
                                         {{ $message }}
                                     </div>
-                                @enderror
-                                <br>
-                                <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
-                                <input type="text" name="namasiswa" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Nama Siswa" value="{{$data->namasiswa}}">
-                                @error('namasiswa')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                                <br>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Kelas</label>
-                                    <input type="text" name="kelas" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Kelas" value="{{ $data->kelas }}">
-                                    @error('kelas')
+                                    @enderror
+                                    <br>
+                                    <br>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
+                                        <input type="text" name="namasiswa" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Masukkan Nama Siswa" value="{{ $data->namasiswa }}">
+                                        @error('namasiswa')
                                         <div class="text-danger">
                                             {{ $message }}
                                         </div>
-                                    @enderror
-                                    <br>
-                                                <div class="mb-3">
-                                                    <label for="exampleInputEmail1" class="form-label"><h5>Jurusan</h5></label>
-                                                    <select class="form-control" name="jurusan" id="jurusan">
+                                        @enderror
+                                        <br><br>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label"><h6>Kelas</h6></label>
+                                            <input type="text" name="kelas" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Masukkan Kelas" value="{{ $data->kelas }}">
+                                            @error('kelas')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <br>
+                                            <br>
+                                            <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label"><h6>Jurusan</h6></label>
+                                                    <select class="form-control" name="namajurusan" id="namajurusan">
                                                         <option value="" selected disabled>Pilih</option>
                                                         @foreach($jurusan as $a)
                                                         <option value="{{ $a->id }}"<?php if($data->jurusan == $a->id) {
                                                             echo 'selected';    
-                                                        }?> > {{ $a->namajurusan }} </option><!--  <--- Tergantung Variabel Database -->
+                                                        }?> > {{ $a->namajurusan }} </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Alamat Siswa</label>
-                                    <input type="text" name="alamatsiswa" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Alamat Siswa" value="{{ $data->alamatsiswa }}">
-                                    @error('alamatsiswa')
-                                        <div class="text-danger">
-                                            {{ $message }}
+                                                <br>
+
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label"><h6>Alamat Siswa</h6></label>
+                                                    <input type="text" name="alamatsiswa" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" placeholder="Masukkan Alamat Siswa" value="{{ $data->alamatsiswa}}">
+                                                    @error('alamatsiswa')
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
+                                                    <br>
+                                                    <br>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputEmail1" class="form-label"><h6>No Telepon Siswa</h6></label>
+                                                        <input type="number" name="notlpsiswa" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" placeholder="Masukkan No Telepon Siswa" value="{{ $data->notlpsiswa}}">
+                                                        @error('notlpsiswa')
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                        @enderror
+                                                        <br>
+                                                        <br>
+                                                        <div class="mt-4">
+                                                            <button type="submit" class="btn btn-primary">Edit Data</button>
+                                                            <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
+                                                        </div>
+                                                    </form>                                  
+
+                                                </div>
+                                            </div>
                                         </div>
-                                    @enderror
-                                    <br>
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">No Telepon</label>
-                                        <input type="text" name="notlpsiswa" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="No Telepon Siswa" value="{{ $data->notlpsiswa }}">
-                                        @error('notlpsiswa')
-                                            <div class="text-danger">
-                                                {{ $message }}
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- Container fluid scss in scafholding.scss -->
+                            <!-- ============================================================== -->
+                            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
+
+                            <!-- ============================================================== -->
+                            <!-- Page wrapper scss in scafholding.scss -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- Right Sidebar -->
+                            <!-- ============================================================== -->
+                            <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
+                            <aside class="right-sidebar">
+                                <!-- Right Sidebar -->
+                                <ul id="right-slide-out" class="sidenav right-sidenav p-t-10">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <!-- Tabs -->
+                                                <ul class="tabs">
+                                                    <li class="tab col s4"><a href="#settings" class="active"><span class="material-icons">build</span></a></li>
+                                                    <li class="tab col s4"><a href="#chat"><span class="material-icons">chat_bubble</span></a></li>
+                                                    <li class="tab col s4"><a href="#activity"><span class="material-icons">local_activity</span></a></li>
+                                                </ul>
+                                                <!-- Tabs -->
                                             </div>
-                                        @enderror
-                                        <br>
-                                        <!-- <div class="mb-1">
-                                                <label for="exampleInputEmail1" class="form-label">Masukkan Foto</label>
-                                                <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
-                                                        alt="" style="width: 90px" alt="">
-                                                <input type="file" name="foto" class="form-control">
-                                            </div> -->
-                                            <div class="mt-4">
-                                                <button type="submit" class="btn btn-primary">Edit Data Siswa</button>
-                                                <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
+                                            <!-- Setting -->
+                                            <div id="settings" class="col s12">
+                                                <div class="m-t-10 p-10 b-b">
+                                                    <h6 class="font-medium">Layout Settings</h6>
+                                                    <ul class="m-t-15">
+                                                        <li class="m-b-10">
+                                                            <label>
+                                                                <input type="checkbox" name="theme-view" id="theme-view" />
+                                                                <span>Dark Theme</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="m-b-10">
+                                                            <label>
+                                                                <input type="checkbox" class="nav-toggle" name="collapssidebar" id="collapssidebar" />
+                                                                <span>Collapse Sidebar</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="m-b-10">
+                                                            <label>
+                                                                <input type="checkbox" name="sidebar-position" id="sidebar-position" />
+                                                                <span>Fixed Sidebar</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="m-b-10">
+                                                            <label>
+                                                                <input type="checkbox" name="header-position" id="header-position" />
+                                                                <span>Fixed Header</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="m-b-10">
+                                                            <label>
+                                                                <input type="checkbox" name="boxed-layout" id="boxed-layout" />
+                                                                <span>Boxed Layout</span>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="p-10 b-b">
+                                                    <!-- Logo BG -->
+                                                    <h6 class="font-medium">Logo Backgrounds</h6>
+                                                    <ul class="m-t-15 theme-color">
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin1"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin2"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin3"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin4"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin5"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin6"></a></li>
+                                                    </ul>
+                                                    <!-- Logo BG -->
+                                                </div>
+                                                <div class="p-10 b-b">
+                                                    <!-- Navbar BG -->
+                                                    <h6 class="font-medium">Navbar Backgrounds</h6>
+                                                    <ul class="m-t-15 theme-color">
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin1"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin2"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin3"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin4"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin5"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin6"></a></li>
+                                                    </ul>
+                                                    <!-- Navbar BG -->
+                                                </div>
+                                                <div class="p-10 b-b">
+                                                    <!-- Logo BG -->
+                                                    <h6 class="font-medium">Sidebar Backgrounds</h6>
+                                                    <ul class="m-t-15 theme-color">
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin1"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin2"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin3"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin4"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin5"></a></li>
+                                                        <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin6"></a></li>
+                                                    </ul>
+                                                    <!-- Logo BG -->
+                                                </div>
                                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Optional JavaScript; choose one of the two! -->
+                                            <!-- chat -->
+                                            <div id="chat" class="col s12">
+                                                <ul class="mailbox m-t-20">
+                                                    <li>
+                                                        <div class="message-center">
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_1' data-user-id='1'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status online pull-right" data-status="online"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Chris Evans</h5>
+                                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                                    <span class="time">9:30 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_2' data-user-id='2'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status busy pull-right" data-status="busy"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Ray Hudson</h5>
+                                                                    <span class="mail-desc">I've sung a song! See you at</span>
+                                                                    <span class="time">9:10 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_3' data-user-id='3'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status away pull-right" data-status="away"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Lb James</h5>
+                                                                    <span class="mail-desc">I am a singer!</span>
+                                                                    <span class="time">9:08 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_4' data-user-id='4'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status offline pull-right" data-status="offline"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Don Andres</h5>
+                                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                                    <span class="time">9:02 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_5' data-user-id='5'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status online pull-right" data-status="online"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Chris Evans</h5>
+                                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                                    <span class="time">9:30 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_6' data-user-id='6'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status busy pull-right" data-status="busy"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Ray Hudson</h5>
+                                                                    <span class="mail-desc">I've sung a song! See you at</span>
+                                                                    <span class="time">9:10 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_7' data-user-id='7'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status away pull-right" data-status="away"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Lb James</h5>
+                                                                    <span class="mail-desc">I am a singer!</span>
+                                                                    <span class="time">9:08 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_8' data-user-id='8'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status offline pull-right" data-status="offline"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Don Andres</h5>
+                                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                                    <span class="time">9:02 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_9' data-user-id='9'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status online pull-right" data-status="online"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Chris Evans</h5>
+                                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                                    <span class="time">9:30 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_10' data-user-id='10'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status busy pull-right" data-status="busy"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Ray Hudson</h5>
+                                                                    <span class="mail-desc">I've sung a song! See you at</span>
+                                                                    <span class="time">9:10 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_11' data-user-id='11'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status away pull-right" data-status="away"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Lb James</h5>
+                                                                    <span class="mail-desc">I am a singer!</span>
+                                                                    <span class="time">9:08 AM</span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- Message -->
+                                                            <a href="#" class="user-info" id='chat_user_12' data-user-id='12'>
+                                                                <span class="user-img">
+                                                                    <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
+                                                                    <span class="profile-status offline pull-right" data-status="offline"></span>
+                                                                </span>
+                                                                <span class="mail-contnet">
+                                                                    <h5>Don Andres</h5>
+                                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                                    <span class="time">9:02 AM</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- Activity -->
+                                            <div id="activity" class="col s12">
+                                                <div class="m-t-10 p-10">
+                                                    <h6 class="font-medium">Activity Timeline</h6>
+                                                    <div class="steamline">
+                                                        <div class="sl-item">
+                                                            <div class="sl-left green"> <i class="ti-user"></i></div>
+                                                            <div class="sl-right">
+                                                                <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
+                                                                <div class="desc">you can write anything </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sl-item">
+                                                            <div class="sl-left blue"><i class="fa fa-image"></i></div>
+                                                            <div class="sl-right">
+                                                                <div class="font-medium">Send documents to Clark</div>
+                                                                <div class="desc">Lorem Ipsum is simply </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sl-item">
+                                                            <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/2.jpg"> </div>
+                                                            <div class="sl-right">
+                                                                <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
+                                                                <div class="desc">Contrary to popular belief</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sl-item">
+                                                            <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/1.jpg"> </div>
+                                                            <div class="sl-right">
+                                                                <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
+                                                                <div class="desc">Approve meeting with tiger</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sl-item">
+                                                            <div class="sl-left teal"> <i class="ti-user"></i></div>
+                                                            <div class="sl-right">
+                                                                <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
+                                                                <div class="desc">you can write anything </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sl-item">
+                                                            <div class="sl-left purple"><i class="fa fa-image"></i></div>
+                                                            <div class="sl-right">
+                                                                <div class="font-medium">Send documents to Clark</div>
+                                                                <div class="desc">Lorem Ipsum is simply </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sl-item">
+                                                            <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/4.jpg"> </div>
+                                                            <div class="sl-right">
+                                                                <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
+                                                                <div class="desc">Contrary to popular belief</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sl-item">
+                                                            <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/6.jpg"> </div>
+                                                            <div class="sl-right">
+                                                                <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
+                                                                <div class="desc">Approve meeting with tiger</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </aside>
+                            <div class="chat-windows"></div>
+                            <!-- ============================================================== -->
+                            <!-- Right Sidebar -->
+                            <!-- ============================================================== -->
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- All Required js -->
+                        <!-- ============================================================== -->
+                        <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+                        <script src="../../dist/js/materialize.min.js"></script>
+                        <script src="../../assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+                        <!-- ============================================================== -->
+                        <!-- Apps -->
+                        <!-- ============================================================== -->
+                        <script src="../../dist/js/app.js"></script>
+                        <script src="../../dist/js/app.init.js"></script>
+                        <script src="../../dist/js/app-style-switcher.js"></script>
+                        <!-- ============================================================== -->
+                        <!-- Custom js -->
+                        <!-- ============================================================== -->
+                        <script src="../../dist/js/custom.min.js"></script>
+                        <!-- ============================================================== -->
+                        <!-- This page plugin js -->
+                        <!-- ============================================================== -->
+                        <script src="../../assets/extra-libs/prism/prism.js"></script>
+                    </body>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
-    -->
-</body>
-
-</html>
-@endsection
+                    <!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/ui-cards.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:19:21 GMT -->
+                    </html>
+                    @endsection

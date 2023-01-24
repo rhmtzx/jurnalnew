@@ -249,7 +249,7 @@
                                         <div class="u-text">
                                             <h4>{{ Auth::user()->name }}</h4>
                                             <p>{{ Auth::user()->email }}</p>
-                                            <a class="waves-effect waves-light btn-small red white-text">View Profile</a>
+                                            <a href="/profil" class="waves-effect waves-light btn-small red white-text">View Profile</a>
                                         </div>
                                     </div>
                                 </li>

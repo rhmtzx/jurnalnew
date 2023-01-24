@@ -5,7 +5,7 @@
                     <ul class="collapsible collapsiblebox">
                         <li class="small-cap"><span class="hide-menu">PERSONAL</span></li>
                         <li>
-                            <a href="#"><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
+                            <a href="/"><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
                             
                         </li>
 
@@ -17,19 +17,19 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#datasiswa" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Siswa </span></a>
+                            <a href="/datasiswa" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Siswa </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="collapsible-header"><i class="material-icons">graphic_eq</i><span class="hide-menu"> Data Guru Pembimbing  </span></a>
+                            <a href="/datagurupembimbing" class="collapsible-header"><i class="material-icons">graphic_eq</i><span class="hide-menu"> Data Guru Pembimbing  </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Jurnal Siswa </span></a>
+                            <a href="/datatambahjurnal" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Jurnal Siswa </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
@@ -37,25 +37,25 @@
 
                          <li class="small-cap"><span class="hide-menu">DATA DUDI</span></li>
                         <li>
-                            <a href="#" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Dudi </span></a>
+                            <a href="/datadudi" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Dudi </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div> 
                         </li>
                         <li>
-                            <a href="#" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Persyaratan </span></a>
+                            <a href="/datapersyaratan" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Persyaratan </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="collapsible-header"><i class="material-icons">graphic_eq</i><span class="hide-menu"> Data Pembimbing Dudi  </span></a>
+                            <a href="/pembimbingdudi" class="collapsible-header"><i class="material-icons">graphic_eq</i><span class="hide-menu"> Data Pembimbing Dudi  </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Siswa Magang </span></a>
+                            <a href="/siswamagang" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Siswa Magang </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
@@ -63,7 +63,7 @@
 
                          <li class="small-cap"><span class="hide-menu">DATA USER</span></li>
                         <li>
-                            <a href="#" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data User </span></a>
+                            <a href="/datauser" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data User </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div> 
