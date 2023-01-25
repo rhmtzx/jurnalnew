@@ -1,10 +1,15 @@
 <?php
 
 
+use App\Models\jurusan;
+use App\Models\datadudi;
+use App\Models\datasiswa;
+use App\Models\tambahjurnal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DatadudiController;
+use App\Http\Controllers\DataguruController;
 use App\Http\Controllers\DatasiswaController;
 use App\Http\Controllers\SiswamagangController;
 use App\Http\Controllers\TambahjurnalController;
@@ -12,10 +17,6 @@ use App\Http\Controllers\DataplotinganController;
 use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
-use App\Models\jurusan;
-use App\Models\datasiswa;
-use App\Models\datadudi;
-use App\Models\tambahjurnal;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +43,10 @@ Route::get('/landinghome', function () {
     return view('landing.home');
 });
 
-
-
+//siswa
+Route::get('/dashboard', function () {
+    return view('siswa.welcomes');
+});
 //jurusan
 Route::middleware('auth')->group(function() {
     Route::get('/datajurusan',[JurusanController::class, 'index'])->name('datajurusan');
@@ -60,6 +63,14 @@ Route::middleware('auth')->group(function() {
     Route::get('/tampildatadudi/{id}',[DatadudiController::class, 'tampildatadudi'])->name('tampildatadudi')->middleware('auth');
     Route::post('/updatedatadudi/{id}',[DatadudiController::class, 'updatedatadudi'])->name('updatedatadudi')->middleware('auth');
     Route::get('/deletedatadudi/{id}',[DatadudiController::class, 'deletedatadudi'])->name('deletedatadudi')->middleware('auth');
+
+    //dataguru
+    Route::get('/dataguru',[DataguruController::class, 'index'])->name('dataguru')->middleware('auth');
+    Route::get('/tambahdataguru',[DataguruController::class, 'tambahdataguru'])->name('tambahdataguru')->middleware('auth');
+    Route::post('/insertdataguru',[DataguruController::class, 'insertdataguru'])->name('insertdataguru')->middleware('auth');
+    Route::get('/tampildataguru/{id}',[DataguruController::class, 'tampildataguru'])->name('tampildataguru')->middleware('auth');
+    Route::post('/updatedataguru/{id}',[DataguruController::class, 'updatedataguru'])->name('updatedataguru')->middleware('auth');
+    Route::get('/deletedataguru/{id}',[DataguruController::class, 'deletedataguru'])->name('deletedataguru')->middleware('auth');
 
 //datasiswa
 Route::get('/datasiswa',[DatasiswaController::class, 'index'])->name('datasiswa')->middleware('auth');
@@ -143,11 +154,11 @@ Route::post('/loginprosessiswa',[LoginController::class, 'loginprosessiswa'])->n
 Route::get('/registersiswa',[LoginController::class, 'registersiswa'])->name('registersiswa');
 Route::post('/registerusersiswa',[LoginController::class, 'registerusersiswa'])->name('registerusersiswa');
 
-//loginmagang
-Route::get('/loginmagang',[LoginController::class, 'loginmagang'])->name('loginmagang');
-Route::post('/loginprosesmagang',[LoginController::class, 'loginprosesmagang'])->name('loginprosesmagang');
-Route::get('/registermagang',[LoginController::class, 'registermagang'])->name('registermagang');
-Route::post('/registerusermagang',[LoginController::class, 'registerusermagang'])->name('registerusermagang');
+//loginguru
+Route::get('/loginguru',[LoginController::class, 'loginguru'])->name('loginguru');
+Route::post('/loginprosesguru',[LoginController::class, 'loginprosesguru'])->name('loginprosesguru');
+Route::get('/registerguru',[LoginController::class, 'registerguru'])->name('registerguru');
+Route::post('/registeruserguru',[LoginController::class, 'registeruserguru'])->name('registeruserguru');
 
 //log out
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\datadudi;
+use App\Models\dataguru;
 use App\Models\datasiswa;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -45,13 +46,13 @@ class LoginController extends Controller
 
 
     public function loginsiswa(){
-        return view('layout.login');
+        return view('layout.loginsiswa');
     }
 
     public function loginprosessiswa(Request $request){
 
-        if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+        if(Auth::attempt($request->only('nisiswa','email','password'))){
+            return redirect('/dashboard');
         }
 
             return redirect('login');
@@ -84,29 +85,29 @@ class LoginController extends Controller
 
 
 
-        return redirect('/login');
+        return redirect('/loginsiswa');
     }
 
 
-    public function loginmagang(){
-        return view('layout.login');
+    public function loginguru(){
+        return view('layout.loginguru');
     }
 
-    public function loginprosesmagang(Request $request){
+    public function loginprosesguru(Request $request){
 
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+            return redirect('/dashboard');
         }
 
             return redirect('login');
 
     }
 
-    public function registermagang(){
-        return view('layout.registermagang');
+    public function registerguru(){
+        return view('layout.registerguru');
     }
 
-    public function registerusermagang(Request $request){
+    public function registeruserguru(Request $request){
         // dd($request->all());
         $this->validate($request,[
             'email' => 'required|unique:users',
@@ -124,25 +125,25 @@ class LoginController extends Controller
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
-            'role' => 'Dudi'
+            'role' => 'guru'
         ]);
 
-        datadudi::create([
-            'namadudi' => $request ->name,
-            'namakepdik' => $request ->namakepdik,
-            'alamatdudi' => $request ->alamatdudi,
-            'foto' => $request ->foto,
+        dataguru::create([
+            'nip' => $request ->nip,
+            'namaguru' => $request ->name,
+            'alamat' => $request ->alamat,
+            'notlpn' => $request ->notlpn,
             'user_id' => $user->id,
 
         ]);
 
-        if($request->hasFile('foto')){
-            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-            $user->foto = $request->file('foto')->getClientOriginalName();
-            $user->save();
-        }
+        // if($request->hasFile('foto')){
+        //     $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
+        //     $user->foto = $request->file('foto')->getClientOriginalName();
+        //     $user->save();
+        // }
 
-        return redirect('/login');
+        return redirect('/loginguru');
     }
 
     public function logout(){
@@ -152,6 +153,10 @@ class LoginController extends Controller
 
     public function landinghome(){
         return view('landing.home');
+    }
+
+    public function dashboard(){
+        return view('siswa.welcomes');
     }
 
     public function profil()
