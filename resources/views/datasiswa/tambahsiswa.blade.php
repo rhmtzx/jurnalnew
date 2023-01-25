@@ -97,8 +97,12 @@
                                         <br><br>
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Kelas</h6></label>
-                                            <input type="text" name="kelas" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="Masukkan Kelas">
+                                            <select class="form-control" name="kelas" id="kelas">
+                                                    <option value="" selected disabled>Pilih Kelas</option>
+                                                    @foreach($kelas as $pipi)
+                                                    <option value="{{ $pipi->id }}">{{ $pipi->kelassiswa }}</option>
+                                                    @endforeach
+                                                </select>
                                             @error('kelas')
                                             <div class="text-danger">
                                                 {{ $message }}

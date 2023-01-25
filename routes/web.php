@@ -163,6 +163,12 @@ Route::post('/registeruserguru',[LoginController::class, 'registeruserguru'])->n
 //log out
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
 
+Route::get('/datakelas',[KelasController::class, 'kelas'])->name('datakelas');
+Route::get('/tambahkelas',[KelasController::class, 'tambahkelas'])->name('tambahkelas');
+Route::post('/insertkelas',[KelasController::class, 'insertkelas'])->name('insertkelas');
+Route::get('/tampilkelas/{id}',[KelasController::class, 'tampilkelas'])->name('tampilakelas');
+Route::post('/updatedatakelas/{id}',[KelasController::class, 'updatedatakelas'])->name('updatedatakelas');
+Route::get('/deletekelas/{id}',[KelasController::class, 'deletekelas'])->name('deletekelas');
 
 
 

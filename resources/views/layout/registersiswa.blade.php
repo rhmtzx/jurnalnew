@@ -18,7 +18,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
 </head>
 
 <body>
@@ -79,6 +79,11 @@
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
+                                @error('email')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="name" type="text" name="kelas"  class="validate" required>
@@ -110,6 +115,11 @@
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
+                                @error('password')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                                 <!-- pwd -->
                                 {{-- <div class="row">
                                     <div class="input-field col s12">

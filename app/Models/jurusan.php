@@ -12,7 +12,7 @@ class jurusan extends Model
     protected $guarded = [];
     protected $dates = ['created_at'];
 
-     //Pusat Model Jurusan
+    //Pusat Model Jurusan
     public function datasiswa()
     {
         return $this->hasMany(datasiswa::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)

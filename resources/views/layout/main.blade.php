@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png')}}">
-    <title>Materialart Admin Template</title>
+    <title>J - On | Jurnal Online</title>
     <!-- This page CSS -->
     <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/chartist/dist/chartist.min.css')}}" rel="stylesheet">
     <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
@@ -407,6 +407,17 @@
 
     <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
     <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/pages/datatable/datatable-basic.init.js')}}"></script>
+
+<script>
+  @if (Session::has('toast_success'))
+  toastr.toast_success("{{ Session::get('toast_success') }}")
+  @endif
+</script>
+<script>
+  @if (Session::has('success'))
+  toastr.success("{{ Session::get('success') }}")
+  @endif
+</script>
 </body>
 
 
