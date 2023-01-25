@@ -16,13 +16,21 @@ class LoginController extends Controller
     }
 
     public function loginproses(Request $request){
-
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required|min:6',
+        ],[
+            'email.required' => 'Email Harus Diisi!',
+            'email.exists' => 'Email yang anda masukkan belum terdaftar!',
+            'password.required' => 'Password Harus Diisi!',
+            'password.min' => 'Password Minimal 6 Huruf',
+        ]);
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+            return redirect('/')->with('success','Login Berhasil!');
         }
                 // dd($request->all());
 
-            return redirect('login');
+            return redirect('login')->with('password','Password Salah');
 
     }
 
@@ -45,13 +53,13 @@ class LoginController extends Controller
 
 
     public function loginsiswa(){
-        return view('layout.login');
+        return view('layout.login')->with('toast_success','Berhasil Login');
     }
 
     public function loginprosessiswa(Request $request){
 
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+            return redirect('/')->with('toast_success','Berhasil Login');
         }
 
             return redirect('login');
@@ -59,11 +67,21 @@ class LoginController extends Controller
     }
 
     public function registersiswa(){
-        return view('layout.registersiswa');
+        return view('layout.registersiswa')->with('toast_success','Berhasil Daftar');
     }
 
     public function registerusersiswa(Request $request){
         // dd($request->all());
+        $this->validate($request,[
+            'email' => 'required|unique:users',
+            'password' => 'required|min:6'
+
+        ],[
+            'email.unique' => 'Email Sudah Digunakan',
+            'email.required' => 'Harus Diisi',
+            'password.min' => 'Isi Password Minimal 6 Huruf'
+        ]);
+        
         $user=User::create([
             'name' => $request ->name,
             'email' => $request ->email,
@@ -84,7 +102,7 @@ class LoginController extends Controller
 
 
 
-        return redirect('/login');
+        return redirect('/login')->with('toast_success','Berhasil Daftar');
     }
 
 
@@ -95,7 +113,7 @@ class LoginController extends Controller
     public function loginprosesmagang(Request $request){
 
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+            return redirect('/')->with('toast_success','Berhasil Login');;
         }
 
             return redirect('login');
@@ -116,9 +134,8 @@ class LoginController extends Controller
             'email.unique' => 'Email Sudah Digunakan',
             'email.required' => 'Harus Diisi',
             'password.min' => 'Isi Password Minimal 6 Huruf'
-
-
         ]);
+
         $user=User::create([
             'name' => $request ->name,
             'email' => $request ->email,
@@ -142,12 +159,12 @@ class LoginController extends Controller
             $user->save();
         }
 
-        return redirect('/login');
+        return redirect('/login')->with('toast_success','Berhasil Daftar');
     }
 
     public function logout(){
         Auth::logout();
-        return redirect('landinghome');
+        return redirect('landinghome')->with('toast_success','Berhasil Logout');
     }
 
     public function landinghome(){

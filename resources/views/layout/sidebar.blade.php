@@ -10,19 +10,25 @@
 
                         <li class="small-cap"><span class="hide-menu">DATA SEKOLAH</span></li>
                         <li>
-                            <a href="/datajurusan" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Jurusan </span></a>
+                            <a href="/datakelas" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Kelas </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
                         </li>
                         <li>
-                            <a href="/datasiswa" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Siswa </span></a>
+                            <a href="/datajurusan" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Jurusan </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
                         </li>
                         <li>
-                            <a href="/datagurupembimbing" class="collapsible-header"><i class="material-icons">graphic_eq</i><span class="hide-menu"> Data Guru Pembimbing  </span></a>
+                            <a href="/datasiswa" class="collapsible-header"><i class="material-icons">graphic_eq</i><span class="hide-menu"> Data Siswa </span></a>
+                            <div class="collapsible-body">
+                                <ul></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/datagurupembimbing" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Guru Pembimbing  </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>

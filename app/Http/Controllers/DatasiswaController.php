@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\datasiswa;
 use App\Models\jurusan;
+use App\Models\kelas;
 
 use Illuminate\Http\Request;
 
@@ -12,14 +13,18 @@ class DatasiswaController extends Controller
     public function index(){
 
         $data = datasiswa::all();
-        return view('datasiswa.datasiswa',compact('data'));
+        $jurusan = jurusan::all();
+        $kelas = kelas::all();
+
+        return view('datasiswa.datasiswa',compact('data','jurusan','kelas'));
     }
 
     public function tambahdatasiswa(){
     $data = datasiswa::all();
     $jurusan = jurusan::all();
+    $kelas = kelas::all();
 
-        return view('datasiswa.tambahsiswa', compact('data','jurusan'));
+        return view('datasiswa.tambahsiswa', compact('data','jurusan','kelas'));
     }
 
     public function insertdatasiswa(Request $request){
@@ -48,6 +53,7 @@ class DatasiswaController extends Controller
                 'jurusan' =>$request->jurusan,
                 'alamatsiswa' =>$request->alamatsiswa,
                 'notlpsiswa' =>$request->notlpsiswa,
+                'user_id' =>$request->null,
                 
             ]);
             // dd($request->all);
@@ -63,10 +69,11 @@ class DatasiswaController extends Controller
         public function tampildatasiswa($id){
             $data = datasiswa::findOrfail($id);
             $jurusan = jurusan::all();
+            $kelas = kelas::all();
 
             //dd($data);
 
-            return view('datasiswa.tampilsiswa', compact('data','jurusan'));
+            return view('datasiswa.tampilsiswa', compact('data','jurusan','kelas'));
         }
 
         public function updatedatasiswa(Request $request, $id){

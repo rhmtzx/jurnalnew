@@ -67,6 +67,11 @@
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
+                                @error('email')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                                 <!-- pwd -->
                                 <div class="row">
                                     <div class="input-field col s12">
@@ -74,6 +79,11 @@
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
+                                @error('password')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                                 <!-- pwd -->
                                 <div class="row m-t-5">
                                     <div class="col s7">
@@ -168,6 +178,12 @@
         $(".preloader").fadeOut();
     });
     </script>
+
+<script>
+  @if (Session::has('toast_success'))
+  toastr.toast_success("{{ Session::get('toast_success') }}")
+  @endif
+</script>
 </body>
 
 

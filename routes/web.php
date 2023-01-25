@@ -12,6 +12,8 @@ use App\Http\Controllers\DataplotinganController;
 use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
+use App\Http\Controllers\KelasController;
+
 use App\Models\jurusan;
 use App\Models\datasiswa;
 use App\Models\datadudi;
@@ -152,6 +154,12 @@ Route::post('/registerusermagang',[LoginController::class, 'registerusermagang']
 //log out
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
 
+Route::get('/datakelas',[KelasController::class, 'kelas'])->name('datakelas');
+Route::get('/tambahkelas',[KelasController::class, 'tambahkelas'])->name('tambahkelas');
+Route::post('/insertkelas',[KelasController::class, 'insertkelas'])->name('insertkelas');
+Route::get('/tampilkelas/{id}',[KelasController::class, 'tampilkelas'])->name('tampilakelas');
+Route::post('/updatedatakelas/{id}',[KelasController::class, 'updatedatakelas'])->name('updatedatakelas');
+Route::get('/deletekelas/{id}',[KelasController::class, 'deletekelas'])->name('deletekelas');
 
 
 
