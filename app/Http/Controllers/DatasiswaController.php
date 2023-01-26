@@ -53,7 +53,7 @@ class DatasiswaController extends Controller
                 'jurusan' =>$request->jurusan,
                 'alamatsiswa' =>$request->alamatsiswa,
                 'notlpsiswa' =>$request->notlpsiswa,
-                'user_id' =>$request->null,
+                'user_id' =>$request->nullable,
                 
             ]);
             // dd($request->all);
@@ -85,6 +85,7 @@ class DatasiswaController extends Controller
                 'jurusan' =>$request->jurusan,
                 'alamatsiswa' =>$request->alamatsiswa,
                 'notlpsiswa' =>$request->notlpsiswa,
+                'user_id' =>$request->nullable,
                 
                 
             ]);

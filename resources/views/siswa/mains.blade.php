@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Default | Equation - Multipurpose Bootstrap Dashboard Template </title>
+    <title>J - On | Jurnal Online </title>
     <link rel="icon" type="image/x-icon" href="{{ asset('equation/designreset.com/preview-equation/default/assets/img/favicon.ico') }}"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="{{ asset('equation/designreset.com/preview-equation/default/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
@@ -106,7 +106,7 @@
     <!--  END CHAT  -->
 
     <!--  BEGIN FOOTER  -->
-    <footer class="footer-section theme-footer">
+    <!-- <footer class="footer-section theme-footer">
 
         <div class="footer-section-1  sidebar-theme">
             
@@ -142,7 +142,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!--  END FOOTER  -->
 
     <!--  BEGIN CONTROL SIDEBAR  -->
