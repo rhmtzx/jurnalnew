@@ -58,15 +58,15 @@
                         </div>
                         <!-- Form -->
                         <div class="row">
-                            <form class="col s12" action="/loginprosesguru" method="POST">
+                            <form class="col s12" action="/loginprosesuser" method="POST">
                                 @csrf
                                 <!-- email -->
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="input-field col s12">
                                         <input id="nip" type="text" name="nip" class="validate" required>
                                         <label for="nip">NIP</label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="email" type="email" name="email" class="validate" required>

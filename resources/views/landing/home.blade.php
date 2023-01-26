@@ -16,10 +16,10 @@
 
                   <p>Kami Membantu Mempercepat Pengisian Jurnal Anda Dalam Bentuk Web.</p>
 
-                <a href="/loginsiswa" class="btn-blue scrool">Login Siswa</a>
+                <a href="/registerguru" class="btn-blue scrool">Register Guru</a>
                 &nbsp;
                 &nbsp;
-                <a href="/loginguru" class="btn-blue scrool">Login Guru</a>
+                <a href="/registersiswa" class="btn-blue scrool">Register Siswa</a>
 
             </div>
             <!--end col-md-6-->

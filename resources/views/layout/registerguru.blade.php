@@ -46,7 +46,7 @@
                         <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-text.png') }}" alt="logo" /></span>
                         <h1 class="font-light m-t-40">Selamat Datang di <span class="font-medium black-text">J-On</span></h1>
                         <p>Selamat Datang di J-On Silahkan Registerasi Akun Anda.</p>
-                        <a href="/loginguru" class="btn btn-round red m-t-5">Login</a>
+                        <a href="/login" class="btn btn-round red m-t-5">Login</a>
                     </div>
                 </div>
                 <div class="auth-box auth-sidebar">
@@ -138,7 +138,7 @@
                             </form>
                         </div>
                         <div class="center-align m-t-20 db">
-                            Sudah Punya Akun? <a href="/loginguru">Login Disini!</a>
+                            Sudah Punya Akun? <a href="/login">Login Disini!</a>
                         </div>
                     </div>
                 </div>
