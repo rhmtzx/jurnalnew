@@ -16,4 +16,8 @@ class kelas extends Model
     {
         return $this->hasMany(user::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
+    public function datasiswa()
+    {
+        return $this->hasMany(datasiswa::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+    }
 }

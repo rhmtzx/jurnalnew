@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-header">
             <div class="page-title">
-                <h3>Dashboard</h3>
+                <h3>Welcome back, {{Auth::user()->name}}</h3>
             </div>
         </div>
 
@@ -81,7 +81,7 @@
 
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-xl-4 col-lg-6 col-md-6 col-12 layout-spacing">
                 <div class="widget-content-area chat-messages p-0  br-4">
                     
@@ -294,7 +294,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
 
@@ -430,8 +430,20 @@
             </div>
 
         </div>
-
         <div class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12 col-12 layout-spacing">
+                <div class="widget-content-area event-calendar p-0 br-4">
+                    <div class="calendar"></div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 col-md-12 col-12 layout-spacing">
+                <div class="widget-content-area event-calendar p-0 br-4">
+                    <div class="calendar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-12 layout-spacing">
                 <div class="statbox widget box">
                     <div class="widget-header ">
@@ -659,9 +671,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row">
+       <!--  <div class="row">
             <div class="col-xl-6 col-lg-12 col-md-12 col-12 layout-spacing">
                 <div class="widget-content-area raised-tickets p-0  h-100 br-4">
                     <div class=" table-header">
@@ -876,9 +888,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-xl-6 col-lg-12 col-md-12 col-12 layout-spacing">
                 <div class="widget-content-area event-calendar p-0 br-4">
                     <div class="calendar"></div>
@@ -957,10 +969,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
-            <div class="col-xl-8 col-lg-8 col-md-8 col-12 layout-spacing">
+            <!-- <div class="col-xl-8 col-lg-8 col-md-8 col-12 layout-spacing">
                 <div class="statbox widget box box-shadow latest-invoice ">
                     <div class="widget-header ">
                         <div class="row">
@@ -1137,7 +1149,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="row">
@@ -1166,7 +1178,8 @@
                                 <div class="col-md-6 col-sm-6">
                                     <div id="daily"></div>
                                 </div>
-                            </div>
+
+
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                             <div class="row">
@@ -1198,7 +1211,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-7 col-lg-12 col-md-12 col-12 layout-spacing">
+            <!-- <div class="col-xl-7 col-lg-12 col-md-12 col-12 layout-spacing">
                 <div class="row">
 
                     <div class="col-sm-4 col-12 mb-sm-0 mb-4">
@@ -1253,7 +1266,7 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
         </div>
 
     </div>

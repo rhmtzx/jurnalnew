@@ -19,7 +19,7 @@ class CreateDatagurusTable extends Migration
             $table->string('namaguru');
             $table->string('alamat');
             $table->bigInteger('notlpn');
-            $table->string('user_id');
+            $table->string('user_id')->nullable();
             $table->timestamps();
         });
     }

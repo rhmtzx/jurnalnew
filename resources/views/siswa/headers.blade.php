@@ -1,7 +1,12 @@
 <header class="header navbar fixed-top navbar-expand-sm">
     <a href="javascript:void(0);" class="sidebarCollapse d-none d-lg-block" data-placement="bottom"><i class="flaticon-menu-line-2"></i></a>
     <ul class="navbar-nav flex-row">
-        <li class="nav-item dropdown language-dropdown ml-1  ml-lg-0">
+        <li class="nav-item  d-lg-block d-none">
+            <form class="form-inline" role="search">
+                <input type="text" class="form-control search-form-control" placeholder="Search...">
+            </form>
+        </li>
+        <!-- <li class="nav-item dropdown language-dropdown ml-1  ml-lg-0">
             <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="flagDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="assets/img/ca.svg" alt=""> <span class="d-lg-inline-block d-none"></span>
             </a>
@@ -13,11 +18,11 @@
                 <a class="dropdown-item" href="javascript:void(0);"><img src="assets/img/ca.svg" class="flag-width" alt=""> &#xA0;English</a>
             </div>
         </li>
-    </ul>
+ --></ul>
 
 
     <ul class="navbar-nav flex-row mr-lg-auto ml-lg-0  ml-auto">
-        <li class="nav-item dropdown message-dropdown ml-lg-4">
+        <!-- <li class="nav-item dropdown message-dropdown ml-lg-4">
             <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="messageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-mail-10"></span><span class="badge badge-primary">13</span>
             </a>
@@ -79,22 +84,22 @@
                     <div class="btn btn-info mb-3 mr-2 btn-rounded"><i class="flaticon-arrow-right mr-3"></i> View more</div>
                 </a>
             </div>
-        </li>
+        </li> -->
 
         <li class="nav-item dropdown notification-dropdown ml-3">
-            <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!-- <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-bell-4"></span><span class="badge badge-success">15</span>
-            </a>
+            </a> -->
             <div class="dropdown-menu position-absolute" aria-labelledby="notificationDropdown">
-                <a class="dropdown-item title" href="javascript:void(0);">
+                <!-- <a class="dropdown-item title" href="javascript:void(0);">
                     <i class="flaticon-bell-13 mr-3"></i> <span>You have 15 new notifications</span>
-                </a>
+                </a> -->
 
                 <a class="dropdown-item text-center  p-1" href="javascript:void(0);">
 
                     <div class="notification-list ">
                         
-                        <div class="notification-item position-relative  mb-3">
+                        <!-- <div class="notification-item position-relative  mb-3">
                             <div class="c-dropdown text-right">
                                 <span id="c-dropdonbtn" class="c-dropbtn mr-2"><i class="flaticon-dots"></i></span>
                                 <div class="c-dropdown-content">
@@ -176,7 +181,7 @@
                                     <img alt="admin-profile" src="assets/img/profile-14.jpg">
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </a>
                 <a class="footer dropdown-item text-center p-2">
@@ -190,13 +195,13 @@
 
     <ul class="navbar-nav flex-row ml-lg-auto">
         
-        <li class="nav-item  d-lg-block d-none">
+        <!-- <li class="nav-item  d-lg-block d-none">
             <form class="form-inline" role="search">
                 <input type="text" class="form-control search-form-control" placeholder="Search...">
             </form>
-        </li>
+        </li> -->
 
-        <li class="nav-item dropdown app-dropdown  ml-lg-4 mr-lg-2 order-lg-0 order-2">
+       <!--  <li class="nav-item dropdown app-dropdown  ml-lg-4 mr-lg-2 order-lg-0 order-2">
             <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-bulb"></span>
             </a>
@@ -230,17 +235,18 @@
                 </a>
             </div>
         </li>
-
-
+ -->
+       
         <li class="nav-item dropdown user-profile-dropdown ml-lg-0 mr-lg-2 ml-3 order-lg-0 order-1">
             <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-user-12"></span>
             </a>
+
             <div class="dropdown-menu  position-absolute" aria-labelledby="userProfileDropdown">
                 <a class="dropdown-item" href="user_profile.html">
                     <i class="mr-1 flaticon-user-6"></i> <span>My Profile</span>
                 </a>
-                <a class="dropdown-item" href="apps_scheduler.html">
+                <!-- <a class="dropdown-item" href="apps_scheduler.html">
                     <i class="mr-1 flaticon-calendar-bold"></i> <span>My Schedule</span>
                 </a>
                 <a class="dropdown-item" href="apps_mailbox.html">
@@ -248,19 +254,19 @@
                 </a>
                 <a class="dropdown-item" href="user_lockscreen_1.html">
                     <i class="mr-1 flaticon-lock-2"></i> <span>Lock Screen</span>
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="user_login_1.html">
+                <a class="dropdown-item" href="/logout">
                     <i class="mr-1 flaticon-power-button"></i> <span>Log Out</span>
                 </a>
             </div>
         </li>
 
-        <li class="nav-item dropdown cs-toggle order-lg-0 order-3"> 
+        <!-- <li class="nav-item dropdown cs-toggle order-lg-0 order-3"> 
             <a href="#" class="nav-link toggle-control-sidebar suffle">
                 <span class="flaticon-menu-dot-fill d-lg-inline-block d-none"></span>
                 <span class="flaticon-dots d-lg-none"></span>
             </a>
-        </li>
+        </li> -->
     </ul>
 </header>

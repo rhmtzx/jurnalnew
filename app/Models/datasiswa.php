@@ -17,4 +17,8 @@ class datasiswa extends Model
 	{
 		return $this->belongsTo(jurusan::class, 'namajurusan', 'id');
 	}
+	public function kelas()
+	{
+		return $this->belongsTo(kelas::class, 'kelassiswa', 'id');
+	}
 }

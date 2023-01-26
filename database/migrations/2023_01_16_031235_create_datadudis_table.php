@@ -22,7 +22,6 @@ class CreateDatadudisTable extends Migration
 
 
 
-            $table->string('user_id');
 
             $table->timestamps();
         });

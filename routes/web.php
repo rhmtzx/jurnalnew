@@ -7,6 +7,7 @@ use App\Models\datasiswa;
 use App\Models\tambahjurnal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DatadudiController;
 use App\Http\Controllers\DataguruController;

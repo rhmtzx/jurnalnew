@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\jurusan;
+use App\Models\kelas;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -36,5 +37,13 @@ class DatabaseSeeder extends Seeder
             ],
         ];
         jurusan::insert($jurusan);
+
+        $kelas = [
+            [
+                'kelassiswa' => 'XI',
+                
+            ],
+        ];
+        kelas::insert($kelas);
     }
 }
