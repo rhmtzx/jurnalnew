@@ -66,12 +66,7 @@
                                         <label for="nip">NIP</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="email" type="email" name="email" class="validate" required>
-                                        <label for="email">Email</label>
-                                    </div>
-                                </div>
+                                
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="name" type="text" name="name" class="validate" required>
@@ -81,21 +76,27 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="alamat" type="text" name="alamat"  class="validate" required>
-                                        <label for="alamat">Alamat</label>
+                                        <label for="alamat">Alamat Guru</label>
                                     </div>
                                 </div>
                                 <!-- email -->
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="notlpn" type="number" name="notlpn" class="validate" required>
-                                        <label for="notlpn">No Telpon</label>
+                                        <label for="notlpn">No Telepon Guru</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="email" type="email" name="email" class="validate" required>
+                                        <label for="email">Masukkan Email</label>
                                     </div>
                                 </div>
                                 <!-- pwd -->
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="password" type="password" name="password" class="validate" required>
-                                        <label for="password">Password</label>
+                                        <label for="password">Buat Password</label>
                                     </div>
                                 </div>
                                  {{-- <div class="col-lg-6 col-md-6">

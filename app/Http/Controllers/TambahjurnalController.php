@@ -10,7 +10,7 @@ class TambahjurnalController extends Controller
     public function index(){
 
         $data = tambahjurnal::all();
-        if(Auth()->user()->role == 'admin'){
+        if(Auth()->user()->role == 'Admin'){
             return view('tambahjurnal.datatambahjurnal',compact('data'));
         }else{
 

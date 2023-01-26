@@ -15,7 +15,7 @@ class DatasiswaController extends Controller
         $data = datasiswa::all();
         $jurusan = jurusan::all();
         $kelas = kelas::all();
-        if(Auth()->user()->role == 'admin'){
+        if(Auth()->user()->role == 'Admin'){
             return view('datasiswa.datasiswa',compact('data','jurusan','kelas'));
         }else{
             return view('user.datasiswa.datasiswa',compact('data','jurusan','kelas'));
@@ -27,7 +27,7 @@ class DatasiswaController extends Controller
     $data = datasiswa::all();
     $jurusan = jurusan::all();
     $kelas = kelas::all();
-        if(Auth()->user()->role == 'admin'){
+        if(Auth()->user()->role == 'Admin'){
             return view('datasiswa.tambahsiswa', compact('data','jurusan','kelas'));
         }else{
             return view('user.datasiswa.tambahsiswa', compact('data','jurusan','kelas'));
@@ -71,10 +71,10 @@ class DatasiswaController extends Controller
             //     $data->foto = $request->file('foto')->getClientOriginalName();
             //     $data->save();
             // }
-                if(Auth()->user()->role == 'admin'){
-                    return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Ditambahkan');
+                if(Auth()->user()->role == 'Admin'){
+                    return redirect()->route('datasiswa')->with('success', 'Data Berhasil Ditambahkan');
                 }else{
-                    return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Ditambahkan');
+                    return redirect()->route('datasiswa')->with('success', 'Data Berhasil Ditambahkan');
                 }
         }
         public function tampildatasiswa($id){
@@ -83,7 +83,7 @@ class DatasiswaController extends Controller
             $kelas = kelas::all();
 
             //dd($data);
-            if(Auth()->user()->role == 'admin'){
+            if(Auth()->user()->role == 'Admin'){
                 return view('datasiswa.tampilsiswa', compact('data','jurusan','kelas'));
             }else{
                 return view('user.datasiswa.tampilsiswa', compact('data','jurusan','kelas'));
@@ -108,7 +108,7 @@ class DatasiswaController extends Controller
             //     $data->foto = $request->file('foto')->getClientOriginalName();
             //     $data->save();
             // }
-            if(Auth()->user()->role == 'admin'){
+            if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Update');
             }else{
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Update');
@@ -118,7 +118,7 @@ class DatasiswaController extends Controller
         public function deletedatasiswa($id){
             $data = datasiswa::find($id);
             $data->delete();
-            if(Auth()->user()->rle == 'admin'){
+            if(Auth()->user()->rle == 'Admin'){
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');
             }else{
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');

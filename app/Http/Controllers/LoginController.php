@@ -30,10 +30,10 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Admin'])) {
             return redirect('/');
         }
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'guru'])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Guru'])) {
             return redirect('/dashboard');
         }
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'siswa'])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Siswa'])) {
             return redirect('/dashboard');
         }
 
@@ -91,7 +91,7 @@ class LoginController extends Controller
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
-            'role' => 'siswa'
+            'role' => 'Siswa'
         ]);
 
         datasiswa::create([
@@ -129,7 +129,7 @@ class LoginController extends Controller
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
-            'role' => 'guru'
+            'role' => 'Guru'
         ]);
 
         dataguru::create([

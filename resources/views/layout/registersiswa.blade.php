@@ -73,10 +73,35 @@
                                     </div>
                                 </div>
                                 <!-- email -->
+                                
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="text" name="kelas"  class="validate" required>
+                                        <label for="name">Kelas Siswa</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="text" name="jurusan" class="validate" required>
+                                        <label for="name">Jurusan Siswa</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="text" name="alamatsiswa" class="validate" required>
+                                        <label for="name">Alamat Siswa</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="name" type="number" name="notlpsiswa" class="validate" required>
+                                        <label for="name">No Telepon Siswa</label>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="email" type="email" name="email" class="validate" required>
-                                        <label for="email">Email</label>
+                                        <label for="email">Masukkan Email</label>
                                     </div>
                                 </div>
                                 @error('email')
@@ -84,35 +109,11 @@
                                     {{ $message }}
                                 </div>
                                 @enderror
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="name" type="text" name="kelas"  class="validate" required>
-                                        <label for="name">Kelas</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="name" type="text" name="jurusan" class="validate" required>
-                                        <label for="name">Jurusan</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="name" type="text" name="alamatsiswa" class="validate" required>
-                                        <label for="name">Alamat</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="name" type="number" name="notlpsiswa" class="validate" required>
-                                        <label for="name">No Telepon</label>
-                                    </div>
-                                </div>
                                 <!-- pwd -->
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="password" type="password" name="password" class="validate" required>
-                                        <label for="password">Password</label>
+                                        <label for="password">Buat Password</label>
                                     </div>
                                 </div>
                                 @error('password')

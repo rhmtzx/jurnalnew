@@ -37,9 +37,9 @@
                             <div class="card-content">
                                 <h1 class="card-title">Data Siswa</h1>
                                 <h6 class="card-subtitle">Seluruh Data Siswa Sekolah Ada Disini!</h6>
-                                <!-- <br>
+                                <br>
                                 <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
-                                <br> -->
+                                <br>
                                 
                                 <div class="table-responsive">
                                     <table id="datasiswa" class="table text-center table-bordered dt-responsive nowrap"

@@ -57,7 +57,7 @@ class DataguruController extends Controller
         public function updatedataguru(Request $request, $id){
             $data = dataguru::find($id);
             $data->update([
-                'NIP' =>$request->NIP,
+                'nip' =>$request->nip,
                 'namaguru' =>$request->namaguru,
                 'alamat' =>$request->alamat,
                 'notlpn' =>$request->notlpn,

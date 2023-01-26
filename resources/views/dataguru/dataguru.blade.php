@@ -62,10 +62,7 @@
                                             @foreach ($data as $row)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
-                                                    <td>
-                                                        <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
-                                                            style="width: 40px">
-                                                    </td>
+                                                    
                                                     <td>{{ $row->nip }}</td>
                                                     <td>{{ $row->namaguru }}</td>
                                                     <td>{{ $row->alamat }}</td>
@@ -139,13 +136,13 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#datadudi').DataTable();
+                $('#dataguru').DataTable();
             });
         </script>
 </body>
 
 <script>
-    $('.deletedatadudi').click(function() {
+    $('.deletedataguru').click(function() {
         var kategoriid = $(this).attr('data-id');
         var kategori = $(this).attr('data-kategori');
         swal({
@@ -157,7 +154,7 @@
         })
         .then((willDelete) => {
             if (willDelete) {
-                window.location = "/deletedatadudi/" + kategoriid + ""
+                window.location = "/deletedataguru/" + kategoriid + ""
                 swal("Data Jurusan Berhasil Di Hapus", {
                     icon: "success",
                 });
