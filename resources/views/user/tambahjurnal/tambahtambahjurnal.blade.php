@@ -1,5 +1,5 @@
-@extends('layout.main')
-@section('content')
+@extends('siswa.welcomes')
+@section('contents')
 <!DOCTYPE html>
 <html>
 
@@ -37,18 +37,18 @@
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
-        
+
         <!-- ============================================================== -->
         <!-- Sidebar scss in sidebar.scss -->
         <!-- ============================================================== -->
-        
+
         <!-- ============================================================== -->
         <!-- Sidebar scss in sidebar.scss -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Page wrapper scss in scafholding.scss -->
         <!-- ============================================================== -->
-        
+
             <!-- ============================================================== -->
             <!-- Title and breadcrumb -->
             <!-- ============================================================== -->
@@ -69,10 +69,10 @@
                     <div class="col s12">
                         <div class="card">
                             <div class="card-content">
-                                
+
                                 <h4><em>TAMBAH JURUSAN</em></h4>
-                                        <hr>                                            
-                                        
+                                        <hr>
+
                                         <form action="/inserttambahjurnal" method="POST" enctype="multipart\form-data" >
 
                                             @csrf
@@ -83,7 +83,7 @@
                                             @error('judul')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
-                                            
+
                                             <section style="padding-top:60px;">
                                                 <div class="container">
                                                     <div class="row">
@@ -113,7 +113,7 @@
                                             <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
                                             <br>
-                                            
+
                                             <div class="mb-1">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6></label>
                                             <br>
@@ -123,22 +123,22 @@
                                             <button type="submit" class="btn btn-primary">Submit Data</button>
                                             <a href="/datatambahjurnal" class="btn btn-danger mb-10">Kembali</a>
 
-                                        </form>                                  
-                                    
+                                        </form>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
+
+
 
             </div>
             <!-- ============================================================== -->
             <!-- Container fluid scss in scafholding.scss -->
             <!-- ============================================================== -->
             <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
-        
+
         <!-- ============================================================== -->
         <!-- Page wrapper scss in scafholding.scss -->
         <!-- ============================================================== -->
@@ -146,7 +146,7 @@
         <!-- Right Sidebar -->
         <!-- ============================================================== -->
         <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
-        
+
         <div class="chat-windows"></div>
         <!-- ============================================================== -->
         <!-- Right Sidebar -->

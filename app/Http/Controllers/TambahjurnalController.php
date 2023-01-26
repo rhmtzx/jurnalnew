@@ -10,11 +10,20 @@ class TambahjurnalController extends Controller
     public function index(){
 
         $data = tambahjurnal::all();
-        return view('tambahjurnal.datatambahjurnal',compact('data'));
+        if(Auth()->user()->role == 'admin'){
+            return view('tambahjurnal.datatambahjurnal',compact('data'));
+        }else{
+
+            return view('user.tambahjurnal.datatambahjurnal',compact('data'));
+        }
     }
 
     public function tambahtambahjurnal(){
-        return view('tambahjurnal.tambahtambahjurnal');
+        if(Auth()->user()->role == 'admin'){
+            return view('tambahjurnal.tambahtambahjurnal');
+        }else{
+            return view('user.tambahjurnal.tambahtambahjurnal');
+        }
     }
 
     public function inserttambahjurnal(Request $request){
@@ -48,14 +57,22 @@ class TambahjurnalController extends Controller
                 $data->foto = $request->file('foto')->getClientOriginalName();
                 $data->save();
             }
-
+            if(Auth()->user()->role == 'admin'){
             return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Ditambahkan');
+            }else{
+            return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Ditambahkan');
+
+            }
         }
         public function tampiltambahjurnal($id){
             $data = tambahjurnal::findOrfail($id);
             //dd($data);
+            if(Auth()->user()->role == 'admin'){
+                return view('tambahjurnal.tampiltambahjurnal', compact('data'));
+            }else{
+                return view('user.tambahjurnal.tampiltambahjurnal', compact('data'));
 
-            return view('tambahjurnal.tampiltambahjurnal', compact('data'));
+            }
         }
 
         public function updatetambahjurnal(Request $request, $id){
@@ -73,13 +90,21 @@ class TambahjurnalController extends Controller
                 $data->save();
             }
 
-            return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Di Update');
+            if(Auth()->user()->role == 'admin'){
+                return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Diupdate');
+                }else{
+                return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Diupdate');
+
+                }
         }
 
         public function deletetambahjurnal($id){
             $data = tambahjurnal::find($id);
             $data->delete();
-
-            return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Di Delete');
+            if(Auth()->user()->role == 'admin'){
+                return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Di Delete');
+            }else{
+                return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Di Delete');
+            }
         }
 }
