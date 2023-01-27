@@ -21,4 +21,8 @@ class datasiswa extends Model
 	{
 		return $this->belongsTo(kelas::class, 'kelassiswa', 'id');
 	}
+	public function plotingan()
+    {
+        return $this->hasMany(plotingan::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+    }
 }

@@ -46,7 +46,12 @@ Route::get('/landinghome', function () {
 
 //siswa
 Route::get('/dashboard', function () {
-    return view('siswa.welcomes');
+    $jurusan = jurusan::count();
+    $siswa = datasiswa::count();
+    $dudi = datadudi::count();
+    $jurnal = tambahjurnal::count();
+    
+    return view('siswa.welcomes', compact('jurusan', 'siswa', 'dudi', 'jurnal'));
 });
 //jurusan
 Route::middleware('auth')->group(function () {

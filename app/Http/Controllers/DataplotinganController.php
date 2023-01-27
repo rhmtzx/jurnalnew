@@ -3,22 +3,33 @@
 namespace App\Http\Controllers;
 use App\Models\Dataplotingan;
 use Illuminate\Http\Request;
+use App\Models\dataguru;
+use App\Models\datasiswa;
+use App\Models\datadudi;
 
 class DataplotinganController extends Controller
 {
     public function index(){
 
-        $data = dataplotingan::all();
+            $data = dataplotingan::all();
+            $guru = dataguru::all();
+            $siswa = datasiswa::all();
+            $dudi = datadudi::all();
         if(Auth()->user()->role == 'Admin'){
+            
 
-            return view('dataplotingan.dataplotingan',compact('data'));
+            return view('dataplotingan.dataplotingan',compact('data','guru','siswa','dudi'));
         }else{
             return view('user.dataplotingan.dataplotingan',compact('data'));
         }
     }
     public function tambahdataplotingan(){
+            $data = dataplotingan::all();
+            $guru = dataguru::all();
+            $siswa = datasiswa::all();
+            $dudi = datadudi::all();
         if(Auth()->user()->role == 'Admin'){
-            return view('dataplotingan.tambahdataplotingan');
+            return view('dataplotingan.tambahdataplotingan',compact('data','guru','siswa','dudi'));
         }else{
             return view('user.dataplotingan.tambahdataplotingan');
         }
@@ -50,9 +61,12 @@ class DataplotinganController extends Controller
         }
         public function tampildataplotingan($id){
             $data = dataplotingan::findOrfail($id);
+            $guru = guru::all();
+            $siswa = siswa::all();
+            $dudi = dudi::all();
             //dd($data);
             if(Auth()->user()->role == 'Admin'){
-                return view('dataplotingan.tampildataplotingan', compact('data'));
+                return view('dataplotingan.tampildataplotingan', compact('data','guru','siswa','dudi'));
             }else{
                 return view('user.dataplotingan.tampildataplotingan', compact('data'));
             }

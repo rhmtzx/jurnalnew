@@ -20,7 +20,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
 </head>
 
 <body>
@@ -44,117 +44,128 @@
         <!-- Page wrapper scss in scafholding.scss -->
         <!-- ============================================================== -->
         
-            <!-- ============================================================== -->
-            <!-- Title and breadcrumb -->
-            <!-- ============================================================== -->
-            <div class="page-titles">
-                <div class="d-flex align-items-center">
-                    <h5 class="font-medium m-b-0">Cards</h5>
-                    <div class="custom-breadcrumb ml-auto">
-                        <a href="#!" class="breadcrumb">Home</a>
-                        <a href="#!" class="breadcrumb">Cards</a>
-                    </div>
+        <!-- ============================================================== -->
+        <!-- Title and breadcrumb -->
+        <!-- ============================================================== -->
+        <div class="page-titles">
+            <div class="d-flex align-items-center">
+                <h5 class="font-medium m-b-0">Cards</h5>
+                <div class="custom-breadcrumb ml-auto">
+                    <a href="#!" class="breadcrumb">Home</a>
+                    <a href="#!" class="breadcrumb">Cards</a>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card">
-                            <div class="card-content">
-                                
-                                <h4><em>TAMBAH PLOTINGAN</em></h4>
-                                        <hr>                                            
-                                        <form action="/insertdataplotingan" method="POST" enctype="multipart\form-data" >
-                                            <br>
-                                            @csrf
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Nama Guru</h6></label>
-                                    <input type="text" name="namagurup" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="">
-                                    @error('namagurup')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                    <br>
-                                    <br>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Nis Siswa</h6></label>
-                                    <input type="text" name="nissiswap" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="">
-                                    @error('nissiswap')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                    <br>
-                                    <br>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Nama Dudi</h6></label>
-                                    <input type="text" name="namadudip" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="">
-                                    @error('namadudip')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                    <br>
-                                    <br>
-                                            <button type="submit" class="btn btn-primary">Submit Data</button>
-                                            <a href="/dataplotingan" class="btn btn-danger mb-10">Kembali</a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Container fluid scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
 
-                                        </form>                                   
-                                    
+                            <h4><em>TAMBAH PLOTINGAN</em></h4>
+                            <hr>                                            
+                            <form action="/insertdataplotingan" method="POST" enctype="multipart\form-data" >
+                                <br>
+                                @csrf
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"><h5>Nama Guru</h5></label>
+                                    <select class="form-control" name="namagurup" id="namagurup">
+                                        <option value="" selected disabled>Pilih Guru</option>
+                                        @foreach($guru as $hi)
+                                        <option value="{{ $hi->id }}">{{ $hi->namaguru }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                            </div>
+                                @error('namagurup')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"><h5>Nis Siswa</h5></label>
+                                    <select class="form-control" name="nissiswap" id="nissiswap">
+                                        <option value="" selected disabled>Pilih Siswa</option>
+                                        @foreach($siswa as $oke)
+                                        <option value="{{ $oke->id }}">{{ $oke->nissiswa }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('nissiswap')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"><h5>Nama Dudi</h5></label>
+                                    <select class="form-control" name="namadudip" id="namadudip">
+                                        <option value="" selected disabled>Pilih Dudi</option>
+                                        @foreach($dudi as $titit)
+                                        <option value="{{ $titit->id }}">{{ $titit->namadudi }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('namadudip')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                                <br>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Submit Data</button>
+                                <a href="/dataplotingan" class="btn btn-danger mb-10">Kembali</a>
+
+                            </form>                                   
+
                         </div>
                     </div>
                 </div>
-                
-                
-
             </div>
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
-            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
-        
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-        <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
-        z
-        <div class="chat-windows"></div>
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
+        </div>
+
+
+
     </div>
     <!-- ============================================================== -->
-    <!-- All Required js -->
+    <!-- Container fluid scss in scafholding.scss -->
     <!-- ============================================================== -->
-    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../../dist/js/materialize.min.js"></script>
-    <script src="../../assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
+
     <!-- ============================================================== -->
-    <!-- Apps -->
+    <!-- Page wrapper scss in scafholding.scss -->
     <!-- ============================================================== -->
-    <script src="../../dist/js/app.js"></script>
-    <script src="../../dist/js/app.init.js"></script>
-    <script src="../../dist/js/app-style-switcher.js"></script>
     <!-- ============================================================== -->
-    <!-- Custom js -->
+    <!-- Right Sidebar -->
     <!-- ============================================================== -->
-    <script src="../../dist/js/custom.min.js"></script>
+    <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
+    z
+    <div class="chat-windows"></div>
     <!-- ============================================================== -->
-    <!-- This page plugin js -->
+    <!-- Right Sidebar -->
     <!-- ============================================================== -->
-    <script src="../../assets/extra-libs/prism/prism.js"></script>
+</div>
+<!-- ============================================================== -->
+<!-- All Required js -->
+<!-- ============================================================== -->
+<script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="../../dist/js/materialize.min.js"></script>
+<script src="../../assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+<!-- ============================================================== -->
+<!-- Apps -->
+<!-- ============================================================== -->
+<script src="../../dist/js/app.js"></script>
+<script src="../../dist/js/app.init.js"></script>
+<script src="../../dist/js/app-style-switcher.js"></script>
+<!-- ============================================================== -->
+<!-- Custom js -->
+<!-- ============================================================== -->
+<script src="../../dist/js/custom.min.js"></script>
+<!-- ============================================================== -->
+<!-- This page plugin js -->
+<!-- ============================================================== -->
+<script src="../../assets/extra-libs/prism/prism.js"></script>
 </body>
 
 

@@ -47,9 +47,9 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Id Guru</th>
+                                                <th scope="col">Nama Guru</th>
                                                 <th scope="col">Nis Siswa</th>
-                                                <th scope="col">Id Dudi</th>
+                                                <th scope="col">Nama Dudi</th>
                                                
                                                 <th scope="col">Dibuat</th>
                                                 <th scope="col">Aksi</th>

@@ -16,4 +16,9 @@ class datadudi extends Model
     {
         return $this->hasMany(user::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
+
+    public function plotingan()
+    {
+        return $this->hasMany(plotingan::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+    }
 }

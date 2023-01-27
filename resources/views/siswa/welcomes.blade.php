@@ -18,11 +18,11 @@
                                 <i class="flaticon-line-chart"></i>
                             </div>
                             <div class="media-body text-right">
-                                <p class="widget-text mb-0">Sales</p>
-                                <p class="widget-numeric-value">98,225</p>
+                                <p class="widget-text mb-0">Total Jurnal</p>
+                                <p class="widget-numeric-value">{{$jurnal}}</p>
                             </div>
                         </div>
-                        <p class="widget-total-stats mt-2">94% New Sales</p>
+                        <p class="widget-total-stats mt-2">{{$jurnal}} Jumlah Jurnal</p>
                     </div>
                 </div>
             </div>
@@ -35,11 +35,11 @@
                                 <i class="flaticon-cart-bag"></i>
                             </div>
                             <div class="media-body text-right">
-                                <p class="widget-text mb-0">Orders</p>
-                                <p class="widget-numeric-value">24,017</p>
+                                <p class="widget-text mb-0">Total Siswa</p>
+                                <p class="widget-numeric-value">{{$siswa}}</p>
                             </div>
                         </div>
-                        <p class="widget-total-stats mt-2">552 New Orders</p>
+                        <p class="widget-total-stats mt-2">{{$siswa}} Jumlah Siswa</p>
                     </div>
                 </div>
             </div>
