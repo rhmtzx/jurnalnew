@@ -15,9 +15,9 @@ class CreateDataplotingansTable extends Migration
     {
         Schema::create('dataplotingans', function (Blueprint $table) {
             $table->id();
-            $table->string('id_gurupem');
-            $table->string('nissiswa');
-            $table->string('id_dudi');
+            $table->string('namagurup');
+            $table->string('nissiswap');
+            $table->string('namadudip');
             $table->timestamps();
         });
     }

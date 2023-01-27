@@ -977,6 +977,21 @@
     <script src="{{ asset('equation/designreset.com/preview-equation/default/assets/js/default-dashboard/default-custom.js') }}"></script>
     <script src="{{ asset('equation/designreset.com/preview-equation/default/assets/js/support-chat.js') }}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="{{ asset('equation/designreset.com/preview-equation/default/plugins/table/datatable/datatables.js')}}"></script>
+    <script>
+        $('#zero-config').DataTable({
+            "language": {
+                "paginate": { "previous": "<i class='flaticon-arrow-left-1'></i>", "next": "<i class='flaticon-arrow-right'></i>" },
+                "info": "Showing page _PAGE_ of _PAGES_"
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="{{ asset('equation/designreset.com/preview-equation/default/assets/js/custom.js')}}"></script>
 </body>
 
 <!-- Mirrored from designreset.com/preview-equation/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jan 2023 02:42:11 GMT -->

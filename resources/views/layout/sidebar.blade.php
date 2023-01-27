@@ -47,6 +47,13 @@
                                 <ul></ul>
                             </div>
                         </li>
+                         <li class="small-cap"><span class="hide-menu">DATA PLOTINGAN SISWA</span></li>
+                        <li>
+                            <a href="/dataplotingan" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Plotingan Siswa </span></a>
+                            <div class="collapsible-body">
+                                <ul></ul>
+                            </div>
+                        </li>
                         <!-- <li>
                             <a href="/datapersyaratan" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Persyaratan </span></a>
                             <div class="collapsible-body">

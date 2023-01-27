@@ -1,104 +1,163 @@
 @extends('layout.main')
 @section('content')
+<!DOCTYPE html>
+<html>
 
-  <!doctype html>
-    <html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-        <title>DATA PLOTINGAN</title>
-    </head>
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/ui-cards.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:19:20 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>Materialart Admin Template</title>
+    <link href="../../dist/css/style.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <link href="../../assets/extra-libs/prism/prism.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
 <body>
-   <div class="page-content-wrapper">
-    <div class="justify-content-center">
-      <div class="row-2">
-        <div class="col-12 col-lg-12">
-            <div class="card-body">
-                <div class="container">
-                    <div class="row" > 
-
-                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                    <div class="breadcrumb-title pe-3">DATA PLOTINGAN</div>
-                        <div class="ps-3">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0 p-0">
-                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">TAMBAH PLOTINGAN</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <div>
-                                    <h4><em>TAMBAH PLOTINGAN</em></h4>
-                                    <hr>                           
-                                    <form action="/insertdataplotingan" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Id Guru Pembimbing</label>
-                                    <input type="number" name="id_gurupem" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Guru Pembimbing">
-                                    @error('id_gurupem')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                    <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nis Siswa</label>
-                                    <input type="number" name="nissiswa" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Jurusan">
-                                    @error('nissiswa')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                    <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Id Dudi</label>
-                                    <input type="number" name="id_dudi" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Id Dudi">
-                                    @error('id_dudi')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                    <div class="mt-4">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        <a href="/dataplotingan" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
-                                    </div>
-                            </form>
-                        </div>
+    <div class="main-wrapper" id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Sidebar scss in sidebar.scss -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Sidebar scss in sidebar.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        
+            <!-- ============================================================== -->
+            <!-- Title and breadcrumb -->
+            <!-- ============================================================== -->
+            <div class="page-titles">
+                <div class="d-flex align-items-center">
+                    <h5 class="font-medium m-b-0">Cards</h5>
+                    <div class="custom-breadcrumb ml-auto">
+                        <a href="#!" class="breadcrumb">Home</a>
+                        <a href="#!" class="breadcrumb">Cards</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Optional JavaScript; choose one of the two! -->
+            <!-- ============================================================== -->
+            <!-- Container fluid scss in scafholding.scss -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                
+                                <h4><em>TAMBAH PLOTINGAN</em></h4>
+                                        <hr>                                            
+                                        <form action="/insertdataplotingan" method="POST" enctype="multipart\form-data" >
+                                            <br>
+                                            @csrf
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Nama Guru</h6></label>
+                                    <input type="text" name="namagurup" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="">
+                                    @error('namagurup')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    <br>
+                                    <br>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Nis Siswa</h6></label>
+                                    <input type="text" name="nissiswap" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="">
+                                    @error('nissiswap')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    <br>
+                                    <br>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Nama Dudi</h6></label>
+                                    <input type="text" name="namadudip" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="">
+                                    @error('namadudip')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    <br>
+                                    <br>
+                                            <button type="submit" class="btn btn-primary">Submit Data</button>
+                                            <a href="/dataplotingan" class="btn btn-danger mb-10">Kembali</a>
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+                                        </form>                                   
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
 
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-        </script>
-        -->
-    </body>
+            </div>
+            <!-- ============================================================== -->
+            <!-- Container fluid scss in scafholding.scss -->
+            <!-- ============================================================== -->
+            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
+        
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+        <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
+        z
+        <div class="chat-windows"></div>
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../dist/js/materialize.min.js"></script>
+    <script src="../../assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- Apps -->
+    <!-- ============================================================== -->
+    <script src="../../dist/js/app.js"></script>
+    <script src="../../dist/js/app.init.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
+    <!-- ============================================================== -->
+    <!-- Custom js -->
+    <!-- ============================================================== -->
+    <script src="../../dist/js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <script src="../../assets/extra-libs/prism/prism.js"></script>
+</body>
 
-    </html>
+
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/ui-cards.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:19:21 GMT -->
+</html>
 @endsection

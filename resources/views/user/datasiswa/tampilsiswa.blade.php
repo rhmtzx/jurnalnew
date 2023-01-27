@@ -1,516 +1,1858 @@
-@extends('layout.main')
-@section('content')
-<!DOCTYPE html>
-<html>
+@extends('siswa.welcomes')
+@section('contents')
 
+<!--  BEGIN MAIN CONTAINER  -->
+<!--     <div class="main-container" id="container">
+        <div class="overlay"></div>
+        <div class="cs-overlay"></div> -->
 
-<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/ui-cards.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:19:20 GMT -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-    <title>Materialart Admin Template</title>
-    <link href="../../dist/css/style.css" rel="stylesheet">
-    <!-- This page CSS -->
-    <link href="../../assets/extra-libs/prism/prism.css" rel="stylesheet">
-    <!-- This page CSS -->
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
+        <!--  BEGIN SIDEBAR  -->
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        </head>
 
-<body>
-    <div class="main-wrapper" id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <div class="preloader">
-            <div class="loader">
-                <div class="loader__figure"></div>
-                <p class="loader__label">Material Admin</p>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        
-        <!-- ============================================================== -->
-        <!-- Sidebar scss in sidebar.scss -->
-        <!-- ============================================================== -->
-        
-        <!-- ============================================================== -->
-        <!-- Sidebar scss in sidebar.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        
-        <!-- ============================================================== -->
-        <!-- Title and breadcrumb -->
-        <!-- ============================================================== -->
-        <div class="page-titles">
-            <div class="d-flex align-items-center">
-                <h5 class="font-medium m-b-0">Cards</h5>
-                <div class="custom-breadcrumb ml-auto">
-                    <a href="#!" class="breadcrumb">Home</a>
-                    <a href="#!" class="breadcrumb">Cards</a>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Container fluid scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col s12">
-                    <div class="card">
-                        <div class="card-content">
+        <!--  END SIDEBAR  -->
+        <body>
+            <!--  BEGIN CONTENT PART  -->
+            <div id="content" class="main-content">
+                <div class="container">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3>Data Siswa</h3>
+                            <div class="crumbs">
 
-                            <h4><em>EDIT SISWA</em></h4>
-                            <hr>                                            
-                            <form action="/updatedatasiswa/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+                                <ul id="breadcrumbs" class="breadcrumb">
+                                    <li><a href="index.html"><i class="flaticon-home-fill"></i></a></li>
+                                    <li><a href="#">Data Siswa</a></li>
+                                    <li class="active"><a href="#">Edit Siswa</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 layout-spacing">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4>Edit Siswa</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+                                    <div class="table-responsive">
+                                <form action="/updatedatasiswa/{{ $data->id }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Nis Siswa</h6></label>
+                                    <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>NIS</h6></label> 
                                     <input type="number" name="nissiswa" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Masukkan Nis Siswa" value="{{ $data->nissiswa }}">
-                                    @error('nissiswa')
-                                    <div class="text-danger">
-                                        {{ $message }}
+                                    aria-describedby="emailHelp" value="{{ $data->nissiswa }}">
+                                    <br>
+                                    
+                                    
+                                <div class="mb-3">
+                                    <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label> 
+                                    <input type="text" name="namasiswa" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" value="{{ $data->namasiswa }}">
+                                    <br>
+                                    
+                                    
+                                <div class="mb-3">
+                                    <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Kelas Siswa</h6></label> 
+                                    <input type="text" name="kelas" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" value="{{ $data->kelas }}">
+                                    <br>
+                                   
+                                    
+                                <div class="mb-3">
+                                    <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label> 
+                                    <input type="text" name="jurusan" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" value="{{ $data->jurusan }}">
+                                    <br>
+                                   
+                                    
+                                <div class="mb-3">
+                                    <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Alamat Siswa</h6></label> 
+                                    <input type="text" name="alamatsiswa" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" value="{{ $data->alamatsiswa }}">
+                                    <br>
+                                    
+                                    
+                                <div class="mb-3">
+                                    <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>No Telepon Siswa</h6></label> 
+                                    <input type="text" name="notlpsiswa" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" value="{{ $data->notlpsiswa }}">
+                                    <br>
+                                    
+                                    
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn btn-primary">Edit Data</button>
+                                        <a href="/dataguru" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                     </div>
-                                    @enderror
-                                    <br>
-                                    <br>
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
-                                        <input type="text" name="namasiswa" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Masukkan Nama Siswa" value="{{ $data->namasiswa }}">
-                                        @error('namasiswa')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-                                        <br><br>
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Kelas</h6></label>
-                                            <select class="form-control" name="kelas" id="kelas">
-                                                <option value="" selected disabled>Pilih</option>
-                                                @foreach($kelas as $pp)
-                                                <option value="{{ $kelas->id }}"<?php if($data->kelas == $kelas->id) {
-                                                    echo 'selected';    
-                                                }?> > {{ $kelas->kelassiswa }} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <br>
-                                        <br>
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Jurusan</h6></label>
-                                            <select class="form-control" name="jurusan" id="jurusan">
-                                                <option value="" selected disabled>Pilih</option>
-                                                @foreach($jurusan as $a)
-                                                <option value="{{ $a->id }}"<?php if($data->jurusan == $a->id) {
-                                                    echo 'selected';    
-                                                }?> > {{ $a->namajurusan }} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <br>
-                                        <br>
-
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Alamat Siswa</h6></label>
-                                            <input type="text" name="alamatsiswa" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="Masukkan Alamat Siswa" value="{{ $data->alamatsiswa}}">
-                                            @error('alamatsiswa')
-                                            <div class="text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                            <br>
-                                            <br>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label"><h6>No Telepon Siswa</h6></label>
-                                                <input type="number" name="notlpsiswa" class="form-control" id="exampleInputEmail1"
-                                                aria-describedby="emailHelp" placeholder="Masukkan No Telepon Siswa" value="{{ $data->notlpsiswa}}">
-                                                @error('notlpsiswa')
-                                                <div class="text-danger">
-                                                    {{ $message }}
-                                                </div>
-                                                @enderror
-                                                <br>
-                                                <br>
-                                                <div class="mt-4">
-                                                    <button type="submit" class="btn btn-primary">Edit Data</button>
-                                                    <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
-                                                </div>
-                                            </form>                                  
-
-                                        </div>
+                                </form>                                  
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                    <!-- <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Hover Table</h4>
+                                    </div>                 
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped mb-4">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>Sale</th>
+                                                <th class="text-center">Status</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Shaun Park</td>
+                                                <td>10/08/2018</td>
+                                                <td>320</td>
+                                                <td class="text-center"><span class="text-success">Complete</span></td>
+                                                <td class="text-center"><i class="flaticon-delete-fill icon"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td> Alma Clarke</td>
+                                                <td>11/08/2018</td>
+                                                <td>420</td>
+                                                <td class="text-center"><span class="text-secondary">Pending</span></td>
+                                                <td class="text-center"><i class="flaticon-delete-fill icon"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Xavier</td>
+                                                <td>12/08/2018</td>
+                                                <td>130</td>
+                                                <td class="text-center"><span class="text-info">In progress</span></td>
+                                                <td class="text-center"><i class="flaticon-delete-fill icon"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Vincent Carpenter</td>
+                                                <td>13/08/2018</td>
+                                                <td>260</td>
+                                                <td class="text-center"><span class="text-danger">Canceled</span></td>
+                                                <td class="text-center"><i class="flaticon-delete-fill icon"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Striped Table</h4>
+                                    </div>                 
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped mb-4">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>Sale</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="usr-img-frame mr-2 rounded-circle">
+                                                            <img alt="admin-profile" class="img-fluid rounded-circle" src="assets/img/boy.png">
+                                                        </div>
+                                                        <p class="align-self-center mb-0">Shaun</p>
+                                                    </div>
+                                                </td>
+                                                <td>10/08/2018</td>
+                                                <td>320</td>
+                                                <td class=" text-center"><i class="t-icon t-hover-icon flaticon-cancel-12"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="usr-img-frame mr-2 rounded-circle">
+                                                            <img alt="admin-profile" class="img-fluid rounded-circle" src="assets/img/girl-1.png">
+                                                        </div>
+                                                        <p  class="align-self-center mb-0">Alma</p>
+                                                    </div>
+                                                </td>
+                                                <td>11/08/2018</td>
+                                                <td>420</td>
+                                                <td class="text-center"><i class="t-icon t-hover-icon flaticon-cancel-12"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="usr-img-frame mr-2 rounded-circle">
+                                                            <img alt="admin-profile" class="img-fluid rounded-circle" src="assets/img/girl-2.png">
+                                                        </div>
+                                                        <p  class="align-self-center mb-0">Kelly</p>
+                                                    </div>
+                                                </td>
+                                                <td>12/08/2018</td>
+                                                <td>130</td>
+                                                <td class="text-center"><i class="t-icon t-hover-icon flaticon-cancel-12"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="usr-img-frame mr-2 rounded-circle">
+                                                            <img alt="admin-profile" class="img-fluid rounded-circle" src="assets/img/boy-2.png">
+                                                        </div>
+                                                        <p  class="align-self-center mb-0">Vincent</p>
+                                                    </div>
+                                                </td>
+                                                <td>13/08/2018</td>
+                                                <td>260</td>
+                                                <td class="text-center"><i class="t-icon t-hover-icon flaticon-cancel-12"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Table Dark</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-dark mb-4">
+                                        <thead>
+                                            <tr>
+                                                <th class="align-center">#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-center">1</td>
+                                                <td>John</td>
+                                                <td>Doe</td>
+                                                <td>johndoe@yahoo.com</td>
+                                                <td class=" text-center"><i class="t-icon flaticon-cancel-12"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">2</td>
+                                                <td>Andy</td>
+                                                <td>King</td>
+                                                <td>andyking@gmail.com</td>
+                                                <td class="text-center"><i class="t-icon flaticon-cancel-12"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">3</td>
+                                                <td>Lisa</td>
+                                                <td>Doe</td>
+                                                <td>lisadoe@live.com</td>
+                                                <td class="text-center"><i class="t-icon flaticon-cancel-12"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">4</td>
+                                                <td>Vincent</td>
+                                                <td>Carpenter</td>
+                                                <td>vinnyc@outlook.com</td>
+                                                <td class="text-center"><i class="t-icon flaticon-cancel-12"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Captions</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table mb-4">
+                                      <caption>List of all users</caption>
+                                      <thead>
+                                            <tr>
+                                                <th class="align-center">#</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th class="">Status</th>
+                                                <th>Register</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-center">1</td>
+                                                <td class="text-primary">Shaun Park</td>
+                                                <td>johndoe@yahoo.com</td>
+                                                <td class=""><span class=" shadow-none badge badge-success badge-pill">Complete</span></td>
+                                                <td>5 min ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">2</td>
+                                                <td class="text-primary">Andy King</td>
+                                                <td>andyking@gmail.com</td>
+                                                <td class=""><span class="badge badge-secondary shadow-none badge-pill">Pending</span></td>
+                                                <td>10 min ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">3</td>
+                                                <td class="text-primary">Mary McDonald</td>
+                                                <td>lisadoe@live.com</td>
+                                                <td class=""><span class="badge badge-info shadow-none badge-pill">In Progress</span></td>
+                                                <td>1 hour ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">4</td>
+                                                <td class="text-primary">Vincent Carpenter</td>
+                                                <td>vinnyc@outlook.com</td>
+                                                <td class=""><span class="badge badge-danger shadow-none badge-pill">Cancel</span></td>
+                                                <td>1 day ago</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Bordered Table</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="align-center">#</th>
+                                                <th>Name</th>
+                                                <th>Progress</th>
+                                                <th>Sales</th>
+                                                <th class="align-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-center">1</td>
+                                                <td>John Doe</td>
+                                                <td>                                                    
+                                                    <div class="progress br-30">
+                                                        <div class="progress-bar br-30 bg-primary" role="progressbar" style="width: 29.56%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><p class="text-danger">29.56%</p></td>
+                                                <td class="align-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit-fill-2"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete-fill"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">2</td>
+                                                <td>Andy King</td>
+                                                <td>                                                    
+                                                    <div class="progress br-30">
+                                                        <div class="progress-bar br-30 bg-warning" role="progressbar" style="width: 19.15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><p class="text-danger">19.15%</p></td>
+                                                <td class="align-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit-fill-2"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete-fill"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">3</td>
+                                                <td>Lisa Doe</td>
+                                                <td>                                                    
+                                                    <div class="progress br-30">
+                                                        <div class="progress-bar br-30 bg-success" role="progressbar" style="width: 39.00%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><p class="text-danger">39.00%</p></td>
+                                                <td class="align-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit-fill-2"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete-fill"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">4</td>
+                                                <td>Vincent Carpenter</td>
+                                                <td>                                                    
+                                                    <div class="progress br-30">
+                                                        <div class="progress-bar br-30 bg-secondary" role="progressbar" style="width: 88.03%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><p class="text-success">88.03%</p></td>
+                                                <td class="align-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit-fill-2"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete-fill"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-center">5</td>
+                                                <td>Shaun Park</td>
+                                                <td>                                                    
+                                                    <div class="progress br-30">
+                                                        <div class="progress-bar br-30 bg-danger" role="progressbar" style="width: 97.09%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td><p class="text-success">97.09%</p></td>
+                                                <td class="align-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit-fill-2"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete-fill"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                -->
+                    <!-- <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Condensed Table</h4>
+                                    </div>                       
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-condensed mb-4">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th class="align-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Xavier</td>
+                                                <td>Developer</td>
+                                                <td>London</td>
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-fill-tick text-primary fs-20"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-close-fill text-danger fs-20"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Andy King</td>
+                                                <td>Designer</td>
+                                                <td>New York</td>
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-fill-tick text-primary fs-20"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-close-fill text-danger fs-20"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mary McDonald</td>
+                                                <td>Accountant</td>
+                                                <td>Amazon</td>
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-fill-tick text-primary fs-20"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-close-fill text-danger fs-20"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Vincent Carpenter</td>
+                                                <td>Data Scientist</td>
+                                                <td>Canada</td>
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-fill-tick text-primary fs-20"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-close-fill text-danger fs-20"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Shaun Park</td>
+                                                <td>Manager</td>
+                                                <td>Italy</td>
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-fill-tick text-primary fs-20"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-close-fill text-danger fs-20"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                
+                    <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Icon Table</h4>
+                                    </div>                       
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped table-checkable table-highlight-head mb-4">
+                                        <thead>
+                                            <tr>
+                                                <th class="checkbox-column">
+                                                    <div class="custom-control custom-checkbox checkbox-primary">
+                                                      <input type="checkbox" class="custom-control-input todochkbox" id="todoAll">
+                                                      <label class="custom-control-label" for="todoAll"></label>
+                                                    </div>
+                                                </th>
+                                                <th class="">Name</th>
+                                                <th class="">Date</th>
+                                                <th class="">Sales</th>
+                                                <th class="text-center">Icons</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="checkbox-column">
+                                                    <div class="custom-control custom-checkbox checkbox-primary">
+                                                      <input type="checkbox" class="custom-control-input todochkbox" id="todo-1">
+                                                      <label class="custom-control-label" for="todo-1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0">Shaun Park</p>
+                                                </td>
+                                                <td>10/08/2018</td>
+                                                <td>320</td>
+
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Settings"><i class="flaticon-settings-4  bg-primary p-1 text-white br-6 mb-1"></i></a> </li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit  bg-success p-1 text-white br-6 mb-1"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete  bg-danger p-1 text-white br-6 mb-1"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="checkbox-column">
+                                                    <div class="custom-control custom-checkbox checkbox-primary">
+                                                      <input type="checkbox" class="custom-control-input todochkbox" id="todo-2">
+                                                      <label class="custom-control-label" for="todo-2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p  class="mb-0">Alma Clarke</p>
+                                                </td>
+                                                <td>11/08/2018</td>
+                                                <td>420</td>
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Settings"><i class="flaticon-settings-4 bg-primary p-1 text-white br-6 mb-1"></i></a> </li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit bg-success p-1 text-white br-6 mb-1"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete bg-danger p-1 text-white br-6 mb-1"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="checkbox-column">
+                                                    <div class="custom-control custom-checkbox checkbox-primary">
+                                                      <input type="checkbox" class="custom-control-input todochkbox" id="todo-3">
+                                                      <label class="custom-control-label" for="todo-3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0">Kelly Young</p>
+                                                </td>
+                                                <td>12/08/2018</td>
+                                                <td>130</td>
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Settings"><i class="flaticon-settings-4 bg-primary p-1 text-white br-6 mb-1"></i></a> </li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit bg-success p-1 text-white br-6 mb-1"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete bg-danger p-1 text-white br-6 mb-1"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="checkbox-column">
+                                                    <div class="custom-control custom-checkbox checkbox-primary">
+                                                      <input type="checkbox" class="custom-control-input todochkbox" id="todo-4">
+                                                      <label class="custom-control-label" for="todo-4"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p  class="mb-0">Vincent Carpenter</p>
+                                                </td>
+                                                <td>13/08/2018</td>
+                                                <td>260</td>
+                                                <td class="text-center">
+                                                    <ul class="table-controls">
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Settings"><i class="flaticon-settings-4 bg-primary p-1 text-white br-6 mb-1"></i></a> </li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Edit"><i class="flaticon-edit bg-success p-1 text-white br-6 mb-1"></i></a></li>
+                                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Delete"><i class="flaticon-delete bg-danger p-1 text-white br-6 mb-1"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Contextual Table</h4>
+                                    </div>                           
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered mb-4">
+                                        <thead>
+                                            <tr class="">
+                                                <th class="align-center">#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="table-default">
+                                                <td class="align-center">1</td>
+                                                <td>John</td>
+                                                <td>Doe</td>
+                                                <td>johndoe@yahoo.com</td>
+                                            </tr>
+                                            <tr class="table-primary">
+                                                <td class="align-center">2</td>
+                                                <td>Andy</td>
+                                                <td>King</td>
+                                                <td>andyking@gmail.com</td>
+                                            </tr>
+                                            <tr class="table-secondary">
+                                                <td class="align-center">3</td>
+                                                <td>Lisa</td>
+                                                <td>Doe</td>
+                                                <td>lisadoe@live.com</td>
+                                            </tr>
+                                            <tr class="table-success">
+                                                <td class="align-center">4</td>
+                                                <td>Vincent</td>
+                                                <td>Carpenter</td>
+                                                <td>vinnyc@outlook.com</td>
+                                            </tr>
+                                            <tr class="table-warning">
+                                                <td class="align-center">5</td>
+                                                <td>Shaun</td>
+                                                <td>Park</td>
+                                                <td>spark@adobe.com</td>
+                                            </tr>
+                                            <tr class="table-danger">
+                                                <td class="align-center">6</td>
+                                                <td>Nia</td>
+                                                <td>Hillyer</td>
+                                                <td>niahill@gmail.com</td>
+                                            </tr>
+
+                                            <tr class="table-info">
+                                                <td class="align-center">7</td>
+                                                <td>Marry</td>
+                                                <td>McDonald</td>
+                                                <td>marryMcD@gmail.com</td>
+                                            </tr>
+                                            <tr class="table-dark">
+                                                <td class="align-center">8</td>
+                                                <td>Amy</td>
+                                                <td>Diaz</td>
+                                                <td>amydiaz@gmail.com</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12 layout-spacing">
+                        <div class="statbox widget box box-shadow">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                        <h4>Table with Footer</h4>
+                                    </div>          
+                                </div>
+                            </div>
+                            <div class="widget-content widget-content-area">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered mb-4">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>Sale</th>
+                                                <th class="align-center">Status</th>
+                                                <th class="align-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Shaun</td>
+                                                <td>10/08/2018</td>
+                                                <td>320</td>
+                                                <td class="align-center"><span class="badge badge-success">Approved</span></td>
+                                                <td class="text-center">
+                                                    
+                                                    <div class="dropdown custom-dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="flaticon-dot-three fs-17"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alma</td>
+                                                <td>11/08/2018</td>
+                                                <td>420</td>
+                                                <td class="align-center"><span class="badge badge-primary">In Progress</span></td>
+                                                <td class="text-center">
+                                                    
+                                                    <div class="dropdown custom-dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="flaticon-dot-three  fs-17"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kelly</td>
+                                                <td>12/08/2018</td>
+                                                <td>130</td>
+                                                <td class="align-center"><span class="badge badge-warning">Suspended</span></td>
+                                                <td class="text-center">
+                                                    
+                                                    <div class="dropdown custom-dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="flaticon-dot-three  fs-17"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Xavier</td>
+                                                <td>13/08/2018</td>
+                                                <td>260</td>
+                                                <td class="align-center"><span class="badge badge-danger">Blocked</span></td>
+                                                <td class="text-center">
+                                                    
+                                                    <div class="dropdown custom-dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="flaticon-dot-three  fs-17"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink4">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Andy</td>
+                                                <td>14/08/2018</td>
+                                                <td>99</td>
+                                                <td class="align-center"><span class="badge badge-secondary">On leave</span></td>
+                                                <td class="text-center">                                                    
+                                                    <div class="dropdown custom-dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="flaticon-dot-three  fs-17"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink5">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Justin</td>
+                                                <td>15/08/2018</td>
+                                                <td>555</td>
+                                                <td class="align-center"><span class="badge badge-info">Pending</span></td>
+                                                <td class="text-center">                                                    
+                                                    <div class="dropdown custom-dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="flaticon-dot-three  fs-17"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink6">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Amy</td>
+                                                <td>16/08/2018</td>
+                                                <td>300</td>
+                                                <td class="align-center"><span class="badge badge-dark">Deleted</span></td>
+                                                <td class="text-center">
+                                                    
+                                                    <div class="dropdown custom-dropdown">
+                                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="flaticon-dot-three  fs-17"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink7">
+                                                            <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>Sale</th>
+                                                <th class="align-center">Status</th>
+                                                <th class="align-center">Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  END CONTENT PART  -->
+    <!-- END MAIN CONTAINER -->
+    
+    <!--  BEGIN FOOTER  -->
+<!--     <footer class="footer-section theme-footer">
+
+        <div class="footer-section-1  sidebar-theme">
+            
+        </div>
+
+        <div class="footer-section-2 container-fluid">
+            <div class="row">
+                <div id="toggle-grid" class="col-xl-7 col-md-6 col-sm-6 col-12 text-sm-left text-center">
+                    <ul class="list-inline links ml-sm-5">
+                        <li class="list-inline-item mr-3">
+                            <a href="javascript:void(0);">Home</a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="javascript:void(0);">Blog</a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="javascript:void(0);">About</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void(0);">Buy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xl-5 col-md-6 col-sm-6 col-12">
+                    <ul class="list-inline mb-0 d-flex justify-content-sm-end justify-content-center mr-sm-3 ml-sm-0 mx-3">
+                        <li class="list-inline-item  mr-3">
+                            <p class="bottom-footer">&#xA9; 2019 <a target="_blank" href="https://designreset.com/equation">Equation Admin Theme</a></p>
+                        </li>
+                        <li class="list-inline-item align-self-center">
+                            <div class="scrollTop"><i class="flaticon-up-arrow-fill-1"></i></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    <!--  END FOOTER  -->
+
+    <!--  BEGIN CONTROL SIDEBAR  -->
+   <!--  <aside class="control-sidebar control-sidebar-light-color cs-content">
+        <div class="">
+
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <div class="close-sidebar">
+                        <i class="flaticon-close-fill p-3 toggle-control-sidebar"></i>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="usr-info text-center mb-5">
+                        <img alt="admin-profile" src="assets/img/c-14.jpg" class="img-fluid rounded-circle mb-3">
+                        <div class=" mt-2">
+                            <h5 class="usr-name mb-0">Linda Nelson</h5>
+                            <p class="usr-occupation mb-0 mt-1">Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-navigation-section text-center mb-5 mt-3">
+                <ul class="nav nav-tabs nav-justified mx-2">
+                    <li class="nav-item">
+                        <a data-toggle="tab" href="#feeds-tab" class="nav-link rounded-circle active show">
+                            <p class="mb-0">Task</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="tab" href="#friends-tab" class="nav-link rounded-circle">
+                            <p class="mb-0">Friends</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="tab" href="#alerts-tab" class="nav-link rounded-circle">
+                            <p class="mb-0">Settings</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+
+                <div id="feeds-tab" class="tab-pane tab-1 fade show active">
+                    
+                    <div class="tasks">
+
+                        <div class="recent">
+
+                            <div class="d-flex justify-content-between mb-5">
+                                
+                                <div class="icon">
+                                    <i class="flaticon-clock-1"></i>
+                                </div>
+
+
+                                <div>
+                                    <span class="">Today</span> <span class="notification-count ml-2">12</span>
+                                </div>
+
+                                <div>
+                                    <p class="r-view-all">See all</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-13.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Sean Freeman</h6>
+                                    <p>has replied your mail.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill remove-noti"></i>
+                            </div>
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-15.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Laurie Fox</h6>
+                                    <p>comment to your posts.</p>
+                                    <p class="meta-time">13 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill remove-noti"></i>
+                            </div>
+
+                            <div class="media system-notify">
+                                <i class="flaticon-settings-7  mr-3"></i>
+                                <div class="media-body">
+                                    <h6 class="mb-0">System Notifications</h6>
+                                    <p>has replied your mail.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill remove-noti"></i>
+                            </div>
+
+
+                            <div class="media mail-notify">
+                                <i class="flaticon-folder-fill-1  mr-3"></i>
+                                <div class="media-body">
+                                    <h6 class="mb-0">Ricky Turner</h6>
+                                    <p>has replied your mails.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill remove-noti"></i>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="today mt-5">
+                            
+                            <div class="d-flex justify-content-between mb-5">
+                                
+                                <div class="icon">
+                                    <i class="flaticon-bell-fill-1"></i>
+                                </div>
+                                <div>
+                                    <span>Yesterday</span> <span class="notification-count ml-2">8</span>
+                                </div>
+
+                                <div>
+                                    <p class="r-view-all">See all</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-7.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Angie Lamb</h6>
+                                    <p>has replied your mail.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill  remove-noti"></i>
+                            </div>
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-5.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Amy Diaz</h6>
+                                    <p>comment to your posts.</p>
+                                    <p class="meta-time">13 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill  remove-noti"></i>
+                            </div>
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-7.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Irene Collins</h6>
+                                    <p>has replied your mail.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill  remove-noti"></i>
+                            </div>
+
+
+                            <div class="media">
+                                <img alt="admin-profile" src="assets/img/c-9.jpg" class="img-fluid mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-0">Lila Perry</h6>
+                                    <p>has replied your mails.</p>
+                                    <p class="meta-time">7 mins ago</p>
+                                </div>
+                                <i class="flaticon-close-fill  remove-noti"></i>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="task-stats mt-5">
+                            
+                            <div class="t-s-header mb-5">
+                                <div class="row">
+                                    <div class="col-md-10 text-center">
+                                        <h6><span>Task Statistics</span></h6>
+                                    </div>
+                                    <div class="col-md-2 text-center">
+                                        <i class="flaticon-close-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="t-s-body">
+                                
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        
+                                        <div class="d-flex justify-content-between">
+                                            <p>Feature Development</p>
+                                            <p>70%</p>
+                                        </div>
+
+                                        <div class="progress  br-30 mb-4">
+                                            <div class="progress-bar  br-30 bg-secondary" role="progressbar" style="width: 70%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <p>Uploading files</p>
+                                            <p>30%</p>
+                                        </div>
+
+                                        <div class="progress  br-30 mb-4">
+                                            <div class="progress-bar  br-30 bg-danger" role="progressbar" style="width: 30%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <p>Total Progress</p>
+                                            <p>86%</p>
+                                        </div>
+
+                                        <div class="progress  br-30">
+                                            <div class="progress-bar  br-30 bg-info" role="progressbar" style="width: 86%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="text-center mt-5 mb-5">
+                                    <button class="btn btn-primary btn-rounded mb-5">See all</button>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="friends-tab" class="tab-pane tab-2 fade">
+
+                    <div class="friends">
+
+                        <div class="recent">
+
+                            <div class="t-s-header mb-5">
+
+                                <div class="row">
+                                    
+                                    <div class="col-md-8 text-center">
+                                        <h6>
+                                            <span>New Activity</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div>
+                                            <p>See all</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <ul class="list-inline text-center mb-5">
+                                
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-1.jpg">
+                                    <span class="badge badge-pill badge-new">8</span>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-2.jpg">
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-13.jpg">
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-3.jpg">
+                                    <span class="badge badge-pill badge-new">5</span>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <img alt="admin-profile" src="assets/img/c-4.jpg">
+                                </li>
+
+                            </ul>
+
+
+                            <div class="friend-request">
+                                
+                                <div class="d-flex justify-content-between header mb-5">
+                                    
+                                    <div class="media">
+                                        <i class="flaticon-user-plus mr-3"></i>
+                                        <div class="media-body">
+                                            <h6 class="mt-1">Friend request</h6>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="mb-0 mt-2">See all</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="media">
+                                    <img alt="admin-profile" src="assets/img/c-15.jpg" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <h6>Kara Young</h6>
+                                        <p>2 mins ago</p>
+                                    </div>
+                                    <i class="flaticon-fill-tick mr-2"></i>
+                                    <i class="flaticon-close-fill"></i>
+                                </div>
+
+                                <div class="media mt-2">
+                                    <img alt="admin-profile" src="assets/img/P-2.jpg" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <h6>Justin Cross</h6>
+                                        <p>5 mins ago</p>
+                                    </div>
+                                    <i class="flaticon-fill-tick mr-2"></i>
+                                    <i class="flaticon-close-fill"></i>
+                                </div>
+
+                                <div class="media mt-2">
+                                    <img alt="admin-profile" src="assets/img/c-5.jpg" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <h6>Amy Diaz</h6>
+                                        <p>7 mins ago</p>
+                                    </div>
+                                    <i class="flaticon-fill-tick mr-2"></i>
+                                    <i class="flaticon-close-fill"></i>
+                                </div>
+
+
+                                <div class="media mt-2">
+                                    <img alt="admin-profile" src="assets/img/c-6.jpg" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <h6>Ernest Reeves</h6>
+                                        <p>10 mins ago</p>
+                                    </div>
+                                    <i class="flaticon-fill-tick mr-2"></i>
+                                    <i class="flaticon-close-fill"></i>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="online mt-5">
+                            
+                            <div class="t-s-header mb-5">
+
+                                <div class="row">
+                                    
+                                    <div class="col-md-8 text-center">
+                                        <h6>
+                                            <span>Online</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div>
+                                            <p class="mb-0 mt-0">See all</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="media d-block d-sm-flex text-sm-left text-center">
+                                <img alt="admin-profile" class="mr-sm-3 mb-sm-0 mb-3" src="assets/img/c-7.jpg">
+                                <div class="media-body mb-4">
+                                    <h6 class="media-heading mt-0"><span class="media-title"> Irene Collins</span><span class="badge badge-info float-sm-right ml-2">9</span></h6>
+                                    <p class="media-text">
+                                        Cras sit amet gravida nulla.
+                                    </p><p class="meta-time">7 mins ago</p>
+                                </div>
+                            </div>
+
+
+                            <div class="media d-block d-sm-flex text-sm-left text-center">
+                                <img alt="admin-profile" class="mr-sm-3 mb-sm-0 mb-3 rounded" src="assets/img/c-8.jpg">
+                                <div class="media-body mb-4">
+                                    <h6 class="media-heading mt-0"><span class="media-title"> Thomas Granger</span><span class="badge badge-secondary float-sm-right ml-2">9</span></h6>
+                                    <p class="media-text">
+                                        Cras sit amet gravida nulla.
+                                    </p><p class="meta-time">13 mins ago</p>
+                                </div>
+                            </div>
+
+
+                            <div class="media d-block d-sm-flex text-sm-left text-center">
+                                <img alt="admin-profile" class="mr-sm-3 mb-sm-0 mb-3 rounded-circle" src="assets/img/c-9.jpg">
+                                <div class="media-body mb-4">
+                                    <h6 class="media-heading mt-0"><span class="media-title"> Grace Roberts</span><span class="badge badge-warning float-sm-right ml-2">9</span></h6>
+                                    <p class="media-text">
+                                        Cras sit amet gravida nulla.
+                                    </p><p class="meta-time">7 mins ago</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="away-stats">
+                            
+
+                            <div class="t-s-header mb-5 mt-5">
+
+                                <div class="row">
+                                        
+                                    <div class="col-md-12">
+                                        <h6>
+                                            <span>Away</span>
+                                        </h6>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="a-s-media mb-5">
+                                    
+                                <div class="media mb-3">
+                                    <div class="profile-img mr-3">
+                                        <img alt="admin-profile" src="assets/img/profile-16.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">Traci Lopez</h6>
+                                    </div>
+                                </div>
+                                
+                                <div class="media mb-3">
+                                    <div class="profile-img mr-3">
+                                        <img alt="admin-profile" src="assets/img/c-11.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">Kristen Beck</h6>
+                                    </div>
+                                </div>
+                                
+                                <div class="media mb-5">
+                                    <div class="profile-img mr-3">
+                                        <img alt="admin-profile" src="assets/img/c-12.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">Keith Foster</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
 
 
                     </div>
-                    <!-- ============================================================== -->
-                    <!-- Container fluid scss in scafholding.scss -->
-                    <!-- ============================================================== -->
-                    <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.</footer>
+                </div>
 
-                    <!-- ============================================================== -->
-                    <!-- Page wrapper scss in scafholding.scss -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- Right Sidebar -->
-                    <!-- ============================================================== -->
-                    <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
-                    <aside class="right-sidebar">
-                        <!-- Right Sidebar -->
-                        <ul id="right-slide-out" class="sidenav right-sidenav p-t-10">
-                            <li>
-                                <div class="row">
-                                    <div class="col s12">
-                                        <!-- Tabs -->
-                                        <ul class="tabs">
-                                            <li class="tab col s4"><a href="#settings" class="active"><span class="material-icons">build</span></a></li>
-                                            <li class="tab col s4"><a href="#chat"><span class="material-icons">chat_bubble</span></a></li>
-                                            <li class="tab col s4"><a href="#activity"><span class="material-icons">local_activity</span></a></li>
-                                        </ul>
-                                        <!-- Tabs -->
-                                    </div>
-                                    <!-- Setting -->
-                                    <div id="settings" class="col s12">
-                                        <div class="m-t-10 p-10 b-b">
-                                            <h6 class="font-medium">Layout Settings</h6>
-                                            <ul class="m-t-15">
-                                                <li class="m-b-10">
-                                                    <label>
-                                                        <input type="checkbox" name="theme-view" id="theme-view" />
-                                                        <span>Dark Theme</span>
-                                                    </label>
-                                                </li>
-                                                <li class="m-b-10">
-                                                    <label>
-                                                        <input type="checkbox" class="nav-toggle" name="collapssidebar" id="collapssidebar" />
-                                                        <span>Collapse Sidebar</span>
-                                                    </label>
-                                                </li>
-                                                <li class="m-b-10">
-                                                    <label>
-                                                        <input type="checkbox" name="sidebar-position" id="sidebar-position" />
-                                                        <span>Fixed Sidebar</span>
-                                                    </label>
-                                                </li>
-                                                <li class="m-b-10">
-                                                    <label>
-                                                        <input type="checkbox" name="header-position" id="header-position" />
-                                                        <span>Fixed Header</span>
-                                                    </label>
-                                                </li>
-                                                <li class="m-b-10">
-                                                    <label>
-                                                        <input type="checkbox" name="boxed-layout" id="boxed-layout" />
-                                                        <span>Boxed Layout</span>
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="p-10 b-b">
-                                            <!-- Logo BG -->
-                                            <h6 class="font-medium">Logo Backgrounds</h6>
-                                            <ul class="m-t-15 theme-color">
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin1"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin2"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin3"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin4"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin5"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin6"></a></li>
-                                            </ul>
-                                            <!-- Logo BG -->
-                                        </div>
-                                        <div class="p-10 b-b">
-                                            <!-- Navbar BG -->
-                                            <h6 class="font-medium">Navbar Backgrounds</h6>
-                                            <ul class="m-t-15 theme-color">
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin1"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin2"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin3"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin4"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin5"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin6"></a></li>
-                                            </ul>
-                                            <!-- Navbar BG -->
-                                        </div>
-                                        <div class="p-10 b-b">
-                                            <!-- Logo BG -->
-                                            <h6 class="font-medium">Sidebar Backgrounds</h6>
-                                            <ul class="m-t-15 theme-color">
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin1"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin2"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin3"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin4"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin5"></a></li>
-                                                <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin6"></a></li>
-                                            </ul>
-                                            <!-- Logo BG -->
-                                        </div>
-                                    </div>
-                                    <!-- chat -->
-                                    <div id="chat" class="col s12">
-                                        <ul class="mailbox m-t-20">
-                                            <li>
-                                                <div class="message-center">
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_1' data-user-id='1'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
-                                                            <span class="profile-status online pull-right" data-status="online"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Chris Evans</h5>
-                                                            <span class="mail-desc">Just see the my admin!</span>
-                                                            <span class="time">9:30 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_2' data-user-id='2'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
-                                                            <span class="profile-status busy pull-right" data-status="busy"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Ray Hudson</h5>
-                                                            <span class="mail-desc">I've sung a song! See you at</span>
-                                                            <span class="time">9:10 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_3' data-user-id='3'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
-                                                            <span class="profile-status away pull-right" data-status="away"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Lb James</h5>
-                                                            <span class="mail-desc">I am a singer!</span>
-                                                            <span class="time">9:08 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_4' data-user-id='4'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
-                                                            <span class="profile-status offline pull-right" data-status="offline"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Don Andres</h5>
-                                                            <span class="mail-desc">Just see the my admin!</span>
-                                                            <span class="time">9:02 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_5' data-user-id='5'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
-                                                            <span class="profile-status online pull-right" data-status="online"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Chris Evans</h5>
-                                                            <span class="mail-desc">Just see the my admin!</span>
-                                                            <span class="time">9:30 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_6' data-user-id='6'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
-                                                            <span class="profile-status busy pull-right" data-status="busy"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Ray Hudson</h5>
-                                                            <span class="mail-desc">I've sung a song! See you at</span>
-                                                            <span class="time">9:10 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_7' data-user-id='7'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
-                                                            <span class="profile-status away pull-right" data-status="away"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Lb James</h5>
-                                                            <span class="mail-desc">I am a singer!</span>
-                                                            <span class="time">9:08 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_8' data-user-id='8'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
-                                                            <span class="profile-status offline pull-right" data-status="offline"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Don Andres</h5>
-                                                            <span class="mail-desc">Just see the my admin!</span>
-                                                            <span class="time">9:02 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_9' data-user-id='9'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/1.jpg" alt="user" class="circle">
-                                                            <span class="profile-status online pull-right" data-status="online"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Chris Evans</h5>
-                                                            <span class="mail-desc">Just see the my admin!</span>
-                                                            <span class="time">9:30 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_10' data-user-id='10'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/2.jpg" alt="user" class="circle">
-                                                            <span class="profile-status busy pull-right" data-status="busy"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Ray Hudson</h5>
-                                                            <span class="mail-desc">I've sung a song! See you at</span>
-                                                            <span class="time">9:10 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_11' data-user-id='11'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/3.jpg" alt="user" class="circle">
-                                                            <span class="profile-status away pull-right" data-status="away"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Lb James</h5>
-                                                            <span class="mail-desc">I am a singer!</span>
-                                                            <span class="time">9:08 AM</span>
-                                                        </span>
-                                                    </a>
-                                                    <!-- Message -->
-                                                    <a href="#" class="user-info" id='chat_user_12' data-user-id='12'>
-                                                        <span class="user-img">
-                                                            <img src="../../assets/images/users/4.jpg" alt="user" class="circle">
-                                                            <span class="profile-status offline pull-right" data-status="offline"></span>
-                                                        </span>
-                                                        <span class="mail-contnet">
-                                                            <h5>Don Andres</h5>
-                                                            <span class="mail-desc">Just see the my admin!</span>
-                                                            <span class="time">9:02 AM</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Activity -->
-                                    <div id="activity" class="col s12">
-                                        <div class="m-t-10 p-10">
-                                            <h6 class="font-medium">Activity Timeline</h6>
-                                            <div class="steamline">
-                                                <div class="sl-item">
-                                                    <div class="sl-left green"> <i class="ti-user"></i></div>
-                                                    <div class="sl-right">
-                                                        <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
-                                                        <div class="desc">you can write anything </div>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item">
-                                                    <div class="sl-left blue"><i class="fa fa-image"></i></div>
-                                                    <div class="sl-right">
-                                                        <div class="font-medium">Send documents to Clark</div>
-                                                        <div class="desc">Lorem Ipsum is simply </div>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item">
-                                                    <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/2.jpg"> </div>
-                                                    <div class="sl-right">
-                                                        <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
-                                                        <div class="desc">Contrary to popular belief</div>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item">
-                                                    <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/1.jpg"> </div>
-                                                    <div class="sl-right">
-                                                        <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
-                                                        <div class="desc">Approve meeting with tiger</div>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item">
-                                                    <div class="sl-left teal"> <i class="ti-user"></i></div>
-                                                    <div class="sl-right">
-                                                        <div class="font-medium">Meeting today <span class="sl-date"> 5pm</span></div>
-                                                        <div class="desc">you can write anything </div>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item">
-                                                    <div class="sl-left purple"><i class="fa fa-image"></i></div>
-                                                    <div class="sl-right">
-                                                        <div class="font-medium">Send documents to Clark</div>
-                                                        <div class="desc">Lorem Ipsum is simply </div>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item">
-                                                    <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/4.jpg"> </div>
-                                                    <div class="sl-right">
-                                                        <div class="font-medium">Go to the Doctor <span class="sl-date">5 minutes ago</span></div>
-                                                        <div class="desc">Contrary to popular belief</div>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item">
-                                                    <div class="sl-left"> <img class="circle" alt="user" src="../../assets/images/users/6.jpg"> </div>
-                                                    <div class="sl-right">
-                                                        <div><a href="javascript:void(0)">Stephen</a> <span class="sl-date">5 minutes ago</span></div>
-                                                        <div class="desc">Approve meeting with tiger</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                <div id="alerts-tab" class="tab-pane tab-3 fade">
+
+                    <div class="settings">
+
+                        <div class="admin-setting">
+
+
+                            <div class="d-flex justify-content-between">
+                                        
+                                <div class="media">
+                                    <i class="flaticon-gear-5 mr-3"></i>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">Admin settings</h6>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
-                    </aside>
-                    <div class="chat-windows"></div>
-                    <!-- ============================================================== -->
-                    <!-- Right Sidebar -->
-                    <!-- ============================================================== -->
+
+                                <div>
+                                    <p class="mb-0 mt-2">See all</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="mb-3 mt-5">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Show notifications</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Enable auto logout</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Show recent activity</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Chat history</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Users activity</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Orders history</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="mb-0 mt-1">Show task statistics</h6>
+                                    <label class="custom-control material-switch mb-4 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="general-setting mt-5">
+
+
+                            <div class="d-flex justify-content-between mb-5">
+                                        
+                                <div class="media">
+                                    <i class="flaticon-gear-5 mr-3"></i>
+                                    <div class="media-body">
+                                        <h6 class="mt-2">General Settings</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-facebook-logo fb"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-dribbble-bold dribbble"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-linkedin-logo lin"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-twitter-logo tweet"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="media mb-4">
+                                <i class="flaticon-behance-logo behance"></i>
+                                <div class="media-body d-flex justify-content-around">
+                                    <h6 class="mb-0 mt-2">Show notfications</h6>
+                                    <label class="custom-control material-switch mb-4  mt-2 material-s-rounded material-primary">
+                                        <input type="checkbox" class="material-switch-control-input" checked="">
+                                        <span class="material-switch-control-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+                            
+
+
+                            <div class="chk-settings mt-5">
+                                
+                                <div class="media mb-4 ">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title">Report panel usage</span>
+                                        </h6>
+                                        <p class="media-text">
+                                            Show information on any malicious activity
+                                        </p>
+                                    </div>
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox checkbox-secondary mr-1">
+                                          <input type="checkbox" class="new-control-input" checked>
+                                          <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="media mb-4 ">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title">Allow mail redirect</span>
+                                        </h6>
+                                        <p class="media-text">
+                                            Redirect mail through exchange server
+                                        </p>
+                                    </div>
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox checkbox-secondary mr-1">
+                                          <input type="checkbox" class="new-control-input">
+                                          <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="media mb-4 ">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Show author name in posts</span>
+                                        </h6>
+                                        <p class="media-text">
+                                            Allow the user to show his name in blog posts
+                                        </p>
+                                    </div>
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox checkbox-secondary mr-1">
+                                          <input type="checkbox" class="new-control-input" checked>
+                                          <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="media mb-4 ">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Sync phone when connected to the PC</span>
+                                        </h6>
+                                        <p class="media-text">
+                                            Connect smart phone automatically and sync with user profile
+                                        </p>
+                                    </div>
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox checkbox-secondary mr-1">
+                                          <input type="checkbox" class="new-control-input" checked>
+                                          <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-5 delete-chat mb-5">
+                                
+                                <div class="media mb-4">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Delete chat history</span>
+                                        </h6>
+                                    </div>
+                                    <i class="del-chat-his flaticon-delete-1 mb-4"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            
+
+                            <div class="mt-5 usr-status mb-5">
+                                
+                                <div class="d-flex justify-content-between mb-5">
+                                        
+                                    <div class="media">
+                                        <i class="flaticon-chat-fill mr-3"></i>
+                                        <div class="media-body">
+                                            <h6 class="mt-2">Status</h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="media mb-2 stats">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Online</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox  mr-1  checkbox-outline-success new-checkbox-rounded">
+                                          <input type="checkbox" class="chb new-control-input">
+                                          <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="media mb-2 stats">
+                                    <div class="media-body">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Offline</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox  mr-1  checkbox-outline-default new-checkbox-rounded">
+                                          <input type="checkbox" class="chb new-control-input">
+                                          <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="media mb-5 stats">
+                                    <div class="media-body mb-5">
+                                        <h6 class="media-heading mt-0"><span class="media-title"> Away</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="n-chk">
+                                        <label class="new-control new-checkbox  mr-1  checkbox-outline-warning new-checkbox-rounded">
+                                          <input type="checkbox" class="chb new-control-input">
+                                          <span class="new-control-indicator"></span><span class="invisible">C</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- All Required js -->
-                <!-- ============================================================== -->
-                <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-                <script src="../../dist/js/materialize.min.js"></script>
-                <script src="../../assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
-                <!-- ============================================================== -->
-                <!-- Apps -->
-                <!-- ============================================================== -->
-                <script src="../../dist/js/app.js"></script>
-                <script src="../../dist/js/app.init.js"></script>
-                <script src="../../dist/js/app-style-switcher.js"></script>
-                <!-- ============================================================== -->
-                <!-- Custom js -->
-                <!-- ============================================================== -->
-                <script src="../../dist/js/custom.min.js"></script>
-                <!-- ============================================================== -->
-                <!-- This page plugin js -->
-                <!-- ============================================================== -->
-                <script src="../../assets/extra-libs/prism/prism.js"></script>
-            </body>
+            </div>
 
+        </div>
+    </aside> -->
+    <!--  END CONTROL SIDEBAR  -->
 
-            <!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/ui-cards.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:19:21 GMT -->
-            </html>
-            @endsection
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/loader.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="assets/js/custom.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
+    <script>
+        checkall('todoAll', 'todochkbox');
+        $('[data-toggle="tooltip"]').tooltip()
+    </script>
+    <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#datasiswa').DataTable();
+    });
+</script>
+</body>
+
+<script>
+    $('.deletedatasiswa').click(function() {
+        var kategoriid = $(this).attr('data-id');
+        var kategori = $(this).attr('data-kategori');
+        swal({
+            title: "Yakin Ingin delete Data ?",
+            text: "Kamu Yakin Akan Menghapus Data Ini !",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                window.location = "/deletedatasiswa/" + kategoriid + ""
+                swal("Data Jurusan Berhasil Di Hapus", {
+                    icon: "success",
+                });
+            } else {
+                swal("Data Jurusan Gagal Di Hapus");
+            }
+        });
+    });
+</script>
+
+<script>
+    @if (Session::has('success'))
+    toastr.success("{{ Session::get('success') }}")
+    @endif
+</script>
+
+<script>
+    @if (Session::has('error'))
+    toastr.error("{{ Session::get('error') }}")
+    @endif
+</script>
+</body>
+@endsection
