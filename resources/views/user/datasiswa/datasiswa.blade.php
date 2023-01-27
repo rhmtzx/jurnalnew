@@ -1,6 +1,5 @@
 @extends('siswa.welcomes')
 @section('contents')
-<<<<<<< Updated upstream
 
 <!--  BEGIN MAIN CONTAINER  -->
 <!--     <div class="main-container" id="container">
@@ -29,39 +28,10 @@
                                 </ul>
                             </div>
                         </div>
-=======
-<!DOCTYPE html>
-<html>
-
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png')}}">
-    <title></title>
-    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/style.css')}}" rel="stylesheet">
-    <!-- This page CSS -->
-    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/data-table.css')}}" rel="stylesheet">
-
-<!-- FONT AWESOME LINK -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-
-<body>
-        <div class="main-wrapper" id="main-wrapper">
-        <div class="page-titles">
-                <div class="d-flex align-items-center">
-                    <h5 class="font-medium m-b-0">Cards</h5>
-                    <div class="custom-breadcrumb ml-auto">
-                        <a href="#!" class="breadcrumb">Home</a>
-                        <a href="#!" class="breadcrumb">Cards</a>
->>>>>>> Stashed changes
                     </div>
 
                     <div class="row" id="cancel-row">
-                
+
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div class="widget-header">
@@ -71,8 +41,7 @@
                                         <br>
                                 <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
                                 <br>
-<<<<<<< Updated upstream
-                                
+
                                     </div>
 
                                 </div>
@@ -80,12 +49,6 @@
                             <div class="widget-content widget-content-area">
                                 <div class="table-responsive mb-4">
                                     <table id="datasiswa" class="table table-striped table-bordered table-hover" style="width:100%">
-=======
-
-                                <div clas                                s="table-responsive">
-                                    <table id="datasiswa" class="table text-center table-bordered dt-responsive nowrap"
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
->>>>>>> Stashed changes
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
@@ -132,14 +95,13 @@
                     </div>
 
                 </div>
-<<<<<<< Updated upstream
                     <!-- <div class="col-lg-6 col-md-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                         <h4>Hover Table</h4>
-                                    </div>                 
+                                    </div>
                                 </div>
                             </div>
                             <div class="widget-content widget-content-area">
@@ -189,14 +151,14 @@
                             </div>
                         </div>
                     </div>
-                
+
                     <div class="col-lg-6 col-md-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                         <h4>Striped Table</h4>
-                                    </div>                 
+                                    </div>
                                 </div>
                             </div>
                             <div class="widget-content widget-content-area">
@@ -269,41 +231,6 @@
                             </div>
                         </div>
                     </div>
-=======
-                </div>
-
-            </div>
-
-
-        <a href="#" data-target="right-slide-out" class="sidenav-trigg                er right-side-toggle b            tn            -floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
-
-        <div class="chat-windows"></div>
-        <!-- ==========================================        ==================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- All Required js -->
-    <!-- ============================================================== -->
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/jquery/dist/jquery.min.js')}}"></script>
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/materialize.min.js')}}"></script>
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js')}}"></script>
-    <!-- ============================================================== -->
-    <!-- Apps -->
-    <!-- ============================================================== -->
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app.js')}}"></script>
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app.init.js')}}"></script>
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app-style-switcher.js')}}"></script>
-    <!-- ============================================================== -->
-    <!-- Custom js -->
-    <!-- ============================================================== -->
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/custom.min.js')}}"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugin js -->
-    <!-- ============================================================== -->
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
-    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/pages/datatable/datatable-basic.init.js')}}"></script>
->>>>>>> Stashed changes
 
                     <div class="col-lg-6 col-md-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
@@ -419,7 +346,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-6 col-md-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div class="widget-header">
@@ -445,7 +372,7 @@
                                             <tr>
                                                 <td class="align-center">1</td>
                                                 <td>John Doe</td>
-                                                <td>                                                    
+                                                <td>
                                                     <div class="progress br-30">
                                                         <div class="progress-bar br-30 bg-primary" role="progressbar" style="width: 29.56%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
@@ -461,7 +388,7 @@
                                             <tr>
                                                 <td class="align-center">2</td>
                                                 <td>Andy King</td>
-                                                <td>                                                    
+                                                <td>
                                                     <div class="progress br-30">
                                                         <div class="progress-bar br-30 bg-warning" role="progressbar" style="width: 19.15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
@@ -477,7 +404,7 @@
                                             <tr>
                                                 <td class="align-center">3</td>
                                                 <td>Lisa Doe</td>
-                                                <td>                                                    
+                                                <td>
                                                     <div class="progress br-30">
                                                         <div class="progress-bar br-30 bg-success" role="progressbar" style="width: 39.00%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
@@ -493,7 +420,7 @@
                                             <tr>
                                                 <td class="align-center">4</td>
                                                 <td>Vincent Carpenter</td>
-                                                <td>                                                    
+                                                <td>
                                                     <div class="progress br-30">
                                                         <div class="progress-bar br-30 bg-secondary" role="progressbar" style="width: 88.03%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
@@ -509,7 +436,7 @@
                                             <tr>
                                                 <td class="align-center">5</td>
                                                 <td>Shaun Park</td>
-                                                <td>                                                    
+                                                <td>
                                                     <div class="progress br-30">
                                                         <div class="progress-bar br-30 bg-danger" role="progressbar" style="width: 97.09%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                     </div>
@@ -535,7 +462,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                         <h4>Condensed Table</h4>
-                                    </div>                       
+                                    </div>
                                 </div>
                             </div>
                             <div class="widget-content widget-content-area">
@@ -610,15 +537,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
-                
+                    </div>
+
                     <div class="col-lg-6 col-md-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                         <h4>Icon Table</h4>
-                                    </div>                       
+                                    </div>
                                 </div>
                             </div>
                             <div class="widget-content widget-content-area">
@@ -733,7 +660,7 @@
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                         <h4>Contextual Table</h4>
-                                    </div>                           
+                                    </div>
                                 </div>
                             </div>
                             <div class="widget-content widget-content-area">
@@ -803,14 +730,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-6 col-md-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                         <h4>Table with Footer</h4>
-                                    </div>          
+                                    </div>
                                 </div>
                             </div>
                             <div class="widget-content widget-content-area">
@@ -832,7 +759,7 @@
                                                 <td>320</td>
                                                 <td class="align-center"><span class="badge badge-success">Approved</span></td>
                                                 <td class="text-center">
-                                                    
+
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="flaticon-dot-three fs-17"></i>
@@ -854,7 +781,7 @@
                                                 <td>420</td>
                                                 <td class="align-center"><span class="badge badge-primary">In Progress</span></td>
                                                 <td class="text-center">
-                                                    
+
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="flaticon-dot-three  fs-17"></i>
@@ -875,13 +802,12 @@
                                                 <td>130</td>
                                                 <td class="align-center"><span class="badge badge-warning">Suspended</span></td>
                                                 <td class="text-center">
-                                                    
+
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="flaticon-dot-three  fs-17"></i>
                                                         </a>
 
-<<<<<<< Updated upstream
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
                                                             <a class="dropdown-item" href="javascript:void(0);">Download</a>
                                                             <a class="dropdown-item" href="javascript:void(0);">Share</a>
@@ -897,7 +823,7 @@
                                                 <td>260</td>
                                                 <td class="align-center"><span class="badge badge-danger">Blocked</span></td>
                                                 <td class="text-center">
-                                                    
+
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="flaticon-dot-three  fs-17"></i>
@@ -917,7 +843,7 @@
                                                 <td>14/08/2018</td>
                                                 <td>99</td>
                                                 <td class="align-center"><span class="badge badge-secondary">On leave</span></td>
-                                                <td class="text-center">                                                    
+                                                <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="flaticon-dot-three  fs-17"></i>
@@ -937,7 +863,7 @@
                                                 <td>15/08/2018</td>
                                                 <td>555</td>
                                                 <td class="align-center"><span class="badge badge-info">Pending</span></td>
-                                                <td class="text-center">                                                    
+                                                <td class="text-center">
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="flaticon-dot-three  fs-17"></i>
@@ -958,7 +884,7 @@
                                                 <td>300</td>
                                                 <td class="align-center"><span class="badge badge-dark">Deleted</span></td>
                                                 <td class="text-center">
-                                                    
+
                                                     <div class="dropdown custom-dropdown">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="flaticon-dot-three  fs-17"></i>
@@ -988,18 +914,18 @@
                             </div>
                         </div>
                     </div> -->
-                
+
             </div>
         </div>
     </div>
     <!--  END CONTENT PART  -->
     <!-- END MAIN CONTAINER -->
-    
+
     <!--  BEGIN FOOTER  -->
 <!--     <footer class="footer-section theme-footer">
 
         <div class="footer-section-1  sidebar-theme">
-            
+
         </div>
 
         <div class="footer-section-2 container-fluid">
@@ -1079,13 +1005,13 @@
             <div class="tab-content">
 
                 <div id="feeds-tab" class="tab-pane tab-1 fade show active">
-                    
+
                     <div class="tasks">
 
                         <div class="recent">
 
                             <div class="d-flex justify-content-between mb-5">
-                                
+
                                 <div class="icon">
                                     <i class="flaticon-clock-1"></i>
                                 </div>
@@ -1148,9 +1074,9 @@
 
 
                         <div class="today mt-5">
-                            
+
                             <div class="d-flex justify-content-between mb-5">
-                                
+
                                 <div class="icon">
                                     <i class="flaticon-bell-fill-1"></i>
                                 </div>
@@ -1211,7 +1137,7 @@
 
 
                         <div class="task-stats mt-5">
-                            
+
                             <div class="t-s-header mb-5">
                                 <div class="row">
                                     <div class="col-md-10 text-center">
@@ -1224,11 +1150,11 @@
                             </div>
 
                             <div class="t-s-body">
-                                
+
                                 <div class="row">
 
                                     <div class="col-md-12">
-                                        
+
                                         <div class="d-flex justify-content-between">
                                             <p>Feature Development</p>
                                             <p>70%</p>
@@ -1241,7 +1167,7 @@
                                     </div>
 
                                     <div class="col-md-12">
-                                        
+
                                         <div class="d-flex justify-content-between mt-3">
                                             <p>Uploading files</p>
                                             <p>30%</p>
@@ -1254,7 +1180,7 @@
                                     </div>
 
                                     <div class="col-md-12">
-                                        
+
                                         <div class="d-flex justify-content-between mt-3">
                                             <p>Total Progress</p>
                                             <p>86%</p>
@@ -1271,7 +1197,7 @@
                                 <div class="text-center mt-5 mb-5">
                                     <button class="btn btn-primary btn-rounded mb-5">See all</button>
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -1288,7 +1214,7 @@
                             <div class="t-s-header mb-5">
 
                                 <div class="row">
-                                    
+
                                     <div class="col-md-8 text-center">
                                         <h6>
                                             <span>New Activity</span>
@@ -1307,7 +1233,7 @@
                             </div>
 
                             <ul class="list-inline text-center mb-5">
-                                
+
                                 <li class="list-inline-item">
                                     <img alt="admin-profile" src="assets/img/c-1.jpg">
                                     <span class="badge badge-pill badge-new">8</span>
@@ -1334,9 +1260,9 @@
 
 
                             <div class="friend-request">
-                                
+
                                 <div class="d-flex justify-content-between header mb-5">
-                                    
+
                                     <div class="media">
                                         <i class="flaticon-user-plus mr-3"></i>
                                         <div class="media-body">
@@ -1399,11 +1325,11 @@
 
 
                         <div class="online mt-5">
-                            
+
                             <div class="t-s-header mb-5">
 
                                 <div class="row">
-                                    
+
                                     <div class="col-md-8 text-center">
                                         <h6>
                                             <span>Online</span>
@@ -1457,12 +1383,12 @@
 
 
                         <div class="away-stats">
-                            
+
 
                             <div class="t-s-header mb-5 mt-5">
 
                                 <div class="row">
-                                        
+
                                     <div class="col-md-12">
                                         <h6>
                                             <span>Away</span>
@@ -1474,7 +1400,7 @@
                             </div>
 
                             <div class="a-s-media mb-5">
-                                    
+
                                 <div class="media mb-3">
                                     <div class="profile-img mr-3">
                                         <img alt="admin-profile" src="assets/img/profile-16.jpg" class="img-fluid">
@@ -1483,7 +1409,7 @@
                                         <h6 class="mt-2">Traci Lopez</h6>
                                     </div>
                                 </div>
-                                
+
                                 <div class="media mb-3">
                                     <div class="profile-img mr-3">
                                         <img alt="admin-profile" src="assets/img/c-11.jpg" class="img-fluid">
@@ -1492,7 +1418,7 @@
                                         <h6 class="mt-2">Kristen Beck</h6>
                                     </div>
                                 </div>
-                                
+
                                 <div class="media mb-5">
                                     <div class="profile-img mr-3">
                                         <img alt="admin-profile" src="assets/img/c-12.jpg" class="img-fluid">
@@ -1517,7 +1443,7 @@
 
 
                             <div class="d-flex justify-content-between">
-                                        
+
                                 <div class="media">
                                     <i class="flaticon-gear-5 mr-3"></i>
                                     <div class="media-body">
@@ -1609,7 +1535,7 @@
 
 
                             <div class="d-flex justify-content-between mb-5">
-                                        
+
                                 <div class="media">
                                     <i class="flaticon-gear-5 mr-3"></i>
                                     <div class="media-body">
@@ -1681,11 +1607,11 @@
 
 
 
-                            
+
 
 
                             <div class="chk-settings mt-5">
-                                
+
                                 <div class="media mb-4 ">
                                     <div class="media-body">
                                         <h6 class="media-heading mt-0"><span class="media-title">Report panel usage</span>
@@ -1757,7 +1683,7 @@
 
 
                             <div class="mt-5 delete-chat mb-5">
-                                
+
                                 <div class="media mb-4">
                                     <div class="media-body">
                                         <h6 class="media-heading mt-0"><span class="media-title"> Delete chat history</span>
@@ -1770,12 +1696,12 @@
                             </div>
 
 
-                            
+
 
                             <div class="mt-5 usr-status mb-5">
-                                
+
                                 <div class="d-flex justify-content-between mb-5">
-                                        
+
                                     <div class="media">
                                         <i class="flaticon-chat-fill mr-3"></i>
                                         <div class="media-body">
@@ -1849,7 +1775,7 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/app.js"></script>
-    
+
     <script>
         $(document).ready(function() {
             App.init();
@@ -1922,8 +1848,3 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </script>
 </body>
 @endsection
-=======
-<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:10 GMT -->
-</html>
-@endsection
->>>>>>> Stashed changes

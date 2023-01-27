@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="row" id="cancel-row">
-                
+
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div class="widget-header">
@@ -41,7 +41,7 @@
                                         <br>
                                 <a href="/tambahtambahjurnal" class="btn btn-success mb-10">Tambah Jurnal +</a>
                                 <br>
-                                
+
                                     </div>
 
                                 </div>
@@ -96,8 +96,8 @@
                     </div>
 
                 </div>
-            
-                
+
+
             </div>
         </div>
     </div>
@@ -124,7 +124,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 <script>
-    $('.deletedatasiswa').click(function() {
+    $('.deletetambahjurnal').click(function() {
         var kategoriid = $(this).attr('data-id');
         var kategori = $(this).attr('data-kategori');
         swal({
@@ -136,7 +136,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         })
         .then((willDelete) => {
             if (willDelete) {
-                window.location = "/deletedatasiswa/" + kategoriid + ""
+                window.location = "/deletetambahjurnal/" + kategoriid + ""
                 swal("Data Jurusan Berhasil Di Hapus", {
                     icon: "success",
                 });
