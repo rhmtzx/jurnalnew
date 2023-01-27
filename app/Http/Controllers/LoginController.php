@@ -103,6 +103,7 @@ class LoginController extends Controller
             'notlpsiswa' => $request ->notlpsiswa,
             'user_id' => $user->id,
         ]);
+        
 
 
 

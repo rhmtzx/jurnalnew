@@ -137,12 +137,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/updatedatapersyaratan/{id}', [DatapersyaratanController::class, 'updatedatapersyaratan'])->name('updatedatapersyaratan');
     Route::get('/deletedatapersyaratan/{id}', [DatapersyaratanController::class, 'deletedatapersyaratan'])->name('deletedatapersyaratan');
 
-    //profil
+    Route::get('/deletekelas/{id}', [KelasController::class, 'deletekelas'])->name('deletekelas');
     Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
     Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
     Route::post('/updateprofil', [LoginController::class, 'updateprofil'])->name('updateprofil');
 
-    //punyauser
+    //profil
+    Route::get('/datakelas', [KelasController::class, 'kelas'])->name('datakelas');
+    Route::get('/tambahkelas', [KelasController::class, 'tambahkelas'])->name('tambahkelas');
+    Route::post('/insertkelas', [KelasController::class, 'insertkelas'])->name('insertkelas');
+    Route::get('/tampilkelas/{id}', [KelasController::class, 'tampilkelas'])->name('tampilakelas');
+    Route::post('/updatedatakelas/{id}', [KelasController::class, 'updatedatakelas'])->name('updatedatakelas');
 });
 //loginadmin
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -171,9 +176,3 @@ Route::post('/loginprosesuser', [LoginController::class, 'loginprosesuser'])->na
 //log out
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/datakelas', [KelasController::class, 'kelas'])->name('datakelas');
-Route::get('/tambahkelas', [KelasController::class, 'tambahkelas'])->name('tambahkelas');
-Route::post('/insertkelas', [KelasController::class, 'insertkelas'])->name('insertkelas');
-Route::get('/tampilkelas/{id}', [KelasController::class, 'tampilkelas'])->name('tampilakelas');
-Route::post('/updatedatakelas/{id}', [KelasController::class, 'updatedatakelas'])->name('updatedatakelas');
-Route::get('/deletekelas/{id}', [KelasController::class, 'deletekelas'])->name('deletekelas');

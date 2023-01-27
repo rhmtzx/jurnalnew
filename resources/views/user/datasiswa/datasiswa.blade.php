@@ -1,5 +1,6 @@
 @extends('siswa.welcomes')
 @section('contents')
+<<<<<<< Updated upstream
 
 <!--  BEGIN MAIN CONTAINER  -->
 <!--     <div class="main-container" id="container">
@@ -28,6 +29,35 @@
                                 </ul>
                             </div>
                         </div>
+=======
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png')}}">
+    <title></title>
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/style.css')}}" rel="stylesheet">
+    <!-- This page CSS -->
+    <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/data-table.css')}}" rel="stylesheet">
+
+<!-- FONT AWESOME LINK -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+        <div class="main-wrapper" id="main-wrapper">
+        <div class="page-titles">
+                <div class="d-flex align-items-center">
+                    <h5 class="font-medium m-b-0">Cards</h5>
+                    <div class="custom-breadcrumb ml-auto">
+                        <a href="#!" class="breadcrumb">Home</a>
+                        <a href="#!" class="breadcrumb">Cards</a>
+>>>>>>> Stashed changes
                     </div>
 
                     <div class="row" id="cancel-row">
@@ -41,6 +71,7 @@
                                         <br>
                                 <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
                                 <br>
+<<<<<<< Updated upstream
                                 
                                     </div>
 
@@ -49,6 +80,12 @@
                             <div class="widget-content widget-content-area">
                                 <div class="table-responsive mb-4">
                                     <table id="datasiswa" class="table table-striped table-bordered table-hover" style="width:100%">
+=======
+
+                                <div clas                                s="table-responsive">
+                                    <table id="datasiswa" class="table text-center table-bordered dt-responsive nowrap"
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+>>>>>>> Stashed changes
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
@@ -95,6 +132,7 @@
                     </div>
 
                 </div>
+<<<<<<< Updated upstream
                     <!-- <div class="col-lg-6 col-md-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div class="widget-header">
@@ -231,6 +269,41 @@
                             </div>
                         </div>
                     </div>
+=======
+                </div>
+
+            </div>
+
+
+        <a href="#" data-target="right-slide-out" class="sidenav-trigg                er right-side-toggle b            tn            -floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
+
+        <div class="chat-windows"></div>
+        <!-- ==========================================        ==================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/materialize.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- Apps -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app.init.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/app-style-switcher.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- Custom js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/custom.min.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/pages/datatable/datatable-basic.init.js')}}"></script>
+>>>>>>> Stashed changes
 
                     <div class="col-lg-6 col-md-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
@@ -808,6 +881,7 @@
                                                             <i class="flaticon-dot-three  fs-17"></i>
                                                         </a>
 
+<<<<<<< Updated upstream
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
                                                             <a class="dropdown-item" href="javascript:void(0);">Download</a>
                                                             <a class="dropdown-item" href="javascript:void(0);">Share</a>
@@ -1848,3 +1922,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </script>
 </body>
 @endsection
+=======
+<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:10 GMT -->
+</html>
+@endsection
+>>>>>>> Stashed changes

@@ -44,7 +44,7 @@
                     <div class="col s12 l8 m6 demo-text">
                         <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-icon.png') }}" alt="logo" /></span>
                         <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-text.png') }}" alt="logo" /></span>
-                        <h1 class="font-light m-t-40">Selamat Datang di<span class="font-medium black-text">J-On</span></h1>
+                        <h1 class="font-light m-t-40">Selamat Datang di <span class="font-medium black-text">J-On</span></h1>
                         <p>Belum punya akun ? register sekarang !.</p>
                         <a href="/registersiswa" class="btn btn-round red m-t-5">Register Siswa</a>
                         <a href="/registerguru"class="btn btn-round red m-t-5">Register Guru</a>
