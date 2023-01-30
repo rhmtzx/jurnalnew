@@ -9,12 +9,13 @@
                     <!-- ============================================================== -->
                     <a href="javascript:void(0)" class="brand-logo">
                         <span class="icon">
-                            <img class="light-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-light-icon.png')}}">
-                            <img class="dark-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-icon.png')}}">
+                            {{-- <img class="light-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-light-icon.png')}}"> --}}
+                            {{-- <img class="dark-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-icon.png')}}"> --}}
                         </span>
                         <span class="text">
-                            <img class="light-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-light-text.png')}}">
-                            <img class="dark-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-text.png')}}">
+                            J-On | Jurnal
+                            {{-- <img class="light-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-light-text.png')}}"> --}}
+                            {{-- <img class="dark-logo" src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-text.png')}}"> --}}
                         </span>
                     </a>
                     <!-- ============================================================== -->

@@ -19,10 +19,10 @@
                             </div>
                             <div class="media-body text-right">
                                 <p class="widget-text mb-0">Total Jurnal</p>
-                                <p class="widget-numeric-value">{{$jurnal}}</p>
+                                <p class="widget-numeric-value"></p>
                             </div>
                         </div>
-                        <p class="widget-total-stats mt-2">{{$jurnal}} Jumlah Jurnal</p>
+                        <p class="widget-total-stats mt-2">Jumlah Jurnal</p>
                     </div>
                 </div>
             </div>
@@ -36,10 +36,10 @@
                             </div>
                             <div class="media-body text-right">
                                 <p class="widget-text mb-0">Total Siswa</p>
-                                <p class="widget-numeric-value">{{$siswa}}</p>
+                                <p class="widget-numeric-value"></p>
                             </div>
                         </div>
-                        <p class="widget-total-stats mt-2">{{$siswa}} Jumlah Siswa</p>
+                        <p class="widget-total-stats mt-2"> Jumlah Siswa</p>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
             </div>
 
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                
+
                 <div class="widget-content-area  data-widgets br-4">
                     <div class="widget  t-income-widget">
                         <div class="media">
@@ -84,7 +84,7 @@
         <!-- <div class="row">
             <div class="col-xl-4 col-lg-6 col-md-6 col-12 layout-spacing">
                 <div class="widget-content-area chat-messages p-0  br-4">
-                    
+
                     <div class="chat-container">
                         <div class="chat-header">
                             <div class="media">
@@ -230,7 +230,7 @@
                             <li class="list-inline-item chat-online-usr">
                                 <img data-original-title="Judy Holmes" alt="admin-profile" src="assets/img/profile-5.jpg" class="bs-tooltip">
                             </li>
-                        </ul>                                
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -241,7 +241,7 @@
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                 <h4>Order Summary</h4>
-                            </div>                 
+                            </div>
                         </div>
                     </div>
                     <div class="widget-content widget-content-area ">
@@ -320,7 +320,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-12 mt-3">
-                            <div class="tab-content" id="monthly-chartContent">                                                                            
+                            <div class="tab-content" id="monthly-chartContent">
                                 <div class="tab-pane fade show active" id="monthly-chart-weekly" role="tabpanel" aria-labelledby="monthly-chart-weekly-tab">
                                     <div class="v-pv-weekly" style="height: 300px; width: 100%; margin-top: 30px;"></div>
 
@@ -382,7 +382,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>                                        
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -395,7 +395,7 @@
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                 <h4>Revenue and Profit</h4>
-                            </div>                 
+                            </div>
                         </div>
                     </div>
                     <div class="widget-content widget-content-area  monthly-profit-chart">
@@ -424,7 +424,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                                
+                        </div>
                     </div>
                 </div>
             </div>
@@ -450,7 +450,7 @@
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                 <h4>New Products</h4>
-                            </div>                 
+                            </div>
                         </div>
                     </div>
 
@@ -768,7 +768,7 @@
                                         <i class="flaticon-checked-1 mb-2 t-solved bs-tooltip" data-placement="top" title="Success"></i>
                                         <i class="flaticon-cancel-circle mb-2 bs-tooltip" data-placement="top" title="Close"></i>
                                     </td>
-                                </tr>                                    
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -777,7 +777,7 @@
 
             <div class="col-xl-6 col-lg-12 col-md-12 col-12 layout-spacing">
                 <div class="widget-content-area task-container  p-0 h-100 br-4">
-                    <div class="task-list">                                
+                    <div class="task-list">
                         <div class="task-header">
                             <div class="row">
                                 <div class="col-md-5 col-sm-5 mb-4 mb-sm-0">
@@ -846,7 +846,7 @@
                                                     <span class="meta-date">16 Jan 2019</span>
                                                 </p>
                                             </td>
-                                        </tr> 
+                                        </tr>
 
                                         <tr>
                                             <td>
@@ -877,7 +877,7 @@
                                                     <span class="meta-date">16 Jan 2019</span>
                                                 </p>
                                             </td>
-                                        </tr>                                   
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -963,7 +963,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -978,7 +978,7 @@
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                 <h4>Latest Invoice</h4>
-                            </div>                 
+                            </div>
                         </div>
                     </div>
                     <div class="widget-content-area ">
@@ -1134,7 +1134,7 @@
                                 <button class="btn btn-secondary btn-rounded">View Profile</button>
                             </div>
                             <div class="row mt-5">
-                                <div class="col-lg-12 text-center mt-4">                                        
+                                <div class="col-lg-12 text-center mt-4">
                                     <button class="btn btn-light-info rounded-circle mb-2 mr-2"><i class="flaticon-twitter-logo flaticon-circle-p"></i>
                                     </button>
                                     <button class="btn btn-light-success rounded-circle mb-2 mr-2"><i class="flaticon-behance-logo flaticon-circle-p"></i>

@@ -16,7 +16,7 @@ class DataplotinganController extends Controller
             $siswa = datasiswa::all();
             $dudi = datadudi::all();
         if(Auth()->user()->role == 'Admin'){
-            
+
 
             return view('dataplotingan.dataplotingan',compact('data','guru','siswa','dudi'));
         }else{
@@ -61,9 +61,9 @@ class DataplotinganController extends Controller
         }
         public function tampildataplotingan($id){
             $data = dataplotingan::findOrfail($id);
-            $guru = guru::all();
-            $siswa = siswa::all();
-            $dudi = dudi::all();
+            $guru = dataguru::all();
+            $siswa = datasiswa::all();
+            $dudi = datadudi::all();
             //dd($data);
             if(Auth()->user()->role == 'Admin'){
                 return view('dataplotingan.tampildataplotingan', compact('data','guru','siswa','dudi'));

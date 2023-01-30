@@ -23,7 +23,7 @@
 
                                 <ul id="breadcrumbs" class="breadcrumb">
                                     <li><a href="index.html"><i class="flaticon-home-fill"></i></a></li>
-                                    <li><a href="#">Data Jurnal</a></li>
+                                    <li><a href="/datatambahjurnal">Data Jurnal</a></li>
                                     <li class="active"><a href="#">Isi Jurnal</a> </li>
                                 </ul>
                             </div>
@@ -44,6 +44,19 @@
                                     <div class="table-responsive">
                                         <form action="/inserttambahjurnal" method="POST" enctype="multipart\form-data" >
                                             @csrf
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
+                                                @foreach ( $data as $b)
+                                                <input type="text" name="usersiswa" class="form-control"
+                                                id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
+                                                value="{{ $b->namasiswa }}">
+                                                @endforeach
+                                                @error('namasiswa')
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                                <br>
                                             <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h6>Judul</h6></label>
                                                 <input type="text" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Judul Jurnal">
@@ -73,13 +86,6 @@
                                             <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
                                             <br>
-                                            <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>User Siswa</h6></label>
-                                                <input type="number" name="usersiswa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi User Siswa">
-                                            </div>
-                                            @error('usersiswa')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
                                             <br>
 
                                             <div class="mb-1">

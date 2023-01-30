@@ -51,7 +51,7 @@
                                     @error('nissiswa')
                                     <div class="text-danger">
                                         {{ $message }}
-                                    </div>
+                                    </div>uiuu
                                     @enderror
                                     <br>
                                     <br>

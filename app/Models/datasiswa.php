@@ -25,4 +25,8 @@ class datasiswa extends Model
     {
         return $this->hasMany(plotingan::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
+	public function tambahjurnal()
+    {
+        return $this->hasMany(tambahjurnal::class,); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+    }
 }

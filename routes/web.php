@@ -40,6 +40,7 @@ Route::get('/', function () {
 })->middleware('auth');
 
 //landing
+
 Route::get('/landinghome', function () {
     return view('landing.home');
 });

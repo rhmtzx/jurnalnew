@@ -23,7 +23,7 @@
 
                                 <ul id="breadcrumbs" class="breadcrumb">
                                     <li><a href="index.html"><i class="flaticon-home-fill"></i></a></li>
-                                    <li><a href="#">Data Jurnal</a></li>
+                                    <li><a href="/datatambahjurnal">Data Jurnal</a></li>
                                     <li class="active"><a href="#">Data Jurnal</a> </li>
                                 </ul>
                             </div>
@@ -66,6 +66,7 @@
                                                 $no = 1;
                                             @endphp
                                             @foreach ($data as $row)
+                                            @if ($row->usersiswa == Auth::user()->name)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
                                                     <td>
@@ -86,7 +87,29 @@
                                                                 class="fa-sharp fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                            @endforeach
+                                                @elseif(Auth::user()->role == 'Admin')
+                                                <tr>
+                                                    <th scope="row">{{ $no++ }}</th>
+                                                    <td>
+                                                        <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                                            style="width: 40px">
+                                                    </td>
+                                                    <td>{{ $row->judul }}</td>
+                                                    <td>{!! $row->deskripsi !!}</td>
+                                                    <td>{{ $row->usersiswa }}</td>
+                                                    <td>{{ $row->created_at}}</td>
+                                                    <td scope="row">
+                                                        <a href="/tampiltambahjurnal/{{ $row->id }}"
+                                                            class="btn btn-warning"><i
+                                                                class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                        <a href="#" class="btn btn-danger deletetambahjurnal"
+                                                            data-id="{{ $row->id }}"
+                                                             data-judul="{{ $row->judul }}"><i
+                                                                class="fa-sharp fa-solid fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                                @endif
+                                                @endforeach
                                         </tbody>
                                     </table>
 

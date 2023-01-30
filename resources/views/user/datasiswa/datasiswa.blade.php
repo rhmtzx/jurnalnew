@@ -23,7 +23,7 @@
 
                                 <ul id="breadcrumbs" class="breadcrumb">
                                     <li><a href="index.html"><i class="flaticon-home-fill"></i></a></li>
-                                    <li><a href="#">Data Siswa</a></li>
+                                    <li><a href="/datasiswa">Data Siswa</a></li>
                                     <li class="active"><a href="#">Data Siswa</a> </li>
                                 </ul>
                             </div>

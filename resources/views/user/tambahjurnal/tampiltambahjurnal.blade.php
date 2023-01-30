@@ -46,6 +46,19 @@
 
                                             @csrf
                                             <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
+                                                @foreach ( $datas as $a)
+                                                <input type="text" name="usersiswa" class="form-control"
+                                                id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
+                                                value="{{ $a->namasiswa }}">
+                                                @endforeach
+                                                @error('namasiswa')
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                                <br>
+                                            <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h5>Judul</h5></label>
                                                 <input type="text" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Judul Jurnal" value="{{ $data->judul }}">
                                             </div>
@@ -71,14 +84,6 @@
                                                 </div>
                                             </section>
                                             @error('deskripsi')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
-                                            <br>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label"><h5>User Siswa</h5></label>
-                                                <input type="number" name="usersiswa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi User Siswa" value="{{ $data->usersiswa }}">
-                                            </div>
-                                            @error('usersiswa')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
                                             <br>

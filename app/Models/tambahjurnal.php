@@ -10,4 +10,8 @@ class tambahjurnal extends Model
     use HasFactory;
     protected $guarded = [];
     protected $dates = ['created_at'];
+
+    public function namasiswa(){
+        return $this->belongsTo(datasiswa::class, 'usersiswa', 'id');
+    }
 }
