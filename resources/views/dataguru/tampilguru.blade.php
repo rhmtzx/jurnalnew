@@ -76,11 +76,6 @@
                                     <input type="number" name="nip" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->nip }}">
                                     <br>
-                                    @error('nip')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
                                     <br>
                                 <div class="mb-3">
                                     <br>
@@ -88,11 +83,6 @@
                                     <input type="text" name="namaguru" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->namaguru }}">
                                     <br>
-                                    @error('namaguru')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
                                     <br>
                                 <div class="mb-3">
                                     <br>
@@ -100,11 +90,6 @@
                                     <input type="text" name="alamat" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->alamat }}">
                                     <br>
-                                    @error('alamat')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
                                     <br>
                                 <div class="mb-3">
                                     <br>
@@ -112,11 +97,6 @@
                                     <input type="number" name="notlpn" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->notlpn }}">
                                     <br>
-                                    @error('notlpn')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
                                     <br>
                                     <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Edit Data</button>

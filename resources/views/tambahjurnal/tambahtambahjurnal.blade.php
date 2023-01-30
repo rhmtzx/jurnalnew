@@ -115,7 +115,8 @@
                                             <br>
                                             
                                             <div class="mb-1">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6></label>
+                                            <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6>
+                                            </label>
                                             <br>
                                             <input type="file" name="foto" class="form-control">
                                             </div>

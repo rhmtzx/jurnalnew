@@ -22,7 +22,7 @@
                                 <p class="widget-numeric-value"></p>
                             </div>
                         </div>
-                        <p class="widget-total-stats mt-2">Jumlah Jurnal</p>
+                        <p class="widget-total-stats mt-2"> Jumlah Jurnal</p>
                     </div>
                 </div>
             </div>

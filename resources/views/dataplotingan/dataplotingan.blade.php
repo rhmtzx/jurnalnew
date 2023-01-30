@@ -42,7 +42,7 @@
                                 <br>
                                 
                                 <div class="table-responsive">
-                                    <table id="datapersyaratan" class="table text-center table-bordered dt-responsive nowrap"
+                                    <table id="dataplotingan" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
@@ -61,14 +61,22 @@
                                             @endphp
                                             @foreach ($data as $row)
                                                 <tr>
-                                                    <th scope="row">{{ $no++ }}</th>
+                                                <th scope="row">{{ $no++ }}</th>
                                                     
-                                                    <td>{{ $row->namagurup }}</td>
-                                                    <td>{{ $row->nissiswap }}</td>
-                                                    <td>{{ $row->namadudip }}</td>
+                                                <!-- <td>{{ $row->namagurup }}</td> -->
+                                                <!-- <td>{{ $row->nissiswap }}</td>
+                                                <td>{{ $row->namadudip }}</td> -->
+                                                <td>{{ $row->dataguru ? $row->namaguru->namagurup : 'data tidak ada' }}</td>
+                                                <td>{{ $row->datasiswa ? $row->nissiswap->nissiswa : 'data tidak ada' }}</td>
+                                                <td>{{ $row->datadudi ? $row->namadudip->namadudi : 'data tidak ada' }}</td>
+
+                                                
+
+
+                                                
                                                     
-                                                    <td>{{ $row->created_at}}</td>
-                                                    <td scope="row">
+                                                <td>{{ $row->created_at}}</td>
+                                                <td scope="row">
                                                         <a href="/tampildataplotingan/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
@@ -136,13 +144,13 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#datapersyaratan').DataTable();
+                $('#dataplotingan').DataTable();
             });
         </script>
 </body>
 
 <script>
-    $('.deletedatapersyaratan').click(function() {
+    $('.deletedataplotingan').click(function() {
         var kategoriid = $(this).attr('data-id');
         var kategori = $(this).attr('data-kategori');
         swal({
@@ -154,7 +162,7 @@
         })
         .then((willDelete) => {
             if (willDelete) {
-                window.location = "/deletedatapersyaratan/" + kategoriid + ""
+                window.location = "/deletedataplotingan/" + kategoriid + ""
                 swal("Data Berhasil Di Hapus", {
                     icon: "success",
                 });
