@@ -54,21 +54,21 @@ class DataplotinganController extends Controller
             ]);
 
             if(Auth()->user()->role == 'Admin'){
-                return redirect()->route('dataplotingan')->with('succes', 'Data Berhasil Ditambahkan');
+                return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Ditambahkan');
             }else{
-                return redirect()->route('dataplotingan')->with('succes', 'Data Berhasil Ditambahkan');
+                return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Ditambahkan');
             }
         }
         public function tampildataplotingan($id){
             $data = dataplotingan::findOrfail($id);
-            $guru = guru::all();
-            $siswa = siswa::all();
-            $dudi = dudi::all();
+            $guru = dataguru::all();
+            $siswa = datasiswa::all();
+            $dudi = datadudi::all();
             //dd($data);
             if(Auth()->user()->role == 'Admin'){
-                return view('dataplotingan.tampildataplotingan', compact('data','guru','siswa','dudi'));
+                return view('dataplotingan.tampildataplotingan',compact('data','guru','siswa','dudi'));
             }else{
-                return view('user.dataplotingan.tampildataplotingan', compact('data'));
+                return view('user.dataplotingan.tampildataplotingan',compact('data'));
             }
         }
 
@@ -81,9 +81,9 @@ class DataplotinganController extends Controller
 
             ]);
             if(Auth()->user()->role == 'Admin'){
-                return redirect()->route('dataplotingan')->with('succes', 'Data Berhasil Di Update');
+                return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Di Update');
             }else{
-                return redirect()->route('dataplotingan')->with('succes', 'Data Berhasil Di Update');
+                return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Di Update');
             }
         }
 
@@ -91,9 +91,9 @@ class DataplotinganController extends Controller
             $data = dataplotingan::find($id);
             $data->delete();
             if(Auth()->user()->role == 'Admin'){
-                return redirect()->route('dataplotingan')->with('succes', 'Data Berhasil Di Delete');
+                return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Di Delete');
             }else{
-                return redirect()->route('dataplotingan')->with('succes', 'Data Berhasil Di Delete');
+                return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Di Delete');
             }
         }
 }

@@ -45,14 +45,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="menu">
-                <a href="/datasiswa" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <div class="">
-                        <i class="flaticon-menu-4"></i>
-                        <span>Data Siswa</span>
-                    </div>
-                </a>
-            </li>
+            
 
         </ul>
     </nav>

@@ -32,7 +32,7 @@ class KelasController extends Controller
                 'kelassiswa' =>$request->kelassiswa,
             ]);
 
-            return redirect()->route('datakelas')->with('succes', 'Data Berhasil Ditambahkan');
+            return redirect()->route('datakelas')->with('success', 'Data Berhasil Ditambahkan');
         }
         public function tampilkelas($id){
             $data = kelas::findOrfail($id);
@@ -46,13 +46,13 @@ class KelasController extends Controller
             $data->update([
                 'kelassiswa' =>$request->kelassiswa,
             ]);
-            return redirect()->route('datakelas')->with('succes', 'Data Berhasil Di Update');
+            return redirect()->route('datakelas')->with('success', 'Data Berhasil Di Update');
         }
 
         public function deletekelas($id){
             $data = kelas::find($id);
             $data->delete();
 
-            return redirect()->route('datakelas')->with('succes', 'Data Berhasil Di Delete');
+            return redirect()->route('datakelas')->with('success', 'Data Berhasil Di Delete');
         }
 }

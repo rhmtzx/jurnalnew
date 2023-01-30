@@ -19,10 +19,10 @@
                             </div>
                             <div class="media-body text-right">
                                 <p class="widget-text mb-0">Total Jurnal</p>
-                                <p class="widget-numeric-value">{{$jurnal}}</p>
+                                <p class="widget-numeric-value"></p>
                             </div>
                         </div>
-                        <p class="widget-total-stats mt-2">{{$jurnal}} Jumlah Jurnal</p>
+                        <p class="widget-total-stats mt-2"> Jumlah Jurnal</p>
                     </div>
                 </div>
             </div>
@@ -36,10 +36,10 @@
                             </div>
                             <div class="media-body text-right">
                                 <p class="widget-text mb-0">Total Siswa</p>
-                                <p class="widget-numeric-value">{{$siswa}}</p>
+                                <p class="widget-numeric-value"></p>
                             </div>
                         </div>
-                        <p class="widget-total-stats mt-2">{{$siswa}} Jumlah Siswa</p>
+                        <p class="widget-total-stats mt-2"> Jumlah Siswa</p>
                     </div>
                 </div>
             </div>

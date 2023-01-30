@@ -38,7 +38,7 @@
                                 <h1 class="card-title">Data Dudi</h1>
                                 <h6 class="card-subtitle">Seluruh Data Dudi Ada Disini!</h6>
                                 <br>
-                                <a href="/tambahgurupembimbing" class="btn btn-success mb-10">Tambah Dudi +</a>
+                                <a href="/tambahdatadudi" class="btn btn-success mb-10">Tambah Dudi +</a>
                                 <br>
                                 
                                 <div class="table-responsive">
@@ -50,11 +50,9 @@
                                                 <th scope="col">Foto</th>
                                                 <th scope="col">Nama Dudi</th>
                                                 <th scope="col">Nama Kepala Direktur</th>
-                                                <th scope="col">Nama Data Pembimbing</th>
                                                 <th scope="col">Alamat Dudi</th>
-                                                <th scope="col">Email Dudi</th>
-                                                <th scope="col">Persyaratan</th>
-                                                <th scope="col">Slot Dudi</th>
+                                                
+
                                                 <th scope="col">Dibuat</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
@@ -72,11 +70,9 @@
                                                     </td>
                                                     <td>{{ $row->namadudi }}</td>
                                                     <td>{{ $row->namakepdik }}</td>
-                                                    <td>{{ $row->namadatapembimbing }}</td>
                                                     <td>{{ $row->alamatdudi }}</td>
-                                                    <td>{{ $row->emaildudi }}</td>
-                                                    <td>{{ $row->persyaratan }}</td>
-                                                    <td>{{ $row->slotdudi }}</td>
+                                                    <!-- <td>{{ $row->alamatdudi }}</td> -->
+
                                                     <td>{{ $row->created_at}}</td>
                                                     <td scope="row">
                                                         <a href="/tampildatadudi/{{ $row->id }}"
@@ -141,6 +137,7 @@
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
         <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
@@ -169,7 +166,7 @@
                     icon: "success",
                 });
             } else {
-                swal("Data Jurusan Gagal Di Hapus");
+                swal("Data Gagal Di Hapus");
             }
         });
     });

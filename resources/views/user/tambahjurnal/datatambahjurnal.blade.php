@@ -53,10 +53,11 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
+                                                <th scope="col">User Siswa</th>
+                                                
                                                 <th scope="col">Foto</th>
                                                 <th scope="col">Judul</th>
                                                 <th scope="col">Deskripsi</th>
-                                                <th scope="col">User Siswa</th>
                                                 <th scope="col">Dibuat</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
@@ -68,13 +69,14 @@
                                             @foreach ($data as $row)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
+                                                    <td>{{ $row->usersiswa }}</td>
+
                                                     <td>
                                                         <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
                                                             style="width: 40px">
                                                     </td>
                                                     <td>{{ $row->judul }}</td>
                                                     <td>{!! $row->deskripsi !!}</td>
-                                                    <td>{{ $row->usersiswa }}</td>
                                                     <td>{{ $row->created_at}}</td>
                                                     <td scope="row">
                                                         <a href="/tampiltambahjurnal/{{ $row->id }}"

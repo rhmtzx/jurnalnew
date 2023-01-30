@@ -73,13 +73,13 @@
                             </div>
                         </li> -->
 
-                         <li class="small-cap"><span class="hide-menu">DATA USER</span></li>
+                        <!--  <li class="small-cap"><span class="hide-menu">DATA USER</span></li>
                         <li>
                             <a href="/datauser" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data User </span></a>
                             <div class="collapsible-body">
                                 <ul></ul>
                             </div>
-                        </li>
+                        </li> -->
 
 
 

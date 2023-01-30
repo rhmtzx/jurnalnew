@@ -19,7 +19,7 @@ class TambahjurnalController extends Controller
     }
 
     public function tambahtambahjurnal(){
-        if(Auth()->user()->role == 'admin'){
+        if(Auth()->user()->role == 'Admin'){
             return view('tambahjurnal.tambahtambahjurnal');
         }else{
             return view('user.tambahjurnal.tambahtambahjurnal');
@@ -67,7 +67,7 @@ class TambahjurnalController extends Controller
         public function tampiltambahjurnal($id){
             $data = tambahjurnal::findOrfail($id);
             //dd($data);
-            if(Auth()->user()->role == 'admin'){
+            if(Auth()->user()->role == 'Admin'){
                 return view('tambahjurnal.tampiltambahjurnal', compact('data'));
             }else{
                 return view('user.tambahjurnal.tampiltambahjurnal', compact('data'));
@@ -90,7 +90,7 @@ class TambahjurnalController extends Controller
                 $data->save();
             }
 
-            if(Auth()->user()->role == 'admin'){
+            if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Diupdate');
                 }else{
                 return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Diupdate');
@@ -101,7 +101,7 @@ class TambahjurnalController extends Controller
         public function deletetambahjurnal($id){
             $data = tambahjurnal::find($id);
             $data->delete();
-            if(Auth()->user()->role == 'admin'){
+            if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Di Delete');
             }else{
                 return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Di Delete');
