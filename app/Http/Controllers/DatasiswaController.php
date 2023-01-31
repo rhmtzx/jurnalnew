@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\datasiswa;
-use App\Models\jurusan;
 use App\Models\kelas;
+use App\Models\jurusan;
+use App\Models\User;
+use App\Models\datasiswa;
 
 use Illuminate\Http\Request;
+// use Illuminate\Foundation\Auth\User;
 
 class DatasiswaController extends Controller
 {
@@ -92,6 +94,7 @@ class DatasiswaController extends Controller
 
         public function updatedatasiswa(Request $request, $id){
             $data = datasiswa::find($id);
+            $data2=User::find($data->user_id);
             $data->update([
                 'nissiswa' =>$request->nissiswa,
                 'namasiswa' =>$request->namasiswa,
@@ -99,10 +102,13 @@ class DatasiswaController extends Controller
                 'jurusan' =>$request->jurusan,
                 'alamatsiswa' =>$request->alamatsiswa,
                 'notlpsiswa' =>$request->notlpsiswa,
-                'user_id' =>$request->nullable,
-
-
+                // 'user_id' =>$request->nullable,
             ]);
+            $data2->update([
+                'name'=>$request->namasiswa
+            ]);
+
+            // datasiswa::where('user_id', $data->user_id)->update($data);
             // if($request->hasFile('foto')){
             //     $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
             //     $data->foto = $request->file('foto')->getClientOriginalName();
@@ -115,9 +121,25 @@ class DatasiswaController extends Controller
             }
         }
 
-        public function deletedatasiswa($id){
+        public function deletedatasiswa(Request $request,$id){
             $data = datasiswa::find($id);
-            $data->delete();
+            $data3=User::find($data->user_id);
+            $data->delete([
+                'nissiswa' =>$request->nissiswa,
+                'namasiswa' =>$request->namasiswa,
+                'kelas' =>$request->kelas,
+                'jurusan' =>$request->jurusan,
+                'alamatsiswa' =>$request->alamatsiswa,
+                'notlpsiswa' =>$request->notlpsiswa,
+            ]);
+            $data3->delete([
+                'nissiswa' =>$request->nissiswa,
+                'namasiswa' =>$request->namasiswa,
+                'kelas' =>$request->kelas,
+                'jurusan' =>$request->jurusan,
+                'alamatsiswa' =>$request->alamatsiswa,
+                'notlpsiswa' =>$request->notlpsiswa,
+            ]);
             if(Auth()->user()->rle == 'Admin'){
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');
             }else{

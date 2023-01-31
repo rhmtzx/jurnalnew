@@ -74,10 +74,10 @@
                                                         <a href="/tampildataguru/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                                @if(Auth()->user()->role == '')<a href="#" class="btn btn-danger deletedataguru"
+                                                            <a href="#" class="btn btn-danger deletedataguru"
                                                             data-id="{{ $row->id }}"
                                                              data-nama="{{ $row->namaguru }}"><i
-                                                                class="fa-sharp fa-solid fa-trash"></i></a>@endif
+                                                                class="fa-sharp fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

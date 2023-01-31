@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\dataguru;
 use Illuminate\Http\Request;
 
@@ -56,12 +57,16 @@ class DataguruController extends Controller
 
         public function updatedataguru(Request $request, $id){
             $data = dataguru::find($id);
+            $data2=User::find($data->user_id);
             $data->update([
                 'nip' =>$request->nip,
                 'namaguru' =>$request->namaguru,
                 'alamat' =>$request->alamat,
                 'notlpn' =>$request->notlpn,
-                
+
+            ]);
+            $data2->update([
+                'name'=>$request->namaguru
             ]);
             // if($request->hasFile('foto')){
             //     $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
@@ -71,9 +76,18 @@ class DataguruController extends Controller
             return redirect()->route('dataguru')->with('succes', 'Data Berhasil Di Update');
         }
 
-        public function deletedataguru($id){
+        public function deletedataguru(Request $request, $id){
             $data = dataguru::find($id);
-            $data->delete();
+            $data3=User::find($data->user_id);
+            $data->delete([
+                'nip'=>$request->nip,
+                'namaguru'=>$request->namaguru,
+                'alamat'=>$request->alamat,
+                'notlpn'=>$request->notlpn,
+            ]);
+            $data3->delete([
+                'name'=>$request->namaguru
+            ]);
 
             return redirect()->route('dataguru')->with('succes', 'Data Berhasil Di Delete');
         }
