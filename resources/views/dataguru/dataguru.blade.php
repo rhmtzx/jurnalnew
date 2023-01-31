@@ -14,9 +14,9 @@
     <!-- This page CSS -->
     <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/data-table.css')}}" rel="stylesheet">
 
-<!-- FONT AWESOME LINK -->    
+<!-- FONT AWESOME LINK -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
 </head>
 
 <body>
@@ -38,9 +38,11 @@
                                 <h1 class="card-title">Data Guru</h1>
                                 <h6 class="card-subtitle">Seluruh Data Guru Ada Disini!</h6>
                                 <br>
+                                @if(Auth()->user()->role == '')
                                 <a href="/tambahdataguru" class="btn btn-success mb-10">Tambah Guru +</a>
+                                @endif
                                 <br>
-                                
+
                                 <div class="table-responsive">
                                     <table id="dataguru" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -62,7 +64,7 @@
                                             @foreach ($data as $row)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
-                                                    
+
                                                     <td>{{ $row->nip }}</td>
                                                     <td>{{ $row->namaguru }}</td>
                                                     <td>{{ $row->alamat }}</td>
@@ -72,10 +74,10 @@
                                                         <a href="/tampildataguru/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deletedataguru"
+                                                                @if(Auth()->user()->role == '')<a href="#" class="btn btn-danger deletedataguru"
                                                             data-id="{{ $row->id }}"
                                                              data-nama="{{ $row->namaguru }}"><i
-                                                                class="fa-sharp fa-solid fa-trash"></i></a>
+                                                                class="fa-sharp fa-solid fa-trash"></i></a>@endif
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -87,12 +89,12 @@
                     </div>
                 </div>
                 </div>
-                
+
             </div>
-            
-            
+
+
         <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
-        
+
         <div class="chat-windows"></div>
         <!-- ============================================================== -->
         <!-- Right Sidebar -->

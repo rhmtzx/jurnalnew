@@ -14,9 +14,9 @@
     <!-- This page CSS -->
     <link href="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/data-table.css')}}" rel="stylesheet">
 
-<!-- FONT AWESOME LINK -->    
+<!-- FONT AWESOME LINK -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                                 <a href="/tambahtambahjurnal" class="btn btn-success mb-10">Tambah Jurnal +</a>
                                 <br>
                                 <br>
-                                
+
                                 <div class="table-responsive">
                                    <table id="tambahjurnal" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -90,12 +90,12 @@
                     </div>
                 </div>
                 </div>
-                
+
             </div>
-            
-            
+
+
         <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings</i></a>
-        
+
         <div class="chat-windows"></div>
         <!-- ============================================================== -->
         <!-- Right Sidebar -->

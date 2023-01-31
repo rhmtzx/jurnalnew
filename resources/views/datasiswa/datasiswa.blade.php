@@ -38,7 +38,10 @@
                                 <h1 class="card-title">Data Siswa</h1>
                                 <h6 class="card-subtitle">Seluruh Data Siswa Sekolah Ada Disini!</h6>
                                 <br>
+                                @if(Auth()->user()->role =='')
                                 <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
+                                @endif
+
                                 <br>
 
                                 <div class="table-responsive">
@@ -75,10 +78,10 @@
                                                         <a href="/tampildatasiswa/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deletedatasiswa"
+                                                        @if(Auth()->user()->role == '')<a href="#" class="btn btn-danger deletedatasiswa"
                                                             data-id="{{ $row->id }}"
                                                              data-nissiswa="{{ $row->nissiswa }}"><i
-                                                                class="fa-sharp fa-solid fa-trash"></i></a>
+                                                                class="fa-sharp fa-solid fa-trash"></i></a>@endif
                                                     </td>
                                                 </tr>
                                             @endforeach
