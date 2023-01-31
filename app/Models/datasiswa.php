@@ -13,17 +13,17 @@ class datasiswa extends Model
     protected $dates = ['created_at'];
 
     //Mengambil dari model jurusan
-	public function jurusan()
+	public function jurusans()
 	{
-		return $this->belongsTo(jurusan::class, 'namajurusan', 'id');
+		return $this->belongsTo(jurusan::class, 'jurusan', 'id');
 	}
-	public function kelas()
+	public function kelass()
 	{
-		return $this->belongsTo(kelas::class, 'kelassiswa', 'id');
+		return $this->belongsTo(kelas::class, 'kelas', 'id');
 	}
-	public function plotingan()
+	public function plotingans()
     {
-        return $this->hasMany(plotingan::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+		return $this->belongsTo(plotingan::class, 'namasiswa', 'id');
     }
 	public function tambahjurnal()
     {

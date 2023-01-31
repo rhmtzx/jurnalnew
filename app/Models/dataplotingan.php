@@ -12,16 +12,16 @@ class dataplotingan extends Model
     protected $guarded = [];
     protected $dates = ['created_at'];
 
-    public function dudi()
+    public function dudis()
 	{
-		return $this->belongsTo(dudi::class, 'namadudi', 'id');
+		return $this->belongsTo(datadudi::class, 'namadudip', 'id');
 	}
-	public function siswa()
+	public function siswas()
 	{
-		return $this->belongsTo(siswa::class, 'namasiswa', 'id');
+		return $this->belongsTo(datasiswa::class, 'namasiswap', 'id');
 	}
-	public function guru()
+	public function gurus()
 	{
-		return $this->belongsTo(guru::class, 'namaguru', 'id');
+		return $this->belongsTo(dataguru::class, 'namagurup', 'id');
 	}
 }

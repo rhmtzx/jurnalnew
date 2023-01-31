@@ -39,17 +39,17 @@ class DataplotinganController extends Controller
 
              $this->validate($request,[
                  'namagurup' => 'required',
-                 'nissiswap' => 'required',
+                 'namasiswap' => 'required',
                  'namadudip' => 'required',
              ],[
                  'namagurup.required' => 'Harus diisi',
-                 'nissiswap.required' => 'Harus diisi',
+                 'namasiswap.required' => 'Harus diisi',
                  'namadudip.required' => 'Harus diisi',
              ]);
 
             $data = dataplotingan::create([
                 'namagurup' =>$request->namagurup,
-                'nissiswap' =>$request->nissiswap,
+                'namasiswap' =>$request->namasiswap,
                 'namadudip' =>$request->namadudip,
             ]);
 
@@ -76,7 +76,7 @@ class DataplotinganController extends Controller
             $data = dataplotingan::find($id);
             $data->update([
                 'namagurup' =>$request->namagurup,
-                'nissiswap' =>$request->nissiswap,
+                'namasiswap' =>$request->namasiswap,
                 'namadudip' =>$request->namadudip,
 
             ]);

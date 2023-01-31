@@ -98,12 +98,12 @@
 
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label"><h5>Nis Siswa</h5></label>
-                                        <select class="form-control" name="nissiswap" id="nissiswap">
+                                        <select class="form-control" name="namasiswap" id="namasiswap">
                                             <option value="" selected disabled>Pilih</option>
                                             @foreach($siswa as $ab)
-                                            <option value="{{ $ab->id }}"<?php if($data->nissiswap == $ab->id) {
+                                            <option value="{{ $ab->id }}"<?php if($data->namasiswap == $ab->id) {
                                                 echo 'selected';    
-                                            }?> > {{ $ab->nissiswa }} </option>
+                                            }?> > {{ $ab->namasiswa }} </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -125,7 +125,7 @@
                                     <!-- <div class="mb-3">
                                         <br>
                                         <label for="exampleInputEmail1" class="form-label"><h6>Nis Siswa</h6></label> 
-                                        <input type="text" name="nissiswap" class="form-control" id="exampleInputEmail1"
+                                        <input type="text" name="namasiswap" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" value="{{ $data->nissiswap }}">
                                         <br>
                                         @error('nissiswap')
