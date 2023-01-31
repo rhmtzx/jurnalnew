@@ -48,7 +48,7 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nama Guru</th>
-                                                <th scope="col">Nis Siswa</th>
+                                                <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Nama Dudi</th>
                                                
                                                 <th scope="col">Dibuat</th>
@@ -62,14 +62,16 @@
                                             @foreach ($data as $row)
                                                 <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                    
+                                                <td>{{ $row->gurus->namaguru}}</td>
+                                                <td>{{ $row->siswas->namasiswa}}</td>
+                                                <td>{{ $row->dudis->namadudi}}</td>  
                                                 <!-- <td>{{ $row->namagurup }}</td> -->
                                                 <!-- <td>{{ $row->nissiswap }}</td>
                                                 <td>{{ $row->namadudip }}</td> -->
-                                                <td>{{ $row->dataguru ? $row->namaguru->namagurup : 'data tidak ada' }}</td>
-                                                <td>{{ $row->datasiswa ? $row->nissiswap->nissiswa : 'data tidak ada' }}</td>
+                                                
+                                                <!-- <td>{{ $row->datasiswa ? $row->nissiswap->nissiswa : 'data tidak ada' }}</td>
                                                 <td>{{ $row->datadudi ? $row->namadudip->namadudi : 'data tidak ada' }}</td>
-
+ -->
                                                 
 
 

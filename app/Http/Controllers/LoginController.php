@@ -18,12 +18,12 @@ class LoginController extends Controller
 
     public function loginproses(Request $request){
         $this->validate($request, [
-            'email' => 'required',
+            'email' => 'required|exists:users,email',
             'password' => 'required|min:6',
         ],[
-            'email.required' => 'Emai Harus Diisi!',
-            'email.exists' => 'Email yang anda masukkan belum terdaftar!',
-            'password.required' => 'Password Harus Diisi!',
+            'email.required' => 'Masukkan Email Anda!',
+            'email.exists' => 'Email Salah!',
+            'password.required' => 'Masukkan Kata Sandi Anda!',
             'password.min' => 'Password Minimal 6 Huruf',
         ]);
 
@@ -36,8 +36,9 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Siswa'])) {
             return redirect('/dashboard');
         }
-
+        
             return redirect('login')->with('password','Password Salah');
+        
     }
 
     public function register(){

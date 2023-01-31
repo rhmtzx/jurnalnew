@@ -14,6 +14,6 @@ class dataguru extends Model
 
     public function plotingan()
     {
-        return $this->hasMany(plotingan::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+        return $this->hasMany(plotingan::class ,'namaguru' ,'id'); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
 }

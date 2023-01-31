@@ -184,6 +184,11 @@
   toastr.toast_success("{{ Session::get('toast_success') }}")
   @endif
 </script>
+<script>
+  @if (Session::has('error'))
+  toastr.error("{{ Session::get('error') }}")
+  @endif
+</script>
 </body>
 
 

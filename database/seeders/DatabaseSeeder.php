@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         ];
         User::insert($adminr2);
 
+        
         $jurusan = [
             [
                 'namajurusan' => 'RPL',
@@ -45,5 +46,6 @@ class DatabaseSeeder extends Seeder
             ],
         ];
         kelas::insert($kelas);
-    }
+
+            }
 }

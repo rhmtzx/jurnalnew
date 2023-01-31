@@ -18,6 +18,6 @@ class kelas extends Model
     }
     public function datasiswa()
     {
-        return $this->hasMany(datasiswa::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+        return $this->hasMany(datasiswa::class,'kelassiswa','id'); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
 }

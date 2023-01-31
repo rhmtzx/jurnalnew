@@ -84,20 +84,23 @@
                                     {{ $message }}
                                 </div>
                                 @enderror
+                                <br>
+
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h5>Nis Siswa</h5></label>
-                                    <select class="form-control" name="nissiswap" id="nissiswap">
+                                    <label for="exampleInputEmail1" class="form-label"><h5>Nama Siswa</h5></label>
+                                    <select class="form-control" name="namasiswap" id="namasiswap">
                                         <option value="" selected disabled>Pilih Siswa</option>
                                         @foreach($siswa as $oke)
-                                        <option value="{{ $oke->id }}">{{ $oke->nissiswa }}</option>
+                                        <option value="{{ $oke->id }}">{{ $oke->namasiswa }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                @error('nissiswap')
+                                @error('namasiswap')
                                 <div class="text-danger">
                                     {{ $message }}
                                 </div>
                                 @enderror
+                                <br>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Dudi</h5></label>
                                     <select class="form-control" name="namadudip" id="namadudip">
