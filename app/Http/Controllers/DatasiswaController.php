@@ -115,9 +115,9 @@ class DatasiswaController extends Controller
             //     $data->save();
             // }
             if(Auth()->user()->role == 'Admin'){
-                return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Update');
+                return redirect()->route('datasiswa')->with('success', 'Data Berhasil Di Update');
             }else{
-                return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Update');
+                return redirect()->route('datasiswa')->with('success', 'Data Berhasil Di Update');
             }
         }
 
@@ -140,10 +140,10 @@ class DatasiswaController extends Controller
                 'alamatsiswa' =>$request->alamatsiswa,
                 'notlpsiswa' =>$request->notlpsiswa,
             ]);
-            if(Auth()->user()->rle == 'Admin'){
-                return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');
+            if(Auth()->user()->role == 'Admin'){
+                return redirect()->route('datasiswa')->with('success', 'Data Berhasil Di Delete');
             }else{
-                return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');
+                return redirect()->route('datasiswa')->with('success', 'Data Berhasil Di Delete');
             }
         }
 }

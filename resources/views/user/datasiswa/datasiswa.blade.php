@@ -39,7 +39,7 @@
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                         <h4>Data Siswa</h4>
                                         <br>
-                                <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
+                                <!-- <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a> -->
                                 <br>
 
                                     </div>
@@ -80,10 +80,10 @@
                                                         <a href="/tampildatasiswa/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deletedatasiswa"
+                                                        <!-- <a href="#" class="btn btn-danger deletedatasiswa"
                                                             data-id="{{ $row->id }}"
                                                              data-nissiswa="{{ $row->nissiswa }}"><i
-                                                                class="fa-sharp fa-solid fa-trash"></i></a>
+                                                                class="fa-sharp fa-solid fa-trash"></i></a> -->
                                                     </td>
                                                 </tr>
                                             @endforeach
