@@ -41,9 +41,6 @@
                                 @if(Auth()->user()->role =='')
                                 <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
                                 @endif
-
-                                <br>
-
                                 <div class="table-responsive">
                                     <table id="datasiswa" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">

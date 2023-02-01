@@ -140,7 +140,7 @@ class DatasiswaController extends Controller
                 'alamatsiswa' =>$request->alamatsiswa,
                 'notlpsiswa' =>$request->notlpsiswa,
             ]);
-            if(Auth()->user()->rle == 'Admin'){
+            if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');
             }else{
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');

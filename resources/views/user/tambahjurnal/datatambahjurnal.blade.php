@@ -53,8 +53,7 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">User Siswa</th>
-                                                
+                                                <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Foto</th>
                                                 <th scope="col">Judul</th>
                                                 <th scope="col">Deskripsi</th>
@@ -89,16 +88,16 @@
                                                                 class="fa-sharp fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                                @elseif(Auth::user()->role == 'Admin')
+                                                @elseif(Auth::user()->role == 'Guru')
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
+                                                    <td>{{ $row->usersiswa }}</td>
                                                     <td>
                                                         <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
                                                             style="width: 40px">
                                                     </td>
                                                     <td>{{ $row->judul }}</td>
                                                     <td>{!! $row->deskripsi !!}</td>
-                                                    <td>{{ $row->usersiswa }}</td>
                                                     <td>{{ $row->created_at}}</td>
                                                     <td scope="row">
                                                         <a href="/tampiltambahjurnal/{{ $row->id }}"

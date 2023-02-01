@@ -1,6 +1,6 @@
 /*
-	Template Name: 
-	Author: 
+	Template Name:
+	Author:
 	File: scss
 */
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
@@ -6189,7 +6189,9 @@ input[type=range]::-ms-thumb {
   .tap-target-wrapper.open .tap-target-wave::after {
     visibility: visible;
     animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-    transition: opacity .3s, transform .3s, visibility 0s 1s; }
+    transition: opacity .3s,
+ transform .3s,
+ visibility 0s 1s; }
 
 .tap-target {
   position: absolute;
@@ -6224,7 +6226,9 @@ input[type=range]::-ms-thumb {
     transition: transform .3s; }
   .tap-target-wave::after {
     visibility: hidden;
-    transition: opacity .3s, transform .3s, visibility 0s;
+    transition: opacity .3s,
+ transform .3s,
+ visibility 0s;
     z-index: -1; }
 
 .tap-target-origin {
@@ -9349,8 +9353,8 @@ input[type=range]::-ms-thumb {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp; }
 
-/*============================================================== 
- For all pages 
+/*==============================================================
+ For all pages
  ============================================================== */
 * {
   outline: none; }
@@ -9399,7 +9403,7 @@ nav i.material-icons {
   height: 64px;
   line-height: 64px; }
 
-/*============================================================== 
+/*==============================================================
  Topbar
  ============================================================== */
 .topbar {
@@ -9581,7 +9585,7 @@ nav i.material-icons {
     .topbar .bars.bar2 {
       width: 20px; }
 
-/*============================================================== 
+/*==============================================================
  sidebar
  ============================================================== */
 .left-sidebar {
@@ -9933,8 +9937,8 @@ nav i.material-icons {
   .chat-windows.show-chat {
     right: 0; } }
 
-/*============================================================== 
- For all pages 
+/*==============================================================
+ For all pages
 ============================================================== */
 .container-fluid {
   width: 100%;
@@ -11493,7 +11497,7 @@ This is for the horizontal layout
 #scroll4.ps:hover > .ps__scrollbar-y-rail:hover > .ps__scrollbar-y {
   background-color: #288fee; }
 
-/*============================================================== 
+/*==============================================================
  Scafholding
  ============================================================== */
 .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav,
@@ -11661,7 +11665,7 @@ html body .display-8 {
   font-size: 1.5rem; }
 
 /*******************
-Padding margin property 
+Padding margin property
 *******************/
 html body .m-t-5 {
   margin-top: 5px !important; }
@@ -11905,7 +11909,7 @@ html body .p-l-0 {
   padding-left: 0 !important; }
 
 /*******************
-Flex property 
+Flex property
 *******************/
 .d-flex {
   display: flex; }
@@ -12540,7 +12544,7 @@ table class
   padding: 8px 5px; }
 
 /*******************
-success error 
+success error
 ******************/
 .success-alert-bar,
 .error-alert-bar {
@@ -12728,14 +12732,14 @@ c3 charts
   /* IE6-9 */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 ); }
 
-/*-- ============================================================== 
- Small Desktop & above all (1024px) 
+/*-- ==============================================================
+ Small Desktop & above all (1024px)
  ============================================================== */
-/*-- ============================================================== 
- Ipad & above all(768px) 
+/*-- ==============================================================
+ Ipad & above all(768px)
  ============================================================== */
-/*-- ============================================================== 
- Phone and below ipad(767px) 
+/*-- ==============================================================
+ Phone and below ipad(767px)
  ============================================================== */
 @media (max-width: 767px) {
   [data-sidebartype="mini-sidebar"] .topbar nav .nav-wrapper .flag-icon {
@@ -12753,7 +12757,7 @@ c3 charts
 
 .rtl {
   /*******************
-Padding margin property 
+Padding margin property
 *******************/
   /** * Zero */
   /* Vertical responsive layout */ }

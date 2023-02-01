@@ -15,6 +15,7 @@ class CreateDatagurusTable extends Migration
     {
         Schema::create('datagurus', function (Blueprint $table) {
             $table->id();
+            $table->string('kd_guru');
             $table->bigInteger('nip');
             $table->string('namaguru');
             $table->string('alamat');

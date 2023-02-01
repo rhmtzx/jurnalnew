@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Helpers\Helper;
 use App\Models\datadudi;
 use App\Models\dataguru;
 use App\Models\datasiswa;
@@ -36,9 +37,9 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Siswa'])) {
             return redirect('/dashboard');
         }
-        
+
             return redirect('login')->with('password','Password Salah');
-        
+
     }
 
     public function register(){
@@ -78,11 +79,13 @@ class LoginController extends Controller
     public function registerusersiswa(Request $request){
         // dd($request->all());
         $this->validate($request,[
+        'nissiswa'=> 'required|unique:datasiswas',
             'email' => 'required|unique:users',
             'password' => 'required|min:6'
 
         ],[
             'email.unique' => 'Email Sudah Digunakan',
+            'nissiswa.unique' => 'NIS Sudah Digunakan',
             'email.required' => 'Harus Diisi',
             'password.min' => 'Isi Password Minimal 6 Huruf'
         ]);
@@ -100,6 +103,7 @@ class LoginController extends Controller
             'namasiswa' => $request ->name,
             'kelas' => $request ->kelas,
             'jurusan' => $request ->jurusan,
+            'kd_guru' => $request ->kd_guru,
             'alamatsiswa' => $request ->alamatsiswa,
             'notlpsiswa' => $request ->notlpsiswa,
             'user_id' => $user->id,
@@ -115,6 +119,7 @@ class LoginController extends Controller
         return view('layout.registerguru');
     }
     public function registeruserguru(Request $request){
+        $kd_guru = Helper::IDGenerator(new dataguru, 'kd_guru', 5, 'SKNS' );
         // dd($request->all());
         $this->validate($request,[
             'email' => 'required|unique:users',
@@ -135,6 +140,7 @@ class LoginController extends Controller
         ]);
 
         dataguru::create([
+            'kd_guru'=>$kd_guru,
             'nip' => $request ->nip,
             'namaguru' => $request ->name,
             'alamat' => $request ->alamat,

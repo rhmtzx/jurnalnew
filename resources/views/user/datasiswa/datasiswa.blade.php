@@ -39,9 +39,9 @@
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                         <h4>Data Siswa</h4>
                                         <br>
+                                        @if(Auth()->user()->role =='')
                                 <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
-                                <br>
-
+                                @endif
                                     </div>
 
                                 </div>
@@ -59,7 +59,7 @@
                                                 <th scope="col">Alamat Siswa</th>
                                                 <th scope="col">No Telepon Siswa</th>
                                                 <th scope="col">Dibuat</th>
-                                                <th scope="col">Aksi</th>
+                                                {{-- <th scope="col">Aksi</th> --}}
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -77,6 +77,7 @@
                                                     <td>{{ $row->notlpsiswa }}</td>
                                                     <td>{{ $row->created_at}}</td>
                                                     <td scope="row">
+                                                        @if(Auth()->user()->role =='')
                                                         <a href="/tampildatasiswa/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
@@ -84,6 +85,7 @@
                                                             data-id="{{ $row->id }}"
                                                              data-nissiswa="{{ $row->nissiswa }}"><i
                                                                 class="fa-sharp fa-solid fa-trash"></i></a>
+                                                                @endif
                                                     </td>
                                                 </tr>
                                             @endforeach
