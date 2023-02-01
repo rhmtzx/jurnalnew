@@ -21,9 +21,11 @@ class JurusanController extends Controller
     public function insertjurusan(Request $request){
 
              $this->validate($request,[
-                 'namajurusan' => 'required',
+                 'namajurusan' => 'required|1unique:jurusans',
              ],[
+                 'namajurusan.unique' => 'Nama Jurusan Sudah Ada',
                  'namajurusan.required' => 'Harus diisi',
+
              ]);
 
             $data = jurusan::create([

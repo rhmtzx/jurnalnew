@@ -28,12 +28,7 @@
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
-        <div class="preloader">
-            <div class="loader">
-                <div class="loader__figure"></div>
-                <p class="loader__label">Material Admin</p>
-            </div>
-        </div>
+        
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
@@ -79,7 +74,7 @@
                                     <label for="exampleInputEmail1" class="form-label"><h6>Jurusan</h6></label>
                                     <input type="text" name="namajurusan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" placeholder="Masukkan Jurusan">
-                                    @error('jurusan')
+                                    @error('namajurusan')
                                     <div class="text-danger">
                                         {{ $message }}
                                     </div>

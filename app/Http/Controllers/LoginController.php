@@ -56,7 +56,7 @@ class LoginController extends Controller
             'role' => 'Admin'
         ]);
 
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Berhasil Login');;
     }
 
     public function loginuser(){
@@ -73,7 +73,7 @@ class LoginController extends Controller
 
         }
         public function registersiswa(){
-            return view('layout.registersiswa')->with('toast_success','Berhasil Daftar');
+            return view('layout.registersiswa')->with('success','Berhasil Daftar');
         }
 
     public function registerusersiswa(Request $request){
@@ -112,11 +112,11 @@ class LoginController extends Controller
 
 
 
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     public function registerguru(){
-        return view('layout.registerguru');
+        return view('layout.registerguru')->with('success','Berhasil Daftar');
     }
     public function registeruserguru(Request $request){
         $kd_guru = Helper::IDGenerator(new dataguru, 'kd_guru', 5, 'SKNS' );
@@ -149,7 +149,7 @@ class LoginController extends Controller
 
         ]);
 
-        return redirect('/login');
+        return redirect('/login')->with('success','Berhasil Daftar');
     }
 
 
@@ -259,7 +259,7 @@ class LoginController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect('landinghome')->with('toast_success','Berhasil Logout');
+        return redirect('landinghome')->with('success','Berhasil Logout');
     }
 
     public function landinghome(){

@@ -23,9 +23,12 @@ class KelasController extends Controller
     public function insertkelas(Request $request){
 
              $this->validate($request,[
-                 'kelassiswa' => 'required',
+                 'kelassiswa' => 'required|unique:kelas',
+
              ],[
+                 'kelassiswa.unique' => 'Kelas Siswa Sudah Ada',
                  'kelassiswa.required' => 'Harus diisi',
+
              ]);
 
             $data = kelas::create([

@@ -81,7 +81,7 @@
                                                         <a href="/tampildatasiswa/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deletedatasiswa"
+                                                        <!-- <a href="#" class="btn btn-danger deletedatasiswa"
                                                             data-id="{{ $row->id }}"
                                                              data-nissiswa="{{ $row->nissiswa }}"><i
                                                                 class="fa-sharp fa-solid fa-trash"></i></a>
