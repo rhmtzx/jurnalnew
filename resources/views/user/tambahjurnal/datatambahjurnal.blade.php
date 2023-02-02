@@ -73,7 +73,7 @@
                                                     <td>{{ $row->created_at}}</td>
                                                     <td scope="row">
                                                         <a href="/tampiltambahjurnal/{{ $row->id }}"
-                                                            class="btn btn-warning"><i
+                                                            class="btn btn-warning"><i>
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                         <a href="#" class="btn btn-danger deletetambahjurnal"
                                                             data-id="{{ $row->id }}"
