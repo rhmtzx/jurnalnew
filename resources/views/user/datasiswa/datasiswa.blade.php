@@ -3,21 +3,7 @@
 <head>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         </head>
-<body>
-    
-<div class="main-content-inner">
-    <div class="row">
-                <!-- Progress Table start -->
-                <div class="col-12 mt-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card_title">Data Seluruh Siswa</h4>
-                            <ul>
-                            <li><h6>Seluruh Siswa Ada Disini</h6></li></ul>
-                            <br>
-                            <div class="single-table">
-                                <div class="table-responsive">
-                                    <table id="bismillah" class="table table-striped table-bordered table-hover" style="width:100%">
+
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
@@ -28,7 +14,7 @@
                                                 <th scope="col">Alamat Siswa</th>
                                                 <th scope="col">No Telepon Siswa</th>
                                                 <th scope="col">Dibuat</th>
-                                                <th scope="col">Aksi</th>
+                                                {{-- <th scope="col">Aksi</th> --}}
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -46,13 +32,15 @@
                                                     <td>{{ $row->notlpsiswa }}</td>
                                                     <td>{{ $row->created_at}}</td>
                                                     <td scope="row">
+                                                        @if(Auth()->user()->role =='')
                                                         <a href="/tampildatasiswa/{{ $row->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                         <!-- <a href="#" class="btn btn-danger deletedatasiswa"
                                                             data-id="{{ $row->id }}"
                                                              data-nissiswa="{{ $row->nissiswa }}"><i
-                                                                class="fa-sharp fa-solid fa-trash"></i></a> -->
+                                                                class="fa-sharp fa-solid fa-trash"></i></a>
+                                                                @endif
                                                     </td>
                                                 </tr>
                                             @endforeach

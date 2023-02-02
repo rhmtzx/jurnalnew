@@ -51,9 +51,9 @@ Route::get('/dashboard', function () {
     $siswa = datasiswa::count();
     $dudi = datadudi::count();
     $jurnal = tambahjurnal::count();
-    
+
     return view('siswa.welcomes', compact('jurusan', 'siswa', 'dudi', 'jurnal'));
-});
+})->middleware('auth');
 //jurusan
 Route::middleware('auth')->group(function () {
     Route::get('/datajurusan', [JurusanController::class, 'index'])->name('datajurusan');

@@ -66,6 +66,11 @@
                                         <label for="name">NIS</label>
                                     </div>
                                 </div>
+                                @error('nissiswa')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="name" type="text" name="name" class="validate" required>
@@ -73,7 +78,7 @@
                                     </div>
                                 </div>
                                 <!-- email -->
-                                
+
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="name" type="text" name="kelas"  class="validate" required>
@@ -121,6 +126,12 @@
                                     {{ $message }}
                                 </div>
                                 @enderror
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="kd_guru" type="text" name="kd_guru" class="validate" required>
+                                        <label for="kd_guru">Masukkan Kode Guru Pembimbing Anda</label>
+                                    </div>
+                                </div>
                                 <!-- pwd -->
                                 {{-- <div class="row">
                                     <div class="input-field col s12">
