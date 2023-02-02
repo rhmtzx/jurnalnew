@@ -4,7 +4,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         </head>
 <body>
-    
+
 <div class="main-content-inner">
     <div class="row">
                 <!-- Progress Table start -->
@@ -36,9 +36,9 @@
                                         <tbody>
                                             @php
                                                 $no = 1;
-                                            @endphp
-                                            @foreach ($data as $row)
-                                            @if ($row->usersiswa == Auth::user()->name)
+                                                @endphp
+                                                @if(Auth::user()->role == 'Siswa')
+                                                @foreach ($data as $row)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
                                                     <td>{{ $row->usersiswa }}</td>
@@ -60,30 +60,32 @@
                                                                 class="fa-sharp fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                                @elseif(Auth::user()->role == 'Guru')
+                                                @endforeach
+                                               @elseif(Auth::user()->role == 'Guru')
+                                                @foreach($data2 as $row2)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->usersiswa }}</td>
+                                                    <td>{{ $row2->usersiswa }}</td>
                                                     <td>
-                                                        <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                                        <img src="{{ asset('fotodudi/' . $row2->foto) }}" alt=""
                                                             style="width: 40px">
                                                     </td>
-                                                    <td>{{ $row->judul }}</td>
-                                                    <td>{!! $row->deskripsi !!}</td>
-                                                    <td>{{ $row->created_at}}</td>
+                                                    <td>{{ $row2->judul }}</td>
+                                                    <td>{!! $row2->deskripsi !!}</td>
+                                                    <td>{{ $row2->created_at}}</td>
                                                     <td scope="row">
-                                                        <a href="/tampiltambahjurnal/{{ $row->id }}"
-                                                            class="btn btn-warning"><i>
+                                                        <a href="/tampiltambahjurnal/{{ $row2->id }}"
+                                                            class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                         <a href="#" class="btn btn-danger deletetambahjurnal"
-                                                            data-id="{{ $row->id }}"
-                                                             data-judul="{{ $row->judul }}"><i
+                                                            data-id="{{ $row2->id }}"
+                                                             data-judul="{{ $row2->judul }}"><i
                                                                 class="fa-sharp fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                                @endif
                                                 @endforeach
-                                        </tbody>
+                                                @endif
+                                            </tbody>
                                 </table>
                                 </div>
                             </div>

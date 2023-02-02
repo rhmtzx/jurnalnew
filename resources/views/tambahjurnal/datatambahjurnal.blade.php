@@ -60,28 +60,30 @@
                                             @php
                                                 $no = 1;
                                             @endphp
-                                            @foreach ($data as $row)
+                                            @if(Auth::user()->role == 'Admin')
+                                            @foreach ($data3 as $row3)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->usersiswa }}</td>
+                                                    <td>{{ $row3->usersiswa }}</td>
                                                     <td>
-                                                        <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                                        <img src="{{ asset('fotodudi/' . $row3->foto) }}" alt=""
                                                             style="width: 40px">
                                                     </td>
-                                                    <td>{{ $row->judul }}</td>
-                                                    <td>{!! $row->deskripsi !!}</td>
-                                                    <td>{{ $row->created_at}}</td>
+                                                    <td>{{ $row3->judul }}</td>
+                                                    <td>{!! $row3->deskripsi !!}</td>
+                                                    <td>{{ $row3->created_at}}</td>
                                                     <td scope="row">
-                                                        <a href="/tampiltambahjurnal/{{ $row->id }}"
+                                                        <a href="/tampiltambahjurnal/{{ $row3->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                         <a href="#" class="btn btn-danger deletetambahjurnal"
-                                                            data-id="{{ $row->id }}"
-                                                             data-judul="{{ $row->judul }}"><i
+                                                            data-id="{{ $row3->id }}"
+                                                             data-judul="{{ $row3->judul }}"><i
                                                                 class="fa-sharp fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
+                                            @endif
                                         </tbody>
                                     </table>
                                 </div>

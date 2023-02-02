@@ -11,13 +11,15 @@ class TambahjurnalController extends Controller
 {
     public function index(){
 
-        $data = tambahjurnal::with('namasiswa')->get();
-        // $data2 = tambahjurnal::with('namasiswa')->where('kd_guru','=',auth()->user()->kd_guru)->get();
+        $data = tambahjurnal::with('namasiswa')->where('student_id', auth()->id())->get();
+        $data3 = tambahjurnal::with('namasiswa')->get();
+        $data2 = tambahjurnal::with('namasiswa')->where('kd_guru',auth()->user()->kd_guru)->get();
+        // dd($data2);
         if(Auth()->user()->role == 'Admin'){
-            return view('tambahjurnal.datatambahjurnal',compact('data'));
+            return view('tambahjurnal.datatambahjurnal',compact('data3'));
         }else{
 
-            return view('user.tambahjurnal.datatambahjurnal',compact('data'));
+            return view('user.tambahjurnal.datatambahjurnal',compact('data','data2'));
         }
     }
 
@@ -51,7 +53,8 @@ class TambahjurnalController extends Controller
                 'deskripsi' =>$request->deskripsi,
                 'foto' =>$request->foto,
                 'usersiswa' =>$request->usersiswa,
-
+                'student_id' =>auth()->user()->id,
+                'kd_guru'=>auth()->user()->kd_guru
 
             ]);
             // dd($request->all);

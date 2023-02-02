@@ -95,6 +95,7 @@ class LoginController extends Controller
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
+            'kd_guru' => $request->kd_guru,
             'role' => 'Siswa'
         ]);
 
@@ -120,7 +121,8 @@ class LoginController extends Controller
     }
     public function registeruserguru(Request $request){
         $kd_guru = Helper::IDGenerator(new dataguru, 'kd_guru', 5, 'SKNS' );
-        // dd($request->all());
+        $kd_guru2 = Helper::IDGenerator(new user, 'kd_guru', 5, 'SKNS' );
+        // dd($kd_guru2);
         $this->validate($request,[
             'email' => 'required|unique:users',
             'password' => 'required|min:6'
@@ -131,16 +133,17 @@ class LoginController extends Controller
             'password.min' => 'Isi Password Minimal 6 Huruf'
         ]);
 
-        $user=User::create([
+        $user=user::create([
             'name' => $request ->name,
             'email' => $request ->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
+            'kd_guru' => $kd_guru2,
             'role' => 'Guru'
         ]);
 
         dataguru::create([
-            'kd_guru'=>$kd_guru,
+            'kd_guru'=>$user->kd_guru,
             'nip' => $request ->nip,
             'namaguru' => $request ->name,
             'alamat' => $request ->alamat,
