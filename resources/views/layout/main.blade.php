@@ -403,18 +403,14 @@
     <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
     <script src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/pages/datatable/datatable-basic.init.js')}}"></script>
 
-<script>
-  @if (Session::has('toast_success'))
-  toastr.toast_success("{{ Session::get('toast_success') }}")
-  @endif
-</script>
+
+</body>
+
 <script>
   @if (Session::has('success'))
   toastr.success("{{ Session::get('success') }}")
   @endif
 </script>
-</body>
-
 
 <!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:18:44 GMT -->
 </html>
