@@ -12,6 +12,7 @@ class TambahjurnalController extends Controller
     public function index(){
 
         $data = tambahjurnal::with('namasiswa')->get();
+        // $data2 = tambahjurnal::with('namasiswa')->where('kd_guru','=',auth()->user()->kd_guru)->get();
         if(Auth()->user()->role == 'Admin'){
             return view('tambahjurnal.datatambahjurnal',compact('data'));
         }else{
