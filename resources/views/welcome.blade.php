@@ -21,7 +21,7 @@
                
                 <div class="row">
                     <!-- col -->
-                    <div class="row">
+                   <!--  <div class="row">
                     <div class="col l3 m6 s12">
                         <div class="card success-gradient card-hover">
                             <div class="card-content">
@@ -84,18 +84,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                    
                  <div class="row">
-                    <!-- col -->
+                    
                     <div class="row">
                     <div class="col l3 m6 s12">
                         <div class="card danger-gradient card-hover">
                             <div class="card-content">
                                 <div class="d-flex no-block align-items-center">
                                     <div>
-                                        <h2 class="white-text m-b-5">250</h2>
-                                        <h6 class="white-text op-5 light-blue-text">Invoices</h6>
+                                        <h2 class="white-text m-b-5">{{$siswa}}</h2>
+                                        <h6 class="white-text op-5 light-blue-text">Jumlah Siswa</h6>
                                     </div>
                                     <div class="ml-auto">
                                         <span class="white-text display-6"><i class="material-icons">assignment</i></span>
@@ -109,8 +109,8 @@
                             <div class="card-content">
                                 <div class="d-flex no-block align-items-center">
                                     <div>
-                                        <h2 class="white-text m-b-5">520</h2>
-                                        <h6 class="white-text op-5">News Feed</h6>
+                                        <h2 class="white-text m-b-5">{{$jurusan}}</h2>
+                                        <h6 class="white-text op-5">Jumlah Jurusan</h6>
                                     </div>
                                     <div class="ml-auto">
                                         <span class="white-text display-6"><i class="material-icons">receipt</i></span>
@@ -126,8 +126,8 @@
                             <div class="card-content">
                                 <div class="d-flex no-block align-items-center">
                                     <div>
-                                        <h2 class="white-text m-b-5">100</h2>
-                                        <h6 class="white-text op-5 text-darken-2">Sales</h6>
+                                        <h2 class="white-text m-b-5">{{$dudi}}</h2>
+                                        <h6 class="white-text op-5 text-darken-2">Jumlah Dudi</h6>
                                     </div>
                                     <div class="ml-auto">
                                         <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
@@ -136,14 +136,13 @@
                             </div>
                         </div>
                     </div>
-                   
                     <div class="col l3 m6 s12">
                         <div class="card warning-gradient card-hover">
                             <div class="card-content">
                                 <div class="d-flex no-block align-items-center">
                                     <div>
-                                        <h2 class="white-text m-b-5">450</h2>
-                                        <h6 class="white-text op-5">Revenue</h6>
+                                        <h2 class="white-text m-b-5">{{$jurnal}}</h2>
+                                        <h6 class="white-text op-5">Jumlah Jurnal</h6>
                                     </div>
                                     <div class="ml-auto">
                                         <span class="white-text display-6"><i class="material-icons">attach_money</i></span>

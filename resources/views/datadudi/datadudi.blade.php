@@ -172,17 +172,17 @@
     });
 </script>
 
-<script>
-    @if (Session::has('success'))
-    toastr.success("{{ Session::get('success') }}")
-    @endif
-</script>
+    <script>
+        @if (Session::has('success'))
+        toastr.success("{{ Session::get('success') }}")
+        @endif
+    </script>
 
-<script>
-    @if (Session::has('error'))
-    toastr.error("{{ Session::get('error') }}")
-    @endif
-</script>
+    <script>
+        @if (Session::has('error'))
+        toastr.error("{{ Session::get('error') }}")
+        @endif
+    </script>
 
 <!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:10 GMT -->
 </html>

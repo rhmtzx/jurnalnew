@@ -1,0 +1,19 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 01 Feb 2023 17:19:35 at https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/index.html# +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/index.html# -O1 "C:\quinte" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+17:25:09	Error: 	"Not Found" (404) at link https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/css/owl.video.play.png (from https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/css/owl.carousel.min.css)
+17:25:17	Error: 	"Not Found" (404) at link https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/index2.html (from https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/themify.html)
+17:25:17	Error: 	"Not Found" (404) at link https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/index3.html (from https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/themify.html)
+17:25:24	Error: 	"Not Found" (404) at link https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/images/sort_both.png (from https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/css/jquery.dataTables.css)
+17:25:24	Error: 	"Not Found" (404) at link https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/images/sort_asc.png (from https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/css/jquery.dataTables.css)
+17:25:24	Error: 	"Not Found" (404) at link https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/images/sort_desc.png (from https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/css/jquery.dataTables.css)
+17:25:24	Error: 	"Not Found" (404) at link https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/images/sort_asc_disabled.png (from https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/css/jquery.dataTables.css)
+17:25:24	Error: 	"Not Found" (404) at link https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/images/sort_desc_disabled.png (from https://rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/css/jquery.dataTables.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 5 minutes 49 seconds : 749 links scanned, 740 files written (19622704 bytes overall) [8054873 bytes received at 23079 bytes/sec], 16160513 bytes transferred using HTTP compression in 690 files, ratio 26%, 24.1 requests per connection
+(8 errors, 0 warnings, 0 messages)
