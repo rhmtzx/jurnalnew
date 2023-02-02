@@ -66,8 +66,8 @@
                                                     <th scope="row">{{ $no++ }}</th>
                                                     <td>{{ $row->nissiswa }}</td>
                                                     <td>{{ $row->namasiswa }}</td>
-                                                    <td>{{ $row->kelass->kelassiswa }}</td>
-                                                    <td>{{ $row->jurusans->namajurusan }}</td>
+                                                    <td>{{ $row->kelas }}</td>
+                                                    <td>{{ $row->jurusan }}</td>
                                                     <td>{{ $row->alamatsiswa }}</td>
                                                     <td>{{ $row->notlpsiswa }}</td>
                                                     <td>{{ $row->created_at}}</td>
