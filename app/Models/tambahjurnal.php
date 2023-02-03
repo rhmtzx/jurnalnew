@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class tambahjurnal extends Model
 {
@@ -13,5 +14,11 @@ class tambahjurnal extends Model
 
     public function namasiswa(){
         return $this->belongsTo(datasiswa::class, 'usersiswa', 'id');
+    }
+
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])
+        ->translatedFormat('l, d F Y');
     }
 }

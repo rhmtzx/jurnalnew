@@ -121,7 +121,7 @@ class LoginController extends Controller
     }
     public function registeruserguru(Request $request){
         $kd_guru = Helper::IDGenerator(new dataguru, 'kd_guru', 5, 'SKNS' );
-        $kd_guru2 = Helper::IDGenerator(new user, 'kd_guru', 5, 'SKNS' );
+        $kd_guru2 = random_int(100000, 999999);
         // dd($kd_guru2);
         $this->validate($request,[
             'email' => 'required|unique:users',
