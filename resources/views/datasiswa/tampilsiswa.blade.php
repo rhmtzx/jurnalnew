@@ -94,8 +94,27 @@
                                         </div>
                                         @enderror
                                         <br>
+                                        <label for="exampleInputEmail1" class="form-label"><h6>Kelas Siswa</h6></label> 
+                                        <input type="text" name="kelas" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->kelas }}">
+                                        <br>
+                                        @error('kelas')
+                                        <div class="text-danger">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                        <br>
+                                        <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label> 
+                                        <input type="text" name="jurusan" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->jurusan }}">
+                                        <br>
+                                        @error('jurusan')
+                                        <div class="text-danger">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
 
-                                        <div class="mb-3">
+<!--                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Kelas Siswa</h6></label>
                                             <select class="form-control" name="kelas" id="kelas">
                                                 <option value="" selected disabled>Pilih</option>
@@ -106,10 +125,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <br>
-
-                                        
-                                            
+                                        <br>  
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label>
                                             <select class="form-control" name="jurusan" id="jurusan">
@@ -121,7 +137,8 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <br>
+                                        <br> -->
+
                                                 <div class="mb-3">
                                                     <br>
                                                     <label for="exampleInputEmail1" class="form-label"><h6>Alamat Siswa</h6></label> 

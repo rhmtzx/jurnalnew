@@ -67,9 +67,9 @@
                                     <i class="feather ft-users text-danger"></i>
                                 </div>
                                 <div class="text-white">
-                                    <p class="mt-xl-0 text-xl-left mb-2">New Customers</p>
+                                    <p class="mt-xl-0 text-xl-left mb-2">Total Plotingan</p>
                                     <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">2765</h3>
+                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$plotingan}}</h3>
                                         <small class="stats_icon"> <span class="feather ft-chevron-up"></span></small>
                                     </div>
                                 </div>
@@ -85,9 +85,9 @@
                                     <i class="feather ft-box text-dark"></i>
                                 </div>
                                 <div class="text-white">
-                                    <p class="mt-xl-0 text-xl-left mb-2">Total Products</p>
+                                    <p class="mt-xl-0 text-xl-left mb-2">Total Guru</p>
                                     <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">628</h3>
+                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$guru}}</h3>
                                         <small class="stats_icon"><span class="feather ft-chevron-up"></span></small>
                                     </div>
                                 </div>
@@ -96,6 +96,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-lg-8 stretched_card mt-4">
                     <div class="card">
@@ -212,6 +213,120 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <!-- Progress Table start -->
+                <div class="col-12 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card_title">Orders Overview</h4>
+                            <div class="single-table">
+                                <div class="table-responsive">
+                                    <table class="table table-hover progress-table text-center">
+                                        <thead class="text-uppercase">
+                                        <tr>
+                                            <th scope="col">Order ID</th>
+                                            <th scope="col">Customer</th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">status</th>
+                                            <th scope="col">action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">6583</th>
+                                            <td>Mark Spence</td>
+                                            <td>Macbook Pro</td>
+                                            <td>09 / 07 / 2018</td>
+                                            <td>672.56$</td>
+                                            <td><span class="badge badge-primary">Progress</span></td>
+                                            <td>
+                                                <ul class="d-flex justify-content-center">
+                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
+                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4652</th>
+                                            <td>David Rebon</td>
+                                            <td>iPhone X</td>
+                                            <td>09 / 07 / 2018</td>
+                                            <td>672.56$</td>
+                                            <td><span class="badge badge-warning">Pending</span></td>
+                                            <td>
+                                                <ul class="d-flex justify-content-center">
+                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
+                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7292</th>
+                                            <td>Jhon Doe</td>
+                                            <td>Samsung</td>
+                                            <td>09 / 07 / 2018</td>
+                                            <td>672.56$</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                            <td>
+                                                <ul class="d-flex justify-content-center">
+                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
+                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7826</th>
+                                            <td>Jessica Roy</td>
+                                            <td>Exercise Machine</td>
+                                            <td>09 / 07 / 2018</td>
+                                            <td>672.56$</td>
+                                            <td><span class="badge badge-danger">Stopped</span></td>
+                                            <td>
+                                                <ul class="d-flex justify-content-center">
+                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
+                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2638</th>
+                                            <td>Malika Jhon</td>
+                                            <td>Machine</td>
+                                            <td>09 / 07 / 2018</td>
+                                            <td>483.56$</td>
+                                            <td><span class="badge badge-primary">Progress</span></td>
+                                            <td>
+                                                <ul class="d-flex justify-content-center">
+                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
+                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">9374</th>
+                                            <td>David Jess</td>
+                                            <td>Laptop</td>
+                                            <td>09 / 07 / 2018</td>
+                                            <td>473.56$</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                            <td>
+                                                <ul class="d-flex justify-content-center">
+                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
+                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Progress Table end -->
             </div>
             <div class="row">
                 <div class="col-lg-4 mt-4 stretched_card">
@@ -417,119 +532,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <!-- Progress Table start -->
-                <div class="col-12 mt-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card_title">Orders Overview</h4>
-                            <div class="single-table">
-                                <div class="table-responsive">
-                                    <table class="table table-hover progress-table text-center">
-                                        <thead class="text-uppercase">
-                                        <tr>
-                                            <th scope="col">Order ID</th>
-                                            <th scope="col">Customer</th>
-                                            <th scope="col">Product</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">status</th>
-                                            <th scope="col">action</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">6583</th>
-                                            <td>Mark Spence</td>
-                                            <td>Macbook Pro</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>672.56$</td>
-                                            <td><span class="badge badge-primary">Progress</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
-                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4652</th>
-                                            <td>David Rebon</td>
-                                            <td>iPhone X</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>672.56$</td>
-                                            <td><span class="badge badge-warning">Pending</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
-                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7292</th>
-                                            <td>Jhon Doe</td>
-                                            <td>Samsung</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>672.56$</td>
-                                            <td><span class="badge badge-success">Completed</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
-                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7826</th>
-                                            <td>Jessica Roy</td>
-                                            <td>Exercise Machine</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>672.56$</td>
-                                            <td><span class="badge badge-danger">Stopped</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
-                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2638</th>
-                                            <td>Malika Jhon</td>
-                                            <td>Machine</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>483.56$</td>
-                                            <td><span class="badge badge-primary">Progress</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
-                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">9374</th>
-                                            <td>David Jess</td>
-                                            <td>Laptop</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>473.56$</td>
-                                            <td><span class="badge badge-success">Completed</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><button type="button" class="btn btn-inverse-primary"><i class="fa fa-edit"></i></button></li>
-                                                    <li><button type="button" class="btn btn-inverse-danger"><i class="ti-trash"></i></button></li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Progress Table end -->
-            </div>
+           
         </div>
 @endsection

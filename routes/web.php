@@ -5,6 +5,8 @@ use App\Models\jurusan;
 use App\Models\datadudi;
 use App\Models\datasiswa;
 use App\Models\tambahjurnal;
+use App\Models\dataplotingan;
+use App\Models\dataguru;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KelasController;
@@ -35,8 +37,11 @@ Route::get('/', function () {
     $siswa = datasiswa::count();
     $dudi = datadudi::count();
     $jurnal = tambahjurnal::count();
+    $plotingan = dataplotingan::count();
+    $guru = dataguru::count();
 
-    return view('welcome', compact('jurusan', 'siswa', 'dudi', 'jurnal'));
+
+    return view('welcome', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru'));
 })->middleware('auth');
 
 //landing
@@ -51,8 +56,10 @@ Route::get('/dashboard', function () {
     $siswa = datasiswa::count();
     $dudi = datadudi::count();
     $jurnal = tambahjurnal::count();
+    $plotingan = dataplotingan::count();
+    $guru = dataguru::count();
 
-    return view('siswa.welcomes', compact('jurusan', 'siswa', 'dudi', 'jurnal'));
+    return view('siswa.welcomes', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru'));
 })->middleware('auth');
 //jurusan
 Route::middleware('auth')->group(function () {
@@ -143,17 +150,20 @@ Route::middleware('auth')->group(function () {
     Route::post('/updatedatapersyaratan/{id}', [DatapersyaratanController::class, 'updatedatapersyaratan'])->name('updatedatapersyaratan');
     Route::get('/deletedatapersyaratan/{id}', [DatapersyaratanController::class, 'deletedatapersyaratan'])->name('deletedatapersyaratan');
 
-    Route::get('/deletekelas/{id}', [KelasController::class, 'deletekelas'])->name('deletekelas');
     Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
     Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
     Route::post('/updateprofil', [LoginController::class, 'updateprofil'])->name('updateprofil');
+    Route::get('/profils', [LoginController::class, 'profils'])->name('profils');
 
-    //profil
+
+    //
     Route::get('/datakelas', [KelasController::class, 'kelas'])->name('datakelas');
     Route::get('/tambahkelas', [KelasController::class, 'tambahkelas'])->name('tambahkelas');
     Route::post('/insertkelas', [KelasController::class, 'insertkelas'])->name('insertkelas');
     Route::get('/tampilkelas/{id}', [KelasController::class, 'tampilkelas'])->name('tampilakelas');
     Route::post('/updatedatakelas/{id}', [KelasController::class, 'updatedatakelas'])->name('updatedatakelas');
+    Route::get('/deletekelas/{id}', [KelasController::class, 'deletekelas'])->name('deletekelas');
+
 });
 //loginadmin
 Route::get('/login', [LoginController::class, 'login'])->name('login');

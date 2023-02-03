@@ -77,7 +77,7 @@
                                             </div>
                                             <br>
                                             <br>
-                                            <button type="submit" class="btn btn-rounded btn-fixed-w btn-success mb-3">Submit Data</button>
+                                            <button type="submit" class="btn btn-rounded btn-fixed-w btn-primary     mb-3"><i class="ion-paper-airplane"></i>Submit</button>
                                             <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
 
                                         </form>

@@ -1,67 +1,31 @@
 @extends('siswa.mains')
-
-@section('content')
-<!doctype html>
-    <html lang="en">
-
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
-            integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>DATA PLOTINGAN DUDI</title>
-    </head>
-
+@section('contents')
+<head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        </head>
 <body>
-   <div class="page-content-wrapper">
-    <div class="justify-content-center">
-      <div class="row-2">
-        <div class="col-12 col-lg-12">
-            <div class="card-body">
-                <div class="container">
-                    <div class="row" > 
-
-                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                    <div class="breadcrumb-title pe-3">DATA PLOTINGAN</div>
-                        <div class="ps-3">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0 p-0">
-                                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-grid-alt"></i></a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">DATA PLOTINGAN</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <div>
-                                    <h4><em>DATA PLOTINGAN</em></h4>
-                                    <hr>
-                                    <a href="/tambahdataplotingan" class="btn btn-success mb-3">Tambah Plotingan +</i></a>
-                                    <!--@if ($message = Session::get('succes'))
-    <div class="alert alert-success" role="alert">
-                                    {{ $message }}
-                                </div>
-    @endif-->
+<div class="main-content-inner">
+    <div class="row">
+                <!-- Progress Table start -->
+                <div class="col-12 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card_title">Data Seluruh Plotingan Siswa</h4>
+                            <ul>
+                            <li><h6>Seluruh Data Plotingan Magang Siswa Ada Disini</h6></li></ul>
+                            <br>
+                            <div class="single-table">
+                                <div class="table-responsive">
                                     <table id="dataplotingan" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Id Guru</th>
-                                                <th scope="col">Nis Siswa</th>
-                                                <th scope="col">Id Dudi</th>
-                                                <th scope="col">Dibuat</th>
+                                                <th scope="col">Nama Guru</th>
+                                                <th scope="col">Nama Siswa</th>
+                                                <th scope="col">Nama Dudi</th>
+                                               
+                                                <!-- <th scope="col">Dibuat</th> -->
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
@@ -71,19 +35,25 @@
                                             @endphp
                                             @foreach ($data as $row)
                                                 <tr>
-                                                    <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->id_gurupem }}</td>
-                                                    <td>{{ $row->nissiswa }}</td>
-                                                    <td>{{ $row->id_dudi }}</td>
-                                                    <td>{{ $row->created_at}}</td>
-                                                    <td scope="row">
-                                                        <a href="/tampildataplotingan/{{ $row->id }}"
-                                                            class="btn btn-warning"><i
-                                                                class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deletedataplotingan"
-                                                            data-id="{{ $row->id }}"
-                                                             data-nissiswa="{{ $row->nissiswa }}"><i
-                                                                class="fa-sharp fa-solid fa-trash"></i></a>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->gurus->namaguru}}</td>
+                                                <td>{{ $row->siswas->namasiswa}}</td>
+                                                <td>{{ $row->dudis->namadudi}}</td>  
+                                                <!-- <td>{{ $row->namagurup }}</td> -->
+                                                <!-- <td>{{ $row->nissiswap }}</td>
+                                                <td>{{ $row->namadudip }}</td> -->
+                                                
+                                                <!-- <td>{{ $row->datasiswa ? $row->nissiswap->nissiswa : 'data tidak ada' }}</td>
+                                                <td>{{ $row->datadudi ? $row->namadudip->namadudi : 'data tidak ada' }}</td>
+ -->
+                                                
+
+
+                                                
+                                                    
+                                                <!-- <td>{{ $row->created_at}}</td> -->
+                                                <td scope="row">
+                                                    <button type="button" class="btn btn-primary btn-flat mt-2" data-toggle="modal" data-target="#exampleLongModalLong2">Info</button>  
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -92,76 +62,100 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
+                <!-- Progress Table end -->
             </div>
-        </div>
-        </div>
-        </div>
-      </section>
-      <!-- /.content -->
+            </div>
+            <div class="card-body">
+                            
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleLongModalLong2">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Hummasoft Technology</h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Sebuah Dudi Yang Berlokasi Di KarangPloso Kabupaten Malang.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-    </div>
-</div>
-        <!-- Optional JavaScript; choose one of the two! -->
+        <!-- DATA TABLE JS -->
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/init/data-table.js')}}">
+</script>
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/jquery.dataTables.js')}}"></script>
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/responsive.bootstrap.min.js')}}"></script>
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-        <script type="text/javascript" src="https://cdn.s.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-            integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            $(document).ready(function() {
-                $('#dataplotingan').DataTable();
-            });
-        </script>
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-                    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-                </script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-                    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-                </script>
-                -->
-    </body>
-    <script>
-        $('.deletedataplotingan').click(function() {
-            var pegawaiid = $(this).attr('data-id');
-            var nama = $(this).attr('data-nama');
-            swal({
-                    title: "Yakin Ingin Menghapus?",
-                    text: "Kamu Yakin Akan Menghapus Data Ini",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        window.location = "/deletedataplotingan/" + pegawaiid + ""
-                        swal("Data berhasil di hapus", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("Data tidak jadi di hapus");
-                    }
+        <!-- DataTablesScript -->
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#bismillah').DataTable();
+    });
+</script>
+
+</body>
+
+<script>
+    $('.deletedatasiswa').click(function() {
+        var kategoriid = $(this).attr('data-id');
+        var kategori = $(this).attr('data-kategori');
+        swal({
+            title: "Yakin Ingin delete Data ?",
+            text: "Kamu Yakin Akan Menghapus Data Ini !",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                window.location = "/deletedatasiswa/" + kategoriid + ""
+                swal("Data Berhasil Di Hapus", {
+                    icon: "success",
                 });
+            } else {
+                swal("Data Gagal Di Hapus");
+            }
         });
-    </script>
-    <script>
-        @if (Session::has('succes'))
-            toastr.success("{{ Session::get('succes') }}");
-        @endif
-    </script>
-    </html>
-@endsection
+    });
+</script>
 
+<script>
+    @if (Session::has('success'))
+    toastr.success("{{ Session::get('success') }}")
+    @endif
+</script>
+
+<script>
+    @if (Session::has('error'))
+    toastr.error("{{ Session::get('error') }}")
+    @endif
+</script>
+
+@endsection

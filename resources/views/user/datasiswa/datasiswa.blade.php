@@ -27,7 +27,7 @@
                                                 <th scope="col">Alamat Siswa</th>
                                                 <th scope="col">No Telepon Siswa</th>
                                                 <th scope="col">Dibuat</th>
-                                                <th scope="col">Aksi</th>
+                                                <!-- <th scope="col">Aksi</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -44,14 +44,15 @@
                                                     <td>{{ $row->alamatsiswa }}</td>
                                                     <td>{{ $row->notlpsiswa }}</td>
                                                     <td>{{ $row->created_at}}</td>
-                                                    <td scope="row">
+                                                    <!-- <td scope="row">
                                                         <a href="/tampildatasiswa/{{ $row->id }}"
                                                             class="btn btn-warning"><i
-                                                                class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                                class="fa-sharp fa-solid fa-pen-to-square"></i></a> -->
                                                         <!-- <a href="#" class="btn btn-danger deletedatasiswa"
                                                             data-id="{{ $row->id }}"
                                                              data-nissiswa="{{ $row->nissiswa }}"><i
                                                                 class="fa-sharp fa-solid fa-trash"></i></a> -->
+                                                                
                                                     </td>
                                                 </tr>
                                             @endforeach

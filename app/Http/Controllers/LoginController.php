@@ -300,4 +300,10 @@ class LoginController extends Controller
         return redirect()->route('profil')->with('success', 'Profil berhasil di Ganti!');
     }
 
+    public function profils()
+    {
+        $data = User::all();
+        return view('siswa.profiles', compact('data'));
+    }
+
 }

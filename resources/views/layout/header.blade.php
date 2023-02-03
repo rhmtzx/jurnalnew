@@ -42,126 +42,17 @@
                         <!-- ============================================================== -->
                         <!-- Notification icon scss in header.scss -->
                         <!-- ============================================================== -->
-                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="noti_dropdown"><i class="material-icons">notifications</i></a>
-                            <ul id="noti_dropdown" class="mailbox dropdown-content">
-                                <li>
-                                    <div class="drop-title">Notifications</div>
-                                </li>
-                                <li>
-                                    <div class="message-center">
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="btn-floating btn-large red"><i class="material-icons">link</i></span>
-                                                <span class="mail-contnet">
-                                                    <h5>Launch Admin</h5>
-                                                    <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="btn-floating btn-large blue"><i class="material-icons">date_range</i></span>
-                                                <span class="mail-contnet">
-                                                    <h5>Event today</h5>
-                                                    <span class="mail-desc">Just a reminder that you have event</span>
-                                                    <span class="time">9:10 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="btn-floating btn-large cyan"><i class="material-icons">settings</i></span>
-                                                <span class="mail-contnet">
-                                                    <h5>Settings</h5>
-                                                    <span class="mail-desc">You can customize this template as you want</span>
-                                                    <span class="time">9:08 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="btn-floating btn-large green"><i class="material-icons">face</i></span>
-                                                <span class="mail-contnet">
-                                                    <h5>Lily Jordan</h5>
-                                                    <span class="mail-desc">Just see the my admin!</span>
-                                                    <span class="time">9:02 AM</span>
-                                                </span>
-                                            </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="center-align" href="javascript:void(0);"> <strong>Check all notifications</strong> </a>
-                                </li>
-                            </ul>
-                        </li>
+                        
                         <!-- ============================================================== -->
                         <!-- Comment topbar icon scss in header.scss -->
                         <!-- ============================================================== -->
-                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="msg_dropdown"><i class="material-icons">comment</i></a>
-                            <ul id="msg_dropdown" class="mailbox dropdown-content">
-                                <li>
-                                    <div class="drop-title">You have 4 new messages</div>
-                                </li>
-                                <li>
-                                    <div class="message-center">
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="user-img">
-                                                    <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/1.jpg')}}" alt="user" class="circle">
-                                                    <span class="profile-status online pull-right"></span>
-                                                </span>
-                                                <span class="mail-contnet">
-                                                    <h5>Chris Evans</h5>
-                                                    <span class="mail-desc">Just see the my admin!</span>
-                                                    <span class="time">9:30 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="user-img">
-                                                    <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/2.jpg')}}" alt="user" class="circle">
-                                                    <span class="profile-status busy pull-right"></span>
-                                                </span>
-                                                <span class="mail-contnet">
-                                                    <h5>Ray Hudson</h5>
-                                                    <span class="mail-desc">I've sung a song! See you at</span>
-                                                    <span class="time">9:10 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="user-img">
-                                                    <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/3.jpg')}}" alt="user" class="circle">
-                                                    <span class="profile-status away pull-right"></span>
-                                                </span>
-                                                <span class="mail-contnet">
-                                                    <h5>Lb James</h5>
-                                                    <span class="mail-desc">I am a singer!</span>
-                                                    <span class="time">9:08 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="user-img">
-                                                    <img src="{{asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/users/4.jpg')}}" alt="user" class="circle">
-                                                    <span class="profile-status offline pull-right"></span>
-                                                </span>
-                                                <span class="mail-contnet">
-                                                    <h5>Don Andres</h5>
-                                                    <span class="mail-desc">Just see the my admin!</span>
-                                                    <span class="time">9:02 AM</span>
-                                                </span>
-                                            </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="center-align" href="javascript:void(0);"> <strong>See all e-Mails</strong> </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="search-box">
+                        <!--  -->
+                        <!-- <li class="search-box">
                             <a href="javascript: void(0);"><i class="material-icons">search</i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fas fa-times"></i></a>
                             </form>
-                        </li>
+                        </li> -->
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Left topbar icon scss in header.scss -->
