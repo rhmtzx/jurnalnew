@@ -16,7 +16,9 @@
                             <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
-                                <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah</a>
+                                @if(Auth::user()->role == 'Siswa')
+                                <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
+                                @endif
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -29,7 +31,9 @@
                                                 <th scope="col">Judul</th>
                                                 <th scope="col">Deskripsi</th>
                                                 <th scope="col">Dibuat</th>
+                                                @if(Auth::user()->role == 'Siswa')
                                                 <th scope="col">Aksi</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -72,15 +76,17 @@
                                                     <td>{{ $row2->judul }}</td>
                                                     <td>{!! $row2->deskripsi !!}</td>
                                                     <td>{{ $row2->created_at}}</td>
+                                                    @if(Auth::user()->role == 'Siswa')
                                                     <td scope="row">
                                                         <a href="/tampiltambahjurnal/{{ $row2->id }}"
                                                             class="btn btn-warning"><i
-                                                                class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                            class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                         <a href="#" class="btn btn-danger deletetambahjurnal"
                                                             data-id="{{ $row2->id }}"
-                                                             data-judul="{{ $row2->judul }}"><i
-                                                                class="fa-sharp fa-solid fa-trash"></i></a>
+                                                            data-judul="{{ $row2->judul }}"><i
+                                                            class="fa-sharp fa-solid fa-trash"></i></a>
                                                     </td>
+                                                    @endif
                                                 </tr>
                                                 @endforeach
                                                 @endif

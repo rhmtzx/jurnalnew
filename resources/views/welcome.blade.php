@@ -6,7 +6,7 @@
             <div class="card info-gradient m-t-0 m-b-0">
                 <div class="card-content">
                     <div class="p-b-40 p-t-20">
-                        <h3 class="white-text">Welcome back {{ Auth::user()->name }}!</h3>
+                        <h3 class="white-text">Selamat Datang {{ Auth::user()->name }}!</h3>
                         <p class="white-text op-7 m-b-20">Success is not a destination, its a Journey!!!</p>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                                         <h6 class="white-text op-5">Jumlah Jurusan</h6>
                                     </div>
                                     <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">receipt</i></span>
+                                        <span class="white-text display-6"><i class="material-icons">assignment</i></span>
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                                         <h6 class="white-text op-5 text-darken-2">Jumlah Dudi</h6>
                                     </div>
                                     <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
+                                        <span class="white-text display-6"><i class="material-icons">assignment</i></span>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                         <h6 class="white-text op-5">Jumlah Jurnal</h6>
                                     </div>
                                     <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">attach_money</i></span>
+                                        <span class="white-text display-6"><i class="material-icons">assignment</i></span>
                                     </div>
                                 </div>
                             </div>

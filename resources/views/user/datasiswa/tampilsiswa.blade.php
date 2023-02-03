@@ -73,8 +73,8 @@
                                     
                                     
                                     <div class="mt-4">
-                                        <button type="submit" class="btn btn-primary">Edit Data</button>
-                                        <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
+                                        <button type="submit" class="btn btn-primary mb-3"><i class="ion-paper-airplane"></i> Edit Data</button>
+                                        <button type="/datasiswa" class="btn btn-danger mb-3"> Kembali</button>
                                     </div>
                                 </form>                                  
                                     </div>

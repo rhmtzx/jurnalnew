@@ -29,13 +29,13 @@
                 *====================================-->
                 <div class="col-md-6 col-sm-12">
                     <ul class="notification-area pull-right">
-                        <li>
+                        <!-- <li>
                             <span class="nav-btn pull-left d_none_lg">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </span>
-                        </li>
+                        </li> -->
                         <li id="full-view" class="d_none_sm"><i class="feather ft-maximize"></i></li>
                         <li id="full-view-exit" class="d_none_sm"><i class="feather ft-minimize"></i></li>
                         <li class="dropdown">
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span></span></i>
                             <div class="dropdown-menu notify-box nt-enveloper-box">
                                 <span class="notify-title">You have 3 new Messages<a href="#">view all</a></span>
@@ -165,10 +165,10 @@
                                     </a>
                                 </div>
                             </div>
-                        </li>
-                        <li class="settings-btn d_none_sm">
+                        </li> -->
+                        <!-- <li class="settings-btn d_none_sm">
                             <i class="ti-more"></i>
-                        </li>
+                        </li> -->
                         <li class="user-dropdown">
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -176,7 +176,7 @@
                                     <img src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/images/user.jpg')}}" alt="" class="img-fluid">
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                                    <a class="dropdown-item" href="#"><i class="ti-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="/profils"><i class="ti-user"></i> Profile</a>
                                     <!-- <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Settings</a> -->
                                     <span role="separator" class="divider"></span>
                                     <a class="dropdown-item" href="/logout"><i class="ti-power-off"></i>Logout</a>
