@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Dataplotingan;
+use App\Models\dataplotingan;
 use Illuminate\Http\Request;
 use App\Models\dataguru;
 use App\Models\datasiswa;

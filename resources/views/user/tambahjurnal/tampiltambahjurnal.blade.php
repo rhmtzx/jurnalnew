@@ -65,6 +65,27 @@
                                             <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
                                             <br>
+                                            @if(Auth::user()->role == 'Guru')   
+                                            <div class="form-group">
+                                                    <label class="col-form-label"><h6>Status Jurnal</h6></label>
+                                                    <select class="form-control" id="statusjurnal" name="statusjurnal">
+                                                        <option selected disabled="">- Pilih Status -</option>
+                                                        <option value="Menunggu Persetujuan" {{ $data->statusjurnal == 'Menunggu Persetujuan' ? 'selected' : '' }}>Menunggu Persetujuan</option>
+                                                        <option value="Telah Disetujui" {{ $data->statusjurnal == 'Telah Disetujui' ? 'selected' : 'Telah Disetujui' }}>Telah Disetujui</option>
+                                                    </select>
+                                                </div>
+                                            @endif
+                                            @if(Auth::user()->role == 'Siswa')   
+                                            <div class="form-group">
+                                                    <label class="col-form-label"><h6>Status Jurnal</h6></label>
+                                                    <select class="form-control" id="statusjurnal" name="statusjurnal">
+                                                        <option selected disabled="">- Pilih Status -</option>
+                                                        <option value="Menunggu Persetujuan" {{ $data->statusjurnal == 'Menunggu Persetujuan' ? 'selected' : '' }}>Menunggu Persetujuan</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            @endif
+
                                             <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6></label>
                                             <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
                                                 alt="" style="width: 90px" alt="">
@@ -78,7 +99,7 @@
                                                 </div>
                                             </div>
                                             <br>
-                                            <button type="submit" class="btn btn-rounded btn-fixed-w btn-success mb-3">Submit Data</button>
+                                            <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Update Data</button>
                                             <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
 
                                         </form>

@@ -52,6 +52,7 @@
                                                 <th scope="col">Foto</th>
                                                 <th scope="col">Judul</th>
                                                 <th scope="col">Deskripsi</th>
+                                                <th scope="col">Status Jurnal</th>
                                                 <th scope="col">Dibuat</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
@@ -71,6 +72,15 @@
                                                     </td>
                                                     <td>{{ $row3->judul }}</td>
                                                     <td>{!! $row3->deskripsi !!}</td>
+                                                    @if ($row3->statusjurnal == 'Telah Disetujui')
+                                                <td>
+                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
+                                                </td>
+                                                @elseif ($row3->statusjurnal == 'Menunggu Persetujuan')
+                                                <td>
+                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
+                                                </td>
+                                                @endif 
                                                     <td>{{ $row3->created_at}}</td>
                                                     <td scope="row">
                                                         <a href="/tampiltambahjurnal/{{ $row3->id }}"

@@ -29,4 +29,8 @@ class datasiswa extends Model
     {
         return $this->hasMany(tambahjurnal::class,); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
+    public function dataabsen()
+    {
+        return $this->hasMany(dataabsen::class,); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+    }
 }

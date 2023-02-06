@@ -20,6 +20,7 @@ use App\Http\Controllers\DataplotinganController;
 use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
+use App\Http\Controllers\DataabsenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +103,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/updatetambahjurnal/{id}', [TambahjurnalController::class, 'updatetambahjurnal'])->name('updatetambahjurnal')->middleware('auth');
     Route::get('/deletetambahjurnal/{id}', [TambahjurnalController::class, 'deletetambahjurnal'])->name('deletetambahjurnal')->middleware('auth');
 
+    //dataabsen
+    Route::get('/dataabsen', [DataabsenController::class, 'index'])->name('dataabsen')->middleware('auth');
+    Route::get('/tambahabsen', [DataabsenController::class, 'tambahabsen'])->name('tambahabsen')->middleware('auth');
+    Route::post('/insertabsen', [DataabsenController::class, 'insertabsen'])->name('insertabsen')->middleware('auth');
+    Route::get('/tampilabsen/{id}', [DataabsenController::class, 'tampilabsen'])->name('tampilabsen')->middleware('auth');
+    Route::post('/updateabsen/{id}', [DataabsenController::class, 'updateabsen'])->name('updateabsen')->middleware('auth');
+    Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen')->middleware('auth');
+
     //datapersyaratan
     Route::get('/datapersyaratan', [DatapersyaratanController::class, 'index'])->name('datapersyaratan')->middleware('auth');
     Route::get('/tambahpersyaratan', [DatapersyaratanController::class, 'tambahpersyaratan'])->name('tambahpersyaratan')->middleware('auth');
@@ -156,13 +165,21 @@ Route::middleware('auth')->group(function () {
     Route::get('/profils', [LoginController::class, 'profils'])->name('profils');
 
 
-    //
+    //kelas
     Route::get('/datakelas', [KelasController::class, 'kelas'])->name('datakelas');
     Route::get('/tambahkelas', [KelasController::class, 'tambahkelas'])->name('tambahkelas');
     Route::post('/insertkelas', [KelasController::class, 'insertkelas'])->name('insertkelas');
     Route::get('/tampilkelas/{id}', [KelasController::class, 'tampilkelas'])->name('tampilakelas');
     Route::post('/updatedatakelas/{id}', [KelasController::class, 'updatedatakelas'])->name('updatedatakelas');
     Route::get('/deletekelas/{id}', [KelasController::class, 'deletekelas'])->name('deletekelas');
+
+//dataabsen
+    // Route::get('/dataabsen', [DataabsenController::class, 'dataabsen'])->name('dataabsen');
+    // Route::get('/tambahabsen', [DataabsenController::class, 'tambahabsen'])->name('tambahabsen');
+    // Route::post('/insertabsen', [DataabsenController::class, 'insertabsen'])->name('insertabsen');
+    // Route::get('/tampilabsen/{id}', [DataabsenController::class, 'tampilabsen'])->name('tampilabsen');
+    // Route::post('/updateabsen/{id}', [DataabsenController::class, 'updateabsen'])->name('updateabsen');
+    // Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen');
 
 });
 //loginadmin

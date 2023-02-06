@@ -39,12 +39,14 @@ class TambahjurnalController extends Controller
                   'deskripsi' => 'required',
                   'foto' => 'required',
                   'usersiswa' => 'required',
+                  'statusjurnal' => 'required',
 
              ],[
                  'judul.required' => 'Harus diisi',
                  'deskripsi.required' => 'Harus diisi',
                  'foto.required' => 'Harus diisi',
                  'usersiswa.required' => 'Harus diisi',
+                 'statusjurnal.required' => 'Harus diisi',
 
              ]);
 
@@ -54,7 +56,9 @@ class TambahjurnalController extends Controller
                 'foto' =>$request->foto,
                 'usersiswa' =>$request->usersiswa,
                 'student_id' =>auth()->user()->id,
-                'kd_guru'=>auth()->user()->kd_guru
+                'kd_guru'=>auth()->user()->kd_guru,
+                'statusjurnal' =>$request->statusjurnal
+
 
             ]);
             // dd($request->all);
@@ -89,6 +93,8 @@ class TambahjurnalController extends Controller
                 'judul' =>$request->judul,
                 'deskripsi' =>$request->deskripsi,
                 'usersiswa' =>$request->usersiswa,
+                'statusjurnal' =>$request->statusjurnal,
+                // 'foto' =>$request->foto,
 
             ]);
 
@@ -99,9 +105,9 @@ class TambahjurnalController extends Controller
             }
 
             if(Auth()->user()->role == 'Admin'){
-                return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Diupdate');
+                return redirect()->route('datatambahjurnal')->with('success', 'Data Berhasil Diupdate');
                 }else{
-                return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Diupdate');
+                return redirect()->route('datatambahjurnal')->with('success', 'Data Berhasil Diupdate');
 
                 }
         }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTambahjurnalsTable extends Migration
+class CreateDataabsensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateTambahjurnalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tambahjurnals', function (Blueprint $table) {
+        Schema::create('dataabsens', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('deskripsi');
+            $table->string('keterangan');
             $table->string('foto');
-            $table->string('kd_guru');
+            $table->string('statusjurnal')->nullable();
             $table->string('usersiswa');
             $table->string('student_id');
-            $table->string('statusjurnal')->nullable();
+            $table->string('kd_guru');
 
             $table->timestamps();
         });
@@ -34,6 +33,6 @@ class CreateTambahjurnalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tambahjurnals');
+        Schema::dropIfExists('dataabsens');
     }
 }

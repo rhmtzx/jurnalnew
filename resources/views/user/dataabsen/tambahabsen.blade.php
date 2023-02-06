@@ -11,60 +11,66 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Tambah Data Jurnal</h4>
+                        <h4 class="card_title">Tambah Data Absen</h4>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
                             
                             <div class="single-table">
                                 <div class="table-responsive">
-                                   <div id="content" class="main-content">
+                                 <div id="content" class="main-content">
 
 
 
-                                    <form action="/inserttambahjurnal" method="POST" enctype="multipart\form-data" >
+                                    <form action="/insertabsen" method="POST" enctype="multipart\form-data" >
                                         @csrf
+                                        <br>
+                                        @if(Auth::user()->role == 'Siswa')     
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
+                                            <label class="col-form-label"><h6>Nama Siswa</h6></label>
                                             @foreach ( $data as $b)
                                             <input type="text" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
                                             id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
                                             value="{{ $b->namasiswa }}">
                                             @endforeach
-                                            @error('namasiswa')
+                                            @error('usersiswa')
                                             <div class="text-danger">
                                                 {{ $message }}
                                             </div>
                                             @enderror
-                                            <br>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label"><h6>Judul</h6></label>
-                                                <input class="form-control form-control-lg input-rounded mb-4" name="judul" type="text" placeholder="Masukan Judul">
+                                            
+                                        @endif
+
+                                <label class="col-form-label"><h6>Keterangan :</h6></label>
+                                <div class="custom-control custom-radio primary-radio">
+                                    <input type="radio" id="Hadir" name="keterangan" value="Hadir" class="custom-control-input">
+                                    <label class="custom-control-label" for="Hadir">Hadir</label>
+                                </div>
+                                <div class="custom-control custom-radio primary-radio">
+                                    <input type="radio" id="Sakit" name="keterangan" value="Sakit" class="custom-control-input">
+                                    <label class="custom-control-label" for="Sakit">Sakit</label>
+                                </div>
+                                <div class="custom-control custom-radio primary-radio">
+                                    <input type="radio" id="Izin" name="keterangan" value="Izin" class="custom-control-input">
+                                    <label class="custom-control-label" for="Izin">Izin</label>
+                                </div>
+                                @error('keterangan')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                <br>
+
+                                            <!-- <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Keterangan</h6></label>
+                                                <input type="text" name="keterangan" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Keterangan">
                                             </div>
-                                            @error('judul')
+                                            @error('keterangan')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
-                                            <section style="padding-top:60px;">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <label for="exampleInputEmail1" class="form-label"><h6>Deskripsi</h6></label>
-                                                            <div class="col-lg-12 mt-4">
-                                                                <div class="card">
-                                                                    <div class="card-body">
-                                                                        <!-- <h4 class="card_title">Summernote Editor</h4> -->
-                                                                        <textarea class="summer_note_editor" placeholder="Masukkan Deskripsi Jurnal" name="deskripsi"></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            @error('deskripsi')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
-                                            <br>
-                                            <br>
+                                            <br> -->
+
+                                            <!-- <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Status Jurnal</h6></label>
+                                                <input type="text" name="statusjurnal" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Status Jurnal">
+                                            </div> -->
                                             @if(Auth::user()->role == 'Siswa')     
                                             <div class="form-group">
                                                 <label class="col-form-label"><h6>Status Jurnal</h6></label>
@@ -75,8 +81,13 @@
                                                 </select>
                                             </div>
                                             @endif
+
+                                            @error('statusjurnal')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                             <br>
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6></label>
+
+                                            <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto</h6></label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Upload</span>
@@ -84,14 +95,15 @@
                                                 <div class="custom-file">
                                                     <input type="file" name="foto" class="custom-file-input" id="inputGroupFile01">
                                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                    
                                                 </div>
                                             </div>
+                                            <a for="exampleInputEmail1" class="form-label"><em>Info : Abaikan Jika Tidak Sakit Atau Izin !!</em></a>
                                             <br>
                                             <br>
-                                            <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>
-                                            <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
-
-                                        </form>
+                                            <button type="submit" class="btn btn-rounded btn-fixed-w btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit</button>
+                                            <a href="/dataabsen" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
+                                        </form> 
                                         
                                     </div>
                                 </div>
