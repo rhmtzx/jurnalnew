@@ -48,6 +48,7 @@
                         <p>Belum punya akun ? register sekarang !.</p>
                         <a href="/registersiswa" class="btn btn-round red m-t-5">Register Siswa</a>
                         <a href="/registerguru"class="btn btn-round red m-t-5">Register Guru</a>
+                        <a href="/registerdudi"class="btn btn-round red m-t-5">Register DuDi</a>
                     </div>
                 </div>
                 <div class="auth-box auth-sidebar">

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png') }}">
-    <title>J-On | Register Siswa</title>
+    <title>J-On | Register Guru</title>
     <link href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/style.css') }}" rel="stylesheet">
     <!-- This page CSS -->
     <link href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/authentication.css') }}" rel="stylesheet">
@@ -18,7 +18,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <![endif]-->
 </head>
 
 <body>
@@ -57,63 +57,35 @@
                         </div>
                         <!-- Form -->
                         <div class="row">
-                            <form class="col s12" action="/registerusersiswa" method="POST">
+                            <form class="col s12" action="/registeruserdudi" method="POST">
                                 @csrf
                                 <!-- email -->
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="name" type="number" name="nissiswa" class="validate" required>
-                                        <label for="name">NIS</label>
-                                    </div>
-                                </div>
-                                @error('nissiswa')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                                <div class="row">
-                                    <div class="input-field col s12">
                                         <input id="name" type="text" name="name" class="validate" required>
-                                        <label for="name">Nama Siswa</label>
+                                        <label for="name">Nama DuDi</label>
                                     </div>
                                 </div>
-                                <!-- email -->
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="name" type="text" name="kelas"  class="validate" required>
-                                        <label for="name">Kelas Siswa</label>
+                                        <input id="namakepdik" type="text" name="namakepdik" class="validate" required>
+                                        <label for="namakepdik">Nama Kepala Direktur</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="name" type="text" name="jurusan" class="validate" required>
-                                        <label for="name">Jurusan Siswa</label>
+                                        <input id="alamatdudi" type="text" name="alamatdudi"  class="validate" required>
+                                        <label for="alamatdudi">Alamat DuDi</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="name" type="text" name="alamatsiswa" class="validate" required>
-                                        <label for="name">Alamat Siswa</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="name" type="number" name="notlpsiswa" class="validate" required>
-                                        <label for="name">No Telepon Siswa</label>
-                                    </div>
-                                </div>
+                                <!-- email -->
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="email" type="email" name="email" class="validate" required>
                                         <label for="email">Masukkan Email</label>
                                     </div>
                                 </div>
-                                @error('email')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                                @enderror
                                 <!-- pwd -->
                                 <div class="row">
                                     <div class="input-field col s12">
@@ -121,25 +93,26 @@
                                         <label for="password">Buat Password</label>
                                     </div>
                                 </div>
-                                @error('password')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="kd_guru" type="text" name="kd_guru" class="validate" required>
-                                        <label for="kd_guru">Masukkan Kode Guru Pembimbing Anda</label>
+                                <div class="mb-1">
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6>
+                                    </label>
+                                    <br>
+                                    <input type="file" name="foto" class="form-control">
                                     </div>
-                                </div>
-                                <label for=""><h6>Info : Pastikan kode benar!!</h6> </label>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="kd_dudi" type="text" name="kd_dudi" class="validate" required>
-                                        <label for="kd_dudi">Masukkan Kode Tempat PKL</label>
+                                 {{-- <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+                                            <!-- Label -->
+                                            <label class="pb-1">
+                                                LOGO DUDI
+                                            </label>
+                                            <!-- Input group -->
+                                            <div class="input-group">
+                                                <br><input name="foto" type="file"
+                                                       class="form-control ">
+                                             </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <label for=""><h6>Info : Pastikan kode benar!!</h6> </label>
+                                </div> --}}
 
                                 <!-- pwd -->
                                 {{-- <div class="row">
@@ -166,7 +139,7 @@
                             </form>
                         </div>
                         <div class="center-align m-t-20 db">
-                            Sudah Punya Akun? <a href="/login">Login DIsini!</a>
+                            Sudah Punya Akun? <a href="/login">Login Disini!</a>
                         </div>
                     </div>
                 </div>

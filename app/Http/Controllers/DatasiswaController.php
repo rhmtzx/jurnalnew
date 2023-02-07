@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\kelas;
 use App\Models\jurusan;
-use App\Models\User;
 use App\Models\datasiswa;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 // use Illuminate\Foundation\Auth\User;
 
 class DatasiswaController extends Controller
@@ -15,12 +16,13 @@ class DatasiswaController extends Controller
     public function index(){
 
         $data = datasiswa::all();
+        $data2 = datasiswa::where('namasiswa', Auth::user()->name)->get();
         $jurusan = jurusan::all();
         $kelas = kelas::all();
         if(Auth()->user()->role == 'Admin'){
             return view('datasiswa.datasiswa',compact('data','jurusan','kelas'));
         }else{
-            return view('user.datasiswa.datasiswa',compact('data','jurusan','kelas'));
+            return view('user.datasiswa.datasiswa',compact('data2','jurusan','kelas'));
 
         }
     }

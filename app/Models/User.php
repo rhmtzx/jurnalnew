@@ -25,6 +25,7 @@ class User extends Authenticatable
         'password',
         'role',
         'kd_guru',
+        'kd_dudi',
     ];
 
     /**

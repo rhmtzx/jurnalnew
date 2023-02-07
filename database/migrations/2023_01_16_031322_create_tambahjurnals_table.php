@@ -19,6 +19,7 @@ class CreateTambahjurnalsTable extends Migration
             $table->text('deskripsi');
             $table->string('foto');
             $table->string('kd_guru');
+            $table->string('kd_dudi');
             $table->string('usersiswa');
             $table->string('student_id');
             $table->string('statusjurnal')->nullable();

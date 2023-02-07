@@ -37,6 +37,9 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Siswa'])) {
             return redirect('/dashboard');
         }
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Dudi'])) {
+            return redirect('/dashboard');
+        }
 
             return redirect('login')->with('password','Password Salah');
 
@@ -96,6 +99,7 @@ class LoginController extends Controller
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
             'kd_guru' => $request->kd_guru,
+            'kd_dudi' => $request->kd_dudi,
             'role' => 'Siswa'
         ]);
 
@@ -105,6 +109,7 @@ class LoginController extends Controller
             'kelas' => $request ->kelas,
             'jurusan' => $request ->jurusan,
             'kd_guru' => $request ->kd_guru,
+            'kd_dudi' => $request ->kd_dudi,
             'alamatsiswa' => $request ->alamatsiswa,
             'notlpsiswa' => $request ->notlpsiswa,
             'user_id' => $user->id,
@@ -148,6 +153,45 @@ class LoginController extends Controller
             'namaguru' => $request ->name,
             'alamat' => $request ->alamat,
             'notlpn' => $request ->notlpn,
+            'user_id' => $user->id,
+
+        ]);
+
+        return redirect('/login')->with('success','Berhasil Daftar');
+    }
+
+    public function registerdudi(){
+        return view('layout.registerdudi')->with('success','Berhasil Daftar');
+    }
+    public function registeruserdudi(Request $request){
+        // $kd_guru = Helper::IDGenerator(new dataguru, 'kd_guru', 5, 'SKNS' );
+        $kd_dudi = random_int(100000, 999999);
+        // dd($kd_guru2);
+        // $this->validate($request,[
+        //     'email' => 'required|unique:users',
+        //     'password' => 'required|min:6'
+
+        // ],[
+        //     'email.unique' => 'Email Sudah Digunakan',
+        //     'email.required' => 'Harus Diisi',
+        //     'password.min' => 'Isi Password Minimal 6 Huruf'
+        // ]);
+
+        $user=user::create([
+            'name' => $request ->name,
+            'email' => $request ->email,
+            'kd_dudi' => $kd_dudi,
+            'password' => bcrypt($request->password),
+            'remember_token' => Str::random(60),
+            'role' => 'Dudi'
+        ]);
+
+        datadudi::create([
+            'kd_dudi'=>$user->kd_dudi,
+            'foto' => $request ->foto,
+            'namadudi' => $request ->name,
+            'namakepdik' => $request ->namakepdik,
+            'alamatdudi' => $request ->alamatdudi,
             'user_id' => $user->id,
 
         ]);

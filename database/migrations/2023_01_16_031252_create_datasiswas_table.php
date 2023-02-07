@@ -22,6 +22,7 @@ class CreateDatasiswasTable extends Migration
             $table->string('alamatsiswa');
             $table->string('notlpsiswa');
             $table->string('kd_guru');
+            $table->string('kd_dudi');
             $table->string('user_id')->nullable();
 
             $table->timestamps();

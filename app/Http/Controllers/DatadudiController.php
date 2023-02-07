@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\datadudi;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,21 @@ class DatadudiController extends Controller
     public function index(){
 
         $data = datadudi::all();
-        return view('datadudi.datadudi',compact('data'));
+        if(Auth()->user()->role == 'Admin'){
+            return view('datadudi.datadudi',compact('data'));
+        }else{
+            return view('user.datadudi.datadudi',compact('data'));
+
+        }
     }
 
     public function tambahdatadudi(){
-        return view('datadudi.tambahdudi');
+        if(Auth()->user()->role == 'Admin'){
+            return view('datadudi.datadudi',compact('data'));
+        }else{
+            return view('user.datadudi.datadudi',compact('data'));
+
+        }
     }
 
     public function insertdatadudi(Request $request){
@@ -24,14 +35,14 @@ class DatadudiController extends Controller
                   'namakepdik' => 'required',
                   'alamatdudi' => 'required',
                   'foto' => 'required',
-                 
+
 
              ],[
                  'namadudi.required' => 'Harus diisi',
                  'namakepdik.required' => 'Harus diisi',
                  'alamatdudi.required' => 'Harus diisi',
                  'foto.required' => 'Harus diisi',
-                 
+
              ]);
 
             $data = datadudi::create([
@@ -48,7 +59,11 @@ class DatadudiController extends Controller
                 $data->save();
             }
 
-            return redirect()->route('datadudi')->with('success', 'Data Berhasil Ditambahkan');
+            if(Auth()->user()->role == 'Admin'){
+                return redirect()->route('datadudi')->with('success', 'Data Berhasil Ditambahkan');
+            }else{
+                return redirect()->route('datadudi')->with('success', 'Data Berhasil Ditambahkan');
+            }
         }
         public function tampildatadudi($id){
             $data = datadudi::findOrfail($id);
@@ -59,24 +74,49 @@ class DatadudiController extends Controller
 
         public function updatedatadudi(Request $request, $id){
             $data = datadudi::find($id);
+            $data2=User::find($data->user_id);
             $data->update([
                 'namadudi' =>$request->namadudi,
                 'namakepdik' =>$request->namakepdik,
                 'alamatdudi' =>$request->alamatdudi,
-                
+
+            ]);
+            $data2->update([
+                'name'=>$request->namadudi
             ]);
             if($request->hasFile('foto')){
                 $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
                 $data->foto = $request->file('foto')->getClientOriginalName();
                 $data->save();
             }
-            return redirect()->route('datadudi')->with('success', 'Data Berhasil Di Update');
+            if(Auth()->user()->role == 'Admin'){
+                return redirect()->route('datadudi')->with('success', 'Data Berhasil Diupdate');
+            }else{
+                return redirect()->route('datadudi')->with('success', 'Data Berhasil Diupdate');
+            }
         }
 
-        public function deletedatadudi($id){
+        public function deletedatadudi(Request $request,$id){
             $data = datadudi::find($id);
-            $data->delete();
+            $data3=User::find($data->user_id);
+            $data->delete([
+                'foto'=>$request->foto,
+                'namadudi' =>$request->namadudi,
+                'namakepdik' =>$request->namakepdik,
+                'alamatdudi' =>$request->alamatdudi,
+            ]);
+            $data3->delete([
+                'foto'=>$request->foto,
+                'namadudi' =>$request->namadudi,
+                'namakepdik' =>$request->namakepdik,
+                'alamatdudi' =>$request->alamatdudi,
+            ]);
 
-            return redirect()->route('datadudi')->with('success', 'Data Berhasil Di Delete');
+
+            if(Auth()->user()->role == 'Admin'){
+                return redirect()->route('datadudi')->with('success', 'Data Berhasil Didelete');
+            }else{
+                return redirect()->route('datadudi')->with('success', 'Data Berhasil Didelete');
+            }
         }
 }

@@ -16,11 +16,7 @@
 
                   <p>Kami Membantu Mempercepat Pengisian Jurnal Anda Dalam Bentuk Web.</p>
 
-                <a href="/registerguru" class="btn-blue scrool">Register Guru</a>
-                &nbsp;
-                &nbsp;
-                <a href="/registersiswa" class="btn-blue scrool">Register Siswa</a>
-
+                <a href="/login" class="btn-blue scrool">Silahkan Login</a>
             </div>
             <!--end col-md-6-->
 

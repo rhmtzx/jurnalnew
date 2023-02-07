@@ -194,6 +194,12 @@ Route::post('/loginprosessiswa', [LoginController::class, 'loginprosessiswa'])->
 Route::get('/registersiswa', [LoginController::class, 'registersiswa'])->name('registersiswa');
 Route::post('/registerusersiswa', [LoginController::class, 'registerusersiswa'])->name('registerusersiswa');
 
+//logindudi
+Route::get('/logindudi', [LoginController::class, 'logindudi'])->name('logindudi');
+Route::post('/loginprosesdudi', [LoginController::class, 'loginprosesdudi'])->name('loginprosesdudi');
+Route::get('/registerdudi', [LoginController::class, 'registerdudi'])->name('registerdudi');
+Route::post('/registeruserdudi', [LoginController::class, 'registeruserdudi'])->name('registeruserdudi');
+
 //loginguru
 Route::get('/loginguru', [LoginController::class, 'loginguru'])->name('loginguru');
 Route::post('/loginprosesguru', [LoginController::class, 'loginprosesguru'])->name('loginprosesguru');

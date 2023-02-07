@@ -14,7 +14,7 @@
                         <h4 class="card_title">Tambah Data Jurnal</h4>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
-                            
+
                             <div class="single-table">
                                 <div class="table-responsive">
                                    <div id="content" class="main-content">
@@ -65,7 +65,7 @@
                                             @enderror
                                             <br>
                                             <br>
-                                            @if(Auth::user()->role == 'Siswa')     
+                                            @if(Auth::user()->role == 'Siswa')
                                             <div class="form-group">
                                                 <label class="col-form-label"><h6>Status Jurnal</h6></label>
                                                 <select class="form-control" id="statusjurnal" name="statusjurnal">
@@ -92,7 +92,7 @@
                                             <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
 
                                         </form>
-                                        
+
                                     </div>
                                 </div>
                             </div>

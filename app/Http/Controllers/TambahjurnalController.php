@@ -14,12 +14,13 @@ class TambahjurnalController extends Controller
         $data = tambahjurnal::with('namasiswa')->where('student_id', auth()->id())->get();
         $data3 = tambahjurnal::with('namasiswa')->get();
         $data2 = tambahjurnal::with('namasiswa')->where('kd_guru',auth()->user()->kd_guru)->get();
+        $data4 = tambahjurnal::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
         // dd($data2);
         if(Auth()->user()->role == 'Admin'){
             return view('tambahjurnal.datatambahjurnal',compact('data3'));
         }else{
 
-            return view('user.tambahjurnal.datatambahjurnal',compact('data','data2'));
+            return view('user.tambahjurnal.datatambahjurnal',compact('data','data2','data4'));
         }
     }
 
@@ -57,6 +58,7 @@ class TambahjurnalController extends Controller
                 'usersiswa' =>$request->usersiswa,
                 'student_id' =>auth()->user()->id,
                 'kd_guru'=>auth()->user()->kd_guru,
+                'kd_dudi'=>auth()->user()->kd_dudi,
                 'statusjurnal' =>$request->statusjurnal
 
 

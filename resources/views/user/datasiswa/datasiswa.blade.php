@@ -34,25 +34,25 @@
                                             @php
                                                 $no = 1;
                                             @endphp
-                                            @foreach ($data as $row)
+                                            @foreach ($data2 as $row2)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
-                                                    <td>{{ $row->nissiswa }}</td>
-                                                    <td>{{ $row->namasiswa }}</td>
-                                                    <td>{{ $row->kelas }}</td>
-                                                    <td>{{ $row->jurusan }}</td>
-                                                    <td>{{ $row->alamatsiswa }}</td>
-                                                    <td>{{ $row->notlpsiswa }}</td>
-                                                    <td>{{ $row->created_at}}</td>
+                                                    <td>{{ $row2->nissiswa }}</td>
+                                                    <td>{{ $row2->namasiswa }}</td>
+                                                    <td>{{ $row2->kelas }}</td>
+                                                    <td>{{ $row2->jurusan }}</td>
+                                                    <td>{{ $row2->alamatsiswa }}</td>
+                                                    <td>{{ $row2->notlpsiswa }}</td>
+                                                    <td>{{ $row2->created_at}}</td>
                                                     <!-- <td scope="row">
-                                                        <a href="/tampildatasiswa/{{ $row->id }}"
+                                                        <a href="/tampildatasiswa/{{ $row2->id }}"
                                                             class="btn btn-warning"><i
                                                                 class="fa-sharp fa-solid fa-pen-to-square"></i></a> -->
                                                         <!-- <a href="#" class="btn btn-danger deletedatasiswa"
-                                                            data-id="{{ $row->id }}"
-                                                             data-nissiswa="{{ $row->nissiswa }}"><i
+                                                            data-id="{{ $row2->id }}"
+                                                             data-nissiswa="{{ $row2->nissiswa }}"><i
                                                                 class="fa-sharp fa-solid fa-trash"></i></a> -->
-                                                                
+
                                                     </td>
                                                 </tr>
                                             @endforeach
