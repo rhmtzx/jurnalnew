@@ -24,6 +24,8 @@
                                     <form action="/updatetambahjurnal/{{ $data->id }}" method="POST" enctype="multipart\form-data" >
 
                                         @csrf
+                                        @if(Auth::user()->role == 'Siswa')  
+
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
                                             @foreach ( $datas as $a)
@@ -31,19 +33,29 @@
                                             id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
                                             value="{{ $a->namasiswa }}">
                                             @endforeach
-                                            @error('namasiswa')
-                                            <div class="text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                            <br>
+                                            @endif
+
+                                        @if(Auth::user()->role == 'Dudi')
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
+                                                <input type="text" name="usersiswa" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->usersiswa}}"
+                                                readonly="">                                         
+                                                <br>
+                                        @endif
+                                            
+                                        @if(Auth::user()->role == 'Siswa')
                                             <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Judul</h6></label>
                                                 <input type="text" name="judul" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Judul Jurnal" value="{{ $data->judul }}">
                                             </div>
-                                            @error('judul')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
+                                        @endif
+                                        @if(Auth::user()->role == 'Dudi')
+                                            <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label"><h6>Judul</h6></label>
+                                                <input type="text" name="judul" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Judul Jurnal" value="{{ $data->judul }}" readonly="">
+                                            </div>
+                                        @endif
+
                                             <section style="padding-top:60px;">
                                                 <div class="container">
                                                     <div class="row">
@@ -53,28 +65,18 @@
                                                                 <div class="card">
                                                                     <div class="card-body">
                                                                         <!-- <h4 class="card_title">Summernote Editor</h4> -->
-                                                                        <textarea class="summer_note_editor" placeholder="Masukkan Deskripsi Jurnal" name="deskripsi">{!! $data->deskripsi !!}</textarea>
+                                                                        <textarea class="summer_note_editor" placeholder="Masukkan Deskripsi Jurnal" name="deskripsi" readonly="">{!! $data->deskripsi !!}</textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                  </section>
-                                            @error('deskripsi')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
+                                            </section>
                                             <br>
-                                            @if(Auth::user()->role == 'Guru')   
-                                            <div class="form-group">
-                                                    <label class="col-form-label"><h6>Status Jurnal</h6></label>
-                                                    <select class="form-control" id="statusjurnal" name="statusjurnal">
-                                                        <option selected disabled="">- Pilih Status -</option>
-                                                        <option value="Menunggu Persetujuan" {{ $data->statusjurnal == 'Menunggu Persetujuan' ? 'selected' : '' }}>Menunggu Persetujuan</option>
-                                                        <option value="Telah Disetujui" {{ $data->statusjurnal == 'Telah Disetujui' ? 'selected' : 'Telah Disetujui' }}>Telah Disetujui</option>
-                                                    </select>
-                                                </div>
-                                            @endif
+                                            
+                                            
+
                                             @if(Auth::user()->role == 'Siswa')   
                                             <div class="form-group">
                                                     <label class="col-form-label"><h6>Status Jurnal</h6></label>
@@ -98,7 +100,18 @@
                                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                                 </div>
                                             </div>
+
+                                            @if(Auth::user()->role == 'Dudi')   
+                                            <div class="form-group">
+                                                    <label class="col-form-label"><h6>Status Jurnal</h6></label>
+                                                    <select class="form-control" id="statusjurnal" name="statusjurnal">
+                                                        <option selected disabled="">- Pilih Status -</option>
+                                                        <option value="Telah Disetujui" {{ $data->statusjurnal == 'Telah Disetujui' ? 'selected' : 'Telah Disetujui' }}>Telah Disetujui</option>
+                                                    </select>
+                                                </div>
+                                            @endif
                                             <br>
+                                            
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Update Data</button>
                                             <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
 

@@ -17,6 +17,7 @@
             <div class="menu-inner" id="sidebar_menu">
                 <nav>
                     <ul class="metismenu" id="menu">
+                        @if(Auth::user()->role == 'Siswa')
                         <ul>D A S H B O A R D</ul>
                         <br>
                             <li class="active">
@@ -53,6 +54,80 @@
                                 <span>Data Absen Siswa</span>
                             </a>
                         </li>
+                        @endif
+
+                        @if(Auth::user()->role == 'Dudi')
+                        <ul>D A S H B O A R D</ul>
+                        <br>
+                            <li class="active">
+                            <a href="/dashboard">
+                                <i class="feather ft-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <br>
+                        <ul>S E K O L A H</ul>
+                        <br>
+                        <li>
+                            <a href="/datasiswa">
+                                <i class="feather ft-calendar"></i>
+                                <span>Data Siswa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dataplotingan">
+                                <i class="feather ft-calendar"></i>
+                                <span>Data Plotingan Siswa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/datatambahjurnal">
+                                <i class="feather ft-calendar"></i>
+                                <span>Data Jurnal Siswa</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/dataabsen">
+                                <i class="feather ft-calendar"></i>
+                                <span>Data Absen Siswa</span>
+                            </a>
+                        </li>
+                        @endif
+
+                        @if(Auth::user()->role == 'Guru')
+                        <ul>D A S H B O A R D</ul>
+                        <br>
+                            <li class="active">
+                            <a href="/dashboard">
+                                <i class="feather ft-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <br>
+                        <ul>S E K O L A H</ul>
+                        <br>
+                        <li>
+                            <a href="/datasiswa">
+                                <i class="feather ft-calendar"></i>
+                                <span>Data Siswa</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/datatambahjurnal">
+                                <i class="feather ft-calendar"></i>
+                                <span>Tambah Jurnal Siswa</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/dataabsen">
+                                <i class="feather ft-calendar"></i>
+                                <span>Data Absen Siswa</span>
+                            </a>
+                        </li>
+                        @endif
                         
                         <!--=========================*
                                   Charts

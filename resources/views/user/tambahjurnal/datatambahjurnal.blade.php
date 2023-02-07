@@ -32,9 +32,10 @@
                                             <th scope="col">Deskripsi</th>
                                             <th scope="col">Status Jurnal</th>
                                             <th scope="col">Dibuat</th>
-                                            @if(Auth::user()->role == 'Siswa')
+                                        @if(Auth::user()->role == 'Siswa')
                                             <th scope="col">Aksi</th>
-                                            @endif
+                                        @endif
+                                        
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -129,15 +130,15 @@
                                                 </td>
                                                 @endif
                                                 <td>{{ $row4->created_at}}</td>
-                                                @if(Auth::user()->role == 'Siswa')
+                                                @if(Auth::user()->role == 'Dudi')
                                                 <td scope="row">
                                                     <a href="/tampiltambahjurnal/{{ $row4->id }}"
                                                         class="btn btn-warning"><i
                                                         class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deletetambahjurnal"
+                                                        <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
                                                         data-id="{{ $row4->id }}"
                                                         data-judul="{{ $row4->judul }}"><i
-                                                        class="fa-sharp fa-solid fa-trash"></i></a>
+                                                        class="fa-sharp fa-solid fa-trash"></i></a> -->
                                                     </td>
                                                     @endif
                                                 </tr>

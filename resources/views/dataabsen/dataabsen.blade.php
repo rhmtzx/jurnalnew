@@ -92,6 +92,39 @@
                                     </tr>
                                     @endforeach
                                     @endif
+
+                                    @if(Auth::user()->role == 'Dudi')
+                                @foreach ($data4 as $row4)
+                                <tr>
+                                    <th scope="row">{{ $no++ }}</th>
+                                    <td>{{ $row4->usersiswa }}</td>
+                                    <td>
+                                        <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
+                                        style="width: 40px">
+                                    </td>
+                                    <td>{{ $row4->keterangan }}</td>
+                                    @if ($row4->statusjurnal == 'Telah Disetujui')
+                                    <td>
+                                        <span class="badge badge-success badge-success ">Telah Disetujui</span>
+                                    </td>
+                                    @elseif ($row4->statusjurnal == 'Menunggu Persetujuan')
+                                    <td>
+                                        <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
+                                    </td>
+                                    @endif
+                                    <td>{{ $row4->created_at}}</td>
+                                    <td scope="row">
+                                        <a href="/tampilabsen/{{ $row4->id }}"
+                                            class="btn btn-warning"><i
+                                            class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                            <a href="#" class="btn btn-danger deleteabsen"
+                                            data-id="{{ $row4->id }}"
+                                            data-judul="{{ $row4->judul }}"><i
+                                            class="fa-sharp fa-solid fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
