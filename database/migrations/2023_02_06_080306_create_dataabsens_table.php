@@ -16,11 +16,12 @@ class CreateDataabsensTable extends Migration
         Schema::create('dataabsens', function (Blueprint $table) {
             $table->id();
             $table->string('keterangan');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->string('statusjurnal')->nullable();
             $table->string('usersiswa');
             $table->string('student_id');
             $table->string('kd_guru');
+            $table->string('kd_dudi');
 
             $table->timestamps();
         });

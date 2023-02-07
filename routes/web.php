@@ -110,6 +110,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/tampilabsen/{id}', [DataabsenController::class, 'tampilabsen'])->name('tampilabsen')->middleware('auth');
     Route::post('/updateabsen/{id}', [DataabsenController::class, 'updateabsen'])->name('updateabsen')->middleware('auth');
     Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen')->middleware('auth');
+    Route::get('/detailabsen', [DataabsenController::class, 'detailabsen'])->name('detailabsen');
+
 
     //datapersyaratan
     Route::get('/datapersyaratan', [DatapersyaratanController::class, 'index'])->name('datapersyaratan')->middleware('auth');

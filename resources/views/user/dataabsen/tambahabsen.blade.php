@@ -101,7 +101,7 @@
                                             <a for="exampleInputEmail1" class="form-label"><em>Info : Abaikan Jika Tidak Sakit Atau Izin !!</em></a>
                                             <br>
                                             <br>
-                                            <button type="submit" class="btn btn-rounded btn-fixed-w btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit</button>
+                                            <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>
                                             <a href="/dataabsen" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
                                         </form> 
                                         

@@ -10,9 +10,9 @@
                 <div class="col-12 mt-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card_title">Data Seluruh Siswa</h4>
+                            <h4 class="card_title">Data Siswa</h4>
                             <ul>
-                            <li><h6>Seluruh Siswa Ada Disini</h6></li></ul>
+                            <li><h6>Data Siswa Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">
@@ -34,6 +34,8 @@
                                             @php
                                                 $no = 1;
                                             @endphp
+
+                                            @if(Auth::user()->role == 'Siswa')
                                             @foreach ($data2 as $row2)
                                                 <tr>
                                                     <th scope="row">{{ $no++ }}</th>
@@ -52,10 +54,41 @@
                                                             data-id="{{ $row2->id }}"
                                                              data-nissiswa="{{ $row2->nissiswa }}"><i
                                                                 class="fa-sharp fa-solid fa-trash"></i></a> -->
-
                                                     </td>
                                                 </tr>
                                             @endforeach
+                                            @endif
+                                            @if(Auth::user()->role == 'Guru')
+                                            @foreach ($data3 as $row3)
+                                                <tr>
+                                                    <th scope="row">{{ $no++ }}</th>
+                                                    <td>{{ $row3->nissiswa }}</td>
+                                                    <td>{{ $row3->namasiswa }}</td>
+                                                    <td>{{ $row3->kelas }}</td>
+                                                    <td>{{ $row3->jurusan }}</td>
+                                                    <td>{{ $row3->alamatsiswa }}</td>
+                                                    <td>{{ $row3->notlpsiswa }}</td>
+                                                    <td>{{ $row3->created_at}}</td>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            @endif
+                                            @if(Auth::user()->role == 'Dudi')
+                                            @foreach ($data5 as $row5)
+                                                <tr>
+                                                    <th scope="row">{{ $no++ }}</th>
+                                                    <td>{{ $row5->nissiswa }}</td>
+                                                    <td>{{ $row5->namasiswa }}</td>
+                                                    <td>{{ $row5->kelas }}</td>
+                                                    <td>{{ $row5->jurusan }}</td>
+                                                    <td>{{ $row5->alamatsiswa }}</td>
+                                                    <td>{{ $row5->notlpsiswa }}</td>
+                                                    <td>{{ $row5->created_at}}</td>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            @endif
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -64,6 +97,9 @@
                     </div>
                 </div>
                 <!-- Progress Table end -->
+            </div>
+            <!-- accordion style 2 start -->
+                
             </div>
             </div>
 

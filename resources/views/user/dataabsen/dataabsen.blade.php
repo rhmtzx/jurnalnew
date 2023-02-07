@@ -45,9 +45,10 @@
                                             <th scope="col">Keterangan</th>
                                             <th scope="col">Status Jurnal</th>
                                             <th scope="col">Dibuat</th>
-                                            @if(Auth::user()->role == 'Siswa')
+                                        @if(Auth::user()->role == 'Siswa')
                                             <th scope="col">Aksi</th>
-                                            @endif
+                                        @endif
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -89,7 +90,44 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                            @elseif(Auth::user()->role == 'Guru')
+                                            @endif
+
+                                            @if(Auth::user()->role == 'Dudi')
+                                            @foreach($data4 as $row4)
+                                            <tr>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>
+                                                    <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
+                                                    style="width: 40px">
+                                                </td>
+                                                <td>{{ $row4->usersiswa }}</td>
+                                                <td>{{ $row4->keterangan }}</td>
+
+                                                @if ($row4->statusjurnal == 'Telah Disetujui')
+                                            <td>
+                                                <span class="badge badge-success badge-success ">Telah Disetujui</span>
+                                            </td>
+                                            @elseif ($row4->statusjurnal == 'Menunggu Persetujuan')
+                                            <td>
+                                                <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
+                                            </td>
+                                            @endif
+
+                                                <td>{{ $row4->created_at}}</td>
+                                                <td scope="row">
+                                                    <a href="/tampilabsen/{{ $row4->id }}"
+                                                        class="btn btn-warning"><i
+                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                        <!-- <a href="#" class="btn btn-danger deleteabsen"
+                                                        data-id="{{ $row4->id }}"
+                                                        data-keterangan="{{ $row4->keterangan }}"><i
+                                                        class="fa-sharp fa-solid fa-trash"></i></a> -->
+                                                </td>
+                                                </tr>
+                                                @endforeach
+                                                @endif
+
+                                            @if(Auth::user()->role == 'Guru')
                                             @foreach($data2 as $row2)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
@@ -111,15 +149,7 @@
                                             @endif
 
                                                 <td>{{ $row2->created_at}}</td>
-                                                <td scope="row">
-                                                    <a href="/tampilabsen/{{ $row2->id }}"
-                                                        class="btn btn-warning"><i
-                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deleteabsen"
-                                                        data-id="{{ $row2->id }}"
-                                                        data-keterangan="{{ $row2->keterangan }}"><i
-                                                        class="fa-sharp fa-solid fa-trash"></i></a>
-                                                    </td>
+                                                
                                                 </tr>
                                                 @endforeach
                                                 @endif

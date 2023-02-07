@@ -13,12 +13,13 @@ class DataabsenController extends Controller
         $data = dataabsen::with('namasiswa')->where('student_id', auth()->id())->get();
         $data3 = dataabsen::with('namasiswa')->get();
         $data2 = dataabsen::with('namasiswa')->where('kd_guru',auth()->user()->kd_guru)->get();
+        $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
+
         // dd($data2);
         if(Auth()->user()->role == 'Admin'){
             return view('dataabsen.dataabsen',compact('data3'));
         }else{
-
-            return view('user.dataabsen.dataabsen',compact('data','data2'));
+            return view('user.dataabsen.dataabsen',compact('data','data2','data4'));
         }
     }
 
@@ -53,7 +54,9 @@ class DataabsenController extends Controller
                 'foto' =>$request->foto,
                 'usersiswa' =>$request->usersiswa,
                 'student_id' =>auth()->user()->id,
-                'kd_guru'=>auth()->user()->kd_guru
+                'kd_guru'=>auth()->user()->kd_guru,
+                'kd_dudi'=>auth()->user()->kd_dudi
+
 
             ]);
             // dd($request->all);
@@ -80,6 +83,22 @@ class DataabsenController extends Controller
                 return view('user.dataabsen.tampilabsen', compact('data','datas'));
 
             }
+        }
+
+        public function detailabsen($id){
+         //    $data = dataabsen::with('namasiswa')->where('student_id', auth()->id())->get();
+        	// $data3 = dataabsen::with('namasiswa')->get();
+        	// $data2 = dataabsen::with('namasiswa')->where('kd_guru',auth()->user()->kd_guru)->get();
+        	$data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
+        	$data = dataabsen::all();
+        	$absen = dataabsen::first();
+        	$each = dataabsen::findOrfail();
+            //dd($data);
+            if(Auth()->user()->role == 'Admin'){
+            	return view('dataabsen.dataabsen',compact('data3'));
+        	}else{
+            	return view('user.dataabsen.detailabsen',compact('data','data2','data4','absen','each'));
+        	}
         }
 
         public function updateabsen(Request $request, $id){
