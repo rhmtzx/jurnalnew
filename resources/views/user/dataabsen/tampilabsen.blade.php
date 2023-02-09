@@ -25,7 +25,6 @@
 
                                         @csrf
                                         <br>
-                                        @if(Auth::user()->role == 'Siswa')     
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
                                             @foreach ( $datas as $a)
@@ -34,17 +33,7 @@
                                             value="{{ $a->namasiswa }}">
                                             @endforeach
                                             <br>
-                                            @endif
 
-                                            @if(Auth::user()->role == 'Dudi')   
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
-                                                <input type="text" name="usersiswa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->usersiswa}}"
-                                                readonly="">                                         
-                                                <br>
-                                                @endif
-
-                                                @if(Auth::user()->role == 'Siswa')
                                                 <label class="col-form-label"><h6>Keterangan :</h6></label>
                                                 <div class="custom-control custom-radio primary-radio">
                                                     <input type="radio" id="Hadir" name="keterangan" value="Hadir" class="custom-control-input" <?php if ($data['keterangan'] == 'Hadir'){ echo 'checked';
@@ -61,39 +50,12 @@
                             } ?>>
                                                     <label class="custom-control-label" for="Izin">Izin</label>
                                                 </div>     
-                                                @endif
-                                                @if(Auth::user()->role == 'Dudi')
-                                                <label class="col-form-label"><h6>Keterangan :</h6></label>
-                                                <div class="custom-control custom-radio primary-radio">
-                                                    <input type="radio" id="Hadir" name="keterangan" value="Hadir" class="custom-control-input" <?php if ($data['keterangan'] == 'Hadir'){ echo 'checked';
-                            } ?>>
-                                                    <label class="custom-control-label" for="Hadir">Hadir</label>
-                                                </div>
-                                                <div class="custom-control custom-radio primary-radio">
-                                                    <input type="radio" id="Sakit" name="keterangan" value="Sakit" class="custom-control-input" <?php if ($data['keterangan'] == 'Sakit'){ echo 'checked';
-                            } ?>>
-                                                    <label class="custom-control-label" for="Sakit">Sakit</label>
-                                                </div>
-                                                <div class="custom-control custom-radio primary-radio">
-                                                    <input type="radio" id="Izin" name="keterangan" value="Izin" class="custom-control-input" <?php if ($data['keterangan'] == 'Izin'){ echo 'checked';
-                            } ?>>
-                                                    <label class="custom-control-label" for="Izin">Izin</label>
-                                                </div>     
-                                                @endif
-
-
-
-
-
+                                                
                                                 <div class="form-group">
                                                     <label class="col-form-label"><h6>Status Jurnal</h6></label>
                                                     <select class="form-control" id="statusjurnal" name="statusjurnal">
                                                         <option selected disabled="">- Pilih Status -</option>
-                                                        <!-- <option value="Menunggu Persetujuan" {{ $data->statusjurnal == 'Menunggu Persetujuan' ? 'selected' : '' }}>Menunggu Persetujuan</option> -->
-
-                                                        @if(Auth::user()->role == 'Dudi')
-                                                        <option value="Telah Disetujui" {{ $data->statusjurnal == 'Telah Disetujui' ? 'selected' : 'Telah Disetujui' }}>Telah Disetujui</option>
-                                                        @endif
+                                                        <option value="Menunggu Persetujuan" {{ $data->statusjurnal == 'Menunggu Persetujuan' ? 'selected' : '' }}>Menunggu Persetujuan</option>
                                                     </select>
                                                 </div>
 

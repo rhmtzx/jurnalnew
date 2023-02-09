@@ -1,181 +1,177 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 
-<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/authentication-register2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:30 GMT -->
+<!-- Mirrored from themesbrand.com/velzon/html/default/auth-signup-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:47 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta charset="utf-8" />
+    <title>J On | Journal Online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png') }}">
-    <title>J-On | Register Guru</title>
-    <link href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/style.css') }}" rel="stylesheet">
-    <!-- This page CSS -->
-    <link href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/authentication.css') }}" rel="stylesheet">
-    <!-- This page CSS -->
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <div class="preloader">
-            <div class="loader">
-                <div class="loader__figure"></div>
-                <p class="loader__label">J-On | Jurnal Online</p>
+
+    <div class="auth-page-wrapper pt-5">
+        <!-- auth page bg -->
+        <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+            <div class="bg-overlay"></div>
+
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                    <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+                </svg>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url({{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/big/auth-bg2.jpg') }}) no-repeat left center;">
+
+        <!-- auth page content -->
+        <div class="auth-page-content">
             <div class="container">
                 <div class="row">
-                    <div class="col s12 l8 m6 demo-text">
-                        {{-- <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-icon.png') }}" alt="logo" /></span>
-                        <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-text.png') }}" alt="logo" /></span> --}}
-                        <h1 class="font-light m-t-40">Selamat Datang di <span class="font-medium black-text">J-On</span></h1>
-                        <p>Selamat Datang di J-On Silahkan Registerasi Akun Anda.</p>
-                        <a href="/login" class="btn btn-round red m-t-5">Login</a>
+                    <div class="col-lg-12">
+                        <div class="text-center mt-sm-5 mb-4 text-white-50">
+                            <div>
+                                <a href="index.html" class="d-inline-block auth-logo">
+                                    <img src="assets/images/logo-light.png" alt="" height="20">
+                                </a>
+                            </div>
+                            <p class="mt-3 fs-15 fw-medium">J On | Journal Online</p>
+                        </div>
                     </div>
                 </div>
-                <div class="auth-box auth-sidebar">
-                    <div id="loginform">
-                        <div class="p-l-10">
-                            <h5 class="font-medium m-b-0 m-t-40">Silahkan Daftarkan Akun Anda</h5>
-                            <small>Masukkan Data Anda</small>
-                        </div>
-                        <!-- Form -->
-                        <div class="row">
-                            <form class="col s12" action="/registeruserdudi" method="POST">
-                                @csrf
-                                <!-- email -->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="name" type="text" name="name" class="validate" required>
-                                        <label for="name">Nama DuDi</label>
-                                    </div>
-                                </div>
+                <!-- end row -->
 
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="namakepdik" type="text" name="namakepdik" class="validate" required>
-                                        <label for="namakepdik">Nama Kepala Direktur</label>
-                                    </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card mt-4">
+
+                            <div class="card-body p-4">
+                                <div class="text-center mt-2">
+                                    <h5 class="text-primary">REGISTER AKUN</h5>
+                                    <p class="text-muted">Register Akun Dudi</p>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="alamatdudi" type="text" name="alamatdudi"  class="validate" required>
-                                        <label for="alamatdudi">Alamat DuDi</label>
-                                    </div>
-                                </div>
-                                <!-- email -->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="email" type="email" name="email" class="validate" required>
-                                        <label for="email">Masukkan Email</label>
-                                    </div>
-                                </div>
-                                <!-- pwd -->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="password" type="password" name="password" class="validate" required>
-                                        <label for="password">Buat Password</label>
-                                    </div>
-                                </div>
-                                <div class="mb-1">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6>
-                                    </label>
-                                    <br>
-                                    <input type="file" name="foto" class="form-control">
-                                    </div>
-                                 {{-- <div class="col-lg-6 col-md-6">
-                                        <div class="form-group">
-                                            <!-- Label -->
-                                            <label class="pb-1">
-                                                LOGO DUDI
-                                            </label>
-                                            <!-- Input group -->
-                                            <div class="input-group">
-                                                <br><input name="foto" type="file"
-                                                       class="form-control ">
-                                             </div>
+                                <div class="p-2 mt-4">
+                                    <form class="col s12" action="/registeruserdudi" method="POST">
+                                        @csrf
+                                        <!-- email -->
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Nama Dudi <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Dudi" required>
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
                                         </div>
-                                    </div>
-                                </div> --}}
+                                        <div class="mb-3">
+                                            <label for="namakepdik" class="form-label">Nama Kepala Direktur <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="namakepdik" id="namakepdik" placeholder="Masukkan Nama Kepala Direktur" required>
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
+                                        </div>
+                                         <div class="mb-3">
+                                            <label for="alamatdudi" class="form-label">Alamat Dudi <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="alamatdudi" id="alamatdudi" placeholder="Masukkan Alamat Dudi" required>
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Masukkan Email <span class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email" required>
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="password-input">Buat Password <span class="text-danger">*</span></label>
+                                            <div class="position-relative auth-pass-inputgroup">
+                                                <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password-input" aria-describedby="passwordInput">
+                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                <div class="invalid-feedback">
+                                                    Please enter password
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto Dudi <span class="text-danger">*</span></h6></label>
+                                                <br>
+                                                <input type="file" name="foto" class="form-control" >
+                                            </div>
+                                        <div class="mt-4">
+                                            <button class="btn btn-success w-100" type="submit">Sign Up</button>
+                                        </div>
+                                    </form>
 
-                                <!-- pwd -->
-                                {{-- <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="cpassword" type="password"  class="validate" required>
-                                        <label for="cpassword">Password</label>
-                                    </div>
-                                </div> --}}
-                                <!-- pwd -->
-                                {{-- <div class="row m-t-5">
-                                    <div class="col s7">
-                                        <label>
-                                            <input type="checkbox" />
-                                            <span>Agree to all Terms</span>
-                                        </label>
-                                    </div>
-                                </div> --}}
-                                <!-- pwd -->
-                                <div class="row m-t-40">
-                                    <div class="col s12">
-                                        <button class="btn-large w100 red" type="submit">Sign Up</button>
-                                    </div>
                                 </div>
-                            </form>
+                            </div>
+                            <!-- end card body -->
                         </div>
-                        <div class="center-align m-t-20 db">
-                            Sudah Punya Akun? <a href="/login">Login Disini!</a>
+                        <!-- end card -->
+
+                        <div class="mt-4 text-center">
+                            <p class="mb-0">Sudah Punya Akun ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end auth page content -->
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <p class="mb-0 text-muted">&copy;
+                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
+        </footer>
+        <!-- end Footer -->
     </div>
-    <!-- ============================================================== -->
-    <!-- All Required js -->
-    <!-- ============================================================== -->
-    <script src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/libs/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/js/materialize.min.js') }}"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugin js -->
-    <!-- ============================================================== -->
-    <script type="text/javascript">
-        $(function() {
-            $(".preloader").fadeOut();
-        });
-    </script>
+    <!-- end auth-page-wrapper -->
+
+    <!-- JAVASCRIPT -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/node-waves/waves.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/feather-icons/feather.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/plugins.js')}}"></script>
+
+    <!-- particles js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/particles.js/particles.js')}}"></script>
+    <!-- particles app js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/particles.app.js')}}"></script>
+    <!-- validation init -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/form-validation.init.js')}}"></script>
+    <!-- password create init -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/passowrd-create.init.js')}}"></script>
 </body>
 
 
-<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/authentication-register2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:30 GMT -->
+<!-- Mirrored from themesbrand.com/velzon/html/default/auth-signup-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:48 GMT -->
 </html>

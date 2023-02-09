@@ -1,197 +1,184 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 
-<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/authentication-login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:30 GMT -->
+<!-- Mirrored from themesbrand.com/velzon/html/default/auth-signin-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:47 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta charset="utf-8" />
+    <title>J - On | Journal Online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/favicon.png') }}">
-    <title>J-On | Silahkan Login</title>
-    <link href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/style.css') }}" rel="stylesheet">
-    <!-- This page CSS -->
-    <link href="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/dist/css/pages/authentication.css') }}" rel="stylesheet">
-    <!-- This page CSS -->
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/favicon.ico')}}">
+
+    <!-- Layout config Js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/layout.js')}}"></script>
+    <!-- Bootstrap Css -->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <div class="preloader">
-            <div class="loader">
-                <div class="loader__figure"></div>
-                <p class="loader__label">J-On | Jurnal Online</p>
+
+    <div class="auth-page-wrapper pt-5">
+        <!-- auth page bg -->
+        <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+            <div class="bg-overlay"></div>
+
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                    <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+                </svg>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url({{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/big/auth-bg2.jpg') }}) no-repeat left center;">
+
+        <!-- auth page content -->
+        <div class="auth-page-content">
             <div class="container">
                 <div class="row">
-                    <div class="col s12 l8 m6 demo-text">
-                        {{-- <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-icon.png') }}" alt="logo" /></span> --}}
-                        {{-- <span class="db"><img src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart/assets/images/logo-text.png') }}" alt="logo" /></span> --}}
-                        <h1 class="font-light m-t-40">Selamat Datang di <span class="font-medium black-text">J-On</span></h1>
-                        <p>Belum punya akun ? register sekarang !.</p>
-                        <a href="/registersiswa" class="btn btn-round red m-t-5">Register Siswa</a>
-                        <a href="/registerguru"class="btn btn-round red m-t-5">Register Guru</a>
-                        <a href="/registerdudi"class="btn btn-round red m-t-5">Register DuDi</a>
+                    <div class="col-lg-12">
+                        <div class="text-center mt-sm-5 mb-4 text-white-50">
+                            <div>
+                                <a href="index.html" class="d-inline-block auth-logo">
+                                    <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/logo-light.png')}}" alt="" height="20">
+                                </a>
+                            </div>
+                            <p class="mt-3 fs-15 fw-medium">J - On | Journal Online</p>
+                        </div>
                     </div>
                 </div>
-                <div class="auth-box auth-sidebar">
-                    <div id="loginform">
-                        <div class="p-l-10">
-                            <h5 class="font-medium m-b-0 m-t-40">Silahkan Login</h5>
-                            <small>Login ke akun anda</small>
+                <!-- end row -->
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card mt-4">
+
+                            <div class="card-body p-4">
+                                <div class="text-center mt-2">
+                                    <h5 class="text-primary">Selamat Datang !</h5>
+                                    <p class="text-muted">Login Untuk Masuk.</p>
+                                </div>
+                                <div class="p-2 mt-4">
+                                    <form action="/loginproses" method="POST">
+                                        @csrf
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Masukkan Email</label>
+                                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            
+                                            <label class="form-label" for="password-input">Masukkan Password</label>
+                                            <div class="position-relative auth-pass-inputgroup mb-3">
+                                                <input type="password" class="form-control pe-5 password-input" placeholder="Masukkan Password" name="password" id="password">
+                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                            </div>
+                                            <div class="float-end">
+                                                <a href="auth-pass-reset-basic.html" class="text-muted">Forgot password?</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
+                                            <label class="form-check-label" for="auth-remember-check">Remember Me</label>
+                                        
+                                        </div>
+                                        <div class="mt-4">
+                                            <button class="btn btn-success w-100" type="submit">Login</button>
+                                        </div>
+                                    <br>
+                                    
+                                        <!-- <div class="mt-4 text-center">
+                                            <div class="signin-other-title">
+                                                <h5 class="fs-13 mb-4 title">Sign In with</h5>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
+                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
+                                                <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
+                                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+                                            </div>
+                                        </div> -->
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- end card body -->
                         </div>
-                        <!-- Form -->
-                        <div class="row">
-                            <form class="col s12" action="/loginproses" method="POST">
-                                @csrf
-                                <!-- email -->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="email" type="email" name="email" class="validate" required>
-                                        <label for="email">Email</label>
-                                    </div>
-                                </div>
-                                @error('email')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                                <!-- pwd -->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="password" type="password" name="password" class="validate" required>
-                                        <label for="password">Password</label>
-                                    </div>
-                                </div>
-                                @error('password')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                                <!-- pwd -->
-                                <div class="row m-t-5">
-                                    <div class="col s7">
-                                        <label>
-                                            <input type="checkbox" />
-                                            <span>Remember Me?</span>
-                                        </label>
-                                    </div>
-                                    <div class="col s5 right-align"><a href="#" class="link" id="to-recover">Forgot Pwd?</a></div>
-                                </div>
-                                <!-- pwd -->
-                                <div class="row m-t-40">
-                                    <div class="col s12">
-                                        <button class="btn-large w100 blue accent-4" type="submit">Login</button>
-                                    </div>
-                                </div>
-                                <div class="row m-t-40">
-                                    <div class="col s12">
-                                        <a href="/landinghome" class="btn-large w100 blue accent-4">Back</a>
-                                    </div>
-                                </div>
-                            </form>
+                        <!-- end card -->
+                        <div class="card mt-1">
+                            <div class="mt-4 text-center">
+                            <p class="mb-1">Tidak Punya Akun ?  Register Disini </p>
                         </div>
-                        {{-- <div class="center-align m-t-20 db">
-                            <a href="#" class="btn indigo darken-1 tooltipped m-r-5" data-position="top" data-tooltip="Login with Facebook"><i class="fab fa-facebook-f"></i></a> <a href="#" class="btn orange darken-4 tooltipped" data-position="top" data-tooltip="Login with Facebook"><i class="fab fa-google-plus-g"></i></a>
-                        </div> --}}
-                        {{-- <div class="center-align m-t-20 db">
-                            Don't have an account? <a href="authentication-register2.html">Sign Up!</a>
-                        </div> --}}
+                        <br>
+                            <div style="display : flex">
+                                        <div class="mt-1 m-auto">
+                                            <a href="/registerdudi" class="btn btn-info w-33" type="submit">Register Dudi</a>
+                                        </div>
+                                        <div class="mt-1 m-auto">
+                                            <a href="/registersiswa" class="btn btn-info w-33" type="submit">Register Siswa</a>
+                                        </div>
+                                        <div class="mt-1 m-auto">
+                                            <a href="/registerguru" class="btn btn-info w-33" type="submit">Register Guru </a>
+                                        </div>
+                                    </div>
+                            <div class="card-body p-4">
+                                
+                                
+                            </div>
+                            <!-- end card body -->
+                        </div>
+                        
+                        
                     </div>
-                    <div id="recoverform">
-                        <div class="p-l-10">
-                            <h5 class="font-medium m-b-0 m-t-40">Recover password</h5>
-                            <small>Enter your Email and instructions will be sent to you!</small>
-                        </div>
-                        <div class="row">
-                            <!-- Form -->
-                            <form class="col s12" action="https://wrappixel.com/demos/admin-templates/materialart/html/ltr/index.html">
-                                <!-- email -->
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="email1" type="email" class="validate" required>
-                                        <label for="email1">Email</label>
-                                    </div>
-                                </div>
-                                <!-- pwd -->
-                                <div class="row m-t-20">
-                                    <div class="col s12">
-                                        <button class="btn-large w100 red" type="submit" name="action">Reset</button>
-                                    </div>
-                                </div>
-                            </form>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end auth page content -->
+
+        <!-- footer -->
+       <!--  <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <p class="mb-0 text-muted">&copy;
+                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
+        </footer> -->
+        <!-- end Footer -->
     </div>
-    <!-- ============================================================== -->
-    <!-- All Required js -->
-    <!-- ============================================================== -->
-    <script src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart//assets/libs/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('material/wrappixel.com/demos/admin-templates/materialart//dist/js/materialize.min.js') }}"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugin js -->
-    <!-- ============================================================== -->
-    <script>
-    $('.tooltipped').tooltip();
-    // ==============================================================
-    // Login and Recover Password
-    // ==============================================================
-    $('#to-recover').on("click", function() {
-        $("#loginform").slideUp();
-        $("#recoverform").fadeIn();
-    });
-    $(function() {
-        $(".preloader").fadeOut();
-    });
-    </script>
+    <!-- end auth-page-wrapper -->
 
-<script>
-  @if (Session::has('toast_success'))
-  toastr.toast_success("{{ Session::get('toast_success') }}")
-  @endif
-</script>
-<script>
-  @if (Session::has('error'))
-  toastr.error("{{ Session::get('error') }}")
-  @endif
-</script>
+    <!-- JAVASCRIPT -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/node-waves/waves.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/feather-icons/feather.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/plugins.js')}}"></script>
+
+    <!-- particles js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/particles.js/particles.js')}}"></script>
+    <!-- particles app js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/particles.app.js')}}"></script>
+    <!-- password-addon init -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/password-addon.init.js')}}"></script>
 </body>
 
 
-<!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/authentication-login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:30 GMT -->
+<!-- Mirrored from themesbrand.com/velzon/html/default/auth-signin-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:47 GMT -->
 </html>

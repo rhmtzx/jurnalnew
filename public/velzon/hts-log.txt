@@ -1,0 +1,18 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 08 Feb 2023 14:38:40 at https://themesbrand.com/velzon/html/default/dashboard-projects.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://themesbrand.com/velzon/html/default/dashboard-projects.html -O1 "C:\velzon" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:44:49	Warning: 	File not parsed, looks like binary: https://themesbrand.com/velzon/html/default/assets/fonts/materialdesignicons-webfont.woff2?v=6.5.95
+14:44:49	Warning: 	File not parsed, looks like binary: https://themesbrand.com/velzon/html/default/assets/fonts/boxicons.woff2
+14:44:50	Warning: 	File not parsed, looks like binary: https://themesbrand.com/velzon/html/default/assets/fonts/la-brands-400.woff2
+14:44:50	Warning: 	File not parsed, looks like binary: https://themesbrand.com/velzon/html/default/assets/fonts/la-regular-400.woff2
+14:44:50	Warning: 	File not parsed, looks like binary: https://themesbrand.com/velzon/html/default/assets/fonts/la-solid-900.woff2
+14:44:52	Warning: 	File not parsed, looks like binary: https://themesbrand.com/velzon/html/default/assets/fonts/remixicon.woff2?t=1590207869815
+14:44:57	Error: 	"Not Found" (404) at link https://themesbrand.com/velzon/html/default/ecommerce-product-detail.html (from https://themesbrand.com/velzon/html/default/apps-ecommerce-cart.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 6 minutes 19 seconds : 1050 links scanned, 1048 files written (73597290 bytes overall) [31471345 bytes received at 83037 bytes/sec], 48635424 bytes transferred using HTTP compression in 402 files, ratio 12%, 14.4 requests per connection
+(1 errors, 6 warnings, 0 messages)

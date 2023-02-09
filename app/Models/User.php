@@ -26,6 +26,8 @@ class User extends Authenticatable
         'role',
         'kd_guru',
         'kd_dudi',
+        'id_jurusan',
+
     ];
 
     /**
@@ -55,5 +57,10 @@ class User extends Authenticatable
     public function datadudi()
     {
         return $this->belongsTo(datadudi::class, 'alamatdudi','namakepdik', 'id');
+    }
+
+    public function jurusan()
+    {
+        return $this->belongsTo(jurusan::class, 'namajurusan', 'id');
     }
 }
