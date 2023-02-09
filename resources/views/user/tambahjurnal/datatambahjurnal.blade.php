@@ -32,9 +32,8 @@
                                             <th scope="col">Deskripsi</th>
                                             <th scope="col">Status Jurnal</th>
                                             <th scope="col">Dibuat</th>
-                                        @if(Auth::user()->role == 'Siswa')
                                             <th scope="col">Aksi</th>
-                                        @endif
+                                    
                                         
                                         </tr>
                                     </thead>
@@ -42,7 +41,7 @@
                                         @php
                                         $no = 1;
                                         @endphp
-                                        @if(Auth::user()->role == 'Siswa')
+
                                         @foreach ($data as $row)
                                         <tr>
                                             <th scope="row">{{ $no++ }}</th>
@@ -62,6 +61,10 @@
                                                 <td>
                                                     <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
                                                 </td>
+                                                @elseif ($row->statusjurnal == 'Jurnal Ditolak')
+                                                <td>
+                                                    <span class="badge badge-success badge-dang ">Jurnal Ditolak</span>
+                                                </td>
                                                 @endif
                                                 <td>{{ $row->created_at}}</td>
                                             <td scope="row">
@@ -75,75 +78,7 @@
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            @elseif(Auth::user()->role == 'Guru')
-                                            @foreach($data2 as $row2)
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row2->usersiswa }}</td>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row2->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row2->judul }}</td>
-                                                <td>{!! $row2->deskripsi !!}</td>
-                                                @if ($row2->statusjurnal == 'Telah Disetujui')
-                                                <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                                </td>
-                                                @elseif ($row2->statusjurnal == 'Menunggu Persetujuan')
-                                                <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @endif
-                                                <td>{{ $row2->created_at}}</td>
-                                                @if(Auth::user()->role == 'Siswa')
-                                                <td scope="row">
-                                                    <a href="/tampiltambahjurnal/{{ $row2->id }}"
-                                                        class="btn btn-warning"><i
-                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <a href="#" class="btn btn-danger deletetambahjurnal"
-                                                        data-id="{{ $row2->id }}"
-                                                        data-judul="{{ $row2->judul }}"><i
-                                                        class="fa-sharp fa-solid fa-trash"></i></a>
-                                                    </td>
-                                                    @endif
-                                                </tr>
-                                                @endforeach
-                                                @elseif(Auth::user()->role == 'Dudi')
-                                            @foreach($data4 as $row4)
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row4->usersiswa }}</td>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row4->judul }}</td>
-                                                <td>{!! $row4->deskripsi !!}</td>
-                                                @if ($row4->statusjurnal == 'Telah Disetujui')
-                                                <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                                </td>
-                                                @elseif ($row4->statusjurnal == 'Menunggu Persetujuan')
-                                                <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @endif
-                                                <td>{{ $row4->created_at}}</td>
-                                                @if(Auth::user()->role == 'Dudi')
-                                                <td scope="row">
-                                                    <a href="/tampiltambahjurnal/{{ $row4->id }}"
-                                                        class="btn btn-warning"><i
-                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
-                                                        data-id="{{ $row4->id }}"
-                                                        data-judul="{{ $row4->judul }}"><i
-                                                        class="fa-sharp fa-solid fa-trash"></i></a> -->
-                                                    </td>
-                                                    @endif
-                                                </tr>
-                                                @endforeach
-                                                @endif
+                                            
                                             </tbody>
                                         </table>
                                     </div>
@@ -164,8 +99,8 @@
             <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/dataTables.responsive.min.js')}}"></script>
             <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/responsive.bootstrap.min.js')}}"></script>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"

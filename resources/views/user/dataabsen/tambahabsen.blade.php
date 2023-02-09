@@ -24,7 +24,7 @@
                                     <form action="/insertabsen" method="POST" enctype="multipart\form-data" >
                                         @csrf
                                         <br>
-                                        @if(Auth::user()->role == 'Siswa')     
+
                                         <div class="mb-3">
                                             <label class="col-form-label"><h6>Nama Siswa</h6></label>
                                             @foreach ( $data as $b)
@@ -38,7 +38,6 @@
                                             </div>
                                             @enderror
                                             
-                                        @endif
 
                                 <label class="col-form-label"><h6>Keterangan :</h6></label>
                                 <div class="custom-control custom-radio primary-radio">
@@ -71,7 +70,6 @@
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Status Jurnal</h6></label>
                                                 <input type="text" name="statusjurnal" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Status Jurnal">
                                             </div> -->
-                                            @if(Auth::user()->role == 'Siswa')     
                                             <div class="form-group">
                                                 <label class="col-form-label"><h6>Status Jurnal</h6></label>
                                                 <select class="form-control" id="statusjurnal" name="statusjurnal">
@@ -80,7 +78,6 @@
                                                     <!-- <option value="Telah Disetujui">Telah Disetujui</option> -->
                                                 </select>
                                             </div>
-                                            @endif
 
                                             @error('statusjurnal')
                                             <div class="alert alert-danger">{{ $message }}</div>
@@ -98,7 +95,8 @@
                                                     
                                                 </div>
                                             </div>
-                                            <a for="exampleInputEmail1" class="form-label"><em>Info : Abaikan Jika Tidak Sakit Atau Izin !!</em></a>
+                                            <a for="exampleInputEmail1" class="form-label">
+                                                <em>Info : Abaikan Jika Tidak Sakit Atau Izin !!</em></a>
                                             <br>
                                             <br>
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>

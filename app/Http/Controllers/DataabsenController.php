@@ -18,6 +18,10 @@ class DataabsenController extends Controller
         // dd($data2);
         if(Auth()->user()->role == 'Admin'){
             return view('dataabsen.dataabsen',compact('data3'));
+        }else if(Auth()->user()->role == 'Guru'){
+            return view('userguru.dataabsen.dataabsen',compact('data','data2'));
+        }else if(Auth()->user()->role == 'Dudi'){
+            return view('userdudi.dataabsen.dataabsen',compact('data','data4'));
         }else{
             return view('user.dataabsen.dataabsen',compact('data','data2','data4'));
         }
@@ -76,13 +80,19 @@ class DataabsenController extends Controller
         public function tampilabsen($id){
             $data = dataabsen::findOrfail($id);
             $datas = datasiswa::where('namasiswa', Auth::user()->name)->get();
+        	$data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
+        	$data2 = dataabsen::with('namasiswa')->where('kd_guru',auth()->user()->kd_guru)->get();
+
             //dd($data);
             if(Auth()->user()->role == 'Admin'){
                 return view('dataabsen.tampilabsen', compact('data','datas'));
-            }else{
-                return view('user.dataabsen.tampilabsen', compact('data','datas'));
-
-            }
+            }else if(Auth()->user()->role == 'Guru'){
+            	return view('userguru.dataabsen.tampilabsen',compact('data','data2'));
+        	}else if(Auth()->user()->role == 'Dudi'){
+            	return view('userdudi.dataabsen.tampilabsen',compact('data','data4'));
+        	}else{
+            	return view('user.dataabsen.tampilabsen',compact('data','datas'));
+        }
         }
 
         public function detailabsen($id){

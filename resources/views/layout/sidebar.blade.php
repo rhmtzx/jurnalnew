@@ -1,68 +1,100 @@
-<aside class="left-sidebar">
-            <ul id="slide-out" class="sidenav">
+<div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/logo-sm.png')}}" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/logo-dark.png')}}" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/logo-sm.png')}}" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/logo-light.png')}}" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
 
-                <li>
-                    <ul class="collapsible collapsiblebox">
-                        <li class="small-cap"><span class="hide-menu">PERSONAL</span></li>
-                        <li>
-                            <a href="/"><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
-                        </li>
+            <div id="scrollbar">
+                <div class="container-fluid">
 
-                        <li class="small-cap"><span class="hide-menu">DATA SEKOLAH</span></li>
-                        <li>
-                            <a href="/datakelas" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Kelas </span></a>
-                            <div class="collapsible-body">
-                                <ul></ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="/datajurusan" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Jurusan </span></a>
-                            <div class="collapsible-body">
-                                <ul></ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="/datasiswa" class="collapsible-header"><i class="material-icons">graphic_eq</i><span class="hide-menu"> Data Siswa </span></a>
-                            <div class="collapsible-body">
-                                <ul></ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="/dataguru" class="collapsible-header"><i class="material-icons">apps</i><span class="hide-menu"> Data Guru </span></a>
-                            <div class="collapsible-body">
-                                <ul></ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="/datatambahjurnal" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Jurnal Siswa </span></a>
-                            <div class="collapsible-body">
-                                <ul></ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="/dataabsen" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Absen Siswa </span></a>
-                            <div class="collapsible-body">
-                                <ul></ul>
-                            </div>
+                    <div id="two-column-menu">
+                    </div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Dashboard</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Dashboard</span>
+                            </a>
                         </li>
 
 
-                         <li class="small-cap"><span class="hide-menu">DATA DUDI</span></li>
-                        <li>
-                            <a href="/datadudi" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Data Dudi </span></a>
-                            <div class="collapsible-body">
-                                <ul></ul>
-                            </div>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Data Sekolah</span></li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datakelas">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Kelas</span>
+                            </a>
                         </li>
-                         <li class="small-cap"><span class="hide-menu">DATA PLOTINGAN SISWA</span></li>
-                        <li>
-                            <a href="/dataplotingan" class="collapsible-header"><i class="material-icons">perm_contact_calendar</i><span class="hide-menu"> Plotingan Siswa </span></a>
-                            <div class="collapsible-body">
-                                <ul></ul>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datajurusan">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Jurusan</span>
+                            </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datasiswa">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Siswa</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/dataguru">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Guru</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Jurnal Siswa</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/dataabsen">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Absen Siswa</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Dudi</span></li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datadudi">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Dudi</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Plotingan Siswa</span></li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/dataplotingan">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Plotingan Siswa </span>
+                            </a>
+                        </li>
+
+
+
+
 
                     </ul>
-                </li>
-            </ul>
-        </aside>
+                </div>
+                <!-- Sidebar -->
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>

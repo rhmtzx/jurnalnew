@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Helpers\Helper;
 use App\Models\datadudi;
 use App\Models\dataguru;
+use App\Models\jurusan;
 use App\Models\datasiswa;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -76,10 +77,12 @@ class LoginController extends Controller
 
         }
         public function registersiswa(){
-            return view('layout.registersiswa')->with('success','Berhasil Daftar');
+        $data = jurusan::all();
+            return view('layout.registersiswa',compact('data'))->with('success','Berhasil Daftar');
         }
 
     public function registerusersiswa(Request $request){
+
         // dd($request->all());
         $this->validate($request,[
         'nissiswa'=> 'required|unique:datasiswas',
@@ -100,14 +103,15 @@ class LoginController extends Controller
             'remember_token' => Str::random(60),
             'kd_guru' => $request->kd_guru,
             'kd_dudi' => $request->kd_dudi,
+            'id_jurusan'=>$request->namajurusan,
             'role' => 'Siswa'
         ]);
 
         datasiswa::create([
             'nissiswa' => $request ->nissiswa,
             'namasiswa' => $request ->name,
-            'kelas' => $request ->kelas,
-            'jurusan' => $request ->jurusan,
+            // 'kelas' => $request ->kelas,
+            'namajurusan' => $user->id_jurusan,
             'kd_guru' => $request ->kd_guru,
             'kd_dudi' => $request ->kd_dudi,
             'alamatsiswa' => $request ->alamatsiswa,

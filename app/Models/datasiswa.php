@@ -15,7 +15,7 @@ class datasiswa extends Model
     //Mengambil dari model jurusan
 	public function jurusans()
 	{
-		return $this->belongsTo(jurusan::class, 'jurusan', 'id');
+		return $this->belongsTo(jurusan::class, 'namajurusan', 'id');
 	}
 	public function kelass()
 	{

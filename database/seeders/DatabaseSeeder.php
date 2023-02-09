@@ -31,21 +31,5 @@ class DatabaseSeeder extends Seeder
         User::insert($adminr2);
 
 
-        $jurusan = [
-            [
-                'namajurusan' => 'RPL',
-
-            ],
-        ];
-        jurusan::insert($jurusan);
-
-        $kelas = [
-            [
-                'kelassiswa' => 'XI',
-
-            ],
-        ];
-        kelas::insert($kelas);
-
             }
 }

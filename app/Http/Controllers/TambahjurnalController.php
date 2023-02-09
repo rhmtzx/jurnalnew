@@ -18,9 +18,15 @@ class TambahjurnalController extends Controller
         // dd($data2);
         if(Auth()->user()->role == 'Admin'){
             return view('tambahjurnal.datatambahjurnal',compact('data3'));
+        }else if(Auth()->user()->role == 'Guru'){
+            return view('userguru.tambahjurnal.datatambahjurnal',compact('data2'));
+        }else if(Auth()->user()->role == 'Dudi'){
+            return view('userdudi.tambahjurnal.datatambahjurnal',compact('data4'));
         }else{
 
             return view('user.tambahjurnal.datatambahjurnal',compact('data','data2','data4'));
+
+            return view('user.tambahjurnal.datatambahjurnal',compact('data','data2',));
         }
     }
 
@@ -80,13 +86,20 @@ class TambahjurnalController extends Controller
         public function tampiltambahjurnal($id){
             $data = tambahjurnal::findOrfail($id);
             $datas = datasiswa::where('namasiswa', Auth::user()->name)->get();
+            // $data = tambahjurnal::with('namasiswa')->where('student_id', auth()->id())->get();
+        	$data3 = tambahjurnal::with('namasiswa')->get();
+        	$data2 = tambahjurnal::with('namasiswa')->where('kd_guru',auth()->user()->kd_guru)->get();
+        	$data4 = tambahjurnal::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
             //dd($data);
             if(Auth()->user()->role == 'Admin'){
                 return view('tambahjurnal.tampiltambahjurnal', compact('data','datas'));
-            }else{
-                return view('user.tambahjurnal.tampiltambahjurnal', compact('data','datas'));
-
-            }
+            }else if(Auth()->user()->role == 'Guru'){
+            	return view('userguru.tambahjurnal.tampiltambahjurnal',compact('data2'));
+        	}else if(Auth()->user()->role == 'Dudi'){
+            	return view('userdudi.tambahjurnal.tampiltambahjurnal',compact('data4','data'));
+        	}else{
+            	return view('user.tambahjurnal.tampiltambahjurnal',compact('data','data2','data4','datas'));
+        }
         }
 
         public function updatetambahjurnal(Request $request, $id){

@@ -1,235 +1,182 @@
 @extends('layout.main')
 @section('content')
             <!-- ============================================================== -->
-            <!-- Temp - Earnings -->
-            <!-- ============================================================== -->
-            <div class="card info-gradient m-t-0 m-b-0">
-                <div class="card-content">
-                    <div class="p-b-40 p-t-20">
-                        <h3 class="white-text">Selamat Datang {{ Auth::user()->name }}!</h3>
-                        <p class="white-text op-7 m-b-20">Success is not a destination, its a Journey!!!</p>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Devices - Income - Sales -->
-                <!-- ============================================================== -->
-               
-                <div class="row">
-                    <!-- col -->
-                   <!--  <div class="row">
-                    <div class="col l3 m6 s12">
-                        <div class="card success-gradient card-hover">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center">
-                                    <div>
-                                        <h2 class="white-text m-b-5">{{$jurusan}}</h2>
-                                        <h6 class="white-text op-5 text-darken-2">Jumlah Jurusan</h6>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col l3 m6 s12">
-                        <div class="card success-gradient card-hover">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center">
-                                    <div>
-                                        <h2 class="white-text m-b-5">{{$siswa}}</h2>
-                                        <h6 class="white-text op-5 text-darken-2">Jumlah Siswa</h6>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     
-                    
-                    <div class="col l3 m6 s12">
-                        <div class="card success-gradient card-hover">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center">
-                                    <div>
-                                        <h2 class="white-text m-b-5">{{$dudi}}</h2>
-                                        <h6 class="white-text op-5 text-darken-2">Jumlah Dudi</h6>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="main-content">
 
-                    <div class="col l3 m6 s12">
-                        <div class="card success-gradient card-hover">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center">
-                                    <div>
-                                        <h2 class="white-text m-b-5">{{$jurnal}}</h2>
-                                        <h6 class="white-text op-5 text-darken-2">Jumlah Jurnal Siswa</h6>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">equalizer</i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                   
-                 <div class="row">
-                    
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
                     <div class="row">
-                    <div class="col l3 m6 s12">
-                        <div class="card danger-gradient card-hover">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center">
-                                    <div>
-                                        <h2 class="white-text m-b-5">{{$siswa}}</h2>
-                                        <h6 class="white-text op-5 light-blue-text">Jumlah Siswa</h6>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">assignment</i></span>
-                                    </div>
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0">Welcome Back {{Auth()->user()->name}}</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                        <li class="breadcrumb-item active">Journal Dashboard</li>
+                                    </ol>
                                 </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col l3 m6 s12">
-                        <div class="card info-gradient card-hover">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center">
-                                    <div>
-                                        <h2 class="white-text m-b-5">{{$jurusan}}</h2>
-                                        <h6 class="white-text op-5">Jumlah Jurusan</h6>
+                    <!-- end page title -->
+
+                    <div class="row project-wrapper">
+                        <div class="col-xxl-8">
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <div class="card card-animate">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm flex-shrink-0">
+                                                    <span class="avatar-title bg-soft-primary text-primary rounded-2 fs-2">
+                                                        <i data-feather="briefcase" class="text-primary"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="flex-grow-1 overflow-hidden ms-3">
+                                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-3">Jumlah Siswa</p>
+                                                    <div class="d-flex align-items-center mb-3">
+                                                        <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value" data-target="{{$siswa}}">{{$siswa}}</span></h4>
+                                                        <span class="badge badge-soft-success fs-12"><i class="ri-arrow-down-s-line fs-13 align-middle me-1"></i></span>
+                                                    </div>
+                                                    <p class="text-muted text-truncate mb-0"> Total Seluruh Siswa {{$siswa}}</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- end card body -->
                                     </div>
-                                    <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">assignment</i></span>
+                                </div><!-- end col -->
+
+                                <div class="col-xl-4">
+                                    <div class="card card-animate">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm flex-shrink-0">
+                                                    <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
+                                                        <i data-feather="award" class="text-warning"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <p class="text-uppercase fw-medium text-muted mb-3">Jumlah Guru</p>
+                                                    <div class="d-flex align-items-center mb-3">
+                                                        <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value" data-target="{{$guru}}">{{$guru}}</span></h4>
+                                                        <span class="badge badge-soft-success fs-12"><i class="ri-arrow-up-s-line fs-13 align-middle me-1"></i></span>
+                                                    </div>
+                                                    <p class="text-muted mb-0">Total Seluruh Guru {{$guru}} </p>
+                                                </div>
+                                            </div>
+                                        </div><!-- end card body -->
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     
-                    
-                    <div class="col l3 m6 s12">
-                        <div class="card success-gradient card-hover">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center">
-                                    <div>
-                                        <h2 class="white-text m-b-5">{{$dudi}}</h2>
-                                        <h6 class="white-text op-5 text-darken-2">Jumlah Dudi</h6>
+                                </div><!-- end col -->
+
+                                <div class="col-xl-4">
+                                    <div class="card card-animate">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm flex-shrink-0">
+                                                    <span class="avatar-title bg-soft-info text-info rounded-2 fs-2">
+                                                        <i data-feather="clock" class="text-info"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="flex-grow-1 overflow-hidden ms-3">
+                                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-3">Jumlah Dudi</p>
+                                                    <div class="d-flex align-items-center mb-3">
+                                                        <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value" data-target="{{$dudi}}">{{$dudi}}</span></h4>
+                                                        <span class="badge badge-soft-success fs-12"><i class="ri-arrow-down-s-line fs-13 align-middle me-1"></i>10.35 %</span>
+                                                    </div>
+                                                    <p class="text-muted text-truncate mb-0">Total Seluruh Dudi {{$dudi}} </p>
+                                                </div>
+                                            </div>
+                                        </div><!-- end card body -->
                                     </div>
-                                    <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">assignment</i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col l3 m6 s12">
-                        <div class="card warning-gradient card-hover">
-                            <div class="card-content">
-                                <div class="d-flex no-block align-items-center">
-                                    <div>
-                                        <h2 class="white-text m-b-5">{{$jurnal}}</h2>
-                                        <h6 class="white-text op-5">Jumlah Jurnal</h6>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <span class="white-text display-6"><i class="material-icons">assignment</i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="card">
+                                        <div class="card-header border-0 align-items-center d-flex">
+                                            <h4 class="card-title mb-0 flex-grow-1">Projects Overview</h4>
+                                            <div>
+                                                <button type="button" class="btn btn-soft-secondary btn-sm">
+                                                    ALL
+                                                </button>
+                                                <button type="button" class="btn btn-soft-secondary btn-sm">
+                                                    1M
+                                                </button>
+                                                <button type="button" class="btn btn-soft-secondary btn-sm">
+                                                    6M
+                                                </button>
+                                                <button type="button" class="btn btn-soft-primary btn-sm">
+                                                    1Y
+                                                </button>
+                                            </div>
+                                        </div><!-- end card header -->
+
+                                        <div class="card-header p-0 border-0 bg-soft-light">
+                                            <div class="row g-0 text-center">
+                                                <div class="col-6 col-sm-3">
+                                                    <div class="p-3 border border-dashed border-start-0">
+                                                        <h5 class="mb-1"><span class="counter-value" data-target="9851">0</span></h5>
+                                                        <p class="text-muted mb-0">Number of Projects</p>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-6 col-sm-3">
+                                                    <div class="p-3 border border-dashed border-start-0">
+                                                        <h5 class="mb-1"><span class="counter-value" data-target="1026">0</span></h5>
+                                                        <p class="text-muted mb-0">Active Projects</p>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-6 col-sm-3">
+                                                    <div class="p-3 border border-dashed border-start-0">
+                                                        <h5 class="mb-1">$<span class="counter-value" data-target="228.89">0</span>k</h5>
+                                                        <p class="text-muted mb-0">Revenue</p>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-6 col-sm-3">
+                                                    <div class="p-3 border border-dashed border-start-0 border-end-0">
+                                                        <h5 class="mb-1 text-success"><span class="counter-value" data-target="10589">0</span>h</h5>
+                                                        <p class="text-muted mb-0">Working Hours</p>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                        </div><!-- end card header -->
+                                        <div class="card-body p-0 pb-2">
+                                            <div>
+                                                <div id="projects-overview-chart" data-colors='["--vz-primary", "--vz-warning", "--vz-success"]' dir="ltr" class="apex-charts"></div>
+                                            </div>
+                                        </div><!-- end card body -->
+                                    </div><!-- end card -->
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end col -->
+
+                        
+
                 </div>
-                    
-                
-                <!-- ============================================================== -->
-                <!-- Table -->
-                <!-- ============================================================== -->
-                
-                <!-- ============================================================== -->
-                <!-- Devices - Income - Sales -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- col -->
-                    <div class="col s12 l4">
-                        <div class="card">
-                            <div class="card-content">
-                                <h5 class="card-title">Device Variations</h5>
-                                <div id="visitor" style="height:267px; width:100%;" class="m-t-20"></div>
-                                <ul class="list-inline center-align">
-                                    <li><i class="fa fa-circle blue-text"></i> Mobiles</li>
-                                    <li><i class="fa fa-circle blue-text text-accent-4"></i> Desktops</li>
-                                    <li><i class="fa fa-circle orange-text"></i> Tablets</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- col -->
-                    <div class="col s12 l4">
-                        <div class="card">
-                            <div class="card-content">
-                                <h5 class="card-title">Net Income</h5>
-                                <div class="net-income m-t-30" style="height:257px; position: relative;"></div>
-                                <ul class="list-inline center-align">
-                                    <li><i class="fa fa-circle blue-text text-accent-4"></i> Net Income</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- col -->
-                    <div class="col s12 l4">
-                        <div class="card">
-                            <div class="card-content">
-                                <h5 class="card-title">Sales Performance</h5>
-                                <div class="row">
-                                    <div class="col s8">
-                                        <h3 class="font-medium m-b-5 m-t-30">$4316</h3>
-                                        <span>(150-165 sales)</span>
-                                    </div>
-                                    <div class="col s4 right-align">
-                                        <div id="sales2" style="height:125px;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-content">
-                                <h5 class="card-title">Monthly Sales</h5>
-                                <div class="row">
-                                    <div class="col s8 m-t-30">
-                                        <h3 class="font-medium m-b-5">$3528</h3>
-                                        <span>(150-165 sales)</span>
-                                    </div>
-                                    <div class="col s4 right-align">
-                                        
-                                        <div id="monthlysales"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Projects of the month -->
-                <!-- ============================================================== -->
-               
+                <!-- container-fluid -->
             </div>
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
-            <footer class="center-align m-b-30">All Rights Reserved by Materialart. Designed and Developed by <a href="https://wrappixel.com/">RQ Team</a>.</footer>
-        
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Velzon.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Design & Develop by Themesbrand
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>        
         @endsection

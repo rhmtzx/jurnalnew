@@ -17,13 +17,18 @@ class DatasiswaController extends Controller
 
         $data = datasiswa::all();
         $data2 = datasiswa::where('namasiswa', Auth::user()->name)->get();
-        // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
+            // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
+        // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dud)->get();
         $data3 = datasiswa::where('kd_guru', Auth::user()->kd_guru)->get();
         $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
         $jurusan = jurusan::all();
         $kelas = kelas::all();
         if(Auth()->user()->role == 'Admin'){
             return view('datasiswa.datasiswa',compact('data','jurusan','kelas'));
+        }else if(Auth()->user()->role == 'Guru'){
+            return view('userguru.datasiswa.datasiswa',compact('data2','jurusan','kelas','data3'));
+        }else if(Auth()->user()->role == 'Dudi'){
+            return view('userdudi.datasiswa.datasiswa',compact('data2','jurusan','kelas','data5'));
         }else{
             return view('user.datasiswa.datasiswa',compact('data2','jurusan','kelas','data3','data5'));
 

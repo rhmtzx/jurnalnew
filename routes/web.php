@@ -32,6 +32,11 @@ use App\Http\Controllers\DataabsenController;
 | contains the "web" middleware group. hw_New_Document(object_record, document_data, document_size)ow create something great!
 |
 */
+//landing
+Route::get('/landinghome', function () {
+    return view('landing.home');
+});
+
 
 Route::get('/', function () {
     $jurusan = jurusan::count();
@@ -41,15 +46,9 @@ Route::get('/', function () {
     $plotingan = dataplotingan::count();
     $guru = dataguru::count();
 
-
     return view('welcome', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru'));
 })->middleware('auth');
 
-//landing
-
-Route::get('/landinghome', function () {
-    return view('landing.home');
-});
 
 //siswa
 Route::get('/dashboard', function () {
@@ -62,6 +61,7 @@ Route::get('/dashboard', function () {
 
     return view('siswa.welcomes', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru'));
 })->middleware('auth');
+
 //jurusan
 Route::middleware('auth')->group(function () {
     Route::get('/datajurusan', [JurusanController::class, 'index'])->name('datajurusan');
@@ -185,25 +185,25 @@ Route::middleware('auth')->group(function () {
 
 });
 //loginadmin
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');;
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
 
 //loginsiswa
-Route::get('/loginsiswa', [LoginController::class, 'loginsiswa'])->name('loginsiswa');
+// Route::get('/loginsiswa', [LoginController::class, 'loginsiswa'])->name('loginsiswa');
 Route::post('/loginprosessiswa', [LoginController::class, 'loginprosessiswa'])->name('loginprosessiswa');
 Route::get('/registersiswa', [LoginController::class, 'registersiswa'])->name('registersiswa');
 Route::post('/registerusersiswa', [LoginController::class, 'registerusersiswa'])->name('registerusersiswa');
 
 //logindudi
-Route::get('/logindudi', [LoginController::class, 'logindudi'])->name('logindudi');
+// Route::get('/logindudi', [LoginController::class, 'logindudi'])->name('logindudi');
 Route::post('/loginprosesdudi', [LoginController::class, 'loginprosesdudi'])->name('loginprosesdudi');
 Route::get('/registerdudi', [LoginController::class, 'registerdudi'])->name('registerdudi');
 Route::post('/registeruserdudi', [LoginController::class, 'registeruserdudi'])->name('registeruserdudi');
 
 //loginguru
-Route::get('/loginguru', [LoginController::class, 'loginguru'])->name('loginguru');
+// Route::get('/loginguru', [LoginController::class, 'loginguru'])->name('loginguru');
 Route::post('/loginprosesguru', [LoginController::class, 'loginprosesguru'])->name('loginprosesguru');
 Route::get('/registerguru', [LoginController::class, 'registerguru'])->name('registerguru');
 Route::post('/registeruserguru', [LoginController::class, 'registeruserguru'])->name('registeruserguru');
@@ -216,4 +216,41 @@ Route::post('/loginprosesuser', [LoginController::class, 'loginprosesuser'])->na
 
 //log out
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+Route::group(['middleware' => ['auth', 'hakakses:Dudi,Siswa,Guru,Admin']], function () {
+
+    //dataabsen
+    Route::get('/dataabsen', [DataabsenController::class, 'index'])->name('dataabsen')->middleware('auth');
+    Route::get('/tambahabsen', [DataabsenController::class, 'tambahabsen'])->name('tambahabsen')->middleware('auth');
+    Route::post('/insertabsen', [DataabsenController::class, 'insertabsen'])->name('insertabsen')->middleware('auth');
+    Route::get('/tampilabsen/{id}', [DataabsenController::class, 'tampilabsen'])->name('tampilabsen')->middleware('auth');
+    Route::post('/updateabsen/{id}', [DataabsenController::class, 'updateabsen'])->name('updateabsen')->middleware('auth');
+    Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen')->middleware('auth');
+    Route::get('/detailabsen', [DataabsenController::class, 'detailabsen'])->name('detailabsen');
+
+    //datasiswa
+    Route::get('/datasiswa', [DatasiswaController::class, 'index'])->name('datasiswa')->middleware('auth');
+    Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
+    Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
+    Route::get('/tampildatasiswa/{id}', [DatasiswaController::class, 'tampildatasiswa'])->name('tampildatasiswa')->middleware('auth');
+    Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
+    Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
+
+    //datatambahjurnal
+    Route::get('/datatambahjurnal', [TambahjurnalController::class, 'index'])->name('datatambahjurnal')->middleware('auth');
+    Route::get('/tambahtambahjurnal', [TambahjurnalController::class, 'tambahtambahjurnal'])->name('tambahtambahjurnal')->middleware('auth');
+    Route::post('/inserttambahjurnal', [TambahjurnalController::class, 'inserttambahjurnal'])->name('inserttambahjurnal')->middleware('auth');
+    Route::get('/tampiltambahjurnal/{id}', [TambahjurnalController::class, 'tampiltambahjurnal'])->name('tampiltambahjurnal')->middleware('auth');
+    Route::post('/updatetambahjurnal/{id}', [TambahjurnalController::class, 'updatetambahjurnal'])->name('updatetambahjurnal')->middleware('auth');
+    Route::get('/deletetambahjurnal/{id}', [TambahjurnalController::class, 'deletetambahjurnal'])->name('deletetambahjurnal')->middleware('auth');
+
+    //dataplotingan
+    Route::get('/dataplotingan', [DataplotinganController::class, 'index'])->name('dataplotingan')->middleware('auth');
+    Route::get('/tambahdataplotingan', [DataplotinganController::class, 'tambahdataplotingan'])->name('tambahdataplotingan')->middleware('auth');
+    Route::post('/insertdataplotingan', [DataplotinganController::class, 'insertdataplotingan'])->name('insertdataplotingan')->middleware('auth');
+    Route::get('/tampildataplotingan/{id}', [DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan')->middleware('auth');
+    Route::post('/updatedataplotingan/{id}', [DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan')->middleware('auth');
+    Route::get('/deletedataplotingan/{id}', [DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan')->middleware('auth');
+});
 

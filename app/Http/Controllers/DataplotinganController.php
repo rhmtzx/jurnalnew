@@ -16,9 +16,11 @@ class DataplotinganController extends Controller
             $siswa = datasiswa::all();
             $dudi = datadudi::all();
         if(Auth()->user()->role == 'Admin'){
-
-
             return view('dataplotingan.dataplotingan',compact('data','guru','siswa','dudi'));
+        }else if(Auth()->user()->role == 'Guru'){
+            return view('userguru.dataplotingan.dataplotingan',compact('data'));
+        }else if(Auth()->user()->role == 'Dudi'){
+            return view('userdudi.dataplotingan.dataplotingan',compact('data'));
         }else{
             return view('user.dataplotingan.dataplotingan',compact('data'));
         }

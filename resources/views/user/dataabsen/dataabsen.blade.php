@@ -11,28 +11,13 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        @if(Auth::user()->role == 'Guru')
-                        <h4 class="card_title">Data Absen Seluruh Siswa</h4>
-                        @endif
-                        @if(Auth::user()->role == 'Siswa')
-                        <h4 class="card_title">Data Absen Siswa</h4>
-                        @endif
-
-                        @if(Auth::user()->role == 'Guru')
-                        <ul>
-                            <li><h6>Seluruh Absen Siswa Ada Disini</h6></li>
-                        </ul>
-                        @endif
-                        @if(Auth::user()->role == 'Siswa')
+                        <h4 class="card_title">Data Absen Siswa</h4>                       
                         <ul>
                             <li><h6>Seluruh Data Absen Ada Disini</h6></li>
                         </ul>
-                        @endif
                             <br>
                             <div class="single-table">
-                                @if(Auth::user()->role == 'Siswa')
                                 <a href="/tambahabsen" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
-                                @endif
                                 <div class="table-responsive">
                                     <br>
                                     <table id="absen" class="table text-center table-bordered dt-responsive nowrap"
@@ -45,18 +30,14 @@
                                             <th scope="col">Keterangan</th>
                                             <th scope="col">Status Jurnal</th>
                                             <th scope="col">Dibuat</th>
-                                        @if(Auth::user()->role == 'Siswa')
                                             <th scope="col">Aksi</th>
-                                        @endif
-                                            
-                                        </tr>
+                                            </tr>
                                     </thead>
                                     <tbody>
                                         @php
                                         $no = 1;
                                         @endphp
 
-                                        @if(Auth::user()->role == 'Siswa')
                                         @foreach ($data as $row)
                                         <tr>
                                             <th scope="row">{{ $no++ }}</th>
@@ -77,12 +58,16 @@
                                             <td>
                                                 <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
                                             </td>
+                                            @elseif ($row->statusjurnal == 'Absen Ditolak')
+                                            <td>
+                                                <span class="badge badge-success badge-danger ">Absen Ditolak</span>
+                                            </td>
                                             @endif
                                             <td>{{ $row->created_at}}</td>
                                             <td scope="row">
-                                                    <a href="/tampilabsen/{{ $row->id }}"
+                                                   <!--  <a href="/tampilabsen/{{ $row->id }}"
                                                         class="btn btn-warning"><i
-                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a> -->
                                                         <a href="#" class="btn btn-danger deleteabsen"
                                                         data-id="{{ $row->id }}"
                                                         data-keterangan="{{ $row->keterangan }}"><i
@@ -90,69 +75,7 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                            @endif
-
-                                            @if(Auth::user()->role == 'Dudi')
-                                            @foreach($data4 as $row4)
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row4->usersiswa }}</td>
-                                                <td>{{ $row4->keterangan }}</td>
-
-                                                @if ($row4->statusjurnal == 'Telah Disetujui')
-                                            <td>
-                                                <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                            </td>
-                                            @elseif ($row4->statusjurnal == 'Menunggu Persetujuan')
-                                            <td>
-                                                <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                            </td>
-                                            @endif
-
-                                                <td>{{ $row4->created_at}}</td>
-                                                <td scope="row">
-                                                    <a href="/tampilabsen/{{ $row4->id }}"
-                                                        class="btn btn-warning"><i
-                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <!-- <a href="#" class="btn btn-danger deleteabsen"
-                                                        data-id="{{ $row4->id }}"
-                                                        data-keterangan="{{ $row4->keterangan }}"><i
-                                                        class="fa-sharp fa-solid fa-trash"></i></a> -->
-                                                </td>
-                                                </tr>
-                                                @endforeach
-                                                @endif
-
-                                            @if(Auth::user()->role == 'Guru')
-                                            @foreach($data2 as $row2)
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row2->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row2->usersiswa }}</td>
-                                                <td>{{ $row2->keterangan }}</td>
-
-                                                @if ($row2->statusjurnal == 'Telah Disetujui')
-                                            <td>
-                                                <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                            </td>
-                                            @elseif ($row2->statusjurnal == 'Menunggu Persetujuan')
-                                            <td>
-                                                <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                            </td>
-                                            @endif
-
-                                                <td>{{ $row2->created_at}}</td>
-                                                
-                                                </tr>
-                                                @endforeach
-                                                @endif
+                                            
                                             </tbody>
                                         </table>
                                     </div>

@@ -74,12 +74,7 @@
                                 <span>Data Siswa</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="/dataplotingan">
-                                <i class="feather ft-calendar"></i>
-                                <span>Data Plotingan Siswa</span>
-                            </a>
-                        </li>
+                        
                         <li>
                             <a href="/datatambahjurnal">
                                 <i class="feather ft-calendar"></i>
@@ -113,11 +108,16 @@
                                 <span>Data Siswa</span>
                             </a>
                         </li>
-                        
+                        <li>
+                            <a href="/dataplotingan">
+                                <i class="feather ft-calendar"></i>
+                                <span>Data Plotingan Siswa</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="/datatambahjurnal">
                                 <i class="feather ft-calendar"></i>
-                                <span>Tambah Jurnal Siswa</span>
+                                <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
                         
