@@ -23,7 +23,12 @@ class TambahjurnalController extends Controller
         }else if(Auth()->user()->role == 'Dudi'){
             return view('userdudi.tambahjurnal.datatambahjurnal',compact('data4'));
         }else{
+<<<<<<< HEAD
             return view('user.tambahjurnal.datatambahjurnal',compact('data','data2','data4'));
+=======
+
+            return view('user.tambahjurnal.datatambahjurnal',compact('data','data2',));
+>>>>>>> 695dcc801b27fa1757c49e26f9c8df904cd5f00a
         }
     }
 
