@@ -7,7 +7,6 @@ use App\Models\kelas;
 use App\Models\jurusan;
 use App\Models\datasiswa;
 use App\Models\dataabsen;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // use Illuminate\Foundation\Auth\User;
@@ -18,7 +17,7 @@ class DatasiswaController extends Controller
 
         $data = datasiswa::all();
         $data2 = datasiswa::where('namasiswa', Auth::user()->name)->get();
-        $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
+        // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
         $data3 = datasiswa::where('kd_guru', Auth::user()->kd_guru)->get();
         $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
         $jurusan = jurusan::all();
@@ -26,7 +25,7 @@ class DatasiswaController extends Controller
         if(Auth()->user()->role == 'Admin'){
             return view('datasiswa.datasiswa',compact('data','jurusan','kelas'));
         }else{
-            return view('user.datasiswa.datasiswa',compact('data2','jurusan','kelas','data4','data3','data5'));
+            return view('user.datasiswa.datasiswa',compact('data2','jurusan','kelas','data3','data5'));
 
         }
     }

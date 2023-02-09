@@ -38,9 +38,9 @@
                                 <h1 class="card-title">Data Siswa</h1>
                                 <h6 class="card-subtitle">Seluruh Data Siswa Sekolah Ada Disini!</h6>
                                 <br>
-                                @if(Auth()->user()->role =='')
+                                {{-- @if(Auth()->user()->role =='') --}}
                                 <a href="/tambahdatasiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
-                                @endif
+                                {{-- @endif --}}
                                 <div class="table-responsive">
                                     <table id="datasiswa" class="table text-center table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -183,3 +183,4 @@
 <!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:10 GMT -->
 </html>
 @endsection
+
