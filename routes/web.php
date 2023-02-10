@@ -7,6 +7,7 @@ use App\Models\datasiswa;
 use App\Models\tambahjurnal;
 use App\Models\dataplotingan;
 use App\Models\dataguru;
+use App\Models\dataabsen;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KelasController;
@@ -45,8 +46,9 @@ Route::get('/', function () {
     $jurnal = tambahjurnal::count();
     $plotingan = dataplotingan::count();
     $guru = dataguru::count();
+    $absen = dataabsen::count();
 
-    return view('welcome', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru'));
+    return view('welcome', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru','absen'));
 })->middleware('auth');
 
 
@@ -58,8 +60,9 @@ Route::get('/dashboard', function () {
     $jurnal = tambahjurnal::count();
     $plotingan = dataplotingan::count();
     $guru = dataguru::count();
+    $absen = dataabsen::count();
 
-    return view('siswa.welcomes', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru'));
+    return view('siswa.welcomes', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru','absen'));
 })->middleware('auth');
 
 //jurusan

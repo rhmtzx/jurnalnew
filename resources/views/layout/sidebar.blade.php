@@ -33,60 +33,61 @@
                         <li class="menu-title"><span data-key="t-menu">Dashboard</span></li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="/">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Dashboard</span>
+                                <i class=" ri-home-3-fill"></i> <span data-key="t-widgets">Dashboard</span>
                             </a>
                         </li>
                         
-
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Data Sekolah</span></li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="/datakelas">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Kelas</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="/datajurusan">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Jurusan</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="/datasiswa">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Siswa</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="/dataguru">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Guru</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Jurnal Siswa</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="/dataabsen">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Absen Siswa</span>
-                            </a>
-                        </li>
-
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Dudi</span></li>
 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="/datadudi">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Dudi</span>
+                                <i class="ri-building-fill"></i> <span data-key="t-widgets">Data Dudi</span>
                             </a>
                         </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Data Sekolah</span></li>
 
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Plotingan Siswa</span></li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datakelas">
+                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Data Kelas</span>
+                            </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datajurusan">
+                                <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Jurusan</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datasiswa">
+                                <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Siswa</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/dataguru">
+                                <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Guru</span>
+                            </a>
+                        </li>
+                        
 
+                        
+
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Siswa</span></li>
+
+                        
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-git-repository-fill"></i> <span data-key="t-widgets">Data Jurnal Siswa</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/dataabsen">
+                                <i class="ri-git-repository-fill"></i> <span data-key="t-widgets">Data Absen Siswa</span>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="/dataplotingan">
-                                <i class="ri-honour-line"></i> <span data-key="t-widgets">Plotingan Siswa </span>
+                                <i class="ri-git-repository-fill"></i> <span data-key="t-widgets">Plotingan Siswa </span>
                             </a>
                         </li>
-
 
                         
                         

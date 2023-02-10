@@ -324,6 +324,7 @@ class LoginController extends Controller
     public function profil()
     {
         $data = User::all();
+        
         return view('layout.profil', compact('data'));
     }
     public function editprofil(request $request)

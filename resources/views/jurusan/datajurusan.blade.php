@@ -52,69 +52,74 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Jurusan Page</h4>
+                                <h4 class="mb-sm-0">Data Kelas Page</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Data Jurusan</li>
+                                        <li class="breadcrumb-item active">Data Kelas</li>
                                     </ol>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
                     <!-- end page title -->
 
+                   
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Data seluruh Jurusan</h5>
+                                    <h5 class="card-title mb-0">Data Seluruh Kelas</h5>
                                     <br>
                                     <div>
-                                <a href="/tambahjurusan" class="btn btn-success mb-10">Tambah Jurusan +</a>
+                                <a href="/tambahkelas" class="btn btn-success mb-10">Tambah Kelas +</a>
                                     </div>
                                     <br>
                                 </div>
                                 <div class="card-body">
-                                    <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" style="width: 10px;">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input fs-15" type="checkbox" id="checkAll" value="option">
-                                                    </div>
-                                                </th>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Nama Jurusan</th>
-                                                <th scope="col">AKSI</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php
+                                    <table class="table align-middle table-nowrap" id="jurusan">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th scope="col" style="width: 50px;">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="checkAll" value="option">
+                                                            </div>
+                                                        </th>
+                                                      <th scope="col">#</th>
+                                                    
+                                                    <th scope="col">Aksi</th>
+                                                    <th scope="col">Nama Jurusan</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="list form-check-all">
+                                                     @php
                                                     $no = 1;
                                                     @endphp
                                                     @foreach ($data as $row)
-                                            <tr>
-                                                <th scope="row">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input fs-15" type="checkbox" name="checkAll" value="option1">
-                                                    </div>
-                                                </th>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
+                                                            </div>
+                                                        </th>
+                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->namajurusan}}</td>
-                                                
-                                                <td>
-                                                    <a href="/tampiljurusan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                    <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
-                                                    data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                                        <td>
+                                                            <div class="d-flex gap-2">
+                                                                <div class="edit">
+                                                                    <a href="/tampiljurusan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                                    <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
+                                                                    data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
                                 </div>
                             </div>
                         </div><!--end col-->
@@ -161,7 +166,7 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#Jurnal').DataTable();
+                $('#jurusan').DataTable();
             });
         </script>
 
