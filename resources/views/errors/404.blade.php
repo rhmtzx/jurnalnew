@@ -1,132 +1,104 @@
 <!doctype html>
-<html lang="zxx">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
-<!-- Mirrored from rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Feb 2023 10:25:09 GMT -->
+
+<!-- Mirrored from themesbrand.com/velzon/html/default/auth-404-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:48 GMT -->
 <head>
-    <!--=========================*
-                Met Data
-    *===========================-->
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Quinte Bootstrap 4 Admin Template">
 
-    <!--=========================*
-              Page Title
-    *===========================-->
-    <title>404 Page | J - On</title>
+    <meta charset="utf-8" />
+    <title>404 Error | J - On</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/favicon.ico')}}">
 
-    <!--=========================*
-                Favicon
-    *===========================-->
-    <link rel="shortcut icon" type="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/image/x-icon')}}" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/images/favicon.png')}}">
+    <!-- Layout config Js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/layout.js')}}"></script>
+    <!-- Bootstrap Css -->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <!--=========================*
-            Bootstrap Css
-    *===========================-->
-    <link rel="stylesheet" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/css/bootstrap.min.css')}}">
-
-    <!--=========================*
-              Custom CSS
-    *===========================-->
-    <link rel="stylesheet" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/css/style.css')}}">
-
-    <!--=========================*
-               Owl CSS
-    *===========================-->
-    <link href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/css/owl.carousel.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/css/owl.theme.default.min.css')}}" rel="stylesheet" type="text/css">
-
-    <!--=========================*
-            Font Awesome
-    *===========================-->
-    <link rel="stylesheet" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/css/font-awesome.min.css')}}">
-
-    <!--=========================*
-             Themify Icons
-    *===========================-->
-    <link rel="stylesheet" href="css/themify-icons.css">
-
-    <!--=========================*
-               Ionicons
-    *===========================-->
-    <link href="css/ionicons.min.css" rel="stylesheet"/>
-
-    <!--=========================*
-              EtLine Icons
-    *===========================-->
-    <link href="css/et-line.css" rel="stylesheet"/>
-
-    <!--=========================*
-              Feather Icons
-    *===========================-->
-    <link href="css/feather.css" rel="stylesheet"/>
-
-    <!--=========================*
-              Modernizer
-    *===========================-->
-    <script src="js/modernizr-2.8.3.min.js"></script>
-
-    <!--=========================*
-               Metis Menu
-    *===========================-->
-    <link rel="stylesheet" href="css/metisMenu.css">
-
-    <!--=========================*
-               Slick Menu
-    *===========================-->
-    <link rel="stylesheet" href="css/slicknav.min.css">
-
-    <!--=========================*
-            Google Fonts
-    *===========================-->
-
-    <!-- Montserrat USE: font-family: 'Montserrat', sans-serif;-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
-          rel="stylesheet">
-
-    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
+
 <body>
 
-<div id="notfound">
-    <div class="notfound">
-        <div class="notfound-404">
-            <h1>Oops!</h1>
+    <div class="auth-page-wrapper pt-5">
+        <!-- auth page bg -->
+        <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+            <div class="bg-overlay"></div>
+
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                    <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+                </svg>
+            </div>
         </div>
-        <h3>404 - Halaman Tidak Ditemukan</h3>
-        <p>Halaman yang Anda cari mungkin telah dihapus atau untuk sementara tidak tersedia.</p>
-        <a href="/dashboard" class="btn btn-primary btn-rounded">Kembali Ke Dashboard</a>
+
+        <!-- auth page content -->
+        <div class="auth-page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center pt-4">
+                            <div class="">
+                                <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/error.svg')}}" alt="" class="error-basic-img move-animation">
+                            </div>
+                            <div class="mt-n4">
+                                <h1 class="display-1 fw-medium">404</h1>
+                                <h3 class="text-uppercase">error, Halaman Tidak tersedia</h3>
+                                <p class="text-muted mb-4">Halaman Yang Kamu Cari Tidak Ada!</p>
+                                <a href="/" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end auth page content -->
+
+        <!-- footer -->
+        <!-- <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <p class="mb-0 text-muted">&copy;
+                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer> -->
+        <!-- end Footer -->
+
     </div>
-</div>
+    <!-- end auth-page-wrapper -->
 
+    <!-- JAVASCRIPT -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/node-waves/waves.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/feather-icons/feather.min.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/plugins.js')}}"></script>
 
-<!--=========================*
-            Scripts
-*===========================-->
+    <!-- particles js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/particles.js/particles.js')}}"></script>
+    <!-- particles app js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/particles.app.js')}}"></script>
 
-<!-- Jquery Js -->
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/jquery.min.js')}}"></script>
-<!-- bootstrap 4 js -->
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/popper.min.js')}}"></script>
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/bootstrap.min.js')}}"></script>
-<!-- Owl Carousel Js -->
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/owl.carousel.min.js')}}"></script>
-<!-- Metis Menu Js -->
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/metisMenu.min.js')}}"></script>
-<!-- SlimScroll Js -->
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/jquery.slimscroll.min.js')}}"></script>
-<!-- Slick Nav -->
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/jquery.slicknav.min.js')}}"></script>
-<!-- Fancy Box Js -->
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/jquery.fancybox.pack.js')}}"></script>
-<!-- Main Js -->
-<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/main.js')}}"></script>
 </body>
 
-<!-- Mirrored from rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Feb 2023 10:25:09 GMT -->
+
+<!-- Mirrored from themesbrand.com/velzon/html/default/auth-404-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:49 GMT -->
 </html>
