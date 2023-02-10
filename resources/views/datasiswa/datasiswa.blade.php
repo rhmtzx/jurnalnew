@@ -71,12 +71,14 @@
                             <!-- Simple card -->
 
                             <div class="card" style="">
-                                {{-- <img class="card-img-top img-fluid" src="assets/images/small/img-1.jpg" alt="Card image cap"> --}}
+                                {{-- <img class="card-img-top img-fluid" src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/images/small/img-1.jpg') }}" alt="Card image cap"> --}}
                                 <div class="card-body">
-                                    <h4 class="card-title mb-2">{{ $row->namajurusan }}</h4>
-                                    <p class="card-text">Data Kelas {{ $row->namajurusan }}</p>
-                                    <div class="text-end">
-                                        <a href="/data/{{ $row->id }}" class="btn btn-primary">Submit</a>
+                                    <h4 class="card-title mb-2 text-center">{{ $row->namajurusan }}</h4>
+                                    <br>
+                                    <p class="card-text text-center">Data Kelas {{ $row->namajurusan }}</p>
+                                    <div class="text-center">
+                                        <br>
+                                        <a href="/data/{{ $row->id }}" class="btn btn-info">Detail</a>
                                     </div>
                                 </div>
                                 </div>

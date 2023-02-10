@@ -35,7 +35,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -66,7 +66,7 @@
                     </div>
                     <!-- end page title -->
 
-                   
+
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
@@ -74,7 +74,7 @@
                                     <h5 class="card-title mb-0">Data Seluruh Kelas</h5>
                                     <br>
                                     <div>
-                                <a href="/tambahkelas" class="btn btn-success mb-10">Tambah Kelas +</a>
+                                <a href="/tambahjurusan" class="btn btn-success mb-10">Tambah Kelas +</a>
                                     </div>
                                     <br>
                                 </div>
@@ -88,7 +88,7 @@
                                                             </div>
                                                         </th>
                                                       <th scope="col">#</th>
-                                                    
+
                                                     <th scope="col">Aksi</th>
                                                     <th scope="col">Nama Jurusan</th>
                                                     </tr>
@@ -130,7 +130,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 
@@ -173,7 +173,7 @@
     </body>
 
     <script>
-        $('.deletetambahjurnal').click(function() {
+        $('.deletejurusan').click(function() {
             var kategoriid = $(this).attr('data-id');
             var kategori = $(this).attr('data-kategori');
             swal({
@@ -185,7 +185,7 @@
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/deletetambahjurnal/" + kategoriid + ""
+                    window.location = "/deletejurusan/" + kategoriid + ""
                     swal("Data Berhasil Di Hapus", {
                         icon: "success",
                     });

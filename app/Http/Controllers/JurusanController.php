@@ -6,6 +6,7 @@ use view;
 use App\Models\jurusan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\datasiswa;
 
 class JurusanController extends Controller
 {
@@ -20,13 +21,13 @@ class JurusanController extends Controller
 
     public function insertjurusan(Request $request){
 
-             // $this->validate($request,[
-             //     'namajurusan' => 'required|1unique:jurusans',
-             // ],[
-             //     'namajurusan.unique' => 'Nama Jurusan Sudah Ada',
-             //     'namajurusan.required' => 'Harus diisi',
+             $this->validate($request,[
+                 'namajurusan' => 'required|unique:jurusans',
+             ],[
+                 'namajurusan.unique' => 'Nama Jurusan Sudah Ada',
+                 'namajurusan.required' => 'Harus diisi',
 
-             // ]);
+             ]);
 
             $data = jurusan::create([
                 'namajurusan' =>$request->namajurusan,
@@ -51,6 +52,10 @@ class JurusanController extends Controller
 
         public function deletejurusan($id){
             $data = jurusan::find($id);
+            $count = datasiswa::where('namajurusan', $id)->count();
+            if($count > 0){
+                return back()->with('error', 'Jurusan sedang digunakan');
+            }
             $data->delete();
 
             return redirect()->route('datajurusan')->with('success', 'Data Berhasil Di Delete');

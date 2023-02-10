@@ -18,7 +18,8 @@ class CreateDatasiswasTable extends Migration
             $table->string('nissiswa');
             $table->string('namasiswa');
             // $table->string('kelas');
-            $table->string('namajurusan');
+            $table->foreignId('namajurusan');
+            $table->foreign('namajurusan')->references('id')->on('jurusans');
             $table->string('alamatsiswa');
             $table->string('notlpsiswa');
             $table->string('kd_guru')->nullable();

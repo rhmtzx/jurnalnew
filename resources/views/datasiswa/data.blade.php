@@ -111,6 +111,8 @@
                                     <br>
                                     <div>
                                 <a href="/tambahsiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
+                                <a href="/datasiswa" class="btn btn-danger mb-10">Kembali</a>
+
                                     </div>
                                     <br>
                                 </div>

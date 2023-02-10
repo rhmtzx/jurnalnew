@@ -26,7 +26,7 @@ class TambahjurnalController extends Controller
 
             return view('user.tambahjurnal.datatambahjurnal',compact('data','data2','data4'));
 
-            return view('user.tambahjurnal.datatambahjurnal',compact('data','data2',));
+            // return view('user.tambahjurnal.datatambahjurnal',compact('data','data2',));
         }
     }
 
