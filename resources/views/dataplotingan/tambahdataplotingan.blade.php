@@ -52,12 +52,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Jurusan</h4>
+                                <h4 class="mb-sm-0">Tambah Data Plotingan</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Tambah Data Jurusan</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Data Siswa</a></li>
+                                        <li class="breadcrumb-item active">Tambah Data Plotingan</li>
                                     </ol>
                                 </div>
 
@@ -71,7 +71,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Tambah Data Jurusan</h5>
+                                    <h5 class="card-title mb-0">Tambah Data Plotingan</h5>
                                     
                                 </div>
                                 <div class="card-body">
@@ -96,10 +96,10 @@
 
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Siswa</h5></label>
-                                    <select class="form-control" name="namasiswap" id="namasiswap" multiple aria-label="multiple select example">
-                                        <option value="" selected disabled>Pilih Siswa</option>
-                                        @foreach($siswa as $oke)
-                                        <option value="{{ $oke->id }}">{{ $oke->namasiswa }}</option>
+                                    <select class="form-control" name="namasiswap" id="namasiswap">
+                                        <option value="" selected disabled>Pilih Guru</option>
+                                        @foreach($siswa as $hi)
+                                        <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -109,6 +109,7 @@
                                 </div>
                                 @enderror
                                 <br>
+
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Dudi</h5></label>
                                     <select class="form-control" name="namadudip" id="namadudip">
@@ -125,8 +126,8 @@
                                 @enderror
                                 <br>
                                 <br>
-                                <button type="submit" class="btn btn-primary">Submit Data</button>
-                                <a href="/dataplotingan" class="btn btn-danger mb-10">Kembali</a>
+                                <button type="submit" class="btn btn-primary">Submit Data <i class=" bx bx-send"></i> </button>
+                                <a href="/dataplotingan" class="btn btn-danger mb-10">Kembali <i class="bx bx-chevron-left"></i> </a>
 
                             </form>                                   
  

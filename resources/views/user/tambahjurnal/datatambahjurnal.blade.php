@@ -16,9 +16,7 @@
                             <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
-                                @if(Auth::user()->role == 'Siswa')
                                 <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
-                                @endif
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -90,14 +88,7 @@
                 </div>
             </div>
 
-            <!-- DATA TABLE JS -->
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/init/data-table.js')}}">
-            </script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/jquery.dataTables.js')}}"></script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/jquery.dataTables.min.js')}}"></script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/dataTables.bootstrap4.min.js')}}"></script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/dataTables.responsive.min.js')}}"></script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/responsive.bootstrap.min.js')}}"></script>
+            
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

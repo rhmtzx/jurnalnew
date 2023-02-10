@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="enable">
 
 
 <!-- Mirrored from themesbrand.com/velzon/html/default/dashboard-projects.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:38:41 GMT -->
@@ -24,14 +24,14 @@
     <!-- custom Css-->
     <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
 
-        <!--datatable css-->
+    <!--datatable css-->
     <link rel="stylesheet" href="{{asset('velzon/cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css')}}" />
     <!--datatable responsive css-->
     <link rel="stylesheet" href="{{asset('velzon/cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css')}}" />
 
     <link rel="stylesheet" href="{{asset('velzon/cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css')}}">
 
-        <!-- Layout config Js -->
+    <!-- Layout config Js -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/layout.js')}}"></script>
     <!-- Bootstrap Css -->
     <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -41,6 +41,8 @@
     <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
+
+    <!-- <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" /> -->
 </head>
 
 <body>
@@ -765,12 +767,10 @@
         </div>
         <div class="offcanvas-footer border-top p-3 text-center">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
                     <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
                 </div>
-                <div class="col-6">
-                    <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy Now</a>
-                </div>
+                
             </div>
         </div>
     </div> --}}
@@ -798,7 +798,7 @@
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/listjs.init.js')}}"></script>
 
     <!-- Sweet Alerts js -->
-    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
+    <!-- <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script> -->
 
 
     <!-- prismjs plugin -->
@@ -820,8 +820,19 @@
     <script src="{{asset('velzon/cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js')}}"></script>
     <script src="{{asset('velzon/cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js')}}"></script>
     <script src="{{asset('velzon/cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js')}}"></script>
-
     <script src="{{asset('velzon/assets/js/pages/datatables.init.js')}}"></script>
+
+    <!-- Sweet Alerts js -->
+    <!-- <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script> -->
+
+    <!-- Sweet alert init js-->
+    <!-- <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/sweetalerts.init.js')}}"></script> -->
+
+    <!-- apexcharts -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+
+    <script src="{{asset('velzon/img.themesbrand.com/velzon/apexchart-js/stock-prices.js"></script>
+
 </body>
 
 
