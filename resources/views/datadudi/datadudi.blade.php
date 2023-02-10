@@ -74,7 +74,7 @@
                                     <h5 class="card-title mb-0">Data Seluruh Dudi</h5>
                                     </div>
                                 <div class="card-body">
-                                    <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
+                                    <table id="dudi" class="table nowrap align-middle" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="width: 10px;">
@@ -110,12 +110,11 @@
                                                     <td>{{ $row->namadudi }}</td>
                                                     <td>{{ $row->namakepdik }}</td>
                                                     <td>{{ $row->alamatdudi }}</td>
-
                                                     <td>{{ $row->created_at}}</td>
                                                 
                                                 <td>
                                                     <a href="/tampildatadudi/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                    <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
+                                                    <a href="#" class="btn btn-danger deletedatadudi" data-id="{{ $row->id }}"
                                                     data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
                                                 </td>
                                             </tr>
@@ -150,7 +149,7 @@
     <!--preloader-->
 
     <!-- JAVASCRIPT -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -168,54 +167,17 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#Jurnal').DataTable();
+                $('#dudi').DataTable();
             });
         </script>
 
     </body>
 
-    <script>
-        $('.deletetambahjurnal').click(function() {
-            var kategoriid = $(this).attr('data-id');
-            var kategori = $(this).attr('data-kategori');
-            swal({
-                title: "Yakin Ingin delete Data ?",
-                text: "Kamu Yakin Akan Menghapus Data Ini !",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    window.location = "/deletetambahjurnal/" + kategoriid + ""
-                    swal("Data Berhasil Di Hapus", {
-                        icon: "success",
-                    });
-                } else {
-                    swal("Data Gagal Di Hapus");
-                }
-            });
-        });
-    </script>
-
-    <script>
-        @if (Session::has('success'))
-        toastr.success("{{ Session::get('success') }}")
-        @endif
-    </script>
-
-    <script>
-        @if (Session::has('error'))
-        toastr.error("{{ Session::get('error') }}")
-        @endif
-    </script>
-
-</body>
 
 
 <!-- Mirrored from themesbrand.com/velzon/html/default/tables-datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:42:44 GMT -->
 <script>
-    $('.deletejurusan').click(function() {
+    $('.deletedatadudi').click(function() {
         var kategoriid = $(this).attr('data-id');
         var kategori = $(this).attr('data-kategori');
         swal({
@@ -227,7 +189,7 @@
         })
         .then((willDelete) => {
             if (willDelete) {
-                window.location = "/deletejurusan/" + kategoriid + ""
+                window.location = "/deletedatadudi/" + kategoriid + ""
                 swal("Data Berhasil Di Hapus", {
                     icon: "success",
                 });

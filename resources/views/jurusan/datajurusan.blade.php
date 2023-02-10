@@ -35,7 +35,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -52,12 +52,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Kelas Page</h4>
+                                <h4 class="mb-sm-0">Data Jurusan Page</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Data Kelas</li>
+                                        <li class="breadcrumb-item active">Data Jurusan</li>
                                     </ol>
                                 </div>
 
@@ -66,20 +66,20 @@
                     </div>
                     <!-- end page title -->
 
-                   
+
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Data Seluruh Kelas</h5>
+                                    <h5 class="card-title mb-0">Data Seluruh Jurusan</h5>
                                     <br>
                                     <div>
-                                <a href="/tambahkelas" class="btn btn-success mb-10">Tambah Kelas +</a>
+                                <a href="/tambahjurusan" class="btn btn-success mb-10">Tambah Jurusan +</a>
                                     </div>
                                     <br>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table align-middle table-nowrap" id="jurusan">
+                                    <table id="jurusan" class="table align-middle table-nowrap" >
                                                 <thead class="table-light">
                                                     <tr>
                                                         <th scope="col" style="width: 50px;">
@@ -88,7 +88,7 @@
                                                             </div>
                                                         </th>
                                                       <th scope="col">#</th>
-                                                    
+
                                                     <th scope="col">Aksi</th>
                                                     <th scope="col">Nama Jurusan</th>
                                                     </tr>
@@ -130,7 +130,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 
@@ -173,7 +173,7 @@
     </body>
 
     <script>
-        $('.deletetambahjurnal').click(function() {
+        $('.deletejurusan').click(function() {
             var kategoriid = $(this).attr('data-id');
             var kategori = $(this).attr('data-kategori');
             swal({
@@ -185,7 +185,7 @@
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/deletetambahjurnal/" + kategoriid + ""
+                    window.location = "/deletejurusan/" + kategoriid + ""
                     swal("Data Berhasil Di Hapus", {
                         icon: "success",
                     });

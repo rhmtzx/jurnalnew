@@ -52,12 +52,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Jurusan</h4>
+                                <h4 class="mb-sm-0">Tambah Data Plotingan</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Edit Data Jurusan</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Data Siswa</a></li>
+                                        <li class="breadcrumb-item active">Tambah Data Plotingan</li>
                                     </ol>
                                 </div>
 
@@ -71,26 +71,14 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Edit Data Jurusan</h5>
+                                    <h5 class="card-title mb-0">Tambah Data Plotingan</h5>
                                     
                                 </div>
                                 <div class="card-body">
                                 <form action="/updatedataplotingan/{{ $data->id }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
-                                <!-- <div class="mb-3">
-                                    <br>
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Nama Guru</h6></label> 
-                                    <input type="text" name="namagurup" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" value="{{ $data->namagurup }}">
-                                    <br>
-                                    @error('namagurup')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                    <br> -->
-
+                                
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label"><h5>Nama Guru</h5></label>
                                         <select class="form-control" name="namagurup" id="namagurup">
@@ -130,35 +118,12 @@
                                     </div>
                                     <br>
 
-                                    <!-- <div class="mb-3">
-                                        <br>
-                                        <label for="exampleInputEmail1" class="form-label"><h6>Nis Siswa</h6></label> 
-                                        <input type="text" name="namasiswap" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->nissiswap }}">
-                                        <br>
-                                        @error('nissiswap')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-                                        <br> -->
-                                        <!-- <div class="mb-3">
-                                            <br>
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Nama Dudi</h6></label> 
-                                            <input type="text" name="namadudip" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" value="{{ $data->namadudip }}">
-                                            <br>
-                                            @error('namadudip')
-                                            <div class="text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                            <br> -->
                                             <div class="mt-4">
                                                 <button type="submit" class="btn btn-primary">Edit Data</button>
                                                 <a href="/dataplotingan" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                             </div>
-                                        </form>
+                                        </form>                     
+ 
                                 </div>
                             </div>
                         </div><!--end col-->

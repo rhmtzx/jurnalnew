@@ -66,48 +66,11 @@
                     </div>
 
 
-                    <!-- end page title -->
-                   <!--  <div class="row justify-content-left">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card shadow-none text-center py-3">
-                                <div class="card-body py-4">
-                                    <div class="avatar-sm position-relative mb-4 mx-auto">
-                                        <div class="job-icon-effect"></div>
-                                        <div class="avatar-title bg-transparent text-success rounded-circle">
-                                            <i class="ri-pencil-ruler-2-line fs-1"></i>
-                                        </div>
-                                    </div>
-                                    <a href="#!" class="stretched-link">
-                                        <h5 class="fs-17 pt-1">IT & Software</h5>
-                                    </a>
-                                    <p class="mb-0 text-muted">1543 Jobs</p>
-                                </div>
-                            </div>
-                        </div><div class="row justify-content-right     ">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card shadow-none text-center py-3">
-                                <div class="card-body py-4">
-                                    <div class="avatar-sm position-relative mb-4 mx-auto">
-                                        <div class="job-icon-effect"></div>
-                                        <div class="avatar-title bg-transparent text-success rounded-circle">
-                                            <i class="ri-pencil-ruler-2-line fs-1"></i>
-                                        </div>
-                                    </div>
-                                    <a href="#!" class="stretched-link">
-                                        <h5 class="fs-17 pt-1">IT & Software</h5>
-                                    </a>
-                                    <p class="mb-0 text-muted">1543 Jobs</p>
-                                    <br>
-                                <a href="/tambahsiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
-
-                                </div>
-                            </div>
-                        </div> -->
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Data seluruh Siswa</h5>
+                                    <h5 class="card-title mb-0">Data Seluruh Siswa</h5>
                                     <br>
                                     <div>
                                 <a href="/tambahsiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
@@ -115,7 +78,7 @@
                                     <br>
                                 </div>
                                 <div class="card-body">
-                                    <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
+                                    <table id="siswa" class="table nowrap align-middle" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="width: 10px;">
@@ -206,7 +169,7 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#Jurnal').DataTable();
+                $('#siswa').DataTable();
             });
         </script>
 

@@ -79,7 +79,7 @@
                                     <br>
                                 </div>
                                 <div class="card-body">
-                                    <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
+                                    <table id="guru" class="table nowrap align-middle" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="width: 10px;">
@@ -97,9 +97,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @php
+                                                @php
                                                     $no = 1;
-                                                    @endphp
+                                                @endphp
                                                     @foreach ($data as $row)
                                             <tr>
                                                 <th scope="row">
@@ -169,7 +169,7 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#Jurnal').DataTable();
+                $('#guru').DataTable();
             });
         </script>
 

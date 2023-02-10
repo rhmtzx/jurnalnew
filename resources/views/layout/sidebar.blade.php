@@ -74,7 +74,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#">
+                            <a class="nav-link menu-link" href="/datatambahjurnal">
                                 <i class="ri-git-repository-fill"></i> <span data-key="t-widgets">Data Jurnal Siswa</span>
                             </a>
                         </li>
