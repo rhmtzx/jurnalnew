@@ -35,7 +35,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -66,13 +66,13 @@
                     </div>
                     <!-- end page title -->
 
-                   
+
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Edit Data Jurusan</h5>
-                                    
+
                                 </div>
                                 <div class="card-body">
                             <form action="/updatedatasiswa/{{ $data->id }}" method="POST"
@@ -80,7 +80,7 @@
                                 @csrf
                                 <div class="mb-3">
                                     <br>
-                                    <label for="exampleInputEmail1" class="form-label"><h6>NIS</h6></label> 
+                                    <label for="exampleInputEmail1" class="form-label"><h6>NIS</h6></label>
                                     <input type="number" name="nissiswa" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->nissiswa }}">
                                     <br>
@@ -92,7 +92,7 @@
                                     <br>
                                     <div class="mb-3">
                                         <br>
-                                        <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label> 
+                                        <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
                                         <input type="text" name="namasiswa" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" value="{{ $data->namasiswa }}">
                                         <br>
@@ -102,54 +102,26 @@
                                         </div>
                                         @enderror
                                         <br>
-                                        <label for="exampleInputEmail1" class="form-label"><h6>Kelas Siswa</h6></label> 
-                                        <input type="text" name="kelas" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->kelas }}">
-                                        <br>
-                                        @error('kelas')
-                                        <div class="text-danger">
-                                            {{ $message }}
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label"><h5>Jurusan</h5></label>
+                                            <select class="form-control" name="namajurusan" id="namajurusan">
+                                                <option value="" selected disabled>Pilih</option>
+                                                @foreach($jurusan as $a)
+                                                <option value="{{ $a->id }}"<?php if($data->namajurusan == $a->id) {
+                                                    echo 'selected';
+                                                }?> > {{ $a->namajurusan }} </option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        @enderror
-                                        <br>
-                                        <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label> 
-                                        <input type="text" name="jurusan" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->jurusan }}">
-                                        <br>
                                         @error('jurusan')
                                         <div class="text-danger">
                                             {{ $message }}
                                         </div>
                                         @enderror
-
-<!--                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Kelas Siswa</h6></label>
-                                            <select class="form-control" name="kelas" id="kelas">
-                                                <option value="" selected disabled>Pilih</option>
-                                                @foreach($kelas as $kkk)
-                                                <option value="{{ $kkk->id }}"<?php if($data->kelas == $kkk->id) {
-                                                    echo 'selected';    
-                                                }?> > {{ $kkk->kelassiswa }} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <br>  
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label>
-                                            <select class="form-control" name="jurusan" id="jurusan">
-                                                <option value="" selected disabled>Pilih</option>
-                                                @foreach($jurusan as $uuu)
-                                                <option value="{{ $uuu->id }}"<?php if($data->jurusan == $uuu->id) {
-                                                    echo 'selected';    
-                                                }?> > {{ $uuu->namajurusan }} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <br> -->
-
+                                        <br>
                                                 <div class="mb-3">
                                                     <br>
-                                                    <label for="exampleInputEmail1" class="form-label"><h6>Alamat Siswa</h6></label> 
+                                                    <label for="exampleInputEmail1" class="form-label"><h6>Alamat Siswa</h6></label>
                                                     <input type="text" name="alamatsiswa" class="form-control" id="exampleInputEmail1"
                                                     aria-describedby="emailHelp" value="{{ $data->alamatsiswa }}">
                                                     <br>
@@ -161,7 +133,7 @@
                                                     <br>
                                                     <div class="mb-3">
                                                         <br>
-                                                        <label for="exampleInputEmail1" class="form-label"><h6>No Telepon Siswa</h6></label> 
+                                                        <label for="exampleInputEmail1" class="form-label"><h6>No Telepon Siswa</h6></label>
                                                         <input type="text" name="notlpsiswa" class="form-control" id="exampleInputEmail1"
                                                         aria-describedby="emailHelp" value="{{ $data->notlpsiswa }}">
                                                         <br>
@@ -186,7 +158,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 

@@ -15,24 +15,30 @@ class DatasiswaController extends Controller
 {
     public function index(){
 
-        $data = datasiswa::all();
+        $data = jurusan::all();
         $data2 = datasiswa::where('namasiswa', Auth::user()->name)->get();
             // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
         // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dud)->get();
         $data3 = datasiswa::where('kd_guru', Auth::user()->kd_guru)->get();
         $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
         $jurusan = jurusan::all();
-        $kelas = kelas::all();
         if(Auth()->user()->role == 'Admin'){
-            return view('datasiswa.datasiswa',compact('data','jurusan','kelas'));
+            return view('datasiswa.datasiswa',compact('data','jurusan'));
         }else if(Auth()->user()->role == 'Guru'){
-            return view('userguru.datasiswa.datasiswa',compact('data2','jurusan','kelas','data3'));
+            return view('userguru.datasiswa.datasiswa',compact('data2','jurusan','data3'));
         }else if(Auth()->user()->role == 'Dudi'){
-            return view('userdudi.datasiswa.datasiswa',compact('data2','jurusan','kelas','data5'));
+            return view('userdudi.datasiswa.datasiswa',compact('data2','jurusan','data5'));
         }else{
-            return view('user.datasiswa.datasiswa',compact('data2','jurusan','kelas','data3','data5'));
+            return view('user.datasiswa.datasiswa',compact('data2','jurusan','data3','data5'));
 
         }
+    }
+    public function data($id){
+        // $data = jurusan::where('namajurusan',$id)->get();
+        $data = datasiswa::where('namajurusan',$id)->get();
+
+
+        return view('datasiswa.data',compact('data'));
     }
 
     public function tambahdatasiswa(){
@@ -108,14 +114,14 @@ class DatasiswaController extends Controller
             $data->update([
                 'nissiswa' =>$request->nissiswa,
                 'namasiswa' =>$request->namasiswa,
-                'kelas' =>$request->kelas,
-                'jurusan' =>$request->jurusan,
+                'namajurusan' =>$request->namajurusan,
                 'alamatsiswa' =>$request->alamatsiswa,
                 'notlpsiswa' =>$request->notlpsiswa,
                 // 'user_id' =>$request->nullable,
             ]);
             $data2->update([
-                'name'=>$request->namasiswa
+                'name'=>$request->namasiswa,
+                'id_jurusan'=>$request->namajurusan
             ]);
 
             // datasiswa::where('user_id', $data->user_id)->update($data);
@@ -134,22 +140,8 @@ class DatasiswaController extends Controller
         public function deletedatasiswa(Request $request,$id){
             $data = datasiswa::find($id);
             $data3=User::find($data->user_id);
-            $data->delete([
-                'nissiswa' =>$request->nissiswa,
-                'namasiswa' =>$request->namasiswa,
-                'kelas' =>$request->kelas,
-                'jurusan' =>$request->jurusan,
-                'alamatsiswa' =>$request->alamatsiswa,
-                'notlpsiswa' =>$request->notlpsiswa,
-            ]);
-            $data3->delete([
-                'nissiswa' =>$request->nissiswa,
-                'namasiswa' =>$request->namasiswa,
-                'kelas' =>$request->kelas,
-                'jurusan' =>$request->jurusan,
-                'alamatsiswa' =>$request->alamatsiswa,
-                'notlpsiswa' =>$request->notlpsiswa,
-            ]);
+            $data->delete();
+            $data3->delete();
             if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');
             }else{

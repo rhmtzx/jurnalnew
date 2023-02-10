@@ -75,7 +75,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            
+
                                             <label class="form-label" for="password-input">Masukkan Password</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
                                                 <input type="password" class="form-control pe-5 password-input" placeholder="Masukkan Password" name="password" id="password">
@@ -89,13 +89,13 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
                                             <label class="form-check-label" for="auth-remember-check">Remember Me</label>
-                                        
+
                                         </div>
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">Login</button>
                                         </div>
                                     <br>
-                                    
+
                                         <!-- <div class="mt-4 text-center">
                                             <div class="signin-other-title">
                                                 <h5 class="fs-13 mb-4 title">Sign In with</h5>
@@ -130,13 +130,13 @@
                                         </div>
                                     </div>
                             <div class="card-body p-4">
-                                
-                                
+
+
                             </div>
                             <!-- end card body -->
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
                 <!-- end row -->

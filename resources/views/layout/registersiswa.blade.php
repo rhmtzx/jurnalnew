@@ -73,7 +73,7 @@
                                         <div class="mb-3">
                                             <label for="nissiswa" class="form-label">NIS <span class="text-danger">*</span></label>
                                             <input type="number" class="form-control" name="nissiswa" id="nissiswa" placeholder="Enter email address" required>
-                                            
+
                                         </div>
                                         @error('nissiswa')
                                         <div class="text-danger">
@@ -83,14 +83,14 @@
                                         <div class="mb-3">
                                             <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="name" id="name" placeholder="Enter email address" required>
-                                            
+
                                         </div>
                                         <!-- email -->
 
                                         <!-- <div class="mb-3">
                                             <label for="kelas" class="form-label">Kelas Siswa <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="kelas" id="kelas" placeholder="Enter email address" required>
-                                            
+
                                         </div> -->
                                         <div class="col-lg-12">
                                             <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
@@ -168,7 +168,7 @@
                         <!-- end card -->
 
                         <div class="mt-4 text-center">
-                            <p class="mb-0">Sudah Punya Akun Siswa ? <a href="auth-signin-basic.html" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
+                            <p class="mb-0">Sudah Punya Akun Siswa ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
                         </div>
 
                     </div>

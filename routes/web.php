@@ -92,6 +92,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
     Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
     Route::get('/tampildatasiswa/{id}', [DatasiswaController::class, 'tampildatasiswa'])->name('tampildatasiswa')->middleware('auth');
+    Route::get('/data/{id}', [DatasiswaController::class, 'data'])->name('data')->middleware('auth');
     Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
     Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
 

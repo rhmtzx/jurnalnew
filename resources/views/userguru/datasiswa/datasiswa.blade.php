@@ -22,7 +22,6 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nis Siswa</th>
                                                 <th scope="col">Nama Siswa</th>
-                                                <th scope="col">Kelas</th>
                                                 <th scope="col">Jurusan</th>
                                                 <th scope="col">Alamat Siswa</th>
                                                 <th scope="col">No Telepon Siswa</th>
@@ -39,8 +38,7 @@
                                                     <th scope="row">{{ $no++ }}</th>
                                                     <td>{{ $row3->nissiswa }}</td>
                                                     <td>{{ $row3->namasiswa }}</td>
-                                                    <td>{{ $row3->kelas }}</td>
-                                                    <td>{{ $row3->jurusan }}</td>
+                                                    <td>{{ $row3->jurusans->namajurusan }}</td>
                                                     <td>{{ $row3->alamatsiswa }}</td>
                                                     <td>{{ $row3->notlpsiswa }}</td>
                                                     <td>{{ $row3->created_at}}</td>
@@ -57,7 +55,7 @@
                 <!-- Progress Table end -->
             </div>
             <!-- accordion style 2 start -->
-                
+
             </div>
             </div>
 
