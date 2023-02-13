@@ -79,17 +79,17 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    
+
                                     <label for="exampleInputEmail1" class="form-label"><h6>NIS</h6></label>
                                     <input type="number" name="nissiswa" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->nissiswa }}">
-                                    
+
                                     @error('nissiswa')
                                     <div class="text-danger">
                                         {{ $message }}
                                     </div>
                                     @enderror
-                                    
+
                                     <div class="mb-3">
                                         <br>
                                         <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
@@ -101,7 +101,7 @@
                                             {{ $message }}
                                         </div>
                                         @enderror
-                                        
+
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Jurusan</h6></label>
                                             <select class="form-control" name="namajurusan" id="namajurusan">
@@ -118,13 +118,13 @@
                                             {{ $message }}
                                         </div>
                                         @enderror
-                                        
+
                                                 <div class="mb-3">
-                                                    
+
                                                     <label for="exampleInputEmail1" class="form-label"><h6>Alamat Siswa</h6></label>
                                                     <input type="text" name="alamatsiswa" class="form-control" id="exampleInputEmail1"
                                                     aria-describedby="emailHelp" value="{{ $data->alamatsiswa }}">
-                                                    
+
                                                     @error('alamatsiswa')
                                                     <div class="text-danger">
                                                         {{ $message }}
@@ -132,20 +132,20 @@
                                                     @enderror
                                                     <br>
                                                     <div class="mb-3">
-                                                        
+
                                                         <label for="exampleInputEmail1" class="form-label"><h6>No Telepon Siswa</h6></label>
                                                         <input type="text" name="notlpsiswa" class="form-control" id="exampleInputEmail1"
                                                         aria-describedby="emailHelp" value="{{ $data->notlpsiswa }}">
-                                                        
+
                                                         @error('notlpsiswa')
                                                         <div class="text-danger">
                                                             {{ $message }}
                                                         </div>
                                                         @enderror
-                                                        
+
                                                         <div class="mt-4">
                                                             <button type="submit" class="btn btn-primary">Edit Data</button>
-                                                            <a href="/data" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
+                                                            <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                                         </div>
                                                     </form>
                                 </div>
