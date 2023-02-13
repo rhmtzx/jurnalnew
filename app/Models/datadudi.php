@@ -17,6 +17,12 @@ class datadudi extends Model
         return $this->hasMany(user::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
 
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])
+        ->translatedFormat('l, d F Y');
+    }
+
     public function plotingan()
     {
         return $this->hasMany(plotingan::class,'namadudi' ,'id'); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)

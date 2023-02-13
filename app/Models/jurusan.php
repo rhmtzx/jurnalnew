@@ -15,11 +15,16 @@ class jurusan extends Model
     //Pusat Model Jurusan
     public function datasiswa()
     {
-        return $this->hasMany(datasiswa::class,'namajurusan' ,'id'); 
+        return $this->hasMany(datasiswa::class,'namajurusan' ,'id');
     }
 
     public function user()
     {
         return $this->hasMany(user::class,'namajurusan' ,'id');
+    }
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])
+        ->translatedFormat('l, d F Y');
     }
 }

@@ -27,7 +27,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Jurnal & Absen</em></ul>
+                        <ul><em>Data Siswa & Plotingan</em></ul>
                         <br>
                         <li>
                             <a href="/datasiswa">
@@ -41,17 +41,20 @@
                                 <span>Data Plotingan Siswa</span>
                             </a>
                         </li>
+                        <br>
+                        <ul><em>Jurnal & Absen</em></ul>
+                        <br>
                         <li>
                             <a href="/datatambahjurnal">
                                 <i class="feather ft-calendar"></i>
-                                <span>Tambah Jurnal Siswa</span>
+                                <span>Isi Jurnal</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="/dataabsen">
                                 <i class="feather ft-calendar"></i>
-                                <span>Data Absen Siswa</span>
+                                <span>Isi Absen</span>
                             </a>
                         </li>
                         @endif
@@ -66,7 +69,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Jurnal & Absen</em></ul>
+                        <ul><em>Data Siswa</em></ul>
                         <br>
                         <li>
                             <a href="/datasiswa">
@@ -74,14 +77,16 @@
                                 <span>Data Siswa</span>
                             </a>
                         </li>
-                        
+                        <br>
+                        <ul><em>Jurnal & Absen</em></ul>
+                        <br>
                         <li>
                             <a href="/datatambahjurnal">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="/dataabsen">
                                 <i class="feather ft-calendar"></i>
@@ -100,7 +105,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Jurnal & Absen</em></ul>
+                        <ul><em>Data Siswa & Plotingan</em></ul>
                         <br>
                         <li>
                             <a href="/datasiswa">
@@ -114,13 +119,16 @@
                                 <span>Data Plotingan Siswa</span>
                             </a>
                         </li>
+                        <br>
+                        <ul><em>Absen & Jurnal</em></ul>
+                        <br>
                         <li>
                             <a href="/datatambahjurnal">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="/dataabsen">
                                 <i class="feather ft-calendar"></i>
@@ -128,7 +136,7 @@
                             </a>
                         </li>
                         @endif
-                        
+
                         <!--=========================*
                                   Charts
                         *===========================-->

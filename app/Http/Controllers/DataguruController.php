@@ -79,15 +79,8 @@ class DataguruController extends Controller
         public function deletedataguru(Request $request, $id){
             $data = dataguru::find($id);
             $data3=User::find($data->user_id);
-            $data->delete([
-                'nip'=>$request->nip,
-                'namaguru'=>$request->namaguru,
-                'alamat'=>$request->alamat,
-                'notlpn'=>$request->notlpn,
-            ]);
-            $data3->delete([
-                'name'=>$request->namaguru
-            ]);
+            $data->delete();
+            $data3->delete();
 
             return redirect()->route('dataguru')->with('succes', 'Data Berhasil Di Delete');
         }

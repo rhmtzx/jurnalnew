@@ -35,7 +35,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -113,10 +113,10 @@
                                                     <td>{{ $row->namaguru }}</td>
                                                     <td>{{ $row->alamat }}</td>
                                                     <td>{{ $row->notlpn }}</td>
-                                                    <td>{{ $row->created_at}}</td>                                                
+                                                    <td>{{ $row->created_at}}</td>
                                                 <td>
                                                     <a href="/tampildataguru/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                    <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
+                                                    <a href="#" class="btn btn-danger deletedataguru" data-id="{{ $row->id }}"
                                                     data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
                                                 </td>
                                             </tr>
@@ -133,7 +133,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 

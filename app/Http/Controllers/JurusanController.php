@@ -7,6 +7,7 @@ use App\Models\jurusan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\datasiswa;
+use toastr;
 
 class JurusanController extends Controller
 {
@@ -32,8 +33,9 @@ class JurusanController extends Controller
             $data = jurusan::create([
                 'namajurusan' =>$request->namajurusan,
             ]);
-
-            return redirect()->route('datajurusan')->with('success', 'Data Berhasil Ditambahkan');
+            
+            toastr()->success('Data Berhasil Ditambahkan!');
+            return redirect()->route('datajurusan');
         }
         public function tampiljurusan($id){
             $data = jurusan::findOrfail($id);

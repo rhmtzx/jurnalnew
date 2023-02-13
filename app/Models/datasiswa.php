@@ -17,6 +17,12 @@ class datasiswa extends Model
 	{
 		return $this->belongsTo(jurusan::class, 'namajurusan', 'id');
 	}
+    
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])
+        ->translatedFormat('l, d F Y');
+    }
 	public function kelass()
 	{
 		return $this->belongsTo(kelas::class, 'kelas', 'id');

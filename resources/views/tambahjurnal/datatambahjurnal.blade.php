@@ -39,7 +39,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -76,7 +76,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Data Seluruh Jurnal</h5>
-                                    
+
                                 </div>
                                 <div class="card-body">
                                     <table id="jurnal" class="table nowrap align-middle" style="width:100%">
@@ -122,7 +122,7 @@
                                                 </td>
                                                 @elseif ($row3->statusjurnal == 'Menunggu Persetujuan')
                                                 <td>
-                                                    <span class="badge badge-soft-warning badge-border">Menunggu Persetujuan</span>                                                    
+                                                    <span class="badge badge-soft-warning badge-border">Menunggu Persetujuan</span>
                                                 </td>
                                                 @elseif ($row3->statusjurnal == 'Jurnal Ditolak')
                                                 <td>
@@ -153,7 +153,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 
