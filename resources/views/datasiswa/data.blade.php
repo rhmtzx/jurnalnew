@@ -57,7 +57,7 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Data Siswa Page</li>
+                                        <li class="breadcrumb-item active">Data Siswa</li>
                                     </ol>
                                 </div>
 
@@ -73,8 +73,7 @@
                                     <h5 class="card-title mb-0">Data Seluruh Siswa</h5>
                                     <br>
                                     <div>
-                                <a href="/tambahsiswa" class="btn btn-success mb-10">Tambah Siswa +</a>
-                                <a href="/datasiswa" class="btn btn-danger mb-10">Kembali</a>
+                                <a href="/tambahsiswa" class="btn btn-primary mb-10">Tambah Siswa +</a>
 
                                     </div>
                                     <br>
@@ -124,7 +123,10 @@
                                             </tr>
                                             @endforeach
                                         </tbody>
+
                                     </table>
+                                <a href="/datasiswa" class="btn btn-danger mb-10">Kembali</a>
+
                                 </div>
                             </div>
                         </div><!--end col-->

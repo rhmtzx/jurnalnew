@@ -52,12 +52,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Dudi</h4>
+                                <h4 class="mb-sm-0">Update Data Dudi</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Data Dudi</a></li>
-                                        <li class="breadcrumb-item active">Edit Data Dudi</li>
+                                        <li class="breadcrumb-item active">Update Data Dudi</li>
                                     </ol>
                                 </div>
 
@@ -71,7 +71,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Edit Data Dudi</h5>
+                                    <h5 class="card-title mb-0">Update Data Dudi</h5>
                                     
                                 </div>
                                 <div class="card-body">
@@ -110,7 +110,7 @@
                                         <br>
                                         <br>
                                     <div class="mt-4">
-                                        <button type="submit" class="btn btn-primary">Edit Data</button>
+                                        <button type="submit" class="btn btn-primary">Update Data</button>
                                         <a href="/datadudi" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                     </div>
                                 </form>          

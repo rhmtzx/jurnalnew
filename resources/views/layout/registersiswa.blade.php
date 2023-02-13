@@ -63,16 +63,16 @@
 
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
-                                    <h5 class="text-primary">Buat Akun Siswa</h5>
-                                    <p class="text-muted">Get your free velzon account now</p>
+                                    <h5 class="text-primary">REGISTER AKUN</h5>
+                                    <p class="text-muted">Register Akun Siswa</p>
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form class="col s12" action="/registerusersiswa" method="POST">
                                         @csrf
                                         <!-- email -->
                                         <div class="mb-3">
-                                            <label for="nissiswa" class="form-label">NIS <span class="text-danger">*</span></label>
-                                            <input type="number" class="form-control" name="nissiswa" id="nissiswa" placeholder="Enter email address" required>
+                                            <label for="nissiswa" class="form-label">NIS Siswa<span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="nissiswa" id="nissiswa" placeholder="Masukkan Nis Siswa" required>
 
                                         </div>
                                         @error('nissiswa')
@@ -82,26 +82,14 @@
                                         @enderror
                                         <div class="mb-3">
                                             <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter email address" required>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
 
                                         </div>
-                                        <!-- email -->
-
-                                        <!-- <div class="mb-3">
-                                            <label for="kelas" class="form-label">Kelas Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="kelas" id="kelas" placeholder="Enter email address" required>
-
-                                        </div> -->
+                                        
                                         <div class="col-lg-12">
                                             <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
-                                            <!-- <select class="form-select mb-3" aria-label="Default select example">
-                                                <option selected>Select your Status </option>
-                                                <option value="1">Declined Payment</option>
-                                                <option value="2">Delivery Error</option>
-                                                <option value="3">Wrong Amount</option>
-                                            </select> -->
                                             <select class="form-control" name="namajurusan" id="namajurusan">
-                                                <option value="" selected disabled>Pilih Jurusan</option>
+                                                <option value="" selected disabled>- Pilih Jurusan Siswa -</option>
                                                 @foreach($data as $hi)
                                                 <option value="{{ $hi->id }}">{{ $hi->namajurusan }}</option>
                                                 @endforeach
@@ -110,21 +98,21 @@
                                         <br>
                                         <div class="mb-3">
                                             <label for="alamatsiswa" class="form-label">Alamat Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="alamatsiswa" id="alamatsiswa" placeholder="Enter email address" required>
+                                            <input type="text" class="form-control" name="alamatsiswa" id="alamatsiswa" placeholder="Masukkan Alamat Siswa" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="notlpsiswa" class="form-label">No Telepon Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="notlpsiswa" id="notlpsiswa" placeholder="Enter email address" required>
+                                            <input type="text" class="form-control" name="notlpsiswa" id="notlpsiswa" placeholder="Masukkan No Telepon Siswa" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="email" id="email" placeholder="Enter email address" required>
+                                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" required>
                                         </div>
                                         <!-- pwd -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="password-input">Password</label>
+                                            <label class="form-label" for="password-input">Buat Password</label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput">
+                                                <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password-input" aria-describedby="passwordInput">
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
                                                 <div class="invalid-feedback">
                                                     Please enter password
@@ -138,14 +126,14 @@
                                         @enderror
                                         <div class="mb-3">
                                             <label for="kd_guru" class="form-label">Masukkan Kode Guru Pembimbing <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="kd_guru" id="kd_guru" placeholder="Enter email address" required>
+                                            <input type="text" class="form-control" name="kd_guru" id="kd_guru" placeholder="Masukkan Kode Guru" required>
                                         </div>
-                                        <label for=""><h6>Info : Pastikan kode benar!!</h6> </label>
+                                        <label for=""><h6><em>Info : Pastikan kode benar!!</em></h6> </label>
                                         <div class="mb-3">
                                             <label for="kd_dudi" class="form-label">Masukkan Kode Dudi<span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="kd_dudi" id="kd_dudi" placeholder="Enter email address" required>
+                                            <input type="text" class="form-control" name="kd_dudi" id="kd_dudi" placeholder="Masukkan Kode Dudi" required>
                                         </div>
-                                        <label for=""><h6>Info : Pastikan kode benar!!</h6> </label>
+                                        <label for=""><em><h6>Info : Pastikan kode benar!!</h6></em></label>
                                         {{-- <div class="row m-t-5">
                                             <div class="col s7">
                                                 <label>
@@ -157,7 +145,7 @@
                                         <!-- pwd -->
                                         <div class="row m-t-40">
                                             <div class="mt-4">
-                                                <button class="btn btn-success w-100" type="submit">Sign Up</button>
+                                                <button class="btn btn-success w-100" type="submit">Register</button>
                                             </div>
                                         </div>
                                     </form>
@@ -186,7 +174,8 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>document.write(new Date().getFullYear())</script> J | On. Crafted with by RQTeams
+                                
                             </p>
                         </div>
                     </div>

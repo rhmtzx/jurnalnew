@@ -52,12 +52,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Jurusan</h4>
+                                <h4 class="mb-sm-0">Update Data Jurusan</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Edit Data Jurusan</li>
+                                        <li class="breadcrumb-item active">Update Data Jurusan</li>
                                     </ol>
                                 </div>
 
@@ -71,7 +71,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Edit Data Jurusan</h5>
+                                    <h5 class="card-title mb-0">Update Data Jurusan</h5>
                                     
                                 </div>
                                 <div class="card-body">
@@ -80,7 +80,7 @@
                                 @csrf
                                 <div class="mb-3">
                                     <br>
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Jurusan</h6></label> 
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Nama Jurusan</h6></label> 
                                     <input type="text" name="namajurusan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->namajurusan }}">
                                     <br>
@@ -91,7 +91,7 @@
                                     @enderror
                                     <br>
                                     <div class="mt-4">
-                                        <button type="submit" class="btn btn-primary">Edit Data</button>
+                                        <button type="submit" class="btn btn-primary">Update Data</button>
                                         <a href="/datajurusan" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                     </div>
                             </form> 

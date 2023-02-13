@@ -71,10 +71,10 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Data seluruh Guru</h5>
+                                    <h5 class="card-title mb-0">Data Seluruh Guru</h5>
                                     <br>
                                     <div>
-                                <a href="/tambahdataguru" class="btn btn-success mb-10">Tambah Guru +</a>
+                                <a href="/tambahdataguru" class="btn btn-primary mb-10">Tambah Guru +</a>
                                     </div>
                                     <br>
                                 </div>

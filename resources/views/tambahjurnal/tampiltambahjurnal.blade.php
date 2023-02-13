@@ -52,12 +52,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Edit Jurnal Page</h4>
+                                <h4 class="mb-sm-0">Update Jurnal Page</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Data Siswa</a></li>
-                                        <li class="breadcrumb-item active">Edit Jurnal</li>
+                                        <li class="breadcrumb-item active">Update Jurnal</li>
                                     </ol>
                                 </div>
 
@@ -71,7 +71,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Edit Jurnal Jurnal</h5>
+                                    <h5 class="card-title mb-0">Update Jurnal Jurnal</h5>
                                     
                                 </div>
                                 <div class="card-body">
@@ -81,7 +81,7 @@
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h5>User Siswa</h5></label>
                                                 <input type="text" name="usersiswa" class="form-control" id="exampleInputEmail1"
-                                                aria-describedby="emailHelp" value="{{ $data->usersiswa }}">
+                                                aria-describedby="emailHelp" value="{{ $data->usersiswa }}" readonly="">
                                             </div>
                                             
                                             <br>
@@ -114,7 +114,7 @@
                                             <br>
                                             
                                             <div class="mb-1">
-                                                <label for="exampleInputEmail1" class="form-label"><h5>Edit Jurnal</h5></label>
+                                                <label for="exampleInputEmail1" class="form-label"><h5>Update Foto</h5></label>
                                         
                                                 <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
                                                 alt="" style="width: 90px" alt="">
@@ -122,7 +122,7 @@
                                                 <input type="file" name="foto" class="form-control">
                                         </div>
                                             <br>
-                                            <button type="submit" class="btn btn-primary">Edit Jurnal</button>
+                                            <button type="submit" class="btn btn-primary">Update Jurnal</button>
                                             <a href="/datatambahjurnal" class="btn btn-danger mb-10">Kembali</a>
 
                                         </form>
