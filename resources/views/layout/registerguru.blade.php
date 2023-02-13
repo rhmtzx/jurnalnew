@@ -71,7 +71,7 @@
                                         @csrf
                                         <!-- email -->
                                         <div class="mb-3">
-                                            <label for="nip" class="form-label">NIP <span class="text-danger">*</span></label>
+                                            <label for="nip" class="form-label">NIP Guru <span class="text-danger">*</span></label>
                                             <input type="number" class="form-control" name="nip" id="nip" placeholder="Masukkan NIP Guru" required>
                                             <div class="invalid-feedback">
                                                 Please enter email
@@ -116,7 +116,7 @@
                                             </div>
                                         </div>
                                         <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Sign Up</button>
+                                            <button class="btn btn-success w-100" type="submit">Register</button>
                                         </div>
                                     </form>
 
@@ -127,7 +127,7 @@
                         <!-- end card -->
 
                         <div class="mt-4 text-center">
-                            <p class="mb-0">Sudah Punya Akun ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
+                            <p class="mb-0">Sudah Punya Akun Guru ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
                         </div>
 
                     </div>
@@ -145,7 +145,8 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>document.write(new Date().getFullYear())</script> J | On. Crafted with by RQTeams
+                                
                             </p>
                         </div>
                     </div>

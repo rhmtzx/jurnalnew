@@ -18,7 +18,7 @@
                 <nav>
                     <ul class="metismenu" id="menu">
                         @if(Auth::user()->role == 'Siswa')
-                        <ul>D A S H B O A R D</ul>
+                        <ul><em>Dashboard</em></ul>
                         <br>
                             <li class="active">
                             <a href="/dashboard">
@@ -27,7 +27,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul>S E K O L A H</ul>
+                        <ul><em>Jurnal & Absen</em></ul>
                         <br>
                         <li>
                             <a href="/datasiswa">
@@ -57,7 +57,7 @@
                         @endif
 
                         @if(Auth::user()->role == 'Dudi')
-                        <ul>D A S H B O A R D</ul>
+                        <ul><em>Dashboard</em></ul>
                         <br>
                             <li class="active">
                             <a href="/dashboard">
@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul>S E K O L A H</ul>
+                        <ul><em>Jurnal & Absen</em></ul>
                         <br>
                         <li>
                             <a href="/datasiswa">
@@ -91,7 +91,7 @@
                         @endif
 
                         @if(Auth::user()->role == 'Guru')
-                        <ul>D A S H B O A R D</ul>
+                        <ul><em>Dashboard</em></ul>
                         <br>
                             <li class="active">
                             <a href="/dashboard">
@@ -100,7 +100,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul>S E K O L A H</ul>
+                        <ul><em>Jurnal & Absen</em></ul>
                         <br>
                         <li>
                             <a href="/datasiswa">

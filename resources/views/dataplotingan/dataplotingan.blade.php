@@ -74,7 +74,7 @@
                                     <h5 class="card-title mb-0">Data Seluruh Plotingan</h5>
                                     <br>
                                     <div>
-                                <a href="/tambahdataplotingan" class="btn btn-success mb-10">Tambah Plotingan +</a>
+                                <a href="/tambahdataplotingan" class="btn btn-primary mb-10">Tambah Plotingan +</a>
                                     </div>
                                     <br>
                                 </div>
@@ -114,7 +114,7 @@
                                                     
                                                 
                                                 <td>
-                                                    <a href="/tampiljurusan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                    <a href="/tampildataplotingan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                     <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
                                                     data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
                                                 </td>

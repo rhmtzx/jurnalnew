@@ -17,7 +17,7 @@
                         </ul>
                             <br>
                             <div class="single-table">
-                                <a href="/tambahabsen" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
+                                <!-- <a href="/tambahabsen" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a> -->
                                 <div class="table-responsive">
                                     <br>
                                     <table id="absen" class="table text-center table-bordered dt-responsive nowrap"

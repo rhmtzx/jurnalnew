@@ -52,7 +52,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Jurusan</h4>
+                                <h4 class="mb-sm-0">Tambah Data Jurusan</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
@@ -79,7 +79,7 @@
                                             <br>
                                             @csrf
                                             <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Jurusan</h6></label>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Nama Jurusan</h6></label>
                                     <input type="text" name="namajurusan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" placeholder="Masukkan Jurusan">
                                     @error('namajurusan')
@@ -87,9 +87,10 @@
                                         {{ $message }}
                                     </div>
                                     @enderror
+                                    
                                     <br>
                                     <br>
-                                            <button type="submit" class="btn btn-primary">Submit Data Jurusan</button>
+                                            <button type="submit" class="btn btn-primary">Submit Data</button>
                                             <a href="/datajurusan" class="btn btn-danger mb-10">Kembali</a>
 
                                         </form> 

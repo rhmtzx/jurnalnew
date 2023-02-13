@@ -52,12 +52,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Jurusan</h4>
+                                <h4 class="mb-sm-0">Update Data Guru</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Edit Data Jurusan</li>
+                                        <li class="breadcrumb-item active">Update Data Guru</li>
                                     </ol>
                                 </div>
 
@@ -71,7 +71,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Edit Data Jurusan</h5>
+                                    <h5 class="card-title mb-0">Update Data Guru</h5>
                                     
                                 </div>
                                 <div class="card-body">
@@ -79,35 +79,35 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <br>
+                                    
                                     <label for="exampleInputEmail1" class="form-label"><h6>NIP</h6></label> 
                                     <input type="number" name="nip" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->nip }}">
                                     <br>
-                                    <br>
+                                    
                                 <div class="mb-3">
-                                    <br>
+                                    
                                     <label for="exampleInputEmail1" class="form-label"><h6>Nama Guru</h6></label> 
                                     <input type="text" name="namaguru" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->namaguru }}">
                                     <br>
-                                    <br>
+                                    
                                 <div class="mb-3">
-                                    <br>
+                                    
                                     <label for="exampleInputEmail1" class="form-label"><h6>Alamat Guru</h6></label> 
                                     <input type="text" name="alamat" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->alamat }}">
                                     <br>
-                                    <br>
+                                    
                                 <div class="mb-3">
-                                    <br>
+                                    
                                     <label for="exampleInputEmail1" class="form-label"><h6>No Telepon Guru</h6></label> 
                                     <input type="number" name="notlpn" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->notlpn }}">
                                     <br>
-                                    <br>
+                                    
                                     <div class="mt-4">
-                                        <button type="submit" class="btn btn-primary">Edit Data</button>
+                                        <button type="submit" class="btn btn-primary">Update Data</button>
                                         <a href="/dataguru" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
                                     </div>
                                 </form>

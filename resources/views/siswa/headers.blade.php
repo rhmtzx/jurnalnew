@@ -38,7 +38,7 @@
                         </li> -->
                         <li id="full-view" class="d_none_sm"><i class="feather ft-maximize"></i></li>
                         <li id="full-view-exit" class="d_none_sm"><i class="feather ft-minimize"></i></li>
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <i class="ti-bell dropdown-toggle" data-toggle="dropdown"><span></span></i>
                             <div class="dropdown-menu bell-notify-box notify-box">
                                 <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
@@ -87,7 +87,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- <li class="dropdown">
                             <i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span></span></i>
                             <div class="dropdown-menu notify-box nt-enveloper-box">

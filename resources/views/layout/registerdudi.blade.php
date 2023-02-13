@@ -93,7 +93,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Masukkan Email <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email" required>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Dudi" required>
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
@@ -114,7 +114,7 @@
                                                 <input type="file" name="foto" class="form-control" >
                                             </div>
                                         <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Sign Up</button>
+                                            <button class="btn btn-success w-100" type="submit">Register</button>
                                         </div>
                                     </form>
 
@@ -125,7 +125,7 @@
                         <!-- end card -->
 
                         <div class="mt-4 text-center">
-                            <p class="mb-0">Sudah Punya Akun ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
+                            <p class="mb-0">Sudah Punya Akun Dudi ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
                         </div>
 
                     </div>
@@ -143,7 +143,7 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>document.write(new Date().getFullYear())</script> J | On. Crafted with by RQTeams
                             </p>
                         </div>
                     </div>
