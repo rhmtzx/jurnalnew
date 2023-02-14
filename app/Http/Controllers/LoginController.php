@@ -94,7 +94,9 @@ class LoginController extends Controller
         ],[
             'email.unique' => 'Email Sudah Digunakan',
             'nissiswa.unique' => 'NIS Sudah Digunakan',
+            'nissiswa.required' => 'NIS Harus Di isi',
             'namasiswa.unique' => 'Nama Sudah Digunakan',
+            'namasiswa.required' => 'Nama Harus Di Isi',
             'email.required' => 'Harus Diisi',
             'password.min' => 'Isi Password Minimal 6 Huruf'
         ]);
@@ -207,8 +209,8 @@ class LoginController extends Controller
     }
 
 
-    
-    
+
+
     public function logout(){
         Auth::logout();
         return redirect('landinghome')->with('success','Berhasil Logout');

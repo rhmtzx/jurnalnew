@@ -84,8 +84,8 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Foto</th>
                                                 <th scope="col">Nama Siswa</th>
+                                                <th scope="col">Foto</th>
                                                 <th scope="col">Keterangan</th>
                                                 <th scope="col">Status Jurnal</th>
                                                 <th scope="col">Dibuat</th>
@@ -109,7 +109,7 @@
                                         <img src="{{ asset('fotodudi/' . $row3->foto) }}" alt=""
                                         style="width: 40px">
                                     </td>
-                                    <td>{{ $row3->usersiswa }}</td>
+                                    {{-- <td>{{ $row3->usersiswa }}</td> --}}
                                     <td>{{ $row3->keterangan }}</td>
                                                 @if ($row3->statusjurnal == 'Telah Disetujui')
                                                 <td>
