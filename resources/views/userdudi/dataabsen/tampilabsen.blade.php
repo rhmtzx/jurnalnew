@@ -14,7 +14,7 @@
                         <h4 class="card_title">Edit Data Absen</h4>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
-                            
+
                             <div class="single-table">
                                 <div class="table-responsive">
                                  <div id="content" class="main-content">
@@ -24,11 +24,10 @@
                                     <form action="/updateabsen/{{ $data->id }}" method="POST" enctype="multipart\form-data" >
 
                                         @csrf
-                                        <br>
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
-                                                <input type="text" name="usersiswa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->usersiswa}}"
-                                                readonly="">                                         
+                                                {{-- <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label> --}}
+                                                <input type="text" hidden name="usersiswa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->usersiswa}}"
+                                                readonly="">
                                                 <br>
 
                                                 <label class="col-form-label"><h6>Keterangan :</h6></label>
@@ -46,9 +45,9 @@
                                                     <input type="radio" id="Izin" name="keterangan" value="Izin" class="custom-control-input" <?php if ($data['keterangan'] == 'Izin'){ echo 'checked';
                             } ?>>
                                                     <label class="custom-control-label" for="Izin">Izin</label>
-                                                </div>     
+                                                </div>
 
-                                                
+
                                                 <div class="form-group">
                                                     <label class="col-form-label"><h6>Status Jurnal</h6></label>
                                                     <select class="form-control" id="statusjurnal" name="statusjurnal">

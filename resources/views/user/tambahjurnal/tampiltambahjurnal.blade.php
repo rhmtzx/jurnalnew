@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+
     <div class="main-content-inner">
         <div class="row">
             <!-- Progress Table start -->
@@ -14,25 +14,31 @@
                         <h4 class="card_title">Edit Data Jurnal</h4>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
-                            
+
                             <div class="single-table">
                                 <div class="table-responsive">
                                    <div id="content" class="main-content">
-                                    
 
-                                    
+
+
                                     <form action="/updatetambahjurnal/{{ $data->id }}" method="POST" enctype="multipart\form-data" >
 
                                         @csrf
 
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
+                                            {{-- <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label> --}}
                                             @foreach ( $datas as $a)
-                                            <input type="text" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
+                                            <input type="hidden" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
                                             id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
-                                            value="{{ $a->namasiswa }}">
+                                            value="{{ $a->id }}">
                                             @endforeach
-                                            
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
+                                                @foreach ( $datas as $c)
+                                                <input type="text" name="" class="form-control form-control-lg input-rounded mb-4"
+                                                id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
+                                                value="{{ $c->namasiswa }}">
+                                                @endforeach
                                             <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"><h6>Judul</h6></label>
                                                 <input type="text" name="judul" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Judul Jurnal" value="{{ $data->judul }}">
@@ -56,15 +62,15 @@
                                                 </div>
                                             </section>
                                             <br>
-                                            
+
                                             <div class="form-group">
-                                                    <label class="col-form-label"><h6>Status Jurnal</h6></label>
-                                                    <select class="form-control" id="statusjurnal" name="statusjurnal">
+                                                    {{-- <label class="col-form-label"><h6>Status Jurnal</h6></label> --}}
+                                                    <select class="form-control" hidden id="statusjurnal" name="statusjurnal">
                                                         <option selected disabled="">- Pilih Status -</option>
                                                         <option value="Menunggu Persetujuan" {{ $data->statusjurnal == 'Menunggu Persetujuan' ? 'selected' : '' }}>Menunggu Persetujuan</option>
-                                                        <option disabled value="Telah Disetujui" {{ $data->statusjurnal == 'Telah Disetujui' ? 'selected' : '' }}>Telah Disetujui</option>
-                                                        <option disabled value="Jurnal Ditolak" {{ $data->statusjurnal == 'Jurnal Ditolak' ? 'selected' : '' }}>Jurnal Ditolak</option>
-                                                        
+                                                        <option value="Telah Disetujui" {{ $data->statusjurnal == 'Telah Disetujui' ? 'selected' : '' }}>Telah Disetujui</option>
+                                                        <option value="Jurnal Ditolak" {{ $data->statusjurnal == 'Jurnal Ditolak' ? 'selected' : '' }}>Jurnal Ditolak</option>
+
                                                     </select>
                                                 </div>
 
@@ -82,12 +88,12 @@
                                             </div>
 
                                             <br>
-                                            
+
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Update Data</button>
                                             <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
 
                                         </form>
-                                        
+
                                     </div>
                                 </div>
                             </div>

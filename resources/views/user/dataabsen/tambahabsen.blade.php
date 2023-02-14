@@ -14,7 +14,7 @@
                         <h4 class="card_title">Tambah Data Absen</h4>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
-                            
+
                             <div class="single-table">
                                 <div class="table-responsive">
                                  <div id="content" class="main-content">
@@ -26,18 +26,31 @@
                                         <br>
 
                                         <div class="mb-3">
-                                            <label class="col-form-label"><h6>Nama Siswa</h6></label>
+                                            {{-- <label class="col-form-label"><h6>Nama Siswa</h6></label> --}}
                                             @foreach ( $data as $b)
-                                            <input type="text" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
+                                            <input type="hidden" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
                                             id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
-                                            value="{{ $b->namasiswa }}">
+                                            value="{{ $b->id }}">
                                             @endforeach
                                             @error('usersiswa')
                                             <div class="text-danger">
                                                 {{ $message }}
                                             </div>
                                             @enderror
-                                            
+                                            <div class="mb-3">
+                                                <label class="col-form-label"><h6>Nama Siswa</h6></label>
+                                                @foreach ( $data as $c)
+                                                <input type="text" name="" class="form-control form-control-lg input-rounded mb-4"
+                                                id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
+                                                value="{{ $c->namasiswa }}">
+                                                @endforeach
+                                                @error('usersiswa')
+                                                <div class="text-danger">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
+
+
 
                                 <label class="col-form-label"><h6>Keterangan :</h6></label>
                                 <div class="custom-control custom-radio primary-radio">
@@ -92,7 +105,7 @@
                                                 <div class="custom-file">
                                                     <input type="file" name="foto" class="custom-file-input" id="inputGroupFile01">
                                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                                    
+
                                                 </div>
                                             </div>
                                             <a for="exampleInputEmail1" class="form-label">
@@ -101,8 +114,8 @@
                                             <br>
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>
                                             <a href="/dataabsen" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
-                                        </form> 
-                                        
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>

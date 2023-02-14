@@ -24,17 +24,31 @@
                                     <form action="/inserttambahjurnal" method="POST" enctype="multipart\form-data" >
                                         @csrf
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
+                                            {{-- <label for="exampleInputEmail1" class="form-label">Nama Siswa</label> --}}
                                             @foreach ( $data as $b)
-                                            <input type="text" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
+                                            {{-- @dd($b); --}}
+                                            <input type="hidden" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
                                             id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
-                                            value="{{ $b->namasiswa }}">
+                                            value="{{ $b->id }}">
                                             @endforeach
                                             @error('namasiswa')
                                             <div class="text-danger">
                                                 {{ $message }}
                                             </div>
                                             @enderror
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
+                                                @foreach ( $data as $c)
+                                                {{-- @dd($b); --}}
+                                                <input type="text" name="" class="form-control form-control-lg input-rounded mb-4"
+                                                id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
+                                                value="{{ $c->namasiswa }}">
+                                                @endforeach
+                                                @error('namasiswa')
+                                                <div class="text-danger">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                             <br>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Judul</h6></label>
@@ -77,7 +91,7 @@
                                             @endif
                                             <br>
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto Dudi <span class="text-danger">*</span></h6></label>
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto </h6></label>
                                                 <br>
                                                 <input type="file" name="foto" class="form-control" >
                                             </div>

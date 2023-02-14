@@ -87,12 +87,14 @@ class LoginController extends Controller
         // dd($request->all());
         $this->validate($request,[
         'nissiswa'=> 'required|unique:datasiswas',
+        'namasiswa'=> 'required|unique:datasiswas',
             'email' => 'required|unique:users',
             'password' => 'required|min:6'
 
         ],[
             'email.unique' => 'Email Sudah Digunakan',
             'nissiswa.unique' => 'NIS Sudah Digunakan',
+            'namasiswa.unique' => 'Nama Sudah Digunakan',
             'email.required' => 'Harus Diisi',
             'password.min' => 'Isi Password Minimal 6 Huruf'
         ]);
@@ -122,7 +124,6 @@ class LoginController extends Controller
 
 
 
-        toastr()->success('Data Berhasil Ditambahkan!');
         return redirect('/login')->with('success', 'Data Berhasil Ditambahkan');
     }
 

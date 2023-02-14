@@ -35,7 +35,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -72,7 +72,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Data Seluruh Absen</h5>
-                                    
+
                                 </div>
                                 <div class="card-body">
                                     <table id="Jurnal" class="table nowrap align-middle" style="width:100%">
@@ -104,7 +104,7 @@
                                         </div>
                                     </th>
                                     <th scope="row">{{ $no++ }}</th>
-                                    <td>{{ $row3->usersiswa }}</td>
+                                    <td>{{ $row3->namasiswa->namasiswa }}</td>
                                     <td>
                                         <img src="{{ asset('fotodudi/' . $row3->foto) }}" alt=""
                                         style="width: 40px">
@@ -143,7 +143,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 

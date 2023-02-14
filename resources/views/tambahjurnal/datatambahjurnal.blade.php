@@ -109,7 +109,7 @@
                                         </div>
                                     </th>
                                     <th scope="row">{{ $no++ }}</th>
-                                    <td>{{ $row3->usersiswa }}</td>
+                                    <td>{{ $row3->namasiswa->namasiswa }}</td>
                                     <td>
                                         <img src="{{ asset('fotodudi/' . $row3->foto) }}" alt=""
                                              style="width: 40px">

@@ -30,18 +30,18 @@
                                             <th scope="col">Status Jurnal</th>
                                             <th scope="col">Dibuat</th>
                                             <th scope="col">Aksi</th>
-                                        
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php
                                         $no = 1;
                                         @endphp
-                                        
+
                                             @foreach($data4 as $row4)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row4->usersiswa }}</td>
+                                                <td>{{ $row4->namasiswa->namasiswa }}</td>
                                                 <td>
                                                     <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
                                                     style="width: 40px">
@@ -73,7 +73,7 @@
                                                     </td>
                                                 </tr>
                                                 @endforeach
-                                                
+
                                             </tbody>
                                         </table>
                                     </div>

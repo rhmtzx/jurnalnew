@@ -73,10 +73,10 @@
                                     <h5 class="card-title mb-0">Data Seluruh Siswa</h5>
                                     <br>
                                     <div>
-                                <a href="/tambahsiswa" class="btn btn-primary mb-10">Tambah Siswa +</a>
+                                {{-- <a href="/tambahsiswa" class="btn btn-primary mb-10">Tambah Siswa +</a>
 
                                     </div>
-                                    <br>
+                                    <br> --}}
                                 </div>
                                 <div class="card-body">
                                     <table id="siswa" class="table nowrap align-middle" style="width:100%">

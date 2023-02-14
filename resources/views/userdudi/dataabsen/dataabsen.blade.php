@@ -11,7 +11,7 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Absen Siswa</h4>                       
+                        <h4 class="card_title">Data Absen Siswa</h4>
                         <ul>
                             <li><h6>Seluruh Data Absen Ada Disini</h6></li>
                         </ul>
@@ -37,7 +37,7 @@
                                         @php
                                         $no = 1;
                                         @endphp
-                                        
+
                                         @foreach ($data4 as $row4)
                                         <tr>
                                             <th scope="row4">{{ $no++ }}</th>
@@ -46,7 +46,7 @@
                                                 <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
                                                 style="width: 40px">
                                             </td>
-                                            <td>{{ $row4->usersiswa }}</td>
+                                            <td>{{ $row4->namasiswa->namasiswa }}</td>
 
                                             <td>{{ $row4->keterangan }}</td>
                                             <!-- <td>{{ $row4->statusjurnal }}</td> -->
@@ -71,7 +71,7 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                            
+
                                             </tbody>
                                         </table>
                                     </div>

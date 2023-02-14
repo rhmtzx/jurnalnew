@@ -83,9 +83,12 @@
                                         <div class="mb-3">
                                             <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
-
                                         </div>
-                                        
+                                        @error('namasiswa')
+                                        <div class="text-danger">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                         <div class="col-lg-12">
                                             <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
                                             <select class="form-control" name="namajurusan" id="namajurusan">
@@ -175,7 +178,7 @@
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
                                 <script>document.write(new Date().getFullYear())</script> J | On. Crafted with by RQTeams
-                                
+
                             </p>
                         </div>
                     </div>

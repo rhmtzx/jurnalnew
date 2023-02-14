@@ -43,7 +43,7 @@
                                         @foreach ($data as $row)
                                         <tr>
                                             <th scope="row">{{ $no++ }}</th>
-                                            <td>{{ $row->usersiswa }}</td>
+                                            <td>{{ $row->namasiswa->namasiswa }}</td>
 
                                             <td>
                                                 <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""

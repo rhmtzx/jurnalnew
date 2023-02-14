@@ -16,7 +16,7 @@
                             <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
-                                
+
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -29,18 +29,18 @@
                                             <th scope="col">Judul</th>
                                             <th scope="col">Deskripsi</th>
                                             <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Dibuat</th>                                        
+                                            <th scope="col">Dibuat</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php
                                         $no = 1;
                                         @endphp
-                                        
+
                                             @foreach($data2 as $row2)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row2->usersiswa }}</td>
+                                                <td>{{ $row2->namasiswa->namasiswa }}</td>
                                                 <td>
                                                     <img src="{{ asset('fotodudi/' . $row2->foto) }}" alt=""
                                                     style="width: 40px">
@@ -61,10 +61,10 @@
                                                 </td>
                                                 @endif
                                                 <td>{{ $row2->created_at}}</td>
-                                               
+
                                                 </tr>
                                                 @endforeach
-                                                
+
                                             </tbody>
                                         </table>
                                     </div>

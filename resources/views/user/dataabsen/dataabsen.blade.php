@@ -11,7 +11,7 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Absen Siswa</h4>                       
+                        <h4 class="card_title">Data Absen Siswa</h4>
                         <ul>
                             <li><h6>Seluruh Data Absen Ada Disini</h6></li>
                         </ul>
@@ -46,7 +46,7 @@
                                                 <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
                                                 style="width: 40px">
                                             </td>
-                                            <td>{{ $row->usersiswa }}</td>
+                                            <td>{{ $row->namasiswa->namasiswa }}</td>
 
                                             <td>{{ $row->keterangan }}</td>
                                             <!-- <td>{{ $row->statusjurnal }}</td> -->
@@ -65,9 +65,9 @@
                                             @endif
                                             <td>{{ $row->created_at}}</td>
                                             <td scope="row">
-                                                   <!--  <a href="/tampilabsen/{{ $row->id }}"
+                                                   <a href="/tampilabsen/{{ $row->id }}"
                                                         class="btn btn-warning"><i
-                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a> -->
+                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                         <a href="#" class="btn btn-danger deleteabsen"
                                                         data-id="{{ $row->id }}"
                                                         data-keterangan="{{ $row->keterangan }}"><i
@@ -75,7 +75,7 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                            
+
                                             </tbody>
                                         </table>
                                     </div>

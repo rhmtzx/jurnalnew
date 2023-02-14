@@ -14,7 +14,7 @@
                         <h4 class="card_title">Edit Data Absen</h4>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
-                            
+
                             <div class="single-table">
                                 <div class="table-responsive">
                                  <div id="content" class="main-content">
@@ -24,15 +24,22 @@
                                     <form action="/updateabsen/{{ $data->id }}" method="POST" enctype="multipart\form-data" >
 
                                         @csrf
-                                        <br>
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
+                                            {{-- <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label> --}}
                                             @foreach ( $datas as $a)
-                                            <input type="text" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
+                                            <input type="hidden" name="usersiswa" class="form-control form-control-lg input-rounded mb-4"
                                             id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
-                                            value="{{ $a->namasiswa }}">
+                                            value="{{ $a->id }}">
                                             @endforeach
                                             <br>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
+                                                @foreach ( $datas as $c)
+                                                <input type="text" name="" class="form-control form-control-lg input-rounded mb-4"
+                                                id="exampleInputEmail1" readonly aria-describedby="emailHelp" placeholder="Halaman"
+                                                value="{{ $c->namasiswa }}">
+                                                @endforeach
+                                                <br>
 
                                                 <label class="col-form-label"><h6>Keterangan :</h6></label>
                                                 <div class="custom-control custom-radio primary-radio">
@@ -49,16 +56,17 @@
                                                     <input type="radio" id="Izin" name="keterangan" value="Izin" class="custom-control-input" <?php if ($data['keterangan'] == 'Izin'){ echo 'checked';
                             } ?>>
                                                     <label class="custom-control-label" for="Izin">Izin</label>
-                                                </div>     
-                                                
-                                                <div class="form-group">
-                                                    <label class="col-form-label"><h6>Status Jurnal</h6></label>
-                                                    <select class="form-control" id="statusjurnal" name="statusjurnal">
-                                                        <option selected disabled="">- Pilih Status -</option>
-                                                        <option value="Menunggu Persetujuan" {{ $data->statusjurnal == 'Menunggu Persetujuan' ? 'selected' : '' }}>Menunggu Persetujuan</option>
-                                                    </select>
                                                 </div>
 
+                                                <div class="form-group">
+                                                    {{-- <label class="col-form-label"><h6>Status Jurnal</h6></label> --}}
+                                                    <select class="form-control" hidden id="statusjurnal" name="statusjurnal">
+                                                        <option selected disabled="">- Pilih Status -</option>
+                                                        <option value="Menunggu Persetujuan" {{ $data->statusjurnal == 'Menunggu Persetujuan' ? 'selected' : '' }}>Menunggu Persetujuan</option>
+                                                        <option value="Telah Disetujui" {{ $data->statusjurnal == 'Telah Disetujui' ? 'selected' : '' }}>Telah Disetujui</option>
+                                                        <option  value="Jurnal Ditolak" {{ $data->statusjurnal == 'Jurnal Ditolak' ? 'selected' : '' }}>Jurnal Ditolak</option>
+                                                    </select>
+                                                </div>
                                                 <div class="mb-1">
                                                     <label for="exampleInputEmail1" class="form-label"><h6>Edit Foto</h6></label>
                                                     <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"

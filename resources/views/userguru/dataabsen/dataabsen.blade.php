@@ -15,7 +15,7 @@
                         <ul>
                             <li><h6>Seluruh Absen Siswa Ada Disini</h6></li>
                         </ul>
-                        
+
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">
@@ -29,7 +29,7 @@
                                             <th scope="col">Nama Siswa</th>
                                             <th scope="col">Keterangan</th>
                                             <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Dibuat</th>                                            
+                                            <th scope="col">Dibuat</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -43,7 +43,7 @@
                                                     <img src="{{ asset('fotodudi/' . $row2->foto) }}" alt=""
                                                     style="width: 40px">
                                                 </td>
-                                                <td>{{ $row2->usersiswa }}</td>
+                                                <td>{{ $row2->namasiswa->namasiswa }}</td>
                                                 <td>{{ $row2->keterangan }}</td>
 
                                                 @if ($row2->statusjurnal == 'Telah Disetujui')
@@ -60,7 +60,7 @@
                                                 </td>
                                             @endif
                                                 <td>{{ $row2->created_at}}</td>
-                                                
+
                                                 </tr>
                                             @endforeach
                                             </tbody>
