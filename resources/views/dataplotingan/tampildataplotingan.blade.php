@@ -110,7 +110,7 @@
                                         <select class="form-control" name="namadudip" id="namadudip">
                                             <option value="" selected disabled>Pilih</option>
                                             @foreach($dudi as $abc)
-                                            <option value="{{ $abc->id }}"<?php if($data->namadudip == $abc->id) {
+                                            <option value="{{ $abc->id }}" data-alamatdudip="{{ $abc->alamatdudi }}"<?php if($data->namadudip == $abc->id) {
                                                 echo 'selected';    
                                             }?> > {{ $abc->namadudi }} </option>
                                             @endforeach
@@ -119,12 +119,11 @@
                                     <br>
 
                                     <div class="mb-3">
-                                    <br>
                                     <label for="exampleInputEmail1" class="form-label"><h6>Alamat Dudi</h6></label> 
-                                    <input type="text" name="alamatdudip" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" readonly="" name="alamatdudip" class="form-control" id="alamatdudip"
                                     aria-describedby="emailHelp" value="{{ $data->alamatdudip }}">
                                     <br>
-                                    <br>
+                                    
 
                                             <div class="mt-4">
                                                 <button type="submit" class="btn btn-primary">Update Data</button>
@@ -181,7 +180,13 @@
                 $('#Jurnal').DataTable();
             });
         </script>
-
+        <script>
+            const namadudip = document.getElementById('namadudip')
+            namadudip.onchange = function(e) {
+            const alamatdudip = e.target.options[e.target.selectedIndex].dataset.alamatdudip    
+            document.getElementById('alamatdudip').value = alamatdudip;
+            }
+        </script>
     </body>
 
 

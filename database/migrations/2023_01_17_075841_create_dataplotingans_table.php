@@ -18,7 +18,7 @@ class CreateDataplotingansTable extends Migration
             $table->foreignid('namagurup');
             $table->foreignid('namasiswap');
             $table->foreignid('namadudip');
-            $table->foreignid('alamatdudip');
+            $table->string('alamatdudip');
             $table->timestamps();
         });
     }

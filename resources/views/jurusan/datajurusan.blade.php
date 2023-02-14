@@ -3,12 +3,7 @@
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 <head>
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" />
-=======
->>>>>>> b60a07f8b2575eda337cea3f926f133cd950d69f
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -40,7 +35,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-
+        
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -61,7 +56,7 @@
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Data Siswa</a></li>
                                         <li class="breadcrumb-item active">Data Jurusan</li>
                                     </ol>
                                 </div>
@@ -71,7 +66,7 @@
                     </div>
                     <!-- end page title -->
 
-
+                   
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
@@ -93,8 +88,8 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Nama Jurusan</th>
-
+                                                    <th scope="col">Nama Jurusan</th>
+                                                    <th scope="col">Dibuat</th>
                                                     <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
@@ -111,9 +106,9 @@
                                                 </th>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->namajurusan}}</td>
-
-
-
+                                                <td>{{ $row->created_at}}</td> 
+                                                    
+                                                
                                                 <td>
                                                     <a href="/tampiljurusan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                     <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
@@ -133,7 +128,7 @@
             </div>
             <!-- End Page-content -->
 
-
+            
         </div>
         <!-- end main content-->
 
@@ -155,13 +150,13 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
         <!-- DataTablesScript -->
         <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -173,7 +168,45 @@
             });
         </script>
 
-   
+    </body>
+
+    <script>
+        $('.deletetambahjurnal').click(function() {
+            var kategoriid = $(this).attr('data-id');
+            var kategori = $(this).attr('data-kategori');
+            swal({
+                title: "Yakin Ingin delete Data ?",
+                text: "Kamu Yakin Akan Menghapus Data Ini !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.location = "/deletetambahjurnal/" + kategoriid + ""
+                    swal("Data Berhasil Di Hapus", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Data Gagal Di Hapus");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        @if (Session::has('success'))
+        toastr.success("{{ Session::get('success') }}")
+        @endif
+    </script>
+
+    <script>
+        @if (Session::has('error'))
+        toastr.error("{{ Session::get('error') }}")
+        @endif
+    </script>
+
+</body>
 
 
 <!-- Mirrored from themesbrand.com/velzon/html/default/tables-datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:42:44 GMT -->
@@ -201,13 +234,17 @@
     });
 </script>
 
-    <script>
-        @if (Session::has('sukses'))
-        toastr.success("{{ Session::get('sukses') }}")
-        @endif
-    </script>
+<script>
+    @if (Session::has('success'))
+    toastr.success("{{ Session::get('success') }}")
+    @endif
+</script>
 
-
+<script>
+    @if (Session::has('error'))
+    toastr.error("{{ Session::get('error') }}")
+    @endif
+</script>
 
 <!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:10 GMT -->
 </html>

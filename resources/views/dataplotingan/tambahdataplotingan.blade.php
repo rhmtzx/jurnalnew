@@ -97,7 +97,7 @@
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Siswa</h5></label>
                                     <select class="form-control" name="namasiswap" id="namasiswap">
-                                        <option value="" selected disabled>Pilih Guru</option>
+                                        <option value="" selected disabled>Pilih Siswa</option>
                                         @foreach($siswa as $hi)
                                         <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
                                         @endforeach

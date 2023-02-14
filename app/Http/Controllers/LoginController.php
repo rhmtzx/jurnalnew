@@ -28,7 +28,7 @@ class LoginController extends Controller
             'password.required' => 'Masukkan Kata Sandi Anda!',
             'password.min' => 'Password Minimal 6 Huruf',
         ]);
-        toastr()->success('Berhasil Login!');
+        // toastr()->success('Berhasil Login!');
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Admin'])) {
             return redirect('/');
@@ -86,17 +86,20 @@ class LoginController extends Controller
 
         // dd($request->all());
         $this->validate($request,[
-        'nissiswa'=> 'required|unique:datasiswas',
-        'namasiswa'=> 'required|unique:datasiswas',
+            'nissiswa'=> 'required|unique:datasiswas',
+            'namasiswa'=> 'unique:datasiswas',
             'email' => 'required|unique:users',
             'password' => 'required|min:6'
 
         ],[
             'email.unique' => 'Email Sudah Digunakan',
             'nissiswa.unique' => 'NIS Sudah Digunakan',
+            'nissiswa.required' => 'NIS Harus Diisi',
             'namasiswa.unique' => 'Nama Sudah Digunakan',
+            'email.unique' => 'Email Sudah Digunakan',
             'email.required' => 'Harus Diisi',
-            'password.min' => 'Isi Password Minimal 6 Huruf'
+            'password.required' => 'Password Harus Diisi',
+            'password.min' => 'Isi Password Minimal 6 Huruf',
         ]);
 
         $user=User::create([
