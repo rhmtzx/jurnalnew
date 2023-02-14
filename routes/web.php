@@ -188,6 +188,7 @@ Route::middleware('auth')->group(function () {
     // Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen');
 
 });
+
 //loginadmin
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');;
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');

@@ -88,9 +88,10 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Nama Guru</th>
+                                                    <th scope="col">Nama Guru</th>
                                                     <th scope="col">Nama Siswa</th>
                                                     <th scope="col">Nama Dudi</th>
+                                                    <th scope="col">Alamat Dudi</th>
                                                     <th scope="col">Dibuat</th>
                                                     <th scope="col">Aksi</th>
                                             </tr>
@@ -110,6 +111,7 @@
                                                 <td>{{ $row->gurus->namaguru}}</td>
                                                 <td>{{ $row->siswas->namasiswa}}</td>
                                                 <td>{{ $row->dudis->namadudi}}</td>
+                                                <td>{{ $row->alamatdudip}}</td>
                                                 <td>{{ $row->created_at}}</td> 
                                                     
                                                 

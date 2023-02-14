@@ -22,7 +22,7 @@
                         <br>
                             <li class="active">
                             <a href="/dashboard">
-                                <i class="feather ft-home"></i>
+                                <i class="fa-solid fa-house"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
@@ -31,13 +31,13 @@
                         <br>
                         <li>
                             <a href="/datasiswa">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Siswa</span>
                             </a>
                         </li>
                         <li>
                             <a href="/dataplotingan">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Plotingan Siswa</span>
                             </a>
                         </li>
@@ -46,15 +46,25 @@
                         <br>
                         <li>
                             <a href="/datatambahjurnal">
+<<<<<<< HEAD
+                                <i class="fa-solid fa-book"></i>
+                                <span>Tambah Jurnal Siswa</span>
+=======
                                 <i class="feather ft-calendar"></i>
                                 <span>Isi Jurnal</span>
+>>>>>>> b60a07f8b2575eda337cea3f926f133cd950d69f
                             </a>
                         </li>
 
                         <li>
                             <a href="/dataabsen">
+<<<<<<< HEAD
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Absen Siswa</span>
+=======
                                 <i class="feather ft-calendar"></i>
                                 <span>Isi Absen</span>
+>>>>>>> b60a07f8b2575eda337cea3f926f133cd950d69f
                             </a>
                         </li>
                         @endif

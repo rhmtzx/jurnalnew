@@ -26,7 +26,7 @@
                                                 <th scope="col">Nama Dudi</th>
                                                
                                                 <!-- <th scope="col">Dibuat</th> -->
-                                                <th scope="col">Aksi</th>
+                                                <!-- <th scope="col">Aksi</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -46,16 +46,8 @@
                                                 <!-- <td>{{ $row->datasiswa ? $row->nissiswap->nissiswa : 'data tidak ada' }}</td>
                                                 <td>{{ $row->datadudi ? $row->namadudip->namadudi : 'data tidak ada' }}</td>
  -->
-                                                
-
-
-                                                
-                                                    
                                                 <!-- <td>{{ $row->created_at}}</td> -->
-                                                <td scope="row">
-                                                    <button type="button" class="btn btn-primary btn-flat mt-2" data-toggle="modal" data-target="#exampleLongModalLong2">Info</button>  
-                                                    </td>
-                                                </tr>
+                                                
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -67,27 +59,9 @@
                 <!-- Progress Table end -->
             </div>
             </div>
-            <div class="card-body">
                             
                             
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleLongModalLong2">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Hummasoft Technology</h5>
-                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Sebuah Dudi Yang Berlokasi Di KarangPloso Kabupaten Malang.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
 
         <!-- DATA TABLE JS -->
 <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/init/data-table.js')}}">

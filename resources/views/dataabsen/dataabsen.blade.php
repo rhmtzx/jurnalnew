@@ -84,8 +84,8 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Foto</th>
+                                                <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Keterangan</th>
                                                 <th scope="col">Status Jurnal</th>
                                                 <th scope="col">Dibuat</th>
@@ -109,16 +109,21 @@
                                         <img src="{{ asset('fotodudi/' . $row3->foto) }}" alt=""
                                         style="width: 40px">
                                     </td>
+                                    <td>{{ $row3->usersiswa }}</td>
                                     <td>{{ $row3->keterangan }}</td>
-                                    @if ($row3->statusjurnal == 'Telah Disetujui')
-                                    <td>
-                                        <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                    </td>
-                                    @elseif ($row3->statusjurnal == 'Menunggu Persetujuan')
-                                    <td>
-                                        <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                    </td>
-                                    @endif
+                                                @if ($row3->statusjurnal == 'Telah Disetujui')
+                                                <td>
+                                                    <span class="badge badge-soft-success badge-border">Telah Disetujui</span>
+                                                </td>
+                                                @elseif ($row3->statusjurnal == 'Menunggu Persetujuan')
+                                                <td>
+                                                    <span class="badge badge-soft-warning badge-border">Menunggu Persetujuan</span>
+                                                </td>
+                                                @elseif ($row3->statusjurnal == 'Jurnal Ditolak')
+                                                <td>
+                                                    <span class="badge badge-soft-danger badge-border">Jurnal Ditolak</span>
+                                                </td>
+                                                @endif
                                     <td>{{ $row3->created_at}}</td>
                                     <td scope="row">
                                         <a href="/tampilabsen/{{ $row3->id }}"

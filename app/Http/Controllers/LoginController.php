@@ -198,6 +198,7 @@ class LoginController extends Controller
             'namadudi' => $request ->name,
             'namakepdik' => $request ->namakepdik,
             'alamatdudi' => $request ->alamatdudi,
+            'notelepondudi' => $request ->notelepondudi,
             'user_id' => $user->id,
 
         ]);
@@ -206,110 +207,8 @@ class LoginController extends Controller
     }
 
 
-    // public function loginsiswa(){
-    //     return view('layout.loginsiswa');
-    // }
-
-    // public function loginprosessiswa(Request $request){
-
-    //     if(Auth::attempt($request->only('nisiswa','email','password'))){
-    //         return redirect('/dashboard');
-    //     }
-
-    //         return redirect('login');
-
-    // }
-
-
-    // public function registerusersiswa(Request $request){
-    //     // dd($request->all());
-    //     $this->validate($request,[
-    //         'email' => 'required|unique:users',
-    //         'password' => 'required|min:6'
-
-    //     ],[
-        //         'email.unique' => 'Email Sudah Digunakan',
-    //         'email.required' => 'Harus Diisi',
-    //         'password.min' => 'Isi Password Minimal 6 Huruf'
-    //     ]);
-
-    //     $user=User::create([
-    //         'name' => $request ->name,
-    //         'email' => $request ->email,
-    //         'password' => bcrypt($request->password),
-    //         'remember_token' => Str::random(60),
-    //         'role' => 'Siswa'
-    //     ]);
-
-    //     datasiswa::create([
-    //         'nissiswa' => $request ->nissiswa,
-    //         'namasiswa' => $request ->name,
-    //         'kelas' => $request ->kelas,
-    //         'jurusan' => $request ->jurusan,
-    //         'alamatsiswa' => $request ->alamatsiswa,
-    //         'notlpsiswa' => $request ->notlpsiswa,
-    //         'user_id' => $user->id,
-    //     ]);
-
-
-
-    //     return redirect('/loginsiswa');
-    // }
-
-
-    // public function loginguru(){
-    //     return view('layout.loginguru');
-    // }
-
-    // public function loginprosesguru(Request $request){
-
-    //     if(Auth::attempt($request->only('email','password'))){
-    //         return redirect('/dashboard');
-    //     }
-
-    //         return redirect('login');
-
-    // }
-
-
-    // public function registeruserguru(Request $request){
-    //     // dd($request->all());
-    //     $this->validate($request,[
-    //         'email' => 'required|unique:users',
-    //         'password' => 'required|min:6'
-
-    //     ],[
-    //         'email.unique' => 'Email Sudah Digunakan',
-    //         'email.required' => 'Harus Diisi',
-    //         'password.min' => 'Isi Password Minimal 6 Huruf'
-    //     ]);
-
-    //     $user=User::create([
-    //         'name' => $request ->name,
-    //         'email' => $request ->email,
-    //         'password' => bcrypt($request->password),
-    //         'remember_token' => Str::random(60),
-    //         'role' => 'guru'
-    //     ]);
-
-    //     dataguru::create([
-    //         'nip' => $request ->nip,
-    //         'namaguru' => $request ->name,
-    //         'alamat' => $request ->alamat,
-    //         'notlpn' => $request ->notlpn,
-    //         'user_id' => $user->id,
-
-    //     ]);
-
-    //     // if($request->hasFile('foto')){
-    //     //     $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-    //     //     $user->foto = $request->file('foto')->getClientOriginalName();
-    //     //     $user->save();
-    //     // }
-
-    //     return redirect('/loginguru');
-    // }
-
+    
+    
     public function logout(){
         Auth::logout();
         return redirect('landinghome')->with('success','Berhasil Logout');

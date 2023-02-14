@@ -34,6 +34,7 @@ class DatadudiController extends Controller
                   'namadudi' => 'required',
                   'namakepdik' => 'required',
                   'alamatdudi' => 'required',
+                  'notelepondudi' => 'required',
                   'foto' => 'required',
 
 
@@ -41,6 +42,7 @@ class DatadudiController extends Controller
                  'namadudi.required' => 'Harus diisi',
                  'namakepdik.required' => 'Harus diisi',
                  'alamatdudi.required' => 'Harus diisi',
+                 'notelepondudi.required' => 'Harus diisi',
                  'foto.required' => 'Harus diisi',
 
              ]);
@@ -49,6 +51,7 @@ class DatadudiController extends Controller
                 'namadudi' =>$request->namadudi,
                 'namakepdik' =>$request->namakepdik,
                 'alamatdudi' =>$request->alamatdudi,
+                'notelepondudi' =>$request->notelepondudi,
                 'foto' =>$request->foto,
             ]);
             // dd($request->all);
@@ -79,6 +82,7 @@ class DatadudiController extends Controller
                 'namadudi' =>$request->namadudi,
                 'namakepdik' =>$request->namakepdik,
                 'alamatdudi' =>$request->alamatdudi,
+                'notelepondudi' =>$request->notelepondudi,
 
             ]);
             $data2->update([
@@ -104,12 +108,14 @@ class DatadudiController extends Controller
                 'namadudi' =>$request->namadudi,
                 'namakepdik' =>$request->namakepdik,
                 'alamatdudi' =>$request->alamatdudi,
+                'notelepondudi' =>$request->notelepondudi,
             ]);
             $data3->delete([
                 'foto'=>$request->foto,
                 'namadudi' =>$request->namadudi,
                 'namakepdik' =>$request->namakepdik,
                 'alamatdudi' =>$request->alamatdudi,
+                'notelepondudi' =>$request->notelepondudi,
             ]);
 
 

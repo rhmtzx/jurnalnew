@@ -118,6 +118,14 @@
                                     </div>
                                     <br>
 
+                                    <div class="mb-3">
+                                    <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Alamat Dudi</h6></label> 
+                                    <input type="text" name="alamatdudip" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" value="{{ $data->alamatdudip }}">
+                                    <br>
+                                    <br>
+
                                             <div class="mt-4">
                                                 <button type="submit" class="btn btn-primary">Update Data</button>
                                                 <a href="/dataplotingan" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
