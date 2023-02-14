@@ -43,16 +43,19 @@ class DataplotinganController extends Controller
                  'namagurup' => 'required',
                  'namasiswap' => 'required',
                  'namadudip' => 'required',
+                 'alamatdudip' => 'required',
              ],[
                  'namagurup.required' => 'Harus diisi',
                  'namasiswap.required' => 'Harus diisi',
                  'namadudip.required' => 'Harus diisi',
+                 'alamatdudip.required' => 'Harus diisi',
              ]);
 
             $data = dataplotingan::create([
                 'namagurup' =>$request->namagurup,
                 'namasiswap' =>$request->namasiswap,
                 'namadudip' =>$request->namadudip,
+                'alamatdudip' =>$request->alamatdudip,
             ]);
 
             if(Auth()->user()->role == 'Admin'){
@@ -80,6 +83,7 @@ class DataplotinganController extends Controller
                 'namagurup' =>$request->namagurup,
                 'namasiswap' =>$request->namasiswap,
                 'namadudip' =>$request->namadudip,
+                'alamatdudip' =>$request->alamatdudip,
 
             ]);
             if(Auth()->user()->role == 'Admin'){

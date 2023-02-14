@@ -33,7 +33,7 @@ class JurusanController extends Controller
                 'namajurusan' =>$request->namajurusan,
             ]);
 
-            return redirect()->route('datajurusan')->with('success', 'Data Berhasil Ditambahkan');
+            return redirect()->route('datajurusan')->with('sukses', 'Data Berhasil Ditambahkan');
         }
         public function tampiljurusan($id){
             $data = jurusan::findOrfail($id);

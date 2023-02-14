@@ -97,7 +97,12 @@
                                     <label for="exampleInputEmail1" class="form-label"><h6>Alamat Dudi</h6></label> 
                                     <input type="text" name="alamatdudi" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->alamatdudi }}">
-                                    
+                                    <br>
+                                <div class="mb-3">
+                                    <br>
+                                    <label for="exampleInputEmail1" class="form-label"><h6>No Telepon Dudi</h6></label> 
+                                    <input type="number" name="notelepondudi" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" value="{{ $data->notelepondudi }}">
                                     <br>
                                 <div class="mb-1">
                                         <label for="exampleInputEmail1" class="form-label"><h6>Edit Foto Dudi</h6>

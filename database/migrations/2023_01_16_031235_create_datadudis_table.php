@@ -20,6 +20,7 @@ class CreateDatadudisTable extends Migration
             $table->string('namadudi');
             $table->string('namakepdik');
             $table->string('alamatdudi');
+            $table->string('notelepondudi');
             $table->string('user_id');
 
 

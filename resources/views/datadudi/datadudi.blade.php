@@ -87,6 +87,7 @@
                                                 <th scope="col">Nama Dudi</th>
                                                 <th scope="col">Nama Kepala Direktur</th>
                                                 <th scope="col">Alamat Dudi</th>
+                                                <th scope="col">No Telepon Dudi</th>
                                                 <th scope="col">Dibuat</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
@@ -110,6 +111,7 @@
                                                     <td>{{ $row->namadudi }}</td>
                                                     <td>{{ $row->namakepdik }}</td>
                                                     <td>{{ $row->alamatdudi }}</td>
+                                                    <td>{{ $row->notelepondudi }}</td>
                                                     <td>{{ $row->created_at}}</td>
                                                 
                                                 <td>

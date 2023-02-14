@@ -22,7 +22,7 @@
                         <br>
                             <li class="active">
                             <a href="/dashboard">
-                                <i class="feather ft-home"></i>
+                                <i class="fa-solid fa-house"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
@@ -31,26 +31,26 @@
                         <br>
                         <li>
                             <a href="/datasiswa">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Siswa</span>
                             </a>
                         </li>
                         <li>
                             <a href="/dataplotingan">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Plotingan Siswa</span>
                             </a>
                         </li>
                         <li>
                             <a href="/datatambahjurnal">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Tambah Jurnal Siswa</span>
                             </a>
                         </li>
                         
                         <li>
                             <a href="/dataabsen">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Absen Siswa</span>
                             </a>
                         </li>

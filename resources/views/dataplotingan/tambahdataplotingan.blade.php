@@ -114,8 +114,8 @@
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Dudi</h5></label>
                                     <select class="form-control" name="namadudip" id="namadudip">
                                         <option value="" selected disabled>Pilih Dudi</option>
-                                        @foreach($dudi as $titit)
-                                        <option value="{{ $titit->id }}">{{ $titit->namadudi }}</option>
+                                        @foreach($dudi as $rapli)
+                                        <option value="{{ $rapli->id }}" data-alamatdudip="{{ $rapli->alamatdudi }}">{{ $rapli->namadudi }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -125,9 +125,19 @@
                                 </div>
                                 @enderror
                                 <br>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"><h6>Alamat Dudi</h6></label>
+                                    <input type="text" name="alamatdudip" class="form-control" id="alamatdudip"
+                                    aria-describedby="emailHelp" placeholder="Masukkan Alamat Dudi" readonly="">
+                                    @error('alamatdudip')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    <br>
                                 <br>
-                                <button type="submit" class="btn btn-primary">Submit Data <i class=" bx bx-send"></i> </button>
-                                <a href="/dataplotingan" class="btn btn-danger mb-10">Kembali <i class="bx bx-chevron-left"></i> </a>
+                                <button type="submit" class="btn btn-primary">Submit Data</button>
+                                <a href="/dataplotingan" class="btn btn-danger mb-10">Kembali</a>
 
                             </form>                                   
  
@@ -181,6 +191,13 @@
             });
         </script>
 
+        <script>
+            const namadudip = document.getElementById('namadudip')
+            namadudip.onchange = function(e) {
+            const alamatdudip = e.target.options[e.target.selectedIndex].dataset.alamatdudip    
+            document.getElementById('alamatdudip').value = alamatdudip;
+            }
+        </script>
     </body>
 
 

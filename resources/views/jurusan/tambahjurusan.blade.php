@@ -4,6 +4,7 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -78,7 +79,7 @@
                                     <form action="/insertjurusan" method="POST" enctype="multipart\form-data" >
                                             <br>
                                             @csrf
-                                            <div class="mb-3">
+                                    <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h6>Nama Jurusan</h6></label>
                                     <input type="text" name="namajurusan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" placeholder="Masukkan Jurusan">
@@ -149,6 +150,11 @@
 
 
 </body>
+<script>
+    @if (Session::has('success'))
+    toastr.success("{{ Session::get('success') }}")
+    @endif
+</script>
 
 
 <!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:10 GMT -->

@@ -6,7 +6,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>J On | Journal Online</title>
+    <title>J On | Register Dudi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -84,9 +84,16 @@
                                                 Please enter email
                                             </div>
                                         </div>
-                                         <div class="mb-3">
+                                        <div class="mb-3">
                                             <label for="alamatdudi" class="form-label">Alamat Dudi <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="alamatdudi" id="alamatdudi" placeholder="Masukkan Alamat Dudi" required>
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="notelepondudi" class="form-label">No Telepon Dudi <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="notelepondudi" id="notelepondudi" placeholder="Masukkan No Telepon Dudi" required>
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
@@ -112,7 +119,7 @@
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto Dudi <span class="text-danger">*</span></h6></label>
                                                 <br>
                                                 <input type="file" name="foto" class="form-control" >
-                                            </div>
+                                        </div>
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">Register</button>
                                         </div>

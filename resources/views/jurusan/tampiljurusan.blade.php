@@ -84,11 +84,6 @@
                                     <input type="text" name="namajurusan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->namajurusan }}">
                                     <br>
-                                    @error('namajurusan')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
                                     <br>
                                     <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Update Data</button>

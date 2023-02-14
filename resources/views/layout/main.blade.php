@@ -6,7 +6,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>J - On | Jurnal Online</title>
+    <title>J - On | Admin Jurnal Online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -831,7 +831,7 @@
     <!-- apexcharts -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
-    <script src="{{asset('velzon/img.themesbrand.com/velzon/apexchart-js/stock-prices.js"></script>
+    <script src="{{asset('velzon/img.themesbrand.com/velzon/apexchart-js/stock-prices.js')}}"></script>
 
 </body>
 
