@@ -16,6 +16,11 @@ class dataplotingan extends Model
 	{
 		return $this->belongsTo(datadudi::class, 'namadudip', 'id');
 	}
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])
+        ->translatedFormat('l, d F Y');
+    }
 	public function siswas()
 	{
 		return $this->belongsTo(datasiswa::class, 'namasiswap', 'id');

@@ -76,15 +76,10 @@
                                             </div>
                                             @endif
                                             <br>
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6></label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Upload</span>
-                                                </div>
-                                                <div class="custom-file">
-                                                    <input type="file" name="foto" class="custom-file-input" id="inputGroupFile01">
-                                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                                </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto Dudi <span class="text-danger">*</span></h6></label>
+                                                <br>
+                                                <input type="file" name="foto" class="form-control" >
                                             </div>
                                             <br>
                                             <br>

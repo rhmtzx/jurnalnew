@@ -28,6 +28,7 @@ class LoginController extends Controller
             'password.required' => 'Masukkan Kata Sandi Anda!',
             'password.min' => 'Password Minimal 6 Huruf',
         ]);
+        toastr()->success('Berhasil Login!');
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Admin'])) {
             return redirect('/');
@@ -121,7 +122,7 @@ class LoginController extends Controller
 
 
 
-
+        toastr()->success('Data Berhasil Ditambahkan!');
         return redirect('/login')->with('success', 'Data Berhasil Ditambahkan');
     }
 
