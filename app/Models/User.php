@@ -27,6 +27,19 @@ class User extends Authenticatable
         'kd_guru',
         'kd_dudi',
         'id_jurusan',
+        //dudi
+        'namakepdik',
+        'alamatdudi',
+        'notelepondudi',
+        'foto',
+        //guru
+        'nip',
+        'alamat',
+        'notlpn',
+        //siswa
+        'nissiswa',
+        'alamatsiswa',
+        'notlpsiswa',
 
     ];
 
@@ -61,6 +74,8 @@ class User extends Authenticatable
 
     public function jurusan()
     {
-        return $this->belongsTo(jurusan::class, 'namajurusan', 'id');
+        return $this->belongsTo(jurusan::class, 'id_jurusan', 'id');
     }
+
+
 }

@@ -25,11 +25,15 @@ class DataguruController extends Controller
                   'namaguru' => 'required',
                   'alamat' => 'required',
                   'notlpn' => 'required',
+                  'foto' => 'required',
+
              ],[
                  'nip.required' => 'Harus diisi',
                  'namaguru.required' => 'Harus diisi',
                  'alamat.required' => 'Harus diisi',
                  'notlpn.required' => 'Harus diisi',
+                 'foto.required' => 'Harus diisi',
+
              ]);
 
             $data = dataguru::create([
@@ -37,14 +41,16 @@ class DataguruController extends Controller
                 'namaguru' =>$request->namaguru,
                 'alamat' =>$request->alamat,
                 'notlpn' =>$request->notlpn,
-            ]);
-            // dd($request->all);
+                'foto' =>$request->foto,
 
-            // if($request->hasFile('foto')){
-            //     $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-            //     $data->foto = $request->file('foto')->getClientOriginalName();
-            //     $data->save();
-            // }
+            ]);
+
+            if($request->hasFile('foto')){
+                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
+                $data->foto = $request->file('foto')->getClientOriginalName();
+                $data->save();
+            }
+            // dd($request->all);
 
             return redirect()->route('dataguru')->with('succes', 'Data Berhasil Ditambahkan');
         }
@@ -68,11 +74,11 @@ class DataguruController extends Controller
             $data2->update([
                 'name'=>$request->namaguru
             ]);
-            // if($request->hasFile('foto')){
-            //     $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-            //     $data->foto = $request->file('foto')->getClientOriginalName();
-            //     $data->save();
-            // }
+            if($request->hasFile('foto')){
+                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
+                $data->foto = $request->file('foto')->getClientOriginalName();
+                $data->save();
+            }
             return redirect()->route('dataguru')->with('succes', 'Data Berhasil Di Update');
         }
 

@@ -165,10 +165,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/updatedatapersyaratan/{id}', [DatapersyaratanController::class, 'updatedatapersyaratan'])->name('updatedatapersyaratan');
     Route::get('/deletedatapersyaratan/{id}', [DatapersyaratanController::class, 'deletedatapersyaratan'])->name('deletedatapersyaratan');
 
-    Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
-    Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
-    Route::post('/updateprofil', [LoginController::class, 'updateprofil'])->name('updateprofil');
-    Route::get('/profils', [LoginController::class, 'profils'])->name('profils');
+
 
 
     //kelas
@@ -216,11 +213,17 @@ Route::post('/registeruserguru', [LoginController::class, 'registeruserguru'])->
 //loginuser
 Route::get('/loginuser', [LoginController::class, 'loginuser'])->name('loginuser');
 Route::post('/loginprosesuser', [LoginController::class, 'loginprosesuser'])->name('loginprosesuser');
-// Route::get('/registeruser',[LoginController::class, 'registeruser'])->name('registeruser');
-// Route::post('/registeruseruser',[LoginController::class, 'registeruseruser'])->name('registeruseruser');
-
 //log out
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//Profile
+Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
+Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
+Route::post('/updateprofilguru', [LoginController::class, 'updateprofilguru'])->name('updateprofilguru');
+Route::post('/updateprofildudi', [LoginController::class, 'updateprofildudi'])->name('updateprofildudi');
+Route::post('/updateprofilsiswa', [LoginController::class, 'updateprofilsiswa'])->name('updateprofilsiswa');
+
+
 
 
 Route::group(['middleware' => ['auth', 'hakakses:Dudi,Siswa,Guru,Admin']], function () {
@@ -257,5 +260,8 @@ Route::group(['middleware' => ['auth', 'hakakses:Dudi,Siswa,Guru,Admin']], funct
     Route::get('/tampildataplotingan/{id}', [DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan')->middleware('auth');
     Route::post('/updatedataplotingan/{id}', [DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan')->middleware('auth');
     Route::get('/deletedataplotingan/{id}', [DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan')->middleware('auth');
+
+
+
 });
 

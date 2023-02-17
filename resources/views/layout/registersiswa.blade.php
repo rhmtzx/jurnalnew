@@ -71,49 +71,71 @@
                                         @csrf
                                         <!-- email -->
                                         <div class="mb-3">
-                                            <label for="nissiswa" class="form-label">NIS Siswa<span class="text-danger">*</span></label>
-                                            <input type="number" class="form-control" name="nissiswa" id="nissiswa" placeholder="Masukkan Nis Siswa" required>
-
-                                        </div>
+                                            <label for="nissiswa" class="form-label"><strong>NIS Siswa</strong><span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="nissiswa" id="nissiswa" placeholder="Masukkan Nis Siswa" >
                                         @error('nissiswa')
                                         <div class="text-danger">
                                             {{ $message }}
                                         </div>
                                         @enderror
-                                        <div class="mb-3">
-                                            <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
                                         </div>
-                                        @error('namasiswa')
+                                        
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label"><strong>Nama Siswa</strong><span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" >
+                                        @error('name')
                                         <div class="text-danger">
                                             {{ $message }}
                                         </div>
                                         @enderror
+                                        </div>
+                                        
+
                                         <div class="col-lg-12">
-                                            <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
+                                            <label for="name" class="form-label"><strong>Kelas Jurusan Siswa</strong><span class="text-danger">*</span></label>
                                             <select class="form-control" name="namajurusan" id="namajurusan">
                                                 <option value="" selected disabled>- Pilih Jurusan Siswa -</option>
                                                 @foreach($data as $hi)
                                                 <option value="{{ $hi->id }}">{{ $hi->namajurusan }}</option>
                                                 @endforeach
                                             </select>
+                                        @error('namajurusan')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
                                         <br>
+                                        
                                         <div class="mb-3">
-                                            <label for="alamatsiswa" class="form-label">Alamat Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="alamatsiswa" id="alamatsiswa" placeholder="Masukkan Alamat Siswa" required>
+                                            <label for="alamatsiswa" class="form-label"><strong>Alamat Siswa</strong><span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="alamatsiswa" id="alamatsiswa" placeholder="Masukkan Alamat Siswa" >
+                                        @error('alamatsiswa')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
+
                                         <div class="mb-3">
-                                            <label for="notlpsiswa" class="form-label">No Telepon Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="notlpsiswa" id="notlpsiswa" placeholder="Masukkan No Telepon Siswa" required>
+                                            <label for="notlpsiswa" class="form-label"><strong>No Telepon Siswa</strong><span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="notlpsiswa" id="notlpsiswa" placeholder="Masukkan No Telepon Siswa" >
+                                        @error('notlpsiswa')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
+
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Email Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" required>
+                                            <label for="email" class="form-label"><strong>Email Siswa</strong><span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" >
+                                        @error('email')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
                                         <!-- pwd -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="password-input">Buat Password</label>
+                                            <label class="form-label" for="password-input"><strong>Buat Password</strong></label>
                                             <div class="position-relative auth-pass-inputgroup">
                                                 <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password-input" aria-describedby="passwordInput">
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
@@ -121,34 +143,36 @@
                                                     Please enter password
                                                 </div>
                                             </div>
-                                        </div>
                                         @error('password')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
+                                        <div class="text-danger">{{ $message }}</div>
                                         @enderror
-                                        <div class="mb-3">
-                                            <label for="kd_guru" class="form-label">Masukkan Kode Guru Pembimbing <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="kd_guru" id="kd_guru" placeholder="Masukkan Kode Guru" required>
                                         </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="kd_guru" class="form-label"><strong>Masukkan Kode Guru Pembimbing</strong><span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="kd_guru" id="kd_guru" placeholder="Masukkan Kode Guru" >
+                                        @error('kd_guru')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                        </div>
+                                        
                                         <label for=""><h6><em>Info : Pastikan kode benar!!</em></h6> </label>
+
                                         <div class="mb-3">
-                                            <label for="kd_dudi" class="form-label">Masukkan Kode Dudi<span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="kd_dudi" id="kd_dudi" placeholder="Masukkan Kode Dudi" required>
+                                            <label for="kd_dudi" class="form-label"><strong>Masukkan Kode Dudi</strong><span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="kd_dudi" id="kd_dudi" placeholder="Masukkan Kode Dudi" >
+                                        @error('kd_dudi')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
                                         <label for=""><em><h6>Info : Pastikan kode benar!!</h6></em></label>
-                                        {{-- <div class="row m-t-5">
-                                            <div class="col s7">
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Agree to all Terms</span>
-                                                </label>
-                                            </div>
-                                        </div> --}}
+                                        
+                                        
                                         <!-- pwd -->
                                         <div class="row m-t-40">
                                             <div class="mt-4">
-                                                <button class="btn btn-success w-100" type="submit">Register</button>
+                                                <button class="btn btn-success w-100" type="submit"><strong>Register Siswa</strong></button>
                                             </div>
                                         </div>
                                     </form>

@@ -88,6 +88,7 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
+                                                <th scope="col">Foto</th>
                                                 <th scope="col">NIP</th>
                                                 <th scope="col">Nama Guru</th>
                                                 <th scope="col">Alamat</th>
@@ -109,6 +110,10 @@
                                                 </th>
                                                 <th scope="row">{{ $no++ }}</th>
 
+                                                    <td>
+                                                        <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                                            style="width: 40px">
+                                                    </td>
                                                     <td>{{ $row->nip }}</td>
                                                     <td>{{ $row->namaguru }}</td>
                                                     <td>{{ $row->alamat }}</td>
