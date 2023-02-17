@@ -15,14 +15,15 @@ class DataplotinganController extends Controller
             $guru = dataguru::all();
             $siswa = datasiswa::all();
             $dudi = datadudi::all();
+            $tittle = 'dataplotingan';
         if(Auth()->user()->role == 'Admin'){
             return view('dataplotingan.dataplotingan',compact('data','guru','siswa','dudi'));
         }else if(Auth()->user()->role == 'Guru'){
-            return view('userguru.dataplotingan.dataplotingan',compact('data'));
+            return view('userguru.dataplotingan.dataplotingan',compact('data','tittle'));
         }else if(Auth()->user()->role == 'Dudi'){
-            return view('userdudi.dataplotingan.dataplotingan',compact('data'));
+            return view('userdudi.dataplotingan.dataplotingan',compact('data','tittle'));
         }else{
-            return view('user.dataplotingan.dataplotingan',compact('data'));
+            return view('user.dataplotingan.dataplotingan',compact('data','tittle'));
         }
     }
     public function tambahdataplotingan(){

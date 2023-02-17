@@ -11,7 +11,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/2.png')}}">
 
     <!-- Layout config Js -->
     <script src="assets/js/layout.js"></script>
@@ -47,8 +47,8 @@
                     <div class="col-lg-12">
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
-                                <a href="index.html" class="d-inline-block auth-logo">
-                                    <img src="assets/images/logo-light.png" alt="" height="20">
+                                <a href="/registerguru" class="d-inline-block auth-logo">
+                                    <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/1.png')}}" alt="" height="100" width="250">
                                 </a>
                             </div>
                             <p class="mt-3 fs-15 fw-medium">J On | Journal Online</p>
@@ -63,8 +63,8 @@
 
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
-                                    <h5 class="text-primary">REGISTER AKUN</h5>
-                                    <p class="text-muted">Register Akun Guru</p>
+                                    <h5 class="text-primary">DAFTAR AKUN</h5>
+                                    <p class="text-muted">Daftar Akun Guru</p>
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form class="col s12" action="/registeruserguru" method="POST">
@@ -116,7 +116,7 @@
                                             </div>
                                         </div>
                                         <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Register</button>
+                                            <button class="btn btn-success w-100" type="submit">Daftar</button>
                                         </div>
                                     </form>
 
@@ -139,20 +139,20 @@
         <!-- end auth page content -->
 
         <!-- footer -->
-        <footer class="footer">
+        {{-- <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
                                 <script>document.write(new Date().getFullYear())</script> J | On. Crafted with by RQTeams
-                                
+
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
         <!-- end Footer -->
     </div>
     <!-- end auth-page-wrapper -->

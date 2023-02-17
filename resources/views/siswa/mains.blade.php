@@ -21,7 +21,7 @@
     <!--=========================*
                 Favicon
     *===========================-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/images/favicon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/images/2.png')}}">
 
     <!--=========================*
             Bootstrap Css

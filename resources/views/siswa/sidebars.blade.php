@@ -4,7 +4,7 @@
                           Logo
             *===========================-->
             <div class="logo">
-                <a href="index.html"><img src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/images/logo-dark.png')}}" alt="logo"></a>
+                <a href="/dashboard"><img src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/images/0.png')}}" alt="logo" width="500px"></a>
             </div>
             <!--=========================*
                         End Logo
@@ -20,7 +20,7 @@
                         @if(Auth::user()->role == 'Siswa')
                         <ul><em>Dashboard</em></ul>
                         <br>
-                            <li class="active">
+                            <li class="{{ ($tittle === 'dashboard') ? 'active':  ''}}">
                             <a href="/dashboard">
                                 <i class="fa-solid fa-house"></i>
                                 <span>Dashboard</span>
@@ -29,13 +29,13 @@
                         <br>
                         <ul><em>Data Siswa & Plotingan</em></ul>
                         <br>
-                        <li>
+                        <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Data Siswa</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ ($tittle === 'dataplotingan') ? 'active': '' }}">
                             <a href="/dataplotingan">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Data Plotingan Siswa</span>
@@ -44,27 +44,17 @@
                         <br>
                         <ul><em>Jurnal & Absen</em></ul>
                         <br>
-                        <li>
+                        <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
-<<<<<<< HEAD
                                 <i class="fa-solid fa-book"></i>
-                                <span>Tambah Jurnal Siswa</span>
-=======
-                                <i class="feather ft-calendar"></i>
                                 <span>Isi Jurnal</span>
->>>>>>> b60a07f8b2575eda337cea3f926f133cd950d69f
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
-<<<<<<< HEAD
                                 <i class="fa-solid fa-book"></i>
-                                <span>Data Absen Siswa</span>
-=======
-                                <i class="feather ft-calendar"></i>
                                 <span>Isi Absen</span>
->>>>>>> b60a07f8b2575eda337cea3f926f133cd950d69f
                             </a>
                         </li>
                         @endif
@@ -72,7 +62,7 @@
                         @if(Auth::user()->role == 'Dudi')
                         <ul><em>Dashboard</em></ul>
                         <br>
-                            <li class="active">
+                            <li class="{{ ($tittle === 'dashboard') ? 'active': '' }}">
                             <a href="/dashboard">
                                 <i class="feather ft-home"></i>
                                 <span>Dashboard</span>
@@ -81,7 +71,7 @@
                         <br>
                         <ul><em>Data Siswa</em></ul>
                         <br>
-                        <li>
+                        <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Siswa</span>
@@ -90,14 +80,14 @@
                         <br>
                         <ul><em>Jurnal & Absen</em></ul>
                         <br>
-                        <li>
+                        <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Absen Siswa</span>
@@ -108,7 +98,7 @@
                         @if(Auth::user()->role == 'Guru')
                         <ul><em>Dashboard</em></ul>
                         <br>
-                            <li class="active">
+                            <li class="{{ ($tittle === 'dashboard') ? 'active': '' }}">
                             <a href="/dashboard">
                                 <i class="feather ft-home"></i>
                                 <span>Dashboard</span>
@@ -117,13 +107,13 @@
                         <br>
                         <ul><em>Data Siswa & Plotingan</em></ul>
                         <br>
-                        <li>
+                        <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Siswa</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ ($tittle === 'dataplotingan') ? 'active': '' }}">
                             <a href="/dataplotingan">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Plotingan Siswa</span>
@@ -132,14 +122,14 @@
                         <br>
                         <ul><em>Absen & Jurnal</em></ul>
                         <br>
-                        <li>
+                        <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
                                 <i class="feather ft-calendar"></i>
                                 <span>Data Absen Siswa</span>

@@ -9,27 +9,31 @@ use App\Models\datasiswa;
 use App\Models\dataabsen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 // use Illuminate\Foundation\Auth\User;
 
 class DatasiswaController extends Controller
 {
     public function index(){
 
-        $data = jurusan::all();
+        $data = jurusan::paginate(4);
         $data2 = datasiswa::where('namasiswa', Auth::user()->name)->get();
             // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
         // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dud)->get();
         $data3 = datasiswa::where('kd_guru', Auth::user()->kd_guru)->get();
         $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
         $jurusan = jurusan::all();
+        $tittle = 'datasiswa';
+
         if(Auth()->user()->role == 'Admin'){
             return view('datasiswa.datasiswa',compact('data','jurusan'));
         }else if(Auth()->user()->role == 'Guru'){
-            return view('userguru.datasiswa.datasiswa',compact('data2','jurusan','data3'));
+            return view('userguru.datasiswa.datasiswa',compact('data2','jurusan','data3','tittle'));
         }else if(Auth()->user()->role == 'Dudi'){
-            return view('userdudi.datasiswa.datasiswa',compact('data2','jurusan','data5'));
+            return view('userdudi.datasiswa.datasiswa',compact('data2','jurusan','data5','tittle'));
         }else{
-            return view('user.datasiswa.datasiswa',compact('data2','jurusan','data3','data5'));
+            return view('user.datasiswa.datasiswa',compact('data2','jurusan','data3','data5','tittle'));
 
         }
     }

@@ -79,7 +79,7 @@
                                     <br> --}}
                                 </div>
                                 <div class="card-body">
-                                    <table id="siswa" class="table nowrap align-middle" style="width:100%">
+                                    <table id="siswa" class="table nowrap align-middle table-bordered table-responsive" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="width: 10px;">
@@ -90,9 +90,11 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nis Siswa</th>
                                                 <th scope="col">Nama Siswa</th>
-                                                <th scope="col">Jurusan</th>
+                                                <th scope="col" hidden>Jurusan</th>
                                                 <th scope="col">Alamat Siswa</th>
                                                 <th scope="col">No Telepon Siswa</th>
+                                                <th scope="col">Detail Jurnal</th>
+                                                <th scope="col">Detail Absen</th>
                                                 <th scope="col">Dibuat</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
@@ -111,9 +113,16 @@
                                                 <th scope="row">{{ $no++ }}</th>
                                                     <td>{{ $row->nissiswa }}</td>
                                                     <td>{{ $row->namasiswa }}</td>
-                                                    <td>{{ $row->jurusans->namajurusan }}</td>
+                                                    <td hidden>{{ $row->jurusans->namajurusan }}</td>
                                                     <td>{{ $row->alamatsiswa }}</td>
                                                     <td>{{ $row->notlpsiswa }}</td>
+                                                    <td>
+                                                        <a href="/dataa/{{ $row->id }}" class="badge badge-soft-info badge-border">Detail</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/dataaa/{{ $row->id }}" class="badge badge-soft-info badge-border">Detail</a>
+
+                                                    </td>
                                                     <td>{{ $row->created_at}}</td>
                                                 <td>
                                                     <a href="/tampildatasiswa/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
@@ -173,7 +182,9 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#siswa').DataTable();
+                $('#siswa').DataTable({
+                    responsive: true
+                });
             });
         </script>
 

@@ -61,7 +61,7 @@
                                                 </td>
                                                 @elseif ($row->statusjurnal == 'Jurnal Ditolak')
                                                 <td>
-                                                    <span class="badge badge-success badge-dang ">Jurnal Ditolak</span>
+                                                    <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
                                                 </td>
                                                 @endif
                                                 <td>{{ $row->created_at}}</td>

@@ -15,6 +15,10 @@ class tambahjurnal extends Model
     public function namasiswa(){
         return $this->belongsTo(datasiswa::class, 'usersiswa', 'id');
     }
+    public function jurusans()
+	{
+		return $this->belongsTo(jurusan::class, 'namajurusan', 'id');
+	}
 
     public function getCreatedAtAttribute()
     {

@@ -13,56 +13,42 @@
                     <div class="card-body">
                         <h4 class="card_title">Data Absen Seluruh Siswa</h4>
                         <ul>
-                            <li><h6>Seluruh Absen Siswa Ada Disini</h6></li>
-                        </ul>
-
+                            <li><h6>Seluruh Absen Siswa Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">
                                     <br>
-                                    <table id="absen" class="table text-center table-bordered dt-responsive nowrap"
+                                    <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Foto</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Keterangan</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Dibuat</th>
+                                            <th scope="col">Aksi</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php
                                         $no = 1;
                                         @endphp
-                                            @foreach($data2 as $row2)
+                                            @foreach($data5 as $row5)
+
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row2->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row2->namasiswa->namasiswa }}</td>
-                                                <td>{{ $row2->keterangan }}</td>
+                                                <td>{{ $row5->namasiswa }}</td>
 
-                                                @if ($row2->statusjurnal == 'Telah Disetujui')
-                                            <td>
-                                                <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                            </td>
-                                            @elseif ($row2->statusjurnal == 'Menunggu Persetujuan')
-                                            <td>
-                                                <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                            </td>
-                                            @elseif ($row2->statusjurnal == 'Absen Ditolak')
-                                                <td>
-                                                    <span class="badge badge-success badge-danger ">Absen Ditolak</span>
-                                                </td>
-                                            @endif
-                                                <td>{{ $row2->created_at}}</td>
-
+                                                <td scope="row">
+                                                    <a href="/absensguru/{{ $row5->id }}"
+                                                        class="btn btn-social btn-social-outline-tw mb-3"><i class="fa-solid fa-eye"></i></a>
+                                                        <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
+                                                        data-id="{{ $row5->id }}"
+                                                        data-judul="{{ $row5->judul }}"><i
+                                                        class="fa-sharp fa-solid fa-trash"></i></a> -->
+                                                    </td>
                                                 </tr>
-                                            @endforeach
+                                                @endforeach
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -101,14 +87,14 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#absen').DataTable();
+                $('#Jurnal').DataTable();
             });
         </script>
 
     </body>
 
     <script>
-        $('.deleteabsen').click(function() {
+        $('.deletetambahjurnal').click(function() {
             var kategoriid = $(this).attr('data-id');
             var kategori = $(this).attr('data-kategori');
             swal({
@@ -120,7 +106,7 @@
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/deleteabsen/" + kategoriid + ""
+                    window.location = "/deletetambahjurnal/" + kategoriid + ""
                     swal("Data Berhasil Di Hapus", {
                         icon: "success",
                     });

@@ -30,18 +30,18 @@
                                                 readonly="">
                                                 <br>
 
-                                                <label class="col-form-label"><h6>Keterangan :</h6></label>
-                                                <div class="custom-control custom-radio primary-radio">
+                                                {{-- <label class="col-form-label"><h6>Keterangan :</h6></label> --}}
+                                                <div class="custom-control custom-radio primary-radio" hidden>
                                                     <input type="radio" id="Hadir" name="keterangan" value="Hadir" class="custom-control-input" <?php if ($data['keterangan'] == 'Hadir'){ echo 'checked';
                             } ?>>
                                                     <label class="custom-control-label" for="Hadir">Hadir</label>
                                                 </div>
-                                                <div class="custom-control custom-radio primary-radio">
+                                                <div class="custom-control custom-radio primary-radio" hidden>
                                                     <input type="radio" id="Sakit" name="keterangan" value="Sakit" class="custom-control-input" <?php if ($data['keterangan'] == 'Sakit'){ echo 'checked';
                             } ?>>
                                                     <label class="custom-control-label" for="Sakit">Sakit</label>
                                                 </div>
-                                                <div class="custom-control custom-radio primary-radio">
+                                                <div class="custom-control custom-radio primary-radio" hidden>
                                                     <input type="radio" id="Izin" name="keterangan" value="Izin" class="custom-control-input" <?php if ($data['keterangan'] == 'Izin'){ echo 'checked';
                             } ?>>
                                                     <label class="custom-control-label" for="Izin">Izin</label>
@@ -60,7 +60,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="mb-1">
+                                                <div class="mb-1" hidden>
                                                     <label for="exampleInputEmail1" class="form-label"><h6>Edit Foto</h6></label>
                                                     <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
                                                     alt="" style="width: 90px" alt="">

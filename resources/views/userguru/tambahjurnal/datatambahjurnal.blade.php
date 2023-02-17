@@ -16,7 +16,6 @@
                             <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
-
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -25,43 +24,28 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Foto</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col">Deskripsi</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Dibuat</th>
+                                            <th scope="col">Aksi</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php
                                         $no = 1;
                                         @endphp
+                                            @foreach($data6 as $row6)
 
-                                            @foreach($data2 as $row2)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row2->namasiswa->namasiswa }}</td>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row2->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row2->judul }}</td>
-                                                <td>{!! $row2->deskripsi !!}</td>
-                                                @if ($row2->statusjurnal == 'Telah Disetujui')
-                                                <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                                </td>
-                                                @elseif ($row2->statusjurnal == 'Menunggu Persetujuan')
-                                                <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @elseif ($row2->statusjurnal == 'Jurnal Ditolak')
-                                                <td>
-                                                    <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
-                                                </td>
-                                                @endif
-                                                <td>{{ $row2->created_at}}</td>
+                                                <td>{{ $row6->namasiswa }}</td>
 
+                                                <td scope="row">
+                                                    <a href="/jurnalsguru/{{ $row6->id }}"
+                                                        class="btn btn-rounded btn-inverse-info btn-fixed-w mb-3"><i class="fa-solid fa-eye"></i></a>
+                                                        <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
+                                                        data-id="{{ $row6->id }}"
+                                                        data-judul="{{ $row6->judul }}"><i
+                                                        class="fa-sharp fa-solid fa-trash"></i></a> -->
+                                                    </td>
                                                 </tr>
                                                 @endforeach
 

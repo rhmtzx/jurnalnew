@@ -97,17 +97,13 @@
                                             @enderror
                                             <br>
 
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto</h6></label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Upload</span>
+                                            {{-- <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto</h6></label> --}}
+                                            <div class="mb-1">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6>
+                                                </label>
+                                                <br>
+                                                <input type="file" name="foto" class="form-control">
                                                 </div>
-                                                <div class="custom-file">
-                                                    <input type="file" name="foto" class="custom-file-input" id="inputGroupFile01">
-                                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-
-                                                </div>
-                                            </div>
                                             <a for="exampleInputEmail1" class="form-label">
                                                 <em>Info : Abaikan Jika Tidak Sakit Atau Izin !!</em></a>
                                             <br>

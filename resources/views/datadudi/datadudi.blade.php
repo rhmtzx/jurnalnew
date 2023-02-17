@@ -35,7 +35,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -74,7 +74,7 @@
                                     <h5 class="card-title mb-0">Data Seluruh Dudi</h5>
                                     </div>
                                 <div class="card-body">
-                                    <table id="dudi" class="table nowrap align-middle" style="width:100%">
+                                    <table id="dudi" class="table nowrap align-middle table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="width: 10px;">
@@ -83,6 +83,7 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
+                                                <th scope="col">Kode Dudi</th>
                                                 <th scope="col">Foto</th>
                                                 <th scope="col">Nama Dudi</th>
                                                 <th scope="col">Nama Kepala Direktur</th>
@@ -104,6 +105,7 @@
                                                     </div>
                                                 </th>
                                                 <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->kd_dudi }}</td>
                                                 <td>
                                                         <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
                                                             style="width: 40px">
@@ -113,7 +115,7 @@
                                                     <td>{{ $row->alamatdudi }}</td>
                                                     <td>{{ $row->notelepondudi }}</td>
                                                     <td>{{ $row->created_at}}</td>
-                                                
+
                                                 <td>
                                                     <a href="/tampildatadudi/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                     <a href="#" class="btn btn-danger deletedatadudi" data-id="{{ $row->id }}"
@@ -133,7 +135,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 
@@ -169,7 +171,9 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#dudi').DataTable();
+                $('#dudi').DataTable({
+                    responsive : true
+                });
             });
         </script>
 

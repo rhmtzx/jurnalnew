@@ -35,7 +35,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -66,7 +66,7 @@
                     </div>
                     <!-- end page title -->
 
-                   
+
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
@@ -88,6 +88,7 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
+                                                    <th scope="col">Foto</th>
                                                     <th scope="col">Nama Jurusan</th>
                                                     <th scope="col">Dibuat</th>
                                                     <th scope="col">Aksi</th>
@@ -105,10 +106,14 @@
                                                     </div>
                                                 </th>
                                                 <th scope="row">{{ $no++ }}</th>
+                                                <td>
+                                                    <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                                    style="width: 40px">
+                                                </td>
                                                 <td>{{ $row->namajurusan}}</td>
-                                                <td>{{ $row->created_at}}</td> 
-                                                    
-                                                
+                                                <td>{{ $row->created_at}}</td>
+
+
                                                 <td>
                                                     <a href="/tampiljurusan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                     <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
@@ -128,7 +133,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 

@@ -32,8 +32,14 @@ class JurusanController extends Controller
 
             $data = jurusan::create([
                 'namajurusan' =>$request->namajurusan,
+                'foto' =>$request->foto,
             ]);
 
+            if($request->hasFile('foto')){
+                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
+                $data->foto = $request->file('foto')->getClientOriginalName();
+                $data->save();
+            }
 
             return redirect()->route('datajurusan')->with('sukses', 'Data Berhasil Ditambahkan');
 
@@ -59,9 +65,10 @@ class JurusanController extends Controller
 
         public function deletejurusan($id){
             $data = jurusan::find($id);
+            toastr()->error('Data Masih Digunakan!');
             $count = datasiswa::where('namajurusan', $id)->count();
             if($count > 0){
-                return back()->with('error', 'Jurusan sedang digunakan');
+                return back();
             }
             $data->delete();
 

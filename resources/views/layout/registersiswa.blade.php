@@ -11,7 +11,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/2.png')}}">
 
     <!-- Layout config Js -->
     <script src="assets/js/layout.js"></script>
@@ -27,7 +27,6 @@
 </head>
 
 <body>
-
     <div class="auth-page-wrapper pt-5">
         <!-- auth page bg -->
         <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
@@ -47,8 +46,8 @@
                     <div class="col-lg-12">
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
-                                <a href="index.html" class="d-inline-block auth-logo">
-                                    <img src="assets/images/logo-light.png" alt="" height="20">
+                                <a href="/registersiswa" class="d-inline-block auth-logo">
+                                    <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/1.png')}}" alt="" height="100" width="250">
                                 </a>
                             </div>
                             <p class="mt-3 fs-15 fw-medium">J - On | Journal Online</p>
@@ -56,122 +55,98 @@
                     </div>
                 </div>
                 <!-- end row -->
-
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card mt-4">
-
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
-                                    <h5 class="text-primary">REGISTER AKUN</h5>
-                                    <p class="text-muted">Register Akun Siswa</p>
+                                    <h5 class="text-primary">DAFTAR AKUN</h5>
+                                    <p class="text-muted">Daftar Akun Siswa</p>
                                 </div>
-                                <div class="p-2 mt-4">
-                                    <form class="col s12" action="/registerusersiswa" method="POST">
-                                        @csrf
-                                        <!-- email -->
-                                        <div class="mb-3">
-                                            <label for="nissiswa" class="form-label">NIS Siswa<span class="text-danger">*</span></label>
-                                            <input type="number" class="form-control" name="nissiswa" id="nissiswa" placeholder="Masukkan Nis Siswa" required>
+                                <form class="col s12" action="/registerusersiswa" method="POST">
+                                    @csrf
+                                    <!-- email -->
+                                    <div class="mb-3">
+                                        <label for="nissiswa" class="form-label">NIS Siswa<span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="nissiswa" id="nissiswa" placeholder="Masukkan Nis Siswa" required>
 
-                                        </div>
-                                        @error('nissiswa')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-                                        <div class="mb-3">
-                                            <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
-                                        </div>
-                                        @error('namasiswa')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-                                        <div class="col-lg-12">
-                                            <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
-                                            <select class="form-control" name="namajurusan" id="namajurusan">
-                                                <option value="" selected disabled>- Pilih Jurusan Siswa -</option>
-                                                @foreach($data as $hi)
-                                                <option value="{{ $hi->id }}">{{ $hi->namajurusan }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <br>
-                                        <div class="mb-3">
-                                            <label for="alamatsiswa" class="form-label">Alamat Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="alamatsiswa" id="alamatsiswa" placeholder="Masukkan Alamat Siswa" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="notlpsiswa" class="form-label">No Telepon Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="notlpsiswa" id="notlpsiswa" placeholder="Masukkan No Telepon Siswa" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email Siswa <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" required>
-                                        </div>
-                                        <!-- pwd -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="password-input">Buat Password</label>
-                                            <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password-input" aria-describedby="passwordInput">
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                                <div class="invalid-feedback">
-                                                    Please enter password
-                                                </div>
+                                    </div>
+                                    @error('nissiswa')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
+                                    </div>
+                                    @error('namasiswa')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    <div class="col-lg-12">
+                                        <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
+                                        <select class="form-control" name="namajurusan" id="namajurusan">
+                                            <option value="" selected disabled>- Pilih Jurusan Siswa -</option>
+                                            @foreach($data as $hi)
+                                            <option value="{{ $hi->id }}">{{ $hi->namajurusan }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <div class="mb-3">
+                                        <label for="alamatsiswa" class="form-label">Alamat Siswa <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="alamatsiswa" id="alamatsiswa" placeholder="Masukkan Alamat Siswa" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="notlpsiswa" class="form-label">No Telepon Siswa <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="notlpsiswa" id="notlpsiswa" placeholder="Masukkan No Telepon Siswa" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email Siswa <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" required>
+                                    </div>
+                                    <!-- pwd -->
+                                    <div class="mb-3">
+                                        <label class="form-label" for="password-input">Buat Password</label>
+                                        <div class="position-relative auth-pass-inputgroup">
+                                            <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password-input" aria-describedby="passwordInput">
+                                            <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                            <div class="invalid-feedback">
+                                                Please enter password
                                             </div>
                                         </div>
-                                        @error('password')
-                                        <div class="text-danger">
-                                            {{ $message }}
+                                    </div>
+                                    @error('password')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    <div class="row m-t-40">
+                                        <div class="mt-4">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalgrid">
+                                                Selanjutnya
+                                            </button>
                                         </div>
-                                        @enderror
-                                        <div class="mb-3">
-                                            <label for="kd_guru" class="form-label">Masukkan Kode Guru Pembimbing <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="kd_guru" id="kd_guru" placeholder="Masukkan Kode Guru" required>
-                                        </div>
-                                        <label for=""><h6><em>Info : Pastikan kode benar!!</em></h6> </label>
-                                        <div class="mb-3">
-                                            <label for="kd_dudi" class="form-label">Masukkan Kode Dudi<span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="kd_dudi" id="kd_dudi" placeholder="Masukkan Kode Dudi" required>
-                                        </div>
-                                        <label for=""><em><h6>Info : Pastikan kode benar!!</h6></em></label>
-                                        {{-- <div class="row m-t-5">
-                                            <div class="col s7">
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Agree to all Terms</span>
-                                                </label>
-                                            </div>
-                                        </div> --}}
-                                        <!-- pwd -->
-                                        <div class="row m-t-40">
-                                            <div class="mt-4">
-                                                <button class="btn btn-success w-100" type="submit">Register</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+                                    </div>
                             </div>
-                            <!-- end card body -->
                         </div>
-                        <!-- end card -->
-
-                        <div class="mt-4 text-center">
-                            <p class="mb-0">Sudah Punya Akun Siswa ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
-                        </div>
-
+                        <!-- end card body -->
                     </div>
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end auth page content -->
+                    <!-- end card -->
 
-        <!-- footer -->
-        <footer class="footer">
+                    <div class="mt-4 text-center">
+                        <p class="mb-0">Sudah Punya Akun Siswa ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    {{-- <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -184,9 +159,40 @@
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- end Footer -->
+        </footer> --}}
+<!-- Grids in modals -->
+<div class="modal fade" id="exampleModalgrid" tabindex="-1" aria-labelledby="exampleModalgridLabel" aria-modal="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalgridLabel">Kode</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-xxl-6">
+                            <div class="mb-3">
+                                <label for="kd_guru" class="form-label">Masukkan Kode Guru Pembimbing <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="kd_guru" id="kd_guru" placeholder="Masukkan Kode Guru" required>
+                            </div>
+                            <label for=""><h6><em>Info : Pastikan kode benar!!</em></h6> </label>
+                            <div class="mb-3">
+                                <label for="kd_dudi" class="form-label">Masukkan Kode Dudi<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="kd_dudi" id="kd_dudi" placeholder="Masukkan Kode Dudi" required>
+                            </div>
+                            <label for=""><em><h6>Info : Pastikan kode benar!!</h6></em></label>
+                        <div class="col-lg-12">
+                            <div class="hstack gap-2 justify-content-end">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+                                <button type="submit" class="btn btn-primary">Daftar</button>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </form>
+            </div>
+        </div>
     </div>
+</body>
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
@@ -205,6 +211,14 @@
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/form-validation.init.js')}}"></script>
     <!-- password create init -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/passowrd-create.init.js')}}"></script>
+    {{-- modal --}}
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/modal.init.js')}}"></script>
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/libs/node-waves/waves.min.js') }}"></script>
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/libs/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/plugins/lord-icon-2.1.0.js') }}"></script>
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/js/plugins.js') }}"></script>
 </body>
 
 

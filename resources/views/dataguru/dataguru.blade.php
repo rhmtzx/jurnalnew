@@ -79,7 +79,7 @@
                                     <br>
                                 </div>
                                 <div class="card-body">
-                                    <table id="guru" class="table nowrap align-middle" style="width:100%">
+                                    <table id="guru" class="table nowrap align-middle table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="width: 10px;">
@@ -88,6 +88,7 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
+                                                <th scope="col">Kode Guru</th>
                                                 <th scope="col">NIP</th>
                                                 <th scope="col">Nama Guru</th>
                                                 <th scope="col">Alamat</th>
@@ -109,6 +110,7 @@
                                                 </th>
                                                 <th scope="row">{{ $no++ }}</th>
 
+                                                <td>{{ $row->kd_guru }}</td>
                                                     <td>{{ $row->nip }}</td>
                                                     <td>{{ $row->namaguru }}</td>
                                                     <td>{{ $row->alamat }}</td>

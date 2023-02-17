@@ -18,6 +18,16 @@ class jurusan extends Model
         return $this->hasMany(datasiswa::class,'namajurusan' ,'id');
     }
 
+    public function tambahjurnal()
+    {
+        return $this->hasMany(tambahjurnal::class,'id_jurusan' ,'id');
+    }
+
+    public function dataabsen()
+    {
+        return $this->hasMany(dataabsen::class,'id_jurusan' ,'id');
+    }
+
     public function user()
     {
         return $this->hasMany(user::class,'namajurusan' ,'id');

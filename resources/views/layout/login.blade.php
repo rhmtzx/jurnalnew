@@ -11,7 +11,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/2.png')}}">
 
     <!-- Layout config Js -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/layout.js')}}"></script>
@@ -48,7 +48,7 @@
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
                                 <a href="index.html" class="d-inline-block auth-logo">
-                                    <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/logo-light.png')}}" alt="" height="20">
+                                    <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/1.png')}}" alt="" height="100" width="250">
                                 </a>
                             </div>
                             <p class="mt-3 fs-15 fw-medium">J - On | Journal Online</p>
@@ -82,13 +82,13 @@
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
                                             </div>
                                             <div class="float-end">
-                                                <a href="auth-pass-reset-basic.html" class="text-muted">Forgot password?</a>
+                                                <a href="auth-pass-reset-basic.html" class="text-muted">Lupa Password?</a>
                                             </div>
                                         </div>
 
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
-                                            <label class="form-check-label" for="auth-remember-check">Remember Me</label>
+                                            {{-- <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
+                                            <label class="form-check-label" for="auth-remember-check">Remember Me</label> --}}
 
                                         </div>
                                         <div class="mt-4">
@@ -120,13 +120,13 @@
                         <br>
                             <div style="display : flex">
                                         <div class="mt-1 m-auto">
-                                            <a href="/registerdudi" class="btn btn-info w-33" type="submit">Register Dudi</a>
+                                            <a href="/registerdudi" class="btn btn-info w-33" type="submit">Daftar Dudi</a>
                                         </div>
                                         <div class="mt-1 m-auto">
-                                            <a href="/registersiswa" class="btn btn-info w-33" type="submit">Register Siswa</a>
+                                            <a href="/registersiswa" class="btn btn-info w-33" type="submit">Daftar Siswa</a>
                                         </div>
                                         <div class="mt-1 m-auto">
-                                            <a href="/registerguru" class="btn btn-info w-33" type="submit">Register Guru </a>
+                                            <a href="/registerguru" class="btn btn-info w-33" type="submit">Daftar Guru </a>
                                         </div>
                                     </div>
                             <div class="card-body p-4">

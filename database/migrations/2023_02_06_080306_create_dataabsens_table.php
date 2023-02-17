@@ -20,6 +20,7 @@ class CreateDataabsensTable extends Migration
             $table->string('statusjurnal')->nullable();
             $table->string('usersiswa');
             $table->string('student_id');
+            $table->string('id_jurusan');
             $table->string('kd_guru');
             $table->string('kd_dudi');
 

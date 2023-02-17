@@ -23,7 +23,7 @@
             <!--begin col-md-6-->
             <div class="col-md-6">
 
-                  <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/website-development.jpg') }}" class="hero-image width-100" alt="pic">
+                  <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/3.png') }}" class="hero-image width-97" alt="pic">
 
             </div>
             <!--end col-md-6-->

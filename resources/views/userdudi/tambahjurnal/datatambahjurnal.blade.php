@@ -24,11 +24,6 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Foto</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col">Deskripsi</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Dibuat</th>
                                             <th scope="col">Aksi</th>
 
                                         </tr>
@@ -37,38 +32,18 @@
                                         @php
                                         $no = 1;
                                         @endphp
+                                            @foreach($data5 as $row5)
 
-                                            @foreach($data4 as $row4)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row4->namasiswa->namasiswa }}</td>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row4->judul }}</td>
-                                                <td>{!! $row4->deskripsi !!}</td>
-                                                @if ($row4->statusjurnal == 'Telah Disetujui')
-                                                <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                                </td>
-                                                @elseif ($row4->statusjurnal == 'Menunggu Persetujuan')
-                                                <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @elseif ($row4->statusjurnal == 'Jurnal Ditolak')
-                                                <td>
-                                                    <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
-                                                </td>
-                                                @endif
-                                                <td>{{ $row4->created_at}}</td>
+                                                <td>{{ $row5->namasiswa }}</td>
+
                                                 <td scope="row">
-                                                    <a href="/tampiltambahjurnal/{{ $row4->id }}"
-                                                        class="btn btn-warning"><i
-                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                    <a href="/jurnalsdudi/{{ $row5->id }}"
+                                                        class="btn btn-social btn-social-outline-tw mb-3"><i class="fa-solid fa-eye"></i></a>
                                                         <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
-                                                        data-id="{{ $row4->id }}"
-                                                        data-judul="{{ $row4->judul }}"><i
+                                                        data-id="{{ $row5->id }}"
+                                                        data-judul="{{ $row5->judul }}"><i
                                                         class="fa-sharp fa-solid fa-trash"></i></a> -->
                                                     </td>
                                                 </tr>

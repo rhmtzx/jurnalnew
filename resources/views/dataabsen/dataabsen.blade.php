@@ -75,7 +75,7 @@
 
                                 </div>
                                 <div class="card-body">
-                                    <table id="Jurnal" class="table nowrap align-middle" style="width:100%">
+                                    <table id="Jurnal" class="table nowrap align-middle table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="width: 10px;">

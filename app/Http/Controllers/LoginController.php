@@ -173,7 +173,6 @@ class LoginController extends Controller
         return view('layout.registerdudi')->with('success','Berhasil Daftar');
     }
     public function registeruserdudi(Request $request){
-        // $kd_guru = Helper::IDGenerator(new dataguru, 'kd_guru', 5, 'SKNS' );
         $kd_dudi = random_int(100000, 999999);
         // dd($kd_guru2);
         // $this->validate($request,[
@@ -205,6 +204,12 @@ class LoginController extends Controller
             'user_id' => $user->id,
 
         ]);
+        
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
+            $user->foto = $request->file('foto')->getClientOriginalName();
+            $user->save();
+        }
 
         return redirect('/login')->with('success','Berhasil Daftar');
     }

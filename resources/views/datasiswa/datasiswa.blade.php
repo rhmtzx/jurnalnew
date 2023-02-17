@@ -66,12 +66,13 @@
                     </div>
                     <div class="row" >
                       @foreach ($data as $row )
-
+                        
                         <div class="col-sm-6 col-xl-3" >
                             <!-- Simple card -->
 
                             <div class="card" style="">
-                                {{-- <img class="card-img-top img-fluid" src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/images/small/img-1.jpg') }}" alt="Card image cap"> --}}
+                                <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                style="width: 75px; margin: auto; padding-top: 10px">
                                 <div class="card-body">
                                     <h4 class="card-title mb-2 text-center">{{ $row->namajurusan }}</h4>
                                     <br>
@@ -87,4 +88,5 @@
                         @endforeach
 
                         </div><!-- end col -->
+                        {{ $data->links() }}
 @endsection

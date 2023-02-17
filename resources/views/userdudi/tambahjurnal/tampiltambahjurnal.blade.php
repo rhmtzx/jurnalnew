@@ -30,13 +30,15 @@
                                                 <input type="hidden" name="usersiswa" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->usersiswa}}"
                                                 readonly="">
 
+
+
                                             <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Judul</h6></label>
-                                                <input type="text" name="judul" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Judul Jurnal" value="{{ $data->judul }}" readonly="">
+                                            {{-- <label for="exampleInputEmail1" class="form-label"><h6>Judul</h6></label> --}}
+                                                <input type="hidden" name="judul" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Judul Jurnal" value="{{ $data->judul }}" readonly="">
                                             </div>
 
 
-                                            <section style="padding-top:60px;">
+                                            <section style="padding-top:60px;" hidden>
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-md-12">
@@ -53,7 +55,6 @@
                                                     </div>
                                                 </div>
                                             </section>
-                                            <br>
                                             <div class="form-group">
                                                     <label class="col-form-label"><h6>Status Jurnal</h6></label>
                                                     <select class="form-control" id="statusjurnal" name="statusjurnal">
@@ -65,18 +66,20 @@
                                                         </option>
                                                     </select>
                                                 </div>
-                                                <br>
 
-                                            <div class="mb-3">
-                                                    <label for="foto" class="form-check-labell"><h5>Masukkan Foto Baru</h5></label>
-                                                    <br><img class="img mb-3" src="{{ asset('fotodudi/'.$data->foto) }}" 
-                                                    alt="" style="width:80px"></br>
-                                                    <input type="file" name="foto" class="form-control" >
+
+                                            {{-- <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6></label> --}}
+                                            <br><img class="img mb-3" hidden src="{{ asset('fotodudi/' . $data->foto) }}"
+                                                alt="" style="width: 90px" alt="">
+                                            <div class="input-group mb-3" hidden>
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" name="foto" class="custom-file-input" id="inputGroupFile01">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                </div>
                                             </div>
-
-
-
-                                            <br>
 
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Update Data</button>
                                             <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>

@@ -36,7 +36,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -67,13 +67,13 @@
                     </div>
                     <!-- end page title -->
 
-                   
+
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Tambah Data Jurusan</h5>
-                                    
+
                                 </div>
                                 <div class="card-body">
                                     <form action="/insertjurusan" method="POST" enctype="multipart\form-data" >
@@ -88,13 +88,19 @@
                                         {{ $message }}
                                     </div>
                                     @enderror
-                                    
+                                    <br>
+                                    <div class="mb-1">
+                                        <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6>
+                                        </label>
+                                        <br>
+                                        <input type="file" name="foto" class="form-control">
+                                        </div>
                                     <br>
                                     <br>
                                             <button type="submit" class="btn btn-primary">Submit Data</button>
                                             <a href="/datajurusan" class="btn btn-danger mb-10">Kembali</a>
 
-                                        </form> 
+                                        </form>
                                 </div>
                             </div>
                         </div><!--end col-->
@@ -105,7 +111,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 

@@ -17,6 +17,11 @@ class dataabsen extends Model
         return $this->belongsTo(datasiswa::class, 'usersiswa', 'id');
     }
 
+    public function jurusans()
+	{
+		return $this->belongsTo(jurusan::class, 'namajurusan', 'id');
+	}
+
     public function getCreatedAtAttribute()
     {
         return Carbon::parse($this->attributes['created_at'])
