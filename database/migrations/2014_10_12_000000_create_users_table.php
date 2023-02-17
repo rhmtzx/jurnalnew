@@ -23,6 +23,26 @@ class CreateUsersTable extends Migration
             $table->string('kd_dudi')->nullable();
             $table->string('id_jurusan')->nullable();
             $table->string('role');
+            $table->string('foto')->default('default.png');
+            //profil siswa
+            $table->string('nissiswa')->nullable();
+            $table->string('alamatsiswa')->nullable();
+            $table->string('notlpsiswa')->nullable();
+            //profil guru
+            $table->string('nip')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('notlpn')->nullable();
+            //profil dudi
+            $table->string('namakepdik')->nullable();
+            $table->string('alamatdudi')->nullable();
+            $table->string('notelepondudi')->nullable();
+
+            $table->string('siswa_id')->nullable();
+            $table->string('guru_id')->nullable();
+            $table->string('dudi_id')->nullable();
+
+
+
             $table->rememberToken();
             $table->timestamps();
         });

@@ -18,12 +18,12 @@
                 <nav>
                     <ul class="metismenu" id="menu">
                         @if(Auth::user()->role == 'Siswa')
-                        <ul><em>Dashboard</em></ul>
+                        <ul><em>Beranda</em></ul>
                         <br>
                             <li class="{{ ($tittle === 'dashboard') ? 'active':  ''}}">
                             <a href="/dashboard">
                                 <i class="fa-solid fa-house"></i>
-                                <span>Dashboard</span>
+                                <span>Beranda</span>
                             </a>
                         </li>
                         <br>
@@ -55,17 +55,13 @@
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Isi Absen</span>
-                            </a>
-                        </li>
-                        @endif
-
                         @if(Auth::user()->role == 'Dudi')
-                        <ul><em>Dashboard</em></ul>
+                        <ul><em>Beranda</em></ul>
                         <br>
                             <li class="{{ ($tittle === 'dashboard') ? 'active': '' }}">
                             <a href="/dashboard">
-                                <i class="feather ft-home"></i>
-                                <span>Dashboard</span>
+                                <i class="fa-solid fa-house"></i>
+                                <span>Beranda</span>
                             </a>
                         </li>
                         <br>
@@ -73,7 +69,7 @@
                         <br>
                         <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Siswa</span>
                             </a>
                         </li>
@@ -82,26 +78,26 @@
                         <br>
                         <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
 
                         <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Absen Siswa</span>
                             </a>
                         </li>
                         @endif
 
                         @if(Auth::user()->role == 'Guru')
-                        <ul><em>Dashboard</em></ul>
+                        <ul><em>Beranda</em></ul>
                         <br>
-                            <li class="{{ ($tittle === 'dashboard') ? 'active': '' }}">
-                            <a href="/dashboard">
-                                <i class="feather ft-home"></i>
-                                <span>Dashboard</span>
+                            <li class="active">
+                            <a href="/dashboard ">
+                                <i class="fa-solid fa-house"></i>
+                                <span>Beranda</span>
                             </a>
                         </li>
                         <br>
@@ -109,13 +105,13 @@
                         <br>
                         <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Siswa</span>
                             </a>
                         </li>
                         <li class="{{ ($tittle === 'dataplotingan') ? 'active': '' }}">
                             <a href="/dataplotingan">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Plotingan Siswa</span>
                             </a>
                         </li>
@@ -124,14 +120,14 @@
                         <br>
                         <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
 
                         <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
-                                <i class="feather ft-calendar"></i>
+                                <i class="fa-solid fa-book"></i>
                                 <span>Data Absen Siswa</span>
                             </a>
                         </li>

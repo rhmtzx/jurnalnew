@@ -38,7 +38,7 @@ class DatadudiController extends Controller
                   'foto' => 'required',
 
 
-             ],[
+             ],[    
                  'namadudi.required' => 'Harus diisi',
                  'namakepdik.required' => 'Harus diisi',
                  'alamatdudi.required' => 'Harus diisi',

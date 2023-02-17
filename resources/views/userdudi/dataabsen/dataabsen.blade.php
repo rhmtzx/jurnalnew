@@ -13,7 +13,8 @@
                     <div class="card-body">
                         <h4 class="card_title">Data Absen Seluruh Siswa</h4>
                         <ul>
-                            <li><h6>Seluruh Absen Siswa Ada Disini</h6></li></ul>
+                            <li><h6>Seluruh Data Absen Siswa Yang Dibimbing Ada Disini</h6></li>
+                        </ul>
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">

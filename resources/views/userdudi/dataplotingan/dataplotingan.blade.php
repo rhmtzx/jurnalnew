@@ -24,9 +24,8 @@
                                                 <th scope="col">Nama Guru</th>
                                                 <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Nama Dudi</th>
+                                                <th scope="col">Alamat Dudi</th>
                                                
-                                                <!-- <th scope="col">Dibuat</th> -->
-                                                <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -39,23 +38,8 @@
                                                 <td>{{ $row->gurus->namaguru}}</td>
                                                 <td>{{ $row->siswas->namasiswa}}</td>
                                                 <td>{{ $row->dudis->namadudi}}</td>  
-                                                <!-- <td>{{ $row->namagurup }}</td> -->
-                                                <!-- <td>{{ $row->nissiswap }}</td>
-                                                <td>{{ $row->namadudip }}</td> -->
+                                                <td>{{ $row->alamatdudip}}</td>
                                                 
-                                                <!-- <td>{{ $row->datasiswa ? $row->nissiswap->nissiswa : 'data tidak ada' }}</td>
-                                                <td>{{ $row->datadudi ? $row->namadudip->namadudi : 'data tidak ada' }}</td>
- -->
-                                                
-
-
-                                                
-                                                    
-                                                <!-- <td>{{ $row->created_at}}</td> -->
-                                                <td scope="row">
-                                                    <button type="button" class="btn btn-primary btn-flat mt-2" data-toggle="modal" data-target="#exampleLongModalLong2">Info</button>  
-                                                    </td>
-                                                </tr>
                                             @endforeach
                                         </tbody>
                                     </table>

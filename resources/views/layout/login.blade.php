@@ -72,7 +72,14 @@
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Masukkan Email</label>
                                             <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email">
+                                        @error('email')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                        @if (session('errore'))
+                                            <div class="text-danger"> {{ session('errore') }} </div>
+                                        @endif
                                         </div>
+                                        
 
                                         <div class="mb-3">
 
@@ -84,7 +91,15 @@
                                             <div class="float-end">
                                                 <a href="auth-pass-reset-basic.html" class="text-muted">Lupa Password?</a>
                                             </div>
+                                        @error('password')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+
+                                        @if (session('error'))
+                                            <div class="text-danger"> {{ session('error') }} </div>
+                                        @endif
                                         </div>
+                                        
 
                                         <div class="form-check">
                                             {{-- <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">

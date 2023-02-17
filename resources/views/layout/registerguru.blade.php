@@ -71,50 +71,83 @@
                                         @csrf
                                         <!-- email -->
                                         <div class="mb-3">
-                                            <label for="nip" class="form-label">NIP Guru <span class="text-danger">*</span></label>
-                                            <input type="number" class="form-control" name="nip" id="nip" placeholder="Masukkan NIP Guru" required>
+                                            <label for="nip" class="form-label"><strong>NIP Guru</strong><span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="nip" id="nip" placeholder="Masukkan NIP Guru">
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
+                                        @error('nip')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Nama Guru <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Guru" required>
+                                            <label for="name" class="form-label"><strong>Nama Guru</strong><span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Guru">
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
+                                        @error('name')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
                                          <div class="mb-3">
-                                            <label for="alamat" class="form-label">Alamat Guru <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat Guru" required>
+                                            <label for="alamat" class="form-label"><strong>Alamat Guru</strong><span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat Guru">
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
+                                        @error('alamat')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
-                                         <div class="mb-3">
-                                            <label for="notlpn" class="form-label">No Telepon Guru <span class="text-danger">*</span></label>
-                                            <input type="number" class="form-control" name="notlpn" id="notlpn" placeholder="Masukkan No Telepon Guru" required>
-                                            <div class="invalid-feedback">
-                                                Please enter email
-                                            </div>
-                                        </div>
+                                        
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Masukkan Email <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Guru" required>
+                                            <label for="notlpn" class="form-label"><strong>No Telepon Guru</strong><span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="notlpn" id="notlpn" placeholder="Masukkan No Telepon Guru">
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
+                                        @error('notlpn')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
                                         <div class="mb-3">
-                                            <label class="form-label" for="password-input">Buat Password</label>
+                                            <label for="email" class="form-label"><strong>Masukkan Email</strong><span class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Guru">
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
+                                        @error('email')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label" for="password-input"><strong>Buat Password</strong></label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password-input" aria-describedby="passwordInput">
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password" aria-describedby="passwordInput">
+                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password"><i class="ri-eye-fill align-middle"></i></button>
                                                 <div class="invalid-feedback">
                                                     Please enter password
                                                 </div>
                                             </div>
+                                        @error('password')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                         </div>
+                                        
+                                        <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><strong>Masukkan Foto Guru <span class="text-danger">*</span></strong></label>
+                                                <br>
+                                                <input type="file" name="foto" class="form-control" >
+                                        @error('foto')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                        </div>
+
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">Daftar</button>
                                         </div>

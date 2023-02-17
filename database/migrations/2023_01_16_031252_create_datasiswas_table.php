@@ -26,6 +26,8 @@ class CreateDatasiswasTable extends Migration
             $table->string('kd_dudi')->nullable();
             $table->string('user_id')->nullable();
 
+            
+            
             $table->timestamps();
         });
     }

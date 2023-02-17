@@ -24,7 +24,8 @@
                                                 <th scope="col">Nama Guru</th>
                                                 <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Nama Dudi</th>
-                                                <th scope="col">Aksi</th>
+                                                <th scope="col">Alamat Dudi</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -36,11 +37,10 @@
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->gurus->namaguru}}</td>
                                                 <td>{{ $row->siswas->namasiswa}}</td>
-                                                <td>{{ $row->dudis->namadudi}}</td>  
-                                                <td scope="row">
-                                                    <button type="button" class="btn btn-primary btn-flat mt-2" data-toggle="modal" data-target="#exampleLongModalLong2">Info</button>  
-                                                    </td>
-                                                </tr>
+                                                <td>{{ $row->dudis->namadudi}}</td>
+                                                <td>{{ $row->alamatdudip}}</td>
+
+                                                
                                             @endforeach
                                         </tbody>
                                     </table>

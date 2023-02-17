@@ -76,11 +76,10 @@
                                 </div>
                                 <div class="card-body">
                                     <form action="/insertdataplotingan" method="POST" enctype="multipart\form-data" >
-                                <br>
                                 @csrf
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Guru</h5></label>
-                                    <select class="form-control" name="namagurup" id="namagurup">
+                                    <select class="form-select rounded-pill" name="namagurup" id="namagurup">
                                         <option value="" selected disabled>Pilih Guru</option>
                                         @foreach($guru as $hi)
                                         <option value="{{ $hi->id }}">{{ $hi->namaguru }}</option>
@@ -95,8 +94,8 @@
                                 <br>
 
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h5>Nama Siswa</h5></label>
-                                    <select class="form-control" name="namasiswap" id="namasiswap">
+                                    <label for="namasiswap" class="form-label"><h5>Nama Siswa</h5></label>
+                                    <select class="form-control rounded-pill" name="namasiswap[]" id="namasiswap">
                                         <option value="" selected disabled>Pilih Siswa</option>
                                         @foreach($siswa as $hi)
                                         <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
@@ -112,7 +111,7 @@
 
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Dudi</h5></label>
-                                    <select class="form-control" name="namadudip" id="namadudip">
+                                    <select class="form-select rounded-pill" name="namadudip" id="namadudip">
                                         <option value="" selected disabled>Pilih Dudi</option>
                                         @foreach($dudi as $rapli)
                                         <option value="{{ $rapli->id }}" data-alamatdudip="{{ $rapli->alamatdudi }}">{{ $rapli->namadudi }}</option>
@@ -126,8 +125,8 @@
                                 @enderror
                                 <br>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Alamat Dudi</h6></label>
-                                    <input type="text" name="alamatdudip" class="form-control" id="alamatdudip"
+                                    <label for="exampleInputEmail1" class="form-label"><h5>Alamat Dudi</h5></label>
+                                    <input type="text" name="alamatdudip" class="form-control rounded-pill" id="alamatdudip"
                                     aria-describedby="emailHelp" placeholder="Masukkan Alamat Dudi" readonly="">
                                     @error('alamatdudip')
                                     <div class="text-danger">

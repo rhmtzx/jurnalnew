@@ -54,7 +54,7 @@ class DataplotinganController extends Controller
 
             $data = dataplotingan::create([
                 'namagurup' =>$request->namagurup,
-                'namasiswap' =>$request->namasiswap,
+                'namasiswap' =>implode(',',$request->namasiswap),
                 'namadudip' =>$request->namadudip,
                 'alamatdudip' =>$request->alamatdudip,
             ]);

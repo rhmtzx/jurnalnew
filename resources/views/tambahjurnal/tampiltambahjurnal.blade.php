@@ -124,7 +124,6 @@
                                             <br>
                                             <button type="submit" class="btn btn-primary">Update Jurnal</button>
                                             <a href="/datatambahjurnal" class="btn btn-danger mb-10">Kembali</a>
-
                                         </form>
                                 </div>
                             </div>

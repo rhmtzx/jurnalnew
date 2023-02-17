@@ -105,6 +105,17 @@
                                     <input type="number" name="notlpn" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->notlpn }}">
                                     <br>
+
+                                <div class="mb-1">
+                                        <label for="exampleInputEmail1" class="form-label"><h6>Edit Foto Dudi</h6>
+                                        </label>
+                                            <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
+                                                alt="" style="width: 90px" alt="">
+                                                <br>
+                                                <input type="file" name="foto" class="form-control">
+                                        </div>
+                                        <br>
+                                        <br>
                                     
                                     <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Update Data</button>

@@ -75,7 +75,7 @@
                                     
                                 </div>
                                 <div class="card-body">
-                                 <form action="/updatedatadudi/{{ $data->id }}" method="POST"
+                                <form action="/updatedatadudi/{{ $data->id }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">

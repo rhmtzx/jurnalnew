@@ -37,6 +37,7 @@
                                                 {{ $message }}
                                             </div>
                                             @enderror
+                                            
                                             <div class="mb-3">
                                                 <label class="col-form-label"><h6>Nama Siswa</h6></label>
                                                 @foreach ( $data as $c)

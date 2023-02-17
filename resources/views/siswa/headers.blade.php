@@ -13,12 +13,12 @@
                         <span></span>
                         <span></span>
                     </div>
-                    <div class="search-box pull-left">
+                    <!-- <div class="search-box pull-left">
                         <form action="#">
                             <i class="ti-search"></i>
                             <input type="text" name="search" placeholder="Search..." required>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
                 <!--==================================*
                          End Navigation and Search
@@ -173,10 +173,10 @@
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="d_none_sm">{{Auth()->user()->name}} <i class="ti-angle-down"></i></span>
-                                    <img src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/images/user.jpg')}}" alt="" class="img-fluid">
+                                    <img src="{{ asset('fotodudi/' . Auth::user()->foto) }}" alt="" class="img-fluid">
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                                    <a class="dropdown-item" href="/profils"><i class="ti-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="/profil"><i class="ti-user"></i> Profile</a>
                                     <!-- <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Settings</a> -->
                                     <span role="separator" class="divider"></span>
                                     <a class="dropdown-item" href="/logout"><i class="ti-power-off"></i>Logout</a>

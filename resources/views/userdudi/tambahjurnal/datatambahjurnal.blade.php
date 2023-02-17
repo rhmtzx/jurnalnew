@@ -11,9 +11,9 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Jurnal Seluruh Siswa</h4>
+                        <h4 class="card_title">Data Jurnal Siswa</h4>
                         <ul>
-                            <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
+                            <li><h6>Seluruh Jurnal Siswa Yang Dibimbing Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">
