@@ -121,7 +121,7 @@ class LoginController extends Controller
             'nissiswa' => $request ->nissiswa,
             'alamatsiswa' => $request ->alamatsiswa,
             'notlpsiswa' => $request ->notlpsiswa,
-            
+
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
             'kd_guru' => $request->kd_guru,
@@ -174,7 +174,7 @@ class LoginController extends Controller
             'email.required' => 'Email Harus Diisi !!',
             'password.required' => 'Password Harus Diisi !!',
             'password.min' => 'Isi Password Minimal 6 Huruf !!',
-            'foto.required' => 'Upload Minimal 1 Foto !!',    
+            'foto.required' => 'Upload Minimal 1 Foto !!',
 
         ]);
 
@@ -183,7 +183,7 @@ class LoginController extends Controller
             'email' => $request ->email,
             'nip' => $request ->nip,
             'foto' => $request->foto,
-                
+
             'alamat' => $request ->alamat,
             'notlpn' => $request ->notlpn,
 
@@ -235,7 +235,7 @@ class LoginController extends Controller
             'email.required' => 'Harus Diisi !!',
             'password.required' => 'Password Harus Diisi !!',
             'password.min' => 'Isi Password Minimal 6 Huruf !!',
-            'foto.required' => 'Upload Minimal 1 Foto !!',    
+            'foto.required' => 'Upload Minimal 1 Foto !!',
 
         ]);
 
@@ -264,7 +264,7 @@ class LoginController extends Controller
             'user_id' => $user->id,
 
         ]);
-        
+
         if($request->hasFile('foto')){
             $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
             $user->foto = $request->file('foto')->getClientOriginalName();
@@ -291,24 +291,26 @@ class LoginController extends Controller
     }
 
 
-    
-
     // Siswa Guru Dan Dudi
     public function profil()
     {
         $data = User::all();
         $jurusan = jurusan::all();
+        $tittle = 'profile';
 
-        return view('siswa.profil', compact('data','jurusan'));
+        return view('siswa.profil', compact('data','jurusan','tittle'));
     }
 
     public function editprofil(request $request)
     {
         $data = User::findOrFail(Auth::user()->id);
+        $tittle = 'editprofil';
         $jurusan = jurusan::all();
 
-        return view('siswa.editprofil', compact('data','jurusan'));
-    }   
+
+
+        return view('siswa.editprofil', compact('data','jurusan','tittle'));
+    }
 
     //Update Profil Siswa
     public function updateprofilsiswa(request $request)
@@ -335,7 +337,7 @@ class LoginController extends Controller
             'kd_guru' => $request->kd_guru,
             'kd_dudi' => $request->kd_dudi,
             'namajurusan' => $request->id_jurusan,
-            
+
         ]);
         if ($request->hasfile('foto')) {
             $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
@@ -367,7 +369,7 @@ class LoginController extends Controller
             'alamat' => $request->alamat,
             'notlpn' => $request->notlpn,
             'kd_guru' => $request->kd_guru,
-            
+
         ]);
         // $data2->update([
         //     'namaguru'=>$request->name
@@ -386,7 +388,7 @@ class LoginController extends Controller
     {
         $data = User::find(Auth::user()->id);
         $data2 = datadudi::with('namadudi')->where(Auth::user()->user_id);
-        
+
         // $data2= Datadudi::Where($data->user_id);
 
         $data->update([
@@ -413,7 +415,7 @@ class LoginController extends Controller
         }
         return redirect()->route('profil')->with('success', 'Profil Dudi Berhasil Di Update !');
 
-        
-        
+
+
     }
 }
