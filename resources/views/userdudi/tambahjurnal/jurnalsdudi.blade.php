@@ -48,6 +48,7 @@
                                                 </td>
                                                 <td>{{ $row4->judul }}</td>
                                                 <td>{!! $row4->deskripsi !!}</td>
+
                                                 @if ($row4->statusjurnal == 'Telah Disetujui')
                                                 <td>
                                                     <span class="badge badge-success badge-success ">Telah Disetujui</span>
@@ -61,6 +62,7 @@
                                                     <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
                                                 </td>
                                                 @endif
+                                                
                                                 <td>{{ $row4->created_at}}</td>
                                                 <td scope="row">
                                                     <a href="/tampiltambahjurnal/{{ $row4->id }}"
@@ -76,6 +78,7 @@
 
                                             </tbody>
                                         </table>
+                                        <br>
                                         <a href="javascript:history.back()" class="btn btn-rounded btn-fixed-w btn-outline-danger mb-3">Kembali</a>
                                     </div>
                                 </div>

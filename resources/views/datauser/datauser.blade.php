@@ -52,34 +52,30 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Data Guru Page</h4>
+                                <h4 class="mb-sm-0">Data User</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Data Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Data Guru</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Data User</a></li>
+                                        <li class="breadcrumb-item active">Data User</li>
                                     </ol>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
                     <!-- end page title -->
+
 
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Data Seluruh Guru</h5>
-                                    <br>
-                                    <div>
-                                <a href="/tambahdataguru" class="btn btn-primary mb-10">Tambah Guru +</a>
-                                    </div>
-                                    <br>
+                                    <h5 class="card-title mb-0">Data Seluruh User</h5>
+                                    
                                 </div>
                                 <div class="card-body">
-                                    <table id="guru" class="table nowrap align-middle table-bordered" style="width:100%">
+                                    <table id="jurusan" class="table nowrap align-middle" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col" style="width: 10px;">
@@ -88,20 +84,17 @@
                                                     </div>
                                                 </th>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Foto</th>
-                                                <th scope="col">Kode Guru</th>
-                                                <th scope="col">NIP</th>
-                                                <th scope="col">Nama Guru</th>
-                                                <th scope="col">Alamat</th>
-                                                <th scope="col">No Telpon</th>
-                                                <th scope="col">Dibuat</th>
-                                                <th scope="col">Aksi</th>
+                                                    <th scope="col">Nama User</th>
+                                                    <th scope="col">Sebagai</th>
+                                                    <th scope="col">Email User</th>
+                                                    <th scope="col">Akun Dibuat</th>
+                                                    <!-- <th scope="col">Blokir Pengguna</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                @php
+                                            @php
                                                     $no = 1;
-                                                @endphp
+                                                    @endphp
                                                     @foreach ($data as $row)
                                             <tr>
                                                 <th scope="row">
@@ -110,21 +103,17 @@
                                                     </div>
                                                 </th>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                    <td>
-                                                        <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
-                                                        style="width: 40px">
-                                                    </td>
-                                                    <td>{{ $row->kd_guru }}</td>
-                                                    <td>{{ $row->nip }}</td>
-                                                    <td>{{ $row->namaguru }}</td>
-                                                    <td>{{ $row->alamat }}</td>
-                                                    <td>{{ $row->notlpn }}</td>
-                                                    <td>{{ $row->created_at}}</td>
-                                                <td>
-                                                    <a href="/tampildataguru/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                    <a href="#" class="btn btn-danger deletedataguru" data-id="{{ $row->id }}"
+                                                
+                                                <td>{{ $row->name}}</td>
+                                                <td>{{ $row->role}}</td>
+                                                <td>{{ $row->email}}</td>
+                                                <td>{{ $row->created_at}}</td>
+
+
+                                                <!-- <td>
+                                                    <a href="#" class="btn btn-danger deleteuser data-id="{{ $row->id }}"
                                                     data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
-                                                </td>
+                                                </td> -->
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -175,14 +164,14 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#guru').DataTable();
+                $('#jurusan').DataTable();
             });
         </script>
 
     </body>
 
     <script>
-        $('.deletetambahjurnal').click(function() {
+        $('.deleteuser').click(function() {
             var kategoriid = $(this).attr('data-id');
             var kategori = $(this).attr('data-kategori');
             swal({
@@ -194,7 +183,7 @@
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/deletetambahjurnal/" + kategoriid + ""
+                    window.location = "/deleteuser/" + kategoriid + ""
                     swal("Data Berhasil Di Hapus", {
                         icon: "success",
                     });

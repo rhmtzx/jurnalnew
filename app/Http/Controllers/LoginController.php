@@ -24,23 +24,23 @@ class LoginController extends Controller
             'password' => 'required|min:6',
         ],[
             'email.required' => 'Masukkan Email Anda !!',
-            'email.exists' => 'Email Yang Anda Masukkan Salah !!',
+            'email.exists' => 'Email Yang Anda Masukkan Belum Terdaftar !!',
             'password.required' => 'Masukkan Kata Sandi Anda !!',
             'password.min' => 'Password Minimal 6 Huruf !!',
         ]);
         // toastr()->success('Berhasil Login!');
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Admin'])) {
-            return redirect('/');
+            return redirect('/')->with('success','Berhasil Login Sebagai Admin');
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Guru'])) {
-            return redirect('/dashboard');
+            return redirect('/dashboard')->with('success','Berhasil Login Sebagai Guru');
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Siswa'])) {
-            return redirect('/dashboard');
+            return redirect('/dashboard')->with('success','Berhasil Login Sebagai Siswa');
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'Dudi'])) {
-            return redirect('/dashboard');
+            return redirect('/dashboard')->with('success','Berhasil Login Sebagai Dudi');
         }
 
             return redirect('login')->with('password','Password Salah');
@@ -143,7 +143,7 @@ class LoginController extends Controller
 
 
 
-        return redirect('/login')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect('/login')->with('success','Siswa Berhasil Daftar');
     }
 
     public function registerguru(){
@@ -204,7 +204,7 @@ class LoginController extends Controller
 
         ]);
 
-        return redirect('/login')->with('success','Berhasil Daftar');
+        return redirect('/login')->with('success','Guru Berhasil Daftar');
     }
 
     public function registerdudi(){
@@ -271,7 +271,7 @@ class LoginController extends Controller
             $user->save();
         }
 
-        return redirect('/login')->with('success','Berhasil Daftar');
+        return redirect('/login')->with('success','Dudi Berhasil Daftar');
     }
 
 
@@ -298,23 +298,25 @@ class LoginController extends Controller
     {
         $data = User::all();
         $jurusan = jurusan::all();
+        $tittle = 'profil';
 
-        return view('siswa.profil', compact('data','jurusan'));
+        return view('siswa.profil', compact('data','jurusan','tittle'));
     }
 
     public function editprofil(request $request)
     {
         $data = User::findOrFail(Auth::user()->id);
         $jurusan = jurusan::all();
+        $tittle = 'editprofil';
 
-        return view('siswa.editprofil', compact('data','jurusan'));
+        return view('siswa.editprofil', compact('data','jurusan','tittle'));
     }   
 
     //Update Profil Siswa
     public function updateprofilsiswa(request $request)
     {
         $data = User::find(Auth::user()->id);
-        $data2 = datasiswa::with('namasiswa')->where(Auth::user()->user_id);
+        $data2 = datasiswa::with('namasiswa')->where('user_id', Auth::user()->id);
         $jurusan = jurusan::all();
 
         $data->update([
@@ -348,8 +350,8 @@ class LoginController extends Controller
     //Update Profil Guru
     public function updateprofilguru(request $request)
     {
-        $data = User::find(Auth::user()->id);
-        $data2 = dataguru::with('namaguru')->where(Auth::user()->user_id);
+        $data = user::find(Auth::user()->id);
+        $data2 = dataguru::with('namaguru')->where('user_id', Auth::user()->id);
         // $data2= Dataguru::find($data->guru_id);
 
         $data->update([
@@ -385,7 +387,7 @@ class LoginController extends Controller
     public function updateprofildudi(request $request)
     {
         $data = User::find(Auth::user()->id);
-        $data2 = datadudi::with('namadudi')->where(Auth::user()->user_id);
+        $data2 = datadudi::with('namadudi')->where('user_id', Auth::user()->id);
         
         // $data2= Datadudi::Where($data->user_id);
 

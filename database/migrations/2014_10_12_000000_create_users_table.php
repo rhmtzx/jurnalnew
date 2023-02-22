@@ -37,12 +37,6 @@ class CreateUsersTable extends Migration
             $table->string('alamatdudi')->nullable();
             $table->string('notelepondudi')->nullable();
 
-            $table->string('siswa_id')->nullable();
-            $table->string('guru_id')->nullable();
-            $table->string('dudi_id')->nullable();
-
-
-
             $table->rememberToken();
             $table->timestamps();
         });

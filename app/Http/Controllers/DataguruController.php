@@ -71,6 +71,7 @@ class DataguruController extends Controller
                 'notlpn' =>$request->notlpn,
 
             ]);
+            
             $data2->update([
                 'name'=>$request->namaguru
             ]);
