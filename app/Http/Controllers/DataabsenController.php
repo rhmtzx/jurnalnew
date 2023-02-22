@@ -109,7 +109,6 @@ class DataabsenController extends Controller
                 $data->foto = $request->file('foto')->getClientOriginalName();
                 $data->save();
             }
-            toastr()->success('Data Berhasil Ditambahkan!');
             if(Auth()->user()->role == 'Admin'){
             return redirect()->route('dataabsen')->with('succes', 'Data Berhasil Ditambahkan');
             }else{

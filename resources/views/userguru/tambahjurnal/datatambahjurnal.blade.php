@@ -1,4 +1,4 @@
-@extends('siswa.mains')
+    @extends('siswa.mains')
 @section('contents')
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -40,7 +40,7 @@
 
                                                 <td scope="row">
                                                     <a href="/jurnalsguru/{{ $row6->id }}"
-                                                        class="btn btn-rounded btn-inverse-info btn-fixed-w mb-3"><i class="fa-solid fa-eye"></i></a>
+                                                        class="btn btn-social btn-social-outline-tw mb-3"><i class="fa-solid fa-eye"></i></a>
                                                         <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
                                                         data-id="{{ $row6->id }}"
                                                         data-judul="{{ $row6->judul }}"><i

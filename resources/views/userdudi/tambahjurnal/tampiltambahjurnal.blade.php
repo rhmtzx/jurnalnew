@@ -55,7 +55,7 @@
                                                     </div>
                                                 </div>
                                             </section>
-                                            <div class="form-group">
+                                                <div class="form-group">
                                                     <label class="col-form-label"><h6>Status Jurnal</h6></label>
                                                     <select class="form-control" id="statusjurnal" name="statusjurnal">
                                                         <option selected disabled="">- Pilih Status -</option>
@@ -65,6 +65,18 @@
                                                         <option value="Jurnal Ditolak" {{ $data->statusjurnal == 'Jurnal Ditolak' ? 'selected' : 'Jurnal Ditolak' }}>Jurnal Ditolak
                                                         </option>
                                                     </select>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                                    @if($p->jobs->status_tugas == 'selesai')
+                                                    <span class="text-dark-75 font-weight-bolder mr-2">Status:</span>
+                                                    <a href="#" class="mb-2 ml-2 badge badge-success btn-sm font-weight-bold btn-upper btn-text mr-2">Selesai</a>
+                                                    @elseif($p->jobs->status_tugas == 'pending')
+                                                    <span class="text-dark-75 font-weight-bolder mr-2">Status:</span>
+                                                    <a href="#" class="mb-2 ml-2 badge badge-warning btn-sm font-weight-bold btn-upper btn-text mr-2">Menunggu Acc</a>
+                                                    @elseif($p->jobs->status_tugas == null)
+                                                    <span class="text-dark-75 font-weight-bolder mr-2">Status:</span>
+                                                    <a href="#" class="mb-2 ml-2 badge badge-danger btn-sm font-weight-bold btn-upper btn-text mr-2">pengerjaan</a>
+                                                    @endif
                                                 </div>
 
 

@@ -118,11 +118,11 @@ class TambahjurnalController extends Controller
                 $data->save();
             }
 
-            toastr()->success('Data Berhasil Ditambahkan!');
+            // toastr()->success('Data Berhasil Ditambahkan!');
             if(Auth()->user()->role == 'Admin'){
-            return redirect()->route('datatambahjurnal');
+            return redirect()->route('datatambahjurnal')->with('Data Berhasil Ditambahkan!');
             }else{
-            return redirect()->route('datatambahjurnal');
+            return redirect()->route('datatambahjurnal')->with('Data Berhasil Ditambahkan!');
 
             }
         }

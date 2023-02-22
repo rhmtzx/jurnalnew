@@ -113,19 +113,18 @@
                                         </div>
                                         
                                         <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label"><h6>Email Dudi</h6></label>
-                                            <input type="email" class="form-control" name="email" id="email" value="{{Auth()->user()->email}}">
-                                            <div class="invalid-feedback">
-                                                Please enter email
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                        <div class="mb-3">
                                                 <label for="exampleFormControlInput1" class="form-label"><h6>Masukkan Foto</h6></label>
                                                 <br>
                                                 <input type="file" name="foto" class="form-control" >
                                         
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label"><h6>Email Dudi</h6></label>
+                                            <input type="email" class="form-control" readonly="" name="email" id="email" value="{{Auth()->user()->email}}">
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
                                         </div>
 
                                         <div class="mt-4">
@@ -221,21 +220,20 @@
                                         </div>
                                         
                                         <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label"><h6>Email Guru</h6></label>
-                                            <input type="email" class="form-control" name="email" id="email" value="{{Auth()->user()->email}}">
-                                            <div class="invalid-feedback">
-                                                Please enter email
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                        <div class="mb-3">
                                                 <label for="exampleFormControlInput1" class="form-label"><h6>Masukkan Foto</h6></label>
                                                 <br>
                                                 <input type="file" name="foto" class="form-control" >
                                         
                                         </div>
 
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label"><h6>Email Guru</h6></label>
+                                            <input type="email" class="form-control" readonly="" name="email" id="email" value="{{Auth()->user()->email}}">
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
+                                        </div>
+                                            
                                         <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
                                         <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
@@ -335,13 +333,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label"><h6>Email Siswa</h6></label>
-                                            <input type="email" class="form-control" name="email" id="email" value="{{Auth()->user()->email}}">
-                                            <div class="invalid-feedback">
-                                                Please enter email
-                                            </div>
-                                        </div>
+                                        
                                         
                                         <!-- <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label"><h6>Jurusan Siswa</h6></label>
@@ -362,6 +354,13 @@
                                             </select>
                                         </div>
                                         
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label"><h6>Email Siswa</h6></label>
+                                            <input type="email" class="form-control" name="email" readonly="" id="email" value="{{Auth()->user()->email}}">
+                                            <div class="invalid-feedback">
+                                                Please enter email
+                                            </div>
+                                        </div>
                                         <!-- <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label"><h6>Masukkan Foto</h6></label>
                                             <br>
