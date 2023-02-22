@@ -55,9 +55,13 @@
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Isi Absen</span>
+<<<<<<< HEAD
                             </a>
                         </li>
                         @endif
+=======
+                                @endif
+>>>>>>> 8a07141412f429bff4de6351f75486ed1c368f42
                         @if(Auth::user()->role == 'Dudi')
                         <ul><em>Beranda</em></ul>
                         <br>
