@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+// use Barryvdh\DomPDF\PDF;
 use App\Models\jurusan;
+use Barryvdh\DomPDF\PDF;
 use App\Models\datasiswa;
 use App\Models\tambahjurnal;
+// use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class TambahjurnalController extends Controller
 {
@@ -83,6 +88,14 @@ class TambahjurnalController extends Controller
 
              ]);
 
+             $id_siswa = $request->input('usersiswa');
+             $absensi = tambahjurnal::where('usersiswa', $id_siswa)
+                               ->whereDate('created_at', Carbon::today())
+                               ->first();
+             if ($absensi) {
+                return redirect()->route('datatambahjurnal')->with('error', 'Anda hanya dapat menginputkan Jurnal sekali dalam sehari.');
+             }
+
             $data = tambahjurnal::create([
                 'judul' =>$request->judul,
                 'deskripsi' =>$request->deskripsi,
@@ -92,10 +105,11 @@ class TambahjurnalController extends Controller
                 'kd_guru'=>auth()->user()->kd_guru,
                 'id_jurusan'=>auth()->user()->id_jurusan,
                 'kd_dudi'=>auth()->user()->kd_dudi,
-                'statusjurnal' =>$request->statusjurnal
+                'statusjurnal' =>$request->statusjurnal,
 
 
             ]);
+
             // dd($request->all);
 
             if($request->hasFile('foto')){
@@ -112,6 +126,7 @@ class TambahjurnalController extends Controller
 
             }
         }
+
         public function tampiltambahjurnal($id){
             $tittle = 'datajurnal';
             $data = tambahjurnal::findOrfail($id);

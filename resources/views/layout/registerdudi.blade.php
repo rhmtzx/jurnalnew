@@ -77,8 +77,8 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        
-                                        
+
+
                                         <div class="mb-3">
                                             <label for="namakepdik" class="form-label"><strong>Nama Kepala Direktur</strong><span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="namakepdik" id="namakepdik" placeholder="Masukkan Nama Kepala Direktur" >
@@ -89,8 +89,8 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        
-                                        
+
+
                                         <div class="mb-3">
                                             <label for="alamatdudi" class="form-label"><strong>Alamat Dudi</strong><span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="alamatdudi" id="alamatdudi" placeholder="Masukkan Alamat Dudi" >
@@ -101,8 +101,8 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
-                                        
+
+
                                         <div class="mb-3">
                                             <label for="notelepondudi" class="form-label"><strong>No Telepon Dudi</strong><span class="text-danger">*</span></label>
                                             <input type="number" class="form-control" name="notelepondudi" id="notelepondudi" placeholder="Masukkan No Telepon Dudi" >
@@ -113,8 +113,8 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
-                                        
+
+
                                         <div class="mb-3">
                                             <label for="email" class="form-label"><strong>Masukkan Email</strong><span class="text-danger">*</span></label>
                                             <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Dudi" >
@@ -125,8 +125,8 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
-                                        
+
+
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input"><strong>Buat Password</strong><span class="text-danger">*</span></label>
                                             <div class="position-relative auth-pass-inputgroup">
@@ -140,18 +140,30 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
-                                        
+
                                         <div class="mb-3">
+                                            <label class="form-label" for="password-input"><strong>Konfirmasi Password</strong></label>
+                                            <div class="position-relative auth-pass-inputgroup">
+                                                <input type="password" name="password_confirmation" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password" aria-describedby="passwordInput">
+                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password"><i class="ri-eye-fill align-middle"></i></button>
+                                                <div class="invalid-feedback">
+                                                    Please enter password
+                                                </div>
+                                                @error('password')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                            </div>
+
+                                            <br>
+                                            <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><strong>Masukkan Foto Dudi <span class="text-danger">*</span></strong></label>
-                                                <br>
                                                 <input type="file" name="foto" class="form-control" >
                                         @error('foto')
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
-                                        
+
+
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">Daftar</button>
                                         </div>

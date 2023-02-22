@@ -24,7 +24,6 @@ class CreateTambahjurnalsTable extends Migration
             $table->string('id_jurusan');
             $table->string('student_id');
             $table->string('statusjurnal')->nullable();
-
             $table->timestamps();
         });
     }

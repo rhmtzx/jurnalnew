@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\datasiswa;
+use Carbon\Carbon;
 use App\Models\dataabsen;
+use App\Models\datasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class DataabsenController extends Controller
 {
@@ -79,6 +81,15 @@ class DataabsenController extends Controller
 
              ]);
 
+             $id_siswa = $request->input('usersiswa');
+             $absensi = dataabsen::where('usersiswa', $id_siswa)
+                               ->whereDate('created_at', Carbon::today())
+                               ->first();
+             if ($absensi) {
+                return redirect()->route('dataabsen')->with('error', 'Anda hanya dapat menginputkan data sekali dalam sehari.');
+             }
+
+
             $data = dataabsen::create([
                 'keterangan' =>$request->keterangan,
                 'statusjurnal' =>$request->statusjurnal,
@@ -105,7 +116,9 @@ class DataabsenController extends Controller
             return redirect()->route('dataabsen')->with('succes', 'Data Berhasil Ditambahkan');
 
             }
+
         }
+
         public function tampilabsen($id){
             $data = dataabsen::findOrfail($id);
             $datas = datasiswa::where('namasiswa', Auth::user()->name)->get();

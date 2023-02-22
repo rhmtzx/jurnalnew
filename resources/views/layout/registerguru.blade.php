@@ -80,7 +80,7 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
+
                                         <div class="mb-3">
                                             <label for="name" class="form-label"><strong>Nama Guru</strong><span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Guru">
@@ -91,7 +91,7 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
+
                                          <div class="mb-3">
                                             <label for="alamat" class="form-label"><strong>Alamat Guru</strong><span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat Guru">
@@ -102,7 +102,7 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
+
                                         <div class="mb-3">
                                             <label for="notlpn" class="form-label"><strong>No Telepon Guru</strong><span class="text-danger">*</span></label>
                                             <input type="number" class="form-control" name="notlpn" id="notlpn" placeholder="Masukkan No Telepon Guru">
@@ -113,7 +113,7 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
+
                                         <div class="mb-3">
                                             <label for="email" class="form-label"><strong>Masukkan Email</strong><span class="text-danger">*</span></label>
                                             <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Guru">
@@ -124,7 +124,7 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
+
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input"><strong>Buat Password</strong></label>
                                             <div class="position-relative auth-pass-inputgroup">
@@ -138,8 +138,21 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        
+
                                         <div class="mb-3">
+                                            <label class="form-label" for="password-input"><strong>Konfirmasi Password</strong></label>
+                                            <div class="position-relative auth-pass-inputgroup">
+                                                <input type="password" name="password_confirmation" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password" aria-describedby="passwordInput">
+                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password"><i class="ri-eye-fill align-middle"></i></button>
+                                                <div class="invalid-feedback">
+                                                    Please enter password
+                                                </div>
+                                                @error('password')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                            </div>
+
+                                        <br><div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><strong>Masukkan Foto Guru <span class="text-danger">*</span></strong></label>
                                                 <br>
                                                 <input type="file" name="foto" class="form-control" >

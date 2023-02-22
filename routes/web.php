@@ -230,6 +230,14 @@ Route::post('/updateprofilguru', [LoginController::class, 'updateprofilguru'])->
 Route::post('/updateprofildudi', [LoginController::class, 'updateprofildudi'])->name('updateprofildudi');
 Route::post('/updateprofilsiswa', [LoginController::class, 'updateprofilsiswa'])->name('updateprofilsiswa');
 
+//lupa password
+Route::get('/lupapassword', [LoginController::class, 'lupapassword'])->name('lupapassword');
+
+//excel
+Route::get('/export', [LoginController::class, 'export'])->name('export');
+
+//pdf
+Route::get('/exportpdf', [LoginController::class, 'exportpdf'])->name('exportpdf');
 
 
 

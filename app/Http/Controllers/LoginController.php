@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Models\User;
 use App\Helpers\Helper;
+use App\Models\jurusan;
 use App\Models\datadudi;
 use App\Models\dataguru;
-use App\Models\jurusan;
 use App\Models\datasiswa;
 use Illuminate\Support\Str;
+use App\Exports\UsersExport;
+use App\Models\tambahjurnal;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class LoginController extends Controller
 {
@@ -95,7 +102,9 @@ class LoginController extends Controller
             'kd_dudi'=> 'required',
 
             'email' => 'required|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required|min:6'
+
 
         ],[
             'nissiswa.required' => 'NIS Siswa Harus Diisi !!',
@@ -111,6 +120,7 @@ class LoginController extends Controller
             'email.required' => 'Email Harus Diisi !!',
             'email.unique' => 'Email Sudah Digunakan !!',
             'password.required' => 'Password Harus Diisi !!',
+            'password.confirmed' => 'Sandi Tidak Sama!!',
             'password.min' => 'Isi Password Minimal 6 Huruf !!',
         ]);
 
@@ -161,7 +171,9 @@ class LoginController extends Controller
             'foto' => 'required','unique:posts',
 
             'email' => 'required|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required|min:6'
+
 
         ],[
             'nip.required' => 'NIP Guru Harus Diisi !!',
@@ -174,6 +186,8 @@ class LoginController extends Controller
             'email.required' => 'Email Harus Diisi !!',
             'password.required' => 'Password Harus Diisi !!',
             'password.min' => 'Isi Password Minimal 6 Huruf !!',
+            'password.confirmed' => 'Sandi Tidak Sama!!',
+            'password.confirmed.required' => 'Isi Password Minimal 6 Huruf !!',
             'foto.required' => 'Upload Minimal 1 Foto !!',
 
         ]);
@@ -221,7 +235,10 @@ class LoginController extends Controller
             'foto' => 'required','unique:posts',
 
             'email' => 'required|unique:users',
-            'password' => 'required|min:6'
+            'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required|min:6'
+
+
 
         ],[
             'name.required' => 'Nama Dudi Harus Diisi !!',
@@ -235,6 +252,7 @@ class LoginController extends Controller
             'email.required' => 'Harus Diisi !!',
             'password.required' => 'Password Harus Diisi !!',
             'password.min' => 'Isi Password Minimal 6 Huruf !!',
+            'password.confirmed' => 'Sandi Tidak Sama!!',
             'foto.required' => 'Upload Minimal 1 Foto !!',
 
         ]);
@@ -415,7 +433,36 @@ class LoginController extends Controller
         }
         return redirect()->route('profil')->with('success', 'Profil Dudi Berhasil Di Update !');
 
-
-
     }
+
+    public function lupapassword(){
+        return view('layout.lupapassword');
+    }
+//     public function sendResetLinkEmail(Request $request)
+// {
+
+//     $this->validateEmail($request);
+
+//     $user = User::where('email', $request->email)->first();
+//     if (!$user) {
+//         return $this->sendFailedResponse($request, 'email');
+//     }
+
+//     $user->sendPasswordResetNotification($this->broker()->createToken($user));
+//     return $this->sendResetLinkResponse($request, 'passwords.sent');
+// }
+    public function export()
+{
+    return Excel::download (new UsersExport, 'JurnalSiswa.xlsx');
+}
+
+public function exportpdf(){
+    $data = tambahjurnal::with('namasiswa')->where('student_id', auth()->id())->get();
+    $tittle = 'datajurusan';
+
+    view()->share('data', compact('tittle'), $data);
+    $pdf = Pdf::loadView('user.tambahjurnal.datatambahjurnal', $data->toArray())->output();
+    return $pdf->download('invoice.pdf');
+}
+
 }

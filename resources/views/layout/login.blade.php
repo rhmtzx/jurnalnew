@@ -79,7 +79,7 @@
                                             <div class="text-danger"> {{ session('errore') }} </div>
                                         @endif
                                         </div>
-                                        
+
 
                                         <div class="mb-3">
 
@@ -88,18 +88,18 @@
                                                 <input type="password" class="form-control pe-5 password-input" placeholder="Masukkan Password" name="password" id="password">
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
                                             </div>
-                                            <div class="float-end">
-                                                <a href="auth-pass-reset-basic.html" class="text-muted">Lupa Password?</a>
-                                            </div>
-                                        @error('password')
+                                            @error('password')
                                             <div class="text-danger">{{ $message }}</div>
-                                        @enderror
+                                            @enderror
 
-                                        @if (session('error'))
+                                            @if (session('error'))
                                             <div class="text-danger"> {{ session('error') }} </div>
                                         @endif
+                                            <div class="float-end">
+                                                <a href="/lupapassword" class="text-muted">Lupa Password?</a>
+                                            </div>
                                         </div>
-                                        
+
 
                                         <div class="form-check">
                                             {{-- <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">

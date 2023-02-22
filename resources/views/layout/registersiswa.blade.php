@@ -123,7 +123,19 @@
                                         {{ $message }}
                                     </div>
                                     @enderror
-                                    <div class="row m-t-40">
+                                    <div class="mb-3">
+                                            <label class="form-label" for="password-input"><strong>Konfirmasi Password</strong></label>
+                                            <div class="position-relative auth-pass-inputgroup">
+                                                <input type="password" name="password_confirmation" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password" aria-describedby="passwordInput">
+                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password"><i class="ri-eye-fill align-middle"></i></button>
+                                                <div class="invalid-feedback">
+                                                    Please enter password
+                                                </div>
+                                                @error('password')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                            </div>
+                                    <br><div class="row m-t-40">
                                         <div class="mt-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalgrid">
                                                 Selanjutnya

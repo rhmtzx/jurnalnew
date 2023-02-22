@@ -18,6 +18,11 @@
                             <div class="single-table">
                                 <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
                                 <div class="table-responsive">
+                            <div class="single-table">
+                                    <br>
+
+                                <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a>
+                                <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -44,7 +49,6 @@
                                         <tr>
                                             <th scope="row">{{ $no++ }}</th>
                                             <td>{{ $row->namasiswa->namasiswa }}</td>
-
                                             <td>
                                                 <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
                                                 style="width: 40px">
