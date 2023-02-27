@@ -21,7 +21,7 @@
 
 
 
-                                    <form action="/insertabsen" method="POST" enctype="multipart\form-data" >
+                                    <form action="/insertabsen" method="POST" enctype="multipart/form-data" >
                                         @csrf
                                         <br>
 
@@ -58,13 +58,15 @@
                                     <input type="radio" id="Hadir" name="keterangan" value="Hadir" class="custom-control-input">
                                     <label class="custom-control-label" for="Hadir">Hadir</label>
                                 </div>
-                                <div class="custom-control custom-radio primary-radio">
-                                    <input type="radio" id="Sakit" name="keterangan" value="Sakit" class="custom-control-input">
-                                    <label class="custom-control-label" for="Sakit">Sakit</label>
-                                </div>
+                                
                                 <div class="custom-control custom-radio primary-radio">
                                     <input type="radio" id="Izin" name="keterangan" value="Izin" class="custom-control-input">
                                     <label class="custom-control-label" for="Izin">Izin</label>
+                                </div>
+
+                                <div class="custom-control custom-radio primary-radio">
+                                    <input type="radio" id="Sakit" name="keterangan" value="Sakit" class="custom-control-input">
+                                    <label class="custom-control-label" for="Sakit">Sakit</label>
                                 </div>
                                 @error('keterangan')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -84,21 +86,13 @@
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Status Jurnal</h6></label>
                                                 <input type="text" name="statusjurnal" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Status Jurnal">
                                             </div> -->
-                                            <div class="form-group">
-                                                <label class="col-form-label"><h6>Status Jurnal</h6></label>
-                                                <select class="form-control" id="statusjurnal" name="statusjurnal">
-                                                    <option selected disabled="">- Pilih Status -</option>
-                                                    <option value="Menunggu Persetujuan">Menunggu Persetujuan</option>
-                                                    <!-- <option value="Telah Disetujui">Telah Disetujui</option> -->
-                                                </select>
+
+                                            <!-- Status Jurnal -->
+                                            <div class="mb-3">
+                                                <input type="hidden" class="form-control form-control-lg input-rounded mb-4" name="statusjurnal" type="text" placeholder="Masukan Status Jurnal">
                                             </div>
 
-                                            @error('statusjurnal')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
-                                            <br>
-
-                                            {{-- <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto</h6></label> --}}
+                                            
                                             <div class="mb-1">
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6>
                                                 </label>
@@ -106,7 +100,7 @@
                                                 <input type="file" name="foto" class="form-control">
                                                 </div>
                                             <a for="exampleInputEmail1" class="form-label">
-                                                <em>Info : Abaikan Jika Tidak Sakit Atau Izin !!</em></a>
+                                                <label><em>Info : Abaikan Foto Jika Tidak Sakit Atau Izin !!</em></label></a>
                                             <br>
                                             <br>
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>

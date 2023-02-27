@@ -69,13 +69,13 @@ class DataabsenController extends Controller
 
             $this->validate($request,[
                   'keterangan' => 'required',
-                  'statusjurnal' => 'required',
+                  // 'statusjurnal' => 'required',
                   // 'foto' => 'required',
                   'usersiswa' => 'required',
 
              ],[
                  'keterangan.required' => 'Silahkan Pilih Salah Satu',
-                 'statusjurnal.required' => 'Silahkan Pilih',
+                 // 'statusjurnal.required' => 'Silahkan Pilih',
                  // 'foto.required' => 'Harus diisi',
                  'usersiswa.required' => 'Harus diisi',
 
@@ -86,13 +86,13 @@ class DataabsenController extends Controller
                                ->whereDate('created_at', Carbon::today())
                                ->first();
              if ($absensi) {
-                return redirect()->route('dataabsen')->with('error', 'Anda hanya dapat menginputkan data sekali dalam sehari.');
+                return redirect()->route('dataabsen')->with('error', 'Anda Telah Absen Hari Ini !!');
              }
 
 
             $data = dataabsen::create([
                 'keterangan' =>$request->keterangan,
-                'statusjurnal' =>$request->statusjurnal,
+                'statusjurnal' =>'Menunggu Persetujuan',
                 'foto' =>$request->foto,
                 'usersiswa' =>$request->usersiswa,
                 'student_id' =>auth()->user()->id,
@@ -185,4 +185,23 @@ class DataabsenController extends Controller
                 return redirect()->route('dataabsen')->with('succes', 'Data Berhasil Di Delete');
             }
         }
+
+    // APPROVE ABSEN DITERIMA
+	public function statusditerimaa(Request $request, $id)
+    {
+            $data = dataabsen::find($id);
+            $data->update([
+                'statusjurnal' => 'Telah Disetujui',
+    ]);
+        return redirect()->back()->with('success', 'Absen Telah Di Setujui');
+	}
+	// UNAPPROVE ABSEN DITOLAK
+	public function statusditolaka(Request $request, $id)
+    {
+            $data = dataabsen::find($id);
+            $data->update([
+                'statusjurnal' => 'Absen Ditolak',
+    ]);
+        return redirect()->back()->with('success', 'Absen Telah Di Tolak');
+	}
 }

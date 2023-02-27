@@ -25,7 +25,7 @@
                                                 <th scope="col">Jurusan</th>
                                                 <th scope="col">Alamat Siswa</th>
                                                 <th scope="col">No Telepon Siswa</th>
-                                                <th scope="col">Dibuat</th>
+                                                <th scope="col">Akun Dibuat</th>
                                             </tr>
                                         </thead>
                                         <tbody>

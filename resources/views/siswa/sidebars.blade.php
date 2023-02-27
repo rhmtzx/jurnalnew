@@ -18,7 +18,7 @@
                 <nav>
                     <ul class="metismenu" id="menu">
                         @if(Auth::user()->role == 'Siswa')
-                        <ul><em>Beranda</em></ul>
+                        <ul>Beranda</ul>
                         <br>
                         <li class="{{ ($tittle === 'dashboard') ? 'active':  ''}}">
                             <a href="/dashboard">
@@ -27,7 +27,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Data Siswa & Plotingan</em></ul>
+                        <ul>Data Siswa & Plotingan</ul>
                         <br>
                         <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
@@ -42,7 +42,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Jurnal & Absen</em></ul>
+                        <ul>Jurnal & Absen</ul>
                         <br>
                         <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
@@ -55,15 +55,12 @@
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Isi Absen</span>
-<<<<<<< HEAD
+
                             </a>
                         </li>
                         @endif
-=======
-                                @endif
->>>>>>> 8a07141412f429bff4de6351f75486ed1c368f42
                         @if(Auth::user()->role == 'Dudi')
-                        <ul><em>Beranda</em></ul>
+                        <ul>Beranda</ul>
                         <br>
                         <li class="{{ ($tittle === 'dashboard') ? 'active': '' }}">
                             <a href="/dashboard">
@@ -72,7 +69,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Data Siswa</em></ul>
+                        <ul>Data Siswa</ul>
                         <br>
                         <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
@@ -81,7 +78,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Jurnal & Absen</em></ul>
+                        <ul>Jurnal & Absen</ul>
                         <br>
                         <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
@@ -99,7 +96,7 @@
                         @endif
 
                         @if(Auth::user()->role == 'Guru')
-                        <ul><em>Beranda</em></ul>
+                        <ul>Beranda</ul>
                         <br>
                         <li class="active">
                             <a href="/dashboard ">
@@ -108,7 +105,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Data Siswa & Plotingan</em></ul>
+                        <ul>Data Siswa & Plotingan</ul>
                         <br>
                         <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
@@ -123,7 +120,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul><em>Absen & Jurnal</em></ul>
+                        <ul>Absen & Jurnal</ul>
                         <br>
                         <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">

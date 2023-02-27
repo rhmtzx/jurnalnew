@@ -17,11 +17,12 @@
                             <br>
                             <div class="single-table">
                                 <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
+                                <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a>
+                                
                                 <div class="table-responsive">
                             <div class="single-table">
                                     <br>
 
-                                <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a>
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"

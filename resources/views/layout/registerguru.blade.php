@@ -160,9 +160,9 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-
-                                        <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Daftar</button>
+                                        <br>
+                                        <div class="mt-50">
+                                            <button class="btn btn-primary w-100" type="submit">Daftar Guru</button>
                                         </div>
                                     </form>
 
@@ -172,8 +172,8 @@
                         </div>
                         <!-- end card -->
 
-                        <div class="mt-4 text-center">
-                            <p class="mb-0">Sudah Punya Akun Guru ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
+                        <div class="mt-30 text-center">
+                            <p class="mb-50">Sudah Punya Akun Guru ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login Disini </a> </p>
                         </div>
 
                     </div>

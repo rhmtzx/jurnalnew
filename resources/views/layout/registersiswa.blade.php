@@ -134,10 +134,11 @@
                                                 @error('password')
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
-                                            </div>
-                                    <br><div class="row m-t-40">
-                                        <div class="mt-4">
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalgrid">
+                                    </div>
+                                    <br>
+                                    <div class="row m-b-40">
+                                        <div class="mb-3">
+                                            <button style="width: 100%;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalgrid">
                                                 Selanjutnya
                                             </button>
                                         </div>
@@ -182,7 +183,7 @@
             </div>
             <div class="modal-body">
                     <div class="row g-3">
-                        <div class="col-xxl-6">
+                        <div class="col-xxl-12">
                             <div class="mb-3">
                                 <label for="kd_guru" class="form-label">Masukkan Kode Guru Pembimbing <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="kd_guru" id="kd_guru" placeholder="Masukkan Kode Guru" required>
@@ -196,7 +197,7 @@
                         <div class="col-lg-12">
                             <div class="hstack gap-2 justify-content-end">
                                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
-                                <button type="submit" class="btn btn-primary">Daftar</button>
+                                <button type="submit" class="btn btn-primary">Daftar Siswa</button>
                             </div>
                         </div><!--end col-->
                     </div><!--end row-->

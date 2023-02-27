@@ -314,11 +314,7 @@ class LoginController extends Controller
     {
         $data = User::all();
         $jurusan = jurusan::all();
-<<<<<<< HEAD
         $tittle = 'profil';
-=======
-        $tittle = 'profile';
->>>>>>> 8a07141412f429bff4de6351f75486ed1c368f42
 
         return view('siswa.profil', compact('data','jurusan','tittle'));
     }
@@ -330,15 +326,11 @@ class LoginController extends Controller
         $jurusan = jurusan::all();
         $tittle = 'editprofil';
 
-<<<<<<< HEAD
+
         return view('siswa.editprofil', compact('data','jurusan','tittle'));
     }   
-=======
 
 
-        return view('siswa.editprofil', compact('data','jurusan','tittle'));
-    }
->>>>>>> 8a07141412f429bff4de6351f75486ed1c368f42
 
     //Update Profil Siswa
     public function updateprofilsiswa(request $request)
@@ -415,13 +407,9 @@ class LoginController extends Controller
     public function updateprofildudi(request $request)
     {
         $data = User::find(Auth::user()->id);
-<<<<<<< HEAD
         $data2 = datadudi::with('namadudi')->where('user_id', Auth::user()->id);
         
-=======
-        $data2 = datadudi::with('namadudi')->where(Auth::user()->user_id);
 
->>>>>>> 8a07141412f429bff4de6351f75486ed1c368f42
         // $data2= Datadudi::Where($data->user_id);
 
         $data->update([

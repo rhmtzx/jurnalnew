@@ -138,14 +138,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
     Route::post('/updatedataguru/{id}', [DataguruController::class, 'updatedataguru'])->name('updatedataguru')->middleware('auth');
     Route::get('/deletedataguru/{id}', [DataguruController::class, 'deletedataguru'])->name('deletedataguru')->middleware('auth');
 
-    // D a t a  S i s w a
-    Route::get('/datasiswa', [DatasiswaController::class, 'index'])->name('datasiswa')->middleware('auth');
-    Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
-    Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
-    Route::get('/tampildatasiswa/{id}', [DatasiswaController::class, 'tampildatasiswa'])->name('tampildatasiswa')->middleware('auth');
-    Route::get('/data/{id}', [DatasiswaController::class, 'data'])->name('data')->middleware('auth');
-    Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
-    Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
+    
 
     // D a t a  A b s e n
     Route::get('/dataabsen', [DataabsenController::class, 'index'])->name('dataabsen')->middleware('auth');
@@ -167,7 +160,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
 
 
 // R O U T E S M I D D L E - S I S W A
-Route::group(['middleware' => ['auth', 'hakakses:Siswa']], function () {
+Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], function () {
     // D a t a  P l o t i n g a n
     Route::get('/dataplotingan', [DataplotinganController::class, 'index'])->name('dataplotingan')->middleware('auth');
     Route::get('/tambahdataplotingan', [DataplotinganController::class, 'tambahdataplotingan'])->name('tambahdataplotingan')->middleware('auth');
@@ -187,33 +180,85 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa']], function () {
     Route::post('/updatetambahjurnal/{id}', [TambahjurnalController::class, 'updatetambahjurnal'])->name('updatetambahjurnal')->middleware('auth');
     Route::get('/deletetambahjurnal/{id}', [TambahjurnalController::class, 'deletetambahjurnal'])->name('deletetambahjurnal')->middleware('auth');
 
+    // D a t a  A b s e n
+    Route::get('/dataabsen', [DataabsenController::class, 'index'])->name('dataabsen')->middleware('auth');
+    Route::get('/tambahabsen', [DataabsenController::class, 'tambahabsen'])->name('tambahabsen')->middleware('auth');
+    Route::post('/insertabsen', [DataabsenController::class, 'insertabsen'])->name('insertabsen')->middleware('auth');
+    Route::get('/dataaa/{id}', [DataabsenController::class, 'dataaa'])->name('dataaa')->middleware('auth');
+    Route::get('/tampilabsen/{id}', [DataabsenController::class, 'tampilabsen'])->name('tampilabsen')->middleware('auth');
+    Route::get('/absensguru/{id}', [DataabsenController::class, 'absensguru'])->name('absensguru')->middleware('auth');
+    Route::get('/absensdudi/{id}', [DataabsenController::class, 'absensdudi'])->name('absensdudi')->middleware('auth');
+    Route::post('/updateabsen/{id}', [DataabsenController::class, 'updateabsen'])->name('updateabsen')->middleware('auth');
+    Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen')->middleware('auth');
+    Route::get('/detailabsen', [DataabsenController::class, 'detailabsen'])->name('detailabsen');
+
+    // D a t a  S i s w a
+    Route::get('/datasiswa', [DatasiswaController::class, 'index'])->name('datasiswa')->middleware('auth');
+    Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
+    Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
+    Route::get('/tampildatasiswa/{id}', [DatasiswaController::class, 'tampildatasiswa'])->name('tampildatasiswa')->middleware('auth');
+    Route::get('/data/{id}', [DatasiswaController::class, 'data'])->name('data')->middleware('auth');
+    Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
+    Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
+
+    //Approve Jurnal
+    Route::put('/statusditerima/{id}', [TambahjurnalController::class, 'statusditerima'])->name('statusditerima')->middleware('auth');
+    Route::put('/statusditolak/{id}', [TambahjurnalController::class, 'statusditolak'])->name('statusditolak')->middleware('auth');
+    //Approve Absen
+    Route::put('/statusditerimaa/{id}', [DataabsenController::class, 'statusditerimaa'])->name('statusditerimaa')->middleware('auth');
+    Route::put('/statusditolaka/{id}', [DataabsenController::class, 'statusditolaka'])->name('statusditolaka')->middleware('auth');
 });
 
 
 
-// R O U T E S M I D D L E - D U D I
-Route::group(['middleware' => ['auth', 'hakakses:Dudi']], function () {
-    // D a t a  P l o t i n g a n
-    Route::get('/dataplotingan', [DataplotinganController::class, 'index'])->name('dataplotingan')->middleware('auth');
-    Route::get('/tambahdataplotingan', [DataplotinganController::class, 'tambahdataplotingan'])->name('tambahdataplotingan')->middleware('auth');
-    Route::post('/insertdataplotingan', [DataplotinganController::class, 'insertdataplotingan'])->name('insertdataplotingan')->middleware('auth');
-    Route::get('/tampildataplotingan/{id}', [DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan')->middleware('auth');
-    Route::post('/updatedataplotingan/{id}', [DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan')->middleware('auth');
-    Route::get('/deletedataplotingan/{id}', [DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan')->middleware('auth');
-});
+// // R O U T E S M I D D L E - D U D I
+// Route::group(['middleware' => ['auth', 'hakakses:Dudi,Admin']], function () {
+
+//     // D a t a  J u r n a l
+//     Route::get('/datatambahjurnal', [TambahjurnalController::class, 'index'])->name('datatambahjurnal')->middleware('auth');
+//     Route::get('/tambahtambahjurnal', [TambahjurnalController::class, 'tambahtambahjurnal'])->name('tambahtambahjurnal')->middleware('auth');
+//     Route::post('/inserttambahjurnal', [TambahjurnalController::class, 'inserttambahjurnal'])->name('inserttambahjurnal')->middleware('auth');
+//     Route::get('/dataa/{id}', [TambahjurnalController::class, 'dataa'])->name('dataa')->middleware('auth');
+//     Route::get('/jurnalsdudi/{id}', [TambahjurnalController::class, 'jurnalsdudi'])->name('jurnalsdudi')->middleware('auth');
+//     Route::get('/jurnalsguru/{id}', [TambahjurnalController::class, 'jurnalsguru'])->name('jurnalsguru')->middleware('auth');
+//     Route::get('/tampiltambahjurnal/{id}', [TambahjurnalController::class, 'tampiltambahjurnal'])->name('tampiltambahjurnal')->middleware('auth');
+//     Route::post('/updatetambahjurnal/{id}', [TambahjurnalController::class, 'updatetambahjurnal'])->name('updatetambahjurnal')->middleware('auth');
+//     Route::get('/deletetambahjurnal/{id}', [TambahjurnalController::class, 'deletetambahjurnal'])->name('deletetambahjurnal')->middleware('auth');
+
+//     // D a t a  A b s e n
+//     Route::get('/dataabsen', [DataabsenController::class, 'index'])->name('dataabsen')->middleware('auth');
+//     Route::get('/tambahabsen', [DataabsenController::class, 'tambahabsen'])->name('tambahabsen')->middleware('auth');
+//     Route::post('/insertabsen', [DataabsenController::class, 'insertabsen'])->name('insertabsen')->middleware('auth');
+//     Route::get('/dataaa/{id}', [DataabsenController::class, 'dataaa'])->name('dataaa')->middleware('auth');
+//     Route::get('/tampilabsen/{id}', [DataabsenController::class, 'tampilabsen'])->name('tampilabsen')->middleware('auth');
+//     Route::get('/absensguru/{id}', [DataabsenController::class, 'absensguru'])->name('absensguru')->middleware('auth');
+//     Route::get('/absensdudi/{id}', [DataabsenController::class, 'absensdudi'])->name('absensdudi')->middleware('auth');
+//     Route::post('/updateabsen/{id}', [DataabsenController::class, 'updateabsen'])->name('updateabsen')->middleware('auth');
+//     Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen')->middleware('auth');
+//     Route::get('/detailabsen', [DataabsenController::class, 'detailabsen'])->name('detailabsen');
+
+//     // D a t a  S i s w a
+//     Route::get('/datasiswa', [DatasiswaController::class, 'index'])->name('datasiswa')->middleware('auth');
+//     Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
+//     Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
+//     Route::get('/tampildatasiswa/{id}', [DatasiswaController::class, 'tampildatasiswa'])->name('tampildatasiswa')->middleware('auth');
+//     Route::get('/data/{id}', [DatasiswaController::class, 'data'])->name('data')->middleware('auth');
+//     Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
+//     Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
+// });
 
 
 
-// R O U T E S M I D D L E - G U R U
-Route::group(['middleware' => ['auth', 'hakakses:Guru']], function () {
-    // D a t a  P l o t i n g a n
-    Route::get('/dataplotingan', [DataplotinganController::class, 'index'])->name('dataplotingan')->middleware('auth');
-    Route::get('/tambahdataplotingan', [DataplotinganController::class, 'tambahdataplotingan'])->name('tambahdataplotingan')->middleware('auth');
-    Route::post('/insertdataplotingan', [DataplotinganController::class, 'insertdataplotingan'])->name('insertdataplotingan')->middleware('auth');
-    Route::get('/tampildataplotingan/{id}', [DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan')->middleware('auth');
-    Route::post('/updatedataplotingan/{id}', [DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan')->middleware('auth');
-    Route::get('/deletedataplotingan/{id}', [DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan')->middleware('auth');
-});
+// // R O U T E S M I D D L E - G U R U
+// Route::group(['middleware' => ['auth', 'hakakses:Guru,Admin']], function () {
+//     // D a t a  P l o t i n g a n
+//     Route::get('/dataplotingan', [DataplotinganController::class, 'index'])->name('dataplotingan')->middleware('auth');
+//     Route::get('/tambahdataplotingan', [DataplotinganController::class, 'tambahdataplotingan'])->name('tambahdataplotingan')->middleware('auth');
+//     Route::post('/insertdataplotingan', [DataplotinganController::class, 'insertdataplotingan'])->name('insertdataplotingan')->middleware('auth');
+//     Route::get('/tampildataplotingan/{id}', [DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan')->middleware('auth');
+//     Route::post('/updatedataplotingan/{id}', [DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan')->middleware('auth');
+//     Route::get('/deletedataplotingan/{id}', [DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan')->middleware('auth');
+// });
 
 
 
