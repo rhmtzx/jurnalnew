@@ -108,13 +108,13 @@ Route::post('/changepassword', [LoginController::class, 'changepassword'])->name
 // L o g o u t
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-<<<<<<< HEAD
+
 // F o r g e t P a s s w o r d
 Route::get('/forgotpasswordd', [ForgotpassworddController::class, 'forgotpasswordd'])->name('forgotpasswordd');
 Route::post('ForgetPasswordStore', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordStore');
 Route::get('ResetPassword/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPassword');
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
-=======
+
 // P r o f i l
 Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
 Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
@@ -128,7 +128,7 @@ Route::get('/editpassword', [UpdatePasswordController::class, 'editpassword'])->
 Route::post('/updatepasswordsiswa', [UpdatePasswordController::class, 'updatepasswordsiswa'])->name('updatepasswordsiswa');
 Route::post('/updatepassworddudi', [UpdatePasswordController::class, 'updatepassworddudi'])->name('updatepassworddudi');
 Route::post('/updatepasswordguru', [UpdatePasswordController::class, 'updatepasswordguru'])->name('updatepasswordguru');
->>>>>>> ef77b7b7c2ca5f502f514286750b209a5138b341
+
 
 
 
