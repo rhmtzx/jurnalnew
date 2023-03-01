@@ -55,7 +55,6 @@
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Isi Absen</span>
-
                             </a>
                         </li>
                         @endif
@@ -144,5 +143,5 @@
         <!--=========================*
                   End Main Menu
         *===========================-->
-    
+
 </div>

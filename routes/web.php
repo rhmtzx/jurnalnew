@@ -13,6 +13,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DatadudiController;
+use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DataguruController;
 use App\Http\Controllers\DatasiswaController;
 use App\Http\Controllers\SiswamagangController;
@@ -107,11 +108,27 @@ Route::post('/changepassword', [LoginController::class, 'changepassword'])->name
 // L o g o u t
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
+<<<<<<< HEAD
 // F o r g e t P a s s w o r d
 Route::get('/forgotpasswordd', [ForgotpassworddController::class, 'forgotpasswordd'])->name('forgotpasswordd');
 Route::post('ForgetPasswordStore', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordStore');
 Route::get('ResetPassword/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPassword');
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
+=======
+// P r o f i l
+Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
+Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
+Route::post('/updateprofilguru', [LoginController::class, 'updateprofilguru'])->name('updateprofilguru');
+Route::post('/updateprofildudi', [LoginController::class, 'updateprofildudi'])->name('updateprofildudi');
+Route::post('/updateprofilsiswa', [LoginController::class, 'updateprofilsiswa'])->name('updateprofilsiswa');
+
+
+//U p d a t e P a s s
+Route::get('/editpassword', [UpdatePasswordController::class, 'editpassword'])->name('editpassword');
+Route::post('/updatepasswordsiswa', [UpdatePasswordController::class, 'updatepasswordsiswa'])->name('updatepasswordsiswa');
+Route::post('/updatepassworddudi', [UpdatePasswordController::class, 'updatepassworddudi'])->name('updatepassworddudi');
+Route::post('/updatepasswordguru', [UpdatePasswordController::class, 'updatepasswordguru'])->name('updatepasswordguru');
+>>>>>>> ef77b7b7c2ca5f502f514286750b209a5138b341
 
 
 

@@ -328,7 +328,7 @@ class LoginController extends Controller
 
 
         return view('siswa.editprofil', compact('data','jurusan','tittle'));
-    }   
+    }
 
 
 
@@ -408,7 +408,6 @@ class LoginController extends Controller
     {
         $data = User::find(Auth::user()->id);
         $data2 = datadudi::with('namadudi')->where('user_id', Auth::user()->id);
-        
 
         // $data2= Datadudi::Where($data->user_id);
 
