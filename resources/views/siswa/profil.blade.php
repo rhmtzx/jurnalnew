@@ -79,6 +79,7 @@
                                             <div>
                                                 <div class="pull-right cover-btn">
                                                     <a type="button" href="/editprofil" class="btn btn-light"><i class="icofont icofont-ui-messaging"></i> Edit Profile </a>
+                                                    <a type="button" href="/editpassword" class="btn btn-light"><i class="icofont icofont-ui-messaging"></i> Edit Passowrd </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,7 +135,7 @@
                             <input type="number" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->notlpsiswa}}" readonly="">
                         </div>
-                                                                
+
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -147,7 +148,7 @@
                             <label for="exampleFormControlInput1" class="form-label"><h6>Kode Guru</h6></label>
                             <input type="number" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->kd_guru}}" readonly="">
-                        </div>                     
+                        </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"><h6>Kode Dudi</h6></label>
                             <input type="number" class="form-control" id="exampleFormControlInput1"
@@ -180,7 +181,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -226,7 +227,7 @@
                             <input type="email" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->kd_guru}}" readonly="">
                         </div>
-                                                                
+
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -239,7 +240,7 @@
                             <label for="exampleFormControlInput1" class="form-label"><h6>NIP Guru</h6></label>
                             <input type="email" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->nip}}" readonly="">
-                        </div>                     
+                        </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"><h6>Email Guru</h6></label>
                             <input type="email" class="form-control" id="exampleFormControlInput1"
@@ -267,7 +268,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -313,7 +314,7 @@
                             <input type="number" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->kd_dudi}}" readonly="">
                         </div>
-                                                                
+
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -326,7 +327,7 @@
                             <label for="exampleFormControlInput1" class="form-label"><h6>Nama Kepala Direktur</h6></label>
                             <input type="email" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->namakepdik}}" readonly="">
-                        </div>                     
+                        </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"><h6>Email Dudi</h6></label>
                             <input type="email" class="form-control" id="exampleFormControlInput1"
@@ -354,7 +355,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+
 @extends('siswa.mains')
 @section('contents')
 
@@ -51,190 +52,142 @@
                     </div>
 
                     @if (auth()->user()->role == 'Dudi')
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="tab-header card mb-4">
-                                <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist" id="mytab">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#personal" role="tab" aria-expanded="true">Informasi Pribadi</a>
-                                        <div class="slide"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="personal" role="tabpanel" aria-expanded="true">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            <h5 class="card_title mb-0">{{Auth()->user()->name}} Profile Pages</h5>
-                                        </div>
-                                        <div class="card-block">
-                                            <div class="view-info">
-                                                <div class="general-info">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-xl-6">
-                                                            <div class="table-responsive">
-                                                                <table class="table m-0">
-                                                                    <tbody>
-                                         <form class="col s12" action="/updateprofildudi" method="POST">
-                                        @csrf
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Nama Dudi</h6></label>
-                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->name}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Dudi</h6></label>
-                                <input type="text" class="form-control" name="alamatdudi" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->alamatdudi}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Kode Dudi</h6></label>
-                                <input type="number" class="form-control" name="kd_dudi" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->kd_dudi}}" readonly>
-                            </div>
-    
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-xl-6">
-                                                            <div class="table-responsive">
-                                                                <table class="table">
-                                                                    <tbody>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Nama Kepala Direktur</h6></label>
-                                <input type="text" class="form-control" name="namakepdik" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->namakepdik}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Dudi</h6></label>
-                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->email}}" readonly>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Dudi</h6></label>
-                                <input type="number" class="form-control" name="notelepondudi" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->notelepondudi}}">
-                            </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="tab-header card mb-4">
+                                    <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist" id="mytab">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#personal" role="tab"
+                                                aria-expanded="true">Informasi Pribadi</a>
+                                            <div class="slide"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="personal" role="tabpanel" aria-expanded="true">
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                <h5 class="card_title mb-0">Update Profile</h5>
+                                            </div>
+                                            <div class="card-block">
+                                                <div class="view-info">
+                                                    <div class="general-info">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-xl-12">
+                                                                <div class="table-responsive">
+                                                                    <form class="col s12" action="/updatepassworddudi"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        <!-- email -->
+
+                                                                        <div class="mb-3">
+                                                                            <label for="exampleFormControlInput1" class="form-label"><h6>Password Lama</h6></label>
+                                                                                <input type="password" class="form-control" name="current_password" id="current_password" value="">
+                                                                                <div class="invalid-feedback">
+                                                                                    Please enter email
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="mb-3">
+                                                                            <label for="exampleFormControlInput1" class="form-label"><h6>Password Baru</h6></label>
+                                                                                <input type="password" class="form-control" name="password" id="password" value="">
+                                                                                <div class="invalid-feedback">
+                                                                                    Please enter email
+                                                                                </div>
+                                                                            </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
                                 <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
                                 </div>
-                            </form>
-                                                                    </tbody>
-                                                                </table>
+                                                                    </form>
+                                                                </div>
                                                             </div>
+
                                                         </div>
-    
+
                                                     </div>
-    
                                                 </div>
                                             </div>
+
                                         </div>
-    
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
-    
                             </div>
                         </div>
-                    </div>
                     @endif
                     @if (auth()->user()->role == 'Guru')
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="tab-header card mb-4">
-                                <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist" id="mytab">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#personal" role="tab" aria-expanded="true">Informasi Pribadi</a>
-                                        <div class="slide"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="personal" role="tabpanel" aria-expanded="true">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            <h5 class="card_title mb-0">{{Auth()->user()->name}} Profile Pages</h5>
-                                        </div>
-                                        <div class="card-block">
-                                            <div class="view-info">
-                                                <div class="general-info">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-xl-6">
-                                                            <div class="table-responsive">
-                                                                <table class="table m-0">
-                                                                    <tbody>
-                            <form class="col s12" action="/updateprofilguru" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Nama Guru</h6></label>
-                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->name}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Guru</h6></label>
-                                <input type="text" class="form-control" name="alamat" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->alamat}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Kode Guru</h6></label>
-                                <input type="email" class="form-control" name="kd_guru" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->kd_guru}}" readonly>
-                            </div>
-    
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-xl-6">
-                                                            <div class="table-responsive">
-                                                                <table class="table">
-                                                                    <tbody>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>NIP Guru</h6></label>
-                                <input type="number" class="form-control" name="nip" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->nip}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Guru</h6></label>
-                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->email}}" readonly>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Guru</h6></label>
-                                <input type="number" class="form-control" name="notlpn" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->notlpn}}">
-                            </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="tab-header card mb-4">
+                                    <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist" id="mytab">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#personal" role="tab"
+                                                aria-expanded="true">Informasi Pribadi</a>
+                                            <div class="slide"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="personal" role="tabpanel" aria-expanded="true">
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                <h5 class="card_title mb-0">Update Profile</h5>
+                                            </div>
+                                            <div class="card-block">
+                                                <div class="view-info">
+                                                    <div class="general-info">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-xl-12">
+                                                                <div class="table-responsive">
+
+                                                                    <form class="col s12" action="/updatepasswordguru"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        <!-- email -->
+                                                                        <div class="mb-3">
+                                                                            <label for="exampleFormControlInput1" class="form-label"><h6>Password Lama</h6></label>
+                                                                                <input type="password" class="form-control" name="current_password" id="current_password" value="">
+                                                                                <div class="invalid-feedback">
+                                                                                    Please enter email
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="mb-3">
+                                                                            <label for="exampleFormControlInput1" class="form-label"><h6>Password Baru</h6></label>
+                                                                                <input type="password" class="form-control" name="password" id="password" value="">
+                                                                                <div class="invalid-feedback">
+                                                                                    Please enter email
+                                                                                </div>
+                                                                            </div>
                             <div class="mt-4">
-                                        <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
-                                        <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
-                                        </div>
-                        </form>
-                                                                    </tbody>
-                                                                </table>
+                                <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
+                                <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
+                                </div>
+                                                                    </form>
+                                                                </div>
                                                             </div>
+
                                                         </div>
-    
+
                                                     </div>
-    
                                                 </div>
                                             </div>
+
                                         </div>
-    
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
-    
                             </div>
                         </div>
-                    </div>
                     @endif
                     @if (auth()->user()->role == 'Siswa')
                     <div class="row">
@@ -261,63 +214,24 @@
                                                             <div class="table-responsive">
                                                                 <table class="table m-0">
                                                                     <tbody>
-                            <form class="col s12" action="/updateprofilsiswa" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Nama Siswa</h6></label>
-                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->name}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>NIS Siswa</h6></label>
-                                <input type="number" class="form-control" name="nissiswa" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->nissiswa}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Siswa</h6></label>
-                                <input type="text" class="form-control" name="alamatsiswa" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->alamatsiswa}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Siswa</h6></label>
-                                <input type="number" class="form-control" name="notlpsiswa" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->notlpsiswa}}">
-                            </div>
+                                                                        <form class="col s12" action="/updatepasswordsiswa" method="POST">
+                                                                            @csrf
+                                                                            <!-- email -->
+                                                                            <div class="mb-3">
+                                                                            <label for="exampleFormControlInput1" class="form-label"><h6>Password Lama</h6></label>
+                                                                                <input type="password" class="form-control" name="current_password" id="current_password" value="">
+                                                                                <div class="invalid-feedback">
+                                                                                    Please enter email
+                                                                                </div>
+                                                                            </div>
 
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12 col-xl-6">
-                                                            <div class="table-responsive">
-                                                                <table class="table">
-                                                                    <tbody>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Kode Guru</h6></label>
-                                <input type="number" class="form-control" name="kd_guru" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->kd_guru}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Kode Dudi</h6></label>
-                                <input type="number" class="form-control" name="kd_dudi" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->kd_dudi}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Siswa</h6></label>
-                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->email}}" readonly>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label>
-                                <select class="form-control" name="id_jurusan" id="id_jurusan">
-                                    <option value="" selected disabled>Pilih</option>
-                                    @foreach($jurusan as $a)
-                                    <option value="{{ $a->id }}"<?php if($data->id_jurusan == $a->id) {
-                                        echo 'selected';
-                                    }?> > {{ $a->namajurusan }} </option>
-                                    @endforeach
-                                </select>
-                            </div>
+                                                                            <div class="mb-3">
+                                                                            <label for="exampleFormControlInput1" class="form-label"><h6>Password Baru</h6></label>
+                                                                                <input type="password" class="form-control" name="password" id="password" value="">
+                                                                                <div class="invalid-feedback">
+                                                                                    Please enter email
+                                                                                </div>
+                                                                            </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
                                 <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
