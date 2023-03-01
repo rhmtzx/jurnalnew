@@ -8,6 +8,7 @@ use App\Models\jurusan;
 use Barryvdh\DomPDF\PDF;
 use App\Models\datasiswa;
 use App\Models\tambahjurnal;
+use App\Models\dataabsen;
 // use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -77,14 +78,14 @@ class TambahjurnalController extends Controller
                   'deskripsi' => 'required',
                   'foto' => 'required',
                   'usersiswa' => 'required',
-                  'statusjurnal' => 'required',
+                  // 'statusjurnal' => 'required',
 
              ],[
                  'judul.required' => 'Harus diisi',
                  'deskripsi.required' => 'Harus diisi',
                  'foto.required' => 'Harus diisi',
                  'usersiswa.required' => 'Harus diisi',
-                 'statusjurnal.required' => 'Harus diisi',
+                 // 'statusjurnal.required' => 'Harus diisi',
 
              ]);
 
@@ -93,30 +94,33 @@ class TambahjurnalController extends Controller
                                ->whereDate('created_at', Carbon::today())
                                ->first();
              if ($absensi) {
-                return redirect()->route('datatambahjurnal')->with('error', 'Anda hanya dapat menginputkan Jurnal sekali dalam sehari.');
+                return redirect()->route('datatambahjurnal')->with('error', 'Anda Sudah Mengisi Jurnal Hari Ini !!');
              }
+
+             $foto = "";
+             // dd($request->file('foto')->getClientOriginalName());
+             if($request->hasFile('foto')){
+                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
+                $foto = $request->file('foto')->getClientOriginalName();
+            }
 
             $data = tambahjurnal::create([
                 'judul' =>$request->judul,
                 'deskripsi' =>$request->deskripsi,
-                'foto' =>$request->foto,
+                'foto' =>$foto,
                 'usersiswa' =>$request->usersiswa,
                 'student_id' =>auth()->user()->id,
                 'kd_guru'=>auth()->user()->kd_guru,
                 'id_jurusan'=>auth()->user()->id_jurusan,
                 'kd_dudi'=>auth()->user()->kd_dudi,
-                'statusjurnal' =>$request->statusjurnal,
+                'statusjurnal' => 'Menunggu Persetujuan',
 
 
             ]);
 
             // dd($request->all);
 
-            if($request->hasFile('foto')){
-                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-                $data->foto = $request->file('foto')->getClientOriginalName();
-                $data->save();
-            }
+            
 
             // toastr()->success('Data Berhasil Ditambahkan!');
             if(Auth()->user()->role == 'Admin'){
@@ -181,4 +185,68 @@ class TambahjurnalController extends Controller
                 return redirect()->route('datatambahjurnal')->with('succes', 'Data Berhasil Di Delete');
             }
         }
+
+    //     public function AproveJurnal($id)
+    // {
+    //     $aprove = tambahjurnal::find($id);
+    //     $aprove->update([
+
+    //         'statusjurnal' => 'Telah Disetujui',
+    //         // 'updated_at' => now(),
+    //     ]);
+    //     return redirect('perusahaan/sub/' . $aprove->id_job);
+    // }
+
+    // public function UnaproveJurnal(Request $request, $id)
+    // {
+    //     $aprove = SubProject::find($id);
+
+    //     $aprove->update([
+    //         'status' => 'pending',
+    //         'updated_at' => now(),
+    //     ]);
+    //     return redirect('perusahaan/sub/' . $aprove->id_job);
+    // }
+
+    // APPROVE JURNAL DITERIMA	
+    public function statusditerima(Request $request, $id)
+    {
+            $data = tambahjurnal::find($id);
+            $data->update([
+                'statusjurnal' => 'Telah Disetujui',
+    ]);
+        return redirect()->back()->with('success', 'Jurnal Telah Di Setujui');
+	}
+	// UNAPPROVE JURNAL DITOLAK
+	public function statusditolak(Request $request, $id)
+    {
+            $data = tambahjurnal::find($id);
+            $data->update([
+                'statusjurnal' => 'Jurnal Ditolak',
+    ]);
+        return redirect()->back()->with('success', 'Jurnal Telah Di Tolak');
+	}
+
+	
+
+	// 	public function updatestatusditolak($id)
+	// {
+ //    	$data = tambahjurnal::all()
+
+ //    // tambahkan logika untuk mengirim notifikasi atau melakukan tindakan lain yang diperlukan
+	// }
+
+	public function update_status(){
+		$judul = $this->input->post('judul');
+		$statusjurnal = $this->input->post('statusjurnal');
+		$tgl_setuju = date('Y-m-d');
+
+		if ($statusjurnal == "Menunggu Persetujuan" OR $statusjurnal == "Jurnal Ditolak") {
+			$this->tambahjurnal->update_status($judul, $statusjurnal);
+		}else{
+			$this->tambahjurnal->update_status1($judul, $statusjurnal, $tgl_setuju);	
+		}
+	}
+
+
 }

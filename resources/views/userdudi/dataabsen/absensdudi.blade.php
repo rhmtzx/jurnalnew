@@ -28,8 +28,9 @@
                                             <th scope="col">Foto</th>
                                             <th scope="col">Nama Siswa</th>
                                             <th scope="col">Keterangan</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Dibuat</th>
+                                            <th scope="col">Status Absen</th>
+                                            <th scope="col">Approve Absen</th>
+                                            <th scope="col">Absen Dibuat</th>
                                             <th scope="col">Aksi</th>
                                             </tr>
                                     </thead>
@@ -63,10 +64,28 @@
                                                 <span class="badge badge-success badge-danger ">Absen Ditolak</span>
                                             </td>
                                             @endif
+                                            <td>
+                                                <button type="button" class="btn btn-box btn-fixed-w btn-outline-success mb-3" onclick="document.getElementById('update-{{$row4->id}}').submit()">
+                                                        <i class="fa-solid fa-check"></i>
+                                                </button>
+                                                <form id="update-{{$row4->id}}"
+                                                    action="{{Route('statusditerimaa',['id' => $row4->id])}}" class="hidden" method="post">
+                                                    @method('put')
+                                                    @csrf
+                                                </form>
+                                                <button type="button" class="btn btn-box btn-fixed-w btn-outline-danger mb-3" onclick="document.getElementById('update2-{{$row4->id}}').submit()">
+                                                        <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                                <form id="update2-{{$row4->id}}"
+                                                     action="{{Route('statusditolaka',['id' => $row4->id])}}" class="hidden" method="post">
+                                                    @method('put')
+                                                    @csrf
+                                                </form>
+                                            </td>
                                             <td>{{ $row4->created_at}}</td>
                                             <td scope="row4">
                                                     <a href="/tampilabsen/{{ $row4->id }}"
-                                                        class="btn btn-social btn-rounded btn-social-outline-tw mb-3"><i
+                                                        class="btn btn-social btn-box btn-social-outline-tw mb-3"><i
                                                         class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                     </td>
                                                 </tr>

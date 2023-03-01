@@ -326,8 +326,11 @@ class LoginController extends Controller
         $jurusan = jurusan::all();
         $tittle = 'editprofil';
 
+
         return view('siswa.editprofil', compact('data','jurusan','tittle'));
     }
+
+
 
     //Update Profil Siswa
     public function updateprofilsiswa(request $request)

@@ -6,7 +6,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>J - On | Login Journal Online</title>
+    <title>J - On | Login Jurnal Online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -51,7 +51,7 @@
                                     <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/1.png')}}" alt="" height="100" width="250">
                                 </a>
                             </div>
-                            <p class="mt-3 fs-15 fw-medium">J - On | Journal Online</p>
+                            <p class="mt-3 fs-15 fw-medium">J - On | Jurnal Online</p>
                         </div>
                     </div>
                 </div>
@@ -94,10 +94,10 @@
 
                                             @if (session('error'))
                                             <div class="text-danger"> {{ session('error') }} </div>
-                                        @endif
-                                            <div class="float-end">
+                                            @endif
+                                            <!-- <div class="float-end">
                                                 <a href="/lupapassword" class="text-muted">Lupa Password?</a>
-                                            </div>
+                                            </div> -->
                                         </div>
 
 
@@ -107,7 +107,7 @@
 
                                         </div>
                                         <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Login</button>
+                                            <button class="btn btn-primary w-100" type="submit">Login</button>
                                         </div>
                                     <br>
 
@@ -135,13 +135,13 @@
                         <br>
                             <div style="display : flex">
                                         <div class="mt-1 m-auto">
-                                            <a href="/registerdudi" class="btn btn-info w-33" type="submit">Daftar Dudi</a>
+                                            <a href="/registerdudi" class="btn btn-primary w-33" type="submit">Daftar Dudi</a>
                                         </div>
                                         <div class="mt-1 m-auto">
-                                            <a href="/registersiswa" class="btn btn-info w-33" type="submit">Daftar Siswa</a>
+                                            <a href="/registersiswa" class="btn btn-primary w-33" type="submit">Daftar Siswa</a>
                                         </div>
                                         <div class="mt-1 m-auto">
-                                            <a href="/registerguru" class="btn btn-info w-33" type="submit">Daftar Guru </a>
+                                            <a href="/registerguru" class="btn btn-primary w-33" type="submit">Daftar Guru </a>
                                         </div>
                                     </div>
                             <div class="card-body p-4">

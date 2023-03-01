@@ -11,7 +11,7 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Edit Data Absen</h4>
+                        <h4 class="card_title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detail Foto Absen</h4>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
 
@@ -48,7 +48,7 @@
                                                 </div>
 
 
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label class="col-form-label"><h6>Status Jurnal</h6></label>
                                                     <select class="form-control" id="statusjurnal" name="statusjurnal">
                                                         <option selected disabled="">- Pilih Status -</option>
@@ -58,18 +58,19 @@
 
                                                         <option value="Absen Ditolak" {{ $data->statusjurnal == 'Absen Ditolak' ? 'selected' : 'Absen Ditolak' }}>Absen Ditolak</option>
                                                     </select>
-                                                </div>
+                                                </div> -->
 
-                                                <div class="mb-1" hidden>
-                                                    <label for="exampleInputEmail1" class="form-label"><h6>Edit Foto</h6></label>
-                                                    <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
-                                                    alt="" style="width: 90px" alt="">
+                                                <div class="mb-1">
+                                                    <label for="exampleInputEmail1" hidden=""
+                                                     class="form-label"><h6>Edit Foto</h6></label>
+                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
+                                                    alt="" style="width: 500px" alt="">
                                                     <br>
-                                                    <input type="file" name="foto" class="form-control">
+                                                    <input hidden="" type="file" name="foto" class="form-control">
                                                 </div>
                                                 <br>
-                                                <button type="submit" class="btn btn-primary">Submit Data</button>
-                                                <a href="/dataabsen" class="btn btn-danger mb-10">Kembali</a>
+                                                <!-- <button type="submit" class="btn btn-primary">Submit Data</button> -->
+                                                <a href="javascript:history.back()" class="btn btn-rounded btn-fixed-w btn-outline-danger mb-3">Kembali</a>
 
                                             </form>
 

@@ -21,7 +21,7 @@
 
 
 
-                                    <form action="/inserttambahjurnal" method="POST" enctype="multipart\form-data" >
+                                    <form action="/inserttambahjurnal" method="POST" enctype="multipart/form-data" >
                                         @csrf
                                         <div class="mb-3">
                                             {{-- <label for="exampleInputEmail1" class="form-label">Nama Siswa</label> --}}
@@ -79,17 +79,13 @@
                                             @enderror
                                             <br>
                                             <br>
-                                            @if(Auth::user()->role == 'Siswa')
-                                            <div class="form-group">
-                                                <label class="col-form-label"><h6>Status Jurnal</h6></label>
-                                                <select class="form-control" id="statusjurnal" name="statusjurnal">
-                                                    <option selected disabled="">- Pilih Status -</option>
-                                                    <option value="Menunggu Persetujuan">Menunggu Persetujuan</option>
-                                                    <!-- <option value="Telah Disetujui">Telah Disetujui</option> -->
-                                                </select>
+
+                                            <!-- Status Jurnal -->
+                                            <div class="mb-3">
+                                                <input type="hidden" class="form-control form-control-lg input-rounded mb-4" name="statusjurnal" type="text" placeholder="Masukan Status Jurnal">
                                             </div>
-                                            @endif
-                                            <br>
+                                            
+
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto </h6></label>
                                                 <br>

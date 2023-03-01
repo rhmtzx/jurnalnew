@@ -28,8 +28,9 @@
                                             <th scope="col">Judul</th>
                                             <th scope="col">Deskripsi</th>
                                             <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Dibuat</th>
-                                            <th scope="col">Aksi</th>
+                                            <th scope="col">Approve Jurnal</th>
+                                            <th scope="col">Jurnal Dibuat</th>
+                                            <th scope="col">Detail</th>
 
                                         </tr>
                                     </thead>
@@ -63,10 +64,35 @@
                                                 </td>
                                                 @endif
                                                 
+                                                <td>
+                                                    <button type="button" class="btn btn-box btn-fixed-w btn-outline-success mb-3" onclick="document.getElementById('update-{{$row4->id}}').submit()">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </button>
+                                                    <form id="update-{{$row4->id}}"
+                                                     action="{{Route('statusditerima',['id' => $row4->id])}}" class="hidden" method="post">
+                                                    @method('put')
+                                                    @csrf
+                                                    </form>
+                                                    <button type="button" class="btn btn-box btn-fixed-w btn-outline-danger mb-3" onclick="document.getElementById('update2-{{$row4->id}}').submit()">
+                                                        <i class="fa-solid fa-xmark"></i>   
+                                                    </button>
+                                                    <form id="update2-{{$row4->id}}"
+                                                     action="{{Route('statusditolak',['id' => $row4->id])}}" class="hidden" method="post">
+                                                    @method('put')
+                                                    @csrf
+                                                    </form>
+                                                </td>
+                                                
+
+                                                <!-- <td>
+                                                    <a href="/statusditerima/{{ $row4->id }}" class="btn btn-box btn-fixed-w btn-outline-info mb-3">Terima</a>
+                                                    <a href="/statusditolak/{{ $row4->id }}" class="btn btn-box btn-fixed-w btn-outline-danger mb-3">Tolak</a>
+                                                </td> -->
+
                                                 <td>{{ $row4->created_at}}</td>
                                                 <td scope="row">
                                                     <a href="/tampiltambahjurnal/{{ $row4->id }}"
-                                                        class="btn btn-social btn-rounded btn-social-outline-tw mb-3"><i
+                                                        class="btn btn-social btn-box btn-social-outline-tw mb-3"><i
                                                         class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                         <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
                                                         data-id="{{ $row4->id }}"
@@ -120,6 +146,21 @@
             });
         </script>
 
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <script>
+            $('.statusjurnal').change(function(){
+                var statusjurnal = $(this).val();
+                // var judul = statusjurnal.substr(0,13);
+                var statusjurnal = statusjurnal.substr(13,0);
+                // alert(statusjurnal);
+
+                $.ajax({
+                    url : "<?php= base_url()?>TambahjurnalController/update_status",
+                    method : "post",
+                    data: {judul:judul, statusjurnal:statusjurnal}
+                })
+            })
+        </script>
     </body>
 
     <script>

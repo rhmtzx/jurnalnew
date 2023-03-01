@@ -11,9 +11,9 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Absen Seluruh Siswa</h4>
+                        <h4 class="card_title">Data Absen Nama Siswa Yang Dibimbing</h4>
                         <ul>
-                            <li><h6>Seluruh Absen Siswa Ada Disini</h6></li></ul>
+                            <li><h6>Seluruh Data Absen Nama Siswa Yang Dibimbing Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">
@@ -24,7 +24,7 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Aksi</th>
+                                            <th scope="col">Detail Jurnal Siswa</th>
 
                                         </tr>
                                     </thead>

@@ -25,4 +25,11 @@ class tambahjurnal extends Model
         return Carbon::parse($this->attributes['created_at'])
         ->translatedFormat('l, d F Y');
     }
+
+    public function update_status($judul, $statusjurnal)
+    {
+        $this->db->set('statusjurnal', $statusjurnal);
+        $this->db->where('judul', $judul);
+        $this->db->update('tambahjurnal');
+    }
 }

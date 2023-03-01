@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <h4 class="card_title">Data Siswa</h4>
                             <ul>
-                            <li><h6>Data Siswa Ada Disini</h6></li></ul>
+                            <li><h6>Data Siswa Yang Dibimbing Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">
@@ -25,7 +25,7 @@
                                                 <th scope="col">Jurusan</th>
                                                 <th scope="col">Alamat Siswa</th>
                                                 <th scope="col">No Telepon Siswa</th>
-                                                <th scope="col">Dibuat</th>
+                                                <th scope="col">Akun Dibuat</th>
                                             </tr>
                                         </thead>
                                         <tbody>
