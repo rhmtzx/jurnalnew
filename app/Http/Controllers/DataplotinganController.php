@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\dataguru;
 use App\Models\datasiswa;
 use App\Models\datadudi;
+use Illuminate\Support\Facades\Schema;
+use toastr;
 
 class DataplotinganController extends Controller
 {
@@ -102,5 +104,15 @@ class DataplotinganController extends Controller
             }else{
                 return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Di Delete');
             }
+        }
+
+        public function deleteall()
+        {
+            Schema::disableForeignKeyConstraints();
+            \App\Models\dataplotingan::truncate();
+            Schema::enableForeignKeyConstraints();
+
+            toastr()->success('Seluruh Data Berhasil Di Hapus');
+            return redirect()->back()->with('success','Seluruh Data Berhasil Di Hapus');
         }
 }

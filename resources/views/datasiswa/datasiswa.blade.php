@@ -64,8 +64,15 @@
                             </div>
                         </div>
                     </div>
+                    <form method="GET" action="/datasiswa">
+                            <input style="height: 40px;
+                            margin-left: 0px;" type="text" name="keyword"/>
+                            <button style="width: 50px;
+                            height: 40px;" class="btn btn-primary" type="submit">Cari</button>
+                    </form>
+                    <br>
                     <div class="row" >
-                      @foreach ($data as $row )
+                      @foreach ($data1 as $row )
                         
                         <div class="col-sm-6 col-xl-3" >
                             <!-- Simple card -->
@@ -88,5 +95,5 @@
                         @endforeach
 
                         </div><!-- end col -->
-                        {{ $data->links() }}
+                        {{ $data1->links() }}
 @endsection

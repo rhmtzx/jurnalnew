@@ -25,6 +25,7 @@ use App\Http\Controllers\DataabsenController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\ForgotpassworddController;
 
 
 /*
@@ -98,22 +99,28 @@ Route::post('/registeruserguru', [LoginController::class, 'registeruserguru'])->
 Route::get('/loginuser', [LoginController::class, 'loginuser'])->name('loginuser');
 Route::post('/loginprosesuser', [LoginController::class, 'loginprosesuser'])->name('loginprosesuser');
 
+// C h a n g e p a s s w o r d
+Route::get('/indexchange', [LoginController::class, 'indexchange'])->name('indexchange');
+Route::post('/changepassword', [LoginController::class, 'changepassword'])->name('changepassword');
+
+
 // L o g o u t
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// P r o f i l
-Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
-Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
-Route::post('/updateprofilguru', [LoginController::class, 'updateprofilguru'])->name('updateprofilguru');
-Route::post('/updateprofildudi', [LoginController::class, 'updateprofildudi'])->name('updateprofildudi');
-Route::put('/updateprofilsiswa', [LoginController::class, 'updateprofilsiswa'])->name('updateprofilsiswa');
+// F o r g e t P a s s w o r d
+Route::get('/forgotpasswordd', [ForgotpassworddController::class, 'forgotpasswordd'])->name('forgotpasswordd');
+Route::post('ForgetPasswordStore', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordStore');
+Route::get('ResetPassword/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPassword');
+Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
+
 
 
 Route::get('/chart',[ChartController::class,'index']);
 Route::get('/bar-chart',[ChartController::class,'barChart']);
 
 Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
-
+    //AjaxGrapic
+    Route::get('/ajaxGrapic',[ChartController::class, 'ajaxGrapic'])->name('ajaxGrapic')->middleware('Admin');
     // J u r u s a n
     Route::get('/datajurusan', [JurusanController::class, 'index'])->name('datajurusan');
     Route::get('/tambahjurusan', [JurusanController::class, 'tambahjurusan'])->name('tambahjurusan');
@@ -121,6 +128,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
     Route::get('/tampiljurusan/{id}', [JurusanController::class, 'tampiljurusan'])->name('tampilajurusan');
     Route::post('/updatedatajurusan/{id}', [JurusanController::class, 'updatedatajurusan'])->name('updatedatajurusan');
     Route::get('/deletejurusan/{id}', [JurusanController::class, 'deletejurusan'])->name('deletejurusan');
+    Route::get('/deleteall', [JurusanController::class, 'deleteall'])->name('deleteall')->middleware('auth');
 
     // D a t a  D u d i
     Route::get('/datadudi', [DatadudiController::class, 'index'])->name('datadudi')->middleware('auth');
@@ -154,13 +162,21 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
 
     // D a t a  U s e r
     Route::get('/datauser', [UserController::class, 'datauser'])->name('datauser')->middleware('auth');
-    Route::get('/deleteuser/{p}', [UserController::class, 'deleteuser'])->name('deleteuser');
+    Route::get('/deleteuser/{id}', [UserController::class, 'deleteuser'])->name('deleteuser');
 });
 
 
 
 // R O U T E S M I D D L E - S I S W A
 Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], function () {
+
+    // P r o f i l
+    Route::get('/profil', [LoginController::class, 'profil'])->name('profil');
+    Route::get('/editprofil', [LoginController::class, 'editprofil'])->name('editprofil');
+    Route::post('/updateprofilguru', [LoginController::class, 'updateprofilguru'])->name('updateprofilguru');
+    Route::post('/updateprofildudi', [LoginController::class, 'updateprofildudi'])->name('updateprofildudi');
+    Route::post('/updateprofilsiswa', [LoginController::class, 'updateprofilsiswa'])->name('updateprofilsiswa');
+
     // D a t a  P l o t i n g a n
     Route::get('/dataplotingan', [DataplotinganController::class, 'index'])->name('dataplotingan')->middleware('auth');
     Route::get('/tambahdataplotingan', [DataplotinganController::class, 'tambahdataplotingan'])->name('tambahdataplotingan')->middleware('auth');
@@ -168,6 +184,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     Route::get('/tampildataplotingan/{id}', [DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan')->middleware('auth');
     Route::post('/updatedataplotingan/{id}', [DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan')->middleware('auth');
     Route::get('/deletedataplotingan/{id}', [DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan')->middleware('auth');
+    Route::get('/deleteall', [DataplotinganController::class, 'deleteall'])->name('deleteall')->middleware('auth');
 
     // D a t a  J u r n a l
     Route::get('/datatambahjurnal', [TambahjurnalController::class, 'index'])->name('datatambahjurnal')->middleware('auth');

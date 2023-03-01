@@ -79,6 +79,7 @@
                                             <div>
                                                 <div class="pull-right cover-btn">
                                                     <a type="button" href="/editprofil" class="btn btn-light"><i class="icofont icofont-ui-messaging"></i> Edit Profile </a>
+                                                    <a type="button" href="/indexchange" class="btn btn-light"><i class="icofont icofont-ui-messaging"></i> Edit Password </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,7 +105,7 @@
                             <div class="tab-pane active" id="personal" role="tabpanel" aria-expanded="true">
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        <h5 class="card_title mb-0">{{Auth()->user()->name}} Profile Pages</h5>
+                                        <h5 class="card_title mb-0">{{Auth()->user()->name}}</h5>
                                     </div>
                                     <div class="card-block">
                                         <div class="view-info">

@@ -88,6 +88,7 @@
                                                     <th scope="col">Sebagai</th>
                                                     <th scope="col">Email User</th>
                                                     <th scope="col">Akun Dibuat</th>
+                                                    <!-- <th scope="col">Aksi</th> -->
                                                     <!-- <th scope="col">Blokir Pengguna</th> -->
                                             </tr>
                                         </thead>

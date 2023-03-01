@@ -794,7 +794,7 @@
     <!-- App js -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/app.js')}}"></script>
 
-        <!-- listjs init -->
+    <!-- listjs init -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/listjs.init.js')}}"></script>
 
     <!-- Sweet Alerts js -->
@@ -808,9 +808,7 @@
 
     <!-- listjs init -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/listjs.init.js')}}"></script>
-
-
-        <!--datatable js-->
+    <!--datatable js-->
     <script src="{{asset('velzon/cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('velzon/cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js')}}"></script>
     <script src="{{asset('velzon/cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js')}}"></script>
@@ -821,18 +819,12 @@
     <script src="{{asset('velzon/cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js')}}"></script>
     <script src="{{asset('velzon/cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js')}}"></script>
     <script src="{{asset('velzon/assets/js/pages/datatables.init.js')}}"></script>
-
-    <!-- Sweet Alerts js -->
-    <!-- <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script> -->
-
-    <!-- Sweet alert init js-->
-    <!-- <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/sweetalerts.init.js')}}"></script> -->
-
     <!-- apexcharts -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
     <script src="{{asset('velzon/img.themesbrand.com/velzon/apexchart-js/stock-prices.js')}}"></script>
 
+    
 </body>
 
 

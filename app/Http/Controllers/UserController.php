@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
 use Hash;
 use Auth;
 
@@ -19,6 +18,6 @@ class UserController extends Controller
     {
         $data = User::find($id);
         $data->delete($id);
-        return redirect()->route('user')->with('message', 'Akun Berhasil Di Hapus');
+        return redirect()->back()->with('success', 'Akun Berhasil Di Hapus');
     }
 }

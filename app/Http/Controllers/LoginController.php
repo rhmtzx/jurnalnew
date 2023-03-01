@@ -438,6 +438,33 @@ class LoginController extends Controller
 
     }
 
+    public function indexchange()
+    {
+        $tittle = 'changepassword';
+
+        return view ('siswa.changepassword',compact('tittle'));
+    }
+
+    public function changepassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|confirmed',
+        ]);
+
+    $user = Auth::user();
+    $current_password = $user->password;
+
+    if (Hash::check($request->current_password, $current_password)) {
+        $user->password = Hash::make($request->password);
+        $user->save();
+            return redirect()->back()->with('success', 'Password berhasil diubah!');
+        } else {
+            return redirect()->back()->withErrors(['current_password' => 'Password saat ini tidak sesuai!']);
+        }
+    }
+
+
     public function lupapassword(){
         return view('layout.lupapassword');
     }

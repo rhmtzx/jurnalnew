@@ -25,17 +25,18 @@
                     <!--begin navbar-nav -->
                     <ul class="navbar-nav ml-auto">
 
-                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#beranda">Beranda</a></li>
 
-                        <li><a href="#about">Bantuan</a></li>
+                        <li><a href="#fitur">Fitur</a></li>
+
+                        <li><a href="#pengguna">Pengguna</a></li>
 
                         <!-- <li><a href="#pricing">Pricing</a></li> -->
 
-                        <li><a href="#team">Team</a></li>
+                        <li><a href="#pertanyaan">Pertanyaan</a></li>
 
                         <li><a href="#showcase">Showcase</a></li>
 
-                        <li><a href="#features">Fitur</a></li>
 
                         <li><a href="#blog">Berita</a></li>
 
