@@ -4,6 +4,9 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -92,6 +95,16 @@
                                 </div>
                                 @enderror
                                 <br>
+
+
+                                <!-- <div class="mb-3">
+                                    <label for="namasiswap" class="form-label"><h5>Nama Siswa</h5></label>
+                                    <select id="ex-caret-position" multiple autocomplete="off" placeholder="How cool is this?">
+                                        @foreach($siswa as $hi)
+                                        <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
+                                        @endforeach
+                                    </select>
+                                </div> -->
 
                                 <div class="mb-3">
                                     <label for="namasiswap" class="form-label"><h5>Nama Siswa</h5></label>
@@ -197,6 +210,9 @@
             document.getElementById('alamatdudip').value = alamatdudip;
             }
         </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
     </body>
 
 

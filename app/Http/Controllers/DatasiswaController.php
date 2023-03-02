@@ -15,9 +15,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DatasiswaController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
-        $data = jurusan::paginate(4);
+        // $data = jurusan::paginate(4);
         $data2 = datasiswa::where('namasiswa', Auth::user()->name)->get();
             // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
         // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dud)->get();
@@ -25,9 +25,11 @@ class DatasiswaController extends Controller
         $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
         $jurusan = jurusan::all();
         $tittle = 'datasiswa';
+        $keyword = $request->keyword;
+        $data1 = jurusan::where('namajurusan','LIKE','%'.$keyword.'%')->paginate(4);
 
         if(Auth()->user()->role == 'Admin'){
-            return view('datasiswa.datasiswa',compact('data','jurusan'));
+            return view('datasiswa.datasiswa',compact('jurusan','data1'));
         }else if(Auth()->user()->role == 'Guru'){
             return view('userguru.datasiswa.datasiswa',compact('data2','jurusan','data3','tittle'));
         }else if(Auth()->user()->role == 'Dudi'){
@@ -38,12 +40,29 @@ class DatasiswaController extends Controller
         }
     }
     public function data($id){
+
         // $data = jurusan::where('namajurusan',$id)->get();
         $data = datasiswa::where('namajurusan',$id)->get();
 
-
         return view('datasiswa.data',compact('data'));
     }
+
+    // public function jurusan(Request $request)
+    // {
+    //     $keyword = $request->keyword;
+    //     $data1 = datasiswa::where('namajurusan','LIKE','%'.$keyword.'%')->paginate(4);
+    //     // $berita = berita::all();
+    //     return view('datasiswa.data', compact('data1'));
+    // }
+
+    // public function jurusan(Request $request)
+    // {
+    //     $jurusan = jurusan::query();
+
+    //     $jurusan->when($request->namajurusan, function($query) use ($request){
+    //         return $query->where('namajurusan','like','%'.$request->namajurusan.'%');
+    //     });
+    // }
 
     public function tambahdatasiswa(){
     $data = datasiswa::all();

@@ -75,6 +75,7 @@
                                     <br>
                                     <div>
                                 <a href="/tambahdataplotingan" class="btn btn-primary mb-10">Tambah Plotingan +</a>
+                                <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-sharp fa-solid fa-trash"></i>  Hapus Semua</button>
                                     </div>
                                     <br>
                                 </div>
@@ -128,6 +129,30 @@
                             </div>
                         </div><!--end col-->
                     </div><!--end row-->
+
+<!-- Default Modals -->
+
+<div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Hapus Semua Data ?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="fs-15">
+                    
+                </h5>
+                <p class="text-muted">Anda Yakin Akan Menghapus Seluruh Data Plotingan ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                <a href="/deleteall" method="get" class="btn btn-danger ">Hapus</a>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
                 </div>
                 <!-- container-fluid -->

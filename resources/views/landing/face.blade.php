@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,600,700" rel="stylesheet">
 
     <!-- Font Favicon -->
-    <link rel="shortcut icon" href="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/2.png') }}">
 
 </head>
 
@@ -51,7 +51,7 @@
                 <!--begin col-md-12 -->
                 <div class="col-md-12 text-center">
 
-                    <p>Copyright © 2019 Essentials. Designed by <a href="https://themeforest.net/user/epic-themes/portfolio?ref=Epic-Themes" target="_blank">Epic-Themes</a></p>
+                    <p> 2023 SMK Negeri 1 Pasuruan. All rights reserved.</p>
 
                     <!--begin footer_social -->
                     <ul class="footer_social">

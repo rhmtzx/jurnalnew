@@ -7,7 +7,9 @@ use App\Models\jurusan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\datasiswa;
+use Illuminate\Support\Facades\Schema;
 use toastr;
+
 
 class JurusanController extends Controller
 {
@@ -73,5 +75,15 @@ class JurusanController extends Controller
             $data->delete();
 
             return redirect()->route('datajurusan')->with('success', 'Data Berhasil Di Delete');
+        }
+
+        public function deleteall()
+        {
+            Schema::disableForeignKeyConstraints();
+            \App\Models\jurusan::truncate();
+            Schema::enableForeignKeyConstraints();
+
+            toastr()->success('Seluruh Data Berhasil Di Hapus');
+            return redirect()->back()->with('success','Seluruh Data Berhasil Di Hapus');
         }
 }

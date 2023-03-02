@@ -82,7 +82,9 @@
 
 
                                         <div class="mb-3">
-
+                                            <div class="float-end">
+                                                <!-- <a href="/forgotpasswordd" class="text-muted">Forgot password?</a> -->
+                                            </div>
                                             <label class="form-label" for="password-input">Masukkan Password</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
                                                 <input type="password" class="form-control pe-5 password-input" placeholder="Masukkan Password" name="password" id="password">
@@ -95,9 +97,7 @@
                                             @if (session('error'))
                                             <div class="text-danger"> {{ session('error') }} </div>
                                             @endif
-                                            <!-- <div class="float-end">
-                                                <a href="/lupapassword" class="text-muted">Lupa Password?</a>
-                                            </div> -->
+                                            
                                         </div>
 
 

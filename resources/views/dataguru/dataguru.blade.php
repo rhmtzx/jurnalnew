@@ -72,11 +72,11 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Data Seluruh Guru</h5>
-                                    <br>
+                                    <!-- <br> -->
                                     <div>
-                                <a href="/tambahdataguru" class="btn btn-primary mb-10">Tambah Guru +</a>
+                                <!-- <a href="/tambahdataguru" class="btn btn-primary mb-10">Tambah Guru +</a> -->
                                     </div>
-                                    <br>
+                                    <!-- <br> -->
                                 </div>
                                 <div class="card-body">
                                     <table id="guru" class="table nowrap align-middle table-bordered" style="width:100%">
