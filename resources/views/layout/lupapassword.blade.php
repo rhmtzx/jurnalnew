@@ -73,10 +73,11 @@
                                     Masukkan Email Anda
                                 </div>
                                 <div class="p-2">
-                                    <form>
+                                    <form action="/forgot-password" method="post">
+                                        @csrf
                                         <div class="mb-4">
                                             <label class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Masukkan Email">
+                                            <input type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus id="email" placeholder="Masukkan Email">
                                         </div>
 
                                         <div class="text-center mt-4">

@@ -1,31 +1,38 @@
 <?php
 
 
+use App\Models\User;
 use App\Models\jurusan;
 use App\Models\datadudi;
-use App\Models\datasiswa;
-use App\Models\tambahjurnal;
-use App\Models\dataplotingan;
 use App\Models\dataguru;
 use App\Models\dataabsen;
+use App\Models\datasiswa;
+use Illuminate\Support\Str;
+use App\Models\tambahjurnal;
+use Illuminate\Http\Request;
+use App\Models\dataplotingan;
+use App\Mail\ResetPasswordMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use Illuminate\Contracts\Mail\Mailable;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\DatadudiController;
-use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DataguruController;
+use App\Http\Controllers\DataabsenController;
 use App\Http\Controllers\DatasiswaController;
 use App\Http\Controllers\SiswamagangController;
 use App\Http\Controllers\TambahjurnalController;
 use App\Http\Controllers\DataplotinganController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
-use App\Http\Controllers\DataabsenController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ApprovalController;
-use App\Http\Controllers\ChartController;
 
 
 /*
@@ -147,7 +154,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
     Route::post('/updatedataguru/{id}', [DataguruController::class, 'updatedataguru'])->name('updatedataguru')->middleware('auth');
     Route::get('/deletedataguru/{id}', [DataguruController::class, 'deletedataguru'])->name('deletedataguru')->middleware('auth');
 
-    
+
 
     // D a t a  A b s e n
     Route::get('/dataabsen', [DataabsenController::class, 'index'])->name('dataabsen')->middleware('auth');
@@ -217,6 +224,45 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     Route::put('/statusditerimaa/{id}', [DataabsenController::class, 'statusditerimaa'])->name('statusditerimaa')->middleware('auth');
     Route::put('/statusditolaka/{id}', [DataabsenController::class, 'statusditolaka'])->name('statusditolaka')->middleware('auth');
 });
+
+    Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
+    Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
+
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+
+
+
+
+// Route::get('/forgot-password', function () {
+//     return view('layout.lupapassword');
+// })->name('password.request');
+
+// Route::post('/forgot-password', function (Request $request) {
+//     $request->validate([
+//         'email' => 'required|email',
+//     ]);
+
+//     $user = User::where('email', $request->email)->first();
+//     if (!$user) {
+//         return back()->withErrors(['email' => 'Email not found']);
+//     }
+
+//     $token = Str::random(60);
+//     $user->reset_token = $token;
+//     $user->reset_token_expire = now()->addMinutes(30);
+//     $user->save();
+
+//     Mail::to($user->email)->send(new ResetPasswordMail($token));
+
+//     return back()->with('status', 'Reset password link sent to your email');
+// })->name('password.email');
+
+
+
+
 
 
 

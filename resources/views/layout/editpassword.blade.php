@@ -95,6 +95,13 @@
                                                                                     Please enter email
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="exampleFormControlInput1" class="form-label"><h6>Konfirmasi Password Baru</h6></label>
+                                                                                    <input type="password" class="form-control" name="password_confirmation" id="password" value="">
+                                                                                    <div class="invalid-feedback">
+                                                                                        Please enter email
+                                                                                    </div>
+                                                                                </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
                                 <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
@@ -164,6 +171,13 @@
                                                                                     Please enter email
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="exampleFormControlInput1" class="form-label"><h6>Konfirmasi Password Baru</h6></label>
+                                                                                    <input type="password" class="form-control" name="password_confirmation" id="password" value="">
+                                                                                    <div class="invalid-feedback">
+                                                                                        Please enter email
+                                                                                    </div>
+                                                                                </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
                                 <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
@@ -228,6 +242,13 @@
                                                                             <div class="mb-3">
                                                                             <label for="exampleFormControlInput1" class="form-label"><h6>Password Baru</h6></label>
                                                                                 <input type="password" class="form-control" name="password" id="password" value="">
+                                                                                <div class="invalid-feedback">
+                                                                                    Please enter email
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                            <label for="exampleFormControlInput1" class="form-label"><h6>Konfirmasi Password Baru</h6></label>
+                                                                                <input type="password" class="form-control" name="password_confirmation" id="password" value="">
                                                                                 <div class="invalid-feedback">
                                                                                     Please enter email
                                                                                 </div>

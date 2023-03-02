@@ -104,7 +104,7 @@
                                                     <div class="form-check">
                                                         <input class="form-check-input fs-15" type="checkbox" name="checkAll" value="option1">
                                                     </div>
-                                                </th>
+                                                </th>   
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>
                                                     <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""

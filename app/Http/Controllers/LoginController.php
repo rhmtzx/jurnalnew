@@ -17,6 +17,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Password;
 
 
 class LoginController extends Controller
@@ -437,22 +438,23 @@ class LoginController extends Controller
 
     }
 
-    public function lupapassword(){
-        return view('layout.lupapassword');
-    }
+    // public function lupapassword(){
+    //     return view('layout.lupapassword');
+    // }
+
 //     public function sendResetLinkEmail(Request $request)
 // {
+//     $request->validate(['email' => 'required|email']);
 
-//     $this->validateEmail($request);
+//     $status = Password::sendResetLink(
+//         $request->only('email')
+//     );
 
-//     $user = User::where('email', $request->email)->first();
-//     if (!$user) {
-//         return $this->sendFailedResponse($request, 'email');
-//     }
-
-//     $user->sendPasswordResetNotification($this->broker()->createToken($user));
-//     return $this->sendResetLinkResponse($request, 'passwords.sent');
+//     return $status === Password::RESET_LINK_SENT
+//                 ? back()->with('status', __($status))
+//                 : back()->withErrors(['email' => __($status)]);
 // }
+
     public function export()
 {
     return Excel::download (new UsersExport, 'JurnalSiswa.xlsx');

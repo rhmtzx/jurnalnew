@@ -74,7 +74,7 @@
                                 <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Siswa</span>
                             </a>
                         </li>
-                        
+
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data User</span></li>
 
                         <li class="nav-item">
