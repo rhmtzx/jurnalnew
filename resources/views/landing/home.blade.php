@@ -82,7 +82,7 @@
             </div>
             <div class="col-md-4">
                 <div class="main-services">
-                    <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/student.png') }}" class="width-100" alt="pic">
+                    <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/malingsiswa.png') }}" class="width-100" alt="pic">
                     <h3>Siswa</h3>
                     <p>Sebagai Siswa Anda Bisa Melakukan Penambahan Data Jurnal Dan Absen PKL Setiap Harinya.</p>
                     <a href="/registersiswa" class="btn-blue-line small scrool">Daftar Siswa Sekarang !!</a>
@@ -90,7 +90,7 @@
             </div>
             <div class="col-md-4">
                 <div class="main-services">
-                    <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/fotoguru.jpg') }}" class="width-100" alt="pic">
+                    <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/malingguru.png') }}" class="width-100" alt="pic">
                     <h3>Guru</h3>
                     <p>Sebagai Guru Anda Bisa Melakukan Pengamatan Data Jurnal Dan Absen Siswa Yang Sedang Melakukan PKL.</p>
                     <a href="/registerguru" class="btn-blue-line small scrool">Daftar Guru Sekarang !!</a>
@@ -98,7 +98,7 @@
             </div>
             <div class="col-md-4">
                 <div class="main-services">
-                    <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/main-service3.png') }}" class="width-100" alt="pic">
+                    <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/malingdudi.png') }}" class="width-100" alt="pic">
                     <h3>Dudi</h3>
                     <p>Sebagai Dudi Anda Bisa Melakukan Penyetujuan Data Jurnal Dan Absen Setiap Harinya Yang Telah Ditambahkan Siswa.</p>
                     <a href="/registerdudi" class="btn-blue-line small scrool">Daftar Dudi Sekarang !!</a>
@@ -107,7 +107,49 @@
         </div>
     </div>
 </section>
+<section class="section-blue small-paddings" id="newsletter-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center padding-top-50 padding-bottom-20">
+                <h3 class="white-text">Ayo! Bergabung Bersama Kami!.</h3>
+                <h3 class="white-text">Dapatkan Kemudahan Dalam Memonitoring Jurnal Dan Absen Harian</h3>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section class="section-white section-top-border" id="keuntungan">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 padding-top-30">
+                <div class="features-second">
+                    <div class="dropcaps-circle">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="margin-bottom-5">Kemudahan Monitoring Jurnal.</h4>
+                    <p>Kelola proses monitoring dan bersiaplah untuk mengatasi tantangan apa pun dengan sangat mudah.</p>
+                </div>
+                <div class="features-second">
+                    <div class="dropcaps-circle">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4 class="margin-bottom-5">Kemudahan Sistem Aplikasi.</h4>
+                    <p>Sistem aplikasi yang mudah memudahkan kerja dan pengoperasian waktu yang cepat.</p>
+                </div>
+                <div class="features-second">
+                    <div class="dropcaps-circle">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4 class="margin-bottom-5">Kemudahan Mengisi Jurnal.</h4>
+                    <p>Anda hanya perlu menginputkan jurnal dengan praktis karena pengisian sangatlah mudah.</p>
+                </div>
+            </div>
+            <div class="col-md-6 wow slideInRight" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: slideInRight;">
+                <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/landing.jpg') }}" class="width-100 box-shadow" alt="pic">
+            </div>
+        </div>
+    </div>
+</section>
 <section class="section-white small-padding-bottom" id="pertanyaan">
     <div class="container">
         <div class="row">
@@ -179,38 +221,6 @@
     </div>
 </section>
 
-<section class="section-white section-top-border">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 padding-top-30">
-                <div class="features-second">
-                    <div class="dropcaps-circle">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h4 class="margin-bottom-5">Customize your workflow.</h4>
-                    <p>Manage any process and be ready to address any challenge with total ease.</p>
-                </div>
-                <div class="features-second">
-                    <div class="dropcaps-circle">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h4 class="margin-bottom-5">Easy onboarding, fast adoption.</h4>
-                    <p>With Essentials getting your team on board is as simple as sending an email.</p>
-                </div>
-                <div class="features-second">
-                    <div class="dropcaps-circle">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h4 class="margin-bottom-5">Improve subscriber retention.</h4>
-                    <p>Analyze customers by region, discounts and more and put a plan in place to improve subscriber retention.</p>
-                </div>
-            </div>
-            <div class="col-md-6 wow slideInRight" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: slideInRight;">
-                <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/landing.jpg') }}" class="width-100 box-shadow" alt="pic">
-            </div>
-        </div>
-    </div>
-</section>
 <!-- <section class="section-blue">
     <div class="container">
         <div class="row">
@@ -325,7 +335,7 @@
         </div>
     </div>
 </section> -->
-<section class="section-blue" id="showcase">
+<!-- <section class="section-blue" id="showcase">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -384,9 +394,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="section-grey medium-paddings section-bottom-border">
+<!-- <section class="section-grey medium-paddings section-bottom-border">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto padding-bottom-40">
@@ -423,51 +433,31 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="section-white section-bottom-border">
+<section class="section-white section-bottom-border" id="lainnya">
     <div class="container">
         <div class="row">
             <div class="col-md-6 padding-top-20">
-                <h3>Get ready to discover all the benefits and secrets of our amazing software.</h3>
-                <p>Velis demo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, sed quia magni dolores eos qui ratione sequi nesciunt neque et poris ratione sequi enim quia tempor magni.</p>
+                <h3>Tunggu Apa Lagi ?</h3>
+                <p>Beberapa Keuntungan Yang Mungkin Anda Peroleh Jika Menggunakan Aplikasi Kami Beberapa Diantaranya Yaitu.</p>
                 <ul class="benefits">
-                    <li><i class="fa fa-check"></i> Quia magni netsum eos qui ratione sequi.</li>
-                    <li><i class="fa fa-check"></i> Venis ratione sequi enim quia tempor magni.</li>
-                    <li><i class="fa fa-check"></i> Enim ipsam voluptatem quia voluptas.</li>
+                    <li><i class="fa fa-check"></i> Pengisian Jurnal Cepat.</li>
+                    <li><i class="fa fa-check"></i> Penggunaan Aplikasi Tanpa Berbayar.</li>
+                    <li><i class="fa fa-check"></i> Monitoring Jurnal Secara Praktis.</li>
                 </ul>
-                <a href="#contact" class="btn-blue scrool">Get Started</a>
+                <a href="/login" class="btn-blue scrool">Login Sekarang</a>
             </div>
             <div class="col-md-6">
-                <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/landing.jpg') }}" class="hero-image width-100 box-shadow" alt="pic">
+                <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/yy.jpg') }}" class="hero-image width-100 box-shadow" alt="pic">
             </div>
         </div>
     </div>
 </section>
 
-<section class="section-blue small-paddings" id="newsletter-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center padding-top-50 padding-bottom-20">
-                <h3 class="white-text">Seen enough? We are currently in the closed beta.<br>
-                Please enter your email to join the waiting list.</h3>
-            </div>
-            <div class="col-md-12 padding-bottom-40">
-                <div class="newsletter_form_wrapper wow bounceIn" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: bounceIn;">
-                    <!-- <div class="newsletter_form_box"> -->
-                        <!-- <p class="newsletter_success_box" style="display:none;">We received your message and you'll hear from us soon. Thank You!</p>
-                        <form id="newsletter-form" class="newsletter-form" action="https://demo.epic-webdesign.com/tf-essentials/v1/php/newsletter.php" method="post">
-                            <input id="email_newsletter" type="email" name="nf_email" placeholder="Enter Your Email Address">
-                            <input type="submit" value="GET STARTED!" id="submit-button-newsletter">
-                        </form> -->
-                    <!-- </div> -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="section-grey" id="blog">
+
+<!-- <section class="section-grey" id="blog">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -532,9 +522,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="section-grey partners-paddings section-top-border section-bottom-border">
+<section class="section-grey partners-paddings section-top-border section-bottom-border" id="kerjasama">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">

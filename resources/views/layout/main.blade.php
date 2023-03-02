@@ -783,31 +783,19 @@
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/plugins.js')}}"></script>
 
-    <!-- apexcharts -->
-    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
-
     <!-- projects js -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/dashboard-projects.init.js')}}"></script>
-
     <script src="{{asset('velzon/code.jquery.com/jquery-3.6.0.min.js')}}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <!-- App js -->
-    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/app.js')}}"></script>
 
     <!-- listjs init -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/listjs.init.js')}}"></script>
-
-    <!-- Sweet Alerts js -->
-    <!-- <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script> -->
-
 
     <!-- prismjs plugin -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/prismjs/prism.js')}}"></script>
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/list.js/list.min.js')}}"></script>
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/list.pagination.js/list.pagination.min.js')}}"></script>
 
-    <!-- listjs init -->
-    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/listjs.init.js')}}"></script>
+
     <!--datatable js-->
     <script src="{{asset('velzon/cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('velzon/cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js')}}"></script>
@@ -819,12 +807,21 @@
     <script src="{{asset('velzon/cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js')}}"></script>
     <script src="{{asset('velzon/cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js')}}"></script>
     <script src="{{asset('velzon/assets/js/pages/datatables.init.js')}}"></script>
+
     <!-- apexcharts -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
-
     <script src="{{asset('velzon/img.themesbrand.com/velzon/apexchart-js/stock-prices.js')}}"></script>
+    <!-- linecharts init -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/apexcharts-line.init.js')}}"></script>
+    <!-- App js -->
+    <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/app.js')}}"></script>
 
+    <script>
     
+    var bulan = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'agu', 'sep', 'okt', 'nov', 'des']
+    var bulanPremium = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'agu', 'sep', 'okt', 'nov', 'des']
+    var bulanPendapatan = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'agu', 'sep', 'okt', 'nov', 'des']
+    </script>
 </body>
 
 

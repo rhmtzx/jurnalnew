@@ -1,6 +1,7 @@
 @extends('layout.main')
 @section('content')
             <!-- ============================================================== -->
+<body>
  <div class="main-content">
 
             <div class="page-content">
@@ -216,76 +217,66 @@
                                 </div><!-- end col -->
                             </div><!-- end row -->
 
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="card">
-                                        <div class="card-header border-0 align-items-center d-flex">
-                                            <h4 class="card-title mb-0 flex-grow-1">Journal Statistics</h4>
-                                            <div>
-                                                <button type="button" class="btn btn-soft-secondary btn-sm">
-                                                    ALL
-                                                </button>
-                                                <button type="button" class="btn btn-soft-secondary btn-sm">
-                                                    1M
-                                                </button>
-                                                <button type="button" class="btn btn-soft-secondary btn-sm">
-                                                    6M
-                                                </button>
-                                                <button type="button" class="btn btn-soft-primary btn-sm">
-                                                    1Y
-                                                </button>
-                                            </div>
-                                        </div><!-- end card header -->
-
-                                        <div class="card-header p-0 border-0 bg-soft-light">
-                                            <div class="row g-0 text-center">
-                                                <div class="col-8 col-sm-3">
-                                                    <div class="p-3 border border-dashed border-start-0">
-                                                        <h5 class="mb-1 text-success"><span class="counter-value" data-target="999">0</span></h5>
-                                                        <p class="text-muted mb-0">Siswa Hadir</p>
-                                                    </div>
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-8 col-sm-3">
-                                                    <div class="p-3 border border-dashed border-start-0">
-                                                        <h5 class="mb-1 text-success"><span class="counter-value" data-target="999">0</span></h5>
-                                                        <p class="text-muted mb-0">Siswa Sakit</p>
-                                                    </div>
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-8 col-sm-3">
-                                                    <div class="p-3 border border-dashed border-start-0">
-                                                        <h5 class="mb-1 text-success"><span class="counter-value" data-target="999">0</span></h5>
-                                                        <p class="text-muted mb-0">Siswa Izin</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-8 col-sm-3">
-                                                    <div class="p-3 border border-dashed border-start-0">
-                                                        <h5 class="mb-1 text-success"><span class="counter-value" data-target="999">0</span></h5>
-                                                        <p class="text-muted mb-0">Siswa Absen</p>
-                                                    </div>
-                                                </div>
-                                                <!--end col-->
-                                                
-                                                <!--end col-->
-                                            </div>
-                                        </div><!-- end card header -->
-                                        <div class="card-body p-0 pb-2">
-                                            <div>
-                                                <div id="projects-overview-chart" data-colors='["--vz-primary", "--vz-warning", "--vz-success"]' dir="ltr" class="apex-charts"></div>
-                                            </div>
-                                        </div><!-- end card body -->
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-                            
-
                     </div>
 
                 </div>
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
+            <div class="row">   
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Line with Data Labels</h4>
+                                    <div class="card-toolbar" style="margin-left: 580px">
+                                                    <form action="{{ url('filter') }}" method="GET" class="form-group">
+                                                        @csrf
+                                                        <select class="form-control" id="tahunPd" name="year">
+                                                            <?php
+                                                                $year = date('Y');
+                                                                $min = $year - 1;
+                                                                $max = $year;
+                                                                for ($i = $max; $i >= $min; $i--){
+                                                                    echo '<option value=' . $i . '>' . $i . '</option>';
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </form>
+                                                </div>
+                                </div><!-- end card header -->
+
+                                <div class="card-body">
+                                    <div id="line_chart_datalabel" data-colors='["--vz-success", "--vz-danger"]' class="apex-charts" dir="ltr"></div>
+                                </div><!-- end card-body -->
+                            </div><!-- end card -->
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Basic Line Chart</h4>
+                                    <div class="card-toolbar" style="margin-left: 580px">
+                                                    <form action="{{ url('filter') }}" method="GET" class="form-group">
+                                                        @csrf
+                                                        <select class="form-control" id="tahunPd" name="year">
+                                                            <?php
+                                                                $year = date('Y');
+                                                                $min = $year - 1;
+                                                                $max = $year;
+                                                                for ($i = $max; $i >= $min; $i--){
+                                                                    echo '<option value=' . $i . '>' . $i . '</option>';
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </form>
+                                                </div>
+                                </div><!-- end card header -->
+
+                                <div class="card-body">
+                                    <div id="line_chart_basic" data-colors='["--vz-primary"]' class="apex-charts" dir="ltr"></div>
+                                </div><!-- end card-body -->
+                            </div><!-- end card -->
+                        </div>
+            </div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -301,5 +292,6 @@
                     </div>
                 </div>
             </footer>
-        </div>     
+        </div>   
+</body>
         @endsection

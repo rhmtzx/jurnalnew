@@ -31,16 +31,13 @@
 
                         <li><a href="#pengguna">Pengguna</a></li>
 
-                        <!-- <li><a href="#pricing">Pricing</a></li> -->
+                        <li><a href="#keuntungan">Keuntungan</a></li>
 
                         <li><a href="#pertanyaan">Pertanyaan</a></li>
 
-                        <li><a href="#showcase">Showcase</a></li>
+                        <!-- <li><a href="#lainnya">Lainnya</a></li> -->
 
-
-                        <li><a href="#blog">Berita</a></li>
-
-                        <li><a href="#contact">Kontak</a></li>
+                        <li><a href="#kerjasama">Kerja Sama</a></li>
 
                         <li class="discover-link"><a href="/login" class="external discover-btn">Log In</a></li>
 

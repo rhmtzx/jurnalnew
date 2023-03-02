@@ -151,4 +151,6 @@ class ChartController extends Controller
 
         return $data;
     }
+
+    // COBA GOOGLE LINE CHART
 }
