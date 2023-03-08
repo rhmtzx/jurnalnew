@@ -7,20 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ResetPasswordMail extends Mailable
+class kirimEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
-    public $token;
-
+    public $data_email;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($token)
+    public function __construct($data_email)
     {
-        $this->token = $token;
+        $this->data_email = $data_email;
     }
 
     /**
@@ -30,6 +28,8 @@ class ResetPasswordMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.reset-password');
+        return $this->subject($this->data_email['subject'])
+        ->from($this->data_email['sender_name'])
+        ->view('mail.kirimEmail');
     }
 }

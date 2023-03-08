@@ -16,7 +16,7 @@ class CreateDatasiswasTable extends Migration
         Schema::create('datasiswas', function (Blueprint $table) {
             $table->id();
             $table->string('nissiswa');
-            $table->string('namasiswa');
+        $table->string('namasiswa')->unique();
             // $table->string('kelas');
             $table->foreignId('namajurusan');
             $table->foreign('namajurusan')->references('id')->on('jurusans');
@@ -26,8 +26,8 @@ class CreateDatasiswasTable extends Migration
             $table->string('kd_dudi')->nullable();
             $table->string('user_id')->nullable();
 
-            
-            
+
+
             $table->timestamps();
         });
     }

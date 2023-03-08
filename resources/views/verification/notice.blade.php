@@ -2,11 +2,11 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 
-<!-- Mirrored from themesbrand.com/velzon/html/default/auth-pass-reset-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:48 GMT -->
+<!-- Mirrored from themesbrand.com/velzon/html/default/auth-twostep-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:48 GMT -->
 <head>
 
     <meta charset="utf-8" />
-    <title>Lupa Passord | J - On</title>
+    <title>Two Step Verification | Velzon - Admin & Dashboard Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -51,7 +51,7 @@
                                     <img src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/images/1.png') }}" alt="" height="100" width="250">
                                 </a>
                             </div>
-                            <p class="mt-3 fs-15 fw-medium">J - On | Journal Online</p>
+                            <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
                         </div>
                     </div>
                 </div>
@@ -62,28 +62,22 @@
                         <div class="card mt-4">
 
                             <div class="card-body p-4">
-                                <div class="text-center mt-2">
-                                    <h5 class="text-primary">Lupa Password?</h5>
-
-                                    <lord-icon src="https://cdn.lordicon.com/rhvddzym.json" trigger="loop" colors="primary:#0ab39c" class="avatar-xl"></lord-icon>
-
+                                <div class="mb-4">
+                                    <div class="avatar-lg mx-auto">
+                                        <div class="avatar-title bg-light text-primary display-5 rounded-circle">
+                                            <i class="ri-mail-line"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="alert alert-borderless alert-warning text-center mb-2 mx-2" role="alert">
-                                    Masukkan Email Anda
-                                </div>
-                                <div class="p-2">
-                                    <form action="/forgot-password" method="post">
-                                        @csrf
-                                        <div class="mb-4">
-                                            <label class="form-label">Email</label>
-                                            <input type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus id="email" placeholder="Masukkan Email">
-                                        </div>
-
-                                        <div class="text-center mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Send Reset Link</button>
-                                        </div>
-                                    </form><!-- end form -->
+                                <div class="p-2 mt-4">
+                                    <div class="text-muted text-center mb-4 mx-lg-3">
+                                        <h4>Verifikasi Email Kamu</h4>
+                                        <p>Tolong Verifikasi Email Anda Terlebih Dahulu &nbsp<span class="fw-semibold">emailanda@gmail.com</span></p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="/landinghome" type="button" class="btn btn-success w-100">Confirm</a>
+                                    </div>
                                 </div>
                             </div>
                             <!-- end card body -->
@@ -91,7 +85,7 @@
                         <!-- end card -->
 
                         <div class="mt-4 text-center">
-                            <p class="mb-0">Gajadi Lupa, Udah ingat <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Login </a> </p>
+                            <p class="mb-0">Didn't receive a code ? <a href="/email/resend-verification" class="fw-semibold text-primary text-decoration-underline">Resend</a> </p>
                         </div>
 
                     </div>
@@ -130,11 +124,12 @@
 
     <!-- particles js -->
     <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/libs/particles.js/particles.js') }}"></script>
-
     <!-- particles app js -->
     <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/particles.app.js') }}"></script>
+    <!-- two-step-verification js -->
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/two-step-verification.init.js') }}"></script>
 </body>
 
 
-<!-- Mirrored from themesbrand.com/velzon/html/default/auth-pass-reset-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:48 GMT -->
+<!-- Mirrored from themesbrand.com/velzon/html/default/auth-twostep-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:41:48 GMT -->
 </html>

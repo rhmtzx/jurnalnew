@@ -18,7 +18,7 @@
                             <div class="single-table">
                                 <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
                                 <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a>
-                                
+
                                 <div class="table-responsive">
                             <div class="single-table">
                                     <br>
@@ -51,8 +51,10 @@
                                             <th scope="row">{{ $no++ }}</th>
                                             <td>{{ $row->namasiswa->namasiswa }}</td>
                                             <td>
-                                                <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
-                                                style="width: 40px">
+                                                <a class="image-popup" href="{{ asset('fotodudi/' . $row->foto) }}">
+                                                    <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                                    style="width: 40px">
+                                                </a>
                                             </td>
                                             <td>{{ $row->judul }}</td>
                                             <td>{!! $row->deskripsi !!}</td>

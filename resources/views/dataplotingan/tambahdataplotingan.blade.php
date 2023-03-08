@@ -4,7 +4,8 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
 
 </head>
@@ -38,7 +39,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -69,13 +70,13 @@
                     </div>
                     <!-- end page title -->
 
-                   
+
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Tambah Data Plotingan</h5>
-                                    
+
                                 </div>
                                 <div class="card-body">
                                     <form action="/insertdataplotingan" method="POST" enctype="multipart\form-data" >
@@ -108,7 +109,7 @@
 
                                 <div class="mb-3">
                                     <label for="namasiswap" class="form-label"><h5>Nama Siswa</h5></label>
-                                    <select class="form-control rounded-pill" name="namasiswap[]" id="namasiswap">
+                                    <select class="form-control rounded-pill" name="namasiswap[]" id="select-state" autocomplete="off">
                                         <option value="" selected disabled>Pilih Siswa</option>
                                         @foreach($siswa as $hi)
                                         <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
@@ -151,8 +152,8 @@
                                 <button type="submit" class="btn btn-primary">Submit Data</button>
                                 <a href="/dataplotingan" class="btn btn-danger mb-10">Kembali</a>
 
-                            </form>                                   
- 
+                            </form>
+
                                 </div>
                             </div>
                         </div><!--end col-->
@@ -163,7 +164,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 
@@ -187,6 +188,8 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
@@ -204,9 +207,15 @@
         </script>
 
         <script>
+            new TomSelect("#select-state",{
+	maxItems: 3
+});
+        </script>
+
+        <script>
             const namadudip = document.getElementById('namadudip')
             namadudip.onchange = function(e) {
-            const alamatdudip = e.target.options[e.target.selectedIndex].dataset.alamatdudip    
+            const alamatdudip = e.target.options[e.target.selectedIndex].dataset.alamatdudip
             document.getElementById('alamatdudip').value = alamatdudip;
             }
         </script>

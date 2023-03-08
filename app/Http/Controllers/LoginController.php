@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+// use auth;
 use App\Models\User;
 use App\Helpers\Helper;
 use App\Models\jurusan;
@@ -17,7 +18,11 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
 class LoginController extends Controller
@@ -95,7 +100,7 @@ class LoginController extends Controller
         // dd($request->all());
         $this->validate($request,[
             'nissiswa'=> 'required|unique:datasiswas',
-            'name'=> 'required',
+            'name'=> 'required|unique:users',
             'namajurusan'=> 'required',
             'alamatsiswa'=> 'required',
             'notlpsiswa'=> 'required',
@@ -111,7 +116,7 @@ class LoginController extends Controller
             'nissiswa.required' => 'NIS Siswa Harus Diisi !!',
             'nissiswa.unique' => 'NIS Siswa Sudah Digunakan !!',
             'name.required' => 'Nama Siswa Harus Diisi !!',
-            // 'name.unique' => 'Nama Siswa Sudah Digunakan !!',
+            'name.unique' => 'Nama Siswa Sudah Digunakan !!',
             'namajurusan.required' => 'Kelas Jurusan Siswa Harus Diisi !!',
             'alamatsiswa.required' => 'Alamat Siswa Harus Diisi !!',
             'notlpsiswa.required' => 'No Telepon Siswa Harus Diisi !!',
@@ -152,9 +157,11 @@ class LoginController extends Controller
             'user_id' => $user->id,
         ]);
 
+        event(new Registered($user));
 
+        auth()->login($user);
 
-        return redirect('/login')->with('success','Siswa Berhasil Daftar');
+        return redirect('/email/need-verification')->with('success','Siswa Berhasil Daftar');
     }
 
     public function registerguru(){
@@ -219,7 +226,12 @@ class LoginController extends Controller
 
         ]);
 
-        return redirect('/login')->with('success','Guru Berhasil Daftar');
+        event(new Registered($user));
+
+        auth()->login($user);
+
+
+        return redirect('/email/need-verification')->with('success','Guru Berhasil Daftar');
     }
 
     public function registerdudi(){
@@ -284,13 +296,17 @@ class LoginController extends Controller
 
         ]);
 
+        event(new Registered($user));
+
+        auth()->login($user);
+
         if($request->hasFile('foto')){
             $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
             $user->foto = $request->file('foto')->getClientOriginalName();
             $user->save();
         }
 
-        return redirect('/login')->with('success','Dudi Berhasil Daftar');
+        return redirect('/email/need-verification')->with('success','Dudi Berhasil Daftar');
     }
 
 
@@ -438,22 +454,20 @@ class LoginController extends Controller
 
     }
 
-    // public function lupapassword(){
-    //     return view('layout.lupapassword');
-    // }
+    public function verify(EmailVerificationRequest $request){
+        $request->fulfill();
+        return redirect('/dashboard');
+    }
 
-//     public function sendResetLinkEmail(Request $request)
-// {
-//     $request->validate(['email' => 'required|email']);
+    public function notice(){
+        return view('verification.notice');
+    }
 
-//     $status = Password::sendResetLink(
-//         $request->only('email')
-//     );
+    public function send(Request $request){
+        $request->user()->sendEmailVerificationNotification();
 
-//     return $status === Password::RESET_LINK_SENT
-//                 ? back()->with('status', __($status))
-//                 : back()->withErrors(['email' => __($status)]);
-// }
+        return back();
+    }
 
     public function export()
 {
@@ -468,5 +482,27 @@ public function exportpdf(){
     $pdf = Pdf::loadView('user.tambahjurnal.datatambahjurnal', $data->toArray())->output();
     return $pdf->download('invoice.pdf');
 }
+// protected function showJobImage($filename)
+// {
+//    //check image exist or not
+//    $exists = Storage::disk('public')->exists('fotodudi/'.$filename);
+
+//    if($exists) {
+
+//       //get content of image
+//       $content = Storage::get('fotodudi/'.$filename);
+
+//       //get mime type of image
+//       $mime = Storage::mimeType('fotodudi/'.$filename);
+//       //prepare response with image content and response code
+//       $response = Response::make($content, 200);
+//       //set header
+//       $response->header("Content-Type", $mime);
+//       // return response
+//       return $response;
+//    } else {
+//       abort(404);
+//    }
+// }
 
 }

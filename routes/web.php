@@ -15,6 +15,7 @@ use App\Mail\ResetPasswordMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Mail\Mailable;
+use Laravel\Fortify\Features;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\KelasController;
@@ -69,7 +70,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
 })->middleware('auth');
 });
 
-Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi']], function () {
+Route::group(['middleware' => ['auth','verified', 'hakakses:Siswa,Guru,Dudi']], function () {
     // D a s h b o a r d  S i s w a
     Route::get('/dashboard', function () {
     $jurusan = jurusan::count();
@@ -253,117 +254,20 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
     Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
 
-    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+    Route::get('/lupapassword', [ForgotPasswordController::class, 'lupapassword'])->name('lupapassword');
+    Route::post('/lupapasswords/{id}', [ForgotPasswordController::class, 'lupapasswords'])->name('lupapasswords');
 
+    Route::get('/email/verify/{id}/{hash}', [LoginController::class, 'verify'])->middleware(['auth','signed'])->name('verification.verify');
+    Route::get('/email/need-verification', [LoginController::class, 'notice'])->middleware('auth')->name('verification.notice');
+    Route::get('/email/resend-verification', [LoginController::class, 'send'])->middleware(['auth','throttle'])->name('verification.send');
 
+    // Password Reset...
+    Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])->name('password.request');
+    Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'reset'])->name('password.reset');
 
+    Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->name('password.email');
+    Route::post('/reset-password', [ForgotPasswordController::class, 'rapli'])->name('password.update');
 
-// Route::get('/forgot-password', function () {
-//     return view('layout.lupapassword');
-// })->name('password.request');
-
-// Route::post('/forgot-password', function (Request $request) {
-//     $request->validate([
-//         'email' => 'required|email',
-//     ]);
-
-//     $user = User::where('email', $request->email)->first();
-//     if (!$user) {
-//         return back()->withErrors(['email' => 'Email not found']);
-//     }
-
-//     $token = Str::random(60);
-//     $user->reset_token = $token;
-//     $user->reset_token_expire = now()->addMinutes(30);
-//     $user->save();
-
-//     Mail::to($user->email)->send(new ResetPasswordMail($token));
-
-//     return back()->with('status', 'Reset password link sent to your email');
-// })->name('password.email');
-
-
-
-
-
-
-
-// // R O U T E S M I D D L E - D U D I
-// Route::group(['middleware' => ['auth', 'hakakses:Dudi,Admin']], function () {
-
-//     // D a t a  J u r n a l
-//     Route::get('/datatambahjurnal', [TambahjurnalController::class, 'index'])->name('datatambahjurnal')->middleware('auth');
-//     Route::get('/tambahtambahjurnal', [TambahjurnalController::class, 'tambahtambahjurnal'])->name('tambahtambahjurnal')->middleware('auth');
-//     Route::post('/inserttambahjurnal', [TambahjurnalController::class, 'inserttambahjurnal'])->name('inserttambahjurnal')->middleware('auth');
-//     Route::get('/dataa/{id}', [TambahjurnalController::class, 'dataa'])->name('dataa')->middleware('auth');
-//     Route::get('/jurnalsdudi/{id}', [TambahjurnalController::class, 'jurnalsdudi'])->name('jurnalsdudi')->middleware('auth');
-//     Route::get('/jurnalsguru/{id}', [TambahjurnalController::class, 'jurnalsguru'])->name('jurnalsguru')->middleware('auth');
-//     Route::get('/tampiltambahjurnal/{id}', [TambahjurnalController::class, 'tampiltambahjurnal'])->name('tampiltambahjurnal')->middleware('auth');
-//     Route::post('/updatetambahjurnal/{id}', [TambahjurnalController::class, 'updatetambahjurnal'])->name('updatetambahjurnal')->middleware('auth');
-//     Route::get('/deletetambahjurnal/{id}', [TambahjurnalController::class, 'deletetambahjurnal'])->name('deletetambahjurnal')->middleware('auth');
-
-//     // D a t a  A b s e n
-//     Route::get('/dataabsen', [DataabsenController::class, 'index'])->name('dataabsen')->middleware('auth');
-//     Route::get('/tambahabsen', [DataabsenController::class, 'tambahabsen'])->name('tambahabsen')->middleware('auth');
-//     Route::post('/insertabsen', [DataabsenController::class, 'insertabsen'])->name('insertabsen')->middleware('auth');
-//     Route::get('/dataaa/{id}', [DataabsenController::class, 'dataaa'])->name('dataaa')->middleware('auth');
-//     Route::get('/tampilabsen/{id}', [DataabsenController::class, 'tampilabsen'])->name('tampilabsen')->middleware('auth');
-//     Route::get('/absensguru/{id}', [DataabsenController::class, 'absensguru'])->name('absensguru')->middleware('auth');
-//     Route::get('/absensdudi/{id}', [DataabsenController::class, 'absensdudi'])->name('absensdudi')->middleware('auth');
-//     Route::post('/updateabsen/{id}', [DataabsenController::class, 'updateabsen'])->name('updateabsen')->middleware('auth');
-//     Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen')->middleware('auth');
-//     Route::get('/detailabsen', [DataabsenController::class, 'detailabsen'])->name('detailabsen');
-
-//     // D a t a  S i s w a
-//     Route::get('/datasiswa', [DatasiswaController::class, 'index'])->name('datasiswa')->middleware('auth');
-//     Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
-//     Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
-//     Route::get('/tampildatasiswa/{id}', [DatasiswaController::class, 'tampildatasiswa'])->name('tampildatasiswa')->middleware('auth');
-//     Route::get('/data/{id}', [DatasiswaController::class, 'data'])->name('data')->middleware('auth');
-//     Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
-//     Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
-// });
-
-
-
-// // R O U T E S M I D D L E - G U R U
-// Route::group(['middleware' => ['auth', 'hakakses:Guru,Admin']], function () {
-//     // D a t a  P l o t i n g a n
-//     Route::get('/dataplotingan', [DataplotinganController::class, 'index'])->name('dataplotingan')->middleware('auth');
-//     Route::get('/tambahdataplotingan', [DataplotinganController::class, 'tambahdataplotingan'])->name('tambahdataplotingan')->middleware('auth');
-//     Route::post('/insertdataplotingan', [DataplotinganController::class, 'insertdataplotingan'])->name('insertdataplotingan')->middleware('auth');
-//     Route::get('/tampildataplotingan/{id}', [DataplotinganController::class, 'tampildataplotingan'])->name('tampildataplotingan')->middleware('auth');
-//     Route::post('/updatedataplotingan/{id}', [DataplotinganController::class, 'updatedataplotingan'])->name('updatedataplotingan')->middleware('auth');
-//     Route::get('/deletedataplotingan/{id}', [DataplotinganController::class, 'deletedataplotingan'])->name('deletedataplotingan')->middleware('auth');
-// });
-
-
-
-
-
-
-
-
-// Route::group(['middleware' => ['auth', 'hakakses:Dudi,Siswa,Guru,Admin']], function () {
-//     //dataabsen
-//     Route::get('/dataabsen', [DataabsenController::class, 'index'])->name('dataabsen')->middleware('auth');
-//     Route::get('/tambahabsen', [DataabsenController::class, 'tambahabsen'])->name('tambahabsen')->middleware('auth');
-//     Route::post('/insertabsen', [DataabsenController::class, 'insertabsen'])->name('insertabsen')->middleware('auth');
-//     Route::get('/tampilabsen/{id}', [DataabsenController::class, 'tampilabsen'])->name('tampilabsen')->middleware('auth');
-//     Route::post('/updateabsen/{id}', [DataabsenController::class, 'updateabsen'])->name('updateabsen')->middleware('auth');
-//     Route::get('/deleteabsen/{id}', [DataabsenController::class, 'deleteabsen'])->name('deleteabsen')->middleware('auth');
-//     Route::get('/detailabsen', [DataabsenController::class, 'detailabsen'])->name('detailabsen');
-
-//     //datasiswa
-//     Route::get('/datasiswa', [DatasiswaController::class, 'index'])->name('datasiswa')->middleware('auth');
-//     Route::get('/tambahdatasiswa', [DatasiswaController::class, 'tambahdatasiswa'])->name('tambahdatasiswa')->middleware('auth');
-//     Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
-//     Route::get('/tampildatasiswa/{id}', [DatasiswaController::class, 'tampildatasiswa'])->name('tampildatasiswa')->middleware('auth');
-//     Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
-//     Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
-
-// });
-
+    // Route::prefix('image')->group(function(){
+    //     Route::get('job/{filename}',[LoginController::class, 'showJobImage'])->name('jobImage');
+    // });

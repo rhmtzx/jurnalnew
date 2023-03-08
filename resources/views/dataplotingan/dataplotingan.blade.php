@@ -4,6 +4,8 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -35,7 +37,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        
+
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -66,7 +68,7 @@
                     </div>
                     <!-- end page title -->
 
-                   
+
                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
@@ -113,9 +115,9 @@
                                                 <td>{{ $row->siswas->namasiswa}}</td>
                                                 <td>{{ $row->dudis->namadudi}}</td>
                                                 <td>{{ $row->alamatdudip}}</td>
-                                                <td>{{ $row->created_at}}</td> 
-                                                    
-                                                
+                                                <td>{{ $row->created_at}}</td>
+
+
                                                 <td>
                                                     <a href="/tampildataplotingan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                     <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
@@ -141,7 +143,7 @@
             </div>
             <div class="modal-body">
                 <h5 class="fs-15">
-                    
+
                 </h5>
                 <p class="text-muted">Anda Yakin Akan Menghapus Seluruh Data Plotingan ?</p>
             </div>
@@ -159,7 +161,7 @@
             </div>
             <!-- End Page-content -->
 
-            
+
         </div>
         <!-- end main content-->
 
@@ -183,6 +185,8 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
@@ -195,7 +199,9 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#jurusan').DataTable();
+                $('#jurusan').DataTable({
+                    responsive : true
+                });
             });
         </script>
 

@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
     <div class="main-content-inner">
         <div class="row">
             <!-- Progress Table start -->
@@ -43,9 +42,10 @@
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row4->namasiswa->namasiswa }}</td>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
+                                                <td><a class="image-popup" href="{{ asset('fotodudi/' . $row4->foto) }}">
+                                                    <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
                                                     style="width: 40px">
+                                                </a>
                                                 </td>
                                                 <td>{{ $row4->judul }}</td>
                                                 <td>{!! $row4->deskripsi !!}</td>
@@ -63,7 +63,7 @@
                                                     <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
                                                 </td>
                                                 @endif
-                                                
+
                                                 <td>
                                                     <button type="button" class="btn btn-box btn-fixed-w btn-outline-success mb-3" onclick="document.getElementById('update-{{$row4->id}}').submit()">
                                                         <i class="fa-solid fa-check"></i>
@@ -74,7 +74,7 @@
                                                     @csrf
                                                     </form>
                                                     <button type="button" class="btn btn-box btn-fixed-w btn-outline-danger mb-3" onclick="document.getElementById('update2-{{$row4->id}}').submit()">
-                                                        <i class="fa-solid fa-xmark"></i>   
+                                                        <i class="fa-solid fa-xmark"></i>
                                                     </button>
                                                     <form id="update2-{{$row4->id}}"
                                                      action="{{Route('statusditolak',['id' => $row4->id])}}" class="hidden" method="post">
@@ -82,7 +82,7 @@
                                                     @csrf
                                                     </form>
                                                 </td>
-                                                
+
 
                                                 <!-- <td>
                                                     <a href="/statusditerima/{{ $row4->id }}" class="btn btn-box btn-fixed-w btn-outline-info mb-3">Terima</a>

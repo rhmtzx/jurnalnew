@@ -80,7 +80,7 @@
                                         <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
                                     </div>
-                                    @error('namasiswa')
+                                    @error('name')
                                     <div class="text-danger">
                                         {{ $message }}
                                     </div>

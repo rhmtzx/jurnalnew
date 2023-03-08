@@ -11,7 +11,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Auth\Passwords\CanResetPassword;
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 

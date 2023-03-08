@@ -16,7 +16,7 @@ class CreateDataplotingansTable extends Migration
         Schema::create('dataplotingans', function (Blueprint $table) {
             $table->id();
             $table->foreignid('namagurup');
-            $table->foreignid('namasiswap');
+            $table->string('namasiswap');
             $table->foreignid('namadudip');
             $table->string('alamatdudip');
             $table->timestamps();

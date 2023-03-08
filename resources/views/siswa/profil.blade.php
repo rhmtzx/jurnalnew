@@ -79,7 +79,7 @@
                                             <div>
                                                 <div class="pull-right cover-btn">
                                                     <a type="button" href="/editprofil" class="btn btn-light"><i class="icofont icofont-ui-messaging"></i> Edit Profile </a>
-                                                    <a type="button" href="/indexchange" class="btn btn-light"><i class="icofont icofont-ui-messaging"></i> Edit Password </a>
+                                                    <a type="button" href="/editpassword" class="btn btn-light"><i class="icofont icofont-ui-messaging"></i> Edit Password </a>
                                                 </div>
                                             </div>
                                         </div>

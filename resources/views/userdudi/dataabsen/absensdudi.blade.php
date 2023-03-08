@@ -44,8 +44,10 @@
                                             <th scope="row4">{{ $no++ }}</th>
 
                                             <td>
-                                                <img src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
-                                                style="width: 40px">
+                                                <a class="image-popup" href="{{ asset('fotodudi/' . $row4->foto) }}">
+                                                    <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
+                                                    style="width: 40px">
+                                                </a>                           
                                             </td>
                                             <td>{{ $row4->namasiswa->namasiswa }}</td>
 

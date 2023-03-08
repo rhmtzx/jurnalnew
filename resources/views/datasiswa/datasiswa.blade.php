@@ -73,7 +73,7 @@
                     <br>
                     <div class="row" >
                       @foreach ($data1 as $row )
-                        
+
                         <div class="col-sm-6 col-xl-3" >
                             <!-- Simple card -->
 

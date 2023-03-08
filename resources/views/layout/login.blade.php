@@ -83,7 +83,6 @@
 
                                         <div class="mb-3">
                                             <div class="float-end">
-                                                <!-- <a href="/forgotpasswordd" class="text-muted">Forgot password?</a> -->
                                             </div>
                                             <label class="form-label" for="password-input">Masukkan Password</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
@@ -97,10 +96,10 @@
                                             @if (session('error'))
                                             <div class="text-danger"> {{ session('error') }} </div>
                                             @endif
-                                            
                                         </div>
-
-
+                                        <div style="margin-left: 250px">
+                                        <a href="/forgot-password" class="text-muted">Lupa Password?</a>
+                                    </div>
                                         <div class="form-check">
                                             {{-- <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
                                             <label class="form-check-label" for="auth-remember-check">Remember Me</label> --}}
@@ -109,7 +108,6 @@
                                         <div class="mt-4">
                                             <button class="btn btn-primary w-100" type="submit">Login</button>
                                         </div>
-                                    <br>
 
                                         <!-- <div class="mt-4 text-center">
                                             <div class="signin-other-title">
