@@ -18,7 +18,7 @@ class CreateDataabsensTable extends Migration
             $table->string('keterangan');
             $table->string('foto')->nullable();
             $table->string('statusjurnal')->nullable();
-            $table->string('usersiswa');
+            $table->string('usersiswa')->references('id')->on('datasiswas')->onDelete('cascade');
             $table->string('student_id');
             $table->string('id_jurusan');
             $table->string('kd_guru');

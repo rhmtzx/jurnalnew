@@ -77,7 +77,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2 class="section-title">Pengguna Kami</h2>
+                <h2 class="section-title">User Pengguna Kami</h2>
                 <p class="section-subtitle">Disini Kami Memiliki 3 Macam Pengguna Di Antaranya.</p>
             </div>
             <div class="col-md-4">
@@ -100,7 +100,7 @@
                 <div class="main-services">
                     <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/malingdudi.png') }}" class="width-100" alt="pic">
                     <h3>Dudi</h3>
-                    <p>Sebagai Dudi Anda Bisa Melakukan Penyetujuan Data Jurnal Dan Absen Setiap Harinya Yang Telah Ditambahkan Siswa.</p>
+                    <p>Sebagai Dudi Anda Bisa Melakukan Penyetujuan Data Jurnal Dan Absen Yang Telah Ditambahkan Siswa.</p>
                     <a href="/registerdudi" class="btn-blue-line small scrool">Daftar Dudi Sekarang !!</a>
                 </div>
             </div>
@@ -532,10 +532,10 @@
             </div>
             <div class="col-md-12 text-center">
                 <ul class="partners-mentions">
-                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/award4a.png') }}" alt="CSS Awards"></li>
-                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/award1a.png') }}" alt="Awwwards"></li>
-                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/award5.png') }}" alt="CSS Winner"></li>
-                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/award3a.png') }}" alt="CSS Design Awards"></li>
+                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Awards"></li>
+                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/esemka.png') }}" alt="Awwwards"></li>
+                    <!-- <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Winner"></li> -->
+                    <!-- <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Design Awards"></li> -->
                 </ul>
             </div>
         </div>

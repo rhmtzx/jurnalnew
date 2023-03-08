@@ -20,7 +20,7 @@ class CreateTambahjurnalsTable extends Migration
             $table->string('foto');
             $table->string('kd_guru');
             $table->string('kd_dudi');
-            $table->string('usersiswa');
+            $table->string('usersiswa')->references('id')->on('datasiswas')->onDelete('cascade');
             $table->string('id_jurusan');
             $table->string('student_id');
             $table->string('statusjurnal')->nullable();

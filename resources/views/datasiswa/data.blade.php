@@ -82,11 +82,11 @@
                                     <table id="siswa" class="table nowrap align-middle table-bordered table-responsive" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th scope="col" style="width: 10px;">
+                                                <!-- <th scope="col" style="width: 10px;">
                                                     <div class="form-check">
                                                         <input class="form-check-input fs-15" type="checkbox" id="checkAll" value="option">
                                                     </div>
-                                                </th>
+                                                </th> -->
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nis Siswa</th>
                                                 <th scope="col">Nama Siswa</th>
@@ -105,11 +105,11 @@
                                                     @endphp
                                                     @foreach ($data as $row)
                                             <tr>
-                                                <th scope="row">
+                                                <!-- <th scope="row">
                                                     <div class="form-check">
                                                         <input class="form-check-input fs-15" type="checkbox" name="checkAll" value="option1">
                                                     </div>
-                                                </th>
+                                                </th> -->
                                                 <th scope="row">{{ $no++ }}</th>
                                                     <td>{{ $row->nissiswa }}</td>
                                                     <td>{{ $row->namasiswa }}</td>
@@ -191,30 +191,6 @@
     </body>
 
     <script>
-        $('.deletedatasiswa').click(function() {
-            var kategoriid = $(this).attr('data-id');
-            var kategori = $(this).attr('data-kategori');
-            swal({
-                title: "Yakin Ingin delete Data ?",
-                text: "Kamu Yakin Akan Menghapus Data Ini !",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    window.location = "/deletedatasiswa/" + kategoriid + ""
-                    swal("Data Berhasil Di Hapus", {
-                        icon: "success",
-                    });
-                } else {
-                    swal("Data Gagal Di Hapus");
-                }
-            });
-        });
-    </script>
-
-    <script>
         @if (Session::has('success'))
         toastr.success("{{ Session::get('success') }}")
         @endif
@@ -231,7 +207,7 @@
 
 <!-- Mirrored from themesbrand.com/velzon/html/default/tables-datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 07:42:44 GMT -->
 <script>
-    $('.deletejurusan').click(function() {
+    $('.deletedatasiswa').click(function() {
         var kategoriid = $(this).attr('data-id');
         var kategori = $(this).attr('data-kategori');
         swal({
@@ -243,7 +219,7 @@
         })
         .then((willDelete) => {
             if (willDelete) {
-                window.location = "/deletejurusan/" + kategoriid + ""
+                window.location = "/deletedatasiswa/" + kategoriid + ""
                 swal("Data Berhasil Di Hapus", {
                     icon: "success",
                 });

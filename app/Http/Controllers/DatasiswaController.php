@@ -7,6 +7,7 @@ use App\Models\kelas;
 use App\Models\jurusan;
 use App\Models\datasiswa;
 use App\Models\dataabsen;
+use App\Models\tambahjurnal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -161,10 +162,21 @@ class DatasiswaController extends Controller
         }
 
         public function deletedatasiswa(Request $request,$id){
+            //Delete Siswa
             $data = datasiswa::find($id);
-            $data3=User::find($data->user_id);
             $data->delete();
+            //Delete User
+            $data3=User::find($data->user_id);
             $data3->delete();
+            //Delete Jurnal
+            $datajurnal = tambahjurnal::find($id);
+            $data7 = tambahjurnal::find($datajurnal->usersiswa);
+            $data7->delete();
+            //Delete Absen
+            $dataabsen = dataabsen::find($id);
+            $data8 = dataabsen::find($dataabsen->usersiswa);
+            $data8->delete();
+
             if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');
             }else{

@@ -169,7 +169,7 @@ class LoginController extends Controller
             'name'=> 'required',
             'alamat'=> 'required',
             'notlpn'=> 'required',
-            'foto' => 'required','unique:posts',
+            // 'foto' => 'required','unique:posts',
 
             'email' => 'required|unique:users',
             'password' => 'required|confirmed|min:6',
@@ -189,7 +189,7 @@ class LoginController extends Controller
             'password.min' => 'Isi Password Minimal 6 Huruf !!',
             'password.confirmed' => 'Sandi Tidak Sama!!',
             'password.confirmed.required' => 'Isi Password Minimal 6 Huruf !!',
-            'foto.required' => 'Upload Minimal 1 Foto !!',
+            // 'foto.required' => 'Upload Minimal 1 Foto !!',
 
         ]);
 
@@ -197,7 +197,7 @@ class LoginController extends Controller
             'name' => $request ->name,
             'email' => $request ->email,
             'nip' => $request ->nip,
-            'foto' => $request->foto,
+            // 'foto' => $request->foto,
 
             'alamat' => $request ->alamat,
             'notlpn' => $request ->notlpn,
@@ -215,7 +215,7 @@ class LoginController extends Controller
             'alamat' => $request ->alamat,
             'notlpn' => $request ->notlpn,
             'user_id' => $user->id,
-            'foto' => $request->foto,
+            // 'foto' => $request->foto,
 
         ]);
 

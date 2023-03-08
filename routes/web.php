@@ -34,6 +34,7 @@ use App\Http\Controllers\DatapersyaratanController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
 use App\Http\Controllers\ForgotpassworddController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -64,8 +65,10 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
     $plotingan = dataplotingan::count();
     $guru = dataguru::count();
     $absen = dataabsen::count();
+    $data[] = tambahjurnal::all();
+    // dd($data);
 
-    return view('welcome', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru','absen'));
+    return view('welcome', compact('jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru','absen','data'));
 })->middleware('auth');
 });
 
@@ -137,14 +140,19 @@ Route::post('/updatepassworddudi', [UpdatePasswordController::class, 'updatepass
 Route::post('/updatepasswordguru', [UpdatePasswordController::class, 'updatepasswordguru'])->name('updatepasswordguru');
 
 
+Route::get('/', [DashboardController::class, 'index']);
+// Route::get('/grafik-penjualan', [ChartController::class, 'grafik'])->name('grafik');
+
+// Route::get('/grafik-penjualan','ChartController@grafik');
 
 
-Route::get('/chart',[ChartController::class,'index']);
-Route::get('/bar-chart',[ChartController::class,'barChart']);
+
+// Route::get('/chart',[ChartController::class,'index']);
+// Route::get('/bar-chart',[ChartController::class,'barChart']);
 
 Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
-    //AjaxGrapic
-    Route::get('/ajaxGrapic',[ChartController::class, 'ajaxGrapic'])->name('ajaxGrapic')->middleware('Admin');
+    // Chart
+    Route::get('/chart', [ChartController::class, 'index']);
     // J u r u s a n
     Route::get('/datajurusan', [JurusanController::class, 'index'])->name('datajurusan');
     Route::get('/tambahjurusan', [JurusanController::class, 'tambahjurusan'])->name('tambahjurusan');
@@ -186,7 +194,11 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
 
     // D a t a  U s e r
     Route::get('/datauser', [UserController::class, 'datauser'])->name('datauser')->middleware('auth');
-    Route::get('/deleteuser/{id}', [UserController::class, 'deleteuser'])->name('deleteuser');
+    Route::get('/destroy/{id}', [UserController::class, 'destroy'])->name('destroy');
+
+    //U p d a t e D e l e t e S i s w a
+    Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
+    Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
 });
 
 
@@ -239,8 +251,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     Route::post('/insertdatasiswa', [DatasiswaController::class, 'insertdatasiswa'])->name('insertdatasiswa')->middleware('auth');
     Route::get('/tampildatasiswa/{id}', [DatasiswaController::class, 'tampildatasiswa'])->name('tampildatasiswa')->middleware('auth');
     Route::get('/data/{id}', [DatasiswaController::class, 'data'])->name('data')->middleware('auth');
-    Route::post('/updatedatasiswa/{id}', [DatasiswaController::class, 'updatedatasiswa'])->name('updatedatasiswa')->middleware('auth');
-    Route::get('/deletedatasiswa/{id}', [DatasiswaController::class, 'deletedatasiswa'])->name('deletedatasiswa')->middleware('auth');
+
 
     //Approve Jurnal
     Route::put('/statusditerima/{id}', [TambahjurnalController::class, 'statusditerima'])->name('statusditerima')->middleware('auth');

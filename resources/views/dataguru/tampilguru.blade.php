@@ -119,7 +119,7 @@
                                     
                                     <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Update Data</button>
-                                        <a href="/dataguru" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
+                                        <a href="/dataguru" class="btn btn-danger waves-effect waves-light mb-10"><i class="ri-reply-fill align-middle me-2"></i>Kembali</a>
                                     </div>
                                 </form>
                                 </div>

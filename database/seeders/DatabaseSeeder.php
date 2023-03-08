@@ -5,9 +5,15 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\jurusan;
 use App\Models\kelas;
+use App\Models\datadudi;
+use App\Models\dataguru;
+use App\Models\datasiswa;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+
+use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,8 +24,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // $faker = Faker::create();
+        // foreach(range(1,100) as $index)
+        // {
+        //     DB::table('users')->insert([
+        //         'name' => $faker->name,
+        //         'email' => $faker->unique()->safeEmail,
+        //         'password' => encrypt('password'),
+        //         'created_at' => $faker->dateTimeBetween('-6 month','+1 month'),
+        //         'role' => $faker->name,
+        //     ]);
+        // }
 
-        $adminr2 = [
+        //User Admin
+        $adminsekul = [
             [
                 'name' => 'Admin Sekolah',
                 'email' => 'admin@gmail.com',
@@ -28,7 +46,32 @@ class DatabaseSeeder extends Seeder
                 'remember_token' => Str::random (60),
             ],
         ];
-        User::insert($adminr2);
+        User::insert($adminsekul);
+        //UserDudi
+        $userdudi = [
+            [
+                'name' => 'Hummasoft Technology',
+                'email' => 'hummasoft@gmail.com',
+                'password' => Hash::make ('123456789'),
+                'role' => 'Dudi',
+                'kd_dudi' => '123456',
+                'remember_token' => Str::random (60),
+            ],
+        ];
+        User::insert($userdudi);
+        //UserGuru
+        $userguru = [
+            [
+                'name' => 'Tri Gunanto Hadi',
+                'email' => 'gunanto@gmail.com',
+                'password' => Hash::make ('123456789'),
+                'role' => 'Guru',
+                'kd_guru' => '123456',
+                'remember_token' => Str::random (60),
+            ],
+        ];
+        User::insert($userguru);
+        
 
         $jurusan1 = [
             [
@@ -164,5 +207,33 @@ class DatabaseSeeder extends Seeder
         ];
         jurusan::insert($jurusan19);
 
-            }
+        // Seeder Dudi
+        $dudiseed = [
+            [
+                'kd_dudi' => '123456',
+                'foto' => 'default.png',
+                'namadudi' => 'Hummasoft Technology',
+                'namakepdik' => 'Afrizal Himawan',
+                'alamatdudi' => 'Perumahan Griya Alam Blok.14',
+                'notelepondudi' => '089679205044',
+                'user_id' => '2',
+            ],
+        ];
+        datadudi::insert($dudiseed);
+        // Seeder Guru
+        $guruseed = [
+            [
+                'kd_guru' => '123456',
+                'nip' => '25071994',
+                'namaguru' => 'Tri Gunanto Hadi',
+                'alamat' => 'Jalan Pangeran diponegoro blok.12',
+                'notlpn' => '089679205044',
+                'user_id' => '3',
+            ],
+        ];
+        dataguru::insert($guruseed);
+        
+    }
+
+        
 }

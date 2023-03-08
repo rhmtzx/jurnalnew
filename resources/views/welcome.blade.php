@@ -224,58 +224,22 @@
             </div>
             <!-- End Page-content -->
             <div class="row">   
-                        <div class="col-xl-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title mb-0">Line with Data Labels</h4>
-                                    <div class="card-toolbar" style="margin-left: 580px">
-                                                    <form action="{{ url('filter') }}" method="GET" class="form-group">
-                                                        @csrf
-                                                        <select class="form-control" id="tahunPd" name="year">
-                                                            <?php
-                                                                $year = date('Y');
-                                                                $min = $year - 1;
-                                                                $max = $year;
-                                                                for ($i = $max; $i >= $min; $i--){
-                                                                    echo '<option value=' . $i . '>' . $i . '</option>';
-                                                                }
-                                                            ?>
-                                                        </select>
-                                                    </form>
-                                                </div>
-                                </div><!-- end card header -->
-
-                                <div class="card-body">
-                                    <div id="line_chart_datalabel" data-colors='["--vz-success", "--vz-danger"]' class="apex-charts" dir="ltr"></div>
-                                </div><!-- end card-body -->
-                            </div><!-- end card -->
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div id="chartStatus">
+                            </div>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title mb-0">Basic Line Chart</h4>
-                                    <div class="card-toolbar" style="margin-left: 580px">
-                                                    <form action="{{ url('filter') }}" method="GET" class="form-group">
-                                                        @csrf
-                                                        <select class="form-control" id="tahunPd" name="year">
-                                                            <?php
-                                                                $year = date('Y');
-                                                                $min = $year - 1;
-                                                                $max = $year;
-                                                                for ($i = $max; $i >= $min; $i--){
-                                                                    echo '<option value=' . $i . '>' . $i . '</option>';
-                                                                }
-                                                            ?>
-                                                        </select>
-                                                    </form>
-                                                </div>
-                                </div><!-- end card header -->
-
-                                <div class="card-body">
-                                    <div id="line_chart_basic" data-colors='["--vz-primary"]' class="apex-charts" dir="ltr"></div>
-                                </div><!-- end card-body -->
-                            </div><!-- end card -->
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div id="grafikjurnal">
+                            </div>
                         </div>
+                    </div>
+                </div>
             </div>
 
             <footer class="footer">
@@ -293,5 +257,177 @@
                 </div>
             </footer>
         </div>   
+@section('footer')
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- Grafik Seluruh Absen -->
+<script>
+    var datasss = <?php echo json_encode($datasss) ?>
+
+    Highcharts.chart('grafikabsen', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Laporan Seluruh Absen 2023'
+    },
+    xAxis: {
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total Absen'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Jumlah Absen',
+        data: datasss
+
+    }]
+});
+</script>
+<!-- Grafik Seluruh Jurnal -->
+<script>
+    var datass = <?php echo json_encode($datass) ?>
+
+    Highcharts.chart('grafikjurnal', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Laporan Total Seluruh Jurnal Dan Absen 2023'
+    },
+    xAxis: {
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total Jurnal Dan Absen'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Jumlah Jurnal',
+        data: datass
+
+    },{
+        name: 'Jumlah Absen',
+        data: datasss
+
+    }]
+});
+</script>
+<!-- Grafik Seluruh User -->
+<script>
+    var datas = <?php echo json_encode($datas) ?>
+
+    Highcharts.chart('chartStatus', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Laporan Total Seluruh User 2023'
+    },
+    xAxis: {
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total User'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Jumlah User',
+        data: datas
+
+    }]
+});
+</script>
+@stop
 </body>
-        @endsection
+@endsection

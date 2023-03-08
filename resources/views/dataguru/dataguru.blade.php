@@ -82,13 +82,13 @@
                                     <table id="guru" class="table nowrap align-middle table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th scope="col" style="width: 10px;">
+                                                <!-- <th scope="col" style="width: 10px;">
                                                     <div class="form-check">
                                                         <input class="form-check-input fs-15" type="checkbox" id="checkAll" value="option">
                                                     </div>
-                                                </th>
+                                                </th> -->
                                                 <th scope="col">#</th>
-                                                <th scope="col">Foto</th>
+                                                <!-- <th scope="col">Foto</th> -->
                                                 <th scope="col">Kode Guru</th>
                                                 <th scope="col">NIP</th>
                                                 <th scope="col">Nama Guru</th>
@@ -104,16 +104,16 @@
                                                 @endphp
                                                     @foreach ($data as $row)
                                             <tr>
-                                                <th scope="row">
+                                                <!-- <th scope="row">
                                                     <div class="form-check">
                                                         <input class="form-check-input fs-15" type="checkbox" name="checkAll" value="option1">
                                                     </div>
-                                                </th>
+                                                </th> -->
                                                 <th scope="row">{{ $no++ }}</th>
-                                                    <td>
+                                                    <!-- <td>
                                                         <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
                                                         style="width: 40px">
-                                                    </td>
+                                                    </td> -->
                                                     <td>{{ $row->kd_guru }}</td>
                                                     <td>{{ $row->nip }}</td>
                                                     <td>{{ $row->namaguru }}</td>

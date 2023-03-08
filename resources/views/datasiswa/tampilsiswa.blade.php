@@ -145,7 +145,7 @@
 
                                                         <div class="mt-4">
                                                             <button type="submit" class="btn btn-primary">Edit Data</button>
-                                                            <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10">Kembali</a>
+                                                            <a href="/datasiswa" class="btn btn-danger waves-effect waves-light mb-10"><i class="ri-reply-fill align-middle me-2"></i>Kembali</a>
                                                         </div>
                                                     </form>
                                 </div>

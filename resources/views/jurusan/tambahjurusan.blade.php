@@ -98,7 +98,7 @@
                                     <br>
                                     <br>
                                             <button type="submit" class="btn btn-primary">Submit Data</button>
-                                            <a href="/datajurusan" class="btn btn-danger mb-10">Kembali</a>
+                                            <a href="/datajurusan" class="btn btn-danger mb-10"><i class="ri-reply-fill align-middle me-2"></i>Kembali</a>
 
                                         </form>
                                 </div>
