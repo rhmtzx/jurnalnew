@@ -82,6 +82,13 @@
                                 <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data User</span>
                             </a>
                         </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Grafik</span></li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/chart">
+                                <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Grafik</span>
+                            </a>
+                        </li>
 
 
                     </ul>

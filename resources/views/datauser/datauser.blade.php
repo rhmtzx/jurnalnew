@@ -87,7 +87,7 @@
                                                     <th scope="col">Nama User</th>
                                                     <th scope="col">Sebagai</th>
                                                     <th scope="col">Email User</th>
-                                                    <th scope="col">Akun Dibuat</th>
+                                                    <!-- <th scope="col">Akun Dibuat</th> -->
                                                     <!-- <th scope="col">Aksi</th> -->
                                                     <!-- <th scope="col">Blokir Pengguna</th> -->
                                             </tr>
@@ -108,11 +108,11 @@
                                                 <td>{{ $row->name}}</td>
                                                 <td>{{ $row->role}}</td>
                                                 <td>{{ $row->email}}</td>
-                                                <td>{{ $row->created_at}}</td>
+                                                <!-- <td>{{ $row->created_at}}</td> -->
 
 
                                                 <!-- <td>
-                                                    <a href="#" class="btn btn-danger deleteuser data-id="{{ $row->id }}"
+                                                    <a  href="#" class="btn btn-danger destroy data-id="{{ $row->id }}"
                                                     data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
                                                 </td> -->
                                             </tr>
@@ -172,7 +172,7 @@
     </body>
 
     <script>
-        $('.deleteuser').click(function() {
+        $('.destroy').click(function() {
             var kategoriid = $(this).attr('data-id');
             var kategori = $(this).attr('data-kategori');
             swal({
@@ -184,7 +184,7 @@
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/deleteuser/" + kategoriid + ""
+                    window.location = "/destroy/" + kategoriid + ""
                     swal("Data Berhasil Di Hapus", {
                         icon: "success",
                     });

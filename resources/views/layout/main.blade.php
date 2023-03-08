@@ -816,12 +816,7 @@
     <!-- App js -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/js/app.js')}}"></script>
 
-    <script>
-    
-    var bulan = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'agu', 'sep', 'okt', 'nov', 'des']
-    var bulanPremium = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'agu', 'sep', 'okt', 'nov', 'des']
-    var bulanPendapatan = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'agu', 'sep', 'okt', 'nov', 'des']
-    </script>
+    @yield('footer')
 </body>
 
 

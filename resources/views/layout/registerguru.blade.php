@@ -152,7 +152,7 @@
                                         @enderror
                                             </div>
 
-                                        <br><div class="mb-3">
+                                        <!-- <br><div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><strong>Masukkan Foto Guru <span class="text-danger">*</span></strong></label>
                                                 <br>
                                                 <input type="file" name="foto" class="form-control" >
@@ -160,7 +160,7 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
-                                        <br>
+ -->                                        <br>
                                         <div class="mt-50">
                                             <button class="btn btn-primary w-100" type="submit">Daftar Guru</button>
                                         </div>

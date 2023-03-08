@@ -92,6 +92,15 @@
                                 <input type="number" class="form-control" name="kd_dudi" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->kd_dudi}}" readonly>
                             </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label"><h6>Edit Foto</h6></label>
+                                <input type="file" class="form-control" name="foto" id="exampleFormControlInput1"
+                                readonly>
+                            </div>
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
+                                <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
+                                </div>
     
                                                                     </tbody>
                                                                 </table>
@@ -107,19 +116,17 @@
                                  value="{{Auth()->user()->namakepdik}}">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Dudi</h6></label>
-                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->email}}" readonly>
-                            </div>
-                            <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Dudi</h6></label>
                                 <input type="number" class="form-control" name="notelepondudi" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->notelepondudi}}">
                             </div>
-                            <div class="mt-4">
-                                <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
-                                <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
-                                </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Dudi</h6></label>
+                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
+                                 value="{{Auth()->user()->email}}" readonly>
+                            </div>
+                            
+                            
                             </form>
                                                                     </tbody>
                                                                 </table>
@@ -200,14 +207,14 @@
                                  value="{{Auth()->user()->nip}}">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Guru</h6></label>
-                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->email}}" readonly>
-                            </div>
-                            <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Guru</h6></label>
                                 <input type="number" class="form-control" name="notlpn" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->notlpn}}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Guru</h6></label>
+                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
+                                 value="{{Auth()->user()->email}}" readonly>
                             </div>
                             <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp

@@ -32,4 +32,9 @@ class tambahjurnal extends Model
         $this->db->where('judul', $judul);
         $this->db->update('tambahjurnal');
     }
+
+    public function jurnals()
+    {
+        return $this->hasMany(Jurnals::class);
+    }
 }

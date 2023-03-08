@@ -21,7 +21,7 @@ class CreateDatagurusTable extends Migration
             $table->string('alamat');
             $table->bigInteger('notlpn');
             $table->string('user_id')->nullable();
-            $table->string('foto');
+            // $table->string('foto');
             
             $table->timestamps();
         });

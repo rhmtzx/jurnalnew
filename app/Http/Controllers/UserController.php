@@ -14,10 +14,11 @@ class UserController extends Controller
 
         return view('datauser.datauser')->with(compact('data'));
     }
-    public function deleteuser($id)
+    public function destroy($id)
     {
-        $data = User::find($id);
-        $data->delete($id);
+        $user = User::findOrFail($id);
+        $user->delete();
+        
         return redirect()->back()->with('success', 'Akun Berhasil Di Hapus');
     }
 }
