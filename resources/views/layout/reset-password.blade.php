@@ -72,8 +72,8 @@
                                         @csrf
                                         <input type="hidden" name="token" value="{{ $request->route('token') }}">
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Masukkan Email</label>
-                                            <input type="email" class="form-control" readonly value="{{ request()->email }}" required autofocus name="email" id="email" placeholder="Masukkan Email">
+                                            {{-- <label for="email" class="form-label">Masukkan Email</label> --}}
+                                            <input type="email" hidden class="form-control" readonly value="{{ request()->email }}" required autofocus name="email" id="email" placeholder="Masukkan Email">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input">Password</label>

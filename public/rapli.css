@@ -1,8 +1,6 @@
-.ellipsis{
-    text-overflow: ellipsis!important;
-    overflow: hidden!important;
-    -webkit-line-clamp: 1!important;
-    -webkit-box-orient: vertical!important;
-    display: -webkit-box!important;
-    word-break: break-word!important;
+.td-ellipsis {
+    max-width: 150px; /* sesuaikan dengan lebar maksimum yang diinginkan */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

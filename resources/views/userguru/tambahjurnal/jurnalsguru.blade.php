@@ -27,7 +27,7 @@
                                             <th scope="col">Nama Siswa</th>
                                             <th scope="col">Foto</th>
                                             <th scope="col">Judul</th>
-                                            <th scope="col">Deskripsi</th>
+                                            <th scope="col" hidden>Deskripsi</th>
                                             <th scope="col">Status Jurnal</th>
                                             <th scope="col">Dibuat</th>
                                         </tr>
@@ -46,7 +46,7 @@
                                                     style="width: 40px">
                                                 </td>
                                                 <td>{{ $row8->judul }}</td>
-                                                <td>{!! $row8->deskripsi !!}</td>
+                                                <td hidden>{!! $row8->deskripsi !!}</td>
                                                 @if ($row8->statusjurnal == 'Telah Disetujui')
                                                 <td>
                                                     <span class="badge badge-success badge-success ">Telah Disetujui</span>

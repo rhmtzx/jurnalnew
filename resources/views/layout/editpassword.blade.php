@@ -162,6 +162,9 @@
                                                                                 <div class="invalid-feedback">
                                                                                     Please enter email
                                                                                 </div>
+                                                                                @error('current_password')
+                                                                                <div class="text-danger">{{ $message }}</div>
+                                                                                @enderror
                                                                             </div>
 
                                                                             <div class="mb-3">
@@ -170,6 +173,9 @@
                                                                                 <div class="invalid-feedback">
                                                                                     Please enter email
                                                                                 </div>
+                                                                                @error('password')
+                                                                                <div class="text-danger">{{ $message }}</div>
+                                                                                @enderror
                                                                             </div>
                                                                             <div class="mb-3">
                                                                                 <label for="exampleFormControlInput1" class="form-label"><h6>Konfirmasi Password Baru</h6></label>
@@ -177,6 +183,12 @@
                                                                                     <div class="invalid-feedback">
                                                                                         Please enter email
                                                                                     </div>
+                                                                                    @if($errors->any('password_confirmation'))
+                                                                                    <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
+                                                                                    @endif
+                                                                                    @if($errors->any('password'))
+                                                                                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                                                                                    @endif
                                                                                 </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
@@ -237,6 +249,9 @@
                                                                                 <div class="invalid-feedback">
                                                                                     Please enter email
                                                                                 </div>
+                                                                                @error('current_password')
+                                                                                <div class="text-danger">{{ $message }}</div>
+                                                                                @enderror
                                                                             </div>
 
                                                                             <div class="mb-3">
@@ -245,6 +260,9 @@
                                                                                 <div class="invalid-feedback">
                                                                                     Please enter email
                                                                                 </div>
+                                                                                @error('password')
+                                                                                <div class="text-danger">{{ $message }}</div>
+                                                                                @enderror
                                                                             </div>
                                                                             <div class="mb-3">
                                                                             <label for="exampleFormControlInput1" class="form-label"><h6>Konfirmasi Password Baru</h6></label>
@@ -252,6 +270,12 @@
                                                                                 <div class="invalid-feedback">
                                                                                     Please enter email
                                                                                 </div>
+                                                                                @if($errors->any('password_confirmation'))
+                                                                                <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
+                                                                                @endif
+                                                                                @if($errors->any('password'))
+                                                                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                                                                                @endif
                                                                             </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp

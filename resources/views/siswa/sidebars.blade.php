@@ -27,22 +27,22 @@
                             </a>
                         </li>
                         <br>
-                        <ul>Data Siswa & Plotingan</ul>
+                        {{-- <ul>Data Siswa & Plotingan</ul>
                         <br>
                         <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Data Siswa</span>
                             </a>
-                        </li>
-                        <li class="{{ ($tittle === 'dataplotingan') ? 'active': '' }}">
+                        </li> --}}
+                        {{-- <li class="{{ ($tittle === 'dataplotingan') ? 'active': '' }}">
                             <a href="/dataplotingan">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Data Plotingan Siswa</span>
                             </a>
                         </li>
-                        <br>
-                        <ul>Jurnal & Absen</ul>
+                        <br> --}}
+                        <ul>Jurnal</ul>
                         <br>
                         <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
@@ -50,11 +50,12 @@
                                 <span>Isi Jurnal</span>
                             </a>
                         </li>
-
+                        <ul> Absen</ul>
+                        <br>
                         <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
-                                <span>Isi Absen</span>
+                                <span>Absen Izin</span>
                             </a>
                         </li>
                         @endif
@@ -77,7 +78,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul>Jurnal & Absen</ul>
+                        <ul>Jurnal</ul>
                         <br>
                         <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
@@ -85,11 +86,11 @@
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
-
+                        <ul>Absen</ul>
                         <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
-                                <span>Data Absen Siswa</span>
+                                <span>Data Izin Siswa</span>
                             </a>
                         </li>
                         @endif
@@ -104,7 +105,7 @@
                             </a>
                         </li>
                         <br>
-                        <ul>Data Siswa & Plotingan</ul>
+                        <ul>Data Siswa</ul>
                         <br>
                         <li class="{{ ($tittle === 'datasiswa') ? 'active': '' }}">
                             <a href="/datasiswa">
@@ -112,14 +113,8 @@
                                 <span>Data Siswa</span>
                             </a>
                         </li>
-                        <li class="{{ ($tittle === 'dataplotingan') ? 'active': '' }}">
-                            <a href="/dataplotingan">
-                                <i class="fa-solid fa-book"></i>
-                                <span>Data Plotingan Siswa</span>
-                            </a>
-                        </li>
                         <br>
-                        <ul>Absen & Jurnal</ul>
+                        <ul>Jurnal</ul>
                         <br>
                         <li class="{{ ($tittle === 'datajurnal') ? 'active': '' }}">
                             <a href="/datatambahjurnal">
@@ -127,11 +122,11 @@
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
-
+                        <ul>Absen</ul>
                         <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
-                                <span>Data Absen Siswa</span>
+                                <span>Data Izin Siswa</span>
                             </a>
                         </li>
                         @endif

@@ -101,7 +101,7 @@
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
                                 <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
                                 </div>
-    
+
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -125,27 +125,27 @@
                                 <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->email}}" readonly>
                             </div>
-                            
-                            
+
+
                             </form>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
                                                         </div>
-    
+
                                                     </div>
-    
+
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
                                         </div>
                                     </div>
                                 </div>
-    
+
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                                 <input type="email" class="form-control" name="kd_guru" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->kd_guru}}" readonly>
                             </div>
-    
+
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -204,7 +204,7 @@
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>NIP Guru</h6></label>
                                 <input type="number" class="form-control" name="nip" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->nip}}">
+                                 value="{{Auth()->user()->nip}}" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Guru</h6></label>
@@ -225,20 +225,20 @@
                                                                 </table>
                                                             </div>
                                                         </div>
-    
+
                                                     </div>
-    
+
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
                                         </div>
                                     </div>
                                 </div>
-    
+
                             </div>
                         </div>
                     </div>
@@ -278,7 +278,7 @@
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>NIS Siswa</h6></label>
                                 <input type="number" class="form-control" name="nissiswa" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->nissiswa}}">
+                                 value="{{Auth()->user()->nissiswa}}" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Siswa</h6></label>
@@ -302,12 +302,12 @@
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Kode Guru</h6></label>
                                 <input type="number" class="form-control" name="kd_guru" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->kd_guru}}">
+                                 value="{{Auth()->user()->kd_guru}}" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Kode Dudi</h6></label>
                                 <input type="number" class="form-control" name="kd_dudi" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->kd_dudi}}">
+                                 value="{{Auth()->user()->kd_dudi}}" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Email Siswa</h6></label>

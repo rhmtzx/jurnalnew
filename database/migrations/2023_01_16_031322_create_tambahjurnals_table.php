@@ -16,7 +16,7 @@ class CreateTambahjurnalsTable extends Migration
         Schema::create('tambahjurnals', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->text('deskripsi');
+            $table->longText('deskripsi');
             $table->string('foto');
             $table->string('kd_guru');
             $table->string('kd_dudi');

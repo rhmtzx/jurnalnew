@@ -44,7 +44,7 @@
 
                                             <td>
                                                 <a class="image-popup" href="{{ asset('fotodudi/' . $row->foto) }}">
-                                                    <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
+                                                    <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/'.$row->foto) }}" alt=""
                                                     style="width: 40px">
                                                 </a>
                                             </td>

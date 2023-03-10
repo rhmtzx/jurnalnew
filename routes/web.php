@@ -56,7 +56,7 @@ Route::get('/landinghome', function () {
 
 
 
-Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
+Route::group(['middleware' => ['auth','hakakses:Admin']], function () {
     // D a s h b o a r d  A d m i n
     Route::get('/', function () {
     $jurusan = jurusan::count();

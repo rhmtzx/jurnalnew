@@ -38,8 +38,11 @@
                         <!-- <li><a href="#lainnya">Lainnya</a></li> -->
 
                         <li><a href="#kerjasama">Kerja Sama</a></li>
-
-                        <li class="discover-link"><a href="/login" class="external discover-btn">Log In</a></li>
+                        @guest
+                        <li class="discover-link"><a href="/login" class="external discover-btn">{{ __('login') }}</a></li>
+                        @else
+                        <li><a href="javascript:history.back()" class="external discover-btn">{{ Auth::user()->name }}</a></li></a>
+                        @endguest
 
                     </ul>
                     <!--end navbar-nav -->

@@ -115,7 +115,7 @@
                                              style="width: 40px">
                                     </td>
                                     <td>{{ $rowk->judul }}</td>
-                                    <td>{!! $rowk->deskripsi !!}</td>
+                                    <td class="td-ellipsis">{!! $rowk->deskripsi !!}</td>
                                                 @if ($rowk->statusjurnal == 'Telah Disetujui')
                                                 <td>
                                                     <span class="badge badge-soft-success badge-border">Telah Disetujui</span>
@@ -273,6 +273,30 @@
     @if (Session::has('error'))
     toastr.error("{{ Session::get('error') }}")
     @endif
+</script>
+<script>
+    $('.td-ellipsis').each(function() {
+var isi_konten = $(this).text();
+
+if (isi_konten.length > 10) { // sesuaikan dengan panjang karakter maksimum yang diinginkan
+    isi_konten = isi_konten.substr(0, 10) + '...';
+}
+
+$(this).html('<div class="summernote-ellipsis">' + isi_konten + '</div>');
+$('.summernote-ellipsis').summernote({
+    toolbar: [],
+    airMode: true,
+    disableResizeEditor: true,
+    height: 150,
+    focus: false,
+    popover: false,
+    dialogsInBody: true,
+    disableDragAndDrop: true,
+    shortcuts: false,
+    codeviewFilter: true,
+    codeviewIframeFilter: true
+});
+});
 </script>
 
 <!-- Mirrored from wrappixel.com/demos/admin-templates/materialart/html/ltr/table-datatable-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 14:20:10 GMT -->

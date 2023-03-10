@@ -80,7 +80,7 @@
                                                     <div class="avatar-sm flex-shrink-0">
                                                         <span class="avatar-title bg-soft-info rounded fs-3">
                                                             <i class="ri-contacts-book-2-fill text-success"></i>
-                                                            
+
                                                         </span>
                                                     </div>
                                                 </div>
@@ -110,7 +110,7 @@
                                                     <div class="avatar-sm flex-shrink-0">
                                                         <span class="avatar-title bg-soft-info rounded fs-3">
                                                             <i class="ri-contacts-book-2-fill text-success"></i>
-                                                            
+
                                                         </span>
                                                     </div>
                                                 </div>
@@ -140,7 +140,7 @@
                                                     <div class="avatar-sm flex-shrink-0">
                                                         <span class="avatar-title bg-soft-info rounded fs-3">
                                                             <i class="ri-building-fill text-success"></i>
-                                                            
+
                                                         </span>
                                                     </div>
                                                 </div>
@@ -223,7 +223,7 @@
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-            <div class="row">   
+            <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
@@ -256,7 +256,7 @@
                     </div>
                 </div>
             </footer>
-        </div>   
+        </div>
 @section('footer')
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <!-- Grafik Seluruh Absen -->
@@ -431,3 +431,4 @@
 @stop
 </body>
 @endsection
+

@@ -45,7 +45,6 @@
                                         @php
                                         $no = 1;
                                         @endphp
-
                                         @foreach ($data as $row)
                                         <tr>
                                             <th scope="row">{{ $no++ }}</th>
@@ -57,7 +56,7 @@
                                                 </a>
                                             </td>
                                             <td>{{ $row->judul }}</td>
-                                            <td>{!! $row->deskripsi !!}</td>
+                                            <td class="td-ellipsis">{!! $row->deskripsi !!}</td>
                                                 @if ($row->statusjurnal == 'Telah Disetujui')
                                                 <td>
                                                     <span class="badge badge-success badge-success ">Telah Disetujui</span>
@@ -155,6 +154,30 @@
         @if (Session::has('error'))
         toastr.error("{{ Session::get('error') }}")
         @endif
+    </script>
+    <script>
+        $('.td-ellipsis').each(function() {
+    var isi_konten = $(this).text();
+
+    if (isi_konten.length > 10) { // sesuaikan dengan panjang karakter maksimum yang diinginkan
+        isi_konten = isi_konten.substr(0, 10) + '...';
+    }
+
+    $(this).html('<div class="summernote-ellipsis">' + isi_konten + '</div>');
+    $('.summernote-ellipsis').summernote({
+        toolbar: [],
+        airMode: true,
+        disableResizeEditor: true,
+        height: 150,
+        focus: false,
+        popover: false,
+        dialogsInBody: true,
+        disableDragAndDrop: true,
+        shortcuts: false,
+        codeviewFilter: true,
+        codeviewIframeFilter: true
+    });
+});
     </script>
 
     @endsection

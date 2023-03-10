@@ -18,7 +18,7 @@ class DatasiswaController extends Controller
 {
     public function index(Request $request){
 
-        // $data = jurusan::paginate(4);
+        // $data = jurusan::paginate(1);
         $data2 = datasiswa::where('namasiswa', Auth::user()->name)->get();
             // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
         // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dud)->get();

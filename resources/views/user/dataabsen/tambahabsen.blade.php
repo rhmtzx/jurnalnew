@@ -18,9 +18,6 @@
                             <div class="single-table">
                                 <div class="table-responsive">
                                  <div id="content" class="main-content">
-
-
-
                                     <form action="/insertabsen" method="POST" enctype="multipart/form-data" >
                                         @csrf
                                         <br>
@@ -37,7 +34,7 @@
                                                 {{ $message }}
                                             </div>
                                             @enderror
-                                            
+
                                             <div class="mb-3">
                                                 <label class="col-form-label"><h6>Nama Siswa</h6></label>
                                                 @foreach ( $data as $c)
@@ -54,11 +51,11 @@
 
 
                                 <label class="col-form-label"><h6>Keterangan :</h6></label>
-                                <div class="custom-control custom-radio primary-radio">
+                                {{-- <div class="custom-control custom-radio primary-radio">
                                     <input type="radio" id="Hadir" name="keterangan" value="Hadir" class="custom-control-input">
                                     <label class="custom-control-label" for="Hadir">Hadir</label>
                                 </div>
-                                
+                                 --}}
                                 <div class="custom-control custom-radio primary-radio">
                                     <input type="radio" id="Izin" name="keterangan" value="Izin" class="custom-control-input">
                                     <label class="custom-control-label" for="Izin">Izin</label>
@@ -92,7 +89,7 @@
                                                 <input type="hidden" class="form-control form-control-lg input-rounded mb-4" name="statusjurnal" type="text" placeholder="Masukan Status Jurnal">
                                             </div>
 
-                                            
+
                                             <div class="mb-1">
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Masukkan foto</h6>
                                                 </label>

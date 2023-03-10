@@ -56,7 +56,7 @@ class LoginController extends Controller
             return redirect('/dashboard')->with('success','Berhasil Login Sebagai Dudi');
         }
 
-            return redirect('login')->with('password','Password Salah');
+            return redirect('login')->with('error','Password Salah');
 
     }
 

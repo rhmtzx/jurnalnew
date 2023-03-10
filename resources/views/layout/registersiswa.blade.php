@@ -23,6 +23,7 @@
     <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{{asset('velzon/themesbrand.com/velzon/html/default/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
 
 </head>
 
@@ -87,7 +88,7 @@
                                     @enderror
                                     <div class="col-lg-12">
                                         <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
-                                        <select class="form-control" name="namajurusan" id="namajurusan">
+                                        <select class="form-control js-example-basic-single" name="namajurusan" id="namajurusan" autocomplete="off">
                                             <option value="" selected disabled>- Pilih Jurusan Siswa -</option>
                                             @foreach($data as $hi)
                                             <option value="{{ $hi->id }}">{{ $hi->namajurusan }}</option>
@@ -105,18 +106,23 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email Siswa <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" required>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" required>
                                     </div>
                                     <!-- pwd -->
                                     <div class="mb-3">
-                                        <label class="form-label" for="password-input">Buat Password</label>
+                                        <label class="form-label" for="password-input">Password</label>
                                         <div class="position-relative auth-pass-inputgroup">
-                                            <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password-input" aria-describedby="passwordInput">
+                                            <input type="password" class="form-control pe-5 password-input" name="password" onpaste="return false" placeholder="Masukkan Password Baru" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                             <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                            <div class="invalid-feedback">
-                                                Please enter password
-                                            </div>
                                         </div>
+                                        <div id="passwordInput" class="form-text">Harus 8 Karakter</div>
+                                    </div>
+                                    <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                        <h5 class="fs-13">Kata Sandi Harus Berisi :</h5>
+                                        <p id="pass-length" class="invalid fs-12 mb-2">Minimal <b>8 Karakter</b></p>
+                                        <p id="pass-lower" class="invalid fs-12 mb-2">di <b>Huruf</b>Kecil (a-z)</p>
+                                        <p id="pass-upper" class="invalid fs-12 mb-2">Minimal <b>Huruf</b> Kapital (A-Z)</p>
+                                        <p id="pass-number" class="invalid fs-12 mb-0">Minimal <b>Angka</b> (0-9)</p>
                                     </div>
                                     @error('password')
                                     <div class="text-danger">
@@ -205,9 +211,6 @@
             </div>
         </div>
     </div>
-</body>
-    <!-- end auth-page-wrapper -->
-
     <!-- JAVASCRIPT -->
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/libs/simplebar/simplebar.min.js')}}"></script>
@@ -232,6 +235,24 @@
     <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/libs/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/plugins/lord-icon-2.1.0.js') }}"></script>
     <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/js/plugins.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
+    {{-- <!--jquery cdn-->
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/code.jquery.com/jquery-3.6.0.min.js') }}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--select2 cdn-->
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/cdn.jsdelivr.net/npm/select2%404.1.0-rc.0/dist/js/select2.min.js') }}"></script>
+
+    <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/select2.init.js') }}"></script> --}}
+    <script>
+        new TomSelect("#namajurusan",{
+	create: true,
+	sortField: {
+		field: "text",
+		direction: "asc"
+	}
+});
+
+    </script>
 </body>
 
 

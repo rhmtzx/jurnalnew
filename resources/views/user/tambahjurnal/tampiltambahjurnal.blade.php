@@ -21,7 +21,7 @@
 
 
 
-                                    <form action="/updatetambahjurnal/{{ $data->id }}" method="POST" enctype="multipart\form-data" >
+                                    <form action="/updatetambahjurnal/{{ $data->id }}" method="POST" enctype="multipart/form-data" >
 
                                         @csrf
 
@@ -76,7 +76,7 @@
 
                                             <div class="mb-3">
                                                     <label for="foto" class="form-check-labell"><h5>Update Foto</h5></label>
-                                                    <br><img class="img mb-3" src="{{ asset('fotodudi/'.$data->foto) }}" 
+                                                    <br><img class="img mb-3" src="{{ asset('fotodudi/'.$data->foto) }}"
                                                     alt="" style="width:80px"></br>
                                                     <input type="file" name="foto" class="form-control" >
                                             </div>

@@ -52,7 +52,7 @@ class ForgotPasswordController extends Controller
                 $user->forceFill([
                     'password' => Hash::make($request->password),
                     'remember_token' =>Str::random(60),
-                    
+
                 ])->save();
 
                 event(new PasswordReset($user));
@@ -60,7 +60,7 @@ class ForgotPasswordController extends Controller
         );
 
         return $status == Password::PASSWORD_RESET
-                ? redirect()->route('login')->with('status', ($status))
+                ? redirect()->route('login')->with('success', ($status))
                 : back()->withInput($request->only('email'))
                         ->withErrors(['email' => ($status)]);
     }

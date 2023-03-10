@@ -17,13 +17,16 @@ class UpdatePasswordController extends Controller
 
     public function updatepasswordsiswa(request $request){
         $request->validate([
+            'current_password' => 'required|min:6|max:100',
             'password' => 'required|min:6|max:100|confirmed',
             'password_confirmation' => 'required'
         ], [
-           'password.required' => 'sandi baru harus diisi',
-           'password.min' => 'sandi harus lebih dari 6',
-           'password.confirmed' => 'sandi ini harus sama dengan sandi baru',
-           'password_confirmation.required' => 'konfirmasi sandi harus diisi',
+            'current_password.required' => 'sandi lama harus diisi',
+            'current_password.min' => 'sandi harus lebih dari 6',
+            'password.required' => 'sandi baru harus diisi',
+            'password.min' => 'sandi harus lebih dari 6',
+            'password.confirmed' => 'sandi ini harus sama dengan sandi baru',
+            'password_confirmation.required' => 'konfirmasi sandi harus diisi',
 
         ]);
 

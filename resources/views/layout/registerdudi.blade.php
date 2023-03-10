@@ -128,14 +128,20 @@
 
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="password-input"><strong>Buat Password</strong><span class="text-danger">*</span></label>
+                                            <label class="form-label" for="password-input">Password</label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" name="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Buat Password" id="password-input" aria-describedby="passwordInput">
+                                                <input type="password" class="form-control pe-5 password-input" name="password" onpaste="return false" placeholder="Masukkan Password Baru" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                                <div class="invalid-feedback">
-                                                    Please enter password
-                                                </div>
                                             </div>
+                                            <div id="passwordInput" class="form-text">Harus 8 Karakter</div>
+                                        </div>
+                                        <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                            <h5 class="fs-13">Kata Sandi Harus Berisi :</h5>
+                                            <p id="pass-length" class="invalid fs-12 mb-2">Minimal <b>8 Karakter</b></p>
+                                            <p id="pass-lower" class="invalid fs-12 mb-2">di <b>Huruf</b>Kecil (a-z)</p>
+                                            <p id="pass-upper" class="invalid fs-12 mb-2">Minimal <b>Huruf</b> Kapital (A-Z)</p>
+                                            <p id="pass-number" class="invalid fs-12 mb-0">Minimal <b>Angka</b> (0-9)</p>
+                                        </div>
                                         @error('password')
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror

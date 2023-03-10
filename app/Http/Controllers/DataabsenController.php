@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\dataabsen;
 use App\Models\datasiswa;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -89,6 +90,7 @@ class DataabsenController extends Controller
                 return redirect()->route('dataabsen')->with('error', 'Anda Telah Absen Hari Ini !!');
              }
 
+             
 
             $data = dataabsen::create([
                 'keterangan' =>$request->keterangan,
@@ -104,9 +106,11 @@ class DataabsenController extends Controller
             ]);
             // dd($request->all);
 
-            if($request->hasFile('foto')){
-                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-                $data->foto = $request->file('foto')->getClientOriginalName();
+            if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+                $file->move('fotodudi/', $filename);
+                $data->foto = $filename;
                 $data->save();
             }
 
@@ -134,7 +138,7 @@ class DataabsenController extends Controller
         	}else if(Auth()->user()->role == 'Dudi'){
             	return view('userdudi.dataabsen.tampilabsen',compact('data','data4','tittle'));
         	}else{
-            	return view('user.dataabsen.tampilabsen',compact('data','datas'));
+            	return view('user.dataabsen.tampilabsen',compact('data','datas','tittle'));
         }
         }
 
@@ -163,9 +167,12 @@ class DataabsenController extends Controller
 
             ]);
 
-            if($request->hasFile('foto')){
-                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-                $data->foto = $request->file('foto')->getClientOriginalName();
+            if ($request->hasFile('foto')) {
+                unlink(public_path('fotodudi/' . $data->foto));
+                $file = $request->file('foto');
+                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+                $file->move('fotodudi/', $filename);
+                $data->foto = $filename;
                 $data->save();
             }
 
@@ -180,6 +187,7 @@ class DataabsenController extends Controller
         public function deleteabsen($id){
             $data = dataabsen::find($id);
             $data->delete();
+            unlink(public_path('fotodudi/' . $data->foto));
             if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('dataabsen')->with('succes', 'Data Berhasil Di Delete');
             }else{

@@ -76,7 +76,7 @@
                                         <p>Tolong Verifikasi Email Anda Terlebih Dahulu &nbsp<span class="fw-semibold">emailanda@gmail.com</span></p>
                                     </div>
                                     <div class="mt-3">
-                                        <a href="/landinghome" type="button" class="btn btn-success w-100">Confirm</a>
+                                        <a href="404" type="button" class="btn btn-success w-100">Confirm</a>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
         <!-- end auth page content -->
 
         <!-- footer -->
-        <footer class="footer">
+        {{-- <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </footer>
         <!-- end Footer -->
     </div>

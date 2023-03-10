@@ -21,7 +21,7 @@
 
 
 
-                                    <form action="/updateabsen/{{ $data->id }}" method="POST" enctype="multipart\form-data" >
+                                    <form action="/updateabsen/{{ $data->id }}" method="POST" enctype="multipart/form-data" >
 
                                         @csrf
                                         <div class="mb-3">

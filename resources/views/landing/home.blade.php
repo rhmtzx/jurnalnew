@@ -6,7 +6,11 @@
             <div class="col-md-6 padding-top-80">
                   <h1>Selamat Datang Di J-On, Tempat Mengisi Jurnal PKL SMKN 1 Pasuruan.</h1>
                   <p>Kami Membantu Mempermudah Pengisian Jurnal Dan Absen Harian Siswa Dalam Bentuk Web.</p>
-                <a href="/login" class="btn-blue scrool">Silahkan Login</a>
+                  @guest
+                  <a href="/login" class="btn-blue scrool">Silahkan Login</a>
+                  @else
+                  <a href="javascript:history.back()" class="btn-blue scrool">Silahkan Login</a>
+                  @endguest
             </div>
             <div class="col-md-6">
                   <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/3.png') }}" class="hero-image width-97" alt="pic">
@@ -85,7 +89,11 @@
                     <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/malingsiswa.png') }}" class="width-100" alt="pic">
                     <h3>Siswa</h3>
                     <p>Sebagai Siswa Anda Bisa Melakukan Penambahan Data Jurnal Dan Absen PKL Setiap Harinya.</p>
+                    @guest
                     <a href="/registersiswa" class="btn-blue-line small scrool">Daftar Siswa Sekarang !!</a>
+                        @else
+                        <a href="404" class="btn-blue-line small scrool">Daftar Siswa Sekarang !!</a>
+                    @endguest
                 </div>
             </div>
             <div class="col-md-4">
@@ -93,7 +101,11 @@
                     <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/malingguru.png') }}" class="width-100" alt="pic">
                     <h3>Guru</h3>
                     <p>Sebagai Guru Anda Bisa Melakukan Pengamatan Data Jurnal Dan Absen Siswa Yang Sedang Melakukan PKL.</p>
+                    @guest
                     <a href="/registerguru" class="btn-blue-line small scrool">Daftar Guru Sekarang !!</a>
+                    @else
+                    <a href="404" class="btn-blue-line small scrool">Daftar Guru Sekarang !!</a>
+                    @endguest
                 </div>
             </div>
             <div class="col-md-4">
@@ -101,7 +113,11 @@
                     <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/malingdudi.png') }}" class="width-100" alt="pic">
                     <h3>Dudi</h3>
                     <p>Sebagai Dudi Anda Bisa Melakukan Penyetujuan Data Jurnal Dan Absen Yang Telah Ditambahkan Siswa.</p>
+                    @guest
                     <a href="/registerdudi" class="btn-blue-line small scrool">Daftar Dudi Sekarang !!</a>
+                        @else
+                        <a href="404" class="btn-blue-line small scrool">Daftar Dudi Sekarang !!</a>
+                    @endguest
                 </div>
             </div>
         </div>
@@ -446,7 +462,11 @@
                     <li><i class="fa fa-check"></i> Penggunaan Aplikasi Tanpa Berbayar.</li>
                     <li><i class="fa fa-check"></i> Monitoring Jurnal Secara Praktis.</li>
                 </ul>
+                @guest
                 <a href="/login" class="btn-blue scrool">Login Sekarang</a>
+                    @else
+                    <a href="javascript:history.back()" class="btn-blue scrool">Login Sekarang</a>
+                @endguest
             </div>
             <div class="col-md-6">
                 <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/yy.jpg') }}" class="hero-image width-100 box-shadow" alt="pic">
