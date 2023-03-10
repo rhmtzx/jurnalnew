@@ -84,7 +84,7 @@ class DataplotinganController extends Controller
             $data = dataplotingan::find($id);
             $data->update([
                 'namagurup' =>$request->namagurup,
-                'namasiswap' =>$request->namasiswap,
+                'namasiswap' =>implode(',',$request->namasiswap),
                 'namadudip' =>$request->namadudip,
                 'alamatdudip' =>$request->alamatdudip,
 

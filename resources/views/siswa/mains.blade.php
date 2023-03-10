@@ -94,6 +94,10 @@
     *===========================-->
     <link rel="stylesheet" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/charts/morris-bundle/morris.css')}}">
 
+
+    <link rel="stylesheet" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/fullcalendar/dist/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/fullcalendar/dist/fullcalendar.print.min.css')}}" media="print">
+
     <!--=========================*
             Google Fonts
     *===========================-->
@@ -373,6 +377,15 @@
 
 <!-- Editor init Js -->
 <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/init/editors.js')}}"></script>
+
+
+<!-- jQuery UI 1.11.4 -->
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/moment/moment.js')}}"></script>
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/fullcalendar/dist/fullcalendar.min.js')}}"></script>
+
+<!-- Calendar Init -->
+<script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/init/full-calendar.js')}}"></script>
 
 </body>
 

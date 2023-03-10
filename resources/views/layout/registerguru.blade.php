@@ -51,7 +51,7 @@
                                     <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/1.png')}}" alt="" height="100" width="250">
                                 </a>
                             </div>
-                            <p class="mt-3 fs-15 fw-medium">J On | Journal Online</p>
+                            <p class="mt-3 fs-15 fw-medium">J On | Jurnal Online</p>
                         </div>
                     </div>
                 </div>

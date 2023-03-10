@@ -66,7 +66,7 @@
                                     <div class="col-md-12">
                                         <div class="media-left">
                                             <a href="#" class="profile-image">
-                                                <img class="user-img img-radius" src="{{ asset('fotodudi/' . Auth::user()->foto) }}" width="155px" height="155px" alt="user-img">
+                                                <img class="user-img img-radius rounded" src="{{ asset('fotodudi/' . Auth::user()->foto) }}" width="155px" height="155px" alt="user-img">
                                             </a>
                                         </div>
                                         <div class="media-body row">

@@ -257,6 +257,9 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     //Approve Jurnal
     Route::put('/statusditerima/{id}', [TambahjurnalController::class, 'statusditerima'])->name('statusditerima')->middleware('auth');
     Route::put('/statusditolak/{id}', [TambahjurnalController::class, 'statusditolak'])->name('statusditolak')->middleware('auth');
+    Route::put('/statusditolak2/{id}', [TambahjurnalController::class, 'statusditolak2'])->name('statusditolak2');
+    Route::put('/tolakpesan/{id}', [TambahjurnalController::class, 'tolakpesan'])->name('tolakpesan');
+
     //Approve Absen
     Route::put('/statusditerimaa/{id}', [DataabsenController::class, 'statusditerimaa'])->name('statusditerimaa')->middleware('auth');
     Route::put('/statusditolaka/{id}', [DataabsenController::class, 'statusditolaka'])->name('statusditolaka')->middleware('auth');

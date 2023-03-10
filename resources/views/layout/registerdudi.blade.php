@@ -51,7 +51,7 @@
                                     <img src="{{asset('velzon/themesbrand.com/velzon/html/default/assets/images/1.png')}}" alt="" height="100" width="250">
                                 </a>
                             </div>
-                            <p class="mt-3 fs-15 fw-medium">J On | Journal Online</p>
+                            <p class="mt-3 fs-15 fw-medium">J On | Jurnal Online</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                                     <p class="text-muted">Daftar Akun Dudi</p>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form class="col s12" action="/registeruserdudi" method="POST">
+                                <form class="col s12" action="/registeruserdudi" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <!-- email -->
                                         <div class="mb-3">
@@ -167,7 +167,7 @@
                                         <div class="mt-4">
                                             <button class="btn btn-primary w-100" type="submit">Daftar Dudi</button>
                                         </div>
-                                    </form>
+                                </form>
 
                                 </div>
                             </div>

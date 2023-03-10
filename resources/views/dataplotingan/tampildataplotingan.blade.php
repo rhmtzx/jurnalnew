@@ -4,6 +4,9 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -94,7 +97,7 @@
 
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label"><h5>Nis Siswa</h5></label>
-                                        <select class="form-control" name="namasiswap" id="namasiswap">
+                                        <select class="form-control" name="namasiswap[]"  id="select-state" autocomplete="off">
                                             <option value="" selected disabled>Pilih</option>
                                             @foreach($siswa as $ab)
                                             <option value="{{ $ab->id }}"<?php if($data->namasiswap == $ab->id) {
@@ -165,6 +168,7 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
@@ -187,6 +191,14 @@
             document.getElementById('alamatdudip').value = alamatdudip;
             }
         </script>
+
+        <script>
+            new TomSelect("#select-state",{
+    maxItems: 3
+});
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
     </body>
 
 

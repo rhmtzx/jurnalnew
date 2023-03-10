@@ -65,18 +65,15 @@
                         </div>
                     </div>
                     <form method="GET" action="/datasiswa">
-                            <input style="height: 40px;
-                            margin-left: 0px;" type="text" name="keyword"/>
-                            <button style="width: 50px;
-                            height: 40px;" class="btn btn-primary" type="submit">Cari</button>
+                        <input placeholder="  Cari Jurusan" style="height: 40px;
+                        margin-left: 0px;" type="text" name="query"/>
+                        <button style="width: 50px;
+                        height: 40px;" class="btn btn-primary" type="submit">Cari</button>
                     </form>
                     <br>
                     <div class="row" >
-                      @foreach ($data1 as $row )
-
+                      @foreach ($data as $row )
                         <div class="col-sm-6 col-xl-3" >
-                            <!-- Simple card -->
-
                             <div class="card" style="">
                                 <img src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
                                 style="width: 75px; margin: auto; padding-top: 10px">
@@ -86,14 +83,12 @@
                                     <p class="card-text text-center">Data Kelas {{ $row->namajurusan }}</p>
                                     <div class="text-center">
                                         <br>
-                                        <a href="/data/{{ $row->id }}" class="btn btn-info">Detail</a>
+                                        <a href="/data/{{ $row->id }}" class="btn btn-primary">Detail</a>
                                     </div>
                                 </div>
                                 </div>
-
-                            </div><!-- end card -->
+                            </div>
                         @endforeach
-
-                        </div><!-- end col -->
-                        {{ $data1->links() }}
+                        </div>
+                        {{ $data->links() }}
 @endsection

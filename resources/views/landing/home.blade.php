@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 padding-top-80">
                   <h1>Selamat Datang Di J-On, Tempat Mengisi Jurnal PKL SMKN 1 Pasuruan.</h1>
-                  <p>Kami Membantu Mempermudah Pengisian Jurnal Dan Absen Harian Siswa Dalam Bentuk Web.</p>
+                  <p>Dengan Aplikasi Kami, Kini Mengisi Jurnal Dan Absen Harian Siswa Dengan Lebih Mudah.</p>
                 <a href="/login" class="btn-blue scrool">Silahkan Login</a>
             </div>
             <div class="col-md-6">
@@ -72,7 +72,6 @@
           </div>
     </div>
 </section>
-
 <section class="section-grey section-top-border" id="pengguna">
     <div class="container">
         <div class="row">
@@ -117,7 +116,6 @@
         </div>
     </div>
 </section>
-
 <section class="section-white section-top-border" id="keuntungan">
     <div class="container">
         <div class="row">
@@ -220,7 +218,42 @@
         </div>
     </div>
 </section>
-
+<section class="section-white section-bottom-border" id="lainnya">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 padding-top-20">
+                <h3>Tunggu Apa Lagi ?</h3>
+                <p>Beberapa Keuntungan Yang Mungkin Anda Peroleh Jika Menggunakan Aplikasi Kami Beberapa Diantaranya Yaitu.</p>
+                <ul class="benefits">
+                    <li><i class="fa fa-check"></i> Pengisian Jurnal Cepat.</li>
+                    <li><i class="fa fa-check"></i> Penggunaan Aplikasi Tanpa Berbayar.</li>
+                    <li><i class="fa fa-check"></i> Monitoring Jurnal Secara Praktis.</li>
+                </ul>
+                <a href="/login" class="btn-blue scrool">Login Sekarang</a>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/yy.jpg') }}" class="hero-image width-100 box-shadow" alt="pic">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-grey partners-paddings section-top-border section-bottom-border" id="kerjasama">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="section-title">Kerja Sama Kami</h3>
+            </div>
+            <div class="col-md-12 text-center">
+                <ul class="partners-mentions">
+                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Awards"></li>
+                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/esemka.png') }}" alt="Awwwards"></li>
+                    <!-- <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Winner"></li> -->
+                    <!-- <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Design Awards"></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- <section class="section-blue">
     <div class="container">
         <div class="row">
@@ -435,25 +468,7 @@
     </div>
 </section> -->
 
-<section class="section-white section-bottom-border" id="lainnya">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 padding-top-20">
-                <h3>Tunggu Apa Lagi ?</h3>
-                <p>Beberapa Keuntungan Yang Mungkin Anda Peroleh Jika Menggunakan Aplikasi Kami Beberapa Diantaranya Yaitu.</p>
-                <ul class="benefits">
-                    <li><i class="fa fa-check"></i> Pengisian Jurnal Cepat.</li>
-                    <li><i class="fa fa-check"></i> Penggunaan Aplikasi Tanpa Berbayar.</li>
-                    <li><i class="fa fa-check"></i> Monitoring Jurnal Secara Praktis.</li>
-                </ul>
-                <a href="/login" class="btn-blue scrool">Login Sekarang</a>
-            </div>
-            <div class="col-md-6">
-                <img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/yy.jpg') }}" class="hero-image width-100 box-shadow" alt="pic">
-            </div>
-        </div>
-    </div>
-</section>
+
 
 
 
@@ -524,23 +539,7 @@
     </div>
 </section> -->
 
-<section class="section-grey partners-paddings section-top-border section-bottom-border" id="kerjasama">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="section-title">Kerja Sama Kami</h3>
-            </div>
-            <div class="col-md-12 text-center">
-                <ul class="partners-mentions">
-                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Awards"></li>
-                    <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/esemka.png') }}" alt="Awwwards"></li>
-                    <!-- <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Winner"></li> -->
-                    <!-- <li><img src="{{ asset('landing/demo.epic-webdesign.com/tf-essentials/v1/images/humma.png') }}" alt="CSS Design Awards"></li> -->
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- <section class="section-white section-top-border" id="contact">
     <div class="container">
         <div class="row">

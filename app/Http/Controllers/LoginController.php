@@ -284,15 +284,19 @@ class LoginController extends Controller
             'remember_token' => Str::random(60),
             'role' => 'Dudi',
         ]);
-
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
+            $user->foto = $request->file('foto')->getClientOriginalName();
+            $user->save();
+        }
         datadudi::create([
             'kd_dudi'=>$user->kd_dudi,
-            'foto' => $request->foto,
             'namadudi' => $request->name,
             'namakepdik' => $user->namakepdik,
             'alamatdudi' => $user->alamatdudi,
             'notelepondudi' => $user->notelepondudi,
             'user_id' => $user->id,
+            'foto' => $user->foto,
 
         ]);
 
@@ -300,11 +304,7 @@ class LoginController extends Controller
 
         auth()->login($user);
 
-        if($request->hasFile('foto')){
-            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-            $user->foto = $request->file('foto')->getClientOriginalName();
-            $user->save();
-        }
+        
 
         return redirect('/email/need-verification')->with('success','Dudi Berhasil Daftar');
     }
