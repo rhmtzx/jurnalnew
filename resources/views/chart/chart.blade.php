@@ -38,7 +38,24 @@
                     </div>
                     <!-- end page title -->
 
-
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div id="statusditerima">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div id="statusabsen">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header" >
@@ -69,24 +86,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <div id="statusditerima">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <div id="statusabsen">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     </div>
                 </div>
@@ -114,10 +114,10 @@
 
     Highcharts.chart('grafikjurnal', {
     chart: {
-        type: 'column'
+        type: 'line'
     },
     title: {
-        text: 'Laporan Total Seluruh Jurnal Dan Absen 2023'
+        text: 'Laporan Total Seluruh Jurnal 2023'
     },
     xAxis: {
         categories: [
@@ -159,10 +159,6 @@
     series: [{
         name: 'Jumlah Jurnal',
         data: datass
-
-    },{
-        name: 'Jumlah Absen',
-        data: datasss
 
     }]
 });
@@ -234,7 +230,7 @@
 
     Highcharts.chart('statusditerima', {
     chart: {
-        type: 'column'
+        type: 'line'
     },
     title: {
         text: 'Laporan Status Jurnal 2023'
@@ -301,7 +297,7 @@
 
     Highcharts.chart('statusabsen', {
     chart: {
-        type: 'column'
+        type: 'line'
     },
     title: {
         text: 'Laporan Status Absen 2023'

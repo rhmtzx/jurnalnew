@@ -28,6 +28,7 @@
                                             <th scope="col" hidden>Deskripsi</th>
                                             <th scope="col">Status Jurnal</th>
                                             <th scope="col">Approve Jurnal</th>
+                                            <th scope="col">Pesan Jika Ditolak</th>
                                             <th scope="col">Jurnal Dibuat</th>
                                             <th scope="col">Detail</th>
 
@@ -73,9 +74,7 @@
                                                     @method('put')
                                                     @csrf
                                                     </form>
-                                                    <button type="button" class="btn btn-box btn-fixed-w btn-outline-danger mb-3" onclick="document.getElementById('update2-{{$row4->id}}').submit()">
-                                                        <i class="fa-solid fa-xmark"></i>
-                                                    </button>
+                                                    <button type="button" class="btn btn-box btn-fixed-w btn-outline-danger mb-3" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa-solid fa-xmark"></i></button>
                                                     <form id="update2-{{$row4->id}}"
                                                      action="{{Route('statusditolak',['id' => $row4->id])}}" class="hidden" method="post">
                                                     @method('put')
@@ -83,21 +82,13 @@
                                                     </form>
                                                 </td>
 
-
-                                                <!-- <td>
-                                                    <a href="/statusditerima/{{ $row4->id }}" class="btn btn-box btn-fixed-w btn-outline-info mb-3">Terima</a>
-                                                    <a href="/statusditolak/{{ $row4->id }}" class="btn btn-box btn-fixed-w btn-outline-danger mb-3">Tolak</a>
-                                                </td> -->
-
+                                                <td>{{ $row4->pesanjurnal }}</td>
+                                                    
                                                 <td>{{ $row4->created_at}}</td>
                                                 <td scope="row">
                                                     <a href="/tampiltambahjurnal/{{ $row4->id }}"
                                                         class="btn btn-social btn-box btn-social-outline-tw mb-3"><i
                                                         class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                        <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
-                                                        data-id="{{ $row4->id }}"
-                                                        data-judul="{{ $row4->judul }}"><i
-                                                        class="fa-sharp fa-solid fa-trash"></i></a> -->
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -114,7 +105,38 @@
                     <!-- Progress Table end -->
                 </div>
             </div>
+           
+            <!-- Large modal -->
+                    
+                        <div class="col-lg-6 mt-4 stretched_card">                    
+                            <div class="modal fade bd-example-modal-lg">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <form id="update3-{{$row4->id}}" action="{{Route('tolakpesan',['id' => $row4->id])}}" class="hidden"
+                                         method="post">
+                                        @method('put')
+                                        @csrf
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Masukkan Alasan Kenapa Jurnal Ditolak !!</h5>
+                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <textarea type="text" name="pesanjurnal" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Masukkan Alasan"></textarea>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-box btn-fixed-w btn-outline-light mb-3" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-box btn-fixed-w btn-outline-danger mb-3">
+                                            Submit
+                                            </button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                    
 
+            <!-- Large modal modal -->
             <!-- DATA TABLE JS -->
             <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/init/data-table.js')}}">
             </script>

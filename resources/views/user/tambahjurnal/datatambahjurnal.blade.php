@@ -35,6 +35,7 @@
                                             <th scope="col">Judul</th>
                                             <th scope="col">Deskripsi</th>
                                             <th scope="col">Status Jurnal</th>
+                                            <th scope="col">Pesan Jika Ditolak</th>
                                             <th scope="col">Dibuat</th>
                                             <th scope="col">Aksi</th>
 
@@ -70,6 +71,7 @@
                                                     <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
                                                 </td>
                                                 @endif
+                                                <td>{{ $row->pesanjurnal}}</td>
                                                 <td>{{ $row->created_at}}</td>
                                             <td scope="row">
                                                 <a href="/tampiltambahjurnal/{{ $row->id }}"

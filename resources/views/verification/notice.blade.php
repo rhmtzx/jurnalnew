@@ -6,7 +6,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Two Step Verification | Velzon - Admin & Dashboard Template</title>
+    <title>J - On | Jurnal Online Verifikasi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -51,7 +51,7 @@
                                     <img src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/images/1.png') }}" alt="" height="100" width="250">
                                 </a>
                             </div>
-                            <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
+                            <p class="mt-3 fs-15 fw-medium">J - On | Jurnal Online Verifikasi</p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                         <!-- end card -->
 
                         <div class="mt-4 text-center">
-                            <p class="mb-0">Didn't receive a code ? <a href="/email/resend-verification" class="fw-semibold text-primary text-decoration-underline">Resend</a> </p>
+                            <p class="mb-0">Belum Menerima Email Verifikasi ? <a href="/email/resend-verification" class="fw-semibold text-primary text-decoration-underline">Kirim Ulang</a> </p>
                         </div>
 
                     </div>
@@ -103,7 +103,7 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>document.write(new Date().getFullYear())</script> J - On. Crafted by RQteams
                             </p>
                         </div>
                     </div>

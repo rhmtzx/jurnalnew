@@ -78,12 +78,7 @@
                                     <table id="jurusan" class="table nowrap align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th scope="col" style="width: 10px;">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input fs-15" type="checkbox" id="checkAll" value="option">
-                                                    </div>
-                                                </th>
-                                                <th scope="col">#</th>
+                                                                                                <th scope="col">#</th>
                                                     <th scope="col">Nama User</th>
                                                     <th scope="col">Sebagai</th>
                                                     <th scope="col">Email User</th>
@@ -98,11 +93,7 @@
                                                     @endphp
                                                     @foreach ($data as $row)
                                             <tr>
-                                                <th scope="row">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input fs-15" type="checkbox" name="checkAll" value="option1">
-                                                    </div>
-                                                </th>
+                                                
                                                 <th scope="row">{{ $no++ }}</th>
                                                 
                                                 <td>{{ $row->name}}</td>

@@ -52,26 +52,23 @@
                             </a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="/datajurusan">
-                                <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Jurusan</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link menu-link" href="/dataguru">
                                 <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Guru</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="/dataplotingan">
-                                <i class="ri-git-repository-fill"></i> <span data-key="t-widgets">Plotingan Siswa </span>
-                            </a>
-                        </li>
-
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Siswa</span></li>
-
-                        <li class="nav-item">
                             <a class="nav-link menu-link" href="/datasiswa">
                                 <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Siswa</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datajurusan">
+                                <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Jurusan</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/dataplotingan">
+                                <i class="ri-git-repository-fill"></i> <span data-key="t-widgets">Plotingan Siswa </span>
                             </a>
                         </li>
 
@@ -86,7 +83,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="/chart">
-                                <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Grafik</span>
+                                <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data Grafik Status</span>
                             </a>
                         </li>
 

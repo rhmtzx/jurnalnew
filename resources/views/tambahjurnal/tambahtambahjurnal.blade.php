@@ -88,7 +88,7 @@
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                    <label for="exampleInputEmail1" class="form-label"><h6>Deskripsi</h6></label>
+                                                        <label for="exampleInputEmail1" class="form-label"><h6>Deskripsi</h6></label>
                                                             <div class="card">
                                                                 <div class="card-header">
                                                                 </div>

@@ -149,74 +149,50 @@
                                     </div><!-- end col -->
 
                                 </div> <!-- end row-->
-                                <div class="row">
-                                <div class="col-xl-4">
-                                    <div class="card card-animate">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm flex-shrink-0">
-                                                    <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
-                                                        <i class="ri-git-repository-fill"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="flex-grow-1 overflow-hidden ms-3">
-                                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-3">Jumlah Jurnal</p>
-                                                    <div class="d-flex align-items-center mb-3">
-                                                        <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value" data-target="{{$jurnal}}">{{$jurnal}}</span></h4>
-                                                        <span class="badge badge-soft-success fs-12"><i class="ri-arrow-up-s-line fs-13 align-middle me-1"></i></span>
+                                
+                            <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        <p class="fw-medium text-muted mb-0">Jumlah Total Jurnal</p>
+                                                        <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="{{$jurnal}}">{{$jurnal}}</span></h2>
+                                                        <p class="mb-0 text-muted"><span class="badge bg-light text-success mb-0"> <i class="ri-arrow-up-line align-middle"></i></span> Jumlah Total Jurnal</p>
                                                     </div>
-                                                    <p class="text-muted text-truncate mb-0"> Total Seluruh Siswa</p>
-                                                </div>
-                                            </div>
-                                        </div><!-- end card body -->
-                                    </div>
-                                </div><!-- end col -->
-
-                                <div class="col-xl-4">
-                                    <div class="card card-animate">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm flex-shrink-0">
-                                                    <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
-                                                        <i class="ri-git-repository-fill"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <p class="text-uppercase fw-medium text-muted mb-3">Jumlah Absen</p>
-                                                    <div class="d-flex align-items-center mb-3">
-                                                        <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value" data-target="{{$absen}}">{{$absen}}</span></h4>
-                                                        <span class="badge badge-soft-success fs-12"><i class="ri-arrow-up-s-line fs-13 align-middle me-1"></i></span>
+                                                    <div>
+                                                        <div class="avatar-sm flex-shrink-0">
+                                                            <span class="avatar-title bg-soft-success rounded fs-3">
+                                                                <i class="ri-git-repository-fill" class="text-info"></i>
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                    <p class="text-muted mb-0">Total Seluruh Absen </p>
                                                 </div>
-                                            </div>
-                                        </div><!-- end card body -->
-                                    </div>
-                                </div><!-- end col -->
+                                            </div><!-- end card body -->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
 
-                                <div class="col-xl-4">
-                                    <div class="card card-animate">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm flex-shrink-0">
-                                                    <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
-                                                        <i class="ri-git-repository-fill"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="flex-grow-1 overflow-hidden ms-3">
-                                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-3">Jumlah Plotingan</p>
-                                                    <div class="d-flex align-items-center mb-3">
-                                                        <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value" data-target="{{$plotingan}}">{{$plotingan}}</span></h4>
-                                                        <span class="badge badge-soft-success fs-12"><i class="ri-arrow-up-s-line fs-13 align-middle me-1"></i></span>
+                                    <div class="col-md-6">
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        <p class="fw-medium text-muted mb-0">Jumlah Total Plotingan</p>
+                                                        <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="{{$plotingan}}">{{$plotingan}}</span></h2>
+                                                        <p class="mb-0 text-muted"><span class="badge bg-light text-success mb-0"> <i class="ri-arrow-up-line align-middle"></i></span> Jumlah Total Plotingan</p>
                                                     </div>
-                                                    <p class="text-muted text-truncate mb-0">Total Seluruh Plotingan </p>
+                                                    <div>
+                                                        <div class="avatar-sm flex-shrink-0">
+                                                            <span class="avatar-title bg-soft-success rounded fs-3">
+                                                                <i class="ri-git-repository-fill" class="text-success"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- end card body -->
-                                    </div>
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-
+                                            </div><!-- end card body -->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+                                </div> <!-- end row-->
                     </div>
 
                 </div>
@@ -260,70 +236,17 @@
 @section('footer')
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <!-- Grafik Seluruh Absen -->
-<script>
-    var datasss = <?php echo json_encode($datasss) ?>
 
-    Highcharts.chart('grafikabsen', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Laporan Seluruh Absen 2023'
-    },
-    xAxis: {
-        categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec'
-        ],
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Total Absen'
-        }
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
-    },
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-    series: [{
-        name: 'Jumlah Absen',
-        data: datasss
-
-    }]
-});
-</script>
 <!-- Grafik Seluruh Jurnal -->
 <script>
     var datass = <?php echo json_encode($datass) ?>
 
     Highcharts.chart('grafikjurnal', {
     chart: {
-        type: 'column'
+        type: 'line'
     },
     title: {
-        text: 'Laporan Total Seluruh Jurnal Dan Absen 2023'
+        text: 'Laporan Total Seluruh Jurnal 2023'
     },
     xAxis: {
         categories: [
@@ -345,7 +268,7 @@
     yAxis: {
         min: 0,
         title: {
-            text: 'Total Jurnal Dan Absen'
+            text: 'Total Jurnal'
         }
     },
     tooltip: {
@@ -365,10 +288,6 @@
     series: [{
         name: 'Jumlah Jurnal',
         data: datass
-
-    },{
-        name: 'Jumlah Absen',
-        data: datasss
 
     }]
 });

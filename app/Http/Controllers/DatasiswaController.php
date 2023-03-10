@@ -10,6 +10,8 @@ use App\Models\dataabsen;
 use App\Models\tambahjurnal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // use Illuminate\Foundation\Auth\User;
@@ -20,14 +22,27 @@ class DatasiswaController extends Controller
 
         // $data = jurusan::paginate(1);
         $data2 = datasiswa::where('namasiswa', Auth::user()->name)->get();
-            // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
+        // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
         // $data4 = dataabsen::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dud)->get();
         $data3 = datasiswa::where('kd_guru', Auth::user()->kd_guru)->get();
         $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
         $jurusan = jurusan::all();
         $tittle = 'datasiswa';
-        $keyword = $request->keyword;
-        $data1 = jurusan::where('namajurusan','LIKE','%'.$keyword.'%')->paginate(4);
+        // $keyword = $request->keyword;//
+        // $datasearch = jurusan::where('namajurusan','LIKE','%'.$keyword.'%')->paginate(1);
+
+      if (isset($_GET['query'])) {
+            $search = $_GET['query'];
+            $data = jurusan::where('namajurusan', 'LIKE', '%' . $search . '%')->paginate(1);
+            $data->appends($request->all());
+        } else {
+            $data = jurusan::paginate(4);
+        }
+        
+        return view('datasiswa.datasiswa',compact('data'));
+
+        
+
 
         if(Auth()->user()->role == 'Admin'){
             return view('datasiswa.datasiswa',compact('jurusan','data1'));

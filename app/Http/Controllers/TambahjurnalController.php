@@ -9,6 +9,7 @@ use Barryvdh\DomPDF\PDF;
 use App\Models\datasiswa;
 use App\Models\tambahjurnal;
 use App\Models\dataabsen;
+use App\Models\pesan;
 // use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -199,36 +200,14 @@ class TambahjurnalController extends Controller
             }
         }
 
-    //     public function AproveJurnal($id)
-    // {
-    //     $aprove = tambahjurnal::find($id);
-    //     $aprove->update([
-
-    //         'statusjurnal' => 'Telah Disetujui',
-    //         // 'updated_at' => now(),
-    //     ]);
-    //     return redirect('perusahaan/sub/' . $aprove->id_job);
-    // }
-
-    // public function UnaproveJurnal(Request $request, $id)
-    // {
-    //     $aprove = SubProject::find($id);
-
-    //     $aprove->update([
-    //         'status' => 'pending',
-    //         'updated_at' => now(),
-    //     ]);
-    //     return redirect('perusahaan/sub/' . $aprove->id_job);
-    // }
-
-    // APPROVE JURNAL DITERIMA
+    // APPROVE JURNAL DITERIMA	
     public function statusditerima(Request $request, $id)
     {
             $data = tambahjurnal::find($id);
             $data->update([
                 'statusjurnal' => 'Telah Disetujui',
     ]);
-        return redirect()->back()->with('success', 'Jurnal Telah Di Setujui');
+        return redirect()->back()->with('success', 'Jurnal Berhasil Di Setujui');
 	}
 	// UNAPPROVE JURNAL DITOLAK
 	public function statusditolak(Request $request, $id)
@@ -237,17 +216,27 @@ class TambahjurnalController extends Controller
             $data->update([
                 'statusjurnal' => 'Jurnal Ditolak',
     ]);
+        return redirect()->back()->with('success', 'Jurnal Berhasil Di Tolak');
+	}
+
+	public function statusditolak2(Request $request, $id)
+    {
+      	$data = tambahjurnal::where('statusjurnal','Menunggu Persetujuan')->whereNotNull('pesanjurnal')
+      	->where('usersiswa', auth()->id())->get();
         return redirect()->back()->with('success', 'Jurnal Telah Di Tolak');
 	}
 
+	public function tolakpesan(Request $request, $id)
+	{
+		$data = tambahjurnal::where('id',$id)->update([
+			'statusjurnal' => 'Jurnal Ditolak',
+			'pesanjurnal' => $request->pesanjurnal,
+		]);
+		return redirect()->back()->with('success', 'Jurnal Berhasil Di Tolak');
+	}
 
+	
 
-	// 	public function updatestatusditolak($id)
-	// {
- //    	$data = tambahjurnal::all()
-
- //    // tambahkan logika untuk mengirim notifikasi atau melakukan tindakan lain yang diperlukan
-	// }
 
 	public function update_status(){
 		$judul = $this->input->post('judul');
