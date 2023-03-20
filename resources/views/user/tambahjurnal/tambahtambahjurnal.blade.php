@@ -90,6 +90,9 @@
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Masukkan Foto </h6></label>
                                                 <br>
                                                 <input type="file" name="foto" class="form-control" >
+                                            @error('foto')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                             </div>
                                             <br>
                                             <br>

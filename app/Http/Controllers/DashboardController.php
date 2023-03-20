@@ -79,7 +79,6 @@ class DashboardController extends Controller
     $plotingan = dataplotingan::count();
     $guru = dataguru::count();
     $absen = dataabsen::count();
-    // $data[] = tambahjurnal::all();
 
         return view('welcome', compact('datas','datass','datasss','jurusan', 'siswa', 'dudi', 'jurnal','plotingan','guru','absen'));
     }

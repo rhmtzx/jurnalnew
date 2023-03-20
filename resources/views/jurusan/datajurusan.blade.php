@@ -146,7 +146,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
-                <a href="/deleteall" method="get" class="btn btn-danger ">Hapus</a>
+                <a href="/deletealll" method="get" class="btn btn-danger ">Hapus</a>
             </div>
 
         </div><!-- /.modal-content -->

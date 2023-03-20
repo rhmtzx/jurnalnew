@@ -78,12 +78,12 @@
                                     <table id="jurusan" class="table nowrap align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                                                                                <th scope="col">#</th>
+                                                    <th scope="col">#</th>
                                                     <th scope="col">Nama User</th>
                                                     <th scope="col">Sebagai</th>
                                                     <th scope="col">Email User</th>
                                                     <!-- <th scope="col">Akun Dibuat</th> -->
-                                                    <!-- <th scope="col">Aksi</th> -->
+                                                    <th scope="col">Aksi</th>
                                                     <!-- <th scope="col">Blokir Pengguna</th> -->
                                             </tr>
                                         </thead>
@@ -102,10 +102,10 @@
                                                 <!-- <td>{{ $row->created_at}}</td> -->
 
 
-                                                <!-- <td>
+                                                <td>
                                                     <a  href="#" class="btn btn-danger destroy data-id="{{ $row->id }}"
                                                     data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
-                                                </td> -->
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>

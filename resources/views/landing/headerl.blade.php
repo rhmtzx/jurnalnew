@@ -35,13 +35,18 @@
 
                         <li><a href="#pertanyaan">Pertanyaan</a></li>
 
-                        <!-- <li><a href="#lainnya">Lainnya</a></li> -->
-
                         <li><a href="#kerjasama">Kerja Sama</a></li>
                         @guest
-                        <li class="discover-link"><a href="/login" class="external discover-btn">{{ __('login') }}</a></li>
+                        <li class="discover-link">
+                            <a href="/login" class="external discover-btn">{{ __('login') }}</a>
+                        </li>
                         @else
-                        <li><a href="javascript:history.back()" class="external discover-btn">{{ Auth::user()->name }}</a></li></a>
+                        <li class="discover-link">
+                            <a href="/dashboard" class="external"><em>{{ Auth::user()->name }}</em></a>
+                        </li>
+                        <li class="discover-link">
+                            <a href="/logout" class="external"><em>Logout</em></a>
+                        </li>
                         @endguest
 
                     </ul>

@@ -4,19 +4,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
     <div class="main-content-inner">
         <div class="row">
             <!-- Progress Table start -->
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Jurnal Seluruh Siswa</h4>
+                        <h4 class="card_title">Data Absen Semua Siswa </h4>
                         <ul>
-                            <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
+                            <li><h6>Semua Absen Siswa Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
-
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -25,53 +23,53 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Foto</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col" hidden>Deskripsi</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Pesan Jika Ditolak</th>
-                                            <th scope="col">Dibuat</th>
+                                            <th scope="col">Waktu Masuk</th>
+                                            <th scope="col">Status Masuk</th>
+                                            <th scope="col">Waktu Keluar</th>
+                                            <th scope="col">Status Keluar</th>
+                                            <th scope="col">Tanggal</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php
                                         $no = 1;
                                         @endphp
+                                            @if(count($data4)>0)
+                                            @foreach($data4 as $row4)
 
-                                            @foreach($data8 as $row8)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row8->namasiswa->namasiswa }}</td>
+                                                <td>{{ $row4->namasiswa->namasiswa }}</td>
+                                                
+                                                <td>{{ $row4->masuk }}</td>
+                                                @if ($row4->statusmasuk == 'Hadir')
                                                 <td>
-                                                    <img src="{{ asset('fotodudi/' . $row8->foto) }}" alt=""
-                                                    style="width: 40px">
+                                                    <span class="badge badge-success badge-success ">Hadir</span>
                                                 </td>
-                                                <td>{{ $row8->judul }}</td>
-                                                <td hidden>{!! $row8->deskripsi !!}</td>
-                                                @if ($row8->statusjurnal == 'Telah Disetujui')
+                                                @elseif ($row4->statusmasuk == 'Terlambat')
                                                 <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                                </td>
-                                                @elseif ($row8->statusjurnal == 'Menunggu Persetujuan')
-                                                <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @elseif ($row8->statusjurnal == 'Jurnal Ditolak')
-                                                <td>
-                                                    <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
+                                                    <span class="badge badge-success badge-danger ">Terlambat</span>
                                                 </td>
                                                 @endif
 
-                                                <td>{{ $row8->pesanjurnal}}</td>
+                                                <td>{{ $row4->keluar }}</td>
+                                                @if ($row4->statuskeluar == 'Telah Keluar')
+                                                <td>
+                                                    <span class="badge badge-success badge-success ">Telah Keluar</span>
+                                                </td>
+                                                @elseif ($row4->statuskeluar == 'Belum Waktunya')
+                                                <td>
+                                                    <span class="badge badge-success badge-danger ">Belum Waktunya</span>
+                                                </td>
+                                                @endif
 
-                                                <td>{{ $row8->created_at}}</td>
+                                                <td>{{ $row4->created_at }}</td>
 
-                                                </tr>
-                                                @endforeach
-
-
+                                            @endforeach
+                                            @endif
                                             </tbody>
                                         </table>
+                                        <br>
                                         <a href="javascript:history.back()" class="btn btn-rounded btn-fixed-w btn-outline-danger mb-3">Kembali</a>
                                     </div>
                                 </div>
@@ -81,7 +79,9 @@
                     <!-- Progress Table end -->
                 </div>
             </div>
+           
 
+            <!-- Large modal modal -->
             <!-- DATA TABLE JS -->
             <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/init/data-table.js')}}">
             </script>
@@ -113,6 +113,21 @@
             });
         </script>
 
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <script>
+            $('.statusjurnal').change(function(){
+                var statusjurnal = $(this).val();
+                // var judul = statusjurnal.substr(0,13);
+                var statusjurnal = statusjurnal.substr(13,0);
+                // alert(statusjurnal);
+
+                $.ajax({
+                    url : "<?php= base_url()?>TambahjurnalController/update_status",
+                    method : "post",
+                    data: {judul:judul, statusjurnal:statusjurnal}
+                })
+            })
+        </script>
     </body>
 
     <script>

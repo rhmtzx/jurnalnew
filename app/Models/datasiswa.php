@@ -39,4 +39,9 @@ class datasiswa extends Model
     {
         return $this->hasMany(dataabsen::class,); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
+
+    public function absens()
+    {
+        return $this->hasMany(Absensi::class,);
+    }
 }

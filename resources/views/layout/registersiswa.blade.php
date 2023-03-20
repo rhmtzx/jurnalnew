@@ -70,22 +70,23 @@
                                     <div class="mb-3">
                                         <label for="nissiswa" class="form-label">NIS Siswa<span class="text-danger">*</span></label>
                                         <input type="number" class="form-control" name="nissiswa" id="nissiswa" placeholder="Masukkan Nis Siswa" required>
-
-                                    </div>
-                                    @error('nissiswa')
+                                         @error('nissiswa')
                                     <div class="text-danger">
                                         {{ $message }}
                                     </div>
                                     @enderror
+                                    </div>
+                                   
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
-                                    </div>
-                                    @error('name')
+                                        @error('name')
                                     <div class="text-danger">
                                         {{ $message }}
                                     </div>
                                     @enderror
+                                    </div>
+                                    
                                     <div class="col-lg-12">
                                         <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
                                         <select class="form-control js-example-basic-single" name="namajurusan" id="namajurusan" autocomplete="off">

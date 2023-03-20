@@ -24,7 +24,7 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Detail Jurnal Siswa</th>
+                                            <th scope="col">Detail Izin Siswa</th>
 
                                         </tr>
                                     </thead>

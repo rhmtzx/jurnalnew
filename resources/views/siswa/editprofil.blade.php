@@ -26,7 +26,7 @@
                                             <div class="media-left">
                                                 <a href="#" class="profile-image">
                                                     <img class="user-img img-radius"
-                                                        src="{{ asset('fotodudi/' . Auth::user()->foto) }}" width="155px"
+                                                        src="{{ asset('fotodudi/' . Auth::user()->foto)  }}" width="155px"
                                                         height="155px" alt="user-img">
                                                 </a>
                                             </div>
@@ -75,8 +75,8 @@
                                                             <div class="table-responsive">
                                                                 <table class="table m-0">
                                                                     <tbody>
-                                         <form class="col s12" action="/updateprofildudi" method="POST">
-                                        @csrf
+                            <form class="col s12" action="/updateprofildudi" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Nama Dudi</h6></label>
                                 <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
@@ -96,6 +96,9 @@
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Edit Foto</h6></label>
                                 <input type="file" class="form-control" name="foto" id="exampleFormControlInput1"
                                 readonly>
+                                @error('foto')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
@@ -175,23 +178,42 @@
                                                             <div class="table-responsive">
                                                                 <table class="table m-0">
                                                                     <tbody>
-                            <form class="col s12" action="/updateprofilguru" method="POST">
+                            <form class="col s12" action="/updateprofilguru" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Nama Guru</h6></label>
-                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->name}}">
+                                <label for="exampleFormControlInput1" class="form-label"><h6>NIP Guru</h6></label>
+                                <input type="number" class="form-control" name="nip" id="exampleFormControlInput1"
+                                 value="{{Auth()->user()->nip}}" readonly>
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Guru</h6></label>
-                                <input type="text" class="form-control" name="alamat" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->alamat}}">
-                            </div>
+                            
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Kode Guru</h6></label>
                                 <input type="email" class="form-control" name="kd_guru" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->kd_guru}}" readonly>
                             </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Guru</h6></label>
+                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
+                                 value="{{Auth()->user()->email}}" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label"><h6>Edit Foto</h6></label>
+                                <input type="file" class="form-control" name="foto" id="exampleFormControlInput1"
+                                readonly>
+                                @error('foto')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            @error('name')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
+                                <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
+                            </div>
+                            
 
                                                                     </tbody>
                                                                 </table>
@@ -202,9 +224,9 @@
                                                                 <table class="table">
                                                                     <tbody>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>NIP Guru</h6></label>
-                                <input type="number" class="form-control" name="nip" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->nip}}" readonly>
+                                <label for="exampleFormControlInput1" class="form-label"><h6>Nama Guru</h6></label>
+                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
+                                 value="{{Auth()->user()->name}}">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Guru</h6></label>
@@ -212,14 +234,11 @@
                                  value="{{Auth()->user()->notlpn}}">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>Email Guru</h6></label>
-                                <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->email}}" readonly>
+                                <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Guru</h6></label>
+                                <input type="text" class="form-control" name="alamat" id="exampleFormControlInput1"
+                                 value="{{Auth()->user()->alamat}}">
                             </div>
-                            <div class="mt-4">
-                                        <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
-                                        <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
-                                        </div>
+                            
                         </form>
                                                                     </tbody>
                                                                 </table>
@@ -268,7 +287,7 @@
                                                             <div class="table-responsive">
                                                                 <table class="table m-0">
                                                                     <tbody>
-                            <form class="col s12" action="/updateprofilsiswa" method="POST">
+                            <form class="col s12" action="/updateprofilsiswa" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Nama Siswa</h6></label>
@@ -276,9 +295,15 @@
                                  value="{{Auth()->user()->name}}">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label"><h6>NIS Siswa</h6></label>
-                                <input type="number" class="form-control" name="nissiswa" id="exampleFormControlInput1"
-                                 value="{{Auth()->user()->nissiswa}}" readonly>
+                                <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label>
+                                <select class="form-control" name="id_jurusan" id="id_jurusan">
+                                    <option value="" selected disabled>Pilih</option>
+                                    @foreach($jurusan as $a)
+                                    <option value="{{ $a->id }}"<?php if($data->id_jurusan == $a->id) {
+                                        echo 'selected';
+                                    }?> > {{ $a->namajurusan }} </option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Siswa</h6></label>
@@ -289,6 +314,18 @@
                                 <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Siswa</h6></label>
                                 <input type="number" class="form-control" name="notlpsiswa" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->notlpsiswa}}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label"><h6>Edit Foto</h6></label>
+                                <input type="file" class="form-control" name="foto" id="exampleFormControlInput1"
+                                readonly>
+                                @error('foto')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
+                                <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
                             </div>
 
                                                                     </tbody>
@@ -315,20 +352,12 @@
                                  value="{{Auth()->user()->email}}" readonly>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label>
-                                <select class="form-control" name="id_jurusan" id="id_jurusan">
-                                    <option value="" selected disabled>Pilih</option>
-                                    @foreach($jurusan as $a)
-                                    <option value="{{ $a->id }}"<?php if($data->id_jurusan == $a->id) {
-                                        echo 'selected';
-                                    }?> > {{ $a->namajurusan }} </option>
-                                    @endforeach
-                                </select>
+                                <label for="exampleFormControlInput1" class="form-label"><h6>NIS Siswa</h6></label>
+                                <input type="number" class="form-control" name="nissiswa" id="exampleFormControlInput1"
+                                 value="{{Auth()->user()->nissiswa}}" readonly>
                             </div>
-                            <div class="mt-4">
-                                <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
-                                <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
-                                </div>
+                            
+                            
                         </form>
                                                                     </tbody>
                                                                 </table>

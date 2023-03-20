@@ -11,11 +11,17 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Jurnal Siswa</h4>
-                        <ul>    
-                            <li><h6>Seluruh Jurnal Siswa Yang Dibimbing Ada Disini !!</h6></li></ul>
+                        <h4 class="card_title">Data Setting Absen</h4>
+                        <ul>
+                            <li><h6>Data Setting Ada Disini !!</h6></li></ul>
                             <br>
                             <div class="single-table">
+                                <a href="/tambahsetting" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
+
+                                <div class="table-responsive">
+                            <div class="single-table">
+                                    <br>
+
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -23,8 +29,11 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Nama Siswa</th>
+                                            <th scope="col">Masuk</th>
+                                            <th scope="col">Keluar</th>
+                                            <th scope="col">Dibuat</th>
                                             <th scope="col">Aksi</th>
+
 
                                         </tr>
                                     </thead>
@@ -32,22 +41,23 @@
                                         @php
                                         $no = 1;
                                         @endphp
-                                            @foreach($data5 as $row5)
-
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row5->namasiswa }}</td>
-
-                                                <td scope="row">
-                                                    <a href="/jurnalsdudi/{{ $row5->id }}"
-                                                        class="btn btn-social btn-social-outline-tw mb-3"><i class="fa-solid fa-eye"></i></a>
-                                                        <!-- <a href="#" class="btn btn-danger deletetambahjurnal"
-                                                        data-id="{{ $row5->id }}"
-                                                        data-judul="{{ $row5->judul }}"><i
-                                                        class="fa-sharp fa-solid fa-trash"></i></a> -->
-                                                    </td>
-                                                </tr>
-                                                @endforeach
+                                        @foreach ($data as $row)
+                                        <tr>
+                                            <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->masuk}}</td>
+                                                <td>{{ $row->keluar}}</td>
+                                                <td>{{ $row->created_at}}</td>
+                                            <td scope="row">
+                                                <a href="/tampilsetting/{{ $row->id }}"
+                                                    class="btn btn-warning"><i
+                                                    class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                                                    <a href="#" class="btn btn-danger deletesetting"
+                                                    data-id="{{ $row->id }}"
+                                                    data-judul="{{ $row->judul }}"><i
+                                                    class="fa-sharp fa-solid fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
 
                                             </tbody>
                                         </table>
@@ -60,17 +70,10 @@
                 </div>
             </div>
 
-            <!-- DATA TABLE JS -->
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/js/init/data-table.js')}}">
-            </script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/jquery.dataTables.js')}}"></script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/jquery.dataTables.min.js')}}"></script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/dataTables.bootstrap4.min.js')}}"></script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/dataTables.responsive.min.js')}}"></script>
-            <script src="{{asset('quinte/rtsolutz.com/raven/demo-quinte/quinte-html/light-sidebar/vendors/data-table/js/responsive.bootstrap.min.js')}}"></script>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -94,7 +97,7 @@
     </body>
 
     <script>
-        $('.deletetambahjurnal').click(function() {
+        $('.deletesetting').click(function() {
             var kategoriid = $(this).attr('data-id');
             var kategori = $(this).attr('data-kategori');
             swal({
@@ -106,7 +109,7 @@
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/deletetambahjurnal/" + kategoriid + ""
+                    window.location = "/deletesetting/" + kategoriid + ""
                     swal("Data Berhasil Di Hapus", {
                         icon: "success",
                     });
@@ -127,6 +130,30 @@
         @if (Session::has('error'))
         toastr.error("{{ Session::get('error') }}")
         @endif
+    </script>
+    <script>
+        $('.td-ellipsis').each(function() {
+    var isi_konten = $(this).text();
+
+    if (isi_konten.length > 10) { // sesuaikan dengan panjang karakter maksimum yang diinginkan
+        isi_konten = isi_konten.substr(0, 10) + '...';
+    }
+
+    $(this).html('<div class="summernote-ellipsis">' + isi_konten + '</div>');
+    $('.summernote-ellipsis').summernote({
+        toolbar: [],
+        airMode: true,
+        disableResizeEditor: true,
+        height: 150,
+        focus: false,
+        popover: false,
+        dialogsInBody: true,
+        disableDragAndDrop: true,
+        shortcuts: false,
+        codeviewFilter: true,
+        codeviewIframeFilter: true
+    });
+});
     </script>
 
     @endsection
