@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\HakAkses;
 use Illuminate\Http\Request;
-use App\Models\tambahjurnal; 
-use App\Models\dataabsen; 
+use App\Models\tambahjurnal;
+use App\Models\dataabsen;
 use Carbon\Carbon;
 use Redirect;
 use Illuminate\Support\Collection;
 
-use App\Models\jurusan; 
-use App\Models\datasiswa; 
-use App\Models\datadudi; 
-use App\Models\dataguru; 
-use App\Models\dataplotingan; 
+use App\Models\jurusan;
+use App\Models\datasiswa;
+use App\Models\datadudi;
+use App\Models\dataguru;
+use App\Models\dataplotingan;
 
 
 use Illuminate\Support\Facades\DB;
@@ -22,6 +23,10 @@ use App\Models\User;
 
 class DashboardController extends Controller
 {
+    function __construct()
+   {
+    $this->middleware('auth');
+}
     public function index()
     {
     	//GRAFIK TOTAL USER
@@ -69,7 +74,7 @@ class DashboardController extends Controller
         {
             $datasss[$months -1] = $Absen[$index];
         }
-        
+
 
     // D a s h b o a r d  A d m i n
     $jurusan = jurusan::count();

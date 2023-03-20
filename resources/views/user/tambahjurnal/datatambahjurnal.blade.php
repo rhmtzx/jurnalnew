@@ -18,11 +18,10 @@
                             <div class="single-table">
                                 <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
                                 <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a>
-
-                                <div class="table-responsive">
+                                <input type="text" name="daterange" value="" />
+                               <div class="table-responsive">
                             <div class="single-table">
                                     <br>
-
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -30,7 +29,7 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Nama Siswa</th>
+                                            <th scope="col" hidden>Nama Siswa</th>
                                             <th scope="col">Foto</th>
                                             <th scope="col">Judul</th>
                                             <th scope="col">Deskripsi</th>
@@ -49,7 +48,7 @@
                                         @foreach ($data as $row)
                                         <tr>
                                             <th scope="row">{{ $no++ }}</th>
-                                            <td>{{ $row->namasiswa->namasiswa }}</td>
+                                            <td hidden>{{ $row->namasiswa->namasiswa }}</td>
                                             <td>
                                                 <a class="image-popup" href="{{ asset('fotodudi/' . $row->foto) }}">
                                                     <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
@@ -77,10 +76,10 @@
                                                 <a href="/tampiltambahjurnal/{{ $row->id }}"
                                                     class="btn btn-warning"><i
                                                     class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                    <a href="#" class="btn btn-danger deletetambahjurnal"
+                                                    {{-- <a href="#" class="btn btn-danger deletetambahjurnal"
                                                     data-id="{{ $row->id }}"
                                                     data-judul="{{ $row->judul }}"><i
-                                                    class="fa-sharp fa-solid fa-trash"></i></a>
+                                                    class="fa-sharp fa-solid fa-trash"></i></a> --}}
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -121,7 +120,15 @@
         </script>
 
     </body>
-
+    <script>
+        $(function() {
+          $('input[name="daterange"]').daterangepicker({
+            opens: 'left'
+          }, function(start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+          });
+        });
+        </script>
     <script>
         $('.deletetambahjurnal').click(function() {
             var kategoriid = $(this).attr('data-id');
@@ -181,5 +188,6 @@
     });
 });
     </script>
+
 
     @endsection

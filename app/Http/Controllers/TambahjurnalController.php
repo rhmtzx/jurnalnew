@@ -26,6 +26,7 @@ class TambahjurnalController extends Controller
         $data4 = tambahjurnal::with('namasiswa')->where('kd_dudi',auth()->user()->kd_dudi)->get();
         $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
         $data6 = datasiswa::where('kd_guru', Auth::user()->kd_guru)->get();
+        // $data7 = tambahjurnal::with('namasiswa')->whereDate('created_at', Carbon::today())->get();
         $tittle = 'datajurnal';
         // dd($data);
         if(Auth()->user()->role == 'Admin'){
@@ -35,9 +36,7 @@ class TambahjurnalController extends Controller
         }else if(Auth()->user()->role == 'Dudi'){
             return view('userdudi.tambahjurnal.datatambahjurnal',compact('data5','tittle'));
         }else{
-
             return view('user.tambahjurnal.datatambahjurnal',compact('data','data2','data4','tittle','data5'));
-
         }
     }
     public function dataa($id){
@@ -200,7 +199,7 @@ class TambahjurnalController extends Controller
             }
         }
 
-    // APPROVE JURNAL DITERIMA	
+    // APPROVE JURNAL DITERIMA
     public function statusditerima(Request $request, $id)
     {
             $data = tambahjurnal::find($id);
@@ -235,7 +234,7 @@ class TambahjurnalController extends Controller
 		return redirect()->back()->with('success', 'Jurnal Berhasil Di Tolak');
 	}
 
-	
+
 
 
 	public function update_status(){
