@@ -76,7 +76,7 @@ class TambahjurnalController extends Controller
             $this->validate($request,[
                   'judul' => 'required',
                   'deskripsi' => 'required',
-                  'foto' => 'required',
+                  'foto' => 'required|mimes:jpg,png,jpeg',
                   'usersiswa' => 'required',
                   // 'statusjurnal' => 'required',
 
@@ -84,18 +84,19 @@ class TambahjurnalController extends Controller
                  'judul.required' => 'Harus diisi',
                  'deskripsi.required' => 'Harus diisi',
                  'foto.required' => 'Harus diisi',
+                 'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg',
                  'usersiswa.required' => 'Harus diisi',
                  // 'statusjurnal.required' => 'Harus diisi',
 
              ]);
 
-             $id_siswa = $request->input('usersiswa');
-             $absensi = tambahjurnal::where('usersiswa', $id_siswa)
+            $id_siswa = $request->input('usersiswa');
+            $absensi = tambahjurnal::where('usersiswa', $id_siswa)
                                ->whereDate('created_at', Carbon::today())
                                ->first();
-             if ($absensi) {
+            if ($absensi) {
                 return redirect()->route('datatambahjurnal')->with('error', 'Anda Sudah Mengisi Jurnal Hari Ini !!');
-             }
+            }
 
             //  $foto = "";
             //  // dd($request->file('foto')->getClientOriginalName());
@@ -234,9 +235,6 @@ class TambahjurnalController extends Controller
 		return redirect()->back()->with('success', 'Jurnal Berhasil Di Tolak');
 	}
 
-
-
-
 	public function update_status(){
 		$judul = $this->input->post('judul');
 		$statusjurnal = $this->input->post('statusjurnal');
@@ -248,6 +246,31 @@ class TambahjurnalController extends Controller
 			$this->tambahjurnal->update_status1($judul, $statusjurnal, $tgl_setuju);
 		}
 	}
+
+
+
+	public function jurnalhariini()
+	{
+      	$khususguru = tambahjurnal::with('namasiswa')->where('kd_guru',auth()->user()->kd_guru)->get();
+        $data7 = tambahjurnal::where('kd_dudi', auth()->user()->kd_dudi)
+                    ->whereDate('created_at', today())
+                    ->get();
+
+		$data = tambahjurnal::whereDate('created_at', today())->get();
+        $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
+        $guru = tambahjurnal::with('namasiswa')->where('kd_guru',auth()->user()->kd_guru)->get();
+		// $data7 = tambahjurnal::whereDate('created_at', Carbon::today())->get();
+		$tittle = 'jurnalhariini';
+
+		if(Auth()->user()->role == 'Dudi'){
+            return view('userdudi.tambahjurnal.jurnalhariini',compact('data','tittle','data7','data5'));
+        }else if(Auth()->user()->role == 'Guru'){
+            return view('userguru.tambahjurnal.jurnalhariini',compact('data','tittle','data7','guru','khususguru'));
+        }else if(Auth()->user()->role == 'Siswa'){
+            return view('user.tambahjurnal.jurnalhariini',compact('data','tittle','data7'));
+        }
+    }
+
 
 
 }

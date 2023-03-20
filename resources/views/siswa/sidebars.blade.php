@@ -50,12 +50,19 @@
                                 <span>Isi Jurnal</span>
                             </a>
                         </li>
+                        <br>
                         <ul> Absen</ul>
                         <br>
                         <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Absen Izin</span>
+                            </a>
+                        </li>
+                        <li class="{{ ($tittle === 'absensiswa') ? 'active': '' }}">
+                            <a href="/absensiswa">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Input Absen</span>
                             </a>
                         </li>
                         @endif
@@ -86,13 +93,49 @@
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
-                        <ul>Absen</ul>
+                        <li class="{{ ($tittle === 'jurnalhariini') ? 'active': '' }}">
+                            <a href="/jurnalhariini">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Jurnal Siswa Hari Ini</span>
+                        </a>
+                        </li>
+                        <br>
+                        <ul>Izin</ul>
+                        <br>
                         <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Data Izin Siswa</span>
                             </a>
                         </li>
+                        <li class="{{ ($tittle === 'hehe') ? 'active': '' }}">
+                            <a href="/izindaydudi">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Izin Siswa Hari Ini</span>
+                            </a>
+                        </li>
+                        <br>
+                        <ul>Absen</ul>
+                        <br>
+                        <li class="{{ ($tittle === 'setting') ? 'active': '' }}">
+                            <a href="/settingdudi">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Atur Waktu Absen</span>
+                            </a>
+                        </li>
+                        <li class="{{ ($tittle === 'iya') ? 'active': '' }}">
+                            <a href="/absendudi">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Absen Siswa</span>
+                            </a>
+                        </li>
+                        <li class="{{ ($tittle === 'dudiabsen') ? 'active': '' }}">
+                            <a href="/absendaydudi">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Absen Siswa Hari Ini</span>
+                            </a>
+                        </li>
+                        <br>
                         @endif
 
                         @if(Auth::user()->role == 'Guru')
@@ -122,11 +165,31 @@
                                 <span>Data Jurnal Siswa</span>
                             </a>
                         </li>
+                        <li class="{{ ($tittle === 'jurnalhariini') ? 'active': '' }}">
+                            <a href="/jurnalhariini">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Jurnal Siswa Hari Ini</span>
+                            </a>
+                        </li>
+                        <br>
                         <ul>Absen</ul>
+                        <br>
                         <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
                             <a href="/dataabsen">
                                 <i class="fa-solid fa-book"></i>
                                 <span>Data Izin Siswa</span>
+                            </a>
+                        </li>
+                        <li class="{{ ($tittle === 'leyselia') ? 'active': '' }}">
+                            <a href="/absenguru">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Absen Siswa</span>
+                            </a>
+                        </li>
+                        <li class="{{ ($tittle === 'teacherabsen') ? 'active': '' }}">
+                            <a href="/absendayguru">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Absen Siswa Hari Ini</span>
                             </a>
                         </li>
                         @endif

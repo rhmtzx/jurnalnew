@@ -11,12 +11,11 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Jurnal Seluruh Siswa</h4>
-                        <ul>
-                            <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
+                        <h4 class="card_title">Data Absen Siswa</h4>
+                        <ul>    
+                            <li><h6>Seluruh Absen Siswa Yang Dibimbing Ada Disini !!</h6></li></ul>
                             <br>
                             <div class="single-table">
-
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -25,54 +24,29 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Foto</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col" hidden>Deskripsi</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Pesan Jika Ditolak</th>
-                                            <th scope="col">Dibuat</th>
+                                            <th scope="col">Aksi</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php
                                         $no = 1;
                                         @endphp
+                                            @foreach($guru as $row5)
 
-                                            @foreach($data8 as $row8)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row8->namasiswa->namasiswa }}</td>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row8->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row8->judul }}</td>
-                                                <td hidden>{!! $row8->deskripsi !!}</td>
-                                                @if ($row8->statusjurnal == 'Telah Disetujui')
-                                                <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                                </td>
-                                                @elseif ($row8->statusjurnal == 'Menunggu Persetujuan')
-                                                <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @elseif ($row8->statusjurnal == 'Jurnal Ditolak')
-                                                <td>
-                                                    <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
-                                                </td>
-                                                @endif
+                                                <td>{{ $row5->namasiswa }}</td>
 
-                                                <td>{{ $row8->pesanjurnal}}</td>
-
-                                                <td>{{ $row8->created_at}}</td>
-
+                                                <td scope="row">
+                                                    <a href="/tampilabsenguru/{{ $row5->id }}"
+                                                        class="btn btn-social btn-social-outline-tw mb-3"><i class="fa-solid fa-eye"></i></a>
+                                                    </td>
                                                 </tr>
                                                 @endforeach
 
-
                                             </tbody>
                                         </table>
-                                        <a href="javascript:history.back()" class="btn btn-rounded btn-fixed-w btn-outline-danger mb-3">Kembali</a>
                                     </div>
                                 </div>
                             </div>

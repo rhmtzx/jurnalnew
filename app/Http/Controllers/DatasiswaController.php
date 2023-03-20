@@ -31,7 +31,8 @@ class DatasiswaController extends Controller
         // $keyword = $request->keyword;//
         // $datasearch = jurusan::where('namajurusan','LIKE','%'.$keyword.'%')->paginate(1);
 
-      if (isset($_GET['query'])) {
+        if(Auth()->user()->role == 'Admin'){
+            if (isset($_GET['query'])) {
             $search = $_GET['query'];
             $data = jurusan::where('namajurusan', 'LIKE', '%' . $search . '%')->paginate(1);
             $data->appends($request->all());
@@ -39,13 +40,8 @@ class DatasiswaController extends Controller
             $data = jurusan::paginate(4);
         }
         
-        return view('datasiswa.datasiswa',compact('data'));
-
-        
-
-
-        if(Auth()->user()->role == 'Admin'){
-            return view('datasiswa.datasiswa',compact('jurusan','data1'));
+        return view('datasiswa.datasiswa',compact('data','jurusan'));
+            // return view('datasiswa.datasiswa',compact('jurusan','data1'));
         }else if(Auth()->user()->role == 'Guru'){
             return view('userguru.datasiswa.datasiswa',compact('data2','jurusan','data3','tittle'));
         }else if(Auth()->user()->role == 'Dudi'){

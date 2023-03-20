@@ -37,8 +37,8 @@
                                         @php
                                         $no = 1;
                                         @endphp
-
-                                            @foreach($data8 as $row8)
+                                            @if(count($data7)>0)
+                                            @foreach($data7 as $row8)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row8->namasiswa->namasiswa }}</td>
@@ -61,14 +61,13 @@
                                                     <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
                                                 </td>
                                                 @endif
-
-                                                <td>{{ $row8->pesanjurnal}}</td>
+                                                <td>{{ $row8->pesanjurnal }}</td>
 
                                                 <td>{{ $row8->created_at}}</td>
 
                                                 </tr>
                                                 @endforeach
-
+                                                @endif
 
                                             </tbody>
                                         </table>

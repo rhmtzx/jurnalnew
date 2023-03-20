@@ -4,24 +4,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
     <div class="main-content-inner">
         <div class="row">
             <!-- Progress Table start -->
+            @foreach($setting as $awok)
+            <div class="col-6 mt-4">
+                <div class="card">
+                        <div class="card-body">
+                            <h4 class="">Absen Masuk</h4>
+                            <hr>
+                            <p class="card-text"><strong>Jam Masuk : {{$awok->masuk}}</strong></p>
+                            <form method="POST" class="btn btn-fixed-w btn-outline-primary mb-3" action="{{ route('absenmasuk') }}">
+                                @csrf
+                                <button type="submit"><strong>M a s u k</strong></button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+            @endforeach
+            @foreach($setting as $awok)
+            <div class="col-6 mt-4">
+                <div class="card">
+                        <div class="card-body">
+                            <h4 class="">Absen Keluar</h4>
+                            <hr>
+                            <p class="card-text"><strong>Jam Keluar : {{$awok->keluar}}</strong></p>
+                            <form method="POST" class="btn btn-fixed-w btn-outline-primary mb-3" action="{{ route('absenkeluar') }}">
+                                @method('put')
+                                @csrf
+                                <button type="submit"><strong>K e l u a r</strong></button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+            @endforeach
+            
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Jurnal Siswa</h4>
+                        <h4 class="card_title">Data Seluruh Absen</h4>
                         <ul>
-                            <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
+                            <li><h6>Data Absen Anda Masuk Disini !!</h6></li></ul>
                             <br>
                             <div class="single-table">
-                                <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
-                                <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a>
-                                <input type="text" name="daterange" value="" />
-                               <div class="table-responsive">
-                            <div class="single-table">
-                                    <br>
                                 <div class="table-responsive">
                                     <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
@@ -29,62 +54,54 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col" hidden>Nama Siswa</th>
-                                            <th scope="col">Foto</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col">Deskripsi</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Pesan Jika Ditolak</th>
                                             <th scope="col">Tanggal</th>
-                                            <th scope="col">Aksi</th>
-
-
+                                            <th scope="col">Nama Siswa</th>
+                                            <th scope="col">Waktu Masuk</th>
+                                            <th scope="col">Status Masuk</th>
+                                            <th scope="col">Waktu Keluar</th>
+                                            <th scope="col">Status Keluar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php
                                         $no = 1;
                                         @endphp
-                                        @foreach ($data as $row)
-                                        <tr>
-                                            <th scope="row">{{ $no++ }}</th>
-                                            <td hidden>{{ $row->namasiswa->namasiswa }}</td>
-                                            <td>
-                                                <a class="image-popup" href="{{ asset('fotodudi/' . $row->foto) }}">
-                                                    <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/' . $row->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </a>
-                                            </td>
-                                            <td>{{ $row->judul }}</td>
-                                            <td class="td-ellipsis">{!! $row->deskripsi !!}</td>
-                                                @if ($row->statusjurnal == 'Telah Disetujui')
+                                            @foreach($absen as $hihi)
+                                            <tr>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <th>{{$hihi->created_at}}</th>
+                                                
+                                                <th>{{$hihi->namasiswa->namasiswa}}</th>
+
+                                                <th>{{$hihi->masuk}}</th> <!-- Waktu Masuk -->
+
+                                                @if ($hihi->statusmasuk == 'Hadir')
                                                 <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
+                                                    <span class="badge badge-success badge-success ">Hadir</span>
                                                 </td>
-                                                @elseif ($row->statusjurnal == 'Menunggu Persetujuan')
+                                                @elseif ($hihi->statusmasuk == 'Terlambat')
                                                 <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @elseif ($row->statusjurnal == 'Jurnal Ditolak')
-                                                <td>
-                                                    <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
+                                                    <span class="badge badge-success badge-danger ">Terlambat</span>
                                                 </td>
                                                 @endif
-                                                <td>{{ $row->pesanjurnal}}</td>
-                                                <td>{{ $row->created_at}}</td>
-                                            <td scope="row">
-                                                <a href="/tampiltambahjurnal/{{ $row->id }}"
-                                                    class="btn btn-warning"><i
-                                                    class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                    {{-- <a href="#" class="btn btn-danger deletetambahjurnal"
-                                                    data-id="{{ $row->id }}"
-                                                    data-judul="{{ $row->judul }}"><i
-                                                    class="fa-sharp fa-solid fa-trash"></i></a> --}}
+
+
+
+                                                <th>{{$hihi->keluar}}</th> <!-- Waktu Keluar -->
+
+                                                @if ($hihi->statuskeluar == 'Belum Waktunya')
+                                                <td>
+                                                    <span class="badge badge-success badge-danger ">Belum Waktunya</span>
                                                 </td>
-                                            </tr>
+                                                @elseif ($hihi->statuskeluar == 'Telah Keluar')
+                                                <td>
+                                                    <span class="badge badge-success badge-success ">Telah Keluar</span>
+                                                </td>
+                                                @endif
+                                                
+                                            </tbody>
                                             @endforeach
 
-                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -119,18 +136,41 @@
             });
         </script>
 
+<script>
+  var button = document.getElementById("masuk");
+  var url = button.dataset.url;
+  
+  button.addEventListener("click", function() {
+    // Kirim request AJAX ke URL menggunakan jQuery
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: {_token: '{{ csrf_token() }}'},
+      success: function(data) {
+        // Tampilkan pesan sukses dan reload halaman
+        alert(data.success);
+        location.reload();
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        // Tampilkan pesan error jika terjadi kesalahan
+        alert("Terjadi kesalahan: " + xhr.status + " " + xhr.statusText);
+      }
+    });
+  });
+</script>
+
+
+<script>
+  var button = document.getElementById("keluar");
+  button.addEventListener("click", function() {
+    // kode yang ingin dijalankan saat button diklik
+  });
+</script>
+
     </body>
+
     <script>
-        $(function() {
-          $('input[name="daterange"]').daterangepicker({
-            opens: 'left'
-          }, function(start, end, label) {
-            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-          });
-        });
-        </script>
-    <script>
-        $('.deletetambahjurnal').click(function() {
+        $('.deletesetting').click(function() {
             var kategoriid = $(this).attr('data-id');
             var kategori = $(this).attr('data-kategori');
             swal({
@@ -142,7 +182,7 @@
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/deletetambahjurnal/" + kategoriid + ""
+                    window.location = "/deletesetting/" + kategoriid + ""
                     swal("Data Berhasil Di Hapus", {
                         icon: "success",
                     });
@@ -186,8 +226,7 @@
         codeviewFilter: true,
         codeviewIframeFilter: true
     });
-});
+    });
     </script>
 
-
-    @endsection
+@endsection

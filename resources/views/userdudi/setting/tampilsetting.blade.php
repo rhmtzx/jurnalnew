@@ -11,68 +11,27 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Jurnal Seluruh Siswa</h4>
+                        <h4 class="card_title">Edit Waktu Masuk Dan Keluar</h4>
                         <ul>
-                            <li><h6>Seluruh Jurnal Siswa Ada Disini</h6></li></ul>
-                            <br>
+                            <!-- <li><h6>Tambahkan Waktu Untuk Masuk Dan Keluar</h6></li></ul> -->
+                            
                             <div class="single-table">
-
                                 <div class="table-responsive">
                                     <br>
-                                    <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Foto</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col" hidden>Deskripsi</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <th scope="col">Pesan Jika Ditolak</th>
-                                            <th scope="col">Dibuat</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @php
-                                        $no = 1;
-                                        @endphp
+                                    <form action="/updatedatasetting/{{ $data->id }}" method="POST" enctype="multipart/form-data" >
+                                        @csrf
+                                                <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Jam Masuk</h6></label>
+                                                <input class="form-control form-control-lg input-rounded mb-4" value="{{ $data->masuk }}" name="masuk" type="time" placeholder="Masukan Judul">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Jam Keluar</h6></label>
+                                                <input class="form-control form-control-lg input-rounded mb-4" name="keluar" type="time" value="{{ $data->keluar }}" placeholder="Masukan Judul">
+                                            </div>
 
-                                            @foreach($data8 as $row8)
-                                            <tr>
-                                                <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row8->namasiswa->namasiswa }}</td>
-                                                <td>
-                                                    <img src="{{ asset('fotodudi/' . $row8->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </td>
-                                                <td>{{ $row8->judul }}</td>
-                                                <td hidden>{!! $row8->deskripsi !!}</td>
-                                                @if ($row8->statusjurnal == 'Telah Disetujui')
-                                                <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
-                                                </td>
-                                                @elseif ($row8->statusjurnal == 'Menunggu Persetujuan')
-                                                <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @elseif ($row8->statusjurnal == 'Jurnal Ditolak')
-                                                <td>
-                                                    <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
-                                                </td>
-                                                @endif
-
-                                                <td>{{ $row8->pesanjurnal}}</td>
-
-                                                <td>{{ $row8->created_at}}</td>
-
-                                                </tr>
-                                                @endforeach
-
-
-                                            </tbody>
-                                        </table>
-                                        <a href="javascript:history.back()" class="btn btn-rounded btn-fixed-w btn-outline-danger mb-3">Kembali</a>
+                                           <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Update Data</button>
+                                            <a href="javascript:history.back()" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
+                                    </form>
                                     </div>
                                 </div>
                             </div>

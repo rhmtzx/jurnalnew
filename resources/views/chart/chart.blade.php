@@ -37,7 +37,21 @@
                         </div>
                     </div>
                     <!-- end page title -->
-
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header" >
+                                <div id="chartStatus"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div id="grafikjurnal">  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header">
@@ -47,45 +61,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-12">
+                    <!-- <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header">
-                                <div id="statusabsen">
-                                    
+                                <div id="statusabsen">         
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-header" >
-                                <!-- <form action="/filter" method="GET" class="form-group" style="margin-left: 1400px">
-                                                        @csrf
-                                                        <select class="form-control" id="tahunPd" name="year">
-                                                            <?php
-                                                                $year = date('Y');
-                                                                $min = $year - 1;
-                                                                $max = $year;
-                                                                for ($i = $max; $i >= $min; $i--){
-                                                                    echo '<option value=' . $i . '>' . $i . '</option>';
-                                                                }
-                                                            ?>
-                                                        </select>
-                                                    </form> -->
-                                <div id="chartStatus"></div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                     <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <div id="grafikjurnal">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     
                     </div>

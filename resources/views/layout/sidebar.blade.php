@@ -37,13 +37,7 @@
                             </a>
                         </li>
 
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Dudi</span></li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="/datadudi">
-                                <i class="ri-building-fill"></i> <span data-key="t-widgets">Data Dudi</span>
-                            </a>
-                        </li>
+                        
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Data Sekolah</span></li>
 
                         <!-- <li class="nav-item">
@@ -71,14 +65,20 @@
                                 <i class="ri-git-repository-fill"></i> <span data-key="t-widgets">Plotingan Siswa </span>
                             </a>
                         </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Dudi</span></li>
 
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data User</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/datadudi">
+                                <i class="ri-building-fill"></i> <span data-key="t-widgets">Data Dudi</span>
+                            </a>
+                        </li>
+                        <!-- <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data User</span></li>
 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="/datauser">
                                 <i class="ri-contacts-book-2-fill"></i> <span data-key="t-widgets">Data User</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Data Grafik</span></li>
 
                         <li class="nav-item">

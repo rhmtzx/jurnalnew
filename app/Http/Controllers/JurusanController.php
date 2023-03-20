@@ -26,10 +26,12 @@ class JurusanController extends Controller
 
              $this->validate($request,[
                  'namajurusan' => 'required|unique:jurusans',
+                  'foto' => 'required|mimes:jpg,png,jpeg',
              ],[
                  'namajurusan.unique' => 'Nama Jurusan Sudah Ada',
                  'namajurusan.required' => 'Harus diisi',
-
+                 'foto.required' => 'Harus diisi',
+                 'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg',
              ]);
 
             $data = jurusan::create([
@@ -73,11 +75,12 @@ class JurusanController extends Controller
                 return back();
             }
             $data->delete();
+            unlink(public_path('fotodudi/' . $data->foto));
 
             return redirect()->route('datajurusan')->with('success', 'Data Berhasil Di Delete');
         }
 
-        public function deleteall()
+        public function deletealll()
         {
             Schema::disableForeignKeyConstraints();
             \App\Models\jurusan::truncate();

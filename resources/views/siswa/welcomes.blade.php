@@ -143,46 +143,7 @@
                     </div>
                 </div>
             @endif
-            <!-- @if(auth()->user()->role == 'Siswa')
-                <div class="col-lg-3 col-md-6 stretched_card pr-mob-3">
-                    <div class="card bg-dark analytics_card">
-                        <div class="card-body">
-                            <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
-                                <div class="icon-rounded">
-                                    <i class="feather ft-users text-dark"></i>
-                                </div>
-                                <div class="text-white">
-                                    <p class="mt-xl-0 text-xl-left mb-2">Total Guru</p>
-                                    <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$guru}}</h3>
-                                        <small class="stats_icon"><span class="feather ft-chevron-up"></span></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif -->
-            <!-- @if(auth()->user()->role == 'Guru')
-                <div class="col-lg-3 col-md-6 stretched_card pr-mob-3">
-                    <div class="card bg-dark analytics_card">
-                        <div class="card-body">
-                            <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
-                                <div class="icon-rounded">
-                                    <i class="feather ft-users text-dark"></i>
-                                </div>
-                                <div class="text-white">
-                                    <p class="mt-xl-0 text-xl-left mb-2">Total Guru</p>
-                                    <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$guru}}</h3>
-                                        <small class="stats_icon"><span class="feather ft-chevron-up"></span></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif -->
+            
                 <!-- Blockquotes area -->
                 <div class="col-lg-12 mt-4 stretched_card">
                     <div class="card">

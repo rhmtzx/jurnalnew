@@ -11,9 +11,9 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Absen Siswa</h4>
+                        <h4 class="card_title">Data Izin Siswa</h4>
                         <ul>
-                            <li><h6>Seluruh Data Absen Ada Disini</h6></li>
+                            <li><h6>Seluruh Data Izin Ada Disini</h6></li>
                         </ul>
                             <br>
                             <div class="single-table">
@@ -30,7 +30,7 @@
                                             <th scope="col">Keterangan</th>
                                             <th scope="col">Status Absen</th>
                                             <th scope="col">Approve Absen</th>
-                                            <th scope="col">Absen Dibuat</th>
+                                            <th scope="col">Tanggal</th>
                                             <th scope="col">Aksi</th>
                                             </tr>
                                     </thead>

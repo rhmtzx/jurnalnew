@@ -245,7 +245,7 @@ class LoginController extends Controller
             'namakepdik'=> 'required|unique:datadudis',
             'alamatdudi'=> 'required',
             'notelepondudi'=> 'required',
-            'foto' => 'required','unique:posts',
+            'foto' => 'required|image|mimes:jpg,png,jpeg','unique:posts',
 
             'email' => 'required|unique:users',
             'password' => 'required|confirmed|min:6',
@@ -267,6 +267,8 @@ class LoginController extends Controller
             'password.min' => 'Isi Password Minimal 6 Huruf !!',
             'password.confirmed' => 'Sandi Tidak Sama!!',
             'foto.required' => 'Upload Minimal 1 Foto !!',
+            'foto.image' => 'Harus Berupa Foto !!',
+            'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
 
         ]);
 
@@ -356,6 +358,13 @@ class LoginController extends Controller
         $data2 = datasiswa::with('namasiswa')->where('user_id', Auth::user()->id);
         $jurusan = jurusan::all();
 
+        $this->validate($request,[
+            'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
+        ],[
+            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!', 
+            'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
+        ]);
+
         $data->update([
             'name' => $request->name,
             'nissiswa' => $request->nissiswa,
@@ -366,21 +375,35 @@ class LoginController extends Controller
             'email' => $request->email,
             'id_jurusan' => $request->id_jurusan,
         ]);
+        
+if ($request->hasFile('foto')) {
+    $file = $request->file('foto');
+    $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+    if ($data->foto != 'default.jpg') {
+        // Hapus file lama
+        $path = public_path('fotodudi/' . $data->foto);
+        if (file_exists($path)) {
+            unlink($path);
+        }
+    } else {
+        // Gunakan nama file default
+        $filename = 'default.jpg';
+    }
+    $file->move('fotodudi/', $filename);
+    $data->foto = $filename;
+    $data->save();
+}
+
         $data2->update([
-            'namasiswa' => $request->name,
-            'nissiswa' => $request->nissiswa,
-            'alamatsiswa' => $request->alamatsiswa,
-            'notlpsiswa' => $request->notlpsiswa,
-            'kd_guru' => $request->kd_guru,
-            'kd_dudi' => $request->kd_dudi,
-            'namajurusan' => $request->id_jurusan,
+            'namasiswa' => $data->name,
+            'nissiswa' => $data->nissiswa,
+            'alamatsiswa' => $data->alamatsiswa,
+            'notlpsiswa' => $data->notlpsiswa,
+            'kd_guru' => $data->kd_guru,
+            'kd_dudi' => $data->kd_dudi,
+            'namajurusan' => $data->id_jurusan,
 
         ]);
-        if ($request->hasfile('foto')) {
-            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-            $data->foto = $request->file('foto')->getClientOriginalName();
-            $data->save();
-        }
         return redirect()->route('profil')->with('success', 'Profil Siswa Berhasil Di Update !');
     }
 
@@ -391,6 +414,13 @@ class LoginController extends Controller
         $data2 = dataguru::with('namaguru')->where('user_id', Auth::user()->id);
         // $data2= Dataguru::find($data->guru_id);
 
+        $this->validate($request,[
+            'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
+        ],[
+            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!', 
+            'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
+        ]);
+
         $data->update([
             'nip' => $request->nip,
             'name' => $request->name,
@@ -398,25 +428,25 @@ class LoginController extends Controller
             'notlpn' => $request->notlpn,
             'kd_guru' => $request->kd_guru,
             'email' => $request->email,
-
         ]);
+        if ($request->hasFile('foto')) {
+                unlink(public_path('fotodudi/' . $data->foto));
+                $file = $request->file('foto');
+                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+                $file->move('fotodudi/', $filename);
+                $data->foto = $filename;
+                $data->save();
+        }
         $data2->update([
-            'nip' => $request->nip,
-            'namaguru' =>$request->name,
-            'alamat' => $request->alamat,
-            'notlpn' => $request->notlpn,
-            'kd_guru' => $request->kd_guru,
-
+            'nip' => $data->nip,
+            'namaguru' =>$data->name,
+            'alamat' => $data->alamat,
+            'notlpn' => $data->notlpn,
+            'kd_guru' => $data->kd_guru,
         ]);
         // $data2->update([
         //     'namaguru'=>$request->name
         // ]);
-
-        if ($request->hasfile('foto')) {
-            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-            $data->foto = $request->file('foto')->getClientOriginalName();
-            $data->save();
-        }
         return redirect()->route('profil')->with('success', 'Profil Guru Berhasil Di Update !');
     }
 
@@ -427,7 +457,16 @@ class LoginController extends Controller
         $data2 = datadudi::with('namadudi')->where('user_id', Auth::user()->id);
 
         // $data2= Datadudi::Where($data->user_id);
-
+        $this->validate($request,[
+            'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
+            'alamatdudi' => 'required',
+        ],[
+            'alamatdudi.required' => 'Harus Diisi !!', 
+            'foto.image' => 'Foto Harus Berupa Foto !!', 
+            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!', 
+            'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
+        ]);
+        
         $data->update([
             'name' => $request->name,
             'alamatdudi' => $request->alamatdudi,
@@ -438,18 +477,24 @@ class LoginController extends Controller
 
             // 'foto' => $request->foto,
         ]);
-        $data2->update([
-            'namadudi' => $request->name,
-            'alamatdudi' => $request->alamatdudi,
-            'kd_dudi' => $request->kd_dudi,
-            'namakepdik' => $request->namakepdik,
-            'notelepondudi' => $request->notelepondudi,
-        ]);
-        if ($request->hasfile('foto')) {
-            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-            $data->foto = $request->file('foto')->getClientOriginalName();
-            $data->save();
+        if ($request->hasFile('foto')) {
+                unlink(public_path('fotodudi/' . $data->foto));
+                $file = $request->file('foto');
+                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+                $file->move('fotodudi/', $filename);
+                $data->foto = $filename;
+                $data->save();
         }
+
+        $data2->update([
+            'namadudi' => $data->name,
+            'alamatdudi' => $data->alamatdudi,
+            'kd_dudi' => $data->kd_dudi,
+            'namakepdik' => $data->namakepdik,
+            'notelepondudi' => $data->notelepondudi,
+            'foto' => $data->foto,
+        ]);
+        
         return redirect()->route('profil')->with('success', 'Profil Dudi Berhasil Di Update !');
 
     }
