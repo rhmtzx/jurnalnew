@@ -17,6 +17,10 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->time('masuk');
             $table->time('keluar');
+
+            $table->time('masukk')->nullable();
+            $table->time('keluarr')->nullable();
+
             $table->string('kd_dudi');
             $table->string('user_id');
             $table->timestamps();

@@ -20,13 +20,27 @@
                                     <br>
                                     <form action="/updatedatasetting/{{ $data->id }}" method="POST" enctype="multipart/form-data" >
                                         @csrf
-                                                <div class="mb-3">
+                                            <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Jam Masuk</h6></label>
                                                 <input class="form-control form-control-lg input-rounded mb-4" value="{{ $data->masuk }}" name="masuk" type="time" placeholder="Masukan Judul">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Jam Keluar</h6></label>
                                                 <input class="form-control form-control-lg input-rounded mb-4" name="keluar" type="time" value="{{ $data->keluar }}" placeholder="Masukan Judul">
+                                            </div>
+
+                                            <!-- SHIFT KEDUA -->
+                                            <label><strong><em>SHIFT KEDUA (ABAIKAN JIKA TIDAK ADA)</em></strong></label>
+                                            <br>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Jam Masuk</h6></label>
+                                                <input class="form-control form-control-lg input-rounded mb-4"
+                                                 name="masukk" type="time" value="{{$data->masukk}}">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Jam Keluar</h6></label>
+                                                <input class="form-control form-control-lg input-rounded mb-4"
+                                                 name="keluarr" type="time" value="{{$data->keluarr}}">
                                             </div>
 
                                            <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Update Data</button>

@@ -20,13 +20,38 @@
                                     <br>
                                     <form action="/insertsetting" method="POST" enctype="multipart/form-data" >
                                         @csrf
+                                            <!-- SHIFT PERTAMA -->
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Jam Masuk</h6></label>
                                                 <input class="form-control form-control-lg input-rounded mb-4" name="masuk" type="time" placeholder="Masukan Judul">
+                                            @error('masuk')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label"><h6>Jam Keluar</h6></label>
                                                 <input class="form-control form-control-lg input-rounded mb-4" name="keluar" type="time" placeholder="Masukan Judul">
+                                            @error('keluar')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            </div>
+                                            <br>
+                                            <!-- SHIFT KEDUA -->
+                                            <label><strong><em>SHIFT KEDUA (ABAIKAN JIKA TIDAK ADA)</em></strong></label>
+                                            <br>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Jam Masuk</h6></label>
+                                                <input class="form-control form-control-lg input-rounded mb-4"
+                                                 name="masukk" type="time" placeholder="Masukan Judul">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Jam Keluar</h6></label>
+                                                <input class="form-control form-control-lg input-rounded mb-4"
+                                                 name="keluarr" type="time" placeholder="Masukan Judul">
                                             </div>
 
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>

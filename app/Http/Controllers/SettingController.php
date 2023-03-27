@@ -23,6 +23,15 @@ class SettingController extends Controller
     }
 
    public function insertsetting(Request $request){
+
+    $this->validate($request,[
+        'masuk' => 'required',
+        'keluar' => 'required',
+    ],[
+        'masuk.required' => 'Waktu Masuk Harus Diisi !!',
+        'keluar.required' => 'Waktu Keluar Harus Diisi !!',
+    ]);
+
     $existingData = Setting::where('kd_dudi', auth()->user()->kd_dudi)->first();
 
     if($existingData){
@@ -31,6 +40,10 @@ class SettingController extends Controller
         $data = Setting::create([
             'masuk' => $request->masuk,
             'keluar' => $request->keluar,
+
+            'masukk' => $request->masukk,
+            'keluarr' => $request->keluarr,
+
             'kd_dudi' => auth()->user()->kd_dudi,
             'user_id' => auth()->user()->id,
         ]);
@@ -50,7 +63,8 @@ class SettingController extends Controller
         $data->update([
                 'masuk' =>$request->masuk,
                 'keluar' =>$request->keluar,
-
+                'masukk' =>$request->masukk,
+                'keluarr' =>$request->keluarr,
             ]);
 
             return redirect()->route('datasetting')->with('success', 'Data Berhasil Diupdate');

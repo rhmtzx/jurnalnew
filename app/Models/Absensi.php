@@ -11,7 +11,14 @@ class Absensi extends Model
     protected $guarded = [];
     protected $dates = ['created_at'];
 
-    public function namasiswa(){
+    public function namasiswa()
+    {
         return $this->belongsTo(datasiswa::class, 'usersiswa', 'id');
     }
+
+    public function user()
+	{
+    	return $this->belongsTo(User::class);
+	}
+
 }

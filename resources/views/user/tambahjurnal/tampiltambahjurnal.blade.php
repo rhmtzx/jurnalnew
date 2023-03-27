@@ -12,12 +12,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card_title">Edit Data Jurnal</h4>
+                        <br>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
 
                             <div class="single-table">
                                 <div class="table-responsive">
-                                   <div id="content" class="main-content">
 
 
 
@@ -85,11 +85,11 @@
                                             <br>
 
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Update Data</button>
-                                            <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
+                                            <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3"><i class="ion-ios-undo"></i>Kembali</a>
 
                                         </form>
 
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

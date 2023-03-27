@@ -37,4 +37,8 @@ class tambahjurnal extends Model
     {
         return $this->hasMany(Jurnals::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }       
 }

@@ -65,6 +65,10 @@ Route::group(['middleware' => ['auth','verified', 'hakakses:Siswa,Guru,Dudi']], 
     Route::get('/dashboard', function () {
 
     $user = User::count();
+    // $count = Tambahjurnal::whereHas('datasiswa', function($query) {
+    //                       $query->where('namasiswa', auth()->user()->namasiswa);
+    //                   })
+    //                   ->count();
 
     $jurusan = jurusan::count();
     $siswa = datasiswa::count();
@@ -203,6 +207,9 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     Route::get('/absensiswa', [AbsensiController::class, 'absensiswa'])->name('absensiswa');
     Route::post('/absenmasuk', [AbsensiController::class, 'absenmasuk'])->name('absenmasuk');
     Route::put('/absenkeluar', [AbsensiController::class, 'absenkeluar'])->name('absenkeluar');
+    Route::post('/absenmasukdua', [AbsensiController::class, 'absenmasukdua'])->name('absenmasukdua');
+    Route::put('/absenkeluardua', [AbsensiController::class, 'absenkeluardua'])->name('absenkeluardua');
+    Route::get('/today', [AbsensiController::class, 'today'])->name('today');  
     // A b s e n D u d i
     Route::get('/absendudi', [AbsensiController::class, 'absendudi'])->name('absendudi');
     Route::get('/tampilabsendudi/{id}', [AbsensiController::class, 'tampilabsendudi'])->name('tampilabsendudi');
@@ -211,7 +218,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     // A b s e n G u r u
     Route::get('/absenguru', [AbsensiController::class, 'absenguru'])->name('absenguru');
     Route::get('/tampilabsenguru/{id}', [AbsensiController::class, 'tampilabsenguru'])->name('tampilabsenguru');
-    Route::get('/absendayteacher', [AbsensiController::class, 'absendayteacher'])->name('absendayteacher');
+    Route::get('/absendayguru', [AbsensiController::class, 'absendayguru'])->name('absendayguru');
     Route::get('/izindayguru', [AbsensiController::class, 'izindayguru'])->name('izindayguru');
 
 

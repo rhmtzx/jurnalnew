@@ -71,14 +71,15 @@ class DataabsenController extends Controller
             $this->validate($request,[
                   'keterangan' => 'required',
                   // 'statusjurnal' => 'required',
-                  // 'foto' => 'required',
+                  'foto' => 'required|mimes:jpg,png,jpeg',
                   'usersiswa' => 'required',
 
              ],[
-                 'keterangan.required' => 'Silahkan Pilih Salah Satu',
+                 'keterangan.required' => 'Silahkan Pilih Salah Satu !!',
                  // 'statusjurnal.required' => 'Silahkan Pilih',
-                 // 'foto.required' => 'Harus diisi',
-                 'usersiswa.required' => 'Harus diisi',
+                 'foto.mimes' => 'Foto harus berupa file jpg,png atau jpeg !!',
+                 'foto.required' => 'Foto harus diisi !!',
+                 'usersiswa.required' => 'Harus diisi !!',
 
              ]);
 
@@ -87,7 +88,7 @@ class DataabsenController extends Controller
                                ->whereDate('created_at', Carbon::today())
                                ->first();
              if ($absensi) {
-                return redirect()->route('dataabsen')->with('error', 'Anda Telah Absen Hari Ini !!');
+                return redirect()->route('dataabsen')->with('error', 'Anda Telah Izin Hari Ini !!');
              }
 
              

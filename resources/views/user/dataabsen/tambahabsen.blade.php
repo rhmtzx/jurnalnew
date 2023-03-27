@@ -17,7 +17,7 @@
 
                             <div class="single-table">
                                 <div class="table-responsive">
-                                 <div id="content" class="main-content">
+                                 
                                     <form action="/insertabsen" method="POST" enctype="multipart/form-data" >
                                         @csrf
                                         <br>
@@ -51,11 +51,6 @@
 
 
                                 <label class="col-form-label"><h6>Keterangan :</h6></label>
-                                {{-- <div class="custom-control custom-radio primary-radio">
-                                    <input type="radio" id="Hadir" name="keterangan" value="Hadir" class="custom-control-input">
-                                    <label class="custom-control-label" for="Hadir">Hadir</label>
-                                </div>
-                                 --}}
                                 <div class="custom-control custom-radio primary-radio">
                                     <input type="radio" id="Izin" name="keterangan" value="Izin" class="custom-control-input">
                                     <label class="custom-control-label" for="Izin">Izin</label>
@@ -69,22 +64,6 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                 <br>
-
-                                            <!-- <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label"><h6>Keterangan</h6></label>
-                                                <input type="text" name="keterangan" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Keterangan">
-                                            </div>
-                                            @error('keterangan')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
-                                            <br> -->
-
-                                            <!-- <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label"><h6>Status Jurnal</h6></label>
-                                                <input type="text" name="statusjurnal" class="form-control form-control-lg input-rounded mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi Status Jurnal">
-                                            </div> -->
-
-                                            <!-- Status Jurnal -->
                                             <div class="mb-3">
                                                 <input type="hidden" class="form-control form-control-lg input-rounded mb-4" name="statusjurnal" type="text" placeholder="Masukan Status Jurnal">
                                             </div>
@@ -95,16 +74,18 @@
                                                 </label>
                                                 <br>
                                                 <input type="file" name="foto" class="form-control">
-                                                </div>
+                                                @error('foto')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
                                             <a for="exampleInputEmail1" class="form-label">
-                                                <label><em>Info : Abaikan Foto Jika Tidak Sakit Atau Izin !!</em></label></a>
                                             <br>
                                             <br>
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>
-                                            <a href="/dataabsen" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
+                                            <a href="/dataabsen" class="btn btn-rounded btn-fixed-w btn-danger mb-3"><i class="ion-ios-undo"></i>Kembali</a>
                                         </form>
 
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

@@ -75,8 +75,8 @@
                                                     <input type="file" name="foto" class="form-control">
                                                 </div>
                                                 <br>
-                                                <button type="submit" class="btn btn-primary">Submit Data</button>
-                                                <a href="/dataabsen" class="btn btn-danger mb-10">Kembali</a>
+                                                <button type="submit" class="btn btn-rounded btn-fixed-w btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>
+                                                <a href="/dataabsen" class="btn btn-rounded btn-fixed-w btn-danger mb-3"><i class="ion-ios-undo"></i>Kembali</a>
 
                                             </form>
 

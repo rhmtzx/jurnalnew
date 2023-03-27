@@ -12,12 +12,13 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card_title">Tambah Data Jurnal</h4>
+                        <br>
                         <ul>
                             <!-- <li><h6>Seluruh Siswa Ada Disini</h6></li></ul> -->
 
                             <div class="single-table">
                                 <div class="table-responsive">
-                                   <div id="content" class="main-content">
+                                   
 
 
 
@@ -37,7 +38,7 @@
                                             </div>
                                             @enderror
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Nama Siswa</label>
+                                                <label for="exampleInputEmail1" class="form-label"><h6>Nama Siswa</h6></label>
                                                 @foreach ( $data as $c)
                                                 {{-- @dd($b); --}}
                                                 <input type="text" name="" class="form-control form-control-lg input-rounded mb-4"
@@ -97,11 +98,11 @@
                                             <br>
                                             <br>
                                             <button type="submit" class="btn btn-rounded btn btn-primary mb-3"><i class="ion-paper-airplane"></i>Submit Data</button>
-                                            <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3">Kembali</a>
+                                            <a href="/datatambahjurnal" class="btn btn-rounded btn-fixed-w btn-danger mb-3"><i class="ion-ios-undo"></i>Kembali</a>
 
                                         </form>
 
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
