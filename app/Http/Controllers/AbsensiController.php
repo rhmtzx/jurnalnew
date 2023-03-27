@@ -80,7 +80,7 @@ public function absenmasuk(Request $request)
 {
 	$waktu = Setting::where('kd_dudi',auth()->user()->kd_dudi)->first();
 	$status = 'Belum Waktunya';
-	if(Carbon::now() > $waktu->keluar){
+	if(Carbon::now() < $waktu->keluar){
 		$status = 'Telah Keluar';
 	}
     // Ambil data user yang sedang login
@@ -196,4 +196,4 @@ public function absenmasuk(Request $request)
 
 		return view('userguru.dataabsen.izinhariini',compact('data7','tittle'));
 	}
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+}
