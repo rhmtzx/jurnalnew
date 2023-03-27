@@ -148,10 +148,10 @@
                 <div class="col-lg-12 mt-4 stretched_card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card_title">Quotes Singkat Pendidikan</h4>
+                            <h4 class="card_title"></h4>
                             <blockquote class="blockquote">
-                                <p class="mb-3">" Pendidikan Adalah Teman Yang Baik, Seseorang Yang Terdidik Akan Dihormati Di Manapun, Pendidikan Juga Mengalahkan Kecantikan Dan Jiwa Muda. "</p>
-                                <footer class="blockquote-footer">Chanakya
+                                <p class="mb-3">" Sebuah jurnal adalah buku harian yang menjadi saksi perjalanan hidupmu. Setiap hal yang kamu tulis di dalamnya akan menjadi kenangan berharga yang dapat diingat sepanjang hidup. Jangan pernah meremehkan kekuatan dari sebuah jurnal, karena di dalamnya terdapat kekuatan yang mampu mengubah hidupmu. Setiap pengalaman yang kamu alami, baik itu suka atau duka, dan gunakan jurnalmu sebagai kanvas untuk mewarnai kehidupanmu dengan pengalaman-pengalaman yang indah yang pernah kamu alami. "</p>
+                                <footer class="blockquote-footer">UNKNOWN
                                     
                                 </footer>
                             </blockquote>

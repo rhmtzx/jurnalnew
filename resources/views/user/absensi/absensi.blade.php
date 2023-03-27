@@ -38,6 +38,41 @@
                 </div>
             </div>
             @endforeach
+
+@foreach($setting as $poke)
+@if(!empty($poke->masukk))
+    <div class="col-6 mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="">Absen Masuk (SHIFT KEDUA)</h4>
+                <hr>
+                    <p class="card-text"><strong>Jam Masuk : {{$poke->masukk}}</strong></p>
+                    <form method="POST" class="btn btn-fixed-w btn-outline-primary mb-3" action="{{ route('absenmasukdua') }}">
+                        @csrf
+                        <button type="submit"><strong>M a s u k</strong></button>
+                    </form>
+            </div>
+        </div>
+    </div>
+@endif
+@if(!empty($poke->keluarr))
+    <div class="col-6 mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="">Absen Keluar (SHIFT KEDUA)</h4>
+                <hr>
+                    <p class="card-text"><strong>Jam Keluar : {{$poke->keluarr}}</strong></p>
+                    <form method="POST" class="btn btn-fixed-w btn-outline-primary mb-3" action="{{ route('absenkeluardua') }}">
+                        @method('put')
+                        @csrf
+                        <button type="submit"><strong>K e l u a r</strong></button>
+                    </form>
+            </div>
+        </div>
+    </div>
+@endif
+@endforeach
+
             
             <div class="col-12 mt-4">
                 <div class="card">

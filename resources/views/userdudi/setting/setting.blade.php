@@ -31,6 +31,8 @@
                                             <th scope="col">#</th>
                                             <th scope="col">Masuk</th>
                                             <th scope="col">Keluar</th>
+                                            <th scope="col">Masuk 2</th>
+                                            <th scope="col">Keluar 2</th>
                                             <th scope="col">Dibuat</th>
                                             <th scope="col">Aksi</th>
 
@@ -46,6 +48,8 @@
                                             <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->masuk}}</td>
                                                 <td>{{ $row->keluar}}</td>
+                                                <td>{{ $row->masukk}}</td>
+                                                <td>{{ $row->keluarr}}</td>
                                                 <td>{{ $row->created_at}}</td>
                                             <td scope="row">
                                                 <a href="/tampilsetting/{{ $row->id }}"

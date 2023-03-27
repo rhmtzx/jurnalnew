@@ -77,15 +77,16 @@ class TambahjurnalController extends Controller
             $this->validate($request,[
                   'judul' => 'required',
                   'deskripsi' => 'required',
-                  'foto' => 'required|mimes:jpg,png,jpeg',
+                  'foto' => 'required|mimes:jpg,png,jpeg|max:2048',
                   'usersiswa' => 'required',
                   // 'statusjurnal' => 'required',
 
              ],[
-                 'judul.required' => 'Harus diisi',
-                 'deskripsi.required' => 'Harus diisi',
-                 'foto.required' => 'Harus diisi',
-                 'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg',
+                 'judul.required' => 'Judul Harus diisi',
+                 'deskripsi.required' => 'Deskripsi Harus diisi',
+                 'foto.required' => 'Foto Harus diisi',
+                 'foto.mimes' => 'Foto Harus Menggunakan Type File Jpg, Png Atau Jpeg',
+                 'foto.max' => 'Foto Tidak Boleh Lebih Dari 2 Mb',
                  'usersiswa.required' => 'Harus diisi',
                  // 'statusjurnal.required' => 'Harus diisi',
 

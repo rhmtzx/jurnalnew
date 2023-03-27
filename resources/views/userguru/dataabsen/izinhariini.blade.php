@@ -10,9 +10,9 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Semua Absen Siswa Hari Ini</h4>
+                        <h4 class="card_title">Data Semua Izin Siswa Hari Ini</h4>
                         <ul>
-                            <li><h6>Semua Absen Siswa Hari Ini Ada Disini !!</h6></li></ul>
+                            <li><h6>Semua Izin Siswa Hari Ini Ada Disini !!</h6></li></ul>
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">
@@ -22,15 +22,14 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Nama Siswa</th>
                                             <th scope="col">Foto</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col" hidden>Deskripsi</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <!-- <th scope="col">Approve Jurnal</th> -->
+                                            <th scope="col">Nama Siswa</th>
+                                            <th scope="col">Keterangan</th>
+                                            <th scope="col">Status Absen</th>
+                                            <!-- <th scope="col">Approve Absen</th> -->
                                             <th scope="col">Pesan Jika Ditolak</th>
-                                            <th scope="col">Jurnal Dibuat</th>
-                                            <th scope="col">Detail</th>
+                                            <th scope="col">Tanggal</th>
+                                            <!-- <th scope="col">Detail</th> -->
 
                                         </tr>
                                     </thead>
@@ -42,14 +41,14 @@
                                             @foreach($data7 as $row4)
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row4->namasiswa->namasiswa }}</td>
                                                 <td><a class="image-popup" href="{{ asset('fotodudi/' . $row4->foto) }}">
                                                     <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
                                                     style="width: 40px">
                                                 </a>
                                                 </td>
-                                                <td>{{ $row4->judul }}</td>
-                                                <td hidden>{!! $row4->deskripsi !!}</td>
+                                                <td>{{ $row4->namasiswa->namasiswa }}</td>
+
+                                                <td>{{ $row4->keterangan }}</td>
 
                                                 @if ($row4->statusjurnal == 'Telah Disetujui')
                                                 <td>
@@ -85,12 +84,12 @@
                                                 <td>{{ $row4->pesanjurnal }}</td>
                                                     
                                                 <td>{{ $row4->created_at}}</td>
-                                                <td scope="row">
+                                                <!-- <td scope="row">
                                                     <a href="/tampiltambahjurnal/{{ $row4->id }}"
                                                         class="btn btn-social btn-box btn-social-outline-tw mb-3"><i
                                                         class="fa-sharp fa-solid fa-pen-to-square"></i></a>
                                                     </td>
-                                                </tr>
+                                                </tr> -->
                                         @endforeach
                                                 
                                             </tbody>

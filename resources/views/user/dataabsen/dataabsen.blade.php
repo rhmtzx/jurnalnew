@@ -11,9 +11,9 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Absen Siswa</h4>
+                        <h4 class="card_title">Data Seluruh Izin</h4>
                         <ul>
-                            <li><h6>Seluruh Data Absen Ada Disini</h6></li>
+                            <li><h6>Semua Data Izin Ada Disini</h6></li>
                         </ul>
                             <br>
                             <div class="single-table">

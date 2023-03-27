@@ -10,9 +10,9 @@
                 <div class="col-12 mt-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card_title">Data Siswa</h4>
+                            <h4 class="card_title">Data Seluruh Siswa</h4>
                             <ul>
-                            <li><h6>Data Siswa Yang Dibimbing Ada Disini</h6></li></ul>
+                            <li><h6>Data Siswa Yang Dibimbing Ada Disini !!</h6></li></ul>
                             <br>
                             <div class="single-table">
                                 <div class="table-responsive">
@@ -20,7 +20,7 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Nis Siswa</th>
+                                                <th scope="col">NIS Siswa</th>
                                                 <th scope="col">Nama Siswa</th>
                                                 <th scope="col">Jurusan</th>
                                                 <th scope="col">Alamat Siswa</th>
