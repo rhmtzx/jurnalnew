@@ -27,6 +27,7 @@ use App\Http\Controllers\DataguruController;
 use App\Http\Controllers\DataabsenController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\DatasiswaController;
+use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\SiswamagangController;
 use App\Http\Controllers\TambahjurnalController;
 use App\Http\Controllers\DataplotinganController;
@@ -298,6 +299,5 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->name('password.email');
     Route::post('/reset-password', [ForgotPasswordController::class, 'rapli'])->name('password.update');
 
-    // Route::prefix('image')->group(function(){
-    //     Route::get('job/{filename}',[LoginController::class, 'showJobImage'])->name('jobImage');
-    // });
+    Route::get('/export', [LoginController::class, 'export']);
+

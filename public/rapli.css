@@ -1,5 +1,5 @@
-.td-ellipsis {
-    max-width: 150px; /* sesuaikan dengan lebar maksimum yang diinginkan */
+.ellipsis-column {
+    width: 200px; /* Sesuaikan dengan lebar kolom tabel */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

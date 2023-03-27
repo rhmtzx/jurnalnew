@@ -54,6 +54,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
+
     /**
      * The attributes that should be cast.
      *
@@ -77,6 +78,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsTo(jurusan::class, 'id_jurusan', 'id');
     }
+<<<<<<< HEAD
     public function absensi()
     {
         return $this->hasMany(Absensi::class);
@@ -85,5 +87,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(tambahjurnal::class);
     }
+=======
+>>>>>>> 702988a1ac18586bb6e1d34a3d9f90cea6421a6d
 
 }
