@@ -12,21 +12,24 @@ class dataplotingan extends Model
     protected $guarded = [];
     protected $dates = ['created_at'];
 
-    public function dudis()
-	{
-		return $this->belongsTo(datadudi::class, 'namadudip', 'id');
-	}
     public function getCreatedAtAttribute()
     {
         return Carbon::parse($this->attributes['created_at'])
         ->translatedFormat('l, d F Y');
     }
-	public function siswas()
+    public function dudis()
 	{
-		return $this->belongsTo(datasiswa::class, 'namasiswap', 'id');
+		return $this->belongsTo(datadudi::class, 'namadudip', 'id');
 	}
 	public function gurus()
 	{
 		return $this->belongsTo(dataguru::class, 'namagurup', 'id');
 	}
+	
+
+	
+	public function plotsiswa()
+    {
+        return $this->hasMany(plotsiswa::class,'idplot', 'id');
+    }
 }

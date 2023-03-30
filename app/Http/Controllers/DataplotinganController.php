@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\dataguru;
 use App\Models\datasiswa;
 use App\Models\datadudi;
+use App\Models\plotsiswa;
 use Illuminate\Support\Facades\Schema;
 use toastr;
 
@@ -13,13 +14,19 @@ class DataplotinganController extends Controller
 {
     public function index(){
 
-            $data = dataplotingan::all();
+            $data = dataplotingan::with('plotsiswa.siswas')->get();
+            // $siswa = plotsiswa::all();
+            // $data = dataplotingan::all();
+            // dd($data);
+            $plotsiswa = plotsiswa::all();
+
+
             $guru = dataguru::all();
             $siswa = datasiswa::all();
             $dudi = datadudi::all();
             $tittle = 'dataplotingan';
         if(Auth()->user()->role == 'Admin'){
-            return view('dataplotingan.dataplotingan',compact('data','guru','siswa','dudi'));
+            return view('dataplotingan.dataplotingan',compact('data','guru','siswa','dudi','plotsiswa'));
         }else if(Auth()->user()->role == 'Guru'){
             return view('userguru.dataplotingan.dataplotingan',compact('data','tittle'));
         }else if(Auth()->user()->role == 'Dudi'){
@@ -46,20 +53,29 @@ class DataplotinganController extends Controller
                  'namagurup' => 'required',
                  'namasiswap' => 'required',
                  'namadudip' => 'required',
-                 'alamatdudip' => 'required',
+                 // 'alamatdudip' => 'required',
              ],[
                  'namagurup.required' => 'Harus diisi',
                  'namasiswap.required' => 'Harus diisi',
                  'namadudip.required' => 'Harus diisi',
-                 'alamatdudip.required' => 'Harus diisi',
+                 // 'alamatdudip.required' => 'Harus diisi',
              ]);
 
             $data = dataplotingan::create([
                 'namagurup' =>$request->namagurup,
-                'namasiswap' =>implode(',',$request->namasiswap),
                 'namadudip' =>$request->namadudip,
-                'alamatdudip' =>$request->alamatdudip,
+                // 'alamatdudip' =>$request->alamatdudip,
             ]);
+        
+        $namasiswap = $request->namasiswap;
+        foreach ($namasiswap as $siswa) 
+    {
+        Plotsiswa::create([
+            'idplot' => $data->id,
+            'plotnamasiswa' => $siswa,
+        ]);
+    }
+
 
             if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Ditambahkan');
@@ -112,7 +128,6 @@ class DataplotinganController extends Controller
             \App\Models\dataplotingan::truncate();
             Schema::enableForeignKeyConstraints();
 
-            toastr()->success('Seluruh Data Berhasil Di Hapus');
-            return redirect()->back()->with('success','Seluruh Data Berhasil Di Hapus');
+            return redirect()->route('dataplotingan')->with('success','Seluruh Data Berhasil Di Hapus');
         }
 }

@@ -60,9 +60,9 @@
                                             <td>
                                                 <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
                                             </td>
-                                            @elseif ($row->statusjurnal == 'Absen Ditolak')
+                                            @elseif ($row->statusjurnal == 'Izin Ditolak')
                                             <td>
-                                                <span class="badge badge-success badge-danger ">Absen Ditolak</span>
+                                                <span class="badge badge-success badge-danger ">Izin Ditolak</span>
                                             </td>
                                             @endif
                                             <td>{{ $row->created_at}}</td>

@@ -126,7 +126,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center padding-top-50 padding-bottom-20">
-                <h3 class="white-text">Ayo! Bergabung Bersama Kami!.</h3>
+                <h3 class="white-text">Ayo! Bergabung Bersama Kami !</h3>
                 <h3 class="white-text">Dapatkan Kemudahan Dalam Memonitoring Jurnal Dan Absen Harian</h3>
             </div>
         </div>
@@ -138,13 +138,6 @@
             <div class="col-md-6 padding-top-30">
                 <div class="features-second">
                     <div class="dropcaps-circle">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h4 class="margin-bottom-5">Kemudahan Monitoring Jurnal.</h4>
-                    <p>Kelola proses monitoring dan bersiaplah untuk mengatasi tantangan apa pun dengan sangat mudah.</p>
-                </div>
-                <div class="features-second">
-                    <div class="dropcaps-circle">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h4 class="margin-bottom-5">Kemudahan Sistem Aplikasi.</h4>
@@ -152,10 +145,17 @@
                 </div>
                 <div class="features-second">
                     <div class="dropcaps-circle">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="margin-bottom-5">Kemudahan Monitoring Jurnal.</h4>
+                    <p>Kelola proses monitoring dan bersiaplah untuk mengatasi tantangan apa pun dengan sangat mudah.</p>
+                </div>
+                <div class="features-second">
+                    <div class="dropcaps-circle">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h4 class="margin-bottom-5">Kemudahan Mengisi Jurnal.</h4>
-                    <p>Anda hanya perlu menginputkan jurnal dengan praktis karena pengisian sangatlah mudah.</p>
+                    <h4 class="margin-bottom-5">Kemudahan Absensi Harian.</h4>
+                    <p>Absen dengan praktis karena pengisian absensi sangatlah mudah.</p>
                 </div>
             </div>
             <div class="col-md-6 wow slideInRight" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: slideInRight;">

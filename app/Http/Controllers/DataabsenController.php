@@ -165,7 +165,7 @@ class DataabsenController extends Controller
             $data = dataabsen::find($id);
             $data->update([
                 'keterangan' =>$request->keterangan,
-                'statusjurnal' =>$request->statusjurnal,
+                'statusjurnal' =>'Menunggu Persetujuan',
                 'usersiswa' =>$request->usersiswa,
 
             ]);
@@ -212,7 +212,7 @@ class DataabsenController extends Controller
     {
             $data = dataabsen::find($id);
             $data->update([
-                'statusjurnal' => 'Absen Ditolak',
+                'statusjurnal' => 'Izin Ditolak',
     ]);
         return redirect()->back()->with('success', 'Absen Telah Di Tolak');
 	}

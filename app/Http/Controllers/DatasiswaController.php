@@ -8,6 +8,7 @@ use App\Models\Absensi;
 use App\Models\jurusan;
 use App\Models\dataabsen;
 use App\Models\datasiswa;
+// use App\Models\Absensi;
 use App\Models\tambahjurnal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

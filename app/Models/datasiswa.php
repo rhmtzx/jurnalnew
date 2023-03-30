@@ -27,9 +27,10 @@ class datasiswa extends Model
 	{
 		return $this->belongsTo(kelas::class, 'kelas', 'id');
 	}
+
 	public function plotingans()
     {
-		return $this->belongsTo(plotingan::class, 'namasiswa', 'id');
+		return $this->hasMany(plotingan::class, 'namasiswa', 'id');
     }
 	public function tambahjurnal()
     {
@@ -37,11 +38,15 @@ class datasiswa extends Model
     }
     public function dataabsen()
     {
-        return $this->hasMany(dataabsen::class,); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+        return $this->hasMany(dataabsen::class,);
     }
-
     public function absens()
     {
         return $this->hasMany(Absensi::class,);
+    }
+    
+    public function dataplotingan()
+    {
+        return $this->hasMany(dataplotingan::class,);
     }
 }

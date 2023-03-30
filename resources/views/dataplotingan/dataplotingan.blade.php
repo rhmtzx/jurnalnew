@@ -77,7 +77,7 @@
                                     <br>
                                     <div>
                                 <a href="/tambahdataplotingan" class="btn btn-primary mb-10">Tambah Plotingan +</a>
-                                <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-sharp fa-solid fa-trash"></i>  Hapus Semua</button>
+                                <!-- <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-sharp fa-solid fa-trash"></i>  Hapus Semua</button> -->
                                     </div>
                                     <br>
                                 </div>
@@ -89,7 +89,7 @@
                                                     <th scope="col">Nama Guru</th>
                                                     <th scope="col">Nama Siswa</th>
                                                     <th scope="col">Nama Dudi</th>
-                                                    <th scope="col">Alamat Dudi</th>
+                                                    <!-- <th scope="col">Alamat Dudi</th> -->
                                                     <th scope="col">Dibuat</th>
                                                     <th scope="col">Aksi</th>
                                             </tr>
@@ -99,14 +99,21 @@
                                                     $no = 1;
                                                     @endphp
                                                     @foreach ($data as $row)
+                                                    
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->gurus->namaguru}}</td>
-                                                <td>{{ $row->siswas->namasiswa}}</td>
-                                                <td>{{ $row->dudis->namadudi}}</td>
-                                                <td>{{ $row->alamatdudip}}</td>
-                                                <td>{{ $row->created_at}}</td>
 
+                                                <td>
+                                                @foreach($row as $yosha)
+                                                    {{ $yosha }}
+
+                                                @endforeach
+                                                </td>
+                                            
+                                                <td>{{ $row->dudis->namadudi}}</td>
+                                                <!-- <td>{{ $row->alamatdudip}}</td>  -->
+                                                <td>{{ $row->created_at}}</td>
 
                                                 <td>
                                                     <a href="/tampildataplotingan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>

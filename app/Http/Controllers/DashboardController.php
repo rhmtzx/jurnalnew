@@ -24,9 +24,11 @@ use App\Models\User;
 class DashboardController extends Controller
 {
     function __construct()
+
     {
         $this->middleware('auth');
     }
+
     public function index()
     {
     	//GRAFIK TOTAL USER

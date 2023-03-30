@@ -103,7 +103,7 @@ class LoginController extends Controller
             'name'=> 'required|unique:users|regex:/^[a-zA-Z ]+$/',
             'namajurusan'=> 'required',
             'alamatsiswa'=> 'required',
-            'notlpsiswa'=> 'required',
+            'notlpsiswa'=> 'required|min:12',
             'kd_guru'=> 'required',
             'kd_dudi'=> 'required',
 
@@ -121,6 +121,7 @@ class LoginController extends Controller
             'namajurusan.required' => 'Kelas Jurusan Siswa Harus Diisi !!',
             'alamatsiswa.required' => 'Alamat Siswa Harus Diisi !!',
             'notlpsiswa.required' => 'No Telepon Siswa Harus Diisi !!',
+            'notlpsiswa.min' => 'No Telepon Siswa Minimal 12 Nomor !!',
             'kd_guru.required' => 'Kode Guru Harus Diisi !!',
             'kd_dudi.required' => 'Kode Dudi Harus Diisi !!',
 
@@ -176,7 +177,7 @@ class LoginController extends Controller
             'nip'=> 'required|unique:datagurus',
             'name'=> 'required|regex:/^[a-zA-Z ]+$/',
             'alamat'=> 'required',
-            'notlpn'=> 'required',
+            'notlpn'=> 'required|min:12',
             // 'foto' => 'required','unique:posts',
 
             'email' => 'required|unique:users',
@@ -191,6 +192,7 @@ class LoginController extends Controller
             'name.regex' => 'Nama Guru Tidak Boleh Menggunakan Angka !!',
             'alamat.required' => 'Alamat Guru Harus Diisi !!',
             'notlpn.required' => 'No Telepon Guru Harus Diisi !!',
+            'notlp.min' => 'No Telepon Guru Minimal 12 Nomor !!',
 
             'email.required' => 'Email Harus Diisi !!',
             'email.required' => 'Email Harus Diisi !!',
@@ -246,7 +248,7 @@ class LoginController extends Controller
             'name'=> 'required',
             'namakepdik'=> 'required|unique:datadudis|regex:/^[a-zA-Z ]+$/',
             'alamatdudi'=> 'required',
-            'notelepondudi'=> 'required',
+            'notelepondudi'=> 'required|min:12',
             'foto' => 'required|image|mimes:jpg,png,jpeg','unique:posts',
             'foto' => 'dimensions:max_width=564,max_height=564',
             'email' => 'required|unique:users',
@@ -263,6 +265,7 @@ class LoginController extends Controller
             'namakepdik.regex' => 'Nama Kepala Direktur Tidak Boleh Menggunakan Angka !!',
             'alamatdudi.required' => 'Alamat Dudi Harus Diisi !!',
             'notelepondudi.required' => 'No Telepon Dudi Harus Diisi !!',
+            'notelepondudi.min' => 'No Telepon Dudi Minimal 12 Nomor !!',
 
             'email.unique' => 'Email Sudah Digunakan !!',
             'email.required' => 'Harus Diisi !!',
