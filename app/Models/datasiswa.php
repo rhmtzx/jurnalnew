@@ -34,17 +34,17 @@ class datasiswa extends Model
     }
 	public function tambahjurnal()
     {
-        return $this->hasMany(tambahjurnal::class,); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+        return $this->hasMany(tambahjurnal::class, 'id'); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
     public function dataabsen()
     {
-        return $this->hasMany(dataabsen::class,);
+        return $this->hasMany(dataabsen::class, 'id');
     }
     public function absens()
     {
         return $this->hasMany(Absensi::class,);
     }
-    
+
     public function dataplotingan()
     {
         return $this->hasMany(dataplotingan::class,);

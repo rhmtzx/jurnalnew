@@ -11,37 +11,35 @@ use Illuminate\Support\Str;
 use App\Models\tambahjurnal;
 use Illuminate\Http\Request;
 use App\Models\dataplotingan;
+use Laravel\Fortify\Features;
 use App\Mail\ResetPasswordMail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Mail\Mailable;
-use Laravel\Fortify\Features;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\DatadudiController;
 use App\Http\Controllers\DataguruController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataabsenController;
-use App\Http\Controllers\SettingController;
 use App\Http\Controllers\DatasiswaController;
-use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\SiswamagangController;
 use App\Http\Controllers\TambahjurnalController;
 use App\Http\Controllers\DataplotinganController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DatapersyaratanController;
+use App\Http\Controllers\ForgotpassworddController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
-use App\Http\Controllers\ForgotpassworddController;
-use App\Http\Controllers\DashboardController;
-<<<<<<< HEAD
-=======
-// use App\Http\Controllers\AbsensiController;
->>>>>>> e01a45c88254d9a5dd70d4ecde34daded700f8c1
+
 
 
 /*
@@ -75,7 +73,7 @@ Route::group(['middleware' => ['auth','verified', 'hakakses:Siswa,Guru,Dudi']], 
     $guru = dataguru::count();
     $absen = dataabsen::count();
     $tittle = 'dashboard';
-    
+
     //WIDGET SISWA
     $jurnalsiswa = tambahjurnal::where('student_id', Auth::id())->count();
     $auth_kd_guru = Auth::user()->kd_guru;
@@ -91,7 +89,7 @@ Route::group(['middleware' => ['auth','verified', 'hakakses:Siswa,Guru,Dudi']], 
     $siswa_khusus_guru = Auth::user()->kd_guru;
     $siswaguru = datasiswa::where('kd_guru', $siswa_khusus_guru)->count();
 
-    
+
 
     return view('siswa.welcomes', compact('siswaguru','khususguru','siswadudi','khususdudi','user','jurusan', 'siswa', 'jurnal','jurnalsiswa','plotingan','guru','gurusiswa','absen','tittle'));
 })->middleware('auth');

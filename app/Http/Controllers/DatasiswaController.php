@@ -174,18 +174,31 @@ class DatasiswaController extends Controller
             }
         }
 
-        public function deletedatasiswa(Request $request,$id){
+        public function deletedatasiswa($id){
             $data = datasiswa::findOrfail($id);
-            $user = User::findOrfail($data->user_id);
-            $jurnal = tambahjurnal::where('usersiswa', '=', $id);
-            $absen = dataabsen::where('usersiswa', '=', $id);
+            // $jurnal = tambahjurnal::where('usersiswa', '=', $id);
+            // $absen = dataabsen::where('usersiswa', '=', $id);
+            foreach ($data->tambahjurnal as $siswa) {
+                if ($siswa->foto && file_exists(public_path('fotodudi/' . $siswa->foto))) {
+                    unlink(public_path('fotodudi/' . $siswa->foto));
+                }
+                $siswa->delete();
+            }
+            foreach ($data->dataabsen as $rapli) {
+                if ($rapli->foto && file_exists(public_path('fotodudi/' . $rapli->foto))) {
+                    unlink(public_path('fotodudi/' . $rapli->foto));
+                }
+                $rapli->delete();
+            }
+
             $Absensi = Absensi::where('usersiswa', '=', $id);
+            $user = User::findOrfail($data->user_id);
 
             $data->delete();
             $user->delete();
-            $jurnal->delete();
-            $absen->delete();
             $Absensi->delete();
+            // $jurnal->delete();
+            // $absen->delete();
             return back()->with('success', 'data berhasil di delete');
-                }
+            }
 }
