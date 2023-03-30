@@ -38,7 +38,6 @@ use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
 use App\Http\Controllers\ForgotpassworddController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AbsensiController;
 
 
 /*
@@ -65,22 +64,32 @@ Route::group(['middleware' => ['auth','verified', 'hakakses:Siswa,Guru,Dudi']], 
     Route::get('/dashboard', function () {
 
     $user = User::count();
-    // $count = Tambahjurnal::whereHas('datasiswa', function($query) {
-    //                       $query->where('namasiswa', auth()->user()->namasiswa);
-    //                   })
-    //                   ->count();
-
     $jurusan = jurusan::count();
     $siswa = datasiswa::count();
-    // $dudi = datadudi::count();
     $jurnal = tambahjurnal::count();
     $plotingan = dataplotingan::count();
     $guru = dataguru::count();
     $absen = dataabsen::count();
     $tittle = 'dashboard';
+    
+    //WIDGET SISWA
+    $jurnalsiswa = tambahjurnal::where('student_id', Auth::id())->count();
+    $auth_kd_guru = Auth::user()->kd_guru;
+    $gurusiswa = dataguru::where('kd_guru', $auth_kd_guru)->count();
+    // WIDGET DUDI
+    $jurnal_khusus_dudi = Auth::user()->kd_dudi;
+    $khususdudi = tambahjurnal::where('kd_dudi', $jurnal_khusus_dudi)->count();
+    $siswa_khusus_dudi = Auth::user()->kd_dudi;
+    $siswadudi = datasiswa::where('kd_dudi', $siswa_khusus_dudi)->count();
+    // WIDGET GURU
+    $jurnal_khusus_guru = Auth::user()->kd_guru;
+    $khususguru = tambahjurnal::where('kd_guru', $jurnal_khusus_guru)->count();
+    $siswa_khusus_guru = Auth::user()->kd_guru;
+    $siswaguru = datasiswa::where('kd_guru', $siswa_khusus_guru)->count();
 
-    return view('siswa.welcomes', compact('user','jurusan', 'siswa', 'jurnal','plotingan','guru','absen',
-        'tittle'));
+    
+
+    return view('siswa.welcomes', compact('siswaguru','khususguru','siswadudi','khususdudi','user','jurusan', 'siswa', 'jurnal','jurnalsiswa','plotingan','guru','gurusiswa','absen','tittle'));
 })->middleware('auth');
 });
 

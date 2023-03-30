@@ -103,7 +103,7 @@ class LoginController extends Controller
             'name'=> 'required|unique:users',
             'namajurusan'=> 'required',
             'alamatsiswa'=> 'required',
-            'notlpsiswa'=> 'required',
+            'notlpsiswa'=> 'required|min:12',
             'kd_guru'=> 'required',
             'kd_dudi'=> 'required',
 
@@ -120,6 +120,7 @@ class LoginController extends Controller
             'namajurusan.required' => 'Kelas Jurusan Siswa Harus Diisi !!',
             'alamatsiswa.required' => 'Alamat Siswa Harus Diisi !!',
             'notlpsiswa.required' => 'No Telepon Siswa Harus Diisi !!',
+            'notlpsiswa.min' => 'No Telepon Siswa Minimal 12 Nomor !!',
             'kd_guru.required' => 'Kode Guru Harus Diisi !!',
             'kd_dudi.required' => 'Kode Dudi Harus Diisi !!',
 
@@ -175,7 +176,7 @@ class LoginController extends Controller
             'nip'=> 'required|unique:datagurus',
             'name'=> 'required',
             'alamat'=> 'required',
-            'notlpn'=> 'required',
+            'notlpn'=> 'required|min:12',
             // 'foto' => 'required','unique:posts',
 
             'email' => 'required|unique:users',
@@ -189,6 +190,7 @@ class LoginController extends Controller
             'name.required' => 'Nama Guru Harus Diisi !!',
             'alamat.required' => 'Alamat Guru Harus Diisi !!',
             'notlpn.required' => 'No Telepon Guru Harus Diisi !!',
+            'notlp.min' => 'No Telepon Guru Minimal 12 Nomor !!',
 
             'email.required' => 'Email Harus Diisi !!',
             'email.required' => 'Email Harus Diisi !!',
@@ -244,7 +246,7 @@ class LoginController extends Controller
             'name'=> 'required',
             'namakepdik'=> 'required|unique:datadudis',
             'alamatdudi'=> 'required',
-            'notelepondudi'=> 'required',
+            'notelepondudi'=> 'required|min:12',
             'foto' => 'required|image|mimes:jpg,png,jpeg','unique:posts',
 
             'email' => 'required|unique:users',
@@ -260,6 +262,7 @@ class LoginController extends Controller
             'namakepdik.unique' => 'Nama Kepala Direktur Sudah Digunakan !!',
             'alamatdudi.required' => 'Alamat Dudi Harus Diisi !!',
             'notelepondudi.required' => 'No Telepon Dudi Harus Diisi !!',
+            'notelepondudi.min' => 'No Telepon Dudi Minimal 12 Nomor !!',
 
             'email.unique' => 'Email Sudah Digunakan !!',
             'email.required' => 'Harus Diisi !!',

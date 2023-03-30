@@ -83,6 +83,21 @@
                                 @csrf
                                 
                                     <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label"><h5>Nis Siswa</h5></label>
+                                        <select class="form-control" name="namasiswap[]"  id="select-state" autocomplete="off">
+                                            <option value="" selected disabled>Pilih</option>
+                                            <!-- @foreach($siswa as $ab)
+                                            <option value="{{ $ab->id }}"<?php if($data->namasiswap == $ab->id) {
+                                                echo 'selected';    
+                                            }?> > {{ $ab->namasiswa }} </option>
+                                            @endforeach -->
+                                            @foreach($siswa as $hi)
+                                            <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label"><h5>Nama Guru</h5></label>
                                         <select class="form-control" name="namagurup" id="namagurup">
                                             <option value="" selected disabled>Pilih</option>
@@ -95,18 +110,6 @@
                                     </div>
                                     <br>
 
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label"><h5>Nis Siswa</h5></label>
-                                        <select class="form-control" name="namasiswap[]"  id="select-state" autocomplete="off">
-                                            <option value="" selected disabled>Pilih</option>
-                                            @foreach($siswa as $ab)
-                                            <option value="{{ $ab->id }}"<?php if($data->namasiswap == $ab->id) {
-                                                echo 'selected';    
-                                            }?> > {{ $ab->namasiswa }} </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <br>
 
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label"><h5>Nama Dudi</h5></label>

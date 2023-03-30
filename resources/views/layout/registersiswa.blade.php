@@ -80,7 +80,7 @@
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
-                                        @error('name')
+                                    @error('name')
                                     <div class="text-danger">
                                         {{ $message }}
                                     </div>
@@ -95,19 +95,39 @@
                                             <option value="{{ $hi->id }}">{{ $hi->namajurusan }}</option>
                                             @endforeach
                                         </select>
+                                    @error('namajurusan')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                     </div>
                                     <br>
                                     <div class="mb-3">
                                         <label for="alamatsiswa" class="form-label">Alamat Siswa <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="alamatsiswa" id="alamatsiswa" placeholder="Masukkan Alamat Siswa" required>
+                                    @error('alamatsiswa')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="notlpsiswa" class="form-label">No Telepon Siswa <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="notlpsiswa" id="notlpsiswa" placeholder="Masukkan No Telepon Siswa" required>
+                                        <input type="number" class="form-control" name="notlpsiswa" id="notlpsiswa" placeholder="Masukkan No Telepon Siswa" required>
+                                    @error('notlpsiswa')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email Siswa <span class="text-danger">*</span></label>
                                         <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" required>
+                                    @error('email')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                     </div>
                                     <!-- pwd -->
                                     <div class="mb-3">
@@ -124,12 +144,12 @@
                                         <p id="pass-lower" class="invalid fs-12 mb-2">di <b>Huruf</b>Kecil (a-z)</p>
                                         <p id="pass-upper" class="invalid fs-12 mb-2">Minimal <b>Huruf</b> Kapital (A-Z)</p>
                                         <p id="pass-number" class="invalid fs-12 mb-0">Minimal <b>Angka</b> (0-9)</p>
-                                    </div>
                                     @error('password')
                                     <div class="text-danger">
                                         {{ $message }}
                                     </div>
                                     @enderror
+                                    </div>
                                     <div class="mb-3">
                                             <label class="form-label" for="password-input"><strong>Konfirmasi Password</strong></label>
                                             <div class="position-relative auth-pass-inputgroup">

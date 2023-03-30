@@ -167,7 +167,7 @@ class TambahjurnalController extends Controller
                 'judul' =>$request->judul,
                 'deskripsi' =>$request->deskripsi,
                 'usersiswa' =>$request->usersiswa,
-                'statusjurnal' =>$request->statusjurnal,
+                'statusjurnal' =>'Menunggu Persetujuan',
                 // 'foto' =>$request->foto,
 
             ]);

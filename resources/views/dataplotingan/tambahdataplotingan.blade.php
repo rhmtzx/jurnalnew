@@ -78,8 +78,24 @@
                                     <form action="/insertdataplotingan" method="POST" enctype="multipart\form-data" >
                                 @csrf
                                 <div class="mb-3">
+                                    <label for="namasiswap" class="form-label"><h5>Nama Siswa</h5></label>
+                                    <select class="form-control" name="namasiswap[]" id="select-state" autocomplete="off">
+                                        <option value="" selected disabled>Pilih Siswa</option>
+                                        @foreach($siswa as $hi)
+                                        <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('namasiswap')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                                <br>
+                                
+                                <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Guru</h5></label>
-                                    <select class="form-select rounded-pill" name="namagurup" id="namagurup">
+                                    <select class="form-select" name="namagurup" id="guruselect">
                                         <option value="" selected disabled>Pilih Guru</option>
                                         @foreach($guru as $hi)
                                         <option value="{{ $hi->id }}">{{ $hi->namaguru }}</option>
@@ -93,35 +109,9 @@
                                 @enderror
                                 <br>
 
-
-                                <!-- <div class="mb-3">
-                                    <label for="namasiswap" class="form-label"><h5>Nama Siswa</h5></label>
-                                    <select id="ex-caret-position" multiple autocomplete="off" placeholder="How cool is this?">
-                                        @foreach($siswa as $hi)
-                                        <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
-                                        @endforeach
-                                    </select>
-                                </div> -->
-
-                                <div class="mb-3">
-                                    <label for="namasiswap" class="form-label"><h5>Nama Siswa</h5></label>
-                                    <select class="form-control rounded-pill" name="namasiswap[]" id="select-state" autocomplete="off">
-                                        <option value="" selected disabled>Pilih Siswa</option>
-                                        @foreach($siswa as $hi)
-                                        <option value="{{ $hi->id }}">{{ $hi->namasiswa }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                @error('namasiswap')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                                <br>
-
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Nama Dudi</h5></label>
-                                    <select class="form-select rounded-pill" name="namadudip" id="namadudip">
+                                    <select class="form-select" name="namadudip" id="dudiselect">
                                         <option value="" selected disabled>Pilih Dudi</option>
                                         @foreach($dudi as $rapli)
                                         <option value="{{ $rapli->id }}" data-alamatdudip="{{ $rapli->alamatdudi }}">{{ $rapli->namadudi }}</option>
@@ -134,9 +124,9 @@
                                 </div>
                                 @enderror
                                 <br>
-                                <div class="mb-3">
+                                <!-- <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label"><h5>Alamat Dudi</h5></label>
-                                    <input type="text" name="alamatdudip" class="form-control rounded-pill" id="alamatdudip"
+                                    <input type="text" name="alamatdudip" class="form-control" id="alamatdudip"
                                     aria-describedby="emailHelp" placeholder="Masukkan Alamat Dudi" readonly="">
                                     @error('alamatdudip')
                                     <div class="text-danger">
@@ -144,7 +134,9 @@
                                     </div>
                                     @enderror
                                     <br>
-                                <br>
+                                <br> -->
+
+                                
                                 <button type="submit" class="btn btn-primary">Submit Data</button>
                                 <a href="/dataplotingan" class="btn btn-danger mb-10"><i class="ri-reply-fill align-middle me-2"></i>Kembali</a>
 
@@ -207,14 +199,24 @@
 	maxItems: 3
 });
         </script>
-
         <script>
+            new TomSelect("#guruselect",{
+    maxItems: 1
+});
+        </script>
+        <script>
+            new TomSelect("#dudiselect",{
+    maxItems: 1
+});
+        </script>
+
+        <!-- <script>
             const namadudip = document.getElementById('namadudip')
             namadudip.onchange = function(e) {
             const alamatdudip = e.target.options[e.target.selectedIndex].dataset.alamatdudip
             document.getElementById('alamatdudip').value = alamatdudip;
             }
-        </script>
+        </script> -->
 
         <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
 

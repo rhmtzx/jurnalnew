@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDataplotingansTable extends Migration
+class CreatePlotsiswasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateDataplotingansTable extends Migration
      */
     public function up()
     {
-        Schema::create('dataplotingans', function (Blueprint $table) {
+        Schema::create('plotsiswas', function (Blueprint $table) {
             $table->id();
-            $table->string('namagurup');
-            $table->string('namadudip');
-            // $table->string('alamatdudip');
+            $table->string('idplot');
+            $table->string('plotnamasiswa');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateDataplotingansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dataplotingans');
+        Schema::dropIfExists('plotsiswas');
     }
 }

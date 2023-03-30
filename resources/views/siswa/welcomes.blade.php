@@ -38,7 +38,7 @@
                                 <div class="text-white">
                                     <p class="mt-xl-0 text-xl-left mb-2">Total Siswa</p>
                                     <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$siswa}}</h3>
+                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$siswadudi}}</h3>
                                         <small class="stats_icon"> <span class="feather ft-chevron-up"></span></small>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                 <div class="text-white">
                                     <p class="mt-xl-0 text-xl-left mb-2">Total Jurnal</p>
                                     <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$jurnal}}</h3>
+                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$khususdudi}}</h3>
                                         <small class="stats_icon"> <span class="feather ft-chevron-up"></span></small>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                                 <div class="text-white">
                                     <p class="mt-xl-0 text-xl-left mb-2">Total Guru</p>
                                     <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$guru}}</h3>
+                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$gurusiswa}}</h3>
                                         <small class="stats_icon"> <span class="feather ft-chevron-up"></span></small>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
                                 <div class="text-white">
                                     <p class="mt-xl-0 text-xl-left mb-2">Total Jurnal</p>
                                     <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$jurnal}}</h3>
+                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$jurnalsiswa}}</h3>
                                         <small class="stats_icon"> <span class="feather ft-chevron-up"></span></small>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                 <div class="text-white">
                                     <p class="mt-xl-0 text-xl-left mb-2">Total Siswa</p>
                                     <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$siswa}}</h3>
+                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$siswaguru}}</h3>
                                         <small class="stats_icon"> <span class="feather ft-chevron-up"></span></small>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                 <div class="text-white">
                                     <p class="mt-xl-0 text-xl-left mb-2">Total Jurnal</p>
                                     <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$jurnal}}</h3>
+                                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1 text-white">{{$khususguru}}</h3>
                                         <small class="stats_icon"> <span class="feather ft-chevron-up"></span></small>
                                     </div>
                                 </div>
@@ -160,13 +160,13 @@
                 </div>                
             </div>
         </div>
-        <div class="col-lg-12 mt-mob-4">
+        <!-- <div class="col-lg-12 mt-mob-4">
             <div class="card">
                 <div class="card-body">
                     <div id="calendar" class="full_calendar"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
                 
     </body>
 
