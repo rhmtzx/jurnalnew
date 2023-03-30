@@ -173,7 +173,7 @@
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="d_none_sm">{{Auth()->user()->name}} <i class="ti-angle-down"></i></span>
-                                    <img src="{{ asset('fotodudi/' . Auth::user()->foto) }}" alt="" class="img-fluid">
+                                    <img src="{{ (Auth::user()->foto) ? asset('fotodudi/'. Auth::user()->foto ) : asset('fotojurnal/default.png') }}" alt="" class="img-fluid">
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
                                     <a class="dropdown-item" href="/profil"><i class="ti-user"></i> Profile</a>

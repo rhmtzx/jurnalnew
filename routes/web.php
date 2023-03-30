@@ -135,11 +135,11 @@ Route::post('/updatepassworddudi', [UpdatePasswordController::class, 'updatepass
 Route::post('/updatepasswordguru', [UpdatePasswordController::class, 'updatepasswordguru'])->name('updatepasswordguru');
 
 
-Route::get('/', [DashboardController::class, 'index']);
 
 
 
 Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
+    Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
     // Chart
     Route::get('/chart', [ChartController::class, 'index']);
     // J u r u s a n
@@ -195,6 +195,9 @@ Route::group(['middleware' => ['auth', 'hakakses:Admin']], function () {
 // R O U T E S M I D D L E - S I S W A
 Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], function () {
 
+    Route::get('/daterange', [TambahjurnalController::class, 'daterange'])->name('daterange');
+    Route::get('/daterangee', [AbsensiController::class, 'daterangee'])->name('daterangee');
+
     // T a m b a h  A b s e n  D u d i
     Route::get('/settingdudi', [SettingController::class, 'index'])->name('datasetting');
     Route::get('/tambahsetting', [SettingController::class, 'tambahsetting'])->name('tambahsetting');
@@ -209,7 +212,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     Route::put('/absenkeluar', [AbsensiController::class, 'absenkeluar'])->name('absenkeluar');
     Route::post('/absenmasukdua', [AbsensiController::class, 'absenmasukdua'])->name('absenmasukdua');
     Route::put('/absenkeluardua', [AbsensiController::class, 'absenkeluardua'])->name('absenkeluardua');
-    Route::get('/today', [AbsensiController::class, 'today'])->name('today');  
+    Route::get('/today', [AbsensiController::class, 'today'])->name('today');
     // A b s e n D u d i
     Route::get('/absendudi', [AbsensiController::class, 'absendudi'])->name('absendudi');
     Route::get('/tampilabsendudi/{id}', [AbsensiController::class, 'tampilabsendudi'])->name('tampilabsendudi');
@@ -301,5 +304,7 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
 
     Route::get('/export', [LoginController::class, 'export']);
     Route::get('/exportpdf', [LoginController::class, 'exportpdf'])->name('exportpdf');
+    Route::get('/cetakpdf', [TambahjurnalController::class, 'cetakpdf'])->name('cetakpdf');
+
 
 

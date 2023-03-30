@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Absensi;
 use Carbon\Carbon;
 use App\Models\dataabsen;
 use App\Models\datasiswa;
@@ -34,7 +36,7 @@ class DataabsenController extends Controller
     }
 
     public function dataaa($id){
-        $datah = dataabsen::with('namasiswa')->where('usersiswa',$id)->get();
+        $datah = Absensi::with('namasiswa')->where('usersiswa',$id)->get();
 
 
         return view('dataabsen.dataaa',compact('datah'));
@@ -91,7 +93,7 @@ class DataabsenController extends Controller
                 return redirect()->route('dataabsen')->with('error', 'Anda Telah Izin Hari Ini !!');
              }
 
-             
+
 
             $data = dataabsen::create([
                 'keterangan' =>$request->keterangan,

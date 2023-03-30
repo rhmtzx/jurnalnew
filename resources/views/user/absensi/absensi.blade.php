@@ -2,6 +2,7 @@
 @section('contents')
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
     <div class="main-content-inner">
@@ -72,18 +73,30 @@
     </div>
 @endif
 @endforeach
+<style>
+    input[name="daterange"] {
+border: 1px solid #ccc;
+padding: 5px;
+font-size: 15px;
+}
+</style>
 
-            
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card_title">Data Seluruh Absen</h4>
                         <ul>
                             <li><h6>Data Absen Anda Masuk Disini !!</h6></li></ul>
-                            <br>
+                            <a href="/dataabsen" class="btn btn-danger">Izin  <i class="fa-solid fa-sheet-plastic"></i></a>
+                            <form method="get" action="/daterangee">
+                                <div class="form-group" style="margin-left: 712px">
+                                    <label for="date-range">Date Range:</label>
+                                    <input type="text" name="daterange" value="" />
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
                             <div class="single-table">
                                 <div class="table-responsive">
-                                    <br>
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
@@ -105,7 +118,7 @@
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <th>{{$hihi->created_at}}</th>
-                                                
+
                                                 <th>{{$hihi->namasiswa->namasiswa}}</th>
 
                                                 <th>{{$hihi->masuk}}</th> <!-- Waktu Masuk -->
@@ -133,7 +146,7 @@
                                                     <span class="badge badge-success badge-success ">Telah Keluar</span>
                                                 </td>
                                                 @endif
-                                                
+
                                             </tbody>
                                             @endforeach
 
@@ -160,7 +173,9 @@
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <!-- DataTablesScript -->
         <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
@@ -174,7 +189,7 @@
 <script>
   var button = document.getElementById("masuk");
   var url = button.dataset.url;
-  
+
   button.addEventListener("click", function() {
     // Kirim request AJAX ke URL menggunakan jQuery
     $.ajax({
@@ -193,7 +208,15 @@
     });
   });
 </script>
-
+<script type="text/javascript">
+    $(function() {
+       $('input[name="daterange"]').daterangepicker({
+          opens: 'left'
+       }, function(start, end, label) {
+          console.log("A date range was chosen: " + start.format('Y-m-d') + ' to ' + end.format('Y-m-d'));
+       });
+    });
+ </script>
 
 <script>
   var button = document.getElementById("keluar");

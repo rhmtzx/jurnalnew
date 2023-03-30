@@ -20,7 +20,8 @@ class CreateAbsensisTable extends Migration
             $table->time('keluar')->nullable();
             $table->string('statuskeluar')->nullable();
 
-            $table->string('usersiswa');
+            $table->bigInteger('usersiswa')->unsigned();
+            $table->foreign('usersiswa')->references('id')->on('datasiswas')->onDelete('cascade');
             $table->string('user_id');
             $table->string('kd_guru');
             $table->string('kd_dudi');

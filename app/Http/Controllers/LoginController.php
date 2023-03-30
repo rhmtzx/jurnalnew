@@ -56,7 +56,7 @@ class LoginController extends Controller
             return redirect('/dashboard')->with('success','Berhasil Login Sebagai Dudi');
         }
 
-            return redirect('login')->with('error','Password Salah');
+            return redirect('login')->with('error','Password atau Email Salah');
 
     }
 
@@ -100,7 +100,7 @@ class LoginController extends Controller
         // dd($request->all());
         $this->validate($request,[
             'nissiswa'=> 'required|unique:datasiswas',
-            'name'=> 'required|unique:users',
+            'name'=> 'required|unique:users|regex:/^[a-zA-Z ]+$/',
             'namajurusan'=> 'required',
             'alamatsiswa'=> 'required',
             'notlpsiswa'=> 'required',
@@ -117,6 +117,7 @@ class LoginController extends Controller
             'nissiswa.unique' => 'NIS Siswa Sudah Digunakan !!',
             'name.required' => 'Nama Siswa Harus Diisi !!',
             'name.unique' => 'Nama Siswa Sudah Digunakan !!',
+            'name.regex' => 'Nama Siswa Tidak Boleh Menggunakan Angka !!',
             'namajurusan.required' => 'Kelas Jurusan Siswa Harus Diisi !!',
             'alamatsiswa.required' => 'Alamat Siswa Harus Diisi !!',
             'notlpsiswa.required' => 'No Telepon Siswa Harus Diisi !!',
@@ -173,7 +174,7 @@ class LoginController extends Controller
         // dd($kd_guru2);
         $this->validate($request,[
             'nip'=> 'required|unique:datagurus',
-            'name'=> 'required',
+            'name'=> 'required|regex:/^[a-zA-Z ]+$/',
             'alamat'=> 'required',
             'notlpn'=> 'required',
             // 'foto' => 'required','unique:posts',
@@ -187,6 +188,7 @@ class LoginController extends Controller
             'nip.required' => 'NIP Guru Harus Diisi !!',
             'nip.unique' => 'NIP Guru Sudah Digunakan !!',
             'name.required' => 'Nama Guru Harus Diisi !!',
+            'name.regex' => 'Nama Guru Tidak Boleh Menggunakan Angka !!',
             'alamat.required' => 'Alamat Guru Harus Diisi !!',
             'notlpn.required' => 'No Telepon Guru Harus Diisi !!',
 
@@ -242,11 +244,11 @@ class LoginController extends Controller
         // dd($kd_guru2);
         $this->validate($request,[
             'name'=> 'required',
-            'namakepdik'=> 'required|unique:datadudis',
+            'namakepdik'=> 'required|unique:datadudis|regex:/^[a-zA-Z ]+$/',
             'alamatdudi'=> 'required',
             'notelepondudi'=> 'required',
             'foto' => 'required|image|mimes:jpg,png,jpeg','unique:posts',
-
+            'foto' => 'dimensions:max_width=564,max_height=564',
             'email' => 'required|unique:users',
             'password' => 'required|confirmed|min:6',
             'password_confirmation' => 'required|min:6'
@@ -258,6 +260,7 @@ class LoginController extends Controller
             // 'name.unique' => 'Nama Dudi Sudah Digunakan !!',
             'namakepdik.required' => 'Nama Kepala Direktur Harus Diisi !!',
             'namakepdik.unique' => 'Nama Kepala Direktur Sudah Digunakan !!',
+            'namakepdik.regex' => 'Nama Kepala Direktur Tidak Boleh Menggunakan Angka !!',
             'alamatdudi.required' => 'Alamat Dudi Harus Diisi !!',
             'notelepondudi.required' => 'No Telepon Dudi Harus Diisi !!',
 
@@ -269,7 +272,7 @@ class LoginController extends Controller
             'foto.required' => 'Upload Minimal 1 Foto !!',
             'foto.image' => 'Harus Berupa Foto !!',
             'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
-
+            'foto.dimensions' => 'Ukuran foto maksimal adalah 564 x 564 piksel.'
         ]);
 
         $user= user::create([
@@ -361,10 +364,16 @@ class LoginController extends Controller
         $jurusan = jurusan::all();
 
         $this->validate($request,[
+            // 'name'=> 'required|unique:users',
             'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
+            'foto' => 'dimensions:max_width=564,max_height=564',
+
         ],[
             'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!',
             'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
+            'foto.dimensions' => 'Ukuran foto maksimal adalah 564 x 564 piksel.',
+            // 'name.unique' => 'Nama Siswa Sudah Digunakan !!',
+
         ]);
 
         $data->update([
@@ -375,26 +384,18 @@ class LoginController extends Controller
             'kd_guru' => $request->kd_guru,
             'kd_dudi' => $request->kd_dudi,
             'email' => $request->email,
-            'id_jurusan' => $request->id_jurusan,
+            // 'id_jurusan' => $request->id_jurusan,
         ]);
-
-if ($request->hasFile('foto')) {
-    $file = $request->file('foto');
-    $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
-    if ($data->foto != 'default.jpg') {
-        // Hapus file lama
-        $path = public_path('fotodudi/' . $data->foto);
-        if (file_exists($path)) {
-            unlink($path);
+        if ($request->hasFile('foto')) {
+            if ($data->foto && file_exists(public_path('fotodudi/' . $data->foto))) {
+                unlink(public_path('fotodudi/' . $data->foto));
+            }
+            $file = $request->file('foto');
+            $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+            $file->move('fotodudi/', $filename);
+            $data->foto = $filename;
+            $data->save();
         }
-    } else {
-        // Gunakan nama file default
-        $filename = 'default.jpg';
-    }
-    $file->move('fotodudi/', $filename);
-    $data->foto = $filename;
-    $data->save();
-}
 
         $data2->update([
             'namasiswa' => $data->name,
@@ -403,7 +404,7 @@ if ($request->hasFile('foto')) {
             'notlpsiswa' => $data->notlpsiswa,
             'kd_guru' => $data->kd_guru,
             'kd_dudi' => $data->kd_dudi,
-            'namajurusan' => $data->id_jurusan,
+            // 'namajurusan' => $data->id_jurusan,
 
         ]);
         return redirect()->route('profil')->with('success', 'Profil Siswa Berhasil Di Update !');
@@ -418,9 +419,13 @@ if ($request->hasFile('foto')) {
 
         $this->validate($request,[
             'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
+            'foto' => 'dimensions:max_width=564,max_height=564',
+
         ],[
             'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!',
             'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
+            'foto.dimensions' => 'Ukuran foto maksimal adalah 564 x 564 piksel.'
+
         ]);
 
         $data->update([
@@ -432,12 +437,14 @@ if ($request->hasFile('foto')) {
             'email' => $request->email,
         ]);
         if ($request->hasFile('foto')) {
+            if ($data->foto && file_exists(public_path('fotodudi/' . $data->foto))) {
                 unlink(public_path('fotodudi/' . $data->foto));
-                $file = $request->file('foto');
-                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
-                $file->move('fotodudi/', $filename);
-                $data->foto = $filename;
-                $data->save();
+            }
+            $file = $request->file('foto');
+            $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+            $file->move('fotodudi/', $filename);
+            $data->foto = $filename;
+            $data->save();
         }
         $data2->update([
             'nip' => $data->nip,
@@ -462,11 +469,13 @@ if ($request->hasFile('foto')) {
         $this->validate($request,[
             'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
             'alamatdudi' => 'required',
+            'foto' => 'dimensions:max_width=564,max_height=564',
         ],[
             'alamatdudi.required' => 'Harus Diisi !!',
             'foto.image' => 'Foto Harus Berupa Foto !!',
             'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!',
             'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
+            'foto.dimensions' => 'Ukuran foto maksimal adalah 564 x 564 piksel.'
         ]);
 
         $data->update([
@@ -480,12 +489,14 @@ if ($request->hasFile('foto')) {
             // 'foto' => $request->foto,
         ]);
         if ($request->hasFile('foto')) {
+            if ($data->foto && file_exists(public_path('fotodudi/' . $data->foto))) {
                 unlink(public_path('fotodudi/' . $data->foto));
-                $file = $request->file('foto');
-                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
-                $file->move('fotodudi/', $filename);
-                $data->foto = $filename;
-                $data->save();
+            }
+            $file = $request->file('foto');
+            $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+            $file->move('fotodudi/', $filename);
+            $data->foto = $filename;
+            $data->save();
         }
 
         $data2->update([
@@ -520,37 +531,4 @@ if ($request->hasFile('foto')) {
 {
     return Excel::download (new UsersExport, 'JurnalSiswa.xlsx');
 }
-
-public function exportpdf(){
-    $data = tambahjurnal::where('usersiswa', Auth::user()->name)->get();
-    // dd($data);
-    $tittle = 'datajurusan';
-
-    view()->share('data', compact('tittle'), $data);
-    $pdf = Pdf::loadView('user.tambahjurnal.datatambahjurnal', $data->toArray())->output();
-    return $pdf->download('invoice.pdf');
-}
-// protected function showJobImage($filename)
-// {
-//    //check image exist or not
-//    $exists = Storage::disk('public')->exists('fotodudi/'.$filename);
-
-//    if($exists) {
-
-//       //get content of image
-//       $content = Storage::get('fotodudi/'.$filename);
-
-//       //get mime type of image
-//       $mime = Storage::mimeType('fotodudi/'.$filename);
-//       //prepare response with image content and response code
-//       $response = Response::make($content, 200);
-//       //set header
-//       $response->header("Content-Type", $mime);
-//       // return response
-//       return $response;
-//    } else {
-//       abort(404);
-//    }
-// }
-
 }

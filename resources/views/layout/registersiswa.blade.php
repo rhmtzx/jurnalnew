@@ -108,6 +108,11 @@
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email Siswa <span class="text-danger">*</span></label>
                                         <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Siswa" required>
+                                        @error('email')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                     </div>
                                     <!-- pwd -->
                                     <div class="mb-3">

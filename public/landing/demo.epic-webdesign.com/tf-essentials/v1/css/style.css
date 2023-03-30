@@ -39,17 +39,17 @@ ul {
 	padding: 0;
 }
 
-ul, ol { 
-	list-style: none; 
-	list-style-image: none; 
-	margin: 0; 
+ul, ol {
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
 	padding: 0;
 	color:#858585;
 	font-size: 14px;
 	line-height:24px;
 	margin-bottom:20px;
 }
-	
+
 ul li, ol li{
 	font-size: 17px;
 	line-height: 28px;
@@ -150,7 +150,7 @@ iframe {
 
 .popup-gallery:hover .video-popup-image{
 	opacity: 1;
-	
+
 }
 
 .video-play-icon {
@@ -173,7 +173,7 @@ iframe {
     -webkit-transition: all 0.4s ease-in-out;
 }
 
-.white-text{ 
+.white-text{
 	color: #fff;
 }
 
@@ -485,7 +485,7 @@ iframe {
 
 .navbar-fixed-top {
 	position: absolute!important;
-	background-color: rgba(0, 0, 0, 0.0)!important; 
+	background-color: rgba(0, 0, 0, 0.0)!important;
 	border-bottom: none;
 	transition: background-color 0.25s ease 0s;
 }
@@ -783,7 +783,7 @@ blockquote {
 /* Features */
 .feature-box{
 	text-align: center;
-	margin: 30px 0 0 0;	
+	margin: 30px 0 0 0;
 }
 
 .feature-box i{
@@ -915,14 +915,14 @@ ul.pricing-list li.price-tag-line a:hover{
    top: -5px;
    z-index: 1;
    overflow: hidden;
-   width: 75px; height: 75px; 
+   width: 75px; height: 75px;
    text-align: right;
 }
 
 .ribbon span {
    font-size: 10px;
-   color: #fff; 
-   text-transform: uppercase; 
+   color: #fff;
+   text-transform: uppercase;
    text-align: center;
    font-weight: bold; line-height: 20px;
    transform: rotate(45deg);
@@ -936,7 +936,7 @@ ul.pricing-list li.price-tag-line a:hover{
 
 .ribbon span::before {
    content: '';
-   position: absolute; 
+   position: absolute;
    left: 0px; top: 100%;
    z-index: -1;
    border-left: 3px solid #79A70A;
@@ -949,7 +949,7 @@ ul.pricing-list li.price-tag-line a:hover{
 
 .ribbon span::after {
    content: '';
-   position: absolute; 
+   position: absolute;
    right: 0%; top: 100%;
    z-index: -1;
    border-right: 3px solid #79A70A;
@@ -1190,7 +1190,7 @@ p.contact_success_box{
 
 #newsletter-form #email_newsletter {
 	width:100%;
-	max-width:450px; 
+	max-width:450px;
 	height:65px;
     padding:0 20px;
 	border: 2px solid #fff;
@@ -1198,7 +1198,7 @@ p.contact_success_box{
     -moz-border-radius: 5px 0 0 5px;
     -webkit-border-radius: 5px 0 0 5px;
     border-radius: 5px 0 0 5px;
-	color:#fff;  
+	color:#fff;
     font-size:16px;
 	margin:0;
 }
@@ -1208,7 +1208,7 @@ p.contact_success_box{
 	height:65px;
     background: #fff;
 	border: none;
-    color:#1e90ff;  
+    color:#1e90ff;
     display: inline;
 	margin:0 0 0 -5px;
     -moz-border-radius: 0 5px 5px 0;
@@ -1387,7 +1387,7 @@ a.btn-blue:visited, a.btn-blue:focus{
 	opacity: 0.25;
 }
 
-.popup-gallery a span.eye-wrapper, 
+.popup-gallery a span.eye-wrapper,
 .popup-gallery a span.eye-wrapper2 {
 	background-color:#000;
 	position: absolute;
@@ -1409,7 +1409,7 @@ a.btn-blue:visited, a.btn-blue:focus{
     border-radius: 5px 5px 0 0;
 }
 
-.popup-gallery-rounded a span.eye-wrapper, 
+.popup-gallery-rounded a span.eye-wrapper,
 .popup-gallery-rounded a span.eye-wrapper2 {
 	-webkit-border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
@@ -1468,7 +1468,7 @@ a.btn-blue:visited, a.btn-blue:focus{
 .testim-inner span.job-text{
 	font-size: 19px;
 	font-weight: 400;
-}	
+}
 
 .testim-inner p{
 	font-size: 20px;
@@ -1753,7 +1753,7 @@ ul.partners-mentions li img:hover {
 @media (max-width: 320px) {
 
 	.newsletter-input {
-		width: 60%;		
+		width: 60%;
 	}
 
 	.btn-newsletter{

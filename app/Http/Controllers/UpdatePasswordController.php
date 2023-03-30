@@ -17,14 +17,16 @@ class UpdatePasswordController extends Controller
 
     public function updatepasswordsiswa(request $request){
         $request->validate([
-            'current_password' => 'required|min:6|max:100',
-            'password' => 'required|min:6|max:100|confirmed',
+            'current_password' => 'required|min:6|max:100|password',
+            'password' => 'required|min:6|max:100|confirmed|regex:/[0-9]+/|regex:/[A-Z]+/',
             'password_confirmation' => 'required'
         ], [
+            'current_password.password' => 'Password Lama Salah.',
             'current_password.required' => 'sandi lama harus diisi',
             'current_password.min' => 'sandi harus lebih dari 6',
             'password.required' => 'sandi baru harus diisi',
             'password.min' => 'sandi harus lebih dari 6',
+            'password.regex' => 'Password harus mengandung setidaknya satu huruf besar dan satu angka.',
             'password.confirmed' => 'sandi ini harus sama dengan sandi baru',
             'password_confirmation.required' => 'konfirmasi sandi harus diisi',
 
@@ -44,13 +46,18 @@ class UpdatePasswordController extends Controller
 
     public function updatepassworddudi(request $request){
         $request->validate([
-            'password' => 'required|min:6|max:100|confirmed',
+            'current_password' => 'required|min:6|max:100|password',
+            'password' => 'required|min:6|max:100|confirmed|regex:/[0-9]+/|regex:/[A-Z]+/',
             'password_confirmation' => 'required'
         ], [
-           'password.required' => 'sandi baru harus diisi',
-           'password.min' => 'sandi harus lebih dari 6',
-           'password.confirmed' => 'sandi ini harus sama dengan sandi baru',
-           'password_confirmation.required' => 'konfirmasi sandi harus diisi',
+            'current_password.password' => 'Password Lama Salah.',
+            'current_password.required' => 'sandi lama harus diisi',
+            'current_password.min' => 'sandi harus lebih dari 6',
+            'password.required' => 'sandi baru harus diisi',
+            'password.min' => 'sandi harus lebih dari 6',
+            'password.regex' => 'Password harus mengandung setidaknya satu huruf besar dan satu angka.',
+            'password.confirmed' => 'sandi ini harus sama dengan sandi baru',
+            'password_confirmation.required' => 'konfirmasi sandi harus diisi',
 
         ]);
         $data = User::find(Auth::user()->id);
@@ -66,13 +73,18 @@ class UpdatePasswordController extends Controller
     }
     public function updatepasswordguru(request $request){
         $request->validate([
-            'password' => 'required|min:6|max:100|confirmed',
+            'current_password' => 'required|min:6|max:100|password',
+            'password' => 'required|min:6|max:100|confirmed|regex:/[0-9]+/|regex:/[A-Z]+/',
             'password_confirmation' => 'required'
         ], [
-           'password.required' => 'sandi baru harus diisi',
-           'password.min' => 'sandi harus lebih dari 6',
-           'password.confirmed' => 'sandi ini harus sama dengan sandi baru',
-           'password_confirmation.required' => 'konfirmasi sandi harus diisi',
+            'current_password.password' => 'Password Lama Salah.',
+            'current_password.required' => 'sandi lama harus diisi',
+            'current_password.min' => 'sandi harus lebih dari 6',
+            'password.required' => 'sandi baru harus diisi',
+            'password.min' => 'sandi harus lebih dari 6',
+            'password.regex' => 'Password harus mengandung setidaknya satu huruf besar dan satu angka.',
+            'password.confirmed' => 'sandi ini harus sama dengan sandi baru',
+            'password_confirmation.required' => 'konfirmasi sandi harus diisi',
 
         ]);
         $data = User::find(Auth::user()->id);

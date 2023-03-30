@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\kelas;
+use App\Models\Absensi;
 use App\Models\jurusan;
-use App\Models\datasiswa;
 use App\Models\dataabsen;
+use App\Models\datasiswa;
 use App\Models\tambahjurnal;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // use Illuminate\Foundation\Auth\User;
@@ -39,7 +40,7 @@ class DatasiswaController extends Controller
         } else {
             $data = jurusan::paginate(4);
         }
-        
+
         return view('datasiswa.datasiswa',compact('data','jurusan'));
             // return view('datasiswa.datasiswa',compact('jurusan','data1'));
         }else if(Auth()->user()->role == 'Guru'){
@@ -173,25 +174,17 @@ class DatasiswaController extends Controller
         }
 
         public function deletedatasiswa(Request $request,$id){
-            //Delete Siswa
-            $data = datasiswa::find($id);
-            $data->delete();
-            //Delete User
-            $data3=User::find($data->user_id);
-            $data3->delete();
-            //Delete Jurnal
-            $datajurnal = tambahjurnal::find($id);
-            $data7 = tambahjurnal::find($datajurnal->usersiswa);
-            $data7->delete();
-            //Delete Absen
-            $dataabsen = dataabsen::find($id);
-            $data8 = dataabsen::find($dataabsen->usersiswa);
-            $data8->delete();
+            $data = datasiswa::findOrfail($id);
+            $user = User::findOrfail($data->user_id);
+            $jurnal = tambahjurnal::where('usersiswa', '=', $id);
+            $absen = dataabsen::where('usersiswa', '=', $id);
+            $Absensi = Absensi::where('usersiswa', '=', $id);
 
-            if(Auth()->user()->role == 'Admin'){
-                return redirect()->route('datasiswa')->with('succes', 'Data Berhasil Di Delete');
-            }else{
-                return redirect()->route('datasiswa')->with('success', 'Data Berhasil Di Delete');
-            }
-        }
+            $data->delete();
+            $user->delete();
+            $jurnal->delete();
+            $absen->delete();
+            $Absensi->delete();
+            return back()->with('success', 'data berhasil di delete');
+                }
 }

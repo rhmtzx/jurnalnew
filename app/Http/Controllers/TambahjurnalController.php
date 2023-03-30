@@ -39,6 +39,24 @@ class TambahjurnalController extends Controller
             return view('user.tambahjurnal.datatambahjurnal',compact('data','data2','data4','tittle','data5'));
         }
     }
+    
+    public function daterange(Request $request)
+{
+    $date_range = $request->input('daterange');
+    $start_date = Carbon::parse(explode(' - ', $date_range)[0])->startOfDay();
+    $end_date = Carbon::parse(explode(' - ', $date_range)[1])->endOfDay();
+    $tittle = 'datajurnal';
+
+    $data = tambahjurnal::where('student_id', auth()->id())->whereBetween('created_at', [$start_date, $end_date])->get();
+
+    return view('user.tambahjurnal.datatambahjurnal', compact('data','tittle'));
+}
+    public function cetakpdf(){
+        $data = tambahjurnal::with('namasiswa')->where('student_id', auth()->id())->get();
+        $tittle = 'datajurnal';
+
+        return view('user.tambahjurnal.cetakpdf',compact('data','tittle'));
+    }
     public function dataa($id){
         $datak = tambahjurnal::with('namasiswa')->where('usersiswa',$id)->get();
 

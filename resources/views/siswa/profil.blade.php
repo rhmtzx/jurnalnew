@@ -66,7 +66,8 @@
                                     <div class="col-md-12">
                                         <div class="media-left">
                                             <a href="#" class="profile-image">
-                                                <img class="user-img img-radius rounded" src="{{ asset('fotodudi/' . Auth::user()->foto) }}" width="155px" height="155px" alt="user-img">
+                                                <img class="user-img img-radius rounded"
+                                                 src="{{ (Auth::user()->foto) ? asset('fotodudi/'. Auth::user()->foto ) : asset('fotojurnal/default.png') }}" width="155px" height="155px" alt="user-img">
                                             </a>
                                         </div>
                                         <div class="media-body row">
@@ -115,25 +116,25 @@
                                                         <div class="table-responsive">
                                                             <table class="table m-0">
                                                                 <tbody>
+                       <div class="mb-3">
+                       <label for="exampleFormControlInput1" class="form-label"><h6>NIS Siswa</h6></label>
+                       <input type="number" class="form-control" id="exampleFormControlInput1"
+                        value="{{Auth()->user()->nissiswa}}" readonly="">
+                        </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"><h6>Nama Siswa</h6></label>
                             <input type="text" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->name}}" readonly="">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"><h6>NIS Siswa</h6></label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1"
-                             value="{{Auth()->user()->nissiswa}}" readonly="">
+                            <label for="exampleFormControlInput1" class="form-label"><h6>Email Siswa</h6></label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                             value="{{Auth()->user()->email}}" readonly="">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Siswa</h6></label>
                             <input type="text" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->alamatsiswa}}" readonly="">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Siswa</h6></label>
-                            <input type="number" class="form-control" id="exampleFormControlInput1"
-                             value="{{Auth()->user()->notlpsiswa}}" readonly="">
                         </div>
 
                                                                 </tbody>
@@ -155,14 +156,14 @@
                              value="{{Auth()->user()->kd_dudi}}" readonly="">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"><h6>Email Siswa</h6></label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                             value="{{Auth()->user()->email}}" readonly="">
-                        </div>
-                        <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"><h6>Kelas Jurusan Siswa</h6></label>
                             <input type="text" class="form-control" id="exampleFormControlInput1"
                              value="{{Auth()->user()->jurusan->namajurusan}}" readonly="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label"><h6>No Telepon Siswa</h6></label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                             value="{{Auth()->user()->notlpsiswa}}" readonly="">
                         </div>
                                                                 </tbody>
                                                             </table>
@@ -376,7 +377,7 @@
     *===================================-->
     <footer>
         <div class="footer-area">
-            <p>&copy; 2023. J | On Crafted with by RQTeams.</p>
+            <p>&copy; 2023. J | On</p>
         </div>
     </footer>
     <!--=================================*

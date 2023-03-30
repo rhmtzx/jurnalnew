@@ -50,7 +50,6 @@
                                 <h1 class="display-5 coming-soon-text">Situs Sedang Dalam Perbaikan</h1>
                                 <p class="fs-14">Silahkan Periksa Kembali Lain Waktu</p>
                                 <div class="mt-4 pt-2">
-                                    <a href="javascript:history.back()" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Kembali</a>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-5">
