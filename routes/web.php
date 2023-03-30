@@ -38,10 +38,7 @@ use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
 use App\Http\Controllers\ForgotpassworddController;
 use App\Http\Controllers\DashboardController;
-<<<<<<< HEAD
-=======
-// use App\Http\Controllers\AbsensiController;
->>>>>>> e01a45c88254d9a5dd70d4ecde34daded700f8c1
+
 
 
 /*
