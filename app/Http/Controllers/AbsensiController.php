@@ -299,8 +299,8 @@ $izins = dataabsen::where('usersiswa', $siswa->id)
             ->whereDate('created_at', now())
             ->get();
 
-       
+
 
         return view('user.absensi.today', compact('tittle','today','jurnals','izins'));
 	}
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+}

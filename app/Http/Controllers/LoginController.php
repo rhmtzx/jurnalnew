@@ -289,11 +289,13 @@ class LoginController extends Controller
             'remember_token' => Str::random(60),
             'role' => 'Dudi',
         ]);
-        if($request->hasFile('foto')){
-            $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-            $user->foto = $request->file('foto')->getClientOriginalName();
-            $user->save();
-        }
+                if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+                $file->move('fotodudi/', $filename);
+                $user->foto = $filename;
+                $user->save();
+            }
         datadudi::create([
             'kd_dudi'=>$user->kd_dudi,
             'namadudi' => $request->name,
@@ -309,7 +311,7 @@ class LoginController extends Controller
 
         auth()->login($user);
 
-        
+
 
         return redirect('/email/need-verification')->with('success','Dudi Berhasil Daftar');
     }
@@ -364,7 +366,7 @@ class LoginController extends Controller
         $this->validate($request,[
             'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
         ],[
-            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!', 
+            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!',
             'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
         ]);
 
@@ -378,7 +380,7 @@ class LoginController extends Controller
             'email' => $request->email,
             'id_jurusan' => $request->id_jurusan,
         ]);
-        
+
 if ($request->hasFile('foto')) {
     $file = $request->file('foto');
     $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
@@ -420,7 +422,7 @@ if ($request->hasFile('foto')) {
         $this->validate($request,[
             'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
         ],[
-            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!', 
+            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!',
             'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
         ]);
 
@@ -464,12 +466,12 @@ if ($request->hasFile('foto')) {
             'foto' => 'image|max:1024|mimes:jpg,png,jpeg', // max size in kilobytes
             'alamatdudi' => 'required',
         ],[
-            'alamatdudi.required' => 'Harus Diisi !!', 
-            'foto.image' => 'Foto Harus Berupa Foto !!', 
-            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!', 
+            'alamatdudi.required' => 'Harus Diisi !!',
+            'foto.image' => 'Foto Harus Berupa Foto !!',
+            'foto.max' => 'Foto Tidak Boleh Lebih Besar Dari 1 Mb !!',
             'foto.mimes' => 'Harus Menggunakan Type File Jpg, Png Atau Jpeg !!',
         ]);
-        
+
         $data->update([
             'name' => $request->name,
             'alamatdudi' => $request->alamatdudi,
@@ -497,7 +499,7 @@ if ($request->hasFile('foto')) {
             'notelepondudi' => $data->notelepondudi,
             'foto' => $data->foto,
         ]);
-        
+
         return redirect()->route('profil')->with('success', 'Profil Dudi Berhasil Di Update !');
 
     }
@@ -523,7 +525,8 @@ if ($request->hasFile('foto')) {
 }
 
 public function exportpdf(){
-    $data = tambahjurnal::with('namasiswa')->where('student_id', auth()->id())->get();
+    $data = tambahjurnal::where('usersiswa', Auth::user()->name)->get();
+    // dd($data);
     $tittle = 'datajurusan';
 
     view()->share('data', compact('tittle'), $data);

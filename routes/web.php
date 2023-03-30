@@ -38,6 +38,10 @@ use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
 use App\Http\Controllers\ForgotpassworddController;
 use App\Http\Controllers\DashboardController;
+<<<<<<< HEAD
+=======
+// use App\Http\Controllers\AbsensiController;
+>>>>>>> e01a45c88254d9a5dd70d4ecde34daded700f8c1
 
 
 /*
@@ -309,4 +313,6 @@ Route::group(['middleware' => ['auth', 'hakakses:Siswa,Guru,Dudi,Admin']], funct
     Route::post('/reset-password', [ForgotPasswordController::class, 'rapli'])->name('password.update');
 
     Route::get('/export', [LoginController::class, 'export']);
+    Route::get('/exportpdf', [LoginController::class, 'exportpdf'])->name('exportpdf');
+
 

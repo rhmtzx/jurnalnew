@@ -76,7 +76,7 @@
                                     </div>
                                     @enderror
                                     </div>
-                                   
+
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama Siswa <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Siswa" required>
@@ -86,7 +86,7 @@
                                     </div>
                                     @enderror
                                     </div>
-                                    
+
                                     <div class="col-lg-12">
                                         <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
                                         <select class="form-control js-example-basic-single" name="namajurusan" id="namajurusan" autocomplete="off">
@@ -266,7 +266,7 @@
     <script src="{{ asset('velzon/themesbrand.com/velzon/html/default/assets/js/pages/select2.init.js') }}"></script> --}}
     <script>
         new TomSelect("#namajurusan",{
-	create: true,
+	// create: true,
 	sortField: {
 		field: "text",
 		direction: "asc"
