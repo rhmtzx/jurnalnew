@@ -42,7 +42,7 @@
                         </li>
                         @else
                         <li class="discover-link">
-                            <a href="/dashboard" class="external"><em>{{ Auth::user()->name }}</em></a>
+                            <a href="javascript:history.back()" class="external"><em>{{ Auth::user()->name }}</em></a>
                         </li>
                         <li class="discover-link">
                             <a href="/logout" class="external"><em>Logout</em></a>

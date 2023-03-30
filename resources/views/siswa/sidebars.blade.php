@@ -54,12 +54,6 @@
                         <br>
                         <ul> Absen</ul>
                         <br>
-                        <li class="{{ ($tittle === 'dataabsen') ? 'active': '' }}">
-                            <a href="/dataabsen">
-                                <i class="fa-solid fa-book"></i>
-                                <span>Absen Izin</span>
-                            </a>
-                        </li>
                         <li class="{{ ($tittle === 'absensiswa') ? 'active': '' }}">
                             <a href="/absensiswa">
                                 <i class="fa-solid fa-book"></i>

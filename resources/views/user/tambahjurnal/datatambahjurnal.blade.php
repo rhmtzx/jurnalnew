@@ -5,6 +5,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
+    <style>
+        input[name="daterange"] {
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 15px;
+}
+    </style>
 
     <div class="main-content-inner">
         <div class="row">
@@ -17,14 +24,19 @@
                             <li><h6>Semua Data Jurnal Ada Disini</h6></li></ul>
                             <br>
                             <div class="single-table">
-                                <a href="/tambahtambahjurnal" class="btn btn-fixed-w btn-outline-success mb-10">Tambah +</a>
-                                <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a>
-                                <input type="text" name="daterange" value="" />
-                               <div class="table-responsive">
-                            <div class="single-table">
-                                    <br>
+                                <a href="/tambahtambahjurnal" class="btn btn-success btn-fixed-w mb-3">Tambah +</a>
+                                <a href="/cetakpdf" target="_blank" class="btn btn-danger"  style="margin-bottom: 15px">Cetak PDF  <i class="fa-solid fa-print"></i></a>
+                                {{-- <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a> --}}
+                                <form method="get" action="/daterange">
+                                    <div class="form-group" style="margin-left: 712px">
+                                        <label for="date-range">Date Range:</label>
+                                        <input type="text" name="daterange" value="" />
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
                                 <div class="table-responsive">
-                                    <br>
+                            <div class="single-table">
+                                <div class="table-responsive">
                                     <table id="Jurnal" class="table text-center table-bordered dt-responsive nowrap"
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
@@ -33,7 +45,7 @@
                                             <th scope="col" hidden>Nama Siswa</th>
                                             <th scope="col">Foto</th>
                                             <th scope="col">Judul</th>
-                                            <th scope="col">Deskripsi</th>
+                                            <th scope="col" hidden>Deskripsi</th>
                                             <th scope="col">Status Jurnal</th>
                                             <th scope="col">Pesan Jika Ditolak</th>
                                             <th scope="col">Tanggal</th>
@@ -57,7 +69,7 @@
                                                 </a>
                                             </td>
                                             <td>{{ $row->judul }}</td>
-                                            <td class="td-ellipsis">{!! $row->deskripsi !!}</td>
+                                            <td class="td-ellipsis" hidden>{!! $row->deskripsi !!}</td>
                                                 @if ($row->statusjurnal == 'Telah Disetujui')
                                                 <td>
                                                     <span class="badge badge-success badge-success ">Telah Disetujui</span>
@@ -96,11 +108,12 @@
                 </div>
             </div>
 
-
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -119,17 +132,18 @@
                 $('#Jurnal').DataTable();
             });
         </script>
-
-    </body>
-    <script>
+       <script type="text/javascript">
         $(function() {
-          $('input[name="daterange"]').daterangepicker({
-            opens: 'left'
-          }, function(start, end, label) {
-            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-          });
+           $('input[name="daterange"]').daterangepicker({
+              opens: 'left'
+           }, function(start, end, label) {
+              console.log("A date range was chosen: " + start.format('Y-m-d') + ' to ' + end.format('Y-m-d'));
+           });
         });
-        </script>
+     </script>
+    </body>
+   <!-- Initialize date range picker -->
+
     <script>
         $('.deletetambahjurnal').click(function() {
             var kategoriid = $(this).attr('data-id');

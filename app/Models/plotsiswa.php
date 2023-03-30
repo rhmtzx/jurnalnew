@@ -13,7 +13,7 @@ class plotsiswa extends Model
 
     public function siswas()
     {
-        return $this->belongsTo(datasiswa::class,'plotnamasiswa','id');
+        return $this->belongsTo(Datasiswa::class, 'plotnamasiswa', 'id');
     }
     
     

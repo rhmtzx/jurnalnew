@@ -82,61 +82,54 @@
                                                     <div class="form-check">
                                                         <input class="form-check-input fs-15" type="checkbox" id="checkAll" value="option">
                                                     </div>
+                                                    <th scope="col">Tanggal</th>
+                                                    <th scope="col">Nama Siswa</th>
+                                                    <th scope="col">Waktu Masuk</th>
+                                                    <th scope="col">Status Masuk</th>
+                                                    <th scope="col">Waktu Keluar</th>
+                                                    <th scope="col">Status Keluar</th>
                                                 </th>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Nama Siswa</th>
-                                                <th scope="col">Foto</th>
-                                                <th scope="col">Keterangan</th>
-                                                <th scope="col">Status Jurnal</th>
-                                                <th scope="col">Dibuat</th>
-                                                <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @php
-                                                    $no = 1;
-                                                    @endphp
-                                            @foreach ($datah as $rowh)
-                                <tr>
-                                    <th scope="row">
-                                        <div class="form-check">
-                                            <input class="form-check-input fs-15" type="checkbox" name="checkAll" value="option1">
-                                        </div>
-                                    </th>
-                                    <th scope="row">{{ $no++ }}</th>
-                                    <td>{{ $rowh->namasiswa->namasiswa }}</td>
-                                    <td>
-                                        <img src="{{ asset('fotodudi/' . $rowh->foto) }}" alt=""
-                                        style="width: 40px">
-                                    </td>
-                                    {{-- <td>{{ $rowh->usersiswa }}</td> --}}
-                                    <td>{{ $rowh->keterangan }}</td>
-                                                @if ($rowh->statusjurnal == 'Telah Disetujui')
+                                        $no = 1;
+                                        @endphp
+                                            @foreach($datah as $hihi)
+                                            <tr>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <th>{{$hihi->created_at}}</th>
+
+                                                <th>{{$hihi->namasiswa->namasiswa}}</th>
+
+                                                <th>{{$hihi->masuk}}</th> <!-- Waktu Masuk -->
+
+                                                @if ($hihi->statusmasuk == 'Hadir')
                                                 <td>
-                                                    <span class="badge badge-soft-success badge-border">Telah Disetujui</span>
+                                                    <span class="badge badge-soft-success badge-border ">Hadir</span>
                                                 </td>
-                                                @elseif ($rowh->statusjurnal == 'Menunggu Persetujuan')
+                                                @elseif ($hihi->statusmasuk == 'Terlambat')
                                                 <td>
-                                                    <span class="badge badge-soft-warning badge-border">Menunggu Persetujuan</span>
-                                                </td>
-                                                @elseif ($rowh->statusjurnal == 'Jurnal Ditolak')
-                                                <td>
-                                                    <span class="badge badge-soft-danger badge-border">Jurnal Ditolak</span>
+                                                    <span class="badge badge-soft-danger badge-border">Terlambat</span>
                                                 </td>
                                                 @endif
-                                    <td>{{ $rowh->created_at}}</td>
-                                    <td scope="row">
-                                        <a href="/tampilabsen/{{ $rowh->id }}"
-                                            class="btn btn-warning"><i
-                                            class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                            <a href="#" class="btn btn-danger deleteabsen"
-                                            data-id="{{ $rowh->id }}"
-                                            data-judul="{{ $rowh->judul }}"><i
-                                            class="fa-sharp fa-solid fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                        </tbody>
+
+
+
+                                                <th>{{$hihi->keluar}}</th> <!-- Waktu Keluar -->
+
+                                                @if ($hihi->statuskeluar == 'Belum Waktunya')
+                                                <td>
+                                                    <span class="badge badge-soft-danger badge-border">Belum Waktunya</span>
+                                                </td>
+                                                @elseif ($hihi->statuskeluar == 'Telah Keluar')
+                                                <td>
+                                                    <span class="badge badge-soft-success badge-border">Telah Keluar</span>
+                                                </td>
+                                                @endif
+
+                                            </tbody>
+                                            @endforeach
                                     </table>
                                     <a href="javascript:history.back()" class="btn btn-danger mb-10">Kembali</a>
                                 </div>

@@ -26,7 +26,7 @@
                                             <div class="media-left">
                                                 <a href="#" class="profile-image">
                                                     <img class="user-img img-radius"
-                                                        src="{{ asset('fotodudi/' . Auth::user()->foto)  }}" width="155px"
+                                                        src="{{ (Auth::user()->foto) ? asset('fotodudi/'. Auth::user()->foto ) : asset('fotojurnal/default.png') }}" width="155px"
                                                         height="155px" alt="user-img">
                                                 </a>
                                             </div>
@@ -79,12 +79,12 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Nama Dudi</h6></label>
-                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
+                                <input type="text" class="form-control" readonly name="name" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->name}}">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Alamat Dudi</h6></label>
-                                <input type="text" class="form-control" name="alamatdudi" id="exampleFormControlInput1"
+                                <input type="text" class="form-control" readonly name="alamatdudi" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->alamatdudi}}">
                             </div>
                             <div class="mb-3">
@@ -115,7 +115,7 @@
                                                                     <tbody>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Nama Kepala Direktur</h6></label>
-                                <input type="text" class="form-control" name="namakepdik" id="exampleFormControlInput1"
+                                <input type="text" class="form-control" readonly name="namakepdik" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->namakepdik}}">
                             </div>
                             <div class="mb-3">
@@ -185,7 +185,7 @@
                                 <input type="number" class="form-control" name="nip" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->nip}}" readonly>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Kode Guru</h6></label>
                                 <input type="email" class="form-control" name="kd_guru" id="exampleFormControlInput1"
@@ -213,7 +213,7 @@
                                 <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
                                 <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
                             </div>
-                            
+
 
                                                                     </tbody>
                                                                 </table>
@@ -238,7 +238,7 @@
                                 <input type="text" class="form-control" name="alamat" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->alamat}}">
                             </div>
-                            
+
                         </form>
                                                                     </tbody>
                                                                 </table>
@@ -291,12 +291,12 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Nama Siswa</h6></label>
-                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
+                                <input type="text" class="form-control" readonly name="name" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->name}}">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label"><h6>Jurusan Siswa</h6></label>
-                                <select class="form-control" name="id_jurusan" id="id_jurusan">
+                                <select class="form-control" selected disabled name="id_jurusan" id="id_jurusan">
                                     <option value="" selected disabled>Pilih</option>
                                     @foreach($jurusan as $a)
                                     <option value="{{ $a->id }}"<?php if($data->id_jurusan == $a->id) {
@@ -323,10 +323,7 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="mt-4">
-                                <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
-                                <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
-                            </div>
+
 
                                                                     </tbody>
                                                                 </table>
@@ -356,8 +353,11 @@
                                 <input type="number" class="form-control" name="nissiswa" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->nissiswa}}" readonly>
                             </div>
-                            
-                            
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary">Update Profile</button>&nbsp
+                                <a href="/profil" class="btn btn-danger mb-10">Kembali</a>
+                            </div>
+
                         </form>
                                                                     </tbody>
                                                                 </table>

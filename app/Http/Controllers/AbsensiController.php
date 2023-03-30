@@ -25,6 +25,17 @@ class AbsensiController extends Controller
 
     	return view('user.absensi.absensi',compact('absen','tittle','setting'));
     }
+    public function daterangee(Request $request)
+{
+    $date_range = $request->input('daterange');
+    $start_date = Carbon::parse(explode(' - ', $date_range)[0])->startOfDay();
+    $end_date = Carbon::parse(explode(' - ', $date_range)[1])->endOfDay();
+    $tittle = 'absensiswa';
+    $setting = Setting::where('kd_dudi',Auth::user()->kd_dudi)->get();
+    $absen = Absensi::where('user_id', auth()->id())->whereBetween('created_at', [$start_date, $end_date])->get();
+
+    return view('user.absensi.absensi', compact('tittle','setting','absen'));
+}
     //  -------------------------------- END HALAMAN ABSEN SISWA -----------------------------------------------
 
     // -------------------------- ABSEN MASUK NORMAL -----------------------------------------------------------
@@ -274,7 +285,7 @@ if (!is_null($siswa)) {
 		$tittle = 'today';
 		$today = Absensi::with('namasiswa')
                  ->whereHas('user', function ($query) {
-                     $query->where('kd_dudi', auth()->user()->kd_dudi);
+                     $query->where('user_id', auth()->id());
                  })
                  ->whereDate('created_at', Carbon::today())
                  ->get();
@@ -303,4 +314,5 @@ $izins = dataabsen::where('usersiswa', $siswa->id)
 
         return view('user.absensi.today', compact('tittle','today','jurnals','izins'));
 	}
+
 }

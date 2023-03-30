@@ -81,7 +81,7 @@
                                         </div>
 
                                         <div class="text-center mt-4">
-                                            <button class="btn btn-success w-100" type="submit">Send Reset Link</button>
+                                            <button class="btn btn-success w-100" type="submit">Kirim Email</button>
                                         </div>
                                     </form><!-- end form -->
                                 </div>

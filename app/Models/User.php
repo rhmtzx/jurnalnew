@@ -78,7 +78,6 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsTo(jurusan::class, 'id_jurusan', 'id');
     }
-
     public function absensi()
     {
         return $this->hasMany(Absensi::class);

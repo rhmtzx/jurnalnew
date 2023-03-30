@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\kelas;
-use App\Models\jurusan;
-use App\Models\datasiswa;
-use App\Models\dataabsen;
 use App\Models\Absensi;
+use App\Models\jurusan;
+use App\Models\dataabsen;
+use App\Models\datasiswa;
+// use App\Models\Absensi;
 use App\Models\tambahjurnal;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // use Illuminate\Foundation\Auth\User;
@@ -40,7 +41,7 @@ class DatasiswaController extends Controller
         } else {
             $data = jurusan::paginate(4);
         }
-        
+
         return view('datasiswa.datasiswa',compact('data','jurusan'));
             // return view('datasiswa.datasiswa',compact('jurusan','data1'));
         }else if(Auth()->user()->role == 'Guru'){
@@ -173,28 +174,31 @@ class DatasiswaController extends Controller
             }
         }
 
-        public function deletedatasiswa(Request $request,$id){
-            //Delete User
-            $data = datasiswa::find($id);
-            $data->delete();
-
-            $datajurnal = tambahjurnal::find($id);
-            $data7 = tambahjurnal::find($datajurnal->usersiswa);
-            $data7->delete();
-
-            $absensi = Absensi::find($id);
-            $data9 = Absensi::find($absensi->usersiswa);
-            $data9->delete();
-
-            $rrr = dataabsen::find($id);
-            $yyy = dataabsen::find($rrr->usersiswa);
-            $yyy->delete();
-
-            $data3=User::find($data->user_id);
-            $data3->delete();
-
-            if(Auth()->user()->role == 'Admin'){
-                return redirect()->route('datasiswa')->with('success', 'Data Berhasil Di Delete');
-            }
+        public function deletedatasiswa($id){
+    $data = datasiswa::findOrfail($id);
+    foreach ($data->tambahjurnal as $siswa) {
+        if ($siswa->foto && file_exists(public_path('fotodudi/' . $siswa->foto))) {
+            unlink(public_path('fotodudi/' . $siswa->foto));
         }
+        $siswa->delete();
+    }
+    foreach ($data->dataabsen as $rapli) {
+        if ($rapli->foto && file_exists(public_path('fotodudi/' . $rapli->foto))) {
+            unlink(public_path('fotodudi/' . $rapli->foto));
+        }
+        $rapli->delete();
+        if ($rapli->foto && file_exists(public_path('fotodudi/' . $rapli->foto))) {
+            unlink(public_path('fotodudi/' . $rapli->foto));
+        }
+    }
+
+    $Absensi = Absensi::where('usersiswa', '=', $id);
+    $user = User::findOrfail($data->user_id);
+
+    $data->delete();
+    $user->delete();
+    $Absensi->delete();
+
+    return back()->with('success', 'data berhasil di delete');
+}
 }
