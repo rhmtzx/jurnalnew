@@ -21,24 +21,28 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\AbsensiController;
+// use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\JurusanController;
-use App\Http\Controllers\SettingController;
+// use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\DatadudiController;
 use App\Http\Controllers\DataguruController;
-use App\Http\Controllers\DashboardController;
+// use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataabsenController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\DatasiswaController;
+use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\SiswamagangController;
 use App\Http\Controllers\TambahjurnalController;
 use App\Http\Controllers\DataplotinganController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DatapersyaratanController;
-use App\Http\Controllers\ForgotpassworddController;
+// use App\Http\Controllers\ForgotpassworddController;
 use App\Http\Controllers\DatagurupembimbingController;
 use App\Http\Controllers\DatapembimbingdudiController;
+use App\Http\Controllers\ForgotpassworddController;
+use App\Http\Controllers\DashboardController;
 
 
 

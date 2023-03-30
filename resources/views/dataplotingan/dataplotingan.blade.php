@@ -86,9 +86,9 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
+                                                    <th scope="col">Nama Dudi</th>
                                                     <th scope="col">Nama Guru</th>
                                                     <th scope="col">Nama Siswa</th>
-                                                    <th scope="col">Nama Dudi</th>
                                                     <!-- <th scope="col">Alamat Dudi</th> -->
                                                     <th scope="col">Dibuat</th>
                                                     <th scope="col">Aksi</th>
@@ -98,20 +98,27 @@
                                                     @php
                                                     $no = 1;
                                                     @endphp
-                                                    @foreach ($data as $row)
+                                            @foreach ($data as $row)
                                                     
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->dudis->namadudi}}</td>
                                                 <td>{{ $row->gurus->namaguru}}</td>
 
                                                 <td>
-                                                @foreach($row as $yosha)
-                                                    {{ $yosha }}
+                                                @foreach($row->plotsiswa as $key => $plotsiswa)
+                                                    @if ($plotsiswa->siswas)
+                                                        {{ $plotsiswa->siswas->namasiswa }}
+                                                    @else
+                                                        DATA NULL
+                                                    @endif
 
+                                                    @if($key != count($row->plotsiswa) - 1)
+                                                        ,
+                                                    @endif
                                                 @endforeach
                                                 </td>
                                             
-                                                <td>{{ $row->dudis->namadudi}}</td>
                                                 <!-- <td>{{ $row->alamatdudip}}</td>  -->
                                                 <td>{{ $row->created_at}}</td>
 

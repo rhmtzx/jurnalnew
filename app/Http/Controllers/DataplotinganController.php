@@ -14,7 +14,7 @@ class DataplotinganController extends Controller
 {
     public function index(){
 
-            $data = dataplotingan::with('plotsiswa.siswas')->get();
+            $data = Dataplotingan::with(['plotsiswa.siswas'])->get();
             // $siswa = plotsiswa::all();
             // $data = dataplotingan::all();
             // dd($data);
@@ -75,14 +75,11 @@ class DataplotinganController extends Controller
             'plotnamasiswa' => $siswa,
         ]);
     }
-
-
             if(Auth()->user()->role == 'Admin'){
-                return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Ditambahkan');
-            }else{
                 return redirect()->route('dataplotingan')->with('success', 'Data Berhasil Ditambahkan');
             }
         }
+
         public function tampildataplotingan($id){
             $data = dataplotingan::findOrfail($id);
             $guru = dataguru::all();

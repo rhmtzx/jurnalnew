@@ -28,8 +28,10 @@ class dataplotingan extends Model
 	
 
 	
-	public function plotsiswa()
+	
+    public function plotsiswa()
     {
-        return $this->hasMany(plotsiswa::class,'idplot', 'id');
+        return $this->hasMany(Plotsiswa::class, 'idplot', 'id');
     }
+
 }
