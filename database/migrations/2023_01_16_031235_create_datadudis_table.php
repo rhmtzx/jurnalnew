@@ -16,7 +16,7 @@ class CreateDatadudisTable extends Migration
         Schema::create('datadudis', function (Blueprint $table) {
             $table->id();
             $table->string('kd_dudi');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->string('namadudi');
             $table->string('namakepdik');
             $table->string('alamatdudi');

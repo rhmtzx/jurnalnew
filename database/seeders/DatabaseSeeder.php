@@ -211,7 +211,6 @@ class DatabaseSeeder extends Seeder
         $dudiseed = [
             [
                 'kd_dudi' => '123456',
-                'foto' => 'default.png',
                 'namadudi' => 'Hummasoft Technology',
                 'namakepdik' => 'Afrizal Himawan',
                 'alamatdudi' => 'Perumahan Griya Alam Blok.14',

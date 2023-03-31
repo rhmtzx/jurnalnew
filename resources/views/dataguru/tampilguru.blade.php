@@ -106,20 +106,9 @@
                                     aria-describedby="emailHelp" value="{{ $data->notlpn }}">
                                     <br>
 
-                                <div class="mb-1">
-                                        <label for="exampleInputEmail1" class="form-label"><h6>Edit Foto Dudi</h6>
-                                        </label>
-                                            <br><img class="img mb-3"src="{{ asset('fotodudi/' . $data->foto) }}"
-                                                alt="" style="width: 90px" alt="">
-                                                <br>
-                                                <input type="file" name="foto" class="form-control">
-                                        </div>
-                                        <br>
-                                        <br>
-                                    
                                     <div class="mt-4">
                                         <button type="submit" class="btn btn-primary">Update Data</button>
-                                        <a href="/dataguru" class="btn btn-danger waves-effect waves-light mb-10"><i class="ri-reply-fill align-middle me-2"></i>Kembali</a>
+                                        <a href="/dataguru" class="btn btn-danger waves-effect waves-light mb-10"><i class="ri-reply-fill align-middle me-2"></i>   Kembali</a>
                                     </div>
                                 </form>
                                 </div>

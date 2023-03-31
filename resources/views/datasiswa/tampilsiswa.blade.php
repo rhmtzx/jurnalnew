@@ -4,6 +4,8 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -102,23 +104,22 @@
                                         </div>
                                         @enderror
 
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label"><h6>Jurusan</h6></label>
-                                            <select class="form-control" name="namajurusan" id="namajurusan">
-                                                <option value="" selected disabled>Pilih</option>
-                                                @foreach($jurusan as $a)
-                                                <option value="{{ $a->id }}"<?php if($data->namajurusan == $a->id) {
-                                                    echo 'selected';
-                                                }?> > {{ $a->namajurusan }} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        @error('jurusan')
-                                        <div class="text-danger">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-
+                                        <div class="col-lg-12">
+                                        <label for="name" class="form-label">Kelas Jurusan Siswa <span class="text-danger">*</span></label>
+                                        <select class="form-control js-example-basic-single" name="namajurusan" id="jurusan" autocomplete="off">
+                                            <option value="" selected disabled>- Pilih Jurusan Siswa -</option>
+                                            @foreach($jurusan as $a)
+                                    <option value="{{ $a->id }}"<?php if($data->namajurusan == $a->id) {
+                                        echo 'selected';
+                                    }?> > {{ $a->namajurusan }} </option>
+                                    @endforeach
+                                        </select>
+                                    @error('jurusan')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    </div>
                                                 <div class="mb-3">
 
                                                     <label for="exampleInputEmail1" class="form-label"><h6>Alamat Siswa</h6></label>
@@ -176,6 +177,7 @@
     <!--preloader-->
 
     <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
@@ -197,7 +199,16 @@
                 $('#Jurnal').DataTable();
             });
         </script>
+        <script>
+        new TomSelect("#jurusan",{
+    // create: true,
+    sortField: {
+        field: "text",
+        direction: "asc"
+    }
+});
 
+    </script>
     </body>
 
 

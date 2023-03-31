@@ -117,8 +117,7 @@
 
                                                 <td>
                                                     <a href="/tampiljurusan/{{ $row->id }}" class="btn btn-warning"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                    <a href="#" class="btn btn-danger deletejurusan" data-id="{{ $row->id }}"
-                                                    data-nama="{{ $row->nama }}"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                                    
                                                 </td>
                                             </tr>
                                             @endforeach

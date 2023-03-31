@@ -157,8 +157,13 @@ class DatasiswaController extends Controller
                 // 'user_id' =>$request->nullable,
             ]);
             $data2->update([
-                'name'=>$request->namasiswa,
-                'id_jurusan'=>$request->namajurusan
+                'name'=>$data->namasiswa,
+                'id_jurusan'=>$data->namajurusan,
+                'nissiswa'=>$data->nissiswa,
+                'alamatsiswa'=>$data->alamatsiswa,
+                'notlpsiswa'=>$data->notlpsiswa,
+
+
             ]);
 
             // datasiswa::where('user_id', $data->user_id)->update($data);
@@ -194,6 +199,7 @@ class DatasiswaController extends Controller
 
     $Absensi = Absensi::where('usersiswa', '=', $id);
     $user = User::findOrfail($data->user_id);
+    
 
     $data->delete();
     $user->delete();
