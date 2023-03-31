@@ -14,7 +14,7 @@ class datadudi extends Model
 
     public function user()
     {
-        return $this->hasMany(user::class); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
+        return $this->hasMany(user::class,); //Model tergantung apa yang ingin direlasikan, Model=(berwarna biru)
     }
 
     public function getCreatedAtAttribute()

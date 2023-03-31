@@ -39,7 +39,7 @@ class TambahjurnalController extends Controller
             return view('user.tambahjurnal.datatambahjurnal',compact('data','data2','data4','tittle','data5'));
         }
     }
-    
+
     public function daterange(Request $request)
 {
     $date_range = $request->input('daterange');
@@ -274,6 +274,9 @@ class TambahjurnalController extends Controller
         $data7 = tambahjurnal::where('kd_dudi', auth()->user()->kd_dudi)
                     ->whereDate('created_at', today())
                     ->get();
+        $data8 = tambahjurnal::where('kd_guru', auth()->user()->kd_guru)
+                    ->whereDate('created_at', today())
+                    ->get();
 
 		$data = tambahjurnal::whereDate('created_at', today())->get();
         $data5 = datasiswa::where('kd_dudi', Auth::user()->kd_dudi)->get();
@@ -284,7 +287,7 @@ class TambahjurnalController extends Controller
 		if(Auth()->user()->role == 'Dudi'){
             return view('userdudi.tambahjurnal.jurnalhariini',compact('data','tittle','data7','data5'));
         }else if(Auth()->user()->role == 'Guru'){
-            return view('userguru.tambahjurnal.jurnalhariini',compact('data','tittle','data7','guru','khususguru'));
+            return view('userguru.tambahjurnal.jurnalhariini',compact('data','tittle','data8','guru','khususguru'));
         }else if(Auth()->user()->role == 'Siswa'){
             return view('user.tambahjurnal.jurnalhariini',compact('data','tittle','data7'));
         }

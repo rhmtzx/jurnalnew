@@ -194,7 +194,7 @@ class LoginController extends Controller
             'notlpn.required' => 'No Telepon Guru Harus Diisi !!',
             'notlp.min' => 'No Telepon Guru Minimal 12 Nomor !!',
 
-            'email.required' => 'Email Harus Diisi !!',
+            'email.unique' => 'Email Sudah Digunakan !!',
             'email.required' => 'Email Harus Diisi !!',
             'password.required' => 'Password Harus Diisi !!',
             'password.min' => 'Isi Password Minimal 6 Huruf !!',

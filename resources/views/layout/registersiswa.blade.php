@@ -158,7 +158,7 @@
                                                 <div class="invalid-feedback">
                                                     Please enter password
                                                 </div>
-                                                @error('password')
+                                                @error('password_confirmation')
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

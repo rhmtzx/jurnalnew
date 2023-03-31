@@ -38,7 +38,7 @@ class DatadudiController extends Controller
                   'foto' => 'required',
 
 
-             ],[    
+             ],[
                  'namadudi.required' => 'Harus diisi',
                  'namakepdik.required' => 'Harus diisi',
                  'alamatdudi.required' => 'Harus diisi',
@@ -101,23 +101,13 @@ class DatadudiController extends Controller
         }
 
         public function deletedatadudi(Request $request,$id){
-            $data = datadudi::find($id);
-            $data3=User::find($data->user_id);
-            $data->delete([
-                'foto'=>$request->foto,
-                'namadudi' =>$request->namadudi,
-                'namakepdik' =>$request->namakepdik,
-                'alamatdudi' =>$request->alamatdudi,
-                'notelepondudi' =>$request->notelepondudi,
-            ]);
-            $data3->delete([
-                'foto'=>$request->foto,
-                'namadudi' =>$request->namadudi,
-                'namakepdik' =>$request->namakepdik,
-                'alamatdudi' =>$request->alamatdudi,
-                'notelepondudi' =>$request->notelepondudi,
-            ]);
-
+            $data = datadudi::findorfail($id);
+            if (file_exists(public_path('fotodudi/' . $data->foto))) {
+                unlink(public_path('fotodudi/' . $data->foto));
+            }
+            $user = User::findOrfail($data->user_id);
+            $data->delete();
+            $user->delete();
 
             if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('datadudi')->with('success', 'Data Berhasil Didelete');
