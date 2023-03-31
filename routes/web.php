@@ -26,7 +26,7 @@ use App\Http\Controllers\DatadudiController;
 use App\Http\Controllers\DataguruController;
 use App\Http\Controllers\DataabsenController;
 use App\Http\Controllers\SettingController;
-use App\Http\Controllers\DatasiswaCon   troller;
+use App\Http\Controllers\DatasiswaController;
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\SiswamagangController;
 use App\Http\Controllers\TambahjurnalController;
