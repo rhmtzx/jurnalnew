@@ -40,6 +40,10 @@ class datasiswa extends Model
     {
         return $this->hasMany(dataabsen::class,'id');
     }
+    public function user()
+    {
+        return $this->hasMany(user::class,'id');
+    }
     public function absens()
     {
         return $this->hasMany(Absensi::class,);

@@ -71,15 +71,24 @@ class DataguruController extends Controller
                 'notlpn' =>$request->notlpn,
 
             ]);
-
-            $data2->update([
-                'name'=>$request->namaguru
-            ]);
-            if($request->hasFile('foto')){
-                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-                $data->foto = $request->file('foto')->getClientOriginalName();
+            if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+                $file->move('fotodudi/', $filename);
+                $data->foto = $filename;
                 $data->save();
             }
+
+            $data2->update([
+                'name'=>$data->namaguru,
+                // 'foto'=>$data->foto,
+                'nip'=>$data->nip,
+                'notlpn'=>$data->notlpn,
+                'alamat'=>$data->alamat,
+
+
+            ]);
+
             return redirect()->route('dataguru')->with('succes', 'Data Berhasil Di Update');
         }
 
@@ -87,7 +96,7 @@ class DataguruController extends Controller
             $data = dataguru::find($id);
             $data3=User::find($data->user_id);
             if (file_exists(public_path('fotodudi/' . $data3->foto))) {
-                unlink(public_path('fotodudi/' . $data3->foto));
+            unlink(public_path('fotodudi/' . $data3->foto));
             }
             $data->delete();
             $data3->delete();

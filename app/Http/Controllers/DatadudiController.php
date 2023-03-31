@@ -83,16 +83,24 @@ class DatadudiController extends Controller
                 'namakepdik' =>$request->namakepdik,
                 'alamatdudi' =>$request->alamatdudi,
                 'notelepondudi' =>$request->notelepondudi,
+                // 'foto' =>$request->foto,
 
             ]);
-            $data2->update([
-                'name'=>$request->namadudi
-            ]);
-            if($request->hasFile('foto')){
-                $request->file('foto')->move('fotodudi/', $request->file('foto')->getClientOriginalName());
-                $data->foto = $request->file('foto')->getClientOriginalName();
+                if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = hash_file('md5', $file->path()) . '.' . $file->getClientOriginalExtension();
+                $file->move('fotodudi/', $filename);
+                $data->foto = $filename;
                 $data->save();
             }
+
+            $data2->update([
+                'name' =>$data->namadudi,
+                'namakepdik' =>$data->namakepdik,
+                'alamatdudi' =>$data->alamatdudi,
+                'notelepondudi' =>$data->notelepondudi,
+            ]);
+
             if(Auth()->user()->role == 'Admin'){
                 return redirect()->route('datadudi')->with('success', 'Data Berhasil Diupdate');
             }else{
