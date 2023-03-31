@@ -199,8 +199,9 @@ class DatasiswaController extends Controller
 
     $Absensi = Absensi::where('usersiswa', '=', $id);
     $user = User::findOrfail($data->user_id);
-    
-
+    if (file_exists(public_path('fotodudi/' . $user->foto))) {
+        unlink(public_path('fotodudi/' . $user->foto));
+    }
     $data->delete();
     $user->delete();
     $Absensi->delete();

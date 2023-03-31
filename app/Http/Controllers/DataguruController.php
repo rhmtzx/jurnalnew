@@ -78,7 +78,7 @@ class DataguruController extends Controller
                 $data->foto = $filename;
                 $data->save();
             }
-            
+
             $data2->update([
                 'name'=>$data->namaguru,
                 // 'foto'=>$data->foto,
@@ -97,7 +97,7 @@ class DataguruController extends Controller
             $data3=User::find($data->user_id);
             if (file_exists(public_path('fotodudi/' . $data3->foto))) {
             unlink(public_path('fotodudi/' . $data3->foto));
-        }
+            }
             $data->delete();
             $data3->delete();
 

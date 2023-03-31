@@ -48,7 +48,7 @@ class datasiswa extends Model
     {
         return $this->hasMany(Absensi::class,);
     }
-    
+
     public function dataplotingan()
     {
         return $this->hasMany(dataplotingan::class,);

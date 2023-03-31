@@ -10,7 +10,7 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card_title">Data Semua Absen Siswa Hari Ini</h4>
+                        <h4 class="card_title">Data Absen Semua Siswa Hari Ini</h4>
                         <ul>
                             <li><h6>Semua Absen Siswa Hari Ini Ada Disini !!</h6></li></ul>
                             <br>
@@ -23,14 +23,11 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Foto</th>
-                                            <th scope="col">Judul</th>
-                                            <th scope="col" hidden>Deskripsi</th>
-                                            <th scope="col">Status Jurnal</th>
-                                            <!-- <th scope="col">Approve Jurnal</th> -->
-                                            <th scope="col">Pesan Jika Ditolak</th>
-                                            <th scope="col">Jurnal Dibuat</th>
-                                            <th scope="col">Detail</th>
+                                            <th scope="col">Waktu Masuk</th>
+                                            <th scope="col">Status Masuk</th>
+                                            <th scope="col">Waktu Keluar</th>
+                                            <th scope="col">Status Keluar</th>
+                                            <th scope="col">Tanggal Absen</th>
 
                                         </tr>
                                     </thead>
@@ -43,56 +40,32 @@
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row4->namasiswa->namasiswa }}</td>
-                                                <td><a class="image-popup" href="{{ asset('fotodudi/' . $row4->foto) }}">
-                                                    <img class="gallery-img img-fluid mx-auto" src="{{ asset('fotodudi/' . $row4->foto) }}" alt=""
-                                                    style="width: 40px">
-                                                </a>
-                                                </td>
-                                                <td>{{ $row4->judul }}</td>
-                                                <td hidden>{!! $row4->deskripsi !!}</td>
 
-                                                @if ($row4->statusjurnal == 'Telah Disetujui')
+                                                <td>{{ $row4->masuk }}</td>
+                                                @if ($row4->statusmasuk == 'Hadir')
                                                 <td>
-                                                    <span class="badge badge-success badge-success ">Telah Disetujui</span>
+                                                    <span class="badge badge-success badge-success ">Hadir</span>
                                                 </td>
-                                                @elseif ($row4->statusjurnal == 'Menunggu Persetujuan')
+                                                @elseif ($row4->statusmasuk == 'Terlambat')
                                                 <td>
-                                                    <span class="badge badge-success badge-warning ">Menunggu Persetujuan</span>
-                                                </td>
-                                                @elseif ($row4->statusjurnal == 'Jurnal Ditolak')
-                                                <td>
-                                                    <span class="badge badge-success badge-danger ">Jurnal Ditolak</span>
+                                                    <span class="badge badge-success badge-danger ">Terlambat</span>
                                                 </td>
                                                 @endif
 
-                                                <!-- <td>
-                                                    <button type="button" class="btn btn-box btn-fixed-w btn-outline-success mb-3" onclick="document.getElementById('update-{{$row4->id}}').submit()">
-                                                        <i class="fa-solid fa-check"></i>
-                                                    </button>
-                                                    <form id="update-{{$row4->id}}"
-                                                     action="{{Route('statusditerima',['id' => $row4->id])}}" class="hidden" method="post">
-                                                    @method('put')
-                                                    @csrf
-                                                    </form>
-                                                    <button type="button" class="btn btn-box btn-fixed-w btn-outline-danger mb-3" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa-solid fa-xmark"></i></button>
-                                                    <form id="update2-{{$row4->id}}"
-                                                     action="{{Route('statusditolak',['id' => $row4->id])}}" class="hidden" method="post">
-                                                    @method('put')
-                                                    @csrf
-                                                    </form>
-                                                </td> -->
+                                               <td>{{ $row4->keluar }}</td>
+                                                @if ($row4->statuskeluar == 'Belum Waktunya')
+                                                <td>
+                                                    <span class="badge badge-success badge-danger ">Belum Waktunya</span>
+                                                </td>
+                                                @elseif ($row4->statuskeluar == 'Telah Keluar')
+                                                <td>
+                                                    <span class="badge badge-success badge-success ">Telah Keluar</span>
+                                                </td>
+                                                @endif
 
-                                                <td>{{ $row4->pesanjurnal }}</td>
-                                                    
                                                 <td>{{ $row4->created_at}}</td>
-                                                <td scope="row">
-                                                    <a href="/tampiltambahjurnal/{{ $row4->id }}"
-                                                        class="btn btn-social btn-box btn-social-outline-tw mb-3"><i
-                                                        class="fa-sharp fa-solid fa-pen-to-square"></i></a>
-                                                    </td>
-                                                </tr>
                                         @endforeach
-                                                
+
                                             </tbody>
                                         </table>
                                         <br>
@@ -105,10 +78,10 @@
                     <!-- Progress Table end -->
                 </div>
             </div>
-           
+
             <!-- Large modal -->
-                    
-                        <div class="col-lg-6 mt-4 stretched_card">                    
+
+                        <div class="col-lg-6 mt-4 stretched_card">
                             <div class="modal fade bd-example-modal-lg">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
@@ -129,7 +102,7 @@
                                             <button type="submit" class="btn btn-box btn-fixed-w btn-outline-danger mb-3">
                                             Submit
                                             </button>
-                                            
+
                                         </div>
                                             @endif
                                         </form>
@@ -138,8 +111,8 @@
                                 </div>
                             </div>
 
-                            
-                    
+
+
 
             <!-- Large modal modal -->
             <!-- DATA TABLE JS -->
