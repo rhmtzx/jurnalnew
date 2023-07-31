@@ -94,7 +94,7 @@
                                                 <th scope="col">Deskripsi</th>
                                                 <th scope="col">Status Jurnal</th>
                                                 <th scope="col">Dibuat</th>
-                                                <th scope="col">Aksi</th>
+                                                <!-- <th scope="col">Aksi</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -130,7 +130,7 @@
                                                 </td>
                                                 @endif
                                     <td>{{ $rowk->created_at}}</td>
-                                    <td scope="row">
+                                    <!-- <td scope="row">
                                         <a href="/tampiltambahjurnal/{{ $rowk->id }}"
                                             class="btn btn-warning"><i
                                             class="fa-sharp fa-solid fa-pen-to-square"></i></a>
@@ -138,7 +138,7 @@
                                             data-id="{{ $rowk->id }}"
                                             data-judul="{{ $rowk->judul }}"><i
                                             class="fa-sharp fa-solid fa-trash"></i></a>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                     @endforeach
                                         </tbody>

@@ -69,7 +69,7 @@
                                                         <i class="fa-solid fa-check"></i>
                                                     </button>
                                                     <form id="update-{{$row4->id}}"
-                                                     action="{{Route('statusditerima',['id' => $row4->id])}}" class="hidden" method="post">
+                                                     action="{{Route('statusditerimaa',['id' => $row4->id])}}" class="hidden" method="post">
                                                     @method('put')
                                                     @csrf
                                                     </form>

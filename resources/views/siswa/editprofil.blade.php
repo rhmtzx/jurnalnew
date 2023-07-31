@@ -225,7 +225,7 @@
                                                                     <tbody>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label"><h6>Nama Guru</h6></label>
-                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
+                                <input type="text" class="form-control" readonly="" name="name" id="exampleFormControlInput1"
                                  value="{{Auth()->user()->name}}">
                             </div>
                             <div class="mb-3">

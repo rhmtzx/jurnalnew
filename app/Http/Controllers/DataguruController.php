@@ -95,7 +95,7 @@ class DataguruController extends Controller
         public function deletedataguru(Request $request, $id){
             $data = dataguru::find($id);
             $data3=User::find($data->user_id);
-            if (file_exists(public_path('fotodudi/' . $data3->foto))) {
+            if ($data3->foto && file_exists(public_path('fotodudi/' . $data3->foto))) {
             unlink(public_path('fotodudi/' . $data3->foto));
             }
             $data->delete();

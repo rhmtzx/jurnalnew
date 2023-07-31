@@ -22,7 +22,11 @@ class ForgotPasswordController extends Controller
     }
     public function store(Request $request){
         $request->validate([
-            'email'=>'required','email'
+            'email'=>'required|exists:users,email'
+        ],[
+            'email.required'=>'Email Harus Di isi!!',
+            'email.exists'=>'Email Belum Terdaftar!!'
+
         ]);
 
         $status = Password::sendResetLink(
@@ -30,7 +34,7 @@ class ForgotPasswordController extends Controller
         );
 
         return $status = Password::RESET_LINK_SENT
-                ? back()->with('status',($status))
+                ? back()->with('success','Berhasil Mengirim Email!!')
                 : back()->withInput($request->only('email'))
                         ->withErrors(['email'=>($status)]);
 

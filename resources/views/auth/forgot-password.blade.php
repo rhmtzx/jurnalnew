@@ -78,6 +78,11 @@
                                         <div class="mb-4">
                                             <label class="form-label">Email</label>
                                             <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                                             @error('email')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                         </div>
 
                                         <div class="text-center mt-4">

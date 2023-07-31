@@ -39,7 +39,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DatapersyaratanController;
 // use App\Http\Controllers\ForgotpassworddController;
-use App\Http\Controllers\DatagurupembimbingController;
+use App\Http\Controllers\DatagurupembimbingConusertroller;
 use App\Http\Controllers\DatapembimbingdudiController;
 use App\Http\Controllers\ForgotpassworddController;
 use App\Http\Controllers\DashboardController;

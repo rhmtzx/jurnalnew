@@ -89,7 +89,7 @@ font-size: 15px;
                             <li><h6>Data Absen Anda Masuk Disini !!</h6></li></ul>
                             <a href="/dataabsen" class="btn btn-danger">Izin  <i class="fa-solid fa-sheet-plastic"></i></a>
                             <form method="get" action="/daterangee">
-                                <div class="form-group" style="margin-left: 712px">
+                                <div class="form-group" style="margin-left: 860px">
                                     <label for="date-range">Date Range:</label>
                                     <input type="text" name="daterange" value="" />
                                 <button type="submit" class="btn btn-primary">Submit</button>

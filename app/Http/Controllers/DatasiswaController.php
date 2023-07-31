@@ -179,12 +179,12 @@ class DatasiswaController extends Controller
             }
         }
 
-        public function deletedatasiswa($id){
+    public function deletedatasiswa($id){
     $data = datasiswa::findOrfail($id);
     foreach ($data->tambahjurnal as $siswa) {
         if ($siswa->foto && file_exists(public_path('fotodudi/' . $siswa->foto))) {
-            unlink(public_path('fotodudi/' . $siswa->foto));
-        }
+                unlink(public_path('fotodudi/' . $siswa->foto));
+            }
         $siswa->delete();
     }
     foreach ($data->dataabsen as $rapli) {
@@ -199,9 +199,9 @@ class DatasiswaController extends Controller
 
     $Absensi = Absensi::where('usersiswa', '=', $id);
     $user = User::findOrfail($data->user_id);
-    if (file_exists(public_path('fotodudi/' . $user->foto))) {
-        unlink(public_path('fotodudi/' . $user->foto));
-    }
+    if ($user->foto && file_exists(public_path('fotodudi/' . $user->foto))) {
+                unlink(public_path('fotodudi/' . $user->foto));
+            }
     $data->delete();
     $user->delete();
     $Absensi->delete();

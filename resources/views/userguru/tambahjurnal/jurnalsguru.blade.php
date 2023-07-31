@@ -43,6 +43,7 @@
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row8->namasiswa->namasiswa }}</td>
                                                 <td>
+                                                <a class="image-popup" href="{{ asset('fotodudi/' . $row8->foto) }}">
                                                     <img src="{{ asset('fotodudi/' . $row8->foto) }}" alt=""
                                                     style="width: 40px">
                                                 </td>

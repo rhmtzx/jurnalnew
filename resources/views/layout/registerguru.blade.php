@@ -109,7 +109,7 @@
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
-                                        @error('notlpn')
+                                        @error('notlp')
                                                 <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>

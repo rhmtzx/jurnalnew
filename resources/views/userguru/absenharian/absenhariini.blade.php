@@ -69,7 +69,6 @@
                                             </tbody>
                                         </table>
                                         <br>
-                                        <a href="javascript:history.back()" class="btn btn-rounded btn-fixed-w btn-outline-danger mb-3">Kembali</a>
                                     </div>
                                 </div>
                             </div>

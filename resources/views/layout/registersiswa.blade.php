@@ -205,14 +205,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalgridLabel">Kode</h5>
+                <h5 class="modal-title" id="exampleModalgridLabel">Masukkan Kode</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                     <div class="row g-3">
                         <div class="col-xxl-12">
                             <div class="mb-3">
-                                <label for="kd_guru" class="form-label">Masukkan Kode Guru Pembimbing <span class="text-danger">*</span></label>
+                                <label for="kd_guru" class="form-label">Masukkan Kode Guru <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="kd_guru" id="kd_guru" placeholder="Masukkan Kode Guru" required>
                             </div>
                             <label for=""><h6><em>Info : Pastikan kode benar!!</em></h6> </label>

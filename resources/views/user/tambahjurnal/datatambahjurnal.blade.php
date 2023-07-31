@@ -28,7 +28,7 @@
                                 <a href="/cetakpdf" target="_blank" class="btn btn-danger"  style="margin-bottom: 15px">Cetak PDF  <i class="fa-solid fa-print"></i></a>
                                 {{-- <a href="/export" class="btn btn-fixed-w btn-outline-success mb-10">Export Excel</a> --}}
                                 <form method="get" action="/daterange">
-                                    <div class="form-group" style="margin-left: 712px">
+                                    <div class="form-group" style="margin-left: 880px">
                                         <label for="date-range">Date Range:</label>
                                         <input type="text" name="daterange" value="" />
                                     <button type="submit" class="btn btn-primary">Submit</button>
